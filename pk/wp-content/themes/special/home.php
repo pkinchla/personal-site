@@ -9,15 +9,6 @@ get_header(); ?>
 			<!-- <h1 class="hero">I make things! Sometimes they live on the web.</h1>   -->
 			<div id="content" class="site-content group" role="main">
         <h1>Hello</h1>
-        <div class="grid-wrap">
-          <div class="col-1 mobile-accom"><img src="<?php echo get_template_directory_uri(); ?>/images/juggle.png" class="text-center"/></div>
-          <div class="col-3">
-            <h5>Inspired</h5>
-            <p>I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot. You understand?</p>
-            
-          </div>
-        </div>
-        <p>My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot. You understand?</p>
 			  <div class="full"><img src="<?php echo get_template_directory_uri(); ?>/images/palette-2.png"></div>
         <h3>Grid</h3>
 			  <div class="grid-wrap">
