@@ -8,7 +8,7 @@ get_header(); ?>
 
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
-			  <h1>Soap Box</h1>
+			  <h1>The Soap Box</h1>
 			  <div class="group">
   			  <div class="col-2">  
               <?php query_posts( 'posts_per_page=10' ); ?>
