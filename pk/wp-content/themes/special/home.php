@@ -9,7 +9,7 @@ get_header(); ?>
 			<!-- <h1 class="hero">I make things! Sometimes they live on the web.</h1>   -->
 			<div id="content" class="site-content group" role="main">
         <h1>Hello</h1>
-			  <div class="full"><img src="<?php echo get_template_directory_uri(); ?>/images/palette-2.png"></div>
+			  <div class="full"><img src="<?php echo get_template_directory_uri(); ?>/images/palette-2.png" alt="palette"></div>
         <h3>Grid</h3>
 			  <div class="grid-wrap">
   			  <div class="col-1">4 columns</div>
