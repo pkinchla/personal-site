@@ -32,7 +32,7 @@
   	<div class="wrap-back">
     	<div class="head-wrap group">	
     		<div class="logo-wrap">
-    			<h1 class="site-title group"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">Paul<span>Kinchla</span></a></h1>
+    			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="group"><span>Paul</span><span>Kinchla</span></a></h1>
     		</div>
 
     		<nav role="navigation" class="site-navigation main-navigation">
