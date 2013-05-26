@@ -65,6 +65,10 @@ section {
 	display: block;
 }
 
+svg:not(:root) {
+    overflow: hidden;
+}
+
 table { /* tables still need 'cellspacing="0"' in the markup */
 	border-collapse: separate;
 	border-spacing: 0;
@@ -410,14 +414,14 @@ a:active {
   .main-small-navigation .menu{display:none;}
   .main-small-navigation {position: absolute; left:60%; top:2%;  }
   .main-small-navigation .menu {margin-top:40px;  }
-  .main-small-navigation .menu-toggle {font:700 normal 16px 'futura-pt', Arial, sans-serif; background:rgb(105,105,105); color:#fff;width:3em;padding:7px 10px;position:absolute;top:5px;left:0; border-radius:8px; border:1px solid rgba(155,155,155,.75); border-top:none; }
+  .main-small-navigation .menu-toggle { width:68px; font:700 normal 16px 'futura-pt', Arial, sans-serif; background:rgb(105,105,105); color:#fff; padding:7px 10px;position:absolute;top:5px;left:0; border-radius:8px; border:1px solid rgba(155,155,155,.75); border-top:none; }
   .main-small-navigation h1.menu-toggle.toggled-on {border-radius:8px 8px 0 0;border-bottom:none;}
-  .main-small-navigation {list-style:none;padding:0; z-index:10;}
-  .main-small-navigation li { border-bottom:1px solid rgba(185,185,185,.35); background:rgb(105,105,105)}
+  .main-small-navigation {list-style:none;padding:0; z-index:10; }
+  .main-small-navigation li { border-bottom:1px solid rgba(185,185,185,.35); background:rgb(105,105,105); width:90px}
   .main-small-navigation li:first-child {border-top:3px solid rgba(50,50,50,.35);}
   .main-small-navigation li:last-child {border-bottom:3px solid rgba(50,50,50,.35);}
   .main-small-navigation li a {font:700 normal 16px 'futura-pt', Arial, sans-serif; }
-  .main-small-navigation li a,  .main-small-navigation  li a:visited {color:#fff; padding:10px 15px 10px 12px;display:block; text-decoration:none; }
+  .main-small-navigation li a,  .main-small-navigation  li a:visited {color:#fff; padding:10px 0 10px 12px;display:block; text-decoration:none; }
   .main-small-navigation li a:hover, .main-small-navigation  li.current_page_item a {background:rgba(61,90,120,.35); text-decoration:none; border-bottom:none;}
 
 
@@ -452,13 +456,12 @@ a:active {
   .resume dt{font-size:20px; font:400 normal 2rem 'futura-pt', Arial, sans-serif; margin:1.5em 0 .5em 0; border-bottom: 1px solid rgba(33,33,33,.25); } 
   .resume dt:first-child{margin-top:0; } 
   .resume h4{font-size:18px; font:400 normal 1.8rem 'futura-pt', Arial, sans-serif; color:#4a4b4e; } 
-  .resume h5{font-size:16px; font:400 italic 1.6rem 'futura-pt', Arial, sans-serif; color:#4a4b4e;} 
+  .resume h5{font-size:16px; font:400 italic 1.8rem 'futura-pt', Arial, sans-serif; color:#4a4b4e;} 
   .resume dd{margin-bottom:1.5em; } 
   .resume b{display:block; font-weight:normal;  } 
-  .resume time, .resume span{ font-size:14px; font:normal 1.4rem 'Georgia', serif;  display: inline-block; margin-left:5%;} 
-  .resume span{ font-size:14px; font:normal 1.4rem 'Georgia', serif;  display: inline-block; margin-left:0;  } 
+  .resume time, .resume span{ font-size:14px; font:normal 1.4rem 'Georgia', serif;  display:block;} 
   .resume ul{list-style: none; padding: 0; margin: 0;} 
-  .resume dd p{margin:0;} 
+  .resume dd p{ } 
 
 /*footer*/
 .site-footer{background:url('images/texture-bg.png');border-top:5px solid rgba(33,33,33,.15);padding:1em 8% 0 8%;clear:both;-moz-box-shadow:inset 0 8px 8px -8px rgba(33,33,33,.75), inset 0 -8px 8px -8px rgba(33,33,33,.75);-webkit-box-shadow:inset 0 8px 8px -8px rgba(33,33,33,.75), inset 0 -8px 8px -8px rgba(33,33,33,.75);box-shadow:inset 0 8px 8px -8px rgba(33,33,33,.75), inset 0 -8px 8px -8px rgba(33,33,33,.75);}
@@ -649,9 +652,9 @@ object {
   .footer-col2 {width: 54%; float: left;margin:0 3% 0 0;}
   .resume dt{font-size:30px; font:400 normal 3rem 'futura-pt', Arial, sans-serif; width:25%; text-align:right; border:none; margin-bottom:-.5em;} 
   .resume h4{font-size:20px; font:400 normal 2rem 'futura-pt', Arial, sans-serif;} 
-  .resume h5{font-size:18px; font:400 italic 1.8rem 'futura-pt', Arial, sans-serif; } 
+  .resume h5{font-size:19px; font:400 italic 1.9rem 'futura-pt', Arial, sans-serif; } 
   .resume dd{margin-left:27%;} 
-  .resume time, .resume span{ font-size:16px; font-size:1.6rem; float: right;} 
+  .resume time, .resume span{ font-size:16px; font-size:1.6rem; float: right;margin-top:5px; display:inline-block} 
   .resume dd p{width:65%;}
 }
 
