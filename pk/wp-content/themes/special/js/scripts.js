@@ -10,5 +10,24 @@
         $('.date .hero').anystretch("/wp-content/themes/special/images/date.jpg", {speed: 500});
         $('.category .hero').anystretch("/wp-content/themes/special/images/category.jpg", {speed: 500});
       
-      
+});
+
+$(document).ready(function() {
+  $('.toggle-content').click(function(){
+	//get collapse content selector
+	var collapse_content_selector = $(this).attr('href');					
+
+	//make the collapse content to be shown or hide
+	var toggle_switch = $(this);
+	$(collapse_content_selector).toggle(function(){
+	  if($(this).css('display')=='none'){
+                            //change the button label to be 'Show'
+		toggle_switch.html('View');
+	  }else{
+                            //change the button label to be 'Hide'
+		toggle_switch.html('Close');
+	  }
+	});
+  });
+
 });
