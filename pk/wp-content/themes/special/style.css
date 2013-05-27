@@ -451,7 +451,7 @@ a:active {
 /*main content*/
   .site-main {float:none; margin:0 1% 0 1%; width: 98%; clear: both;}
   .site-content { padding:2% 10% 5% 10%; }
-    .site-content p{max-width:750px; } /*thinking about it */
+    .site-content p{max-width:650px; } /*thinking about it */
     
 /*portfolio*/
   .portfolio-item {background:#ccc; background:rgba(120,152,183,.25); margin-bottom:1.5em; border-radius:10px 0 0 10px; }
@@ -668,7 +668,7 @@ object {
 }
 
 @media only screen and (min-width:1100px) { 
-  .site-header {width:320px;  margin-left:1%; position:absolute; }
+  .site-header {width:320px;  margin-left:1%; position:fixed; }
   .site-header:after { content: url(images/tag.png); background:none; }
     .site-content {padding-right:0; }
   .head-wrap {margin: 0 59px 0 59px; width:160px; padding-bottom:0}
