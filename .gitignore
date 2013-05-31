@@ -15,23 +15,23 @@
 /*
 !.gitignore
 !README.md
-!pk/
+!
  
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.
-pk/*
-!pk/wp-content/
+/*
+/wp-content/
 
-pk/wp-content/*
-!pk/wp-content/themes/
-!pk/wp-content/plugins/
+/wp-content/*
+/wp-content/themes/
+!/wp-content/plugins/
 
 
 # for future version controlled plugins
-pk/wp-content/plugins/*
+/wp-content/plugins/*
 
 
 # Ignore everything in the "themes" directory, except the themes you
 # specify (see the commented-out example for a hint on how to do this.)
-pk/wp-content/themes/*
-!pk/wp-content/themes/special/
+/wp-content/themes/*
+!/wp-content/themes/special/
