@@ -394,7 +394,7 @@ a:active {
   .site-title a{text-decoration: none; color:#4a4b4e; display:block; width: 65%; line-height:100%; padding:1% 30% 1% 10px;  }
   .site-title span{display:block; margin:0; padding:0; float:left; width:50%}
     /*social media icons*/
-    .social {clear: both; margin:1em auto 0 auto; list-style: none; width:55%}
+    .social {clear: both; margin:1em auto 0 auto; list-style: none; width:77%; margin-left:23%; }
     .social li{display: inline;  }
     .social li a span {display:inline-block; background:url('images/social-icons.svg') no-repeat; height:41px; opacity: 0.8; width:40px; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; transition: all .3s ease; }
     .social li a:hover { border-bottom:none; }
