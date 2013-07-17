@@ -385,7 +385,7 @@ a:active {
 ----------------------------------------------- */
 .site-header { width:100%; position:fixed; margin:0; -webkit-font-smoothing: antialiased; z-index:1;}
   /*logo and banner wrapping*/
-  .head-wrap {margin: 0 ; width:100%; padding-bottom:5px;  }
+  .head-wrap {margin: 0 ; width:100%; padding-bottom:.3125em;  }
   .logo-wrap{float: left; margin-left:10%;  }
   .wrap-back { background:url('images/texture-bg.png'); border-bottom: 1px solid #a2a2a2;}
   .site-title { width:100%; text-align:left; font:700 italic 16px 'futura-pt', Arial, sans-serif; font-size:1.6rem; line-height:100%; padding-top:10px;}
