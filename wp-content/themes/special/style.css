@@ -385,7 +385,7 @@ a:active {
 ----------------------------------------------- */
 .site-header { width:100%; position:fixed; margin:0; -webkit-font-smoothing: antialiased; z-index:1;}
   /*logo and banner wrapping*/
-  .head-wrap {margin: 0 ; width:100%; padding-bottom:.3125em;  }
+  .head-wrap {margin: 0 ; width:100%; padding-bottom:.5em;  }
   .logo-wrap{float: left; margin-left:10%;  }
   .wrap-back { background:url('images/texture-bg.png'); border-bottom: 1px solid #a2a2a2;}
   .site-title { width:100%; text-align:left; font:700 italic 16px 'futura-pt', Arial, sans-serif; font-size:1.6rem; line-height:100%; padding-top:10px;}
@@ -420,7 +420,7 @@ a:active {
   /* Small menu */
   .menu-toggle{cursor:pointer;}
   .main-small-navigation .menu{display:none;}
-  .main-small-navigation {position: absolute; left:60%; top:2%;  }
+  .main-small-navigation {position: absolute; left:60%;}
   .main-small-navigation .menu {margin-top:40px;  }
   .main-small-navigation .menu-toggle { width:68px; font:700 normal 16px 'futura-pt', Arial, sans-serif; background:rgb(105,105,105); color:#fff; padding:7px 10px;position:absolute;top:10px;left:0; border-radius:8px; border:1px solid rgba(155,155,155,.75); border-top:none; }
   .main-small-navigation h1.menu-toggle.toggled-on {border-radius:8px 8px 0 0;border-bottom:none;}
