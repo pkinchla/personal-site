@@ -22,6 +22,7 @@
 <![endif]-->
 <script type="text/javascript" src="//use.typekit.net/ltt0nnt.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<noscript><link href="icons.fallback.css" rel="stylesheet"></noscript>
 <?php wp_head(); ?>
 </head>
 
@@ -43,19 +44,19 @@
     		</nav><!-- .site-navigation .main-navigation -->
     	</div>
   	  <ul class="social social-desktop">
-  		  <li><a href="http://www.residentadvisor.net/profile/pkinchla" target="_blank"><span class="ra"></span></a></li>
-  		  <li><a href="https://twitter.com/PK_info" target="_blank"><span class="twitter"></span></a></li>
-  		  <li><a href="https://github.com/wbp-paulk" target="_blank"><span class="git-hub"></span></a></li>
-  		  <li><a href="<?php bloginfo('rss2_url'); ?>"><span class="rss"></span></a></li>
+  		  <li><a href="http://www.residentadvisor.net/profile/pkinchla" target="_blank"><span class="ra icons"></span></a></li>
+  		  <li><a href="https://twitter.com/PK_info" target="_blank"><span class="twitter icons"></span></a></li>
+  		  <li><a href="https://github.com/wbp-paulk" target="_blank"><span class="git-hub icons"></span></a></li>
+  		  <li><a href="<?php bloginfo('rss2_url'); ?>"><span class="rss icons"></span></a></li>
   		</ul>
   	</div>
 	</header><!-- #masthead .site-header -->
     	<div class="social-small-wrap">
     	<ul class="social social-small">
-    	  <li><a href="http://www.residentadvisor.net/profile/pkinchla" target="_blank"><span class="ra"></span></a></li>
-    	  <li><a href="https://twitter.com/PK_info" target="_blank"><span class="twitter"></span></a></li>
-    	  <li><a href="https://github.com/wbp-paulk" target="_blank"><span class="git-hub"></span></a></li>
-    	  <li><a href="<?php bloginfo('rss2_url'); ?>"><span class="rss"></span></a></li>
+    	  <li><a href="http://www.residentadvisor.net/profile/pkinchla" target="_blank"><span class="ra icons"></span></a></li>
+    	  <li><a href="https://twitter.com/PK_info" target="_blank"><span class="twitter icons"></span></a></li>
+    	  <li><a href="https://github.com/wbp-paulk" target="_blank"><span class="git-hub icons"></span></a></li>
+    	  <li><a href="<?php bloginfo('rss2_url'); ?>"><span class="rss icons"></span></a></li>
     	</ul>
     	</div>
       <div class="hero"> 
