@@ -109,7 +109,7 @@ input,
 select,
 textarea {
 	color: #222; color: #4a4b4e;
-	font-family:Georgia, serif;
+	font-family: "rooney-web", Georgia, serif;
 	font-size: 16px;
 	font-size: 1.6rem;
 	line-height: 1.5;
@@ -204,7 +204,7 @@ sub {
 	top: .5ex;
 }
 small {
-	font-size: 75%;
+	font-size: 90%;
 }
 big {
 	font-size: 125%;
@@ -478,10 +478,7 @@ a:active {
   .site-info {margin:0 1% 0 1%; width: 98%; padding-bottom:1.5em }
   .footer-col1 {width: 90%; float: none; }
   .footer-col2 {width: 90%; float: none; margin:1.5em 0; }
-  .site-footer dl {float: left; width: 45%; margin: 0; padding:0 0 10% 1%;  }
-  .site-footer dt { font-size:20px; font:400 italic 2rem 'futura-pt', Arial, sans-serif;}
-  .site-footer dd { font-size:15px; font:400 normal 1.5rem 'futura-pt', Arial, sans-serif; }
-  .copy{ display:block; font-size:14px; font:400 normal 1.4rem 'futura-pt', Arial, sans-serif; margin-top:1.5em}
+  .copy{ display:block; font-size:15px; font:400 normal 1.5rem 'futura-pt', Arial, sans-serif; margin-top:1.5em}
 
 .sticky {
 }
