@@ -119,7 +119,7 @@ textarea {
 h1,h2,h3,h4,h5 {
 	clear: both; font-family:'futura-pt', Arial, sans-serif; font-weight:700; color:#55616a;
 }
-h1 {font-size: 30px; font-size:3rem}
+h1 {font-size: 30px; font-size:3rem;}
 h2 {font-size: 25px; font-size:2.5rem}
 h3 {font-size: 20px; font-size:2rem}
 h4 {font-size: 18px; font-size:1.8rem}
@@ -505,7 +505,8 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
-.entry-title {}
+.entry-title {margin-bottom:.5em;}
+.entry-title:after {content:''; display: block; height: 1px; width: 100%; background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0, rgb(241,241,241)), color-stop(0.05, rgb(221,221,221)), color-stop(0.95, rgb(221,221,221)), color-stop(1, rgb(241,241,241)) ); background-image: -moz-linear-gradient(left center, rgb(241,241,241) 0%, rgb(221,221,221) 05%, rgb(221,221,221) 95%, rgb(241,241,241) 100% ); }
 
 
 /* =Asides
