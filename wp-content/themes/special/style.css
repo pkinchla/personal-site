@@ -391,7 +391,7 @@ a:active {
   .site-title { width:100%; text-align:left; font:700 italic 16px 'futura-pt', Arial, sans-serif; font-size:1.6rem; line-height:100%; padding-top:10px;}
   .site-title a:before {content: url('images/logo-mobile.png'); display:block; float:left; margin-right:5%; padding:1%;}
   .site-title a:hover {background:#ccc; background:rgba(33,33,33,.15);border-bottom:none;}
-  .site-title a{text-decoration: none; color:#4a4b4e; display:block; width: 65%; line-height:100%; padding:3% .625em 1% .625em;  }
+  .site-title a{text-decoration: none; color:#4a4b4e; display:block; width: 65%; line-height:100%; padding:3% .625em 1% .625em; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; transition: all .3s ease;   }
   .site-title span{display:block; margin:0; padding:0; float:left; width:50%}
     /*social media icons*/
     .social {clear: both; margin:1em auto 0 auto; list-style: none; width:77%; margin-left:23%; }
@@ -413,7 +413,7 @@ a:active {
   .menu ul{width: 100%; list-style: none; padding:0;  margin:18px 0 0 0;}
   .main-navigation {width:50%; float: left; margin-left:10%; }
   .main-navigation li{display: inline;}
-  .main-navigation li a{display:inline; font:400 normal 2.8rem 'futura-pt', Arial, sans-serif;color:#4a4b4e;line-height:1;padding:1% 3.47em 1% .869em;  text-decoration:none; text-align: center; font-size:23px; font-size: 2.3rem}
+  .main-navigation li a{display:inline; font:400 normal 2.8rem 'futura-pt', Arial, sans-serif;color:#4a4b4e;line-height:1;padding:1% 3.47em 1% .869em;  text-decoration:none; text-align: center; font-size:23px; font-size: 2.3rem; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; transition: all .3s ease; }
   .main-navigation li:hover > a{background:#ccc;background:rgba(33,33,33,.15);border-bottom:none;}
   .main-navigation li.current_page_item a,
   .main-navigation li.current-menu-item a{background:#ccc;background:rgba(61,90,120,.25)}
