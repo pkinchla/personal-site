@@ -634,9 +634,10 @@ object {
   .main-navigation li a{display: inline; text-decoration:none; text-align: center; font-size:23px; font-size: 2.3rem}
   [class*='col-']{float:left;margin:0 3% 0 0;}
     .portfolio-item [class*='col-']{padding:3% 0; }
-    .col-3 {width:72%;}
-    .col-2 {width:47%;}
-    .col-1 {width:22%;}
+    .col-three-quarter {width:72%;}
+    .col-half {width:47%;}
+    .col-third {width:30%;}
+    .col-quarter {width:22%;}
     .full{width: 100%;}
   .mobile-accom {display:block;}
   .portfolio-item p, .portfolio-item h5{margin:0;}

@@ -12,18 +12,23 @@ get_header(); ?>
 			  <div class="full"><img src="<?php echo get_template_directory_uri(); ?>/images/palette-2.png" alt="palette"></div>
         <h3>Grid</h3>
 			  <div class="grid-wrap">
-  			  <div class="col-1">4 columns</div>
-  			  <div class="col-1">4 columns</div>
-  			  <div class="col-1">4 columns</div>
-  			  <div class="col-1">4 columns</div>
-			  </div>
-			  <div class="grid-wrap">
-  			  <div class="col-2">2 columns</div>
-  			  <div class="col-2">2 columns</div>
+  			  <div class="col-quarter">4 columns</div>
+  			  <div class="col-quarter">4 columns</div>
+  			  <div class="col-quarter">4 columns</div>
+  			  <div class="col-quarter">4 columns</div>
 			  </div>
         <div class="grid-wrap">
-          <div class="col-1">1 quarter column</div>
-          <div class="col-3">3 quarter column</div>
+          <div class="col-third">3 columns</div>
+          <div class="col-third">3 columns</div>
+          <div class="col-third">3 columns</div>
+        </div>
+			  <div class="grid-wrap">
+  			  <div class="col-half">2 columns</div>
+  			  <div class="col-half">2 columns</div>
+			  </div>
+        <div class="grid-wrap">
+          <div class="col-quarter">1 quarter column</div>
+          <div class="col-third">3 quarter column</div>
         </div>
 			  <h1>Heading 1</h1>
 			  <h2>Heading 2</h2>
