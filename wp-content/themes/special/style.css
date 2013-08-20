@@ -349,6 +349,7 @@ a:active {
   .action{border:1px solid #ccc;border-color:#ccc #ccc #bbb #ccc;padding:5px 10px;background:rgba(110,128,147,.45);color:rgba(0,0,0,.8);font:700 normal 100% 'futura-pt',Arial,sans-serif;border-radius:5px;-webkit-transition:all 0.3s ease-out;-moz-transition:all 0.3s ease-out;-o-transition:all 0.3s ease-out;transition:all 0.3s ease-out;}
   .action:hover { background:rgba(120,152,183,.75); }
   .action:visited, .action:hover, .action:focus, .action:active{color:rgba(0,0,0,.8);border:1px solid #bbb;}
+  .action a:visited, .action a:hover, .action a:focus, .action a:active{border-bottom: none;}
 
 /* Alignment */
 .alignleft {
