@@ -19,7 +19,7 @@
 			</div>
 		<div class="footer-col1">	
 			<h5>Colophon</h5>
-			<small>This site is set in Georgia and Futura PT. Futura PT is provided via <a href="https://typekit.com/">Typekit</a>. Coded with <a href="http://validator.w3.org/check?uri=referer">HTML</a>, handcrafted CSS and built on <a href="http://wordpress.org/">Wordpress</a></small>
+			<small>This site is set in Skolar Web and Futura PT. Typefaces are being served up via <a href="https://typekit.com/">Typekit</a>. Handcrafted with <a href="http://validator.w3.org/check?uri=referer">HTML</a>, CSS and built on <a href="http://wordpress.org/">Wordpress</a></small>
 			<small class="copy">Paul Kinchla  &copy; 2005 - <?php echo date("Y"); ?></small>
 			</div>
 		</div><!-- .site-info -->
