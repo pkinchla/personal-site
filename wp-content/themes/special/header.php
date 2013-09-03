@@ -44,20 +44,20 @@
     		</nav><!-- .site-navigation .main-navigation -->
     	</div>
   	  <ul class="social social-desktop">
-  		  <li><a href="http://www.residentadvisor.net/profile/pkinchla" target="_blank"><span class="ra icons"></span></a></li>
-  		  <li><a href="https://twitter.com/PK_info" target="_blank"><span class="twitter icons"></span></a></li>
-  		  <li><a href="https://github.com/wbp-paulk" target="_blank"><span class="git-hub icons"></span></a></li>
-  		  <li><a href="<?php bloginfo('rss2_url'); ?>"><span class="rss icons"></span></a></li>
+  		  <li><a class="ra icons" href="http://www.residentadvisor.net/profile/pkinchla" target="_blank"><span class="assistive-text">Resident Advisor</span></a></li>
+  		  <li><a class="twitter icons" href="https://twitter.com/PK_info" target="_blank"><span class="assistive-text">Twitter</span></a></li>
+  		  <li><a class="git-hub icons" href="https://github.com/wbp-paulk" target="_blank"><span class="assistive-text">Github</span></a></li>
+  		  <li><a class="rss icons" href="<?php bloginfo('rss2_url'); ?>"><span class="assistive-text">RSS</span></a></li>
   		</ul>
   	</div>
 	</header><!-- #masthead .site-header -->
     	<div class="social-small-wrap">
     	<ul class="social social-small">
-    	  <li><a href="http://www.residentadvisor.net/profile/pkinchla" target="_blank"><span class="ra icons"></span></a></li>
-    	  <li><a href="https://twitter.com/PK_info" target="_blank"><span class="twitter icons"></span></a></li>
-    	  <li><a href="https://github.com/wbp-paulk" target="_blank"><span class="git-hub icons"></span></a></li>
-    	  <li><a href="<?php bloginfo('rss2_url'); ?>"><span class="rss icons"></span></a></li>
-    	</ul>
+        <li><a class="ra icons" href="http://www.residentadvisor.net/profile/pkinchla" target="_blank"><span class="assistive-text">Resident Advisor</span></a></li>
+        <li><a class="twitter icons" href="https://twitter.com/PK_info" target="_blank"><span class="assistive-text">Twitter</span></a></li>
+        <li><a class="git-hub icons" href="https://github.com/wbp-paulk" target="_blank"><span class="assistive-text">Github</span></a></li>
+        <li><a class="rss icons" href="<?php bloginfo('rss2_url'); ?>"><span class="assistive-text">RSS</span></a></li>
+      </ul>
     	</div>
       <div class="hero"> 
   			<?php if (is_home()) { echo '<div class="content"><h2>I make Websites<span>and I am very permanent</span></h2></div>';}?>
