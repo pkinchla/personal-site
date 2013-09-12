@@ -1,3 +1,7 @@
+ 
+ // js body class for javascript disabled browsers
+ $('body').addClass('js-enabled');
+
  $(document).ready(function() {
   
         $('.home .hero').anystretch("/wp-content/themes/special/images/crane.jpg", {speed: 500});
@@ -33,13 +37,12 @@ $(document).ready(function() {
 });
 
 
-        $(document).ready(function() {
-            $('.crapagram').embedagram({
-                    instagram_id: "1909818" ,
-                    limit: 1
-                });
+$(document).ready(function() {
+    $('.crapagram').embedagram({
+            instagram_id: "1909818" ,
+            limit: 1
         });
-
+});
 
 
 /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
