@@ -136,7 +136,7 @@ add_action( 'wp_enqueue_scripts', 'special_scripts' );
 */
 if( !is_admin() ){
 	wp_deregister_script('jquery');
-	wp_register_script('jquery', ("http://code.jquery.com/jquery-latest.min.js"), false, '');
+	wp_register_script('jquery', ("http://code.jquery.com/jquery-latest.min.js") );
 	wp_enqueue_script('jquery');
 }
 
