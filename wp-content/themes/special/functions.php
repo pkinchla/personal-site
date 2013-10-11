@@ -105,13 +105,13 @@ function special_widgets_init() {
 }
 add_action( 'widgets_init', 'special_widgets_init' );
 
+
+
 /**
  * Enqueue scripts and styles
  */
 function special_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri('style.min.css') );
-
-	wp_enqueue_script( 'theme_typekit', '//use.typekit.net/ltt0nnt.js');
 
 	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.min.js', array( 'jquery' ), '20120206', true );
 	
@@ -141,12 +141,17 @@ if( !is_admin() ){
 }
 
 /* Enqueue typekit inline script */
-add_action( 'wp_enqueue_scripts', 'theme_typekit' );
-function theme_typekit_inline() {
-if ( wp_script_is( 'theme_typekit', 'done' ) ) { ?>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script> <?php }
+function h5bs_enqueue_scripts() {
+	wp_enqueue_script( 'typekit', '//use.typekit.net/ltt0nnt.js', array(), null, false);
 }
-add_action( 'wp_head', 'theme_typekit_inline' );
+	add_action( 'wp_enqueue_scripts', 'h5bs_enqueue_scripts' );
+	function h5bs_typekit_inline() {
+if ( wp_script_is( 'typekit', 'done' ) ) {
+	echo '<script>try{Typekit.load();}catch(e){}</script>';
+	}
+}
+ 
+add_action( 'wp_head', 'h5bs_typekit_inline' );
 
 /* conditional for html5 shiv and respond.js header */
 function add_ie_html5_shim () {
