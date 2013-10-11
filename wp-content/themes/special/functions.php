@@ -111,13 +111,13 @@ add_action( 'widgets_init', 'special_widgets_init' );
 function special_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri('style.min.css') );
 
+	wp_enqueue_script( 'theme_typekit', '//use.typekit.net/ltt0nnt.js');
+
 	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.min.js', array( 'jquery' ), '20120206', true );
 	
 	wp_enqueue_script( 'jquery.anystretch.min', get_template_directory_uri() . '/js/jquery.anystretch.min.js', array( 'jquery' ), '', true );
 	
 	wp_enqueue_script( 'embed', get_template_directory_uri() . '/js/jquery-embedagram.js', array( 'jquery' ), '', true );
-	
-	//wp_enqueue_script( 'embed-pack', get_template_directory_uri() . '/js/jquery-embedagram.pack.js', array( 'jquery' ), '', true );
 	
 	wp_enqueue_script( 'script', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '', true );
 
@@ -139,6 +139,35 @@ if( !is_admin() ){
 	wp_register_script('jquery', ("http://code.jquery.com/jquery-latest.min.js") );
 	wp_enqueue_script('jquery');
 }
+
+/* Enqueue typekit inline script */
+add_action( 'wp_enqueue_scripts', 'theme_typekit' );
+function theme_typekit_inline() {
+if ( wp_script_is( 'theme_typekit', 'done' ) ) { ?>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script> <?php }
+}
+add_action( 'wp_head', 'theme_typekit_inline' );
+
+/* conditional for html5 shiv and respond.js header */
+function add_ie_html5_shim () {
+    echo "\n".'<!--[if lt IE 9]>';
+    echo "\n".'<script src="'.get_template_directory_uri() .'/js/html5.js"></script>';
+    echo "\n".'<![endif]-->'."\n";
+}
+add_action('wp_head', 'add_ie_html5_shim');
+
+/* noscript for grunticon */
+function no_script_css () {
+    echo '<noscript><link src="'.get_template_directory_uri() .'/js/icons.fallback.css" rel="stylesheet></noscript>'."\n";
+}
+add_action('wp_head', 'no_script_css');
+
+/* Remove Recent comments css from head */
+function remove_recent_comments_style() {
+    global $wp_widget_factory;
+    remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
+}
+add_action('widgets_init', 'remove_recent_comments_style');
 
 
 /**
