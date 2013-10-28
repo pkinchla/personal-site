@@ -674,7 +674,7 @@ object {
   .resume dd p{width:65%;}
 }
 
-@media only screen and (min-width:1350px) {
+@media only screen and (min-width:1100px) {
   .site-header {width:320px;  margin-left:1%; position:fixed; }
   .site-header:after { content: url(images/tag.png); background:none; }
     .site-content {padding-right:0; }
@@ -683,7 +683,7 @@ object {
     .logo-wrap{float: none; margin-left:0;}
     .main-navigation{display:block;float:left;width:100%;padding-right:20px;}
     .main-navigation li{text-align:right;width:100%; display:inline-block}
-    .main-navigation li a{font-size:28px;font-size:2.8rem;padding:1% 80px 1% 0;width:100%;display:inline-block;text-align: right; }
+    .main-navigation li a{font-size:28px;font-size:2.8rem;padding:1.5% 80px 1.5% 0;width:100%;display:inline-block;text-align: right; }
     .site-info {margin:0 1% 0 350px;  width: 75%; }
     .site-title {font-size:30px; font-size:3rem; padding-top:40px; }
     .site-title a:before { content: url('images/logo.png');  margin-right:5%; float: left; margin-top:1px;}
@@ -706,7 +706,7 @@ object {
   h4 {font-size: 30px; font-size:3rem}
   h5 {font-size: 28px; font-size:2.8rem}
 .site-content p{ max-width:37.5em; }
-.main-navigation li a{font-size:30px;font-size:3rem;padding:1.5% 80px 1.5% 0;}
+.main-navigation li a{font-size:30px;font-size:3rem;}
 .resume h4{font-size:25px; font-size: 2.5rem; }
 .resume h5{font-size:23px; font-size: 2.3rem}
 .resume time, .resume span{ font-size:18px; font-size: 1.8rem;}
