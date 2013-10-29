@@ -151,7 +151,7 @@ ul ul, ol ol, ul ol, ol ul {
 /*Fancy ordered Lists http://www.456bereastreet.com/archive/201105/styling_ordered_list_numbers/*/
 ol{counter-reset:li;margin-left:0;padding-left:0;}
   ol > li{position:relative;margin:0 0 6px 1.5em;padding:4px 8px;list-style:none;}
-  ol > li:before{content:counter(li);counter-increment:li;position:absolute;top:5px;left:-2em;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;width:2em;border-radius:50%;margin-right:8px;padding:4px;font-size:80%;color:#fff;background:#55616a;background:rgba(85,97,106,0.71);font-family:'futura-pt',Arial,sans-serif;font-weight:400;text-align:center;}
+  ol > li:before{content:counter(li);counter-increment:li;position:absolute;top:5px;left:-2em;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;width:2em;border-radius:50%;margin-right:8px;padding:0.23em;font-size:80%;color:#fff;background:#55616a;background:rgba(85,97,106,0.71);font-family:'futura-pt',Arial,sans-serif;font-weight:400;text-align:center;}
   li ol, li ul {margin-top:6px;}
   ol ol li:last-child {margin-bottom:0;}
 
