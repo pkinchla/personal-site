@@ -409,7 +409,7 @@ a:active {
     .social .git-hub { background-position:-79px 0; }
     .social .rss { background-position:-119px 0; }
       .social-small-wrap {background:rgba(255,255,255,.85); width:100%; margin:0 auto 0 auto; z-index:2; padding-top:40px }
-      .social-small{ width: 90%; padding-top:8px; margin-left:11%; }
+      .social-small{ width: 90%; padding-top:.8em; margin-left:11%; }
       .social-desktop {display: none;}
 /* Main Navigation
 ----------------------------------------------- */
