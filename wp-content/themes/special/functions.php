@@ -109,7 +109,7 @@ add_action( 'widgets_init', 'special_widgets_init' );
  * Enqueue scripts and styles
  */
 function special_scripts() {
-	wp_enqueue_style( 'style', get_stylesheet_uri('style.min.css') );
+	wp_enqueue_style( 'style', get_stylesheet_uri('style.css') );
 
 	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.min.js', array( 'jquery' ), '20120206', true );
 	
