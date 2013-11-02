@@ -18,7 +18,7 @@ get_header(); ?>
 
 				<div class="entry-content">
 
-					<p><?php _e( 'Happy Halloween. Maybe try a search.', 'special' ); ?></p>
+					<p><?php _e( 'Yikes! Maybe try a search.', 'special' ); ?></p>
 
 					<?php get_search_form(); ?>
       
