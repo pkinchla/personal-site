@@ -1,0 +1,13 @@
+{
+    "name" : "mothership",
+    "version" : "0.1.0",
+    "author" : "Paul Kinchla",
+    "private" : true,
+
+     "devDependencies" : {
+        "grunt" :                       "~0.4.0",
+        "grunt-contrib-cssmin":         "*",
+        "grunt-contrib-uglify":         "*"
+    }
+ 
+}
