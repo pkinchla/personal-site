@@ -403,7 +403,7 @@ a:active {
   .logo-wrap{float: left; margin-left:10%;  }
   .wrap-back { background:url('images/texture-bg.png'); border-bottom: 1px solid #a2a2a2;}
   .site-title { width:100%; text-align:left; font:700 italic 16px 'futura-pt', Arial, sans-serif; font-size:1.6rem; line-height:100%; padding-top:10px;}
-  .site-title a:before { display:block; float:left; margin-right:5%; padding:0 1% 1% 1%; margin-top:1.5px ;}
+  .site-title a:before { display:block; float:left; margin-right:5%; padding:2% 1% 1% 1%;}
   .site-title a:hover {background:#ccc; background:rgba(33,33,33,.15);border-bottom:none;}
   .site-title a{text-decoration: none; color:#4a4b4e; display:block; width: 65%; line-height:100%; padding:3% .625em 1% .625em; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; transition: all .3s ease;   }
   .site-title span{display:block; margin:0; padding:0; float:left; width:50%}
