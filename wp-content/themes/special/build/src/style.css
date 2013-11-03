@@ -400,9 +400,9 @@ a:active {
   .logo-wrap{float: left; margin-left:10%;  }
   .wrap-back { background:url('images/texture-bg.png'); border-bottom: 1px solid #a2a2a2;}
   .site-title { width:100%; text-align:left; font:700 italic 1em futura-pt, Arial, sans-serif; line-height:100%; padding-top:10px;}
-  .site-title a:before { display:block; float:left; margin-right:5%; padding:2% 1% 1% 1%;}
+  .site-title a:before { display:block; float:left; margin-right:5%; padding:1%;}
   .site-title a:hover {background:#ccc; background:rgba(33,33,33,.15);border-bottom:none;}
-  .site-title a{text-decoration: none; color:#4a4b4e; display:block; width: 65%; line-height:100%; padding:3% .625em 1% .625em; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; transition: all .3s ease;   }
+  .site-title a{text-decoration: none; color:#4a4b4e; display:block; width: 65%; line-height:100%; padding:3% .625em; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; transition: all .3s ease;   }
   .site-title span{display:block; margin:0; padding:0; float:left; width:50%}
     /*social media icons*/
     .social {clear: both; margin:1em auto 0 auto; list-style: none; width:77%; margin-left:23%; }
@@ -415,7 +415,7 @@ a:active {
     .social .twitter { background-position:-39px 0; }
     .social .git-hub { background-position:-79px 0; }
     .social .rss { background-position:-119px 0; }
-      .social-small-wrap {background:rgba(255,255,255,.85); width:100%; margin:0 auto 0 auto; z-index:2; padding-top:40px }
+      .social-small-wrap {background:rgba(255,255,255,.85); width:100%; margin:0 auto 0 auto; z-index:2; padding-top:44px }
       .social-small{ width: 90%; padding-top:.8em; margin-left:11%; }
       .social-desktop {display: none;}
 /* Main Navigation
@@ -479,12 +479,12 @@ a:active {
 /*resume*/
   .resume{display:block; border:1px solid rgba(33,33,33,.15);padding:5%;-webkit-box-shadow:inset 0px 0px 10px rgba(33,33,33,.05);-moz-box-shadow:inset 0px 0px 10px rgba(33,33,33,.05);box-shadow:inset 0px 0px 10px rgba(33,33,33,.05);}
   .resume dt:first-child{margin-top:0;}
-  .resume dt{font:400 normal 1.25em futura-pt, Arial, sans-serif; margin:1.5em 0 .5em 0; border-bottom: 1px solid rgba(33,33,33,.25); }
-  .resume h4, 
-  .resume h5{font:400 normal 1.125em futura-pt, Arial, sans-serif; color:#4a4b4e; }
+  .resume dt{font:400 normal 1.6em futura-pt, Arial, sans-serif; margin:1.5em 0 .5em 0; border-bottom: 1px solid rgba(33,33,33,.25); }
+  .resume h4{font:400 normal 1.25em futura-pt, Arial, sans-serif; color:#4a4b4e;}
+  .resume h5{font:400 italic 1.125em futura-pt, Arial, sans-serif; color:#4a4b4e; }
   .resume dd{margin-bottom:1.5em; }
   .resume b{display:block; font-weight:normal;}
-  .resume time, .resume span{ font:normal .875em skolar, Georgia, serif;  display:block;}
+  .resume time, .resume span{ font:normal .75em skolar, Georgia, serif;  display:block;}
   .resume ul{list-style: none; padding: 0; margin: 0;}
 
    /*for javascript enabled browsers*/ 
@@ -707,11 +707,11 @@ object {
     .wrap-back {border:none; border-right: 1px solid #a2a2a2; border-left: 1px solid #a2a2a2;}
     .logo-wrap{float: none; margin-left:0;}
     .main-navigation{display:block;float:left;width:100%;padding-right:20px;}
-    .main-navigation li{text-align:right;width:100%; display:inline-block}
+    .main-navigation li{ width:100%; display:inline-block; line-height:1.8; }
     .main-navigation li a{font-size:1.5em;padding:1.5% 80px 1.5% 0;width:100%;display:inline-block;text-align: right; }
     .site-info {margin:0 1% 0 350px;  width: 75%; }
-    .site-title {font-size: 1.5em;  padding-top:40px; }
-    .site-title a:before { margin-right:5%; float: left; margin-top:3px;}
+    .site-title {font-size: 1.644em;  padding-top:40px; }
+    .site-title a:before { margin-right:5%; margin-top:1%; float: left;}
     .site-title a{padding:3% 2.53em 1% .8em; width:100%; }
     .main-navigation ul{list-style:none;margin:20px 0 0 -16px;padding:0;width:112%;}
     .social-desktop{display:block; }
@@ -726,4 +726,4 @@ object {
 @media only screen and (min-width:1600px) {
 body{font-size:1.25em;}
 .site-content p{ max-width:37.5em; }
-}
+} 
