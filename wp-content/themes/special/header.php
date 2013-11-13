@@ -35,15 +35,13 @@
     		<div class="logo-wrap">
     			<h1 class="site-title group"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="group"><span>Paul</span><span>Kinchla</span></a></h1>
     		</div>
-
     		<nav role="navigation" class="site-navigation main-navigation">
     			<h1 class="assistive-text"><?php _e( '&#9776; Menu', 'special' ); ?></h1>
     			<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'special' ); ?>"><?php _e( 'Skip to content', 'special' ); ?></a></div>
-
     			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
     		</nav><!-- .site-navigation .main-navigation -->
     	</div>
-  	  <ul class="social social-desktop">
+  	  <ul class="social">
   		  <li><a class="ra icons" href="http://www.residentadvisor.net/profile/pkinchla" target="_blank"><span class="assistive-text">Resident Advisor</span></a></li>
   		  <li><a class="twitter icons" href="https://twitter.com/PK_info" target="_blank"><span class="assistive-text">Twitter</span></a></li>
   		  <li><a class="git-hub icons" href="https://github.com/wbp-paulk" target="_blank"><span class="assistive-text">Github</span></a></li>
@@ -51,14 +49,6 @@
   		</ul>
   	</div>
 	</header><!-- #masthead .site-header -->
-    	<div class="social-small-wrap">
-    	<ul class="social social-small">
-        <li><a class="ra icons" href="http://www.residentadvisor.net/profile/pkinchla" target="_blank"><span class="assistive-text">Resident Advisor</span></a></li>
-        <li><a class="twitter icons" href="https://twitter.com/PK_info" target="_blank"><span class="assistive-text">Twitter</span></a></li>
-        <li><a class="git-hub icons" href="https://github.com/wbp-paulk" target="_blank"><span class="assistive-text">Github</span></a></li>
-        <li><a class="rss icons" href="<?php bloginfo('rss2_url'); ?>"><span class="assistive-text">RSS</span></a></li>
-      </ul>
-    	</div>
       <div class="hero"> 
   			<?php if (is_home()) { echo '<div class="content"><h2>I make Websites<span>and I am very permanent</span></h2></div>';}?>
       </div>
