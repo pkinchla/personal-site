@@ -28,6 +28,7 @@ module.exports = function(grunt){
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-cssmin');  
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-devtools');
   
   // Default task.
   grunt.registerTask('default', ['cssmin', 'uglify']);
