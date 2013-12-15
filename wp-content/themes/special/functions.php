@@ -117,7 +117,7 @@ function special_scripts() {
 	
 	wp_enqueue_script( 'embed', get_template_directory_uri() . '/js/jquery-embedagram.js', array( 'jquery' ), '', true );
 	
-	//wp_enqueue_script( 'embed-pack', get_template_directory_uri() . '/js/jquery-embedagram.pack.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'headroom', get_template_directory_uri() . '/js/headroom.js', array( 'jquery' ), '', true );
 	
 	wp_enqueue_script( 'script', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '', true );
 

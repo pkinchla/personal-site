@@ -18,20 +18,20 @@
 
 $(document).ready(function() {
   $('.toggle-content').click(function(){
-	//get collapse content selector
-	var collapse_content_selector = $(this).attr('href');					
+  //get collapse content selector
+  var collapse_content_selector = $(this).attr('href');         
 
-	//make the collapse content to be shown or hide
-	var toggle_switch = $(this);
-	$(collapse_content_selector).toggle(function(){
-	  if($(this).css('display')=='none'){
+  //make the collapse content to be shown or hide
+  var toggle_switch = $(this);
+  $(collapse_content_selector).toggle(function(){
+    if($(this).css('display')=='none'){
                             //change the button label to be 'Show'
-		toggle_switch.html('View');
-	  }else{
+    toggle_switch.html('View');
+    }else{
                             //change the button label to be 'Hide'
-		toggle_switch.html('Close');
-	  }
-	});
+    toggle_switch.html('Close');
+    }
+  });
   });
 
 });
@@ -43,6 +43,18 @@ $(document).ready(function() {
             limit: 1
         });
 });
+
+
+  var headroom = new Headroom(document.getElementById("masthead"), {
+ "tolerance": 5,
+  "offset": 50,
+  "classes": {
+    "initial": "animated",
+    "pinned": "swingInX",
+    "unpinned": "swingOutX"
+  }
+});
+headroom.init();
 
 
 /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */

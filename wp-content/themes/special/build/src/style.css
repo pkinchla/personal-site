@@ -394,7 +394,7 @@ a:active {
 
 /* Header
 ----------------------------------------------- */
-.site-header { width:100%; margin:0; -webkit-font-smoothing: antialiased; z-index:1;}
+.site-header {width:100%; margin:0; -webkit-font-smoothing: antialiased; z-index:1;}
   /*logo and banner wrapping*/
   .head-wrap {margin: 0 ; width:100%; padding-bottom:.5em;  }
   .logo-wrap{float: left; margin-left:10%;  }
@@ -415,9 +415,7 @@ a:active {
     .social .twitter { background-position:-39px 0; }
     .social .git-hub { background-position:-79px 0; }
     .social .rss { background-position:-119px 0; }
-      .social-small-wrap {background:rgba(255,255,255,.85); width:100%; margin:0 auto 0 auto; z-index:2; padding-top:44px }
-      .social-small{ }
-
+  
 /* Main Navigation
 ----------------------------------------------- */
   .menu ul{width: 100%; list-style: none; padding:0;  margin:18px 0 0 0;}
@@ -719,7 +717,24 @@ object {
     .hero .content {padding:20px 5%; float: left; margin: 100px 1% 0 475px; width: 35%; }
     .hero .content h2 {font-size: 3.5em;}
     .hero .content h2 span{font-size:.5em;}
-    .site-main {float: left; margin:0 1% 0 375px;  width: 65%; }
+    .site-main {float: left; margin:0 1% 0 375px;  width: 65%;}
+
+        /*headroom*/
+        .animated{-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:.5s;-moz-animation-duration:.5s;-ms-animation-duration:.5s;-o-animation-duration:.5s;animation-duration:.5s;}
+        
+        @-webkit-keyframes swingInX {0% {-webkit-transform:perspective(400px) rotateX(-90deg) } 100% {-webkit-transform:perspective(400px) rotateX(0deg) } }
+        @-moz-keyframes swingInX {0% {-moz-transform:perspective(400px) rotateX(-90deg) } 100% {-moz-transform:perspective(400px) rotateX(0deg) } }
+        @-o-keyframes swingInX {0% {-o-transform:perspective(400px) rotateX(-90deg) } 100% {-o-transform:perspective(400px) rotateX(0deg) } }
+        @keyframes swingInX {0% {transform:perspective(400px) rotateX(-90deg) } 100% {transform:perspective(400px) rotateX(0deg) } }
+        .animated.swingInX {-webkit-transform-origin:top; -moz-transform-origin:top; -ie-transform-origin:top; -o-transform-origin:top; transform-origin:top; -webkit-backface-visibility:visible!important; -webkit-animation-name:swingInX; -moz-backface-visibility:visible!important; -moz-animation-name:swingInX; -o-backface-visibility:visible!important; -o-animation-name:swingInX; backface-visibility:visible!important; animation-name:swingInX }
+        
+
+        @-webkit-keyframes swingOutX {0% {-webkit-transform:perspective(400px) rotateX(0deg) } 100% {-webkit-transform:perspective(400px) rotateX(-90deg) } }
+        @-moz-keyframes swingOutX {0% {-moz-transform:perspective(400px) rotateX(0deg) } 100% {-moz-transform:perspective(400px) rotateX(-90deg) } }
+        @-o-keyframes swingOutX {0% {-o-transform:perspective(400px) rotateX(0deg) } 100% {-o-transform:perspective(400px) rotateX(-90deg) } }
+        @keyframes swingOutX {0% {transform:perspective(400px) rotateX(0deg) } 100% {transform:perspective(400px) rotateX(-90deg) } } 
+        .animated.swingOutX {-webkit-transform-origin:top; -webkit-animation-name:swingOutX; -webkit-backface-visibility:visible!important; -moz-animation-name:swingOutX; -moz-backface-visibility:visible!important; -o-animation-name:swingOutX; -o-backface-visibility:visible!important; animation-name:swingOutX; backface-visibility:visible!important }
+
 }
 
 @media only screen and (min-width:1600px) {
