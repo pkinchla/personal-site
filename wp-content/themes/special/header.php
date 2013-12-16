@@ -50,7 +50,7 @@
   	</div>
 	</header><!-- #masthead .site-header -->
       <div class="hero"> 
-  			<?php if (is_home()) { echo '<div class="content"><h2>I make Websites<span>and I am very permanent</span></h2></div>';}?>
+  			<?php if (is_home()) { echo '<div class="content"><h2>Something <span>Clever</span></h2></div>';}?>
       </div>
 	<div id="main" class="site-main">
     
