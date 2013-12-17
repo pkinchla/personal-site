@@ -400,7 +400,7 @@ a:active {
   .logo-wrap{float: left; margin-left:10%;  }
   .wrap-back { background:url('images/texture-bg.png'); border-bottom: 1px solid #a2a2a2;}
   .site-title {position:relative; width:100%; text-align:left; font:700 italic 1em futura-pt, Arial, sans-serif; line-height:100%; padding-top:10px;}
-  .site-title a:before {position:absolute; left:.5em; top:.85em; content:''; width:2em; height:2em; }
+  .site-title a:before {position:absolute; left:.6em; top:.85em; content:''; width:2em; height:2em; }
   .site-title a:hover {background:#ccc; background:rgba(33,33,33,.15);border-bottom:none;}
   .site-title a{text-decoration: none; color:#4a4b4e; display:block; width: 65%; line-height:100%; padding:3% .625em 3% 2.3em; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; transition: all .3s ease;   }
   .site-title span{display:block; width:50%}
@@ -709,7 +709,7 @@ object {
     .main-navigation li a{font-size:1.5em;padding:1.7% 80px 1.7% 0;width:100%;display:inline-block;text-align: right; }
     .site-info {margin:0 1% 0 350px;  width: 75%; }
     .site-title {font-size: 1.644em;  padding-top:40px; }
-    .site-title a:before {top:1.63em;}
+    .site-title a:before {top:1.616em; left:.7em; }
     .site-title a{padding-right:.9em; width:100%; margin-left:.15em }
     .main-navigation ul{list-style:none;margin:20px 0 0 -16px;padding:0;width:112%;}
     .social{ margin-left: 12%; background:none; border:none; margin-top:.2em; } 
