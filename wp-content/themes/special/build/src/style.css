@@ -326,18 +326,18 @@ textarea {
 
 /* Links */
 a {
-  color: #6E8093;
+  color: #0c9;
   text-decoration:none;
   padding-bottom:2px;
 }
 a:visited {
-  color: #7898B7;
+  color: #009973;
 }
 a:hover,
 a:focus,
 a:active {
-  color: #334259;
-  border-bottom:1px dashed;
+  color: #0c9;
+  border-bottom:2px dotted #0c9;
 }
 
 .linked-header {
@@ -353,7 +353,7 @@ a:active {
 
 /*download and toggle classes*/
   .toggle-content { display:none; padding: 5px 10px; font-size: 100%; border-radius:5px;}
-  .action{border:1px solid #ccc;border-color:#ccc #ccc #bbb #ccc;padding:5px 10px;background:rgba(110,128,147,.45);color:rgba(0,0,0,.8);font:700 normal 100%  futura-pt,Arial,sans-serif;border-radius:5px;-webkit-transition:all 0.3s ease-out;-moz-transition:all 0.3s ease-out;-o-transition:all 0.3s ease-out;transition:all 0.3s ease-out;}
+  .action {display:inline-block; margin:0 .5em; border:1px solid #ccc;border-color:#ccc #ccc #bbb #ccc;padding:5px 10px;background:rgba(110,128,147,.45);color:rgba(0,0,0,.8);font:700 normal 100%  futura-pt,Arial,sans-serif;border-radius:5px;-webkit-transition:all 0.3s ease-out;-moz-transition:all 0.3s ease-out;-o-transition:all 0.3s ease-out;transition:all 0.3s ease-out;}
   .action:hover { background:rgba(120,152,183,.75); }
   .action:visited, .action:hover, .action:focus, .action:active{color:rgba(0,0,0,.8);border:1px solid #bbb;}
   .action a, .action a:visited, .action a:hover, .action a:focus, .action a:active{border-bottom: none; color:rgba(0,0,0,.8);}
@@ -406,7 +406,7 @@ a:active {
   .site-title span{display:block; width:50%}
     /*social media icons*/
     .social {clear: both; margin:0 auto; list-style:none; border-top: 1px solid #a2a2a2; background:rgba(255,255,255,.85); width:89%; padding:.8em 0 0 11%;}
-    .social li{display: inline-block;  }
+    .social li{display: inline-block; margin:0 .2em; }
     .social li a {display:inline-block; padding:0;  }
     .social li a {display:inline-block; height:40px; opacity: 0.6; width:40px; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; transition: all .3s ease; }
     .social li a:hover { border-bottom:none; }
@@ -712,7 +712,8 @@ object {
     .site-title a:before {top:1.616em; left:.7em; }
     .site-title a{padding-right:.9em; width:100%; margin-left:.15em }
     .main-navigation ul{list-style:none;margin:20px 0 0 -16px;padding:0;width:112%;}
-    .social{ margin-left: 12%; background:none; border:none; margin-top:.2em; } 
+    .social{ margin-left: 12%; background:none; border:none; margin-top:.2em; }
+    .social li {margin:0;} 
     .hero {width: 100%; height:200px; border-bottom:3px solid rgba(33,33,33,.15); }
     .hero .content {padding:20px 5%; float: left; margin:0 1% 0 455px; width: 25%; }
     .hero .content h2 {font-size: 3em;}
