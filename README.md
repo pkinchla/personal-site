@@ -13,6 +13,7 @@ A custom theme for my personal site. My playground for web development. Not inte
 
 - https://github.com/danmillar/jquery-anystretch  
 - https://github.com/WickyNilliams/headroom.js
+- https://github.com/bramstein/trmix
 
 ### The MIT License (MIT)
 
