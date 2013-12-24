@@ -49,8 +49,15 @@
   		</ul>
   	</div>
 	</header><!-- #masthead .site-header -->
-      <div class="hero"> 
-  			<?php if (is_home()) { echo '<div class="content"><h2>Something <span>Clever</span></h2></div>';}?>
+      <?php if (has_post_thumbnail()) {
+        $feat_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail_name');
+      }
+      ?>
+ 
+      <div class="hero" data-stretch="<?php echo $feat_image[0]; ?>"> 
+        <?php if (is_home()) { echo '<div class="content"><h2>Something <span>Clever</span></h2></div>';}?>
       </div>
+
+      
 	<div id="main" class="site-main">
     
