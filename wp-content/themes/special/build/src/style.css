@@ -97,10 +97,10 @@ a img {
 /* =Global
 ----------------------------------------------- */
 ::selection {
-  background: #ffb7b7; /* Safari */
+  background: #ffb7b7; /* web-kit */
   }
 ::-moz-selection {
-  background: #ffb7b7; /* Firefox */
+  background: #ffb7b7; /* gecko */
 }
 body,
 button,
@@ -326,17 +326,17 @@ textarea {
 
 /* Links */
 a {
-  color: #0c9;
+  color: #009E77;
   text-decoration:none;
   padding-bottom:2px;
 }
 a:visited {
-  color: #009973;
+  color: #1E8A6F;
 }
 a:hover,
 a:focus,
 a:active {
-  color: #0c9;
+  color: #009E77;
   border-bottom:2px dotted #0c9;
 }
 
@@ -353,13 +353,13 @@ a:active {
 
 /*download and toggle classes*/
   .toggle-content { display:none; padding: 5px 10px; font-size: 100%; border-radius:5px;}
-  .action {display:inline-block; margin:0 .5em; border:1px solid #ccc;border-color:#ccc #ccc #bbb #ccc;padding:5px 10px;background:rgba(110,128,147,.45);color:rgba(0,0,0,.8);font:700 normal 100%  futura-pt,Arial,sans-serif;border-radius:5px;-webkit-transition:all 0.3s ease-out;-moz-transition:all 0.3s ease-out;-o-transition:all 0.3s ease-out;transition:all 0.3s ease-out;}
+  .action {display:inline-block; border:1px solid #ccc;border-color:#ccc #ccc #bbb #ccc;padding:5px 10px;background:rgba(110,128,147,.45);color:rgba(0,0,0,.8);font:700 normal 100%  futura-pt,Arial,sans-serif;border-radius:5px;-webkit-transition:all 0.3s ease-out;-moz-transition:all 0.3s ease-out;-o-transition:all 0.3s ease-out;transition:all 0.3s ease-out;}
   .action:hover { background:rgba(120,152,183,.75); }
   .action:visited, .action:hover, .action:focus, .action:active{color:rgba(0,0,0,.8);border:1px solid #bbb;}
   .action a, .action a:visited, .action a:hover, .action a:focus, .action a:active{border-bottom: none; color:rgba(0,0,0,.8);}
 
   /*for javascript enabled browsers*/
-  .js-enabled .toggle-content {display:inline;}
+  .js-enabled .toggle-content {display:inline; margin-right:.5em;}
 
 /* Alignment */
 .alignleft {
@@ -511,6 +511,11 @@ a:active {
 }
 .entry-meta a {
   color:white;
+}
+
+.entry-meta a:hover {
+  border-bottom:none;
+  background:rgba(33,33,33,.15); 
 }
 
 .byline {
