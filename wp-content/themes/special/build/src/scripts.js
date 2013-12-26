@@ -6,7 +6,7 @@
   
         $('.home .hero').anystretch("/wp-content/themes/special/images/crane.jpg", {speed: 500});
         $('.error404 .hero').anystretch("/wp-content/themes/special/images/max.gif", {speed: 500});
-        $('.page .hero').anystretch( );
+        $('.hero').anystretch("", {speed: 500});
   });
 
 $(document).ready(function() {
