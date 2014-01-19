@@ -8,7 +8,7 @@ get_header(); ?>
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content group" role="main">
         <header class="entry-header">
-          <h2 class="entry-title">Welcome!</h2>        
+          <h1 class="entry-title">Welcome!</h1>        
         </header>
         <p class="col-half">Hello there. I am a developer / designer living and working in upstate NY. This is less a portfolio site and more a personal journal that soon will be the home to what I hope is some <a href="/blog/">meaningful writing</a>. The following are some key facts about me.</p>
         

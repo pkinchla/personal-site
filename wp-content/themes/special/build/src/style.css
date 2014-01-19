@@ -117,7 +117,7 @@ textarea {
 h1,h2,h3,h4,h5 {
   clear: both; font-family: futura-pt, Arial, sans-serif; font-weight:700; color:#55616a;
 }
-h1 {font-size:3em;}
+h1 {font-size:3em; line-height:1.2;}
 h2 {font-size:2.5em}
 h3 {font-size:2em}
 h4 {font-size:1.5em}
@@ -533,7 +533,7 @@ a:active {
 
 .entry-title {margin-bottom:.5em; display: inline-block; width:90%; }
 .single-post .entry-title {margin-bottom:0; }
-.entry-title:after {content:''; display: block; height: 1px; width: 100%; background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0, rgb(241,241,241)), color-stop(0.05, rgb(221,221,221)), color-stop(0.95, rgb(221,221,221)), color-stop(1, rgb(241,241,241)) ); background-image: -moz-linear-gradient(left center, rgb(241,241,241) 0%, rgb(221,221,221) 05%, rgb(221,221,221) 95%, rgb(241,241,241) 100% ); }
+.entry-title:after {content:''; display: block; height: 1px; width: 100%; margin-top:.5em; background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0, rgb(241,241,241)), color-stop(0.05, rgb(221,221,221)), color-stop(0.95, rgb(221,221,221)), color-stop(1, rgb(241,241,241)) ); background-image: -moz-linear-gradient(left center, rgb(241,241,241) 0%, rgb(221,221,221) 05%, rgb(221,221,221) 95%, rgb(241,241,241) 100% ); }
 
 
 /* =Asides
@@ -610,10 +610,16 @@ img.size-full {
 .site-content .gallery-columns-4 .gallery-item img {
 }
 
+audio {
+  width:auto;
+  display:inline-block;
+}
+
 /* Make sure embeds and iframes fit their containers */
 embed,
 iframe,
-object {
+object, 
+audio {
   max-width: 100%;
 }
 
