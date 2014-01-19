@@ -18,7 +18,12 @@ get_header(); ?>
           <li>I am a decent basketball player and terrible at baseball.</li>
           <li>I went to art school.</li>
         </ol>
-        
+        <h3>Latest Writing</h3>
+          <?php query_posts( 'posts_per_page=1' ); ?>
+              <?php while ( have_posts() ) : the_post(); ?>
+              <h4><a class="linked-header" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                <div class="entry-meta"><time><?php the_time('l, F jS, Y') ?></time></div>
+          <?php endwhile; // end of the loop. ?>
 
 			  
         </div><!-- #content .site-content -->
