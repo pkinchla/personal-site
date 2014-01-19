@@ -611,7 +611,7 @@ img.size-full {
 }
 
 audio {
-  width:auto;
+  width:50%;
   display:inline-block;
 }
 
