@@ -531,9 +531,9 @@ a:active {
   margin: 0 0 1.5em;
 }
 
-.entry-title {margin-bottom:.5em; display: inline-block; width:90%; }
+.entry-title {margin-bottom:.5em; display: inline-block; width:90%; margin-top:.2em; }
 .single-post .entry-title {margin-bottom:0; }
-.entry-title:after {content:''; display: block; height: 1px; width: 100%; margin-top:.5em; background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0, rgb(241,241,241)), color-stop(0.05, rgb(221,221,221)), color-stop(0.95, rgb(221,221,221)), color-stop(1, rgb(241,241,241)) ); background-image: -moz-linear-gradient(left center, rgb(241,241,241) 0%, rgb(221,221,221) 05%, rgb(221,221,221) 95%, rgb(241,241,241) 100% ); }
+.entry-title:after {content:''; display: block; height: 1px; width: 100%; margin-top:.3em; background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0, rgb(241,241,241)), color-stop(0.05, rgb(221,221,221)), color-stop(0.95, rgb(221,221,221)), color-stop(1, rgb(241,241,241)) ); background-image: -moz-linear-gradient(left center, rgb(241,241,241) 0%, rgb(221,221,221) 05%, rgb(221,221,221) 95%, rgb(241,241,241) 100% ); }
 
 
 /* =Asides
