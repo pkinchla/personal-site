@@ -14,23 +14,35 @@ module.exports = function(grunt){
                         dest: '../style.css'
                 }
         },            
+        concat: {
+                options: {
+                
+                separator: ';',
+                
+                },
+                dist:  {
+                        src: 'src/js/*',
+                        dest: 'src/built.js'
+        },
         uglify: {
                 options: {
 
                 },
                 build: {
-                        src: 'src/scripts.js',
-                        dest: '../js/scripts.js',
+                        src: 'src/built.js',
+                        dest: '../js/built.js'
                 }
-        } 
+        }
+    },
   });
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-cssmin');  
+  grunt.loadNpmTasks('grunt-contrib-concat'); 
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-devtools');
+  
   
   // Default task.
-  grunt.registerTask('default', ['cssmin', 'uglify']);
+  grunt.registerTask('default', ['cssmin', 'concat', 'uglify' ]);
 
 };
