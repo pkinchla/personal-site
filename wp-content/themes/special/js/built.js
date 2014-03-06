@@ -141,16 +141,19 @@ $(document).ready(function() {
 });
 
 
-  var headroom = new Headroom(document.getElementById("masthead"), {
- "tolerance": 5,
-  "offset": 50,
+var headroom = new Headroom(document.getElementById("masthead"), {
+  "tolerance": 5,
+  "offset": 205,
   "classes": {
     "initial": "animated",
-    "pinned": "swingInX",
-    "unpinned": "swingOutX"
+    "pinned": "slideDown",
+    "unpinned": "slideUp",
+    "top": "headroom--top",
+    "notTop": "headroom--not-top"
   }
 });
 headroom.init();
+
 
 
 /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
