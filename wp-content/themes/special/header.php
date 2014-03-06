@@ -29,7 +29,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site group">
 	<?php do_action( 'before' ); ?>
-	<header id="masthead" class="site-header group" role="banner">
+	<header id="masthead" class="site-header group animated" role="banner">
   	<div class="wrap-back">
     	<div class="head-wrap group">	
     		<div class="logo-wrap">

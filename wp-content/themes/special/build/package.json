@@ -1,13 +1,13 @@
 {
-    "name" : "mothership",
-    "version" : "0.1.0",
-    "author" : "Paul Kinchla",
-    "private" : true,
-
-     "devDependencies" : {
-        "grunt" :                       "~0.4.0",
-        "grunt-contrib-cssmin":         "*",
-        "grunt-contrib-uglify":         "*"
-    }
- 
+  "name": "mothership",
+  "version": "0.1.0",
+  "author": "Paul Kinchla",
+  "private": true,
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "*",
+    "grunt-devtools": "~0.2.1"
+  }
 }

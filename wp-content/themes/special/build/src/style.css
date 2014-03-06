@@ -738,18 +738,16 @@ audio {
         /*headroom*/
         .animated{-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:.5s;-moz-animation-duration:.5s;-ms-animation-duration:.5s;-o-animation-duration:.5s;animation-duration:.5s;}
         
-        @-webkit-keyframes swingInX {0% {-webkit-transform:perspective(400px) rotateX(-90deg) } 100% {-webkit-transform:perspective(400px) rotateX(0deg) } }
-        @-moz-keyframes swingInX {0% {-moz-transform:perspective(400px) rotateX(-90deg) } 100% {-moz-transform:perspective(400px) rotateX(0deg) } }
-        @-o-keyframes swingInX {0% {-o-transform:perspective(400px) rotateX(-90deg) } 100% {-o-transform:perspective(400px) rotateX(0deg) } }
-        @keyframes swingInX {0% {transform:perspective(400px) rotateX(-90deg) } 100% {transform:perspective(400px) rotateX(0deg) } }
-        .animated.swingInX {-webkit-transform-origin:top; -moz-transform-origin:top; -ie-transform-origin:top; -o-transform-origin:top; transform-origin:top; -webkit-backface-visibility:visible!important; -webkit-animation-name:swingInX; -moz-backface-visibility:visible!important; -moz-animation-name:swingInX; -o-backface-visibility:visible!important; -o-animation-name:swingInX; backface-visibility:visible!important; animation-name:swingInX }
-        
-
-        @-webkit-keyframes swingOutX {0% {-webkit-transform:perspective(400px) rotateX(0deg) } 100% {-webkit-transform:perspective(400px) rotateX(-90deg) } }
-        @-moz-keyframes swingOutX {0% {-moz-transform:perspective(400px) rotateX(0deg) } 100% {-moz-transform:perspective(400px) rotateX(-90deg) } }
-        @-o-keyframes swingOutX {0% {-o-transform:perspective(400px) rotateX(0deg) } 100% {-o-transform:perspective(400px) rotateX(-90deg) } }
-        @keyframes swingOutX {0% {transform:perspective(400px) rotateX(0deg) } 100% {transform:perspective(400px) rotateX(-90deg) } } 
-        .animated.swingOutX {-webkit-transform-origin:top; -webkit-animation-name:swingOutX; -webkit-backface-visibility:visible!important; -moz-animation-name:swingOutX; -moz-backface-visibility:visible!important; -o-animation-name:swingOutX; -o-backface-visibility:visible!important; animation-name:swingOutX; backface-visibility:visible!important }
+        @-webkit-keyframes slideDown {0% {-webkit-transform:translateY(-65%) } 100% {-webkit-transform:translateY(0) } } 
+        @-moz-keyframes slideDown {0% {-moz-transform:translateY(-65%) } 100% {-moz-transform:translateY(0) } } 
+        @-o-keyframes slideDown {0% {-o-transform:translateY(-65%) } 100% {-o-transform:translateY(0) } } 
+        @keyframes slideDown {0% {transform:translateY(-65%) } 100% {transform:translateY(0) } }
+        .animated.slideDown {-webkit-animation-name:slideDown; -moz-animation-name:slideDown; -o-animation-name:slideDown; animation-name:slideDown } 
+        @-webkit-keyframes slideUp {0% {-webkit-transform:translateY(0) } 100% {-webkit-transform:translateY(-70%) } } 
+        @-moz-keyframes slideUp {0% {-moz-transform:translateY(0) } 100% {-moz-transform:translateY(-70%) } } 
+        @-o-keyframes slideUp {0% {-o-transform:translateY(0) } 100% {-o-transform:translateY(-70%) } } 
+        @keyframes slideUp {0% {transform:translateY(0) } 100% {transform:translateY(-70%) } } 
+        .animated.slideUp {-webkit-animation-name:slideUp; -moz-animation-name:slideUp; -o-animation-name:slideUp; animation-name:slideUp }
 
 }
 
