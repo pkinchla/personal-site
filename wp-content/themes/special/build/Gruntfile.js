@@ -26,7 +26,7 @@
         uglify: {
                 js: {
                         src: 'src/built.js',
-                        dest:'../js/built.js'
+                        dest:'../js/built.min.js'
                 }
         },
   });
