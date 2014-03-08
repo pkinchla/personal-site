@@ -15,25 +15,20 @@
                 }
         },            
         concat: {
-                options: {
-                
-                separator: ';',
-                
-                },
-                dist:  {
-                        src: 'src/js/*',
-                        dest: 'src/built.js'
+                js: {
+                        src: ['src/js/*'],
+                        dest: 'src/built.js',
+                        options: {
+                        separator: ';',
+                    }
+                }
         },
         uglify: {
-                options: {
-
-                },
-                build: {
+                js: {
                         src: 'src/built.js',
-                        dest: '../js/built.js'
+                        dest:'../js/built.js'
                 }
-        }
-    },
+        },
   });
 
   // These plugins provide necessary tasks.
