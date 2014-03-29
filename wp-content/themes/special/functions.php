@@ -125,13 +125,14 @@ function special_scripts() {
 add_action( 'wp_enqueue_scripts', 'special_scripts' );
 
 /**
-*	Use latest jQuery release
+* Use latest jQuery release
 */
-if( !is_admin() ){
-	wp_deregister_script('jquery');
-	wp_register_script('jquery', ("http://code.jquery.com/jquery-latest.min.js"),'','', true );
-	wp_enqueue_script('jquery');
+function jquery_scripts() {
+       wp_deregister_script('jquery');
+       wp_register_script('jquery', ("http://code.jquery.com/jquery-latest.min.js"),'','', true );
+       wp_enqueue_script('jquery');
 }
+add_action('wp_enqueue_scripts', 'jquery_scripts');
 
 function remove_recent_comments_style() {
     global $wp_widget_factory;
