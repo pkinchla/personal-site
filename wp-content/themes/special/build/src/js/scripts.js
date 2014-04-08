@@ -12,7 +12,7 @@
 $(document).ready(function() {
   $('.toggle-content').click(function(){
   //get collapse content selector
-  var collapse_content_selector = $(this).attr('href');         
+  var collapse_content_selector = $(this).attr('name');         
 
   //make the collapse content to be shown or hide
   var toggle_switch = $(this);
