@@ -21,7 +21,7 @@ get_header(); ?>
           <?php query_posts( 'posts_per_page=1' ); ?>
               <?php while ( have_posts() ) : the_post(); ?>
               <h4><a class="linked-header" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                <div class="entry-meta"><time><?php the_time('l, F jS, Y') ?></time></div>
+                <div class="entry-meta"><time datetime="<?php the_time('c');?>"><?php the_time('l, F jS, Y') ?></time></div>
           <?php endwhile; // end of the loop. ?>
 
 			  
