@@ -485,7 +485,7 @@ a:active {
   .resume h5{font:400 italic 1.125em futura-pt, Arial, sans-serif; color:#4a4b4e; }
   .resume dd{margin-bottom:1.5em; }
   .resume b{display:block; font-weight:normal;}
-  .resume time, .resume span{ font:normal .75em skolar, Georgia, serif;  display:block;}
+  .resume span{ font:normal .75em skolar, Georgia, serif;  display:inline-block;}
   .resume ul{list-style: none; padding: 0; margin: 0;}
 
    /*for javascript enabled browsers*/ 
@@ -706,7 +706,7 @@ audio {
   .contact { margin-left:1%; padding:0;}
   .resume dt{ width:25%; text-align:right; border:none; margin-bottom:-.5em;}
   .resume dd{margin-left:27%;}
-  .resume time, .resume span{ float: right;margin-top:5px; display:inline-block; margin-right:5%; }
+  .resume span{ float: right;margin-top:5px; display:inline-block; margin-right:5%; }
   .resume dd p{width:65%;}
   ol > li:before{top:4px;}
 }
