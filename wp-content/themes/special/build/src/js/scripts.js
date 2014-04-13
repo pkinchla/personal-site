@@ -29,15 +29,6 @@ $(document).ready(function() {
 
 });
 
-
-$(document).ready(function() {
-    $('.crapagram').embedagram({
-            instagram_id: "1909818" ,
-            limit: 1
-        });
-});
-
-
  var headroom = new Headroom(document.getElementById("masthead"), {
   "tolerance": 5,
   "offset": 205,
