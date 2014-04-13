@@ -5,49 +5,6 @@
  */
 
 !function(a){"use strict";function b(a){this.callback=a,this.ticking=!1}function c(a,d){d=d||c.options,this.lastKnownScrollY=0,this.elem=a,this.debouncer=new b(this.update.bind(this)),this.tolerance=d.tolerance,this.classes=d.classes,this.offset=d.offset,this.initialised=!1}window.requestAnimationFrame=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame,b.prototype={constructor:b,update:function(){this.callback&&this.callback(),this.ticking=!1},requestTick:function(){this.ticking||(requestAnimationFrame(this.update.bind(this)),this.ticking=!0)},handleEvent:function(){this.requestTick()}},c.prototype={constructor:c,init:function(){this.elem.classList.add(this.classes.initial),setTimeout(this.attachEvent.bind(this),100)},destroy:function(){this.initialised=!1,window.removeEventListener("scroll",this.debouncer,!1),this.elem.classList.remove(this.classes.unpinned,this.classes.pinned,this.classes.initial)},attachEvent:function(){this.initialised||(this.initialised=!0,window.addEventListener("scroll",this.debouncer,!1))},unpin:function(){this.elem.classList.add(this.classes.unpinned),this.elem.classList.remove(this.classes.pinned)},pin:function(){this.elem.classList.remove(this.classes.unpinned),this.elem.classList.add(this.classes.pinned)},getScrollY:function(){return void 0!==window.pageYOffset?window.pageYOffset:(document.documentElement||document.body.parentNode||document.body).scrollTop},update:function(){var a=this.getScrollY(),b=Math.abs(a-this.lastKnownScrollY)>=this.tolerance;0>a||(b&&(a>this.lastKnownScrollY&&a>=this.offset?this.unpin():a<this.lastKnownScrollY&&this.pin()),this.lastKnownScrollY=a)}},c.options={tolerance:0,offset:0,classes:{pinned:"headroom--pinned",unpinned:"headroom--unpinned",initial:"headroom"}},a.Headroom=c}(this);;/*
- * embedagram - embed your instagram photos
- *   http://embedagram.com/plugin.php
- *
- * Copyright (c) 2011 Matthew Hokanson (http://h0ke.com)
- * Licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
- */
-(function($){
-    $.fn.extend({
-        embedagram: function(options) {
-
-            // set the defaults
-            var defaults = {
-                instagram_id: -999,
-                thumb_width: 900,
-                wrap_tag: 'figure',
-                link_type: 'web',
-                limit: 1,
-                success: function() { return true;  },
-            };
-
-            var options = $.extend(defaults, options);
-
-            return this.each(function() {
-                var o = options;
-                var obj = $(this);  
-
-                // set the jsonp url
-                var jsonp_url = "http://embedagram.com/e/plugin/" + o.instagram_id + "/?callback=?";
-                jsonp_url += "&thumb_width=" + o.thumb_width + "&wrap_tag=" + o.wrap_tag;
-                jsonp_url += "&limit=" + o.limit + "&link_type=" + o.link_type;
-                
-                // get the json yo!
-                $.getJSON(jsonp_url, function(data) {
-                    obj.html(data.html);
-                    o.success.apply(obj);
-                });
-                
-                return obj;
-            });
-        }
-    });
-})(jQuery);
-;/*
  * jQuery Anystretch
  * Version 1.2 (@jbrooksuk / me.itslimetime.com)
  * https://github.com/jbrooksuk/jquery-anystretch
@@ -106,15 +63,6 @@ $(document).ready(function() {
   });
 
 });
-
-
-$(document).ready(function() {
-    $('.crapagram').embedagram({
-            instagram_id: "1909818" ,
-            limit: 1
-        });
-});
-
 
  var headroom = new Headroom(document.getElementById("masthead"), {
   "tolerance": 5,
