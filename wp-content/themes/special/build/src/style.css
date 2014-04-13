@@ -467,8 +467,9 @@ a:active {
   .portfolio-item {background:#ccc; background:rgba(120,152,183,.25); margin-bottom:1.5em; border-radius:10px 0 0 10px; }
   .portfolio-item img{padding-top:5%; }
   .portfolio-item p, .portfolio-item h5{margin:0 5%;}
-  .crapagram figure { -webkit-box-shadow: 0px 0px 10px 0px black; box-shadow: 0px 0px 10px 0px black; border-radius:50%; overflow: hidden; border: 3px solid #999; } 
-  .crapagram figure img{width:100%; } 
+  .flickr-stream { -webkit-box-shadow: 0px 0px 10px 0px black; box-shadow: 0px 0px 10px 0px black; border-radius:50%; overflow: hidden; border: 3px solid #999; } 
+  .flickr-stream a {text-decoration: none;} 
+  .flickr-stream img{width:100%; display:block; } 
 
 /*contact block*/
   .contact {list-style:none; font-family: futura-pt, Arial, sans-serif; margin:0; padding:0;}
