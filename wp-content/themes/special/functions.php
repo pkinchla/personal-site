@@ -111,7 +111,7 @@ add_action( 'widgets_init', 'special_widgets_init' );
 function special_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri('style.css') );
 
-	wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/built.min.js', array( 'jquery' ), '20120206', true );
+	wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/built.min.js', array( 'jquery' ), '1', true );
 	
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -140,6 +140,41 @@ function remove_recent_comments_style() {
 }
 add_action('widgets_init', 'remove_recent_comments_style');
 
+
+/* flickr stream */
+//Function: Get flickr media and display based on user id
+function getFlickrPhotos($id, $limit=1) {
+    require_once("phpFlickr-3.1/phpFlickr.php");
+    $f = new phpFlickr("d93fb719daf226cd7f73f47c6e5c3bf8");
+    $id = ('120749958@N08');
+    $photos = $f->people_getPublicPhotos($id, NULL, NULL, 1);
+      foreach ($photos['photos']['photo'] as $photo) {
+        return '<figure class="flickr-stream"><a target="_blank" href="' . $f->buildPhotoURL($photo, 'large') . '" title="' . $photo['title'] . '"><img src="' . $f->buildPhotoURL($photo, 'large') . '" alt="' . $photo['title'] . '" title="' . $photo['title'] . '" /></a></figure>';
+    }
+} 
+
+// short code for flickr stream
+add_shortcode( 'flickr', 'getFlickrPhotos');
+
+/* google analytics in footer */
+add_action('wp_footer', 'add_googleanalytics');
+
+function add_googleanalytics() { ?>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-22750130-1', 'paulkinchla.com');
+  ga('send', 'pageview');
+
+</script>
+
+
+<?php } 
+
 /**
 * admin login stuff
 */
@@ -161,38 +196,4 @@ function my_login_stylesheet() { ?>
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 
-
-
-/* flickr stream */
-//Function: Get flickr media and display based on user id
-function getFlickrPhotos($id, $limit=1) {
-    require_once("phpFlickr-3.1/phpFlickr.php");
-    $f = new phpFlickr("d93fb719daf226cd7f73f47c6e5c3bf8");
-    $photos = $f->people_getPublicPhotos($id, NULL, NULL, 1);
-    $return ='<figure class="flickr">';
-    foreach ($photos['photos']['photo'] as $photo) {
-        $return.='<a target="_blank" href="' . $f->buildPhotoURL($photo, 'large') . '" title="' . $photo['title'] . '"><img src="' . $f->buildPhotoURL($photo, 'large') . '" alt="' . $photo['title'] . '" title="' . $photo['title'] . '" /></a>';
-    }
-    echo $return.='</figure>';
-} 
-
-add_shortcode( 'getFlickrPhotos', '120749958@N08',1 );
-add_shortcode( 'flickr', 'getFlickrPhotos');
-
-add_action('wp_footer', 'add_googleanalytics');
-
-function add_googleanalytics() { ?>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-22750130-1', 'paulkinchla.com');
-  ga('send', 'pageview');
-
-</script>
-
-
-<?php } ?>
+?>
