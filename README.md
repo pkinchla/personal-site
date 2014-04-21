@@ -13,7 +13,6 @@ A custom WordPress theme for my personal site. Not intended for distribution.
 
 - https://github.com/danmillar/jquery-anystretch  
 - https://github.com/WickyNilliams/headroom.js
-- https://github.com/bramstein/trmix
 
 ### The MIT License (MIT)
 
