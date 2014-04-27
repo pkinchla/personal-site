@@ -10,7 +10,7 @@ get_header(); ?>
         <header class="entry-header">
           <h1 class="entry-title">Welcome!</h1>        
         </header>
-        <p class="col-half">Hello there. I am a developer / designer living and working in upstate NY. This site is my personal online journal that soon will be the home to what I hope is some <a href="/blog/">meaningful writing</a>. The following are some key facts about me.</p>
+        <p class="col-half">Hello there. I am a developer / designer living and working in upstate NY. This site is home to my thoughts web development, technology, and music.  The following are some key facts about me.</p>
         <ol class="col-half">
           <li>I am pretty big on progressive enchancment and web standards.</li>
           <li>I grew up in the Boston area.</li>
