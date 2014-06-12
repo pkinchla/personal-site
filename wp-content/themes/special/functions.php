@@ -140,6 +140,18 @@ function remove_recent_comments_style() {
 }
 add_action('widgets_init', 'remove_recent_comments_style');
 
+// defer all local scripts 
+//Adapted from https://gist.github.com/toscho/1584783
+add_filter( 'clean_url', function( $url )
+{
+    if ( FALSE === strpos( $url, '.js' ) )
+    { // not our file
+        return $url;
+    }
+    // Must be a ', not "!
+    return "$url' defer='defer";
+}, 11, 1 );
+
 
 /* flickr stream */
 //Function: Get flickr media and display based on user id
