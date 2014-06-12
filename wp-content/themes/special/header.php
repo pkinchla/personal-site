@@ -21,26 +21,6 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js" type="text/javascript"></script>
 <![endif]-->
-<script type="text/javascript">
-  (function() {
-    var config = {
-      kitId: 'ltt0nnt'
-    };
-    var d = false;
-    var tk = document.createElement('script');
-    tk.src = '//use.typekit.net/' + config.kitId + '.js';
-    tk.type = 'text/javascript';
-    tk.async = 'true';
-    tk.onload = tk.onreadystatechange = function() {
-      var rs = this.readyState;
-      if (d || rs && rs != 'complete' && rs != 'loaded') return;
-      d = true;
-      try { Typekit.load(config); } catch (e) {}
-    };
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(tk, s);
-  })();
-</script>
 <noscript><link href="<?php echo get_template_directory_uri(); ?>/js/icons.fallback.css" rel="stylesheet"></noscript>
 <?php wp_head(); ?>
 </head>
