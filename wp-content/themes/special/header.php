@@ -46,7 +46,7 @@
   	  <ul class="social">
   		  <li><a class="ra icons" href="http://www.residentadvisor.net/profile/pkinchla" target="_blank"><span class="assistive-text">Resident Advisor</span></a></li>
   		  <li><a class="twitter icons" href="https://twitter.com/PK_info" target="_blank"><span class="assistive-text">Twitter</span></a></li>
-  		  <li><a class="git-hub icons" href="https://github.com/wbp-paulk" target="_blank"><span class="assistive-text">Github</span></a></li>
+  		  <li><a class="git-hub icons" href="https://github.com/pkinchla" target="_blank"><span class="assistive-text">Github</span></a></li>
   		  <li><a class="rss icons" href="<?php bloginfo('rss2_url'); ?>"><span class="assistive-text">RSS</span></a></li>
   		</ul>
   	</div>
