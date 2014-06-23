@@ -2,7 +2,7 @@
 Theme Name: Special
 Theme URI: http://underscores.me/
 Author: Underscores.me and me Paul Kinchla
-Author URI: http://underscores.me/
+Author URI: paulkinchla.com
 Description: A sandbox for me getting better at this wordpress thing
 Version: 1.0
 License: GNU General Public License
@@ -149,7 +149,7 @@ ul ul, ol ol, ul ol, ol ul {
 /*Fancy ordered Lists http://www.456bereastreet.com/archive/201105/styling_ordered_list_numbers/*/
 ol{counter-reset:li;margin-left:0;padding-left:0;}
   ol > li{position:relative;margin:0 0 6px 1.5em;padding:4px 8px;list-style:none;}
-  ol > li:before{content:counter(li);counter-increment:li;position:absolute;top:7px;left:-2em;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;width:2em;border-radius:50%;margin-right:8px;padding:.2em .2em .2em .25em;font-size:.775em;color:#fff;background:#55616a;background:rgba(85,97,106,0.71);font-family: futura-pt, Arial,sans-serif; text-align:center;}
+  ol > li:before{content:counter(li);counter-increment:li;position:absolute;top:7px;left:-2em;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;width:1.95em;border-radius:50%;margin-right:8px;padding:.2em .2em .2em .25em;font-size:.775em;color:#fff;background:#55616a;background:rgba(85,97,106,0.71);font-family: futura-pt, Arial,sans-serif; text-align:center;}
   li ol, li ul {margin-top:6px;}
   ol ol li:last-child {margin-bottom:0;}
 
@@ -157,11 +157,35 @@ b, strong {
   font-weight: bold;
 }
 dfn, cite, em, i {
-  font:italic 1em futura-pt, Arial, sans-serif; ;
+  font:italic 1em futura-pt, Arial, sans-serif;
+  font-size: 1.1em;
 }
 blockquote {
   margin: 0 1.5em;
 }
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 0;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  max-width:650px;
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 2.5em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote cite{
+  display: block;
+  margin-left:1.5em;
+}
+
 address {
   margin: 0 0 1.5em;
 }
@@ -326,18 +350,18 @@ textarea {
 
 /* Links */
 a {
-  color: #009E77;
+  color: #0000ff;
   text-decoration:none;
   padding-bottom:2px;
 }
 a:visited {
-  color: #1E8A6F;
+  color: #00008b;
 }
 a:hover,
 a:focus,
 a:active {
-  color: #009E77;
-  border-bottom:2px dotted #0c9;
+  color: #0000ff;
+  border-bottom:2px dotted #0000ff;
 }
 
 .linked-header {
@@ -469,7 +493,8 @@ a:active {
   .portfolio-item p, .portfolio-item h5{margin:0 5%;}
   .flickr-stream { -webkit-box-shadow: 0px 0px 10px 0px black; box-shadow: 0px 0px 10px 0px black; border-radius:50%; overflow: hidden; border: 3px solid #999; } 
   .flickr-stream a {text-decoration: none;} 
-  .flickr-stream img{width:100%; display:block; } 
+  .flickr-stream img{width:100%; display:block; }
+  .entry-content img.iphone-example {max-width: 250px;}
 
 /*contact block*/
   .contact {list-style:none; font-family: futura-pt, Arial, sans-serif; margin:0; padding:0;}
@@ -657,11 +682,14 @@ audio {
   background: rgba(33,33,33,.02); 
   border: 1px solid rgba(33,33,33,.10); 
   padding:.5em 1em;
-
 }
 
 .children li {
   list-style: none;
+}
+
+.comment-author .avatar {
+  vertical-align: middle;
 }
 
 
@@ -683,6 +711,7 @@ audio {
   [class*='col-']{float:left;margin:0 3% 0 0;}
     .portfolio-item [class*='col-']{padding:3% 0; }
     .col-three-quarter {width:72%;}
+    .col-two-third {width:63%;}
     .col-half {width:47%;}
     .col-third {width:30%;}
     .col-quarter {width:22%;}
