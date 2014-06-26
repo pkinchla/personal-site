@@ -127,7 +127,8 @@ hr {
   background-color: #ccc;
   border: 0;
   height: 1px;
-  margin-bottom: 1.5em;
+  margin: 1.5em 0;
+  background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0, rgb(241,241,241)), color-stop(0.05, rgb(221,221,221)), color-stop(0.95, rgb(221,221,221)), color-stop(1, rgb(241,241,241)) ); background-image: -moz-linear-gradient(left center, rgb(241,241,241) 0%, rgb(221,221,221) 05%, rgb(221,221,221) 95%, rgb(241,241,241) 100% );
 }
 
 /* Text elements */
@@ -242,7 +243,6 @@ table{margin:0 0 1.5em;width:100%;}
 table caption {font-size:; font:700 italic 1.5625em futura-pt, Arial, sans-serif; margin-left:15%; }
   th{ background:rgba(120,152,183,.45); text-align:center; font-family: futura-pt, Arial, sans-serif;font-weight:700;color:#334259; width:20%; }
     th:first-child{width:5%;}
-    th:last-child{}
 
   td{text-align:center; border: 1px solid rgba(33,33,33,.10); border-bottom:none; border-right:none; color:green;}
     tr:nth-child(even){background:rgba(98,115,113,.35);}
@@ -377,7 +377,7 @@ a:active {
 
 /*download and toggle classes*/
   .toggle-content { display:none; padding: 5px 10px; font-size: 100%; border-radius:5px;}
-  .action {display:inline-block; border:1px solid #ccc;border-color:#ccc #ccc #bbb #ccc;padding:5px 10px;background:rgba(110,128,147,.45);color:rgba(0,0,0,.8);font:700 normal 100%  futura-pt,Arial,sans-serif;border-radius:5px;-webkit-transition:all 0.3s ease-out;-moz-transition:all 0.3s ease-out;-o-transition:all 0.3s ease-out;transition:all 0.3s ease-out;}
+  .action {margin:1em 0; display:inline-block; border:1px solid #ccc;border-color:#ccc #ccc #bbb #ccc;padding:5px 10px;background:rgba(110,128,147,.45);color:rgba(0,0,0,.8);font:700 normal 100%  futura-pt,Arial,sans-serif;border-radius:5px;-webkit-transition:all 0.3s ease-out;-moz-transition:all 0.3s ease-out;-o-transition:all 0.3s ease-out;transition:all 0.3s ease-out;}
   .action:hover { background:rgba(120,152,183,.75); }
   .action:visited, .action:hover, .action:focus, .action:active{color:rgba(0,0,0,.8);border:1px solid #bbb;}
   .action a, .action a:visited, .action a:hover, .action a:focus, .action a:active{border-bottom: none; color:rgba(0,0,0,.8);}
@@ -468,10 +468,8 @@ a:active {
 /* Main Content and Grid
 ----------------------------------------------- */
 /*Grid Base*/
-  .grid-wrap { width: 100%; }
-  .grid-wrap:after{content:"";display:table; clear:both; }
   [class*='col-']:first-child{margin-left:0;}
-  [class*='col-']{width:100%; padding:0; margin:0 0 1.5em 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;  /*background:#ccc;*/}
+  [class*='col-']{width:100%; padding:0; margin:0 0 1.5em 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
   .portfolio-item [class*='col-']{padding:0; }
   .full{width: 100%;}
 
@@ -787,5 +785,9 @@ body{font-size:1.25em;}
 .hero .content {margin:100px 1% 0 495px;}
 .hero .content h2 {font-size: 3.5em;}
 .site-content p{ max-width:37.5em; }
-.site-title {font-size: 1.5em; }
-} 
+.site-title {font-size: 1.5em;}
+}
+
+@media only screen and (min-width:1600px) {
+  .entry-content img.iphone-example {max-width: 80%; margin:0;}
+}
