@@ -35,7 +35,7 @@
   	<div class="wrap-back">
     	<div class="head-wrap group">	
     		<div class="logo-wrap">
-    			<h1 class="site-title group"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="group"><span>Paul</span><span>Kinchla</span></a></h1>
+    			<h1 class="site-title group"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="group"><span>Paul</span> <span>Kinchla</span></a></h1>
     		</div>
     		<nav role="navigation" class="site-navigation main-navigation">
     			<h1 class="assistive-text"><?php _e( '&#9776; Menu', 'special' ); ?></h1>
@@ -51,15 +51,11 @@
   		</ul>
   	</div>
 	</header><!-- #masthead .site-header -->
-      <?php if (has_post_thumbnail()) {
-        $feat_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail_name');
-      }
-      ?>
- 
-      <div class="hero" data-stretch="<?php echo $feat_image[0]; ?>"> 
-        <?php if (is_home()) { echo '<div class="content"><h2>Something <span>Clever</span></h2></div>';}?>
-      </div>
-
-      
-	<div id="main" class="site-main">
-    
+    <?php if (has_post_thumbnail()) {
+      $feat_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail_name');
+       }
+     ?>
+    <div class="hero" data-stretch="<?php echo $feat_image[0]; ?>"> 
+      <?php if (is_home()) { echo '<div class="content"><h2>Something <span>Clever</span></h2></div>';}?>
+    </div>
+  <div id="main" class="site-main">   
