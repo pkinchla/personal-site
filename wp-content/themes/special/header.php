@@ -40,7 +40,7 @@
     		<nav role="navigation" class="site-navigation main-navigation">
     			<h1 class="assistive-text"><?php _e( '&#9776; Menu', 'special' ); ?></h1>
     			<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'special' ); ?>"><?php _e( 'Skip to content', 'special' ); ?></a></div>
-    			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+    			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false ) ); ?>
     		</nav><!-- .site-navigation .main-navigation -->
     	</div>
   	  <ul class="social">
@@ -56,6 +56,6 @@
        }
      ?>
     <div class="hero" data-stretch="<?php echo $feat_image[0]; ?>"> 
-      <?php if (is_home()) { echo '<div class="content"><h2>Something <span>Clever</span></h2></div>';}?>
+      <?php if (is_front_page()) { echo '<div class="content"><h2>Something <span>Clever</span></h2></div>';}?>
     </div>
   <div id="main" class="site-main">   
