@@ -442,7 +442,7 @@ a:active {
   
 /* Main Navigation
 ----------------------------------------------- */
-  .menu ul{width: 100%; list-style: none; padding:0;  margin:18px 0 0 0;}
+  .menu {width: 100%; list-style: none; padding:0;  margin:18px 0 0 0;}
   .main-navigation {float: left;}
   .main-navigation li{display: inline-block;}
   .main-navigation li a{display:inline; font:400 normal 1.4375em/1.2  futura-pt, Arial, sans-serif;color:#4a4b4e; padding:1% 3.47em 1% .869em;  text-decoration:none; text-align: center; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; -ms-transition: all .3s ease; -o-transition: all .3s ease; transition: all .3s ease; }
