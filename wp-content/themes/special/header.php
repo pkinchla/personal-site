@@ -22,10 +22,8 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js" type="text/javascript"></script>
 <![endif]-->
-<script type="text/javascript" src="//use.typekit.net/ltt0nnt.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-<noscript><link href="<?php echo get_template_directory_uri(); ?>/js/icons.fallback.css" rel="stylesheet"></noscript>
 <?php wp_head(); ?>
+<noscript><link href="<?php echo get_template_directory_uri(); ?>/js/icons.fallback.css" rel="stylesheet"></noscript>
 </head>
 
 <body <?php body_class(); ?>>
