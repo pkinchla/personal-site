@@ -124,6 +124,18 @@ function special_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'special_scripts' );
 
+// enqueue typekit
+function theme_typekit() {
+    wp_enqueue_script( 'theme_typekit', '//use.typekit.net/ltt0nnt.js');
+}
+add_action( 'wp_enqueue_scripts', 'theme_typekit' );
+function theme_typekit_inline() {
+  if ( wp_script_is( 'theme_typekit', 'done' ) ) { ?>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<?php }
+}
+add_action( 'wp_head', 'theme_typekit_inline' );
+
 /**
 * Use latest jQuery release
 */
@@ -139,19 +151,6 @@ function remove_recent_comments_style() {
     remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
 }
 add_action('widgets_init', 'remove_recent_comments_style');
-
-// defer all local scripts 
-//Adapted from https://gist.github.com/toscho/1584783
-add_filter( 'clean_url', function( $url )
-{
-    if ( FALSE === strpos( $url, '.js' ) )
-    { // not our file
-        return $url;
-    }
-    // Must be a ', not "!
-    return "$url' defer='defer";
-}, 11, 1 );
-
 
 /* flickr stream */
 //Function: Get flickr media and display based on user id
