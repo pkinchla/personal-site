@@ -124,6 +124,15 @@ function special_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'special_scripts' );
 
+
+if ( $_SERVER['REMOTE_ADDR'] === '127.0.0.1' ){
+  add_action( 'wp_enqueue_scripts', 'enqueue_livereload' );
+}
+function enqueue_livereload(){
+  wp_enqueue_script( 'livereload', 'http://localhost:35729/livereload.js', '', null, true);
+}
+
+
 // enqueue typekit
 function theme_typekit() {
     wp_enqueue_script( 'theme_typekit', '//use.typekit.net/ltt0nnt.js');
