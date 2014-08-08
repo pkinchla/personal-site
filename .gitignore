@@ -37,3 +37,4 @@ wp-content/plugins/*
 wp-content/themes/*
 !wp-content/themes/special/
 wp-content/themes/special/build/node_modules/*
+wp-content/themes/special/build/.sass-cache/
