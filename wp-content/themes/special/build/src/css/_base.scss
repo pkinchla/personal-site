@@ -1,97 +1,8 @@
-/*
-Theme Name: Special
-Theme URI: http://underscores.me/
-Author: Underscores.me and me Paul Kinchla
-Author URI: paulkinchla.com
-Description: A sandbox for me getting better at this wordpress thing
-Version: 1.0
-License: GNU General Public License
-License URI: license.txt
-Tags:
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-Resetting and rebuilding styles have been helped along thanks to the fine work of
-Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
-along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
-and Blueprint http://www.blueprintcss.org/
-*/
-
 /* =Reset
 -------------------------------------------------------------- */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
-  border: 0;
-  font-family: inherit;
-  font-size: 100%;
-  font-style: inherit;
-  font-weight: inherit;
-  margin: 0;
-  outline: 0;
-  padding: 0;
-  vertical-align: baseline;
-}
-
-html {
-  overflow-y: scroll;
-  /* Keeps page centred in all browsers regardless of content height */
-  -webkit-text-size-adjust: 100%;
-  /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
-  -ms-text-size-adjust: 100%;
-  /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
-}
-
 body {
   background:#f1f1f1;
-}
-
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
-  display: block;
-}
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
-table {
-  /* tables still need 'cellspacing="0"' in the markup */
-  border-collapse: separate;
-  border-spacing: 0;
-}
-
-caption, th, td {
-  font-weight: normal;
-  text-align: left;
-}
-
-blockquote {
-  &:before, &:after {
-    content: "";
-  }
-}
-
-q {
-  &:before, &:after {
-    content: "";
-  }
-}
-
-blockquote, q {
-  quotes: "" "";
-}
-
-a {
-  &:focus {
-    outline: thin dotted;
-  }
-  &:hover, &:active {
-    /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
-    outline: 0;
-  }
-  img {
-    border: 0;
-  }
 }
 
 /* =Global
@@ -108,7 +19,6 @@ a {
 }
 
 body, button, input, select, textarea {
-  color: #222;
   color: #4a4b4e;
   font-family: skolar, Georgia, serif;
   font-size: 1em;
@@ -122,6 +32,7 @@ h1, h2, h3, h4, h5 {
   font-family: futura-pt, Arial, sans-serif;
   font-weight: 700;
   color: #55616a;
+  margin:0;
 }
 
 h1 {
@@ -157,11 +68,12 @@ hr {
 /* Text elements */
 
 p {
-  margin-bottom: 1.5em;
+  margin:0 0 1.5em 0;
 }
 
 ul, ol {
   margin: 0 0 1.5em .2em;
+  padding:0;
 }
 
 ul {
@@ -391,8 +303,6 @@ button, input, select, textarea {
 button, input {
   line-height: normal;
   /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
-  *overflow: visible;
-  /* Corrects inner spacing displayed oddly in IE6/7 */
 }
 
 button, html input[type="button"] {
@@ -553,7 +463,7 @@ textarea {
 a {
   color: #009E77;
   text-decoration: none;
-  padding-bottom: 2px;
+  padding-bottom: .1em;
   &:visited {
     color: #19775F;
   }
@@ -653,15 +563,6 @@ a {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
 }
-
-/*Clear all the Floats*/
-
-.group:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 /* Header
 ----------------------------------------------- */
 
@@ -677,6 +578,7 @@ a {
   margin: 0;
   width: 100%;
   padding-bottom: .5em;
+  @extend %clearfix;
 }
 
 .logo-wrap {
@@ -955,6 +857,9 @@ a {
   p {
     max-width: 650px;
   }
+  section {
+    @extend %clearfix;
+  }
 }
 
 /*thinking about it */
@@ -1020,6 +925,7 @@ a {
   -webkit-box-shadow: inset 0px 0px 10px rgba(33, 33, 33, 0.05);
   -moz-box-shadow: inset 0px 0px 10px rgba(33, 33, 33, 0.05);
   box-shadow: inset 0px 0px 10px rgba(33, 33, 33, 0.05);
+  @extend %clearfix;
   dt {
     &:first-child {
       margin-top: 0;
@@ -1031,13 +937,14 @@ a {
   h4 {
     font: 400 normal 1.25em futura-pt, Arial, sans-serif;
     color: #4a4b4e;
+
   }
   h5 {
     font: 400 italic 1.125em futura-pt, Arial, sans-serif;
     color: #4a4b4e;
   }
   dd {
-    margin-bottom: 1.5em;
+    margin:0 0 1.5em 0;
   }
   b {
     display: block;
@@ -1076,6 +983,7 @@ a {
   margin: 0 1% 0 1%;
   width: 98%;
   padding-bottom: 1.5em;
+  @extend %clearfix;
 }
 
 .footer-col1 {
