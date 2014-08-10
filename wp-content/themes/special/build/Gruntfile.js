@@ -9,7 +9,7 @@
         sass: {
               dist: {
               files: {
-              '../style.css' : '**/*.scss'
+              '../style.css' : 'src/css/style.scss'
             }
           }
         },
@@ -22,7 +22,7 @@
             }
           },
           css: {
-            files: ['**/*.scss'],
+            files: ['src/style.scss'],
             tasks: ['sass']
           },
             options: {
