@@ -22,7 +22,7 @@
             }
           },
           css: {
-            files: ['src/style.scss'],
+            files: ['src/css/*.scss'],
             tasks: ['sass']
           },
             options: {
