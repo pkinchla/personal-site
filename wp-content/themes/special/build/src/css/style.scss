@@ -1,2 +1,6 @@
-// ----- Settings - @Font-Face Declarations, Variables ----- //
+// ----- reset ----- //
+@import "normalize";
+// ----- settings ----- //
+@import "settings";
+// ----- base and globals ----- //
 @import "base";
