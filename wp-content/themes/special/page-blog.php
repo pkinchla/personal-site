@@ -9,7 +9,7 @@ get_header(); ?>
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
 			  <h1 class="entry-title">The Soap Box</h1>
-			  <div class="group">
+			   <section>
   			  <div class="col-half">  
               <?php query_posts( 'posts_per_page=10' ); ?>
               <?php while ( have_posts() ) : the_post(); ?>
@@ -23,7 +23,7 @@ get_header(); ?>
             <?php wp_list_categories('title_li=&show_count=1&feed=RSS'); ?>
            </ol>
           </div>
-        </div>
+        </section>
 			</div><!-- #content .site-content -->
 		</div><!-- #primary .content-area -->
 

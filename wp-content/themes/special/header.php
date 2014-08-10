@@ -27,13 +27,13 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site group">
+<div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
-	<header id="masthead" class="site-header group animated" role="banner">
+	<header id="masthead" class="site-header animated" role="banner">
   	<div class="wrap-back">
-    	<div class="head-wrap group">	
+    	<div class="head-wrap">	
     		<div class="logo-wrap">
-    			<h1 class="site-title group"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="group"><span>Paul</span> <span>Kinchla</span></a></h1>
+    			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="group"><span>Paul</span> <span>Kinchla</span></a></h1>
     		</div>
     		<nav role="navigation" class="site-navigation main-navigation">
     			<h1 class="assistive-text"><?php _e( '&#9776; Menu', 'special' ); ?></h1>
@@ -41,7 +41,7 @@
     			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false ) ); ?>
     		</nav><!-- .site-navigation .main-navigation -->
     	</div>
-  	  <ul class="social">
+      <ul class="social">
   		  <li><a class="ra icons" href="http://www.residentadvisor.net/profile/pkinchla" target="_blank"><span class="assistive-text">Resident Advisor</span></a></li>
   		  <li><a class="twitter icons" href="https://twitter.com/PK_info" target="_blank"><span class="assistive-text">Twitter</span></a></li>
   		  <li><a class="git-hub icons" href="https://github.com/pkinchla" target="_blank"><span class="assistive-text">Github</span></a></li>

@@ -12,7 +12,7 @@
 	</div><!-- #main .site-main -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info group">
+		<div class="site-info">
 		 <div class="footer-col2">
 		  <h5><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Licensed with a Creative Commons</a></h5>
       <small>All associated logos are trademarks or registered trademarks or service marks of their respective owners. All rights reserved. Any use of these is done for non-commercial purposes unless otherwise noted.</small>
