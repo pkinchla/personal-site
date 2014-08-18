@@ -36,7 +36,7 @@
     			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="group"><span>Paul</span> <span>Kinchla</span></a></h1>
     		</div>
     		<nav role="navigation" class="site-navigation main-navigation">
-    			<h1 class="assistive-text"><?php _e( '&#9776; Menu', 'special' ); ?></h1>
+    			<h1 class="assistive-text"><?php _e( 'Menu', 'special' ); ?></h1>
     			<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'special' ); ?>"><?php _e( 'Skip to content', 'special' ); ?></a></div>
     			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false ) ); ?>
     		</nav><!-- .site-navigation .main-navigation -->
