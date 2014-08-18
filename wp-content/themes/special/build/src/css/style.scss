@@ -1,6 +1,6 @@
 // ----- reset ----- //
 @import "normalize";
 // ----- settings ----- //
-@import "settings";
-// ----- base and globals ----- //
-@import "base";
+@import "helpers";
+// ----- element styling ----- //
+@import "layout";

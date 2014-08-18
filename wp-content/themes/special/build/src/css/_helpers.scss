@@ -1,9 +1,35 @@
-%clearfix:before,
-%clearfix:after {
-    content: " ";
-    display: table;
-}
+// variables
 
-%clearfix:after {
+// colors
+  $background-white:#f1f1f1;
+  $body-color: #4a4b4e;
+  $light-blue: #e6edfa;
+  $medium-blue-gray: #6e8093;
+  $medium-gray: #55616a;
+  $dark-blue: #334259;
+  $white: #fff;
+  $black: #000;
+  $selection-color: #ffb7b7;
+
+
+
+// clear fixin
+  %clearfix:before, %clearfix:after {
+    display: table;
+    content: ' ';
+  }
+
+  %clearfix:after {
     clear: both;
-}
+  }
+
+// common objects
+  // hero background fallback
+  %background-svg {
+    background-color: #7898b7;
+    background-image: url('data:image/svg+xml;base64,IDxzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2ZXJzaW9uPScxLjEnIHdpZHRoPScxJyBoZWlnaHQ9JzEwMCUnIGlkPSdzdmcyJz4KICA8ZGVmcyBpZD0nZGVmczQnPgogICAgPGZpbHRlciB4PSctMScgeT0nLTEnIHdpZHRoPScyJyBoZWlnaHQ9JzInIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0nc1JHQicgaWQ9J2ZpbHRlcjMwMDEnPgogICAgICA8ZmVUdXJidWxlbmNlIHR5cGU9J2ZyYWN0YWxOb2lzZScgc2VlZD0nMzInIGJhc2VGcmVxdWVuY3k9JzAgMC4wMDA1JyBudW1PY3RhdmVzPScxJyByZXN1bHQ9J3Jlc3VsdDUnIGlkPSdmZVR1cmJ1bGVuY2UzMDA3JyAvPgogICAgPC9maWx0ZXI+CiAgPC9kZWZzPgogIDxyZWN0IGhlaWdodD0nMTAyJScgd2lkdGg9JzEwMCUnIHN0eWxlPSdmaWx0ZXI6dXJsKCNmaWx0ZXIzMDAxKScgLz4KPC9zdmc+Cg==');
+  }
+
+  %texture-bg {
+    background: url('images/texture-bg.png');
+  }
