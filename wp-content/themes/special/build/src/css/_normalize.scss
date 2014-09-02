@@ -7,10 +7,10 @@
  */
 
 html {
-    font-family: sans-serif; /* 1 */
+  font-family:sans-serif; /* 1 */
 
-        -ms-text-size-adjust: 100%; /* 2 */
-    -webkit-text-size-adjust: 100%; /* 2 */
+      -ms-text-size-adjust:100%; /* 2 */
+  -webkit-text-size-adjust:100%; /* 2 */
 }
 
 /**
@@ -18,7 +18,7 @@ html {
  */
 
 body {
-    margin: 0;
+  margin:0;
 }
 
 /* HTML5 display definitions
@@ -31,7 +31,7 @@ body {
  */
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
-    display: block;
+  display:block;
 }
 
 /**
@@ -40,9 +40,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
  */
 
 audio, canvas, progress, video {
-    display: inline-block; /* 1 */
-
-    vertical-align: baseline; /* 2 */
+  display:inline-block; /* 1 */
+  vertical-align:baseline; /* 2 */
 }
 
 /**
@@ -51,9 +50,8 @@ audio, canvas, progress, video {
  */
 
 audio:not([controls]) {
-    display: none;
-
-    height: 0;
+  display:none;
+  height:0;
 }
 
 /**
@@ -62,7 +60,7 @@ audio:not([controls]) {
  */
 
 [hidden], template {
-    display: none;
+  display:none;
 }
 
 /* Links
@@ -73,7 +71,7 @@ audio:not([controls]) {
  */
 
 a {
-    background: transparent;
+  background:transparent;
 }
 
 /**
@@ -81,7 +79,7 @@ a {
  */
 
 a:active, a:hover {
-    outline: 0;
+  outline:0;
 }
 
 /* Text-level semantics
@@ -92,7 +90,7 @@ a:active, a:hover {
  */
 
 abbr[title] {
-    border-bottom: 1px dotted;
+  border-bottom:1px dotted;
 }
 
 /**
@@ -100,7 +98,7 @@ abbr[title] {
  */
 
 b, strong {
-    font-weight: bold;
+  font-weight:bold;
 }
 
 /**
@@ -108,7 +106,7 @@ b, strong {
  */
 
 dfn {
-    font-style: italic;
+  font-style:italic;
 }
 
 /**
@@ -117,9 +115,8 @@ dfn {
  */
 
 h1 {
-    font-size: 2em;
-
-    margin: .67em 0;
+  font-size:2em;
+  margin:.67em 0;
 }
 
 /**
@@ -127,8 +124,8 @@ h1 {
  */
 
 mark {
-    color: #000;
-    background: #ff0;
+  color:#000;
+  background:#ff0;
 }
 
 /**
@@ -136,7 +133,7 @@ mark {
  */
 
 small {
-    font-size: 80%;
+  font-size:80%;
 }
 
 /**
@@ -144,20 +141,18 @@ small {
  */
 
 sub, sup {
-    font-size: 75%;
-    line-height: 0;
-
-    position: relative;
-
-    vertical-align: baseline;
+  font-size:75%;
+  line-height:0;
+  position:relative;
+  vertical-align:baseline;
 }
 
 sup {
-    top: -.5em;
+  top:-.5em;
 }
 
 sub {
-    bottom: -.25em;
+  bottom:-.25em;
 }
 
 /* Embedded content
@@ -168,7 +163,7 @@ sub {
  */
 
 img {
-    border: 0;
+  border:0;
 }
 
 /**
@@ -176,7 +171,7 @@ img {
  */
 
 svg:not(:root) {
-    overflow: hidden;
+  overflow:hidden;
 }
 
 /* Grouping content
@@ -187,7 +182,7 @@ svg:not(:root) {
  */
 
 figure {
-    margin: 1em 40px;
+  margin:1em 40px;
 }
 
 /**
@@ -195,9 +190,9 @@ figure {
  */
 
 hr {
-    -moz-box-sizing: content-box;
-         box-sizing: content-box;
-    height: 0;
+  -moz-box-sizing:content-box;
+       box-sizing:content-box;
+  height:0;
 }
 
 /**
@@ -205,7 +200,7 @@ hr {
  */
 
 pre {
-    overflow: auto;
+  overflow:auto;
 }
 
 /**
@@ -213,8 +208,8 @@ pre {
  */
 
 code, kbd, pre, samp {
-    font-family: monospace, monospace;
-    font-size: 1em;
+  font-family:monospace, monospace;
+  font-size:1em;
 }
 
 /* Forms
@@ -233,11 +228,9 @@ code, kbd, pre, samp {
  */
 
 button, input, optgroup, select, textarea {
-    font: inherit; /* 2 */
-
-    margin: 0; /* 3 */
-
-    color: inherit; /* 1 */
+  font:inherit; /* 2 */
+  margin:0; /* 3 */
+  color:inherit; /* 1 */
 }
 
 /**
@@ -245,7 +238,7 @@ button, input, optgroup, select, textarea {
  */
 
 button {
-    overflow: visible;
+  overflow:visible;
 }
 
 /**
@@ -256,7 +249,7 @@ button {
  */
 
 button, select {
-    text-transform: none;
+  text-transform:none;
 }
 
 /**
@@ -269,9 +262,9 @@ button, select {
 
 button, html input[type='button'], /* 1 */
 input[type='reset'], input[type='submit'] {
-    cursor: pointer; /* 3 */
+  cursor:pointer; /* 3 */
 
-    -webkit-appearance: button; /* 2 */
+  -webkit-appearance:button; /* 2 */
 }
 
 /**
@@ -279,7 +272,7 @@ input[type='reset'], input[type='submit'] {
  */
 
 button[disabled], html input[disabled] {
-    cursor: default;
+  cursor:default;
 }
 
 /**
@@ -287,9 +280,8 @@ button[disabled], html input[disabled] {
  */
 
 button::-moz-focus-inner, input::-moz-focus-inner {
-    padding: 0;
-
-    border: 0;
+  padding:0;
+  border:0;
 }
 
 /**
@@ -298,7 +290,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  */
 
 input {
-    line-height: normal;
+  line-height:normal;
 }
 
 /**
@@ -310,8 +302,8 @@ input {
  */
 
 input[type='checkbox'], input[type='radio'] {
-    box-sizing: border-box; /* 1 */
-    padding: 0; /* 2 */
+  box-sizing:border-box; /* 1 */
+  padding:0; /* 2 */
 }
 
 /**
@@ -321,7 +313,7 @@ input[type='checkbox'], input[type='radio'] {
  */
 
 input[type='number']::-webkit-inner-spin-button, input[type='number']::-webkit-outer-spin-button {
-    height: auto;
+  height:auto;
 }
 
 /**
@@ -331,11 +323,11 @@ input[type='number']::-webkit-inner-spin-button, input[type='number']::-webkit-o
  */
 
 input[type='search'] {
-    -webkit-box-sizing: content-box; /* 2 */
-       -moz-box-sizing: content-box;
-            box-sizing: content-box;
+  -webkit-box-sizing:content-box; /* 2 */
+     -moz-box-sizing:content-box;
+          box-sizing:content-box;
 
-    -webkit-appearance: textfield; /* 1 */
+  -webkit-appearance:textfield; /* 1 */
 }
 
 /**
@@ -345,7 +337,7 @@ input[type='search'] {
  */
 
 input[type='search']::-webkit-search-cancel-button, input[type='search']::-webkit-search-decoration {
-    -webkit-appearance: none;
+  -webkit-appearance:none;
 }
 
 /**
@@ -353,10 +345,9 @@ input[type='search']::-webkit-search-cancel-button, input[type='search']::-webki
  */
 
 fieldset {
-    margin: 0 2px;
-    padding: .35em .625em .75em;
-
-    border: 1px solid #c0c0c0;
+  margin:0 2px;
+  padding:.35em .625em .75em;
+  border:1px solid #c0c0c0;
 }
 
 /**
@@ -365,9 +356,8 @@ fieldset {
  */
 
 legend {
-    padding: 0; /* 2 */
-
-    border: 0; /* 1 */
+  padding:0; /* 2 */
+  border:0; /* 1 */
 }
 
 /**
@@ -375,7 +365,7 @@ legend {
  */
 
 textarea {
-    overflow: auto;
+  overflow:auto;
 }
 
 /**
@@ -384,7 +374,7 @@ textarea {
  */
 
 optgroup {
-    font-weight: bold;
+  font-weight:bold;
 }
 
 /* Tables
@@ -395,10 +385,10 @@ optgroup {
  */
 
 table {
-    border-spacing: 0;
-    border-collapse: collapse;
+  border-spacing:0;
+  border-collapse:collapse;
 }
 
 td, th {
-    padding: 0;
+  padding:0;
 }
