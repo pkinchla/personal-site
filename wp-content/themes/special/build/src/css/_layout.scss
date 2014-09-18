@@ -992,8 +992,7 @@ a {
   margin-bottom:1.5em;
   padding:.1em .5em;
   color:white;
-  background:$medium-blue-gray;
-  background:rgba(110, 128, 147, .7);
+  background:lighten($medium-blue-gray, 10%);
   a {
     color:white;
     &:hover {
@@ -1001,15 +1000,6 @@ a {
       background:rgba(33, 33, 33, .15);
     }
   }
-}
-
-.byline {
-  display:none;
-}
-
-.single .byline, .group-blog .byline {
-  display:inline-block;
-  margin-left:1em;
 }
 
 .page-links {
