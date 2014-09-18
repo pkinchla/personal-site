@@ -953,7 +953,8 @@ a {
   padding: 15px 2% 20px 3%;
   background: rgba(255, 255, 255, 0.75); }
 .hero h2 {
-  font: 700 normal 2.3em / 1 futura-pt, Arial, sans-serif;
+  font: 700 normal 2.3em futura-pt, Arial, sans-serif;
+  line-height: 1;
   color: #334259;
   text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.75); }
   .hero h2 span {
