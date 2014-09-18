@@ -1066,20 +1066,12 @@ a {
   margin-bottom: 1.5em;
   padding: .1em .5em;
   color: white;
-  background: #6e8093;
-  background: rgba(110, 128, 147, 0.7); }
+  background: #8b9aa9; }
   .entry-meta a {
     color: white; }
     .entry-meta a:hover {
       border-bottom: none;
       background: rgba(33, 33, 33, 0.15); }
-
-.byline {
-  display: none; }
-
-.single .byline, .group-blog .byline {
-  display: inline-block;
-  margin-left: 1em; }
 
 .page-links {
   clear: both;
