@@ -165,6 +165,10 @@ function remove_recent_comments_style() {
 }
 add_action('widgets_init', 'remove_recent_comments_style');
 
+// remove added p tags
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
+
 /* flickr stream */
 //Function: Get flickr media and display based on user id
 function getFlickrPhotos($id, $limit=1) {
