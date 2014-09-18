@@ -829,7 +829,8 @@ a {
     background:rgba(255, 255, 255, .75);
   }
   h2 {
-    font:700 normal 2.3em / 1 futura-pt, Arial, sans-serif;
+    font:700 normal 2.3em futura-pt, Arial, sans-serif;
+    line-height: 1;
     color:$dark-blue;
     text-shadow:0 -1px 0 rgba(255, 255, 255, .75);
     span {
