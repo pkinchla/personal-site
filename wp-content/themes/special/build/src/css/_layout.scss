@@ -20,7 +20,6 @@ body, button, input, select, textarea {
 }
 
 // Headings 
-
 h1, h2, h3, h4, h5 {
   font-family:futura-pt, Arial, sans-serif;
   font-weight:700;
@@ -147,7 +146,7 @@ blockquote {
   max-width:650px;
   margin:0 1.5em;
   margin:1.5em 0;
-  padding:.5em 10px;
+  padding:1em .5em;
   quotes:'\201C''\201D''\2018''\2019';
   border-left:10px solid #ccc;
   background:$white;
@@ -1487,3 +1486,39 @@ embed, iframe, object, audio {
     margin:0;
   }
 }
+
+@media only screen and (min-width:135em) {
+  .hero {
+    float:left;
+    width:70%;
+  }
+  .site-main {
+    width:52.99%;
+    margin-right:0;
+  }
+  .site-content {
+    padding-right:5%;
+  }
+  .site-info {
+    width:100%;
+    margin:0 auto;
+  }
+  .site-footer {
+    float: left;
+    padding:1em 4% 0 4%;
+    width:22%;
+    height:100%;
+    clear:none;
+    position:fixed;
+    right:0;
+    border-left:1px solid #ccc;
+  }
+
+  .footer-col1, .footer-col2 {
+    float:none;
+    width:100%;
+    margin:1.5em auto;
+    padding:0;
+  }
+}
+
