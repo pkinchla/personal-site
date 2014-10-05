@@ -16,7 +16,7 @@
 
         watch: {
           all: {
-            files: ['../*.php', '../inc/*.php', '../phpFlickr-3.1/*.php', '../js/*.js', '../images/*.{png,jpg,jpeg,gif,webp,svg}'],
+            files: ['../*.php', '../inc/*.php', '../phpFlickr-3.1/*.php', 'src/js/*.js', '../images/*.{png,jpg,jpeg,gif,webp,svg}'],
             options: {
               livereload: true,  // Set livereload to trigger a reload upon change
             }
