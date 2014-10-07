@@ -1,6 +1,6 @@
 # mothership
 
-A custom WordPress theme for my personal site. Not intended for distribution.   
+My personal site. Not intended for distribution.   
 
 ## Credit Where Credit is Due
 
