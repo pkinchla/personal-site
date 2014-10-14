@@ -24,8 +24,7 @@ if ( ! function_exists( 'special_setup' ) ) :
  *
  * @since Special 1.0
  */
- 
- 
+
  /**
   * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
   *
@@ -128,6 +127,7 @@ function special_scripts() {
 		wp_enqueue_script( 'grunticon-loader', get_template_directory_uri() . '/build/src/js/grunticon.loader.js', array(), '', true );
 		wp_enqueue_script( 'headroom', get_template_directory_uri() . '/build/src/js/headroom.js', array(), '', true );
 		wp_enqueue_script( 'anystretch', get_template_directory_uri() . '/build/src/js/jquery.anystretch.js', array(), '', true );
+		wp_enqueue_script( 'picturefill', get_template_directory_uri() . '/build/src/js/picturefill.js', array(), '', true );
 		wp_enqueue_script( 'scripts', get_template_directory_uri() . '/build/src/js/scripts.js', array(), '', true );
 		wp_enqueue_script( 'livereload', 'http://localhost:35729/livereload.js', '', null, true);
 	} 
@@ -169,6 +169,12 @@ add_action('widgets_init', 'remove_recent_comments_style');
 remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );
 
+// image sizes for portfolio
+add_image_size( 'portfolio_small', 550, 550, false );
+add_image_size( 'portfolio_medium', 800, 800, false );
+add_image_size( 'portfolio_large', 1300, 1300, false );
+
+
 /* flickr stream */
 //Function: Get flickr media and display based on user id
 function getFlickrPhotos($id, $limit=1) {
@@ -177,7 +183,7 @@ function getFlickrPhotos($id, $limit=1) {
     $id = ('120749958@N08');
     $photos = $f->people_getPublicPhotos($id, NULL, NULL, 1);
       foreach ($photos['photos']['photo'] as $photo) {
-        return '<figure class="flickr-stream"><a target="_blank" href="' . $f->buildPhotoURL($photo, 'large') . '" title="' . $photo['title'] . '"><img src="' . $f->buildPhotoURL($photo, 'large') . '" alt="' . $photo['title'] . '" title="' . $photo['title'] . '" /></a></figure>';
+        return '<figure class="flickr-stream"><a target="_blank" href="' . $f->buildPhotoURL($photo, 'medium') . '" title="' . $photo['title'] . '"><img src="'. $f->buildPhotoURL($photo, 'small') .'" srcset="'.$f->buildPhotoURL($photo, 'large').' 930w, '.$f->buildPhotoURL($photo, 'medium').' 480w, '.$f->buildPhotoURL($photo, 'small').' 230w" sizes="(min-width: 45.25em) 75.75vw, 88.8vw" alt="' . $photo['title'] . '" title="' . $photo['title'] . '" /></a></figure>';
     }
 } 
 
