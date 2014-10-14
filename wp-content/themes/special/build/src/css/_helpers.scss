@@ -23,6 +23,53 @@ $selection-color:#ffb7b7;
   clear:both;
 }
 
+%link-reset {
+  text-decoration:none;
+  &:hover {
+    text-decoration:none;
+  }
+}
+%relative {
+  position:relative;
+}
+%absolute {
+  position:absolute;
+}
+%block {
+  display:block;
+}
+%inline-block {
+  display:inline-block;
+}
+%text-center {
+	text-align:center;
+}
+%plain-list {
+  margin:0;
+  padding:0;
+  li {
+    list-style:none;
+  }
+  dd {
+    margin:0;
+  }
+}
+%vertical-align {
+  position:relative;
+  top:50%;
+  -webkit-transform:translateY(-50%);
+      -ms-transform:translateY(-50%);
+          transform:translateY(-50%);
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition:$transition-property $transition-time $method;
+     -moz-transition:$transition-property $transition-time $method;
+      -ms-transition:$transition-property $transition-time $method;
+       -o-transition:$transition-property $transition-time $method;
+          transition:$transition-property $transition-time $method;
+}
+
 // common objects
 // hero background fallback
 %background-svg {
