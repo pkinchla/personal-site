@@ -25,8 +25,8 @@ h1, h2, h3, h4, h5 {
   font-weight:700;
   clear:both;
   margin:0;
-  color:$medium-gray;
   letter-spacing:-.01em;
+  color:$medium-gray;
 }
 
 h1 {
@@ -826,7 +826,7 @@ a {
   }
   h2 {
     font:700 normal 2.3em futura-pt, Arial, sans-serif;
-    line-height: 1;
+    line-height:1;
     color:$dark-blue;
     text-shadow:0 -1px 0 rgba(255, 255, 255, .75);
     span {
@@ -947,52 +947,55 @@ a {
   }
 }
 .portfolio-list {
-    @extend %clearfix;
-    @extend %plain-list;
-    li {
-      margin-bottom:1.25em;
-      @extend %relative;
-      &:nth-child(3n+1) {
-        clear:both;
-      }
+  @extend %clearfix;
+  @extend %plain-list;
+  li {
+    margin-bottom:1.25em;
+
+    @extend %relative;
+    &:nth-child(3n+1) {
+      clear:both;
     }
-    a {
-      @extend %link-reset;
-      @extend %relative;
+  }
+  a {
+    @extend %link-reset;
+    @extend %relative;
+    @extend %block;
+    @extend %text-center;
+    img {
       @extend %block;
-      @extend %text-center;
-      img {
-        @extend %block;
+    }
+    .title {
+      font-family:futura-pt, Arial, sans-serif;
+      font-size:1.70em;
+      z-index:2;
+      top:45%;
+      display:none;
+      width:100%;
+      color:white;
+
+      @extend %absolute;
+    }
+    &:hover {
+      border-bottom:none;
+      &:after {
+        z-index:1;
+        top:0;
+        left:0;
+        display:inline-block;
+        width:100%;
+        height:100%;
+        content:'';
+        background:rgba(33,33,33,.85);
+
+        @extend %absolute;
       }
       .title {
-        font-family: futura-pt, Arial, sans-serif;
-        color:white;
-        font-size: 1.70em;
-        @extend %absolute;
-        width:100%;
-        top:45%;
-        display:none;
-        z-index:2;
-      }
-      &:hover {
-        border-bottom: none;
-         &:after {
-            content:'';
-            display: inline-block;
-            @extend %absolute;
-            height:100%;
-            width:100%;
-            top:0;
-            left:0;
-            background: rgba(33,33,33,.85);
-            z-index: 1;
-        }
-        .title {
-          display: block;
-        }
+        display:block;
       }
     }
   }
+}
 
 //for javascript enabled browsers
 
@@ -1259,12 +1262,12 @@ embed, iframe, object, audio {
     margin-left:.5%;
   }
   .portfolio-list {
-   a {
-    .title {
-      font-size:1.125em;
+    a {
+      .title {
+        font-size:1.125em;
+      }
     }
-   }
-  } 
+  }
 }
 
 @media only screen and (min-width:750px) {
@@ -1562,13 +1565,13 @@ embed, iframe, object, audio {
     margin:0 auto;
   }
   .site-footer {
-    float: left;
-    padding:1em 4% 0 4%;
-    width:22%;
-    height:100%;
-    clear:none;
     position:fixed;
     right:0;
+    float:left;
+    clear:none;
+    width:22%;
+    height:100%;
+    padding:1em 4% 0 4%;
     border-left:1px solid #ccc;
   }
 
@@ -1579,4 +1582,3 @@ embed, iframe, object, audio {
     padding:0;
   }
 }
-
