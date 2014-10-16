@@ -54,7 +54,7 @@ get_header(); ?>
 			   <section>
           <?php if ($main_image_square) { ?>
             <div class="col-third">
-              <p><?php echo $copy; ?></p>
+              <?php echo $copy; ?>
             </div>
             <div class="col-two-third">		 
               <figure class="portfolio-item">
@@ -75,7 +75,7 @@ get_header(); ?>
           <?php  } 
                 else { ?>
             <div class="col-two-third">
-              <p><?php echo $copy; ?></p>
+              <?php echo $copy; ?>
             </div>
             <div class="col-third">    
               <figure class="portfolio-item">
