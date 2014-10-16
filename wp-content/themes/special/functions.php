@@ -168,7 +168,6 @@ add_action('widgets_init', 'remove_recent_comments_style');
 // remove added p tags
 remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );
-remove_filter ('acf_the_content', 'wpautop');
 
 // image sizes for portfolio
 add_image_size( 'portfolio_small', 550, 550, false );
