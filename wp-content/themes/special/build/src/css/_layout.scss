@@ -110,7 +110,7 @@ ol {
               box-sizing:border-box;
       width:1.95em;
       margin-right:8px;
-      padding:.2em .2em .2em .25em;
+      padding:.25em;
       content:counter(li);
       counter-increment:li;
       text-align:center;
@@ -1421,9 +1421,6 @@ embed, iframe, object, audio {
     width:65%;
     margin:0 1% 0 375px;
   }
-  ol > li:before {
-    padding:.12em;
-  }
   //headroom
   .animated {
     -webkit-animation-duration:.5s;
@@ -1545,6 +1542,11 @@ embed, iframe, object, audio {
   .entry-content img.iphone-example {
     max-width:80%;
     margin:0;
+  }
+  ol > li {
+    &:before {
+      padding:.20em;
+    }
   }
 }
 
