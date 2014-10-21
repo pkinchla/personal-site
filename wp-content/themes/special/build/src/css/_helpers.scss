@@ -12,7 +12,6 @@ $black:#000;
 $selection-color:#ffb7b7;
 
 
-
 // clear fixin
 %clearfix:before, %clearfix:after {
   display:table;
@@ -25,8 +24,18 @@ $selection-color:#ffb7b7;
 
 %link-reset {
   text-decoration:none;
+  border:none;
   &:hover {
     text-decoration:none;
+    border:none;
+  }
+  &:active {
+    text-decoration:none;
+    border:none;
+  }
+  &:visited {
+    text-decoration:none;
+    border:none;
   }
 }
 %relative {
