@@ -802,7 +802,6 @@ a {
     background:rgba(255, 255, 255, .75);
   }
   h2 {
-    font:700 normal 2.3em futura-pt, Arial, sans-serif;
     line-height:1;
     color:$dark-blue;
     text-shadow:0 -1px 0 rgba(255, 255, 255, .75);
@@ -946,19 +945,22 @@ a {
       @include transition(all, .3s, ease-out);
     }
     .title {
-      font-family:futura-pt, Arial, sans-serif;
-      font-size:1.70em;
+      font:700 normal 1.7em futura-pt, Arial, sans-serif;
       z-index:2;
-      top:45%;
+      top:40%;
       display:none;
       width:100%;
       color:white;
 
       @extend %absolute;
     }
+    b {
+      @extend %block;
+      font:400 italic .875em/1 futura-pt, Arial, sans-serif;
+    }
     &:hover {
       img {
-        opacity:.1;
+        opacity:.05;
       }
       .title {
         @extend %block;
