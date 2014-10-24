@@ -43,8 +43,8 @@ get_header(); ?>
                   <li class="col-third">
                     <a class="portfolio-link" href="<?php the_permalink(); ?>">
                       <span class="title"><?php the_title(); ?><b><?php the_excerpt(); ?></b></span>  
-                      <img src="<?php echo $large; ?>"
-                        srcset="<?php echo $large; ?> 1100w, <?php echo $large; ?> 800w, <?php echo $large; ?> 550w"
+                      <img src="<?php echo $small; ?>"
+                        srcset="<?php echo $large; ?> 1100w, <?php echo $medium; ?> 800w, <?php echo $small; ?> 550w"
                         sizes="(min-width: 52em) 33vw, 100vw "alt="<?php echo $alt ?>" 
                       />
                     </a>
