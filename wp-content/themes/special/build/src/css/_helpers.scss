@@ -24,18 +24,18 @@ $selection-color:#ffb7b7;
 
 %link-reset {
   text-decoration:none;
-  border:none;
+  border-bottom:none;
   &:hover {
     text-decoration:none;
-    border:none;
+    border-bottom:0;
   }
   &:active {
     text-decoration:none;
-    border:none;
+    border-bottom:0;
   }
   &:visited {
     text-decoration:none;
-    border:none;
+    border-bottom:0;
   }
 }
 %relative {
