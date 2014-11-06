@@ -145,6 +145,9 @@ function special_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'special_scripts' );
 
+// flickr feed include for shortcode
+require( get_template_directory() . '/flickr-feed.php' );
+
 // enqueue typekit
 function theme_typekit() {
     wp_enqueue_script( 'theme_typekit', '//use.typekit.net/ltt0nnt.js');
@@ -173,22 +176,6 @@ remove_filter( 'the_excerpt', 'wpautop' );
 add_image_size( 'portfolio_small', 550, 550, false );
 add_image_size( 'portfolio_medium', 800, 800, false );
 add_image_size( 'portfolio_large', 1300, 1300, false );
-
-
-/* flickr stream */
-//Function: Get flickr media and display based on user id
-function getFlickrPhotos($id, $limit=1) {
-    require_once("phpFlickr-3.1/phpFlickr.php");
-    $f = new phpFlickr("d93fb719daf226cd7f73f47c6e5c3bf8");
-    $id = ('120749958@N08');
-    $photos = $f->people_getPublicPhotos($id, NULL, NULL, 1);
-      foreach ($photos['photos']['photo'] as $photo) {
-        return '<figure class="flickr-stream"><a target="_blank" href="' . $f->buildPhotoURL($photo, 'small') . '" title="' . $photo['title'] . '"><img src="'. $f->buildPhotoURL($photo, 'small') .'" srcset="'.$f->buildPhotoURL($photo, 'large').' 930w, '.$f->buildPhotoURL($photo, 'medium').' 480w, '.$f->buildPhotoURL($photo, 'small').' 230w" sizes="(min-width: 45.25em) 75.75vw, 88.8vw" alt="' . $photo['title'] . '" title="' . $photo['title'] . '" /></a></figure>';
-    }
-} 
-
-// short code for flickr stream
-add_shortcode( 'flickr', 'getFlickrPhotos');
 
 /* google analytics in footer */
 add_action('wp_footer', 'add_googleanalytics');
