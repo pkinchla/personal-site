@@ -1531,38 +1531,3 @@ embed, iframe, object, audio {
     }
   }
 }
-
-@media only screen and (min-width:135em) {
-  .hero {
-    float:left;
-    width:70%;
-  }
-  .site-main {
-    width:52.99%;
-    margin-right:0;
-  }
-  .site-content {
-    padding-right:5%;
-  }
-  .site-info {
-    width:100%;
-    margin:0 auto;
-  }
-  .site-footer {
-    position:fixed;
-    right:0;
-    float:left;
-    clear:none;
-    width:22%;
-    height:100%;
-    padding:1em 4% 0 4%;
-    border-left:1px solid #ccc;
-  }
-
-  .footer-col1, .footer-col2 {
-    float:none;
-    width:100%;
-    margin:1.5em auto;
-    padding:0;
-  }
-}
