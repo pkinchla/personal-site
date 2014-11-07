@@ -886,6 +886,7 @@ window.matchMedia || (window.matchMedia = function() {
 
 // jquery anystretch hero images for pages that cannot have a featured image
     $('.error404 .hero').anystretch("/wp-content/themes/special/images/max.gif", {speed: 500});
+    $('.author .hero').anystretch("/wp-content/themes/special/images/pencil.jpg", {speed: 500});
     $('.hero').anystretch("", {speed: 500});
     
 // toggle content button
