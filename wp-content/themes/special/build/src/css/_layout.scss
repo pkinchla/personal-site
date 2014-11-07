@@ -86,6 +86,7 @@ ol ol, ul ol {
   margin-left:1.5em;
 }
 
+//http://www.456bereastreet.com/archive/201105/styling_ordered_list_numbers/
 ol {
   margin-left:0;
   padding-left:0;
@@ -121,8 +122,6 @@ ol {
     }
   }
 }
-
-//Fancy ordered Lists http://www.456bereastreet.com/archive/201105/styling_ordered_list_numbers/
 
 li {
   ol, ul {
@@ -1383,7 +1382,6 @@ embed, iframe, object, audio {
   }
   .hero {
     width:100%;
-    height:200px;
     border-bottom:3px solid rgba(33, 33, 33, .15);
     .content {
       float:left;
