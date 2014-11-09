@@ -149,17 +149,20 @@ add_action( 'wp_enqueue_scripts', 'special_scripts' );
 require( get_template_directory() . '/flickr-feed.php' );
 
 // enqueue typekit
-function theme_typekit() {
-    wp_enqueue_script( 'theme_typekit', '//use.typekit.net/ltt0nnt.js');
-}
-add_action( 'wp_enqueue_scripts', 'theme_typekit' );
+add_action('wp_head', 'typekit_js');
 
-function theme_typekit_inline() {
-  if ( wp_script_is( 'theme_typekit', 'done' ) ) { ?>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-<?php }
-}
-add_action( 'wp_head', 'theme_typekit_inline' );
+function typekit_js() { ?>
+<script>
+	document.documentElement.className = 'js wf-loading';
+	(function(d) {
+		var config = {
+			kitId: 'ltt0nnt',
+			scriptTimeout: 3000
+		},
+		h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+	})(document);
+</script>
+<?php } 
 
 
 function remove_recent_comments_style() {
