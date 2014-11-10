@@ -879,7 +879,9 @@ window.matchMedia || (window.matchMedia = function() {
 		w.picturefill = picturefill;
 	}
 
-} )( this, this.document );;// js body class for javascript disabled browsers
+} )( this, this.document );;  $ = jQuery.noConflict(true);
+  
+  // js body class for javascript disabled browsers  
   $('body').addClass('js-enabled');
 
   $(document).ready(function() {
@@ -966,4 +968,4 @@ window.matchMedia || (window.matchMedia = function() {
     window.location = link;
   });
 
-   });
+});
