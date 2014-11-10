@@ -104,24 +104,14 @@ function special_widgets_init() {
 }
 add_action( 'widgets_init', 'special_widgets_init' );
 
-
-/**
-* Use latest jQuery release
-*/
-function jquery_scripts() {
-       wp_deregister_script('jquery');
-       wp_register_script('jquery', ("https://code.jquery.com/jquery-1.11.0.min.js"),'','1.11.0', true );
-       wp_enqueue_script('jquery');
-}
-add_action('wp_enqueue_scripts', 'jquery_scripts');
-
-
 /**
  * Enqueue scripts and styles
  */
 function special_scripts() {
 		
 		wp_enqueue_style( 'style', get_stylesheet_uri('style.css') );
+
+		wp_enqueue_script('jquery');
 	
 	if ( WP_DEBUG || SCRIPT_DEBUG ) {
 		wp_enqueue_script( 'grunticon-loader', get_template_directory_uri() . '/build/src/js/grunticon.loader.js', array(), '', true );
