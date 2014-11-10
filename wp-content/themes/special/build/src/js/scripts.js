@@ -1,4 +1,6 @@
-// js body class for javascript disabled browsers
+  $ = jQuery.noConflict(true);
+  
+  // js body class for javascript disabled browsers  
   $('body').addClass('js-enabled');
 
   $(document).ready(function() {
@@ -85,4 +87,4 @@
     window.location = link;
   });
 
-   });
+});
