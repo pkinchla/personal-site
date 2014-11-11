@@ -529,19 +529,7 @@ a {
 
 // Alignment 
 
-.alignleft {
-  display:inline;
-  float:left;
-  margin-right:1.5em;
-}
-
-.alignright {
-  display:inline;
-  float:right;
-  margin-left:1.5em;
-}
-
-.aligncenter {
+.aligncenter, .alignright, .alignleft {
   display:block;
   clear:both;
   margin:0 auto;
@@ -855,6 +843,10 @@ a {
   }
 }
 
+.entry-content {
+  @extend %clearfix;
+}
+
 .entry-content img.iphone-example {
   max-width:250px;
 }
@@ -1114,6 +1106,8 @@ img {
 .wp-caption {
   max-width:100%;
   border:1px solid #ccc;
+  font: 400 italic 1em futura-pt, Arial, sans-serif;
+  color:$dark-blue;
   &.aligncenter, &.alignleft, &.alignright {
     margin-bottom:1.5em;
   }
@@ -1126,10 +1120,8 @@ img {
 
 .wp-caption-text {
   text-align:center;
-}
-
-.wp-caption .wp-caption-text {
-  margin:.8075em 0;
+  width:90%;
+  margin:.8075em auto;
 }
 
 .site-content .gallery {
@@ -1253,6 +1245,17 @@ embed, iframe, object, audio {
         font-size:1.125em;
       }
     }
+  }
+  .alignleft {
+    display:inline;
+    float:left;
+    margin-right:1.5em;
+  }
+
+  .alignright {
+    display:inline;
+    float:right;
+    margin-left:1.5em;
   }
 }
 
