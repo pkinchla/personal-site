@@ -79,7 +79,7 @@ get_header(); ?>
             </div>
             <div class="col-third">    
               <figure class="portfolio-item">
-                <img class="iphone-exmaple" src="<?php echo $medium_rectangle; ?>"/>
+                <img class="iphone-exmaple" src="<?php echo $medium_rectangle; ?>" alt="<?php echo $alt_rectangle ?>" />
               </figure>
             </div>    
           <?php } ?>  
