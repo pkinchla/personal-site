@@ -879,7 +879,7 @@ window.matchMedia || (window.matchMedia = function() {
 		w.picturefill = picturefill;
 	}
 
-} )( this, this.document );;  $ = jQuery.noConflict(true);
+} )( this, this.document );;jQuery(document).ready(function($) {
   
   // js body class for javascript disabled browsers  
   $('body').addClass('js-enabled');
@@ -961,11 +961,5 @@ window.matchMedia || (window.matchMedia = function() {
        }, 1 );
      });
 
-   // fix for touch events for portfolio list links
-   $('.portfolio-link').on('click touchend', function(e) {
-    var el = $(this);
-    var link = el.attr('href');
-    window.location = link;
   });
-
 });

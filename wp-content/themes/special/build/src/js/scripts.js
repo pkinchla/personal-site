@@ -1,4 +1,4 @@
-  $ = jQuery.noConflict(true);
+jQuery(document).ready(function($) {
   
   // js body class for javascript disabled browsers  
   $('body').addClass('js-enabled');
@@ -80,11 +80,5 @@
        }, 1 );
      });
 
-   // fix for touch events for portfolio list links
-   $('.portfolio-link').on('click touchend', function(e) {
-    var el = $(this);
-    var link = el.attr('href');
-    window.location = link;
   });
-
 });
