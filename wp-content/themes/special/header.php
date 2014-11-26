@@ -49,18 +49,20 @@
   		</ul>
   	</div>
 	</header><!-- #masthead .site-header -->
-    <?php if (has_post_thumbnail()) {
-      $feat_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail_name');
-       }
-     ?>
     <div class="hero"<?php 
         if (has_post_thumbnail()) {
-           echo 'data-stretch="'.$feat_image[0].'"';
+           $feat_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail_name');
+           echo ' data-stretch="'.$feat_image[0].'"';
         }
         else {
           echo '';
+        } 
+          echo '>'  . "\n";
+        if (is_front_page()) { 
+          echo '<div class="content">
+          <h2>Something <span>Clever</span></h2>
+          </div>' . "\n";
         }
-      ?>"> 
-      <?php if (is_front_page()) { echo '<div class="content"><h2>Something <span>Clever</span></h2></div>';}?>
+      ?>
     </div>
   <div id="main" class="site-main">   
