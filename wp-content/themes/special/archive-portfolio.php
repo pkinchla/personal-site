@@ -5,7 +5,15 @@
  */
 
 // vars
- $copy = get_field('copy');
+$copy = get_field('copy');
+
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$loop = new WP_Query( array(
+'post_type' => 'Portfolio',
+'posts_per_page' => 24,
+'orderby' => 'menu_order',
+'paged'=>$paged,
+));
 
 get_header(); ?>
 
@@ -14,7 +22,6 @@ get_header(); ?>
 			  <h1 class="entry-title"><?php the_title(); ?></h1>
 			   <section>
   			 <ul class="portfolio-list">
-         <?php $loop = new WP_Query( array( 'post_type' => 'Portfolio', 'posts_per_page' => 20 ) ); ?>
 
               <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                 
