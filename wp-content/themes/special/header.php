@@ -53,7 +53,14 @@
       $feat_image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail_name');
        }
      ?>
-    <div class="hero" data-stretch="<?php echo $feat_image[0]; ?>"> 
+    <div class="hero"<?php 
+        if (has_post_thumbnail()) {
+           echo 'data-stretch="'.$feat_image[0].'"';
+        }
+        else {
+          echo '';
+        }
+      ?>"> 
       <?php if (is_front_page()) { echo '<div class="content"><h2>Something <span>Clever</span></h2></div>';}?>
     </div>
   <div id="main" class="site-main">   
