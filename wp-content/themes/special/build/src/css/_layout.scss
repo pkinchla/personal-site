@@ -937,9 +937,7 @@ a {
   }
   a {
     @extend %link-reset;
-    @extend %relative;
     @extend %block;
-    @extend %text-center;
 
     padding:0;
     background:rgba(33,33,33,.85);
@@ -950,12 +948,14 @@ a {
     .title {
       @extend %absolute;
 
-      font:700 normal 1.7em futura-pt, Arial, sans-serif;
+      font:700 normal 1em futura-pt, Arial, sans-serif;
       z-index:2;
       top:40%;
       display:none;
-      width:100%;
+      max-width:90%;
       color:white;
+      padding-left: 1em;
+
     }
     b {
       @extend %block;
@@ -1190,7 +1190,6 @@ embed, iframe, object, audio {
 }
 
 //Queries of Media
-
 @media only screen and (min-width:724px) {
   [class*='col-'] {
     float:left;
@@ -1238,13 +1237,6 @@ embed, iframe, object, audio {
   }
   #url {
     margin-left:.5%;
-  }
-  .portfolio-list {
-    a {
-      .title {
-        font-size:1.125em;
-      }
-    }
   }
   .alignleft {
     display:inline;
