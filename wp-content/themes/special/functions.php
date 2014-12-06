@@ -115,7 +115,7 @@ add_filter( 'clean_url', function( $url )
         return $url;
     }
     // Must be a ', not "!
-    return "$url' async='true";
+    return "$url' defer='defer";
 }, 11, 1 );
 
 
