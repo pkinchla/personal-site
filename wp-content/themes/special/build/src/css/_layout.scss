@@ -791,24 +791,6 @@ a {
   @extend %background-svg;
 }
 
-.hero {
-  .content {
-    float:right;
-    width:65%;
-    margin:0 auto;
-    padding:15px 2% 20px 3%;
-    background:rgba(255, 255, 255, .75);
-  }
-  h2 {
-    line-height:1;
-    color:$dark-blue;
-    text-shadow:0 -1px 0 rgba(255, 255, 255, .75);
-    span {
-      display:block;
-    }
-  }
-}
-
 //main content
 
 .site-main {
@@ -1383,18 +1365,6 @@ embed, iframe, object, audio {
   .hero {
     width:100%;
     border-bottom:3px solid rgba(33, 33, 33, .15);
-    .content {
-      float:left;
-      width:25%;
-      margin:0 1% 0 455px;
-      padding:20px 5%;
-      h2 {
-        font-size:3em;
-        span {
-          font-size:.5em;
-        }
-      }
-    }
   }
   .site-main {
     float:left;
@@ -1506,12 +1476,6 @@ embed, iframe, object, audio {
   }
   .hero {
     height:400px;
-    .content {
-      margin:100px 1% 0 495px;
-      h2 {
-        font-size:3.5em;
-      }
-    }
   }
   .site-content p {
     max-width:37.5em;
