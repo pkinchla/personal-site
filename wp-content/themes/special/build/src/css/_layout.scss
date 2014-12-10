@@ -462,13 +462,13 @@ textarea {
 a {
   padding-bottom:.1em;
   text-decoration:none;
-  color:#009e77;
+  color:$green;
   &:visited {
-    color:#19775f;
+    color:$green-dark;
   }
   &:hover, &:focus, &:active {
-    color:#009e77;
-    border-bottom:2px dotted #009e77;
+    color:$green;
+    border-bottom:2px dotted $green;
   }
 }
 
@@ -497,24 +497,21 @@ a {
   font:700 normal 1em futura-pt,Arial,sans-serif;
   display:inline-block;
   margin:1em 0;
-  padding:.25em .8em .25em .8em;
-  color:rgba(0, 0, 0, .8);
-  border:1px solid #ccc;
-  border-color:#ccc #ccc #bbb #ccc;
+  color:$white;
+  padding:.35em 1em .35em 1em;
   border-radius:5px;
-  background:rgba(110, 128, 147, .45);
+  background:$green;
   &:hover {
-    background:rgba(120, 152, 183, .75);
+    background:$green-dark;
   }
   &:visited, &:hover, &:focus, &:active {
-    color:rgba(0, 0, 0, .8);
-    border:1px solid #bbb;
+    color:$white;
+    border:darken($green, 50%);
   }
   a {
-    color:rgba(0, 0, 0, .8);
     border-bottom:none;
     &:visited, &:hover, &:focus, &:active {
-      color:rgba(0, 0, 0, .8);
+      color:$white;
       border-bottom:none;
     }
   }
