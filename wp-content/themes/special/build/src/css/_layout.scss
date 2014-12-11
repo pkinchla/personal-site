@@ -66,7 +66,7 @@ hr {
 //Text elements 
 
 .js.wf-loading * {
-  visibility: hidden
+  visibility:hidden;
 }
 
 p {
@@ -497,8 +497,8 @@ a {
   font:700 normal 1em futura-pt,Arial,sans-serif;
   display:inline-block;
   margin:1em 0;
-  color:$white;
   padding:.35em 1em .35em 1em;
+  color:$white;
   border-radius:5px;
   background:$green;
   &:hover {
@@ -515,6 +515,40 @@ a {
       border-bottom:none;
     }
   }
+}
+
+//page progress 
+.page-progress {
+  /* Positioning */
+  position:fixed;
+  bottom:0;
+  left:0;
+  /* Dimensions */
+  width:100%;
+  height:.5em;
+  /* Progress bar value for IE10+ */
+  color:$green;
+  /* Get rid of the default border in Firefox/Opera. */
+  border:none;
+  /* Progress bar container for Firefox/IE10+ */
+  background-color:transparent;
+  /* Reset the appearance */
+
+  -webkit-appearance:none;
+     -moz-appearance:none;
+          appearance:none;
+}
+
+.page-progress::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+.page-progress::-webkit-progress-value {
+  background-color: $green;
+}
+
+.page-progress::-moz-progress-bar {
+  background-color: $green; 
 }
 
 //for javascript enabled browsers
@@ -932,9 +966,8 @@ a {
       top:40%;
       display:none;
       max-width:90%;
+      padding-left:1em;
       color:white;
-      padding-left: 1em;
-
     }
     b {
       @extend %block;
@@ -1083,10 +1116,10 @@ img {
 }
 
 .wp-caption {
+  font:400 italic 1em futura-pt, Arial, sans-serif;
   max-width:100%;
-  border:1px solid #ccc;
-  font: 400 italic 1em futura-pt, Arial, sans-serif;
   color:$dark-blue;
+  border:1px solid #ccc;
   &.aligncenter, &.alignleft, &.alignright {
     margin-bottom:1.5em;
   }
@@ -1098,9 +1131,9 @@ img {
 }
 
 .wp-caption-text {
-  text-align:center;
   width:90%;
   margin:.8075em auto;
+  text-align:center;
 }
 
 .site-content .gallery {

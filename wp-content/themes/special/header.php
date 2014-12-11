@@ -27,6 +27,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<progress value="0" class="page-progress"></progress>  
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header animated" role="banner">
