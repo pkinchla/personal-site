@@ -15,6 +15,10 @@ My personal site. Not intended for distribution.
 - https://github.com/WickyNilliams/headroom.js
 - http://www.grumpicon.com/
 
+#### JQuery for Reading Progress
+
+- http://css-tricks.com/reading-position-indicator/
+
 ### The MIT License (MIT)
 
 Copyright (c) 2014 Paul Kinchla
