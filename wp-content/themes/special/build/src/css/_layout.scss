@@ -1504,14 +1504,20 @@ embed, iframe, object, audio {
   body {
     font-size:1.25em;
   }
+  .site-title {
+    font-size:1.5em;
+  }
   .hero {
     height:400px;
   }
-  .site-content p {
-    max-width:37.5em;
+  .site-content{
+    max-width: 65em;
+    p {
+      max-width:37.5em;
+    }
   }
-  .site-title {
-    font-size:1.5em;
+  .site-info {
+    max-width: 65em;
   }
   .entry-content img.iphone-example {
     max-width:80%;
