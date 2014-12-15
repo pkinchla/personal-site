@@ -976,7 +976,8 @@ a {
     }
     &:hover {
       img {
-        opacity:.05;
+        opacity:.1;
+        @include filter(blur,5px);
       }
       .title {
         @extend %block;
