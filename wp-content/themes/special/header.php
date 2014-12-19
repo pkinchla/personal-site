@@ -9,7 +9,6 @@
  */
 ?>
 <!DOCTYPE html>
-<!-- psst, if you want to take a closer look at the code that powers this site take a look at the repo here https://github.com/wbp-paulk/mothership -->
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
