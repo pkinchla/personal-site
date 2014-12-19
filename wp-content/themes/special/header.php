@@ -17,7 +17,6 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico?=v2" type="image/x-icon" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<meta name="google-site-verification" content="NgzPbjF9JgfD5TItR2dFVwE70g0CN2XOMSnfNgstCtM" />
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js" type="text/javascript"></script>
