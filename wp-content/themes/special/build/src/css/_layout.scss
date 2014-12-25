@@ -14,7 +14,7 @@ body {
 }
 
 body, button, input, select, textarea {
-  font-family:skolar, Georgia, serif;
+  font-family:Georgia, serif;
   font-size:1em;
   line-height:1.625;
   color:$body-color;
@@ -805,6 +805,11 @@ a {
   width:100%;
 }
 
+.example-list {
+  @include columns(2, 3%);
+  list-style: inside square;
+}
+
 //hero section
 
 .hero {
@@ -918,7 +923,7 @@ a {
     display:block;
   }
   span {
-    font:normal .75em skolar, Georgia, serif;
+    font:normal .75em Georgia, serif;
     display:inline-block;
   }
   ul {
@@ -1312,6 +1317,9 @@ embed, iframe, object, audio {
   }
   ol > li:before {
     top:5px;
+  }
+  .example-list {
+    @include columns(4, 3%);
   }
 }
 
