@@ -22,7 +22,7 @@ body, button, input, select, textarea {
 
 // Headings 
 h1, h2, h3, h4, h5 {
-  font-family:futura-pt, Arial, sans-serif;
+  font-family:futura-pt, 'Arial Narrow', sans-serif;
   font-weight:700;
   clear:both;
   margin:0;
@@ -106,7 +106,7 @@ ol {
     padding:4px 8px;
     list-style:none;
     &:before {
-      font-family:futura-pt, Arial,sans-serif;
+      font-family:futura-pt,' Aria Narrow',sans-serif;
       font-size:.775em;
       position:absolute;
       top:7px;
@@ -143,7 +143,7 @@ b, strong {
 }
 
 dfn, cite, em, i {
-  font:italic 1em futura-pt, Arial, sans-serif;
+  font:italic 1em futura-pt, 'Arial Narrow', sans-serif;
   font-size:1.1em;
 }
 
@@ -232,13 +232,13 @@ table {
   width:100%;
   margin:0 0 1.5em;
   caption {
-    font:700 italic 1.5625em futura-pt, Arial, sans-serif;
+    font:700 italic 1.5625em futura-pt, 'Arial Narrow', sans-serif;
     margin-left:15%;
   }
 }
 
 th {
-  font-family:futura-pt, Arial, sans-serif;
+  font-family:futura-pt, 'Arial Narrow', sans-serif;
   font-weight:700;
   width:20%;
   text-align:center;
@@ -277,7 +277,7 @@ tfoot {
     background:rgba(120, 152, 183, .15);
   }
   span {
-    font:700 italic .875em futura-pt, Arial, sans-serif;
+    font:700 italic .875em futura-pt, 'Arial Narrow', sans-serif;
     padding:3px 7px;
     border-radius:5px;
     background:rgba(98, 115, 113, .35);
@@ -302,7 +302,7 @@ button, input {
 }
 
 button, html input[type='button'] {
-  font:700 normal .9375em futura-pt, Arial, sans-serif;
+  font:700 normal .9375em futura-pt, 'Arial Narrow', sans-serif;
   // Corrects inability to style clickable 'input' types in iOS 
   line-height:1;
   padding:1.12em 1.5em 1em;
@@ -323,7 +323,7 @@ button, html input[type='button'] {
 
 input {
   &[type='reset'], &[type='submit'] {
-    font:700 normal 1em futura-pt, Arial, sans-serif;
+    font:700 normal 1em futura-pt, 'Arial Narrow', sans-serif;
     // Corrects inability to style clickable 'input' types in iOS 
     line-height:1;
     padding:.35em 1em;
@@ -494,7 +494,7 @@ a {
 .action {
   @include transition(all, .3s, ease);
 
-  font:700 normal 1em futura-pt,Arial,sans-serif;
+  font:700 normal 1em futura-pt',Aria Narrow',sans-serif;
   display:inline-block;
   margin:1em 0;
   padding:.35em 1em .35em 1em;
@@ -604,7 +604,7 @@ a {
 }
 
 .site-title {
-  font:700 italic 1em futura-pt, Arial, sans-serif;
+  font:700 italic 1em futura-pt, 'Arial Narrow', sans-serif;
   line-height:100%;
   position:relative;
   width:100%;
@@ -698,7 +698,7 @@ a {
       @include transition(all, .3s, ease-out);
       @extend %link-reset;
 
-      font:400 normal 1.4375em / 1.2 futura-pt, Arial, sans-serif;
+      font:400 normal 1.4375em / 1.2 futura-pt, 'Arial Narrow', sans-serif;
       display:inline;
       padding:1% 3.47em 1% .869em;
       text-align:center;
@@ -736,7 +736,7 @@ a {
   .menu-toggle {
     @extend %text-center;
 
-    font:700 normal 1em futura-pt, Arial, sans-serif;
+    font:700 normal 1em futura-pt, 'Arial Narrow', sans-serif;
     position:absolute;
     top:10px;
     left:0;
@@ -762,7 +762,7 @@ a {
       border-bottom:3px solid rgba(50, 50, 50, .35);
     }
     a {
-      font:700 normal 1em futura-pt, Arial, sans-serif;
+      font:700 normal 1em futura-pt, 'Arial Narrow', sans-serif;
       display:block;
       padding:10px 0 10px 12px;
       text-decoration:none;
@@ -872,7 +872,7 @@ a {
 //contact block
 
 .contact {
-  font-family:futura-pt, Arial, sans-serif;
+  font-family:futura-pt, 'Arial Narrow', sans-serif;
   margin:0;
   padding:0;
   list-style:none;
@@ -881,7 +881,7 @@ a {
 //category lists
 
 .cat-item {
-  font:400 italic 1em futura-pt, Arial, sans-serif;
+  font:400 italic 1em futura-pt, 'Arial Narrow', sans-serif;
   &:before {
     top:3px;
     padding:.30em .25em;
@@ -900,7 +900,7 @@ a {
      -moz-box-shadow:inset 0 0 10px rgba(33, 33, 33, .05);
           box-shadow:inset 0 0 10px rgba(33, 33, 33, .05);
   dt {
-    font:400 normal 1.6em futura-pt, Arial, sans-serif;
+    font:400 normal 1.6em futura-pt, 'Arial Narrow', sans-serif;
     margin:1.5em 0 .5em 0;
     border-bottom:1px solid rgba(33, 33, 33, .25);
     &:first-child {
@@ -908,11 +908,11 @@ a {
     }
   }
   h4 {
-    font:400 normal 1.25em futura-pt, Arial, sans-serif;
+    font:400 normal 1.25em futura-pt, 'Arial Narrow', sans-serif;
     color:#4a4b4e;
   }
   h5 {
-    font:400 italic 1.125em futura-pt, Arial, sans-serif;
+    font:400 italic 1.125em futura-pt, 'Arial Narrow', sans-serif;
     color:#4a4b4e;
   }
   dd {
@@ -966,7 +966,7 @@ a {
     .title {
       @extend %absolute;
 
-      font:700 normal 1em futura-pt, Arial, sans-serif;
+      font:700 normal 1em futura-pt, 'Arial Narrow', sans-serif;
       z-index:2;
       top:40%;
       display:none;
@@ -977,7 +977,7 @@ a {
     b {
       @extend %block;
 
-      font:400 italic .875em/1 futura-pt, Arial, sans-serif;
+      font:400 italic .875em/1 futura-pt, 'Arial Narrow', sans-serif;
     }
     &:hover {
       img {
@@ -1028,7 +1028,7 @@ a {
 }
 
 .copy {
-  font-family:futura-pt, Arial, sans-serif;
+  font-family:futura-pt, 'Arial Narrow', sans-serif;
   display:block;
   margin-top:1.5em;
 }
@@ -1038,7 +1038,7 @@ a {
 }
 
 .entry-meta {
-  font-family:futura-pt, Arial, sans-serif;
+  font-family:futura-pt, 'Arial Narrow', sans-serif;
   display:inline-block;
   margin-bottom:1.5em;
   padding:.1em .5em;
@@ -1122,7 +1122,7 @@ img {
 }
 
 .wp-caption {
-  font:400 italic 1em futura-pt, Arial, sans-serif;
+  font:400 italic 1em futura-pt, 'Arial Narrow', sans-serif;
   max-width:100%;
   color:$dark-blue;
   border:1px solid #ccc;
@@ -1174,7 +1174,7 @@ embed, iframe, object, audio {
 
 .site-content {
   .site-navigation {
-    font:700 italic 1em futura-pt, arial, sans-serif;
+    font:700 italic 1em futura-pt, 'arial Narrow', sans-serif;
     overflow:hidden;
     margin:0 0 1.5em;
   }
