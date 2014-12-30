@@ -26,7 +26,7 @@
 		
 	</footer><!-- #colophon .site-footer -->
 </div><!-- #page .hfeed .site -->
-    
+<progress value="0" class="page-progress"></progress>     
 <?php wp_footer(); ?>
 </body>
 </html>
