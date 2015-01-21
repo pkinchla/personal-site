@@ -104,21 +104,6 @@ function special_widgets_init() {
 }
 add_action( 'widgets_init', 'special_widgets_init' );
 
-/**
- * Enqueue scripts and styles
- */
-// add defer
-add_filter( 'clean_url', function( $url )
-{
-    if ( FALSE === strpos( $url, '.js' ) )
-    { // not our file
-        return $url;
-    }
-    // Must be a ', not "!
-    return "$url' defer='defer";
-}, 11, 1 );
-
-
 function special_scripts() {
 		
 		wp_enqueue_style( 'style', get_stylesheet_uri('style.css') );
