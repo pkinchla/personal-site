@@ -6,9 +6,9 @@ jQuery(document).ready(function($) {
   $(document).ready(function() {
 
 // jquery anystretch hero images for pages that cannot have a featured image
-    $('.error404 .hero').anystretch("/wp-content/themes/special/images/max.gif", {speed: 500});
-    $('.author .hero').anystretch("/wp-content/themes/special/images/pencil.jpg", {speed: 500});
-    $('.hero').anystretch("", {speed: 500});
+    $('.error404 .hero').anystretch("/wp-content/themes/special/images/max.gif", {speed: 1000});
+    $('.author .hero').anystretch("/wp-content/themes/special/images/pencil.jpg", {speed: 1000});
+    $('.hero').anystretch("", {speed: 1000});
     
 // toggle content button
     // still need to add support for multiple buttons per page at some point.
