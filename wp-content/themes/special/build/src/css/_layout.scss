@@ -966,11 +966,11 @@ a {
       z-index:2;
       top:40%;
       display:none;
-      max-width:90%;
+      max-width:85%;
       padding-left:1em;
       color:white;
     }
-    b {
+    em {
       @extend %block;
 
       font:400 italic .875em/1 futura-pt, 'Arial Narrow', sans-serif;
