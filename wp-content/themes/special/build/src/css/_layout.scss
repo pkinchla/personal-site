@@ -495,7 +495,7 @@ a {
   @include transition(all, .3s, ease);
 
   font:700 normal 1em futura-pt,'Arial Narrow',sans-serif;
-  display:inline-block;
+  @extend %inline-block;
   margin:1em 0;
   padding:.35em 1em .35em 1em;
   color:$white;
@@ -650,12 +650,12 @@ a {
   border-top:1px solid #a2a2a2;
   background:rgba(255, 255, 255, .85);
   li {
-    display:inline-block;
+    @extend %inline-block;
     margin:0 .2em;
     a {
       @include transition(all, .3s, ease-out);
       @extend %link-reset;
-      display:inline-block;
+      @extend %inline-block;
       width:40px;
       height:40px;
       padding:0;
@@ -691,7 +691,7 @@ a {
 .main-navigation {
   float:left;
   li {
-    display:inline-block;
+    @extend %inline-block;
     a {
       @include transition(all, .3s, ease-out);
       @extend %link-reset;
@@ -920,7 +920,7 @@ a {
   }
   span {
     font:normal .75em Georgia, serif;
-    display:inline-block;
+    @extend %inline-block;
   }
   ul {
     margin:0;
@@ -1035,7 +1035,7 @@ a {
 
 .entry-meta {
   font-family:futura-pt, 'Arial Narrow', sans-serif;
-  display:inline-block;
+  @extend %inline-block;
   margin-bottom:1.5em;
   padding:.1em .5em;
   color:white;
@@ -1057,7 +1057,7 @@ a {
 }
 
 .entry-title {
-  display:inline-block;
+  @extend %inline-block;
   width:90%;
   margin-top:.2em;
   margin-bottom:.5em;
@@ -1156,7 +1156,7 @@ img {
 }
 
 audio {
-  display:inline-block;
+  @extend %inline-block;
   width:50%;
 }
 
