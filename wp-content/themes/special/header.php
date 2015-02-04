@@ -27,6 +27,7 @@
 
 <body <?php body_class(); ?>> 
 <div id="page" class="hfeed site">
+  <a class="skip-link assistive-text" href="#content"><?php _e( 'Skip to content', 'paul_kinchla' ); ?></a>
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header animated" role="banner">
   	<div class="wrap-back">

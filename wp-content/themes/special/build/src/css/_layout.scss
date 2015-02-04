@@ -612,6 +612,7 @@ a {
   text-align:left;
   a {
     @include transition(all, .3s, ease);
+    @extend %link-reset;
 
     line-height:100%;
     display:block;
@@ -628,7 +629,6 @@ a {
       content:'';
     }
     &:hover {
-      border-bottom:none;
       background:#ccc;
       background:rgba(33, 33, 33, .15);
     }
@@ -654,8 +654,7 @@ a {
     margin:0 .2em;
     a {
       @include transition(all, .3s, ease-out);
-
-      display:inline-block;
+      @extend %link-reset;
       display:inline-block;
       width:40px;
       height:40px;
@@ -663,7 +662,6 @@ a {
       opacity:.6;
       &:hover {
         opacity:.8;
-        border-bottom:none;
       }
     }
   }
@@ -704,11 +702,10 @@ a {
       text-align:center;
       text-decoration:none;
       color:#4a4b4e;
-    }
-    &:hover > a {
-      border-bottom:none;
-      background:#ccc;
-      background:rgba(33, 33, 33, .15);
+      &:hover {
+        background:#ccc;
+        background:rgba(33, 33, 33, .15);
+      }
     }
     &.current_page_item a, &.current-menu-item a {
       background:#ccc;
