@@ -111,7 +111,6 @@ function special_scripts() {
 		wp_enqueue_script('jquery');
 	
 	if ( WP_DEBUG || SCRIPT_DEBUG ) {
-		wp_enqueue_script( 'grunticon-loader', get_template_directory_uri() . '/build/src/js/grunticon.loader.js', array(), '', true );
 		wp_enqueue_script( 'headroom', get_template_directory_uri() . '/build/src/js/headroom.js', array(), '', true );
 		wp_enqueue_script( 'anystretch', get_template_directory_uri() . '/build/src/js/jquery.anystretch.js', array(), '', true );
 		wp_enqueue_script( 'picturefill', get_template_directory_uri() . '/build/src/js/picturefill.js', array(), '', true );
@@ -135,21 +134,23 @@ add_action( 'wp_enqueue_scripts', 'special_scripts' );
 // flickr feed include for shortcode
 require( get_template_directory() . '/flickr-feed.php' );
 
+// enqueue grunticon
+add_action('wp_head', 'grunticon_loader');
+
+function grunticon_loader() { ?>
+<script>
+	window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),c=function(c){var a=t.document.createElement("link"),s=t.document.getElementsByTagName("script")[0];a.rel="stylesheet",a.href=e[c&&n?0:c?1:2],s.parentNode.insertBefore(a,s)},a=new t.Image;a.onerror=function(){c(!1)},a.onload=function(){c(1===a.width&&1===a.height)},a.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}},grunticon(["/wp-content/themes/special/js/icons.data.svg.css","/wp-content/themes/special/js/icons.data.png.css","/wp-content/themes/special/js/icons.fallback.css"]);
+</script>
+<?php } 
+
 // enqueue typekit
 add_action('wp_head', 'typekit_js');
 
 function typekit_js() { ?>
 <script>
-	document.documentElement.className = 'js wf-loading';
-	(function(d) {
-		var config = {
-			kitId: 'ltt0nnt',
-			scriptTimeout: 3000
-		},
-		h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-	})(document);
+	document.documentElement.className = 'js wf-loading';(function(d) {var config = {kitId: 'ltt0nnt',scriptTimeout: 3000},h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)})(document);
 </script>
-<?php } 
+<?php }
 
 
 function remove_recent_comments_style() {
