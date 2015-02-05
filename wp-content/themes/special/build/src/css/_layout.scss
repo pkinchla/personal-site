@@ -521,7 +521,8 @@ a {
 .page-progress {
   /* Positioning */
   position:fixed;
-  bottom:0;
+  z-index:1;
+  top:0;
   left:0;
   /* Dimensions */
   width:100%;
