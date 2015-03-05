@@ -58,16 +58,11 @@ get_header(); ?>
             </div>
             <div class="col-two-third">		 
               <figure class="portfolio-item">
-                <img src="<?php echo $small_square; ?>"
-                  srcset="<?php echo $large_square; ?> 1300w, <?php echo $medium_square; ?> 800w, <?php echo $small_square; ?> 550w"
-                  sizes="(min-width: 45.25em) 75.75vw, 88.8vw" alt="<?php echo $alt_square ?>" 
-                />
+                <img src="<?php echo $small_square; ?>" srcset="<?php echo $large_square; ?> 1300w, <?php echo $medium_square; ?> 800w, <?php echo $small_square; ?> 550w" sizes="(max-width:52em) 85vw, (min-width: 52em) 40vw" alt="<?php echo $alt_square ?>">
               </figure>
               <?php if ($square_image_optional) { ?>
               <figure class="portfolio-item">
-                <img src="<?php  echo $small_square_opt; ?>"
-                srcset="<?php echo $large_square_opt;?> 1300w, <?php echo $medium_square_opt;?> 800w, <?php echo $small_square_opt;?> 550w"
-                sizes="(min-width: 45.25em) 75.75vw, 88.8vw" alt="<?php echo $alt_square_opt; ?>"
+                <img src="<?php  echo $small_square_opt; ?>" srcset="<?php echo $large_square_opt;?> 1300w, <?php echo $medium_square_opt;?> 800w, <?php echo $small_square_opt;?> 550w" sizes="(max-width:52em) 85vw, (min-width: 52em) 40vw" alt="<?php echo $alt_square_opt; ?>"
               </figure>
               <?php }
                     else { }?>
