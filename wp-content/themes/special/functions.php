@@ -26,13 +26,13 @@ if ( ! function_exists( 'special_setup' ) ) :
  */
 
  /**
-  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
-  *
-  * @since Special 1.0
-  */
+	* Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
+	*
+	* @since Special 1.0
+	*/
  function special_page_menu_args( $args ) {
- 	$args['show_home'] = false;
- 	return $args;
+	$args['show_home'] = false;
+	return $args;
  }
  add_filter( 'wp_page_menu_args', 'special_page_menu_args' );
  
@@ -109,6 +109,11 @@ function special_scripts() {
 		wp_enqueue_style( 'style', get_stylesheet_uri('style.css') );
 
 		wp_enqueue_script('jquery');
+
+	// prettify for posts	
+	if ( is_single()) {
+		wp_enqueue_script('prettify', '//google-code-prettify.googlecode.com/svn/loader/run_prettify.js?&skin=desert', array(), '', false);
+	} 
 	
 	if ( WP_DEBUG || SCRIPT_DEBUG ) {
 		wp_enqueue_script( 'headroom', get_template_directory_uri() . '/build/src/js/headroom.js', array(), '', true );
@@ -154,8 +159,8 @@ function typekit_js() { ?>
 
 
 function remove_recent_comments_style() {
-    global $wp_widget_factory;
-    remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
+		global $wp_widget_factory;
+		remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
 }
 add_action('widgets_init', 'remove_recent_comments_style');
 
@@ -174,13 +179,13 @@ add_action('wp_footer', 'add_googleanalytics');
 function add_googleanalytics() { ?>
 
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-22750130-1', 'paulkinchla.com');
-  ga('send', 'pageview');
+	ga('create', 'UA-22750130-1', 'paulkinchla.com');
+	ga('send', 'pageview');
 
 </script>
 
@@ -193,18 +198,18 @@ function add_googleanalytics() { ?>
 
  /* change logo link and title */
 function my_login_logo_url() {
-    return get_bloginfo( 'url' );
+		return get_bloginfo( 'url' );
 }
 add_filter( 'login_headerurl', 'my_login_logo_url' );
 
 function my_login_logo_url_title() {
-    return 'The Mother Ship';
+		return 'The Mother Ship';
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 /* add stylesheet for login page */
 function my_login_stylesheet() { ?>
-    <link rel="stylesheet" id="custom_wp_admin_css"  href="<?php echo get_bloginfo( 'stylesheet_directory' ) . '/style-login.css'; ?>" type="text/css" media="all" />
+		<link rel="stylesheet" id="custom_wp_admin_css"  href="<?php echo get_bloginfo( 'stylesheet_directory' ) . '/style-login.css'; ?>" type="text/css" media="all" />
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 

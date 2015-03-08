@@ -174,18 +174,11 @@ address {
 }
 
 pre {
-  font-family:'Courier 10 Pitch', Courier, monospace;
-  font-size:1em;
-  line-height:1.6;
-  overflow:auto;
+  overflow:hidden;
   max-width:100%;
-  margin-bottom:1.6em;
-  padding:1.6em;
-  background:#eee;
-}
-
-code, kbd, tt, var {
-  font-family:1em Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+  padding:1em;
+  border:1px solid $selection-color;
+  border-radius:.25em;
 }
 
 abbr, acronym {
