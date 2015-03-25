@@ -1,0 +1,236 @@
+// general structure classes
+.wrapper {
+  @extend %clearfix;
+
+  width:90%;
+  margin:0 auto;
+}
+
+// header
+.site-header {
+  @extend %relative;
+
+  border-bottom:1px solid $dark-blue;
+  &.wrapper {
+    width:inherit;
+  }
+}
+.site-logo {
+  @extend %block;
+  @extend %clearfix;
+
+  padding:1em 1em 1em;
+  background:$light-blue;
+  .logo {
+    height:2em;
+
+    fill:$body-color;
+  }
+}
+// main navigation
+.site-navigation {
+  @extend %clearfix;
+}
+
+.menu {
+  @extend %plain-list;
+  @extend %clearfix;
+  li {
+    font-family:'futura-pt', sans-serif;
+    font-size:1.25em;
+    width:100%;
+    border-bottom:1px solid $dark-blue;
+    background:$white;
+    &:first-child {
+      border-top:1px solid $dark-blue;
+    }
+    &:last-child {
+      border-bottom:0;
+    }
+    a {
+      @extend %block;
+      @extend %link-reset;
+
+      padding:1em 10%;
+      color:$dark-blue;
+      &:hover {
+        color:$white;
+        background:$dark-blue;
+      }
+    }
+  }
+}
+
+// responsive nav styles
+.js .nav-collapse {
+  @extend %block;
+
+  position:absolute;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  zoom:1;
+  max-height:0;
+}
+
+.nav-collapse.opened {
+  max-height:9999px;
+}
+
+.nav-toggle {
+  @extend %link-reset;
+
+  font:700 italic 1.25em 'futura-pt', sans-serif;
+  position:absolute ;
+  top:0;
+  right:0;
+  display:block;
+  width:4.5em;
+  height:1.1em;
+  padding:1.25em 1.25em;
+  -webkit-user-select:none;
+     -moz-user-select:none;
+      -ms-user-select:none;
+          user-select:none;
+  text-transform:uppercase;
+  color:$green;
+  border-left:1px solid $dark-blue;
+  background:$white;
+  &:before {
+    display:block;
+    content:'Menu';
+    text-align:center;
+  }
+}
+
+.nav-toggle.active::before {
+  content:'Close';
+}
+
+// home page specific styles
+.site-content__home {
+  @extend %relative;
+  h1 {
+    @extend %text-center;
+
+    margin-top:30%;
+  }
+}
+.site-content__home__heroimg {
+  @extend %absolute;
+
+  z-index:-5;
+  border-bottom:1px solid $dark-blue;
+}
+@include gs-media(s, min) {
+  .site-logo {
+    .logo {
+      @include gs-span(s, 1);
+    }
+  }
+  .site-content__home {
+    h1 {
+      @include gs-span(s, 1);
+    }
+    .site-content__home__copy {
+      @include gs-span(s, 1, 2);
+      @include clear;
+
+      margin-top:45%;
+    }
+  }
+}
+
+@include gs-media(m, min) {
+  .site-logo {
+    .logo {
+      @include gs-span(m, 1, 2);
+    }
+  }
+  .site-content__home {
+    h1 {
+      @include gs-span(m, 1, 2);
+    }
+    .site-content__home__copy {
+      @include gs-span(m, 1, 3);
+
+      margin-top:50%;
+    }
+  }
+}
+
+@include gs-media(l, min) {
+  .site-content__home {
+    h1 {
+      margin-top:35%;
+    }
+  }
+  // site-header
+  .site-header__banner {
+    @include gs-span(l, 1, 2);
+    position:absolute;
+    z-index:1;
+    border:1px solid $dark-blue;
+    background:$light-blue;
+    @include skewY(15deg);
+    padding-top:5em;
+    margin-top:-5em;
+
+
+    &:before {
+      border-right:1px solid $dark-blue;
+    }
+  }
+  .site-header {
+    border:none;
+    &.wrapper {
+      width:90%;
+      margin:0 auto;
+    }
+    .site-logo {
+      background:inherit;
+      @include skewY(-15deg);
+      .logo {
+        width:100%;
+        margin:1em auto 0 auto;
+      }
+    }
+  }
+  .site-header__navigation {
+    @include skew(-15deg)
+  }
+  .menu {
+    margin:1em 0 4em 0;
+    background:inherit;
+    
+    li {
+      font-family:'futura-pt', sans-serif;
+      font-size:1.55em;
+      text-align:right;
+      border-bottom:inherit;
+      background:inherit;
+      &:first-child {
+        border-top:0;
+      }
+      &:last-child {
+        border-bottom:0;
+      }
+      a {
+        padding:.05em 35% .05em 0;
+        background:inherit;
+      }
+    }
+  }
+  // menu js classes 
+  .js .nav-collapse {
+    position:relative;
+  }
+  .js .nav-collapse.closed {
+    max-height:none;
+  }
+  .nav-toggle {
+    display:none;
+  }
+}
+
+@include gs-media(c, min) {
+}

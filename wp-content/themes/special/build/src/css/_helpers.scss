@@ -11,7 +11,7 @@ $white:#fff;
 $black:#000;
 $selection-color:#ffb7b7;
 $green:#009e77;
-$green-dark:#19775f;
+$dark-green:#19775f;
 
 
 .screen-reader-text {
@@ -48,6 +48,10 @@ $green-dark:#19775f;
 }
 
 %clearfix:after {
+  clear:both;
+}
+
+@mixin clear {
   clear:both;
 }
 
@@ -106,6 +110,21 @@ $green-dark:#19775f;
 
 %texture-bg {
   background:url('images/texture-bg.png');
+}
+
+%nav-link {
+  
+  &:hover {
+    background:rgba(33, 33, 33, 0.15);
+  }
+}
+
+@mixin skew($deg) {
+-webkit-transform:skew($deg);
+   -moz-transform:skew($deg);
+    -ms-transform:skew($deg);
+     -o-transform:skew($deg);
+        transform:skew($deg);
 }
 
 // mixins
