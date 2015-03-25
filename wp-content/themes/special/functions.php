@@ -112,6 +112,7 @@ function special_scripts() {
 		wp_enqueue_script( 'gridset', get_template_directory_uri() . '/build/src/dev-js/gridset-overlay.js', array(), '', true );
 		wp_enqueue_script( 'skip-link', get_template_directory_uri() . '/build/src/js/skip-link-focus-fix.js', array(), '', true );
 		wp_enqueue_script( 'picturefill', get_template_directory_uri() . '/build/src/js/picturefill.js', array(), '', true );
+		wp_enqueue_script( 'responsive-nav', get_template_directory_uri() . '/build/src/js/responsive-nav.js', array(), '', true );
 		wp_enqueue_script( 'scripts', get_template_directory_uri() . '/build/src/js/scripts.js', array(), '', true );
 		wp_enqueue_script( 'livereload', 'http://localhost:35729/livereload.js', '', null, true);
 	} 
@@ -163,6 +164,9 @@ remove_filter( 'the_excerpt', 'wpautop' );
 add_image_size( 'portfolio_small', 550, 550, false );
 add_image_size( 'portfolio_medium', 800, 800, false );
 add_image_size( 'portfolio_large', 1300, 1300, false );
+add_image_size( 'hero_large', 2000, 2000, false );
+add_image_size( 'hero_cinema', 3000, 3000, false );
+add_image_size( 'hero_cinema_large', 3500, 3500, false );
 
 /* google analytics in footer */
 add_action('wp_footer', 'add_googleanalytics');
