@@ -134,6 +134,11 @@ add_action( 'wp_enqueue_scripts', 'special_scripts' );
 // flickr feed include for shortcode
 require( get_template_directory() . '/flickr-feed.php' );
 
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
 // enqueue grunticon
 add_action('wp_head', 'grunticon_loader');
 
@@ -152,9 +157,53 @@ function typekit_js() { ?>
 </script>
 <?php }
 
+// remove added p tags
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
+
+// image sizes for portfolio
+add_image_size( 'portfolio_small', 550, 550, false );
+add_image_size( 'portfolio_medium', 800, 800, false );
+add_image_size( 'portfolio_large', 1300, 1300, false );
+
+/* google analytics in footer */
+add_action('wp_footer', 'add_googleanalytics');
+
+function add_googleanalytics() { ?>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-22750130-1', 'paulkinchla.com');
+	ga('send', 'pageview');
+
+</script>
+
+
+<?php } 
 
 /**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
+* admin login stuff
+*/
 
+ /* change logo link and title */
+function my_login_logo_url() {
+		return get_bloginfo( 'url' );
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+		return 'The Mother Ship';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+/* add stylesheet for login page */
+function my_login_stylesheet() { ?>
+		<link rel="stylesheet" id="custom_wp_admin_css"  href="<?php echo get_bloginfo( 'stylesheet_directory' ) . '/style-login.css'; ?>" type="text/css" media="all" />
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+
+?>

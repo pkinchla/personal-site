@@ -48,15 +48,15 @@ $copy = get_field('copy');
 
 get_header(); ?>
 
-		<div id="primary" class="content-area">
-			<div id="content" class="site-content" role="main">
-			  <h1 class="entry-title"><?php the_title(); ?></h1>
-			   <section>
+    <div id="primary" class="content-area">
+      <main id="content" class="site-content" role="main">
+        <h1 class="entry-title"><?php the_title(); ?></h1>
+         <section>
           <?php if ($main_image_square) { ?>
             <div class="col-third">
               <?php echo $copy; ?>
             </div>
-            <div class="col-two-third">		 
+            <div class="col-two-third">    
               <figure class="portfolio-item">
                 <img src="<?php echo $small_square; ?>" srcset="<?php echo $large_square; ?> 1300w, <?php echo $medium_square; ?> 800w, <?php echo $small_square; ?> 550w" sizes="(max-width:52em) 85vw, (min-width: 52em) 40vw" alt="<?php echo $alt_square ?>">
               </figure>
@@ -79,8 +79,8 @@ get_header(); ?>
             </div>    
           <?php } ?>  
         </section>
-			</div><!-- #content .site-content -->
-		</div><!-- #primary .content-area -->
+      </main><!-- #content .site-content -->
+    </div><!-- #primary .content-area -->
 
 
 <?php get_footer(); ?>

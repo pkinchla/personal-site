@@ -17,11 +17,11 @@ $loop = new WP_Query( array(
 
 get_header(); ?>
 
-		<div id="primary" class="content-area">
-			<div id="content" class="site-content" role="main">
-			  <h1 class="entry-title"><?php the_title(); ?></h1>
-			   <section>
-  			 <ul class="portfolio-list">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <h1 class="entry-title"><?php the_title(); ?></h1>
+         <section>
+         <ul class="portfolio-list">
               <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                 
                   <?php $list_image = get_field('list_image'); 
@@ -56,8 +56,8 @@ get_header(); ?>
             </ul>
         </section>
         <?php echo $copy; ?>
-			</div><!-- #content .site-content -->
-		</div><!-- #primary .content-area -->
+    </main><!-- #main -->
+  </div><!-- #primary -->
 
-
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
