@@ -116,14 +116,13 @@ function special_scripts() {
 	} 
 	
 	if ( WP_DEBUG || SCRIPT_DEBUG ) {
-		wp_enqueue_script( 'headroom', get_template_directory_uri() . '/build/src/js/headroom.js', array(), '', true );
-		wp_enqueue_script( 'anystretch', get_template_directory_uri() . '/build/src/js/jquery.anystretch.js', array(), '', true );
+		wp_enqueue_script( 'gridset', get_template_directory_uri() . '/build/src/dev-js/gridset-overlay.js', array(), '', true );
 		wp_enqueue_script( 'picturefill', get_template_directory_uri() . '/build/src/js/picturefill.js', array(), '', true );
 		wp_enqueue_script( 'scripts', get_template_directory_uri() . '/build/src/js/scripts.js', array(), '', true );
 		wp_enqueue_script( 'livereload', 'http://localhost:35729/livereload.js', '', null, true);
 	} 
 	else {
-		wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/built.min.js', array( 'jquery' ), '1', true );
+		wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/built.min.js', array(), '1', true );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -138,15 +137,6 @@ add_action( 'wp_enqueue_scripts', 'special_scripts' );
 
 // flickr feed include for shortcode
 require( get_template_directory() . '/flickr-feed.php' );
-
-// enqueue grunticon
-add_action('wp_head', 'grunticon_loader');
-
-function grunticon_loader() { ?>
-<script>
-	window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),c=function(c){var a=t.document.createElement("link"),s=t.document.getElementsByTagName("script")[0];a.rel="stylesheet",a.href=e[c&&n?0:c?1:2],s.parentNode.insertBefore(a,s)},a=new t.Image;a.onerror=function(){c(!1)},a.onload=function(){c(1===a.width&&1===a.height)},a.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}},grunticon(["/wp-content/themes/special/js/icons.data.svg.css","/wp-content/themes/special/js/icons.data.png.css","/wp-content/themes/special/js/icons.fallback.css"]);
-</script>
-<?php } 
 
 // enqueue typekit
 add_action('wp_head', 'typekit_js');

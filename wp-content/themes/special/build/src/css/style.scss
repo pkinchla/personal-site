@@ -2,5 +2,7 @@
 @import "normalize";
 // ----- settings ----- //
 @import "helpers";
-// ----- element styling ----- //
+// ----- grid mixins ----- //
+@import "gridset";
+// ----- layout and design ----- //
 @import "layout";
