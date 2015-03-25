@@ -2,19 +2,26 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package Special
- * @since Special 1.0
+ * @package special
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'special' ), 'after' => '</div>' ) ); ?>
-		<?php edit_post_link( __( 'Edit', 'special' ), '<span class="edit-link action">', '</span>' ); ?>
+		<?php
+			wp_link_pages( array(
+				'before' => '<div class="page-links">' . __( 'Pages:', 'special' ),
+				'after'  => '</div>',
+			) );
+		?>
 	</div><!-- .entry-content -->
-</article><!-- #post-<?php the_ID(); ?> -->
+
+	<footer class="entry-footer">
+		<?php edit_post_link( __( 'Edit', 'special' ), '<span class="edit-link">', '</span>' ); ?>
+	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->

@@ -1,32 +1,32 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * The template for displaying all single posts.
  *
- * @package Special
- * @since Special 1.0
+ * @package special
  */
 
 get_header(); ?>
 
-		<div id="primary" class="content-area">
-			<div id="content" class="site-content" role="main">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
-        
-				<?php get_template_part( 'content', 'single' ); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php special_content_nav( 'nav-below' ); ?>
+			<?php get_template_part( 'content', 'single' ); ?>
 
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() )
-						comments_template( '', true );
-				?>
+			<?php the_post_navigation(); ?>
 
-			<?php endwhile; // end of the loop. ?>
+			<?php
+				// If comments are open or we have at least one comment, load up the comment template
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+			?>
 
-			</div><!-- #content .site-content -->
-		</div><!-- #primary .content-area -->
+		<?php endwhile; // end of the loop. ?>
 
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

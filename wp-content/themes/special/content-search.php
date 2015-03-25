@@ -1,5 +1,9 @@
 <?php
 /**
+ * The template part for displaying results in search pages.
+ *
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
  * @package special
  */
 ?>
@@ -15,22 +19,9 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
-		<?php
-			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'special' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-		?>
-
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'special' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+	<div class="entry-summary">
+		<?php the_excerpt(); ?>
+	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
 		<?php special_entry_footer(); ?>

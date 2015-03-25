@@ -1,8 +1,10 @@
-// ----- reset ----- //
-@import "normalize";
-// ----- settings ----- //
-@import "helpers";
 // ----- grid mixins ----- //
 @import "gridset";
+// ----- settings ----- //
+@import "helpers";
+// ----- reset ----- //
+@import "normalize";
+// ----- _s' base ----- //
+@import "base";
 // ----- layout and design ----- //
 @import "layout";
