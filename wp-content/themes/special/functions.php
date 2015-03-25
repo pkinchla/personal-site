@@ -103,8 +103,6 @@ function special_scripts() {
 		
 		wp_enqueue_style( 'style', get_stylesheet_uri('style.css') );
 
-		wp_enqueue_script('jquery');
-
 	// prettify for posts	
 	if ( is_single()) {
 		wp_enqueue_script('prettify', '//google-code-prettify.googlecode.com/svn/loader/run_prettify.js?&skin=desert', array(), '', false);
@@ -118,7 +116,7 @@ function special_scripts() {
 		wp_enqueue_script( 'livereload', 'http://localhost:35729/livereload.js', '', null, true);
 	} 
 	else {
-		wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/built.min.js', array( 'jquery' ), '1', true );
+		wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/built.min.js', array(), '1', true );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
