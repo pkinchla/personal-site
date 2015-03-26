@@ -1,11 +1,3 @@
-// general structure classes
-.wrapper {
-  @extend %clearfix;
-
-  width:90%;
-  margin:0 auto;
-}
-
 // header
 .site-header {
   @extend %relative;
@@ -18,7 +10,8 @@
 .site-logo {
   @extend %block;
   @extend %clearfix;
-
+  @extend %nav-link;
+  @extend %link-reset;
   padding:1em 1em 1em;
   background:$light-blue;
   .logo {
@@ -49,14 +42,11 @@
     }
     a {
       @extend %block;
+      @extend %nav-link;
       @extend %link-reset;
 
-      padding:1em 10%;
-      color:$dark-blue;
-      &:hover {
-        color:$white;
-        background:$dark-blue;
-      }
+      padding:.85em 10%;
+      color:$body-color;
     }
   }
 }
@@ -79,14 +69,13 @@
 .nav-toggle {
   @extend %link-reset;
 
-  font:700 italic 1.25em 'futura-pt', sans-serif;
+  font:700 italic 1em 'futura-pt', sans-serif;
   position:absolute ;
   top:0;
   right:0;
   display:block;
-  width:4.5em;
-  height:1.1em;
-  padding:1.25em 1.25em;
+  width:35%;
+  padding:1.35em 10%;
   -webkit-user-select:none;
      -moz-user-select:none;
       -ms-user-select:none;
@@ -106,6 +95,49 @@
   content:'Close';
 }
 
+.site-footer {
+  margin-top:6em;
+  border-top:1px solid $dark-blue;
+  background:$light-blue;
+  padding-bottom:3em;
+}
+.site-footer__social {
+  @extend %plain-list;
+  @extend %clearfix;
+
+  margin:1.5em 0 1.5em 0;
+  li {
+    float:left;
+    width:25%;
+    a {
+      @extend %block;
+      @extend %text-center;
+      @extend %link-reset;
+      @extend %relative;
+
+      font-family:'futura-pt', sans-serif;
+      padding-bottom:1em;
+      svg {
+        @extend %block;
+
+        fill:$green;
+      }
+      &:hover {
+        color:$white;
+        background:$dark-blue;
+        svg {
+          fill:$white;
+        }
+      }
+    }
+  }
+}
+.site-footer__colophon {
+  small {
+    font-family: 'futura-pt', sans-serif;
+  }
+}
+
 // home page specific styles
 .site-content__home {
   @extend %relative;
@@ -121,6 +153,12 @@
   z-index:-5;
   border-bottom:1px solid $dark-blue;
 }
+@include gs-media(s, min-max) {
+  ul, ol {
+    margin-left:1.15em;
+  }
+}
+
 @include gs-media(s, min) {
   .site-logo {
     .logo {
@@ -141,41 +179,56 @@
 }
 
 @include gs-media(m, min) {
+  // base 
+  h1 {
+    font-size:2.625em;
+  }
+  // header
   .site-logo {
     .logo {
       @include gs-span(m, 1, 2);
     }
   }
+  // footer
+  .site-footer__social {
+    @include gs-span(m, 1, 2);
+  }
+  .site-footer__colophon {
+    @include gs-span(m, 1, 2);
+    @include clear;
+  }
+  // home page
+
   .site-content__home {
     h1 {
       @include gs-span(m, 1, 2);
     }
     .site-content__home__copy {
-      @include gs-span(m, 1, 3);
+      @include gs-span(m, 1, 2);
 
       margin-top:50%;
+    }
+    .site-content__home__blog {
+      @include gs-span(m , 3);
+
+      margin-top:50%;
+      text-align:right;
     }
   }
 }
 
 @include gs-media(l, min) {
-  .site-content__home {
-    h1 {
-      margin-top:35%;
-    }
-  }
   // site-header
   .site-header__banner {
     @include gs-span(l, 1, 2);
+    @include skewY(15deg);
+
     position:absolute;
     z-index:1;
+    margin-top:-5em;
+    padding-top:5em;
     border:1px solid $dark-blue;
     background:$light-blue;
-    @include skewY(15deg);
-    padding-top:5em;
-    margin-top:-5em;
-
-
     &:before {
       border-right:1px solid $dark-blue;
     }
@@ -187,21 +240,22 @@
       margin:0 auto;
     }
     .site-logo {
-      background:inherit;
       @include skewY(-15deg);
+
+      margin-top:-.5%;
       .logo {
         width:100%;
+        height:3em;
         margin:1em auto 0 auto;
       }
     }
   }
   .site-header__navigation {
-    @include skew(-15deg)
+    @include skewY(-15deg);
   }
   .menu {
-    margin:1em 0 4em 0;
+    margin:1em 0 5em 0;
     background:inherit;
-    
     li {
       font-family:'futura-pt', sans-serif;
       font-size:1.55em;
@@ -230,7 +284,61 @@
   .nav-toggle {
     display:none;
   }
+
+  .site-footer__social {
+    @include gs-span(l, 2, 3);
+  }
+  .site-footer__colophon {
+    @include gs-span(l, 5, 6);
+    clear:none;
+    margin-top:3em;
+  }
+  
+  // home page
+  .site-content__home {
+    h1 {
+      margin-top:37.5%;
+    }
+    .site-content__home__copy {
+      @include gs-span(l, 1, 3);
+      @include skew($bg:darken($background-white, 2%), $deg:30deg, $right:-120px, $width: 250px);
+
+      margin-top:inherit;
+      padding:3em 5% 1.5em 5%;
+      background:darken($background-white, 2%);
+    }
+    .site-content__home__blog {
+      @include gs-span(l, 3, 4);
+
+      margin-top:-37.5%;
+    }
+  }
+
 }
 
 @include gs-media(c, min) {
+  body {
+    font-size:1.15em ;
+  }
+  // site-header
+  .site-header__banner {
+    @include gs-span(c, 3, 4);
+  }
+  .site-content__home {
+    h1 {
+      @include gs-span(c, 3, 4);
+
+      margin-top:30%;
+    }
+    .site-content__home__copy {
+      @include gs-span(c, 2, 4);
+      @include skew($bg:darken($background-white, 2%), $deg:15deg, $right:-50px, $width: 250px);
+    }
+    .site-content__home__blog {
+      @include gs-span(c, 4, 5);
+      @include clear;
+
+      margin-top:6em;
+    }
+  }
 }

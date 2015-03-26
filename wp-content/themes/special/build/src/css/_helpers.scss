@@ -22,7 +22,7 @@ $dark-green:#19775f;
   height:1px;
 }
 .screen-reader-text:hover,.screen-reader-text:active, .screen-reader-text:focus {
-  font-size:14px;
+  font-size:.875em;
   font-weight:bold;
   line-height:normal;
   z-index:100000;
@@ -84,6 +84,9 @@ $dark-green:#19775f;
 %block {
   display:block;
 }
+%inline {
+  display:inline;
+}
 %inline-block {
   display:inline-block;
 }
@@ -113,18 +116,25 @@ $dark-green:#19775f;
 }
 
 %nav-link {
-  
   &:hover {
     background:rgba(33, 33, 33, 0.15);
   }
 }
 
-@mixin skew($deg) {
--webkit-transform:skew($deg);
-   -moz-transform:skew($deg);
-    -ms-transform:skew($deg);
-     -o-transform:skew($deg);
-        transform:skew($deg);
+@mixin skewY($deg) {
+-webkit-transform:skewY($deg);
+   -moz-transform:skewY($deg);
+    -ms-transform:skewY($deg);
+     -o-transform:skewY($deg);
+        transform:skewY($deg);
+}
+
+@mixin skewX($deg) {
+-webkit-transform:skewX($deg);
+   -moz-transform:skewX($deg);
+    -ms-transform:skewX($deg);
+     -o-transform:skewX($deg);
+        transform:skewX($deg);
 }
 
 // mixins
@@ -176,4 +186,31 @@ $dark-green:#19775f;
        -moz-box-shadow:$top $left $blur $set $color;
             box-shadow:$top $left $blur $set $color;
   }
+}
+
+
+@mixin skew($side: right, $deg: -20deg, $right: -15px, $left: -15px, $width: 30px, $bg: #fff) {
+    position: relative;
+
+    &:before {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+
+        @if $side == right {
+            right: $right;
+        }
+        @else if $side == left {
+            left: $left;
+        }
+
+        display: block;
+        width: $width;
+        background: $bg;
+        -webkit-transform: skew($deg);
+            -ms-transform: skew($deg);
+                transform: skew($deg);
+    }
 }

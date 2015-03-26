@@ -14,6 +14,14 @@ Text Domain: michaelgwozdz.com
 /*--------------------------------------------------------------
  Typography
 --------------------------------------------------------------*/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
 body, button, input, select, textarea {
   font-family:Georgia, serif;
   line-height:1.625;
@@ -29,26 +37,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size:2.625em;
+  font-size:2em;
   font-weight:800;
   line-height:.975;
   margin:.75em 0;
 }
 
 h2 {
-  font-size:2.25em;
+  font-size:1.875em;
   line-height:1.1;
   margin:0 0 .25em 0;
 }
 
 h3 {
-  font-size:1.45em;
+  font-size:1.775em;
   line-height:1.3;
   margin:0 0 .10em 0;
 }
 
 h4 {
-  font-size:1.20em;
+  font-size:1.5em;
   margin:0;
 }
 
@@ -249,11 +257,10 @@ textarea {
 Links
 --------------------------------------------------------------*/
 a {
-  @include transition(all, .2s, ease-in-out);
-
+  @include transition(all, .2s, ease-in);
   text-decoration:none;
-  text-decoration:underline;
   color:$green;
+  border-bottom:1px dotted $green;
 }
 
 a:visited {
@@ -262,7 +269,8 @@ a:visited {
 
 a:hover, a:focus, a:active {
   text-decoration:none;
-  color:$dark-blue;
+  color:$dark-green;
+  border-bottom:none;
 }
 
 // pagination
@@ -282,9 +290,20 @@ a:hover, a:focus, a:active {
   text-align:right;
 }
 
+.linked-header {
+  @extend %link-reset;
+}
+
+
 /*--------------------------------------------------------------
 Alignments
 --------------------------------------------------------------*/
+.wrapper {
+  @extend %clearfix;
+
+  width:90%;
+  margin:0 auto;
+}
 .alignleft {
   display:inline;
   float:left;
@@ -329,6 +348,16 @@ Posts and pages
 .page-links {
   clear:both;
   margin:0 0 1.5em;
+}
+
+.entry-meta {
+  time {
+    @extend %inline-block;
+    background:$dark-blue;
+    color:$white;
+    padding:.25em 1em;
+    font-family:'futura-pt';
+  }
 }
 
 
