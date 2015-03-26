@@ -138,15 +138,6 @@ require( get_template_directory() . '/flickr-feed.php' );
  */
 require get_template_directory() . '/inc/template-tags.php';
 
-// enqueue grunticon
-add_action('wp_head', 'grunticon_loader');
-
-function grunticon_loader() { ?>
-<script>
-	window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),c=function(c){var a=t.document.createElement("link"),s=t.document.getElementsByTagName("script")[0];a.rel="stylesheet",a.href=e[c&&n?0:c?1:2],s.parentNode.insertBefore(a,s)},a=new t.Image;a.onerror=function(){c(!1)},a.onload=function(){c(1===a.width&&1===a.height)},a.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}},grunticon(["/wp-content/themes/special/js/icons.data.svg.css","/wp-content/themes/special/js/icons.data.png.css","/wp-content/themes/special/js/icons.fallback.css"]);
-</script>
-<?php } 
-
 // enqueue typekit
 add_action('wp_head', 'typekit_js');
 
