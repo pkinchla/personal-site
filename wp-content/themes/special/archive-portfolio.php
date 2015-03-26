@@ -19,8 +19,8 @@ get_header(); ?>
 
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <h1 class="entry-title"><?php the_title(); ?></h1>
-         <section>
+      <div class="wrapper">
+        <h1 class="entry-title"><?php the_title(); ?></h1>
          <ul class="portfolio-list">
               <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                 
@@ -48,14 +48,14 @@ get_header(); ?>
                   
                   <li class="col-third">
                     <a class="portfolio-link" href="<?php the_permalink(); ?>">
-                      <h5 class="title"><?php the_title(); ?> | <em><?php the_excerpt(); ?></em></h5>  
+                      <h4 class="title"><?php the_title(); ?> | <em><?php the_excerpt(); ?></em></h4>  
                       <img src="<?php echo $small; ?>" srcset="<?php echo $large; ?> 1100w, <?php echo $medium; ?> 800w, <?php echo $small; ?> 550w" sizes="(max-width:52em) 85vw, (min-width: 52em) 21.66vw" alt="<?php echo $alt ?>">
                     </a>
                   </li>           
               <?php endwhile; ?>
             </ul>
-        </section>
-        <?php echo $copy; ?>
+        </div>
+      <?php echo $copy; ?>
     </main><!-- #main -->
   </div><!-- #primary -->
 

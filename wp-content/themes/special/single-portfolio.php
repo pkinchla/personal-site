@@ -50,8 +50,8 @@ get_header(); ?>
 
     <div id="primary" class="content-area">
       <main id="content" class="site-content" role="main">
+      <div class="wrapper">
         <h1 class="entry-title"><?php the_title(); ?></h1>
-         <section>
           <?php if ($main_image_square) { ?>
             <div class="col-third">
               <?php echo $copy; ?>
@@ -78,7 +78,7 @@ get_header(); ?>
               </figure>
             </div>    
           <?php } ?>  
-        </section>
+        </div>
       </main><!-- #content .site-content -->
     </div><!-- #primary .content-area -->
 
