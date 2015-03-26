@@ -1,6 +1,6 @@
 # mothership
 
-My personal site. Not intended for distribution.   
+My personal site.
 
 ## Credit Where Credit is Due
 
@@ -9,15 +9,6 @@ My personal site. Not intended for distribution.
 - http://underscores.me
 - https://github.com/automattic/_s
 
-### Plugins
-
-- https://github.com/danmillar/jquery-anystretch  
-- https://github.com/WickyNilliams/headroom.js
-- http://www.grumpicon.com/
-
-#### JQuery for Reading Progress
-
-- http://css-tricks.com/reading-position-indicator/
 
 ### The MIT License (MIT)
 
