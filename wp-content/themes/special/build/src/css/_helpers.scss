@@ -120,7 +120,7 @@ $dark-green:#19775f;
     background:rgba(33, 33, 33, 0.15);
   }
 }
-
+// mixins
 @mixin skewY($deg) {
 -webkit-transform:skewY($deg);
    -moz-transform:skewY($deg);
@@ -136,8 +136,6 @@ $dark-green:#19775f;
      -o-transform:skewX($deg);
         transform:skewX($deg);
 }
-
-// mixins
 
 @mixin transition($transition-property, $transition-time, $method) {
   -webkit-transition:$transition-property $transition-time $method;
@@ -156,9 +154,9 @@ $dark-green:#19775f;
 }
 
 @mixin columns($count, $gap) {
-  -webkit-columns:$count;
-     -moz-columns:$count;
-          columns:$count;
+   -webkit-columns:$count;
+      -moz-columns:$count;
+           columns:$count;
   -webkit-column-gap:$gap;
      -moz-column-gap:$gap;
           column-gap:$gap;
@@ -181,14 +179,13 @@ $dark-green:#19775f;
     -webkit-box-shadow:inset $top $left $blur $set $color;
        -moz-box-shadow:inset $top $left $blur $set $color;
             box-shadow:inset $top $left $blur $set $color;
-  } @else {
+  }
+  @else {
     -webkit-box-shadow:$top $left $blur $set $color;
        -moz-box-shadow:$top $left $blur $set $color;
             box-shadow:$top $left $blur $set $color;
   }
 }
-
-
 @mixin skew($side: right, $deg: -20deg, $right: -15px, $left: -15px, $width: 30px, $bg: #fff) {
     position: relative;
 
