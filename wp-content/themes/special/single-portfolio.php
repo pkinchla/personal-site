@@ -49,35 +49,34 @@ $copy = get_field('copy');
 get_header(); ?>
 
     <div id="primary" class="content-area">
-      <main id="content" class="site-content" role="main">
+      <main id="content" class="site-content__portfolio__single" role="main">
       <div class="wrapper">
         <h1 class="entry-title"><?php the_title(); ?></h1>
-          <?php if ($main_image_square) { ?>
-            <div class="col-third">
+          <?php 
+            if ($main_image_square) { ?>  
+            <section class="portfolio__single__copy--print">
               <?php echo $copy; ?>
-            </div>
-            <div class="col-two-third">    
-              <figure class="portfolio-item">
+            </section>
+            <section class="portfolio__single__image--print">
                 <img src="<?php echo $small_square; ?>" srcset="<?php echo $large_square; ?> 1300w, <?php echo $medium_square; ?> 800w, <?php echo $small_square; ?> 550w" sizes="(max-width:52em) 85vw, (min-width: 52em) 40vw" alt="<?php echo $alt_square ?>">
-              </figure>
               <?php if ($square_image_optional) { ?>
-              <figure class="portfolio-item">
                 <img src="<?php  echo $small_square_opt; ?>" srcset="<?php echo $large_square_opt;?> 1300w, <?php echo $medium_square_opt;?> 800w, <?php echo $small_square_opt;?> 550w" sizes="(max-width:52em) 85vw, (min-width: 52em) 40vw" alt="<?php echo $alt_square_opt; ?>"
-              </figure>
+              
               <?php }
-                    else { }?>
-            </div>
+                     else { }?>
+            </section>
           <?php  } 
-                else { ?>
-            <div class="col-two-third">
+            else { ?>
+            <section class="portfolio__single__copy--phone">
               <?php echo $copy; ?>
-            </div>
-            <div class="col-third">    
-              <figure class="portfolio-item">
-                <img class="iphone-exmaple" src="<?php echo $medium_rectangle; ?>" alt="<?php echo $alt_rectangle ?>" />
-              </figure>
-            </div>    
-          <?php } ?>  
+            </section>
+            <section class="portfolio__single__image--phone">    
+              <img src="<?php echo $medium_rectangle; ?>" alt="<?php echo $alt_rectangle ?>" />
+            </section>   
+          <?php } ?>
+          <div class="back-link">
+            <a href="<?php echo get_page_link(7); ?>">&larr; Back to List</a>
+          </div>
         </div>
       </main><!-- #content .site-content -->
     </div><!-- #primary .content-area -->

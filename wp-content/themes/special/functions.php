@@ -143,10 +143,6 @@ function typekit_js() { ?>
 </script>
 <?php }
 
-// remove added p tags
-remove_filter( 'the_content', 'wpautop' );
-remove_filter( 'the_excerpt', 'wpautop' );
-
 // image sizes for portfolio
 add_image_size( 'portfolio_small', 550, 550, false );
 add_image_size( 'portfolio_medium', 800, 800, false );

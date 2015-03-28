@@ -47,8 +47,8 @@ get_header(); ?>
         <div class="site-content__blog__postlist">
         <?php query_posts( 'posts_per_page=10' ); ?>
           <?php while ( have_posts() ) : the_post(); ?>
+            <h4><a class="linked-header" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
             <div class="entry-meta">
-              <h4><a class="linked-header" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
               <time datetime="<?php the_time('c');?>"><?php the_time('l, F jS, Y') ?></time>
             </div>
           <?php endwhile; // end of the loop. ?>
