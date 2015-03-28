@@ -21,11 +21,19 @@ html {
   box-sizing: inherit;
 }
 
+::selection{
+  background:$selection-color;
+}
+
+::-moz-selection{
+  background:$selection-color;
+}
 
 body, button, input, select, textarea {
   font-family:Georgia, serif;
   line-height:1.625;
   color:$body-color;
+  background:$background-white;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -194,8 +202,9 @@ th {
 4.0 Forms
 --------------------------------------------------------------*/
 button, input, select, textarea {
+  font-family: 'futura-pt', sans-serif;
   font-size:100%; /* Corrects font size not being inherited in all browsers */
-  font-weight:800;
+  font-weight:700;
   margin:0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
   vertical-align:baseline; /* Improves appearance and consistency in all browsers */
 }
@@ -273,7 +282,8 @@ textarea {
 Links
 --------------------------------------------------------------*/
 a {
-  @include transition(all, .2s, ease-in);
+  @include transition(all, .2s, ease-in-out);
+  
   text-decoration:none;
   color:$green;
   border-bottom:1px dotted $green;
@@ -289,10 +299,38 @@ a:hover, a:focus, a:active {
   border-bottom:none;
 }
 
+.action {
+  @extend %link-reset;
+  font: 700 1em 'futura-pt', sans-serif;
+  margin: 1em 0;
+  padding: 0.35em 1em;
+  color: $white;
+  border-radius: 5px;
+  background:$green;
+  &:hover, &:active, &:visited  {
+    color:white;
+  }
+  &:hover {
+    background:darken($green, 10%);
+  }
+}
+
 // pagination
+.nav-links {
+  margin: 0 auto;
+}
 
 .site-main .comment-navigation, .site-main .paging-navigation, .site-main .post-navigation {
-  margin:0 0 1.5em;
+  @extend %clearfix;
+  @include clear;
+  margin:1.5em auto;
+  font-family:'futura-pt', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  width:65%;
+  a {
+    @extend %link-reset;
+  }
 }
 
 .comment-navigation .nav-previous, .paging-navigation .nav-previous, .post-navigation .nav-previous {
@@ -309,6 +347,7 @@ a:hover, a:focus, a:active {
 .linked-header {
   @extend %link-reset;
 }
+
 
 
 /*--------------------------------------------------------------
@@ -367,12 +406,18 @@ Posts and pages
 }
 
 .entry-meta {
-  time {
-    @extend %inline-block;
-    background:$dark-blue;
+  @extend %inline-block;
+  background:$dark-blue;
+  color:$white;
+  padding:.25em 1em;
+  font-family:'futura-pt';
+  a {
+    @extend %link-reset;
     color:$white;
-    padding:.25em 1em;
-    font-family:'futura-pt';
+    &:hover {
+      background:$green;
+      color:white;
+    }
   }
 }
 
@@ -398,6 +443,18 @@ Comments
 .bypostauthor {
   display:block;
 }
+.comment-meta {
+  font-family: 'futura-pt', sans-serif;
+  border-top: 1px solid $dark-blue;
+  padding:.5em 0 1em 0;
+  margin:.5em 0;
+
+}
+.comment-author {
+  img {
+    vertical-align: middle;
+  }
+}
 
 /*--------------------------------------------------------------
 Media
@@ -412,6 +469,10 @@ Media
 /* Make sure embeds and iframes fit their containers */
 embed, iframe, object {
   max-width:100%;
+}
+
+audio {
+  margin-bottom: 1.5em;
 }
 
 /*--------------------------------------------------------------
