@@ -15,13 +15,46 @@ $loop = new WP_Query( array(
 'paged'=>$paged,
 ));
 
+
+$hero_image = get_field('hero_image');
+
+ if( !empty($hero_image)): 
+
+  // vars
+  $url = $hero_image['url'];
+  $title = $hero_image['title'];
+  $alt = $hero_image['alt'];
+  $caption = $hero_image['caption'];
+
+  // image sizes
+  $thumbnail = 'portfolio_small';
+  $small = $hero_image['sizes'][ $thumbnail ];
+
+  $size_medium = 'portfolio_medium';
+  $medium = $hero_image['sizes'][ $size_medium ];
+
+  $size_large = 'portfolio_large';
+  $large = $hero_image['sizes'][ $size_large ];
+  
+  $hero_large = 'hero_large';
+  $hero_small = $hero_image['sizes'][ $hero_large ];
+
+  $hero_cinema = 'hero_cinema';
+  $hero_medium = $hero_image['sizes'][ $hero_cinema ];
+
+  $hero_cinema_large = 'hero_cinema_large';
+  $hero_large = $hero_image['sizes'][ $hero_cinema_large ];
+
+endif;
+
 get_header(); ?>
 
   <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
+    <main id="main" class="site-content__portfolio" role="main">
       <div class="wrapper">
+        <img class="site-content__portfolio__heroimg" src="<?php echo $small; ?>" srcset="<?php echo $hero_small; ?> 2000w, <?php echo $hero_medium; ?> 3000w, <?php echo $hero_large ?> 3500w, <?php echo $large; ?> 1100w, <?php echo $medium; ?> 800w, <?php echo $small; ?> 550w" sizes="100vw" alt="<?php echo $alt ?>">
         <h1 class="entry-title"><?php the_title(); ?></h1>
-         <ul class="portfolio-list">
+         <ul class="site-content__portfolio__list">
               <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                 
                   <?php $list_image = get_field('list_image'); 
@@ -46,10 +79,10 @@ get_header(); ?>
 
                   endif; ?>
                   
-                  <li class="col-third">
-                    <a class="portfolio-link" href="<?php the_permalink(); ?>">
+                  <li>
+                    <a class="site-content__portfolio__listlink" href="<?php the_permalink(); ?>">
                       <h4 class="title"><?php the_title(); ?> | <em><?php the_excerpt(); ?></em></h4>  
-                      <img src="<?php echo $small; ?>" srcset="<?php echo $large; ?> 1100w, <?php echo $medium; ?> 800w, <?php echo $small; ?> 550w" sizes="(max-width:52em) 85vw, (min-width: 52em) 21.66vw" alt="<?php echo $alt ?>">
+                      <img src="<?php echo $small; ?>" srcset="<?php echo $large; ?> 1100w, <?php echo $medium; ?> 800w, <?php echo $small; ?> 550w" sizes="(max-width:40em) 85vw, (min-width: 40em) 23.33vw" alt="<?php echo $alt ?>">
                     </a>
                   </li>           
               <?php endwhile; ?>
