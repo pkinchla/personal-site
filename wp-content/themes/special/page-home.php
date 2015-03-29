@@ -40,7 +40,7 @@ get_header(); ?>
       
     <div id="primary" class="content-area">
       <main id="content" class="site-content__home" role="main">
-        <img class="site-content__home__heroimg" src="<?php echo $small; ?>" srcset="<?php echo $hero_small; ?> 2000w, <?php echo $hero_medium; ?> 3000w, <?php echo $hero_large ?> 3500w, <?php echo $large; ?> 1100w, <?php echo $medium; ?> 800w, <?php echo $small; ?> 550w" sizes="100vw" alt="<?php echo $alt ?>">
+        <img class="site-content__home__heroimg" src="<?php echo $small; ?>" srcset="<?php echo $hero_large ?> 3250w, <?php echo $hero_medium; ?> 3000w, <?php echo $hero_small; ?> 2000w, <?php echo $large; ?> 1300w, <?php echo $medium; ?> 800w, <?php echo $small; ?> 550w" sizes="100vw" alt="<?php echo $alt ?>">
         <div class="wrapper">
           <h1><?php echo $heading ?></h1>
           <section class="site-content__home__copy">
