@@ -164,14 +164,16 @@ function critical_css() {
 }
 add_action( 'wp_head', 'critical_css');
 
-// image sizes for portfolio
-add_image_size( 'portfolio_small', 550, 550, false );
-add_image_size( 'portfolio_medium', 800, 800, false );
-add_image_size( 'portfolio_large', 1300, 1300, false );
-add_image_size( 'hero_large', 2000, 2000, false );
-add_image_size( 'hero_cinema', 3000, 3000, false );
-add_image_size( 'hero_cinema_large', 3500, 3500, false );
-
+// custom image sizes
+add_image_size( 'portfolio_small', 550);
+add_image_size( 'portfolio_medium', 800);
+add_image_size( 'portfolio_large', 1300);
+add_image_size( 'portfolio_x_large', 1550);
+add_image_size( 'hero_medium', 1800);
+add_image_size( 'hero_large', 2000);
+add_image_size( 'hero_x_large', 2250);
+add_image_size( 'hero_cinema', 3000);
+add_image_size( 'hero_cinema_large', 3500);
 
 // google analytics in footer 
 function add_googleanalytics()  {
