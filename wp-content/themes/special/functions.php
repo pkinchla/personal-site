@@ -135,13 +135,36 @@ require( get_template_directory() . '/flickr-feed.php' );
 require get_template_directory() . '/inc/template-tags.php';
 
 // enqueue typekit
+function typekit_js() {
+	$typekit_file = get_template_directory_uri() . '/js/typekit.js';
+	$typekit_path = file_get_contents($typekit_file);
+	
+	echo '<script>'. $typekit_path .'</script>' . "\n";
+}
+
 add_action('wp_head', 'typekit_js');
 
-function typekit_js() { ?>
-<script>
-	document.documentElement.className = 'js wf-loading';(function(d) {var config = {kitId: 'ltt0nnt',scriptTimeout: 3000},h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)})(document);
-</script>
-<?php }
+// function for critical path css
+function critical_css() {
+	if ( WP_DEBUG || SCRIPT_DEBUG ) {
+		wp_enqueue_style( 'style', get_stylesheet_uri('style.css') );	
+	}
+	else {
+	// css
+	$crit_sheet = get_template_directory_uri() . '/critical.css';
+	$critical_path = file_get_contents($crit_sheet);
+
+	// loadCSS
+	$js_sheet = get_template_directory_uri() . '/js/loadCSS.js';
+	$loadCSS_path = file_get_contents($js_sheet);
+
+	echo '<style>'. $critical_path .'</style>' . "\n";
+	echo '<script>'. $loadCSS_path .'</script>' . "\n";
+	echo '<script>loadCSS("'. get_stylesheet_uri(). '")</script>' . "\n";
+	echo '<noscript><link rel="stylesheet" href="'. get_stylesheet_uri(). '"></noscript>' . "\n";
+	}
+}
+add_action( 'wp_head', 'critical_css');
 
 // image sizes for portfolio
 add_image_size( 'portfolio_small', 550, 550, false );
@@ -151,24 +174,16 @@ add_image_size( 'hero_large', 2000, 2000, false );
 add_image_size( 'hero_cinema', 3000, 3000, false );
 add_image_size( 'hero_cinema_large', 3500, 3500, false );
 
-/* google analytics in footer */
+
+// google analytics in footer 
+function add_googleanalytics()  {
+	$ga_file = get_template_directory_uri() . '/js/ga.js';
+	$ga_path = file_get_contents($ga_file);
+	
+	echo '<script>'. $ga_path .'</script>' . "\n";
+}
 add_action('wp_footer', 'add_googleanalytics');
 
-function add_googleanalytics() { ?>
-
-<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	ga('create', 'UA-22750130-1', 'paulkinchla.com');
-	ga('send', 'pageview');
-
-</script>
-
-
-<?php } 
 
 /**
 * admin login stuff
