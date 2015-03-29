@@ -65,7 +65,8 @@
                 dist: {
                     files: {
                   '../js/built.min.js': 'src/built.js',
-                  '../js/loadCSS.js': 'src/head-js/loadCSS.js'
+                  '../js/loadCSS.js': 'src/head-js/loadCSS.js',
+                  '../js/typekit.js': '../js/typekit.js'
                 }
               }
         },
