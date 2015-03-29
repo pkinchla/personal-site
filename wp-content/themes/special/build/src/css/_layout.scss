@@ -427,6 +427,10 @@
 
     margin-top:-15em;
     text-align:right;
+    .cat-item {
+      float:right;
+      clear:both;
+    }
   }
   // about page
   .site-content__about {
