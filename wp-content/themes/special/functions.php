@@ -101,8 +101,6 @@ add_action( 'widgets_init', 'special_widgets_init' );
  */
 function special_scripts() {
 		
-		wp_enqueue_style( 'style', get_stylesheet_uri('style.css') );
-
 	// prettify for posts	
 	if ( is_single()) {
 		wp_enqueue_script('prettify', '//google-code-prettify.googlecode.com/svn/loader/run_prettify.js?&skin=desert', array(), '', false);
