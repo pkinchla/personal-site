@@ -1,6 +1,6 @@
 {
   "name": "mothership",
-  "version": "1.0",
+  "version": "0.1.0",
   "author": "Paul Kinchla",
   "private": true,
   "devDependencies": {
@@ -9,6 +9,7 @@
     "grunt-contrib-cssmin": "^0.10.0",
     "grunt-contrib-sass": "^0.7.3",
     "grunt-contrib-uglify": "^0.5.1",
-    "grunt-contrib-watch": "^0.6.1"
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-criticalcss": "^0.5.0"
   }
 }

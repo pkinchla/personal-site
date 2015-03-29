@@ -29,15 +29,26 @@
             livereload: true, // Set livereload to trigger a reload upon change
           }
         },
-
         // production
+        criticalcss: {
+          custom: {
+            options: {
+                url: "http://dev.paulkinchla.com",
+                width: 1024,
+                height: 800,
+                outputfile: "../critical.css",
+                filename: "../style.css",
+            }
+          }
+        },
+
         cssmin: {
-                options: {
-                },
-                build: {
-                        src:  '../style.css',
-                        dest: '../style.css'
+              compress: {
+                files: {
+                  '../style.css': [ '../style.css' ],
+                  '../critical.css': [ '../critical.css' ]
                 }
+              }
         },   
  
                     
@@ -51,10 +62,12 @@
                 }
         },
         uglify: {
-                js: {
-                        src: 'src/built.js',
-                        dest:'../js/built.min.js'
+                dist: {
+                    files: {
+                  '../js/built.min.js': 'src/built.js',
+                  '../js/loadCSS.js': 'src/head-js/loadCSS.js'
                 }
+              }
         },
   });
 
@@ -65,12 +78,13 @@
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-concat'); 
   grunt.loadNpmTasks('grunt-contrib-uglify');
+   grunt.loadNpmTasks('grunt-criticalcss');
   
   
   // Default task.
   grunt.registerTask('default', ['watch']);
   
   // Production task for concatenation and minification
-  grunt.registerTask('deploy', ['cssmin', 'concat', 'uglify' ]);
+  grunt.registerTask('deploy', ['criticalcss', 'cssmin', 'concat', 'uglify' ]);
 
 };
