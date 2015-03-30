@@ -313,6 +313,9 @@ a:hover, a:focus, a:active {
   &:hover {
     background:darken($green, 10%);
   }
+  &:focus, &:visited {
+    color:$white;
+  }
 }
 
 // pagination

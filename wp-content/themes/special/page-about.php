@@ -9,6 +9,8 @@ $contact = get_field('contact');
 $resume = get_field('resume');
 $flickr_field = get_field('flickr_field');
 $skill = get_field('skill');
+$resume = get_field('resume_file');
+$url_file = $resume['url'];
 
 require_once('resp-hero.php');
 
@@ -29,6 +31,7 @@ get_header(); ?>
         </ul>
         <section class="site-content__about__resume">
           <h3>R&eacute;sum&eacute;</h3>
+          <a class="action" href="<?php echo $url_file ?>" download>Download</a>
           <dl class="resume">
             <dt>Work</dt>
               <?php if( have_rows('work')): ?>
