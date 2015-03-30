@@ -337,6 +337,11 @@
       max-width:65%;
     }
   }
+  .single {
+    .byline {
+      display: block;
+    }
+  }
 }
 
 @include gs-media(s, min) {
@@ -445,6 +450,19 @@
       clear:both;
     }
   }
+  // media in posts
+   .alignleft {
+    display:inline;
+    float:right;
+    margin:0 -25% 1.5em 1.5em;
+  }
+  .alignright {
+    display:inline;
+    float:right;
+    margin-left:1.5em;
+    margin:0 -25% 1.5em 1.5em;
+  }
+  
   // about page
   .site-content__about {
     .entry-title {
@@ -686,6 +704,14 @@
 
     margin-top:inherit;
     text-align:right;
+  }
+  // media in posts
+   .alignleft {
+    float:left;
+    margin:0 1.5em 1.5em -25%;
+  }
+  .alignright {
+    margin:0 -25% 1.5em 1.5em;
   }
   // about page
   .site-content__about {

@@ -362,22 +362,12 @@ Alignments
   width:90%;
   margin:0 auto;
 }
-.alignleft {
-  display:inline;
-  float:left;
-  margin-right:1.5em;
-}
 
-.alignright {
-  display:inline;
-  float:right;
-  margin-left:1.5em;
-}
-
-.aligncenter {
+.aligncenter, .alignright, .alignleft {
   display:block;
   clear:both;
   margin:0 auto;
+  border: 1px solid $dark-blue;
 }
 
 /*--------------------------------------------------------------
@@ -493,6 +483,7 @@ Captions
 
 .wp-caption-text {
   text-align:center;
+  font-family:'futura-pt', sans-serif;
 }
 
 .wp-caption .wp-caption-text {
