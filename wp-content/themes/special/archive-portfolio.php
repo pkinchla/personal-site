@@ -52,7 +52,7 @@ get_header(); ?>
                 $size_large = 'large';
                 $large = $list_image['sizes'][$size_large];
                 $width_large = 'large-width';
-                $large_width = $list_image['sizes'][$width_large];
+                $large_width = '1024';
 
                 $size_portfolio_small = 'portfolio_small';
                 $portfolio_small = $list_image['sizes'][$size_portfolio_small];
@@ -69,42 +69,12 @@ get_header(); ?>
                 $width_portfolio_large = 'portfolio_large-width';
                 $portfolio_large_width = $list_image['sizes'][$width_portfolio_large];
 
-                $size_portfolio_x_large = 'portfolio_x_large';
-                $portfolio_x_large = $list_image['sizes'][$size_portfolio_x_large];
-                $width_portfolio_x_large = 'portfolio_x_large-width';
-                $portfolio_x_large_width = $list_image['sizes'][$width_portfolio_x_large];
-                
-                $size_hero_medium = 'hero_medium';
-                $hero_medium = $list_image['sizes'][$size_hero_medium];
-                $width_hero_medium = 'hero_medium-width';
-                $hero_medium_width = $list_image['sizes'][$width_hero_medium];
-
-                $size_hero_large = 'hero_large';
-                $hero_large = $list_image['sizes'][$size_hero_large];
-                $width_hero_large = 'hero_large-width';
-                $hero_large_width = $list_image['sizes'][$width_hero_large];
-
-                $size_hero_x_large = 'hero_x_large';
-                $hero_x_large = $list_image['sizes'][$size_hero_x_large];
-                $width_hero_x_large = 'hero_x_large-width';
-                $hero_x_large_width = $list_image['sizes'][$width_hero_x_large];
-
-                $size_hero_cinema = 'hero_cinema';
-                $hero_cinema = $list_image['sizes'][$size_hero_cinema];
-                $width_hero_cinema = 'hero_cinema-width';
-                $hero_cinema_width = $list_image['sizes'][$width_hero_cinema];
-
-                $size_hero_cinema_large = 'hero_cinema_large';
-                $hero_cinema_large = $list_image['sizes'][$size_hero_cinema_large];
-                $width_hero_cinema_large = 'hero_cinema_large-width';
-                $hero_cinema_large_width = $list_image['sizes'][$width_hero_cinema_large];
-
               endif;
               ?>
             <li>
               <a class="site-content__portfolio__listlink" href="<?php the_permalink(); ?>">
                 <h4 class="title"><?php the_title(); ?> | <em><?php the_excerpt(); ?></em></h4>  
-                <img src="<?php echo $medium; ?>"srcset="<?php echo $hero_cinema_large .' '. $hero_cinema_large_width; ?>w, <?php echo $hero_cinema .' '. $hero_cinema_width; ?>w, <?php echo $hero_x_large .' '. $hero_x_large_width; ?>w, <?php echo $hero_large .' '. $hero_large_width; ?>w, <?php echo $hero_medium .' '. $hero_medium_width; ?>w, <?php echo $portfolio_x_large .' '. $portfolio_x_large_width; ?>w, <?php echo $portfolio_large .' '. $portfolio_large_width; ?>w, <?php echo $portfolio_medium .' '. $portfolio_medium_width; ?>w, <?php echo $large .' '. $large_width; ?>w, <?php echo $portfolio_small .' '. $portfolio_small_width; ?>w, <?php echo $medium .' '. $medium_width; ?>w, <?php echo $thumbnail .' '. $thumbnail_width; ?>w" sizes="(min-width:120em) 14vw, (min-width:64em) 20vw, (min-width:40em) 30vw, 90vw" alt="<?php echo $alt ?>">
+                <img src="<?php echo $medium; ?>" srcset="<?php echo $portfolio_large .' '. $portfolio_large_width; ?>w, <?php echo $portfolio_medium .' '. $portfolio_medium_width; ?>w, <?php echo $large .' '. $large_width; ?>w, <?php echo $portfolio_small .' '. $portfolio_small_width; ?>w, <?php echo $medium .' '. $medium_width; ?>w, <?php echo $thumbnail .' '. $thumbnail_width; ?>w" sizes="(min-width:120em) 14vw, (min-width:64em) 20vw, (min-width:40em) 30vw, 90vw" alt="<?php echo $alt ?>">
               </a>
             </li>           
             <?php endwhile; ?>

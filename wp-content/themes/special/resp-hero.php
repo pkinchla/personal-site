@@ -24,7 +24,7 @@ if( !empty($hero_image)):
   $size_large = 'large';
   $large = $hero_image['sizes'][$size_large];
   $width_large = 'large-width';
-  $large_width = $hero_image['sizes'][$width_large];
+  $large_width = '1024';
 
   $size_portfolio_small = 'portfolio_small';
   $portfolio_small = $hero_image['sizes'][$size_portfolio_small];
