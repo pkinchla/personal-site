@@ -9,7 +9,9 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main site-content__default" role="main">
-			<img class="site-content__default__heroimg" src="<?php echo get_template_directory_uri() ?>/images/max.gif" alt="max headroom">
+			<figure class="wrapper">
+				<img class="site-content__default__heroimg" src="<?php echo get_template_directory_uri() ?>/images/max.gif" alt="max headroom">
+			</figure>
 			<div class="wrapper">
 				<header class="page-header">
 						<h1 class="page-title"><?php _e( '404', 'special' ); ?></h1>
