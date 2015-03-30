@@ -5,58 +5,33 @@
  * @package special
  */
 
-$hero_image = get_field('hero_image');
-
- if( !empty($hero_image)): 
-
-	// vars
-	$url = $hero_image['url'];
-	$title = $hero_image['title'];
-	$alt = $hero_image['alt'];
-	$caption = $hero_image['caption'];
-
-	// image sizes
-	$thumbnail = 'portfolio_small';
-	$small = $hero_image['sizes'][ $thumbnail ];
-
-	$size_medium = 'portfolio_medium';
-	$medium = $hero_image['sizes'][ $size_medium ];
-
-	$size_large = 'portfolio_large';
-	$large = $hero_image['sizes'][ $size_large ];
-	
-	$hero_large = 'hero_large';
-	$hero_small = $hero_image['sizes'][ $hero_large ];
-
-	$hero_cinema = 'hero_cinema';
-	$hero_medium = $hero_image['sizes'][ $hero_cinema ];
-
-	$hero_cinema_large = 'hero_cinema_large';
-	$hero_large = $hero_image['sizes'][ $hero_cinema_large ];
-
-endif;
+require_once('resp-hero.php');
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<img class="site-content__default__heroimg" src="<?php echo $small; ?>" srcset="<?php echo $hero_small; ?> 2000w, <?php echo $hero_medium; ?> 3000w, <?php echo $hero_large ?> 3500w, <?php echo $large; ?> 1100w, <?php echo $medium; ?> 800w, <?php echo $small; ?> 550w" sizes="100vw" alt="<?php echo $alt ?>">
-	<section class="site-content__default__body">
-		<header class="entry-header">
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		</header><!-- .entry-header -->
+<figure class="wrapper">
+		<img class="site-content__default__heroimg" src="<?php echo $medium; ?>" src="<?php echo $medium; ?>"srcset="<?php echo $hero_cinema_large .' '. $hero_cinema_large_width; ?>w, <?php echo $hero_cinema .' '. $hero_cinema_width; ?>w, <?php echo $hero_x_large .' '. $hero_x_large_width; ?>w, <?php echo $hero_large .' '. $hero_large_width; ?>w, <?php echo $hero_medium .' '. $hero_medium_width; ?>w, <?php echo $portfolio_x_large .' '. $portfolio_x_large_width; ?>w, <?php echo $portfolio_large .' '. $portfolio_large_width; ?>w, <?php echo $portfolio_medium .' '. $portfolio_medium_width; ?>w, <?php echo $large .' '. $large_width; ?>w, <?php echo $portfolio_small .' '. $portfolio_small_width; ?>w, <?php echo $medium .' '. $medium_width; ?>w, <?php echo $thumbnail .' '. $thumbnail_width; ?>w" sizes="(min-width:120em) 62vw, (min-width:64) 72vw, (min-width:40em) 57vw, 90vw" alt="<?php echo $alt ?>">
+	</figure>
+	<div class="wrapper">
+		<section class="site-content__default__body">
+			<header class="entry-header">
+				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			</header><!-- .entry-header -->
 
-		<div class="entry-content">
-			<?php the_content(); ?>
-			<?php
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'special' ),
-					'after'  => '</div>',
-				) );
-			?>
-		</div><!-- .entry-content -->
+			<div class="entry-content">
+				<?php the_content(); ?>
+				<?php
+					wp_link_pages( array(
+						'before' => '<div class="page-links">' . __( 'Pages:', 'special' ),
+						'after'  => '</div>',
+					) );
+				?>
+			</div><!-- .entry-content -->
 
-		<footer class="entry-footer">
-			<?php edit_post_link( __( 'Edit', 'special' ), '<span class="edit-link">', '</span>' ); ?>
-		</footer><!-- .entry-footer -->
-	</section>
+			<footer class="entry-footer">
+				<?php edit_post_link( __( 'Edit', 'special' ), '<span class="edit-link">', '</span>' ); ?>
+			</footer><!-- .entry-footer -->
+		</section>
+	</div>
 </article><!-- #post-## -->
