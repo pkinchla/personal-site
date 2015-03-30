@@ -1,6 +1,6 @@
 <?php
 /**
- * Template name: Blog Landing Page
+ * Template name: About Page
  *
  */
 
