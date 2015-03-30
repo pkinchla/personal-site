@@ -100,12 +100,7 @@ add_action( 'widgets_init', 'special_widgets_init' );
  * Enqueue scripts and styles.
  */
 function special_scripts() {
-		
-	// prettify for posts	
-	if ( is_single()) {
-		wp_enqueue_script('prettify', '//google-code-prettify.googlecode.com/svn/loader/run_prettify.js?&skin=desert', array(), '', false);
-	} 
-	
+			
 	if ( WP_DEBUG || SCRIPT_DEBUG ) {
 		wp_enqueue_script( 'gridset', get_template_directory_uri() . '/build/src/dev-js/gridset-overlay.js', array(), '', true );
 		wp_enqueue_script( 'skip-link', get_template_directory_uri() . '/build/src/js/skip-link-focus-fix.js', array(), '', true );
