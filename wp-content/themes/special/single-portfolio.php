@@ -58,12 +58,11 @@ get_header(); ?>
               <?php echo $copy; ?>
             </section>
             <section class="portfolio__single__image--print">
-                <img src="<?php echo $small_square; ?>" srcset="<?php echo $large_square; ?> 1300w, <?php echo $medium_square; ?> 800w, <?php echo $small_square; ?> 550w" sizes="(max-width:52em) 85vw, (min-width: 52em) 40vw" alt="<?php echo $alt_square ?>">
+                <img src="<?php echo $small_square; ?>" srcset="<?php echo $large_square; ?> 1300w, <?php echo $medium_square; ?> 800w, <?php echo $small_square; ?> 550w" sizes="(min-width:64em) 66vw, (min-width:40em) 85vw, 90vw" alt="<?php echo $alt_square ?>">
               <?php if ($square_image_optional) { ?>
-                <img src="<?php  echo $small_square_opt; ?>" srcset="<?php echo $large_square_opt;?> 1300w, <?php echo $medium_square_opt;?> 800w, <?php echo $small_square_opt;?> 550w" sizes="(max-width:52em) 85vw, (min-width: 52em) 40vw" alt="<?php echo $alt_square_opt; ?>"
-              
+                <img src="<?php  echo $small_square_opt; ?>" srcset="<?php echo $large_square_opt;?> 1300w, <?php echo $medium_square_opt;?> 800w, <?php echo $small_square_opt;?> 550w" sizes="(min-width:64em) 66vw, (min-width:40em) 85vw, 90vw" alt="<?php echo $alt_square_opt; ?>"
               <?php }
-                     else { }?>
+                  else { }?>
             </section>
           <?php  } 
             else { ?>
