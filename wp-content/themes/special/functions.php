@@ -195,11 +195,8 @@ function ms_image_editor_default_to_gd( $editors ) {
 }
 add_filter( 'wp_image_editors', 'ms_image_editor_default_to_gd' );
 
-/**
-* admin login stuff
-*/
-
- /* change logo link and title */
+// custom login page
+// change logo link and title 
 function my_login_logo_url() {
 		return get_bloginfo( 'url' );
 }
@@ -211,9 +208,8 @@ function my_login_logo_url_title() {
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 /* add stylesheet for login page */
-function my_login_stylesheet() { ?>
-		<link rel="stylesheet" id="custom_wp_admin_css"  href="<?php echo get_bloginfo( 'stylesheet_directory' ) . '/style-login.css'; ?>" type="text/css" media="all" />
-<?php }
+function my_login_stylesheet() { 
+		wp_enqueue_style( 'style-login', get_template_directory_uri() . '/style-login.css' );
+}
 add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 
-?>
