@@ -176,6 +176,15 @@
   border-top:none;
 }
 
+.site-content__blog__archives {
+  h2 {
+    margin-bottom:.15em;
+  }
+  .entry-meta {
+    margin-bottom:1.5em;
+  }
+}
+
 // about page specific styles
 .site-content__about__contact {
   .contact {

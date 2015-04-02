@@ -10,38 +10,37 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main site-content__default" role="main">
+			<figure class="wrapper">
+				<img class="site-content__default__heroimg" src="<?php echo get_template_directory_uri() ?>/images/cham.jpg" alt="max headroom">
+			</figure>
+			<div class="wrapper">
+				<section class="site-content__default__body">
+					<?php if ( have_posts() ) : ?>
 
-		<?php if ( have_posts() ) : ?>
+						<header class="page-header">
+							<?php
+								the_archive_title( '<h1 class="page-title">', '</h1>' );
+								the_archive_description( '<div class="taxonomy-description">', '</div>' );
+							?>
+						</header><!-- .page-header -->
+						<section class="site-content__blog__archives">
+							<?php /* Start the Loop */ ?>
+							<?php while ( have_posts() ) : the_post(); ?>
+								<h2><a class="linked-header" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+								<div class="entry-meta">
+									<time datetime="<?php the_time('c');?>"><?php the_time('l, F jS, Y') ?></time>
+								</div>
+							<?php endwhile; ?>
+							<?php the_posts_navigation(); ?>
+						</section>
+					<?php else : ?>
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+						<?php get_template_part( 'content', 'none' ); ?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-				?>
-
-			<?php endwhile; ?>
-
-			<?php the_posts_navigation(); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'content', 'none' ); ?>
-
-		<?php endif; ?>
-
+					<?php endif; ?>
+				</section>
+			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
