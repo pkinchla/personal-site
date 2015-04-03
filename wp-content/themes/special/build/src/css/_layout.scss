@@ -12,12 +12,11 @@
   @extend %clearfix;
   @extend %nav-link;
   @extend %link-reset;
-
+  font-family:'futura-pt', sans-serif;
   padding:1em 1em 1em;
   background:$light-blue;
   .logo {
     height:2em;
-
     fill:$body-color;
   }
 }
@@ -48,6 +47,11 @@
 
       padding:.85em 10%;
       color:$body-color;
+    }
+  }
+  .current-menu-item {
+    a {
+      @include alpha-attribute('background-color', rgba($dark-blue, 0.20), lighten($dark-blue, 70%));
     }
   }
 }
@@ -212,7 +216,7 @@
             box-shadow:inset 0 0 10px rgba(33, 33, 33, .05);
   }
   dt {
-    font:400 normal 1.6em futura-pt, 'Arial Narrow', sans-serif;
+    font:400 normal 1.6em 'futura-pt', sans-serif;
     margin:1.5em 0 .5em 0;
     border-bottom:1px solid rgba(33, 33, 33, .25);
     &:first-child {
@@ -220,11 +224,11 @@
     }
   }
   h4 {
-    font:400 normal 1.25em futura-pt, 'Arial Narrow', sans-serif;
+    font:400 normal 1.25em 'futura-pt', sans-serif;
     color:$body-color;
   }
   h5 {
-    font:400 italic 1.125em futura-pt, 'Arial Narrow', sans-serif;
+    font:400 italic 1.125em 'futura-pt', sans-serif;
     margin:0 0 .15em 0;
     color:$body-color;
   }
@@ -304,9 +308,9 @@
     }
     img {
       opacity:.15;
-
       -webkit-filter:blur(4px);
               filter:blur(4px);
+      filter: alpha(opacity=15);              
     }
   }
 }
