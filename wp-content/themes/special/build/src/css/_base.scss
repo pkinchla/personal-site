@@ -403,7 +403,7 @@ Posts and pages
   background:$dark-blue;
   color:$white;
   padding:.25em 1em;
-  font-family:'futura-pt';
+  font-family:'futura-pt', sans-serif;
   a {
     @extend %link-reset;
     color:$white;
@@ -416,7 +416,7 @@ Posts and pages
 
 .cat-item, 
 .entry-footer {
-  font-family:'futura-pt';
+  font-family:'futura-pt', sans-serif;
 }
 
 
