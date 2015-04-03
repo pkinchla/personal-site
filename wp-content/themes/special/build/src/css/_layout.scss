@@ -16,10 +16,12 @@
   padding:1em 1em 1em;
   background:$light-blue;
   .logo {
+    @include gs-span(s, 1);
     height:2em;
     fill:$body-color;
   }
 }
+
 // main navigation
 .site-navigation {
   @extend %clearfix;
@@ -153,11 +155,11 @@
     @include clear;
   }
 }
-
 // home page specific styles
 .site-content__home {
   @extend %relative;
   h1 {
+    @include gs-span(s, 1);
     @extend %text-center;
 
     margin-top:30%;
@@ -168,6 +170,12 @@
 
   z-index:-5;
   border-bottom:1px solid $dark-blue;
+}
+.site-content__home__copy {
+  @include gs-span(s, 1, 2);
+  @include clear;
+
+  margin-top:50%;
 }
 // blog listing specific styles
 .site-content__blog {
@@ -356,26 +364,6 @@
     }
   }
 }
-
-@include gs-media(s, min) {
-  .site-logo {
-    .logo {
-      @include gs-span(s, 1);
-    }
-  }
-  .site-content__home {
-    h1 {
-      @include gs-span(s, 1);
-    }
-    .site-content__home__copy {
-      @include gs-span(s, 1, 2);
-      @include clear;
-
-      margin-top:50%;
-    }
-  }
-}
-
 @include gs-media(m, min) {
   // base 
   h1 {
