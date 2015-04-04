@@ -1308,23 +1308,25 @@ window.matchMedia || (window.matchMedia = function() {
 
   window.responsiveNav = responsiveNav;
 
-}(document, window, 0));;// write better
-'use strict';
+}(document, window, 0));;(function (document) {
+  'use strict';
+  
+  // responive nav (note: this adds js class to html element)
+  var nav = responsiveNav(".main-navigation", {
+    animate: true,
+    transition: 284,
+    label: "",
+    insert: "after",
+    customToggle: "",
+    closeOnNavClick: false,
+    openPos: "relative",
+    navClass: "nav-collapse",
+    navActiveClass: "js-nav-active",
+    jsClass: "js",
 
-// responive nav (note: this adds js class to html element)
-var nav = responsiveNav(".main-navigation", {
-  animate: true,
-  transition: 284,
-  label: "",
-  insert: "after",
-  customToggle: "",
-  closeOnNavClick: false,
-  openPos: "relative",
-  navClass: "nav-collapse",
-  navActiveClass: "js-nav-active",
-  jsClass: "js",
+  });
 
-});;( function() {
+}(document));;( function() {
 	var is_webkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
 	    is_opera  = navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,
 	    is_ie     = navigator.userAgent.toLowerCase().indexOf( 'msie' )   > -1;
