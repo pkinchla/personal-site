@@ -49,7 +49,7 @@ $copy = get_field('copy');
 get_header(); ?>
 
     <div id="primary" class="content-area">
-      <main id="content" class="site-content__portfolio__single" role="main">
+      <main id="main" class="site-main site-content__portfolio__single" role="main">
       <div class="wrapper">
         <h1 class="entry-title"><?php the_title(); ?></h1>
           <?php 
