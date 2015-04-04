@@ -17,7 +17,7 @@ require_once('resp-hero.php');
 get_header(); ?>
 
   <div id="primary" class="content-area">
-    <main id="content" class="site-content__about" role="main">
+    <main id="main" class="site-main site-content__about" role="main">
       <figure class="wrapper">
         <img class="site-content__about__heroimg" src="<?php echo $medium; ?>" srcset="<?php echo $hero_cinema_large .' '. $hero_cinema_large_width; ?>w, <?php echo $hero_cinema .' '. $hero_cinema_width; ?>w, <?php echo $hero_x_large .' '. $hero_x_large_width; ?>w, <?php echo $hero_large .' '. $hero_large_width; ?>w, <?php echo $hero_medium .' '. $hero_medium_width; ?>w, <?php echo $portfolio_x_large .' '. $portfolio_x_large_width; ?>w, <?php echo $portfolio_large .' '. $portfolio_large_width; ?>w, <?php echo $large .' '. $large_width; ?>w, <?php echo $portfolio_medium .' '. $portfolio_medium_width; ?>w, <?php echo $portfolio_small .' '. $portfolio_small_width; ?>w, <?php echo $medium .' '. $medium_width; ?>w, <?php echo $thumbnail .' '. $thumbnail_width; ?>w" sizes="(min-width:120em) 62vw, (min-width:64) 72vw, (min-width:40em) 57vw, 90vw" alt="<?php echo $alt ?>">
       </figure>
@@ -26,9 +26,9 @@ get_header(); ?>
         <div class="site-content__about__copy">
           <?php echo $copy; ?>
         </div>
-        <ul class="site-content__about__contact">
+        <div class="site-content__about__contact">
           <?php echo $contact; ?>
-        </ul>
+        </div>
         <section class="site-content__about__resume">
           <h3>R&eacute;sum&eacute;</h3>
           <a class="action" href="<?php echo $url_file ?>" download>Download</a>
@@ -45,7 +45,7 @@ get_header(); ?>
                 $company_link = get_sub_field('company_link');
               ?>  
               <dd>
-                <h4><?php echo $title; ?> <span><time><?php echo $date_start ?></time><time><?php if ($date_end) {echo '-' . $date_end;} ?></time></span></h4>
+                <h4><?php echo $title; ?> <span><time><?php echo $date_start ?></time><?php if ($date_end) {echo '-<time>' . $date_end . '</time>';} ?></span></h4>
                 <h5><?php echo $company_name; ?></h5>
                 <p><?php echo $description; ?> <em><a href="http://<?php echo $company_link ?>/" target="_blank"><?php echo $company_link; ?></a></em></p>
               </dd>
@@ -94,9 +94,9 @@ get_header(); ?>
               </dd>
           </dl>
         </section>
-        <section class="site-content__about__picture">
+        <div class="site-content__about__picture">
           <?php echo $flickr_field; ?>
-        </section>
+        </div>
       </div>
     </main><!-- #content .site-content -->
   </div><!-- #primary .content-area -->

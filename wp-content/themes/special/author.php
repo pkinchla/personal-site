@@ -7,7 +7,7 @@
 get_header(); ?>
 
   <div id="primary" class="content-area">
-    <main id="content" class="site-content__blog" role="main">
+    <main id="main" class="site-main site-content__blog" role="main">
       <div class="wrapper">
         <h1 class="entry-title">Author: <?php the_author_link(); ?></h1>
         <div class="site-content__blog__postlist">

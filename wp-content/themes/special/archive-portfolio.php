@@ -20,7 +20,7 @@ require_once('resp-hero.php');
 get_header(); ?>
 
   <div id="primary" class="content-area">
-    <main id="main" class="site-content__portfolio" role="main">
+    <main id="main" class="site-main site-content__portfolio" role="main">
       <figure class="wrapper">
         <img class="site-content__portfolio__heroimg" src="<?php echo $medium; ?>" srcset="<?php echo $hero_cinema_large .' '. $hero_cinema_large_width; ?>w, <?php echo $hero_cinema .' '. $hero_cinema_width; ?>w, <?php echo $hero_x_large .' '. $hero_x_large_width; ?>w, <?php echo $hero_large .' '. $hero_large_width; ?>w, <?php echo $hero_medium .' '. $hero_medium_width; ?>w, <?php echo $portfolio_x_large .' '. $portfolio_x_large_width; ?>w, <?php echo $portfolio_large .' '. $portfolio_large_width; ?>w, <?php echo $large .' '. $large_width; ?>w, <?php echo $portfolio_medium .' '. $portfolio_medium_width; ?>w, <?php echo $portfolio_small .' '. $portfolio_small_width; ?>w, <?php echo $medium .' '. $medium_width; ?>w, <?php echo $thumbnail .' '. $thumbnail_width; ?>w" sizes="(min-width:120em) 62vw, (min-width:64) 72vw, (min-width:40em) 57vw, 90vw" alt="<?php echo $alt ?>">
       </figure>
@@ -73,7 +73,7 @@ get_header(); ?>
               ?>
             <li>
               <a class="site-content__portfolio__listlink" href="<?php the_permalink(); ?>">
-                <h4 class="title"><?php the_title(); ?> | <em><?php the_excerpt(); ?></em></h4>  
+                <h4 class="title"><?php the_title(); ?> | <em><?php echo get_the_excerpt(); ?></em></h4>  
                 <img src="<?php echo $medium; ?>" srcset="<?php echo $portfolio_large .' '. $portfolio_large_width; ?>w, <?php echo $portfolio_medium .' '. $portfolio_medium_width; ?>w, <?php echo $large .' '. $large_width; ?>w, <?php echo $portfolio_small .' '. $portfolio_small_width; ?>w, <?php echo $medium .' '. $medium_width; ?>w, <?php echo $thumbnail .' '. $thumbnail_width; ?>w" sizes="(min-width:120em) 14vw, (min-width:64em) 20vw, (min-width:40em) 30vw, 90vw" alt="<?php echo $alt ?>">
               </a>
             </li>           

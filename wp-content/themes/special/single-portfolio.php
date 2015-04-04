@@ -54,24 +54,24 @@ get_header(); ?>
         <h1 class="entry-title"><?php the_title(); ?></h1>
           <?php 
             if ($main_image_square) { ?>  
-            <section class="portfolio__single__copy--print">
+            <div class="portfolio__single__copy--print">
               <?php echo $copy; ?>
-            </section>
-            <section class="portfolio__single__image--print">
+            </div>
+            <div class="portfolio__single__image--print">
                 <img src="<?php echo $small_square; ?>" srcset="<?php echo $large_square; ?> 1300w, <?php echo $medium_square; ?> 800w, <?php echo $small_square; ?> 550w" sizes="(min-width:64em) 66vw, (min-width:40em) 85vw, 90vw" alt="<?php echo $alt_square ?>">
               <?php if ($square_image_optional) { ?>
                 <img src="<?php  echo $small_square_opt; ?>" srcset="<?php echo $large_square_opt;?> 1300w, <?php echo $medium_square_opt;?> 800w, <?php echo $small_square_opt;?> 550w" sizes="(min-width:64em) 66vw, (min-width:40em) 85vw, 90vw" alt="<?php echo $alt_square_opt; ?>"
               <?php }
                   else { }?>
-            </section>
+            </div>
           <?php  } 
             else { ?>
-            <section class="portfolio__single__copy--phone">
+            <div class="portfolio__single__copy--phone">
               <?php echo $copy; ?>
-            </section>
-            <section class="portfolio__single__image--phone">    
+            </div>
+            <div class="portfolio__single__image--phone">    
               <img src="<?php echo $medium_rectangle; ?>" alt="<?php echo $alt_rectangle ?>" />
-            </section>   
+            </div>   
           <?php } ?>
           <div class="back-link">
             <a href="<?php echo get_page_link(7); ?>">&larr; Back to List</a>

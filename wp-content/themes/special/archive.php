@@ -15,7 +15,7 @@ get_header(); ?>
 				<img class="site-content__default__heroimg" src="<?php echo get_template_directory_uri() ?>/images/cham.jpg" alt="max headroom">
 			</figure>
 			<div class="wrapper">
-				<section class="site-content__default__body">
+				<div class="site-content__default__body">
 					<?php if ( have_posts() ) : ?>
 
 						<header class="page-header">
@@ -24,7 +24,7 @@ get_header(); ?>
 								the_archive_description( '<div class="taxonomy-description">', '</div>' );
 							?>
 						</header><!-- .page-header -->
-						<section class="site-content__blog__archives">
+						<div class="site-content__blog__archives">
 							<?php /* Start the Loop */ ?>
 							<?php while ( have_posts() ) : the_post(); ?>
 								<h2><a class="linked-header" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -33,13 +33,13 @@ get_header(); ?>
 								</div>
 							<?php endwhile; ?>
 							<?php the_posts_navigation(); ?>
-						</section>
+						</div>
 					<?php else : ?>
 
 						<?php get_template_part( 'content', 'none' ); ?>
 
 					<?php endif; ?>
-				</section>
+				</div>
 			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
