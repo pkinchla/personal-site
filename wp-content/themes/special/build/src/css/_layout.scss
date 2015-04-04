@@ -306,6 +306,7 @@
     color:$white;
     em {
       font-weight:normal;
+      @extend %block;
     }
   }
   &:hover {
