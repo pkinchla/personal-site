@@ -199,6 +199,7 @@
 
 // about page specific styles
 .site-content__about__contact {
+  margin-bottom:1.5em;
   .contact {
     @extend %plain-list;
 
