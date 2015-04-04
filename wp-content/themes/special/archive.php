@@ -12,7 +12,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main site-content__default" role="main">
 			<figure class="wrapper">
-				<img class="site-content__default__heroimg" src="<?php echo get_template_directory_uri() ?>/images/cham.jpg" alt="max headroom">
+				<img class="site-content__default__heroimg" src="<?php echo get_template_directory_uri() ?>/images/cham.jpg" alt="metallic chameleon">
 			</figure>
 			<div class="wrapper">
 				<div class="site-content__default__body">
