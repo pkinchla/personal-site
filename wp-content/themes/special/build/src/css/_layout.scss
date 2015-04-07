@@ -859,7 +859,7 @@
     @include gs-span(c, 2);
   }
   .site-content__about__resume {
-    @include gs-span(c, 2, 5);
+    @include gs-span(c, 1, 4);
   }
   .site-content__about__picture {
     @include gs-span(c, 6, 8);
