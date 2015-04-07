@@ -818,7 +818,7 @@
     }
     .site-content__home__copy {
       @include gs-span(c, 2, 4);
-      @include skew($bg:darken($background-white, 2.5%), $deg:15deg, $right:-50px, $width: 250px);
+      @include skew($bg:darken($background-white, 2.5%), $deg:15deg, $right:-65px, $width: 250px);
     }
     .site-content__home__blog {
       @include gs-span(c, 4, 5);
@@ -859,7 +859,7 @@
     @include gs-span(c, 2);
   }
   .site-content__about__resume {
-    @include gs-span(c, 1, 4);
+    @include gs-span(c, 2, 5);
   }
   .site-content__about__picture {
     @include gs-span(c, 6, 8);
