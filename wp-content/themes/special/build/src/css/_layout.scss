@@ -19,6 +19,7 @@
     @include gs-span(s, 1);
     height:2em;
     fill:$body-color;
+    
   }
 }
 
@@ -457,13 +458,13 @@
    .alignleft {
     display:inline;
     float:right;
-    margin:0 -25% 1.5em 1.5em;
+    margin:.45em -25% 1.5em 1.5em;
   }
   .alignright {
     display:inline;
     float:right;
     margin-left:1.5em;
-    margin:0 -25% 1.5em 1.5em;
+    margin:.45em -25% 1.5em 1.5em;
   }
   
   // about page
@@ -711,10 +712,7 @@
   // media in posts
    .alignleft {
     float:left;
-    margin:0 1.5em 1.5em -25%;
-  }
-  .alignright {
-    margin:0 -25% 1.5em 1.5em;
+    margin:.45em 1.5em 1.5em -25%;
   }
   // about page
   .site-content__about {
