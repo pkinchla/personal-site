@@ -183,6 +183,9 @@ function add_googleanalytics()  {
 }
 add_action('wp_footer', 'add_googleanalytics');
 
+// fuck emoji
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
 
 // media uploader fix for production
 function ms_image_editor_default_to_gd( $editors ) {
