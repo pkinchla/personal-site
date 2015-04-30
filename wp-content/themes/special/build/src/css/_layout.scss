@@ -12,14 +12,16 @@
   @extend %clearfix;
   @extend %nav-link;
   @extend %link-reset;
+
   font-family:'futura-pt', sans-serif;
   padding:1em 1em 1em;
   background:$light-blue;
   .logo {
     @include gs-span(s, 1);
+
     height:2em;
+
     fill:$body-color;
-    
   }
 }
 
@@ -54,7 +56,7 @@
   }
   .current-menu-item {
     a {
-      @include alpha-attribute('background-color', rgba($dark-blue, 0.20), lighten($dark-blue, 70%));
+      @include alpha-attribute('background-color', rgba($dark-blue, .20), lighten($dark-blue, 70%));
     }
   }
 }
@@ -209,16 +211,19 @@
 }
 .site-content__about__resume {
   @extend %clearfix;
+
+  margin-bottom:3em;
   h3 {
     @extend %inline-block;
   }
   .action {
     @extend %inline-block;
+
     margin:0 0 0 3em;
   }
-  margin-bottom:3em;
   .resume {
     @extend %clearfix;
+
     padding:5%;
     border:1px solid rgba(33, 33, 33, .15);
     -webkit-box-shadow:inset 0 0 10px rgba(33, 33, 33, .05);
@@ -297,6 +302,8 @@
   @extend %block;
   @extend %relative;
   @extend %link-reset;
+
+  overflow:hidden;
   .title {
     @extend %inline-block;
     @extend %vertical-align;
@@ -307,8 +314,9 @@
     width:75%;
     color:$white;
     em {
-      font-weight:normal;
       @extend %block;
+
+      font-weight:normal;
     }
   }
   &:hover {
@@ -317,11 +325,29 @@
 
       z-index:1;
     }
+    .animate-left, .animate-right {
+      @extend %inline-block;
+
+      -webkit-animation-duration:1s;
+              animation-duration:1s;
+
+      -webkit-animation-fill-mode:both;
+              animation-fill-mode:both;
+    }
+    .animate-left {
+      -webkit-animation-name:slideInLeft;
+              animation-name:slideInLeft;
+    }
+    .animate-right {
+      -webkit-animation-name:slideInRight;
+              animation-name:slideInRight;
+    }
     img {
       opacity:.15;
+
       -webkit-filter:blur(4px);
               filter:blur(4px);
-      filter: alpha(opacity=15);              
+              filter:alpha(opacity=15);
     }
   }
 }
@@ -363,7 +389,7 @@
   }
   .single {
     .byline {
-      display: block;
+      display:block;
     }
   }
 }
@@ -455,7 +481,7 @@
     }
   }
   // media in posts
-   .alignleft {
+  .alignleft {
     display:inline;
     float:right;
     margin:.45em -25% 1.5em 1.5em;
@@ -463,10 +489,8 @@
   .alignright {
     display:inline;
     float:right;
-    margin-left:1.5em;
     margin:.45em -25% 1.5em 1.5em;
   }
-  
   // about page
   .site-content__about {
     .entry-title {
@@ -710,7 +734,7 @@
     text-align:right;
   }
   // media in posts
-   .alignleft {
+  .alignleft {
     float:left;
     margin:.45em 1.5em 1.5em -25%;
   }
