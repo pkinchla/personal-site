@@ -86,31 +86,21 @@
             box-shadow:$top $left $blur $set $color;
   }
 }
-@mixin skew($side: right, $deg: -20deg, $right: -15px, $left: -15px, $width: 30px, $bg: #fff) {
-    position: relative;
 
-    &:before {
-        z-index: -1;
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-
-        @if $side == right {
-            right: $right;
-        }
-        @else if $side == left {
-            left: $left;
-        }
-
-        display: block;
-        width: $width;
-        background: $bg;
-        -webkit-transform: skew($deg);
-            -ms-transform: skew($deg);
-                transform: skew($deg);
-    }
+@mixin fluid-box($width) {
+  width:$width;
+  height: 0;
+  padding-bottom:$width;
 }
+
+@mixin verticalAlign($top) {
+  position:absolute;
+  top:$top;
+  -webkit-transform: translateY(-$top);
+  -ms-transform: translateY(-$top);
+  transform: translateY(-$top);
+}
+
 
 // semantic class helpers
 .screen-reader-text {
@@ -201,14 +191,6 @@
     margin:0;
   }
 }
-%vertical-align {
-  position:absolute;
-  top:50%;
-  -webkit-transform:translateY(-50%);
-      -ms-transform:translateY(-50%);
-          transform:translateY(-50%);
-}
-
 %texture-bg {
   background:url('images/texture-bg.png');
 }

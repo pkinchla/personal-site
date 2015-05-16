@@ -306,7 +306,7 @@
   overflow:hidden;
   .title {
     @extend %inline-block;
-    @extend %vertical-align;
+    @include verticalAlign(50%);
 
     font-size:1em;
     left:10%;
@@ -698,20 +698,28 @@
   // home page
   .site-content__home {
     h1 {
-      margin-top:37%;
+      font-size:3.5em;
+      position:relative;
+      z-index:1;
+      margin-top:40%;
     }
     .site-content__home__copy {
-      @include gs-span(l, 1, 2);
-      @include skew($bg:darken($background-white, 2.5%), $deg:40deg, $right:-45%, $width: 380px);
+      @include gs-span(l, 1, 3);
 
-      margin-top:inherit;
-      padding:3em 0 1.5em 5%;
-      background:darken($background-white, 2.5%);
+      position:relative;
+      margin-top:5em;
+      transform:rotate(15deg);
+      border:1px solid $dark-blue;
+      background:darken(rgba($background-white, .90), 2.5%);
+      .content {
+        padding:8em 6em 8em 8em;
+        transform:rotate(-15deg);
+      }
     }
     .site-content__home__blog {
       @include gs-span(l, 3, 4);
 
-      margin-top:-39.5%;
+      margin-top:-42.5%;
     }
   }
   // blog page
@@ -839,14 +847,16 @@
       margin-top:30%;
     }
     .site-content__home__copy {
-      @include gs-span(c, 2, 3);
-      @include skew($bg:darken($background-white, 2.5%), $deg:35deg, $right:-45%, $width: 410px);
+      @include gs-span(c, 2, 4);
+      .content {
+        padding:8em 6em 8em 8em;
+      }
     }
     .site-content__home__blog {
-      @include gs-span(c, 4, 5);
+      @include gs-span(c, 7, 8);
       @include clear;
 
-      margin-top:6em;
+      margin-top:-39%;
     }
   }
   // blog page specific styles
