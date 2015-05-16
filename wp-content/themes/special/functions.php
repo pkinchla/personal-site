@@ -96,6 +96,22 @@ function special_widgets_init() {
 }
 add_action( 'widgets_init', 'special_widgets_init' );
 
+
+// adding async for scripts usage -
+// wp_enqueue_script('script', '/path/to/my/script.js#asyncload');
+
+function add_async_forscript($url)
+{
+		if (strpos($url, '#asyncload')===false)
+				return $url;
+		else if (is_admin())
+				return str_replace('#asyncload', '', $url);
+		else
+				return str_replace('#asyncload', '', $url)."' async='async"; 
+}
+add_filter('clean_url', 'add_async_forscript', 11, 1);
+
+
 /**
  * Enqueue scripts and styles.
  */
@@ -110,7 +126,7 @@ function special_scripts() {
 		wp_enqueue_script( 'livereload', 'http://localhost:35729/livereload.js', '', null, true);
 	} 
 	else {
-		wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/built.min.js', array(), '', true );
+		wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/built.min.js#asyncload', array(), '', true );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
