@@ -25,6 +25,7 @@
   }
 }
 
+
 // main navigation
 .site-navigation {
   @extend %clearfix;
@@ -708,12 +709,12 @@
 
       position:relative;
       margin-top:5em;
-      transform:rotate(15deg);
+      @include rotate(15deg);
       border:1px solid $dark-blue;
       background:darken(rgba($background-white, .90), 2.5%);
       .content {
         padding:8em 6em 8em 8em;
-        transform:rotate(-15deg);
+        @include rotate(-15deg);
       }
     }
     .site-content__home__blog {
