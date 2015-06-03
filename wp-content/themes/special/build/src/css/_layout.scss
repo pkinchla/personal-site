@@ -22,6 +22,18 @@
     height:2em;
 
     fill:$body-color;
+
+  }
+}
+
+// animation for logo type on home page only
+.js {
+  .home {
+    .the-d {
+      stroke:$body-color;
+      stroke-width:1px;
+      stroke-miterlimit:10;
+    }
   }
 }
 
@@ -401,7 +413,7 @@
   }
 }
 @include gs-media(m, min) {
-  // base 
+  // base
   h1 {
     font-size:2.625em;
   }
@@ -663,7 +675,7 @@
       }
     }
   }
-  // menu js classes 
+  // menu js classes
   .js .nav-collapse {
     position:relative;
   }
