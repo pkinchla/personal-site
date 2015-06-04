@@ -1317,7 +1317,7 @@ window.matchMedia || (window.matchMedia = function() {
 	// second part of array that will indicate the page
 	var path = pathArray[2];
 
-	if (path != "") {
+	if (path == undefined) {
 		(function(window) {
 
 			cobrasvg.prototype._supportSvg = function() {
