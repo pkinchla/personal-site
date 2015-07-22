@@ -1,4 +1,8 @@
 // header
+.site-header__banner {
+  @include linear-gradient(lighten($dark-blue, 52.5%), $light-blue);
+}
+
 .site-header {
   @extend %relative;
 
@@ -15,14 +19,12 @@
 
   font-family:'futura-pt', sans-serif;
   padding:1em 1em 1em;
-  background:$light-blue;
   .logo {
     @include gs-span(s, 1);
 
     height:2em;
 
     fill:$body-color;
-
   }
 }
 
@@ -629,7 +631,6 @@
     margin-top:-5em;
     padding-top:5em;
     border:1px solid $dark-blue;
-    background:$light-blue;
     &:before {
       border-right:1px solid $dark-blue;
     }
