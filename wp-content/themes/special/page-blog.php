@@ -27,7 +27,7 @@ get_header(); ?>
         <div class="site-content__blog__categories">
           <h2>Categories</h2>
           <ol>
-            <?php wp_list_categories('title_li=&show_count=1&feed=RSS'); ?>
+            <?php wp_list_categories('title_li=&show_count=0&feed=RSS'); ?>
           </ol>
         </div>
       </div>
