@@ -1,6 +1,6 @@
 // header
 .site-header__banner {
-  @include linear-gradient(lighten($dark-blue, 52.5%), $light-blue);
+  background:$light-blue;
 }
 
 .site-header {
@@ -11,6 +11,7 @@
     width:inherit;
   }
 }
+
 .site-logo {
   @extend %block;
   @extend %clearfix;
@@ -626,12 +627,14 @@
   .site-header__banner {
     @include gs-span(l, 1, 2);
     @include skewY(15deg);
-
+    @include linear-gradient($light-blue, lighten($dark-blue, 52.5%));
+    
     position:absolute;
     z-index:1;
     margin-top:-5em;
     padding-top:5em;
     border:1px solid $dark-blue;
+    
     &:before {
       border-right:1px solid $dark-blue;
     }
@@ -717,6 +720,7 @@
     }
   }
   // home page
+
   .site-content__home {
     h1 {
       font-size:3.5em;
