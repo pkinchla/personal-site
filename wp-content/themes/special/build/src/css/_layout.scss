@@ -1,6 +1,6 @@
 // header
 .site-header__banner {
-  background:$light-blue;
+  @include linear-gradient($light-blue, lighten($dark-blue, 52.5%));
 }
 
 .site-header {
@@ -627,7 +627,7 @@
   .site-header__banner {
     @include gs-span(l, 1, 2);
     @include skewY(15deg);
-    @include linear-gradient($light-blue, lighten($dark-blue, 52.5%));
+    
     
     position:absolute;
     z-index:1;
