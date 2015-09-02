@@ -49,7 +49,7 @@
       <section class="site-footer__colophon">
         <h3>Colophon</h3>
         <p>This site is set in Georgia and Futura PT. Embedded typefaces are being served from <a href="https://typekit.com/">Typekit</a>. Handcrafted with <a href="http://validator.w3.org/check?uri=referer">HTML</a>, CSS and built on <a href="https://wordpress.org/">WordPress</a></p>
-        <small>Paul Kinchla &copy; 2005 - <?php echo date("Y") ?></small>
+        <small>&copy;2006 - <?php echo date("Y") ?> Paul Kinchla</small>
       </section>
 
     </div><!-- .site-info -->
