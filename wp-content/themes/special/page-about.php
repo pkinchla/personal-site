@@ -9,12 +9,13 @@ $contact = get_field('contact');
 $resume = get_field('resume');
 $flickr_field = get_field('flickr_field');
 $skill = get_field('skill');
-$resume = get_field('resume_file');
+$resume = get_field('file_resume');
 $url_file = $resume['url'];
 
 require_once('resp-hero.php');
 
 get_header(); ?>
+
 
   <div id="primary" class="content-area">
     <main id="main" class="site-main site-content__about" role="main">
