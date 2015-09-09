@@ -202,12 +202,21 @@
 
   margin-top:50%;
 }
+
 // blog listing specific styles
 .site-content__blog {
   .entry-meta {
     margin-bottom:1.5em;
   }
 }
+
+// blog listing specific styles
+.site-content__author {
+  .entry-meta {
+    margin-bottom:1.5em;
+  }
+}
+
 .site-content__blog__heroimg, .site-content__about__heroimg, .site-content__portfolio__heroimg, .site-content__default__heroimg {
   border:1px solid $dark-blue;
   border-top:none;
