@@ -503,13 +503,10 @@
   }
   .site-content__blog__categories {
     @include gs-span(m, 1);
-
     margin-top:-15em;
-    text-align:right;
-    .cat-item {
+    text-align:right;    
+    ol {
       float:right;
-      clear:both;
-      text-align:right;
     }
   }
   // media in posts
@@ -772,9 +769,7 @@
   }
   .site-content__blog__categories {
     @include gs-span(l, 2, 3);
-
     margin-top:inherit;
-    text-align:right;
   }
   // media in posts
   .alignleft {
@@ -910,7 +905,6 @@
   .site-content__blog__categories {
     @include gs-span(c, 4);
 
-    text-align:right;
   }
   // about page
   .site-content__about {
