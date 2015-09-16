@@ -1,3 +1,12 @@
+// wrapper base width
+.wrapper {
+  width:90%;
+}
+
+.wrapper.hero-interior {
+  width:100%;
+}
+
 // header
 .site-header__banner {
   @include linear-gradient($light-blue, lighten($dark-blue, 52.5%));
@@ -200,7 +209,7 @@
   @include gs-span(s, 1, 2);
   @include clear;
 
-  margin-top:50%;
+  margin-top:60%;
 }
 
 // blog listing specific styles
@@ -426,6 +435,9 @@
 }
 @include gs-media(m, min) {
   // base
+  .wrapper.hero-interior {
+    width:90%;
+  }
   h1 {
     font-size:2.625em;
   }
@@ -650,6 +662,7 @@
     &.wrapper {
       width:90%;
       margin:0 auto;
+      
     }
     .site-logo {
       @include skewY(-15deg);

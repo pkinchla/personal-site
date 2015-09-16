@@ -105,7 +105,7 @@ pre {
 }
 
 code, kbd, tt, var {
-  font:15px Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+  font-family:15px Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
 }
 
 abbr, acronym {
@@ -358,8 +358,6 @@ Alignments
 --------------------------------------------------------------*/
 .wrapper {
   @extend %clearfix;
-
-  width:90%;
   margin:0 auto;
 }
 
