@@ -147,10 +147,22 @@ require( get_template_directory() . '/flickr-feed.php' );
  */
 require get_template_directory() . '/inc/template-tags.php';
 
+
+function file_get_data($url) {
+	$ch = curl_init();
+	$timeout = 5;
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+	$data = curl_exec($ch);
+	curl_close($ch);
+	return $data;
+}
+
 // enqueue typekit
 function typekit_js() {
 	$typekit_file = get_template_directory_uri() . '/js/typekit.js';
-	$typekit_path = file_get_contents($typekit_file);
+	$typekit_path = file_get_data($typekit_file);
 	
 	echo '<script>'. $typekit_path .'</script>' . "\n";
 }
@@ -165,11 +177,11 @@ function critical_css() {
 	else {
 	// css
 	$crit_sheet = get_template_directory_uri() . '/critical.css';
-	$critical_path = file_get_contents($crit_sheet);
+	$critical_path = file_get_data($crit_sheet);
 
 	// loadCSS
 	$js_sheet = get_template_directory_uri() . '/js/loadCSS.js';
-	$loadCSS_path = file_get_contents($js_sheet);
+	$loadCSS_path = file_get_data($js_sheet);
 
 	echo '<style>'. $critical_path .'</style>' . "\n";
 	echo '<script>'. $loadCSS_path .'</script>' . "\n";
@@ -193,7 +205,7 @@ add_image_size( 'hero_cinema_large', 3500);
 // google analytics in footer 
 function add_googleanalytics()  {
 	$ga_file = get_template_directory_uri() . '/js/ga.js';
-	$ga_path = file_get_contents($ga_file);
+	$ga_path = file_get_data($ga_file);
 	
 	echo '<script>'. $ga_path .'</script>' . "\n";
 }
