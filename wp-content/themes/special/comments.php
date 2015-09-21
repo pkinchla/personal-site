@@ -32,7 +32,7 @@ if ( post_password_required() ) {
 			</h2>
 
 			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-			<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
+			<nav id="comment-nav-above" class="navigation comment-navigation">
 				<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'special' ); ?></h2>
 				<div class="nav-links">
 
@@ -53,7 +53,7 @@ if ( post_password_required() ) {
 			</ol><!-- .comment-list -->
 
 			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-			<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
+			<nav id="comment-nav-below" class="navigation comment-navigation">
 				<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'special' ); ?></h2>
 				<div class="nav-links">
 
