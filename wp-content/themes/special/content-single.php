@@ -8,7 +8,7 @@ require_once('resp-hero.php');
 $nav_args = array(
 		'prev_text' => '&larr; Prev Post',
 		'next_text' => 'Next Post &rarr;',
-		'screen_reader_text' => 'Portfolio Navigation',
+		'screen_reader_text' => 'Post Navigation',
 	);
 
 ?>
