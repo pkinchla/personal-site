@@ -46,9 +46,16 @@ get_header(); ?>
                 $company_link = get_sub_field('company_link');
               ?>  
               <dd>
-                <h4><?php echo $title; ?> <span><time datetime="<?php echo $date_start ?>"><?php echo $date_start ?></time><?php if ($date_end) {echo '-<time datetime="'. $date_end .'">' . $date_end . '</time>';} ?></span></h4>
+                <h4><?php echo $title; ?>  <span><time datetime="<?php echo $date_start ?>"><?php echo $date_start ?></time>
+                  <?php if ($date_end): {
+                          echo '- <time datetime="'. $date_end .'">' . $date_end . '</time>';} 
+                        else: { 
+                          echo '- present';
+                        } 
+                        endif;
+                        ?></span></h4>
                 <h5><?php echo $company_name; ?></h5>
-                <p><?php echo $description; ?> <em><a href="http://<?php echo $company_link ?>/" target="_blank"><?php echo $company_link; ?></a></em></p>
+                <p><?php echo $description; ?> <em><a href="//<?php echo $company_link ?>/" target="_blank"><?php echo $company_link; ?></a></em></p>
               </dd>
                <?php endwhile; ?>
               <?php endif; ?>
@@ -61,7 +68,7 @@ get_header(); ?>
                 $location = get_sub_field('location');
               ?>  
               <dd>
-                <h4><?php echo $title; ?><span><time datetime="<?php echo $date ?>"><?php echo $date; ?></time></span></h4>
+                <h4><?php echo $title; ?>  <span><time datetime="<?php echo $date ?>"><?php echo $date; ?></time></span></h4>
                 <h5><?php echo $location; ?></h5>
               </dd>
                 <?php endwhile; ?>
@@ -76,7 +83,7 @@ get_header(); ?>
                 $school = get_sub_field('school');
                 $degree = get_sub_field('degree');
               ?>  
-                <h4><?php echo $school; ?> <span><?php echo $degree ?></span></h4>
+                <h4><?php echo $school; ?>  <span><?php echo $degree ?></span></h4>
               <?php endwhile; ?>
               <?php endif; ?>
               </dd>
