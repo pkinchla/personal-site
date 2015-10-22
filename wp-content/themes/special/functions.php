@@ -126,7 +126,7 @@ function special_scripts() {
 		wp_enqueue_script( 'livereload', 'http://localhost:35729/livereload.js', '', null, true);
 	} 
 	else {
-		wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/built.min.js', array(), '', true );
+		wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/built.min.js#asyncload', array(), '', true );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
