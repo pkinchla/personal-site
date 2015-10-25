@@ -209,7 +209,7 @@
   @include gs-span(s, 1, 2);
   @include clear;
 
-  margin-top:60%;
+  margin-top:55%;
 }
 
 // blog listing specific styles
@@ -851,6 +851,9 @@
 }
 
 @include gs-media(c, min) {
+  .wrapper {
+    max-width:120em;
+  }
   body {
     font-size:1.25em ;
   }
@@ -861,6 +864,10 @@
   // footer
   .site-footer__social {
     @include gs-span(c, 2, 4);
+    svg {
+      max-width:70%;
+      margin:0 auto;
+    }
   }
   .site-footer__colophon {
     @include gs-span(c, 6, 7);
@@ -936,16 +943,18 @@
     @include gs-span(c, 1, 4);
   }
   .site-content__about__picture {
-    @include gs-span(c, 6, 8);
-
+    @include gs-span(c, 5, 7);
+    figure {
+      margin-left:15%;
+    }
     clear:none;
     img {
       margin-top:3.4em;
     }
     p {
       top:95%;
-      left:15%;
-      width:55%;
+      left:67.575%;
+      width:50%;
     }
   }
   // portfolio listing page
