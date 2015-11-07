@@ -519,7 +519,7 @@
     text-align:right;    
     ol {
       float:right;
-      min-width:25%;
+      min-width:40%;
     }
   }
   // media in posts
@@ -784,7 +784,11 @@
   .site-content__blog__categories {
     @include gs-span(l, 2, 3);
     margin-top:inherit;
+    ol {
+      min-width:25%;
+    }
   }
+
   // media in posts
   .alignleft {
     float:left;
@@ -925,7 +929,9 @@
   }
   .site-content__blog__categories {
     @include gs-span(c, 4);
-
+    ol {
+      min-width:55%;
+    }
   }
   // about page
   .site-content__about {
