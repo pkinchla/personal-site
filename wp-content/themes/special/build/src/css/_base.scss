@@ -427,11 +427,25 @@ Comments
   word-wrap:break-word;
 }
 
+.comment-form-comment {
+  label {
+    font-family: 'futura-pt', sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    color:$dark-blue;
+  }
+}
 .bypostauthor {
   display:block;
 }
+.logged-in-as {
+  font-family: 'futura-pt', sans-serif;
+  font-style: italic;
+  color:$dark-blue;
+}
 .comment-meta {
   font-family: 'futura-pt', sans-serif;
+  font-style: italic;
   border-top: 1px solid $dark-blue;
   padding:.5em 0 1em 0;
   margin:.5em 0;
