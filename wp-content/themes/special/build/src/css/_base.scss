@@ -15,17 +15,17 @@ Text Domain: paulkinchla..com
  Typography
 --------------------------------------------------------------*/
 html {
-  box-sizing: border-box;
+  box-sizing:border-box;
 }
 *, *:before, *:after {
-  box-sizing: inherit;
+  box-sizing:inherit;
 }
 
-::selection{
+::selection {
   background:$selection-color;
 }
 
-::-moz-selection{
+::-moz-selection {
   background:$selection-color;
 }
 
@@ -37,11 +37,11 @@ body, button, input, select, textarea {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color:$dark-blue;
-  font-family: 'futura-pt', sans-serif;
+  font-family:'futura-pt', sans-serif;
   font-weight:800;
   clear:both;
-  letter-spacing: -0.03em;
+  letter-spacing:-.03em;
+  color:$dark-blue;
 }
 
 h1 {
@@ -53,20 +53,27 @@ h1 {
 
 h2 {
   font-size:1.875em;
+  font-style:italic;
   line-height:1.1;
   margin:0 0 .25em 0;
+  span {
+    font-style:normal;
+  }
 }
 
 h3 {
   font-size:1.775em;
   line-height:1.3;
   margin:0 0 .10em 0;
+  span {
+    font-style:normal;
+  }
 }
 
 h4 {
   font-size:1.5em;
-  margin:0;
   line-height:1.3;
+  margin:0;
 }
 
 p {
@@ -74,21 +81,24 @@ p {
 }
 
 b, strong {
-  font-weight:bold;
+  font-weight:800;
+  font-family:'futura-pt', sans-serif;
 }
 
 dfn, cite, em, i {
   font-style:italic;
+  font-family:'futura-pt', sans-serif;
+  font-size:1.05em;
 }
 
 cite {
-  display: block;
+  display:block;
 }
 
 blockquote {
   margin:0 1.5em 0 0;
-  border-left:3px solid $dark-blue;
   padding-left:1.5em;
+  border-left:3px solid $dark-blue;
 }
 
 address {
@@ -177,7 +187,7 @@ img {
 }
 
 svg {
-  overflow: visible;
+  overflow:visible;
 }
 
 figure {
@@ -197,7 +207,7 @@ th {
 4.0 Forms
 --------------------------------------------------------------*/
 button, input, select, textarea {
-  font-family: 'futura-pt', sans-serif;
+  font-family:'futura-pt', sans-serif;
   font-size:100%; /* Corrects font size not being inherited in all browsers */
   font-weight:700;
   margin:0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
@@ -278,7 +288,7 @@ Links
 --------------------------------------------------------------*/
 a {
   @include transition(all, .2s, ease-in-out);
-  
+
   text-decoration:none;
   color:$green;
   border-bottom:1px dotted $green;
@@ -296,13 +306,14 @@ a:hover, a:focus, a:active {
 
 .action {
   @extend %link-reset;
-  font: 700 1em 'futura-pt', sans-serif;
-  margin: 1em 0;
-  padding: 0.35em 1em;
-  color: $white;
-  border-radius: 5px;
+
+  font:700 1em 'futura-pt', sans-serif;
+  margin:1em 0;
+  padding:.35em 1em;
+  color:$white;
+  border-radius:5px;
   background:$green;
-  &:hover, &:active, &:visited  {
+  &:hover, &:active, &:visited {
     color:white;
   }
   &:hover {
@@ -315,17 +326,18 @@ a:hover, a:focus, a:active {
 
 // pagination
 .nav-links {
-  margin: 0 auto;
+  margin:0 auto;
 }
 
 .site-main .comment-navigation, .site-main .paging-navigation, .site-main .post-navigation {
   @extend %clearfix;
   @include clear;
-  margin:1.5em auto;
+
   font-family:'futura-pt', sans-serif;
-  font-weight: 700;
-  font-style: italic;
+  font-weight:700;
+  font-style:italic;
   width:65%;
+  margin:1.5em auto;
   a {
     @extend %link-reset;
   }
@@ -353,6 +365,7 @@ Alignments
 --------------------------------------------------------------*/
 .wrapper {
   @extend %clearfix;
+
   margin:0 auto;
 }
 
@@ -360,7 +373,7 @@ Alignments
   display:block;
   clear:both;
   margin:0 auto;
-  border: 1px solid $dark-blue;
+  border:1px solid $dark-blue;
 }
 
 /*--------------------------------------------------------------
@@ -393,22 +406,23 @@ Posts and pages
 
 .entry-meta {
   @extend %inline-block;
-  background:$dark-blue;
-  color:$white;
-  padding:.25em 1em;
+
   font-family:'futura-pt', sans-serif;
+  padding:.25em 1em;
+  color:$white;
+  background:$dark-blue;
   a {
     @extend %link-reset;
+
     color:$white;
     &:hover {
-      background:$green;
       color:white;
+      background:$green;
     }
   }
 }
 
-.cat-item, 
-.entry-footer {
+.cat-item, .entry-footer {
   font-family:'futura-pt', sans-serif;
 }
 
@@ -429,9 +443,9 @@ Comments
 
 .comment-form-comment {
   label {
-    font-family: 'futura-pt', sans-serif;
-    font-style: italic;
-    font-weight: 700;
+    font-family:'futura-pt', sans-serif;
+    font-weight:700;
+    font-style:italic;
     color:$dark-blue;
   }
 }
@@ -439,21 +453,20 @@ Comments
   display:block;
 }
 .logged-in-as {
-  font-family: 'futura-pt', sans-serif;
-  font-style: italic;
+  font-family:'futura-pt', sans-serif;
+  font-style:italic;
   color:$dark-blue;
 }
 .comment-meta {
-  font-family: 'futura-pt', sans-serif;
-  font-style: italic;
-  border-top: 1px solid $dark-blue;
-  padding:.5em 0 1em 0;
+  font-family:'futura-pt', sans-serif;
+  font-style:italic;
   margin:.5em 0;
-
+  padding:.5em 0 1em 0;
+  border-top:1px solid $dark-blue;
 }
 .comment-author {
   img {
-    vertical-align: middle;
+    vertical-align:middle;
   }
 }
 
@@ -473,7 +486,7 @@ embed, iframe, object {
 }
 
 audio {
-  margin-bottom: 1.5em;
+  margin-bottom:1.5em;
 }
 
 /*--------------------------------------------------------------
@@ -490,8 +503,8 @@ Captions
 }
 
 .wp-caption-text {
-  text-align:center;
   font-family:'futura-pt', sans-serif;
+  text-align:center;
 }
 
 .wp-caption .wp-caption-text {
