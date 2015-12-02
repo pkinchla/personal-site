@@ -441,12 +441,14 @@ Comments
   word-wrap:break-word;
 }
 
-.comment-form-comment {
+.comment-form {
   label {
     font-family:'futura-pt', sans-serif;
     font-weight:700;
     font-style:italic;
     color:$dark-blue;
+    width:4em;
+    display:inline-block;
   }
 }
 .bypostauthor {
@@ -461,7 +463,7 @@ Comments
   font-family:'futura-pt', sans-serif;
   font-style:italic;
   margin:.5em 0;
-  padding:.5em 0 1em 0;
+  padding:.5em 0 0 0;
   border-top:1px solid $dark-blue;
 }
 .comment-author {
