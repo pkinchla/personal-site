@@ -13,12 +13,10 @@ get_header(); ?>
 				<img class="site-content__default__heroimg" src="<?php echo get_template_directory_uri() ?>/images/max.gif" alt="max headroom">
 			</figure>
 			<div class="wrapper">
-				<header class="page-header">
 						<h1 class="page-title"><?php _e( '404', 'special' ); ?></h1>
-				</header><!-- .page-header -->
 				<section class="error-404 not-found site-content__default__body">
 					<div class="page-content">
-						<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'special' ); ?></p>
+						<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'special' ); ?></p>
 
 						<?php get_search_form(); ?>
 
