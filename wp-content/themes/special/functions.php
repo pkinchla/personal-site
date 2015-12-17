@@ -215,6 +215,12 @@ add_action('wp_footer', 'add_googleanalytics');
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
 
+// remove wp-embed
+function deregister_wp_embed(){
+	wp_deregister_script( 'wp-embed' );
+}
+add_action( 'wp_footer', 'deregister_wp_embed' );
+
 // media uploader fix for production
 function ms_image_editor_default_to_gd( $editors ) {
 	$gd_editor = 'WP_Image_Editor_GD';
