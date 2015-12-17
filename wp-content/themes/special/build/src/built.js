@@ -2232,92 +2232,101 @@
 
 animate_something();
 
-window.onload = function(){
-	//canvas init
-	var canvas = document.querySelector(".snow");
-	var ctx = canvas.getContext("2d");
-	
-	//canvas dimensions
-	var W = window.innerWidth;
-	var H = window.innerHeight;
-	canvas.width = W;
-	canvas.height = H;
-	
-	//snowflake particles
-	var mp = 25; //max particles
-	var particles = [];
-	for(var i = 0; i < mp; i++)
-	{
-		particles.push({
-			x: Math.random()*W, //x-coordinate
-			y: Math.random()*H, //y-coordinate
-			r: Math.random()*4+1, //radius
-			d: Math.random()*mp //density
-		})
+(function () {
+
+	var COUNT = 300;
+	var masthead = document.querySelector('.site');
+	var canvas = document.createElement('canvas');
+	var ctx = canvas.getContext('2d');
+	var width = masthead.clientWidth;
+	var height = masthead.clientHeight;
+	var i = 0;
+	var active = false;
+
+	function onResize() {
+		width = masthead.clientWidth;
+		height = masthead.clientHeight;
+		canvas.width = width;
+		canvas.height = height;
+		ctx.fillStyle = '#FFF';
+
+		var wasActive = active;
+		active = width > 0;
+
+		if (!wasActive && active)
+			requestAnimFrame(update);
 	}
-	
-	//Lets draw the flakes
-	function draw()
-	{
-		ctx.clearRect(0, 0, W, H);
-		
-		ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
-		ctx.beginPath();
-		for(var i = 0; i < mp; i++)
-		{
-			var p = particles[i];
-			ctx.moveTo(p.x, p.y);
-			ctx.arc(p.x, p.y, p.r, 0, Math.PI*2, true);
-		}
-		ctx.fill();
-		update();
+
+	var Snowflake = function () {
+		this.x = 0;
+		this.y = 0;
+		this.vy = 0;
+		this.vx = 0;
+		this.r = 0;
+
+		this.reset();
 	}
-	
-	//Function to move the snowflakes
-	//angle will be an ongoing incremental flag. Sin and Cos functions will be applied to it to create vertical and horizontal movements of the flakes
-	var angle = 0;
-	function update()
-	{
-		angle += 0.01;
-		for(var i = 0; i < mp; i++)
-		{
-			var p = particles[i];
-			//Updating X and Y coordinates
-			//We will add 1 to the cos function to prevent negative values which will lead flakes to move upwards
-			//Every particle has its own density which can be used to make the downward movement different for each flake
-			//Lets make it more random by adding in the radius
-			p.y += Math.cos(angle+p.d) + 1 + p.r/2;
-			p.x += Math.sin(angle) * 2;
-			
-			//Sending flakes back from the top when it exits
-			//Lets make it a bit more organic and let flakes enter from the left and right also.
-			if(p.x > W+5 || p.x < -5 || p.y > H)
-			{
-				if(i%3 > 0) //66.67% of the flakes
-				{
-					particles[i] = {x: Math.random()*W, y: -10, r: p.r, d: p.d};
-				}
-				else
-				{
-					//If the flake is exitting from the right
-					if(Math.sin(angle) > 0)
-					{
-						//Enter from the left
-						particles[i] = {x: -5, y: Math.random()*H, r: p.r, d: p.d};
-					}
-					else
-					{
-						//Enter from the right
-						particles[i] = {x: W+5, y: Math.random()*H, r: p.r, d: p.d};
-					}
-				}
+
+	Snowflake.prototype.reset = function() {
+		this.x = Math.random() * width;
+		this.y = Math.random() * -height;
+		this.vy = 1 + Math.random() * 3;
+		this.vx = 0.5 - Math.random();
+		this.r = 1 + Math.random() * 2;
+		this.o = 0.5 + Math.random() * 0.5;
+	}
+
+	canvas.style.position = 'absolute';
+	canvas.style.left = canvas.style.top = '0';
+
+	var snowflakes = [], snowflake;
+	for (i = 0; i < COUNT; i++) {
+		snowflake = new Snowflake();
+		snowflakes.push(snowflake);
+	}
+
+	function update() {
+
+		ctx.clearRect(0, 0, width, height);
+
+		if (!active)
+			return;
+
+		for (i = 0; i < COUNT; i++) {
+			snowflake = snowflakes[i];
+			snowflake.y += snowflake.vy;
+			snowflake.x += snowflake.vx;
+
+			ctx.globalAlpha = snowflake.o;
+			ctx.beginPath();
+			ctx.arc(snowflake.x, snowflake.y, snowflake.r, 0, Math.PI * 2, false);
+			ctx.closePath();
+			ctx.fill();
+
+			if (snowflake.y > height) {
+				snowflake.reset();
 			}
 		}
+
+		requestAnimFrame(update);
 	}
-	
-	//animation loop
-	setInterval(draw, 33);
-}
+
+	// shim layer with setTimeout fallback
+	window.requestAnimFrame = (function(){
+		return  window.requestAnimationFrame       ||
+						window.webkitRequestAnimationFrame ||
+						window.mozRequestAnimationFrame    ||
+						function( callback ){
+							window.setTimeout(callback, 1000 / 60);
+						};
+	})();
+
+	onResize();
+	window.addEventListener('resize', onResize, false);
+
+	masthead.appendChild(canvas);
+})();
+
 
 (function (document) {
 	'use strict';
