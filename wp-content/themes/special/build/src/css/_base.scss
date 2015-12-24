@@ -397,6 +397,7 @@ Posts and pages
 
 .page-content, .entry-content, .entry-summary {
   margin:1.5em 0 0;
+  @extend %clearfix;
 }
 
 .page-links {
