@@ -36,7 +36,7 @@ pkg: grunt.file.readJSON('package.json'),
   criticalcss: {
     custom: {
       options: {
-        url: 'http://dev.paulkinchla.com/about/',
+        url: 'http://dev.paulkinchla.com',
         width: 1366,
         height:768,
         outputfile: '../critical.css',
