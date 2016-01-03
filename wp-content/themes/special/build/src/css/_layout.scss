@@ -230,10 +230,10 @@ canvas {
 }
 
 .site-content__blog__heroimg, .site-content__about__heroimg, .site-content__portfolio__heroimg, .site-content__default__heroimg {
+  position:relative;
+  z-index:-2;
   border:1px solid $dark-blue;
   border-top:none;
-  position: relative;
-  z-index: -2;
 }
 
 .site-content__blog__archives {
@@ -407,17 +407,6 @@ canvas {
   @extend %text-center;
 
   margin-top:1.5em;
-  a {
-    @extend %link-reset;
-
-    font-family:'futura-pt', sans-serif;
-    display:inline-block;
-    padding:.5em .75em;
-    border:1px solid $green;
-    &:hover {
-      border-bottom:1px solid green;
-    }
-  }
 }
 
 @include gs-media(s, min-max) {
@@ -520,8 +509,9 @@ canvas {
   }
   .site-content__blog__categories {
     @include gs-span(m, 1);
+
     margin-top:-15em;
-    text-align:right;    
+    text-align:right;
     ol {
       float:right;
       min-width:40%;
@@ -651,14 +641,12 @@ canvas {
   .site-header__banner {
     @include gs-span(l, 1, 2);
     @include skewY(15deg);
-    
-    
+
     position:absolute;
     z-index:1;
     margin-top:-5em;
     padding-top:5em;
     border:1px solid $dark-blue;
-    
     &:before {
       border-right:1px solid $dark-blue;
     }
@@ -668,7 +656,6 @@ canvas {
     &.wrapper {
       width:90%;
       margin:0 auto;
-      
     }
     .site-logo {
       @include skewY(-15deg);
@@ -745,7 +732,6 @@ canvas {
     }
   }
   // home page
-
   .site-content__home {
     h1 {
       font-size:3.5em;
@@ -788,12 +774,12 @@ canvas {
   }
   .site-content__blog__categories {
     @include gs-span(l, 2, 3);
+
     margin-top:inherit;
     ol {
       min-width:25%;
     }
   }
-
   // media in posts
   .alignleft {
     float:left;
@@ -956,10 +942,11 @@ canvas {
   }
   .site-content__about__picture {
     @include gs-span(c, 5, 7);
+
+    clear:none;
     figure {
       margin-left:15%;
     }
-    clear:none;
     img {
       margin-top:3.4em;
     }

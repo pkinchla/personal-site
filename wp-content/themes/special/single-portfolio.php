@@ -74,7 +74,7 @@ get_header(); ?>
             </div>   
           <?php } ?>
           <div class="back-link">
-            <a href="<?php echo get_page_link(7); ?>">&larr; Back to List</a>
+            <a class="action" href="<?php echo get_page_link(7); ?>">&larr; Back to List</a>
           </div>
         </div>
       </main><!-- #content .site-content -->

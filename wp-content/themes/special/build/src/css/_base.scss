@@ -81,14 +81,14 @@ p {
 }
 
 b, strong {
-  font-weight:800;
   font-family:'futura-pt', sans-serif;
+  font-weight:800;
 }
 
 dfn, cite, em, i {
-  font-style:italic;
   font-family:'futura-pt', sans-serif;
   font-size:1.05em;
+  font-style:italic;
 }
 
 cite {
@@ -307,22 +307,20 @@ a:hover, a:focus, a:active {
 .action {
   @extend %link-reset;
 
-  font:700 1em 'futura-pt', sans-serif;
-  margin:1em 0;
-  padding:.35em 1em;
-  color:$white;
-  border-radius:5px;
-  background:$green;
-  &:hover, &:active, &:visited {
-    color:white;
-  }
+  font-family:'futura-pt', sans-serif;
+  display:inline-block;
+  padding:.5em 1em;
+  border:1px solid $green;
   &:hover {
-    background:darken($green, 10%);
+    color:white;
+    background:$green;
   }
-  &:focus, &:visited {
-    color:$white;
+  &:hover, &:active, &:visited {
+    border-bottom:1px solid $green;
   }
 }
+
+
 
 // pagination
 .nav-links {
@@ -396,8 +394,9 @@ Posts and pages
 }
 
 .page-content, .entry-content, .entry-summary {
-  margin:1.5em 0 0;
   @extend %clearfix;
+
+  margin:1.5em 0 0;
 }
 
 .page-links {
@@ -447,9 +446,9 @@ Comments
     font-family:'futura-pt', sans-serif;
     font-weight:700;
     font-style:italic;
-    color:$dark-blue;
-    width:4em;
     display:inline-block;
+    width:4em;
+    color:$dark-blue;
   }
 }
 .bypostauthor {
