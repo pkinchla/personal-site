@@ -422,6 +422,15 @@ Posts and pages
   }
 }
 
+.entry-footer {
+  border:1px solid $dark-blue;
+  padding:.5em 1em;
+}
+
+.tags-links {
+  @extend %block;
+}
+
 .cat-item, .entry-footer {
   font-family:'futura-pt', sans-serif;
 }
