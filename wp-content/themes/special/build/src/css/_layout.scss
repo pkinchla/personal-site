@@ -573,7 +573,7 @@ canvas {
     p {
       position:absolute;
       top:35%;
-      left:95%;
+      left:80%;
       width:55.5%;
     }
   }
@@ -813,7 +813,8 @@ canvas {
     @include gs-span(l, 2, 4);
     @include clear;
     p {
-      width:35%;
+      left:95%;
+      width:36%;
     }
   }
   // portfolio listing page
