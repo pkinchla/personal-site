@@ -408,7 +408,8 @@ Posts and pages
   @extend %inline-block;
 
   font-family:'futura-pt', sans-serif;
-  padding:.25em 1em;
+  font-style:italic;
+  padding:.25em 1em .25em .75em;
   color:$white;
   background:$dark-blue;
   a {
@@ -423,8 +424,8 @@ Posts and pages
 }
 
 .entry-footer {
-  border:1px solid $dark-blue;
   padding:.5em 1em;
+  border:1px solid $dark-blue;
 }
 
 .tags-links {

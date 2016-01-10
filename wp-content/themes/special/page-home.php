@@ -21,7 +21,7 @@ get_header(); ?>
             </div>
           </div>
           <section class="site-content__home__blog">
-          <h3>Latest Writing</h3>
+          <h2>Latest Writing</h2>
             <?php query_posts( 'posts_per_page=1' ); ?>
                 <?php while ( have_posts() ) : the_post(); ?>
                 <h4><a class="linked-header" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>

@@ -219,6 +219,10 @@ canvas {
 .site-content__blog {
   .entry-meta {
     margin-bottom:1.5em;
+    padding:0;
+    color:$dark-blue;
+    border-bottom:1px solid $medium-blue-gray;
+    background:none;
   }
 }
 
