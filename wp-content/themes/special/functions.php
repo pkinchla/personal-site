@@ -166,7 +166,6 @@ function typekit_js() {
 	
 	echo '<script>'. $typekit_path .'</script>' . "\n";
 }
-
 add_action('wp_head', 'typekit_js');
 
 // function for critical path css
@@ -220,17 +219,6 @@ function deregister_wp_embed(){
 	wp_deregister_script( 'wp-embed' );
 }
 add_action( 'wp_footer', 'deregister_wp_embed' );
-
-// media uploader fix for production
-function ms_image_editor_default_to_gd( $editors ) {
-	$gd_editor = 'WP_Image_Editor_GD';
-
-	$editors = array_diff( $editors, array( $gd_editor ) );
-	array_unshift( $editors, $gd_editor );
-
-	return $editors;
-}
-add_filter( 'wp_image_editors', 'ms_image_editor_default_to_gd' );
 
 // custom login page
 // change logo link and title 

@@ -315,7 +315,7 @@ a:hover, a:focus, a:active {
     color:white;
     background:$green;
   }
-  &:hover, &:active, &:visited {
+  &:hover, &:active, &:visited, &:focus {
     border-bottom:1px solid $green;
   }
 }
