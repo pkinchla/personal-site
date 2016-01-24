@@ -1,0 +1,469 @@
+// wrapper base width
+.wrapper {
+  width:90%;
+}
+
+.wrapper.hero-interior {
+  width:100%;
+}
+
+// header
+.site-header__banner {
+  @include linear-gradient($light-blue, lighten($dark-blue, 52.5%));
+}
+
+.site-header {
+  @extend %relative;
+
+  border-bottom:1px solid $dark-blue;
+  &.wrapper {
+    width:inherit;
+  }
+}
+
+.site-logo {
+  @extend %block;
+  @extend %clearfix;
+  @extend %nav-link;
+  @extend %link-reset;
+
+  font-family:'futura-pt', sans-serif;
+  padding:1em 1em 1em;
+  .logo {
+    @include gs-span(s, 1);
+
+    height:2em;
+
+    fill:$body-color;
+  }
+}
+
+// animation for logo type on home page only
+.js {
+  .home {
+    .the-d {
+      stroke:$body-color;
+      stroke-width:1px;
+      stroke-miterlimit:10;
+    }
+  }
+}
+
+canvas {
+  z-index:-1;
+}
+
+// main navigation
+.site-navigation {
+  @extend %clearfix;
+}
+
+.menu {
+  @extend %plain-list;
+  @extend %clearfix;
+  li {
+    font-family:'futura-pt', sans-serif;
+    font-size:1.25em;
+    width:100%;
+    border-bottom:1px solid $dark-blue;
+    background:$white;
+    &:first-child {
+      border-top:1px solid $dark-blue;
+    }
+    &:last-child {
+      border-bottom:0;
+    }
+    a {
+      @extend %block;
+      @extend %nav-link;
+      @extend %link-reset;
+
+      padding:.85em 10%;
+      color:$body-color;
+    }
+  }
+  .current-menu-item {
+    a {
+      @include alpha-attribute('background-color', rgba($dark-blue, .20), lighten($dark-blue, 70%));
+    }
+  }
+}
+
+// responsive nav styles
+.js .nav-collapse {
+  @extend %block;
+
+  position:absolute;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  zoom:1;
+  max-height:0;
+}
+
+.nav-collapse.opened {
+  max-height:9999px;
+}
+
+.nav-toggle {
+  @extend %link-reset;
+
+  font:700 italic 1em 'futura-pt', sans-serif;
+  position:absolute ;
+  top:0;
+  right:0;
+  display:block;
+  width:35%;
+  padding:1.35em 10%;
+  -webkit-user-select:none;
+     -moz-user-select:none;
+      -ms-user-select:none;
+          user-select:none;
+  text-transform:uppercase;
+  color:$green;
+  border-left:1px solid $dark-blue;
+  background:$white;
+  &:before {
+    display:block;
+    content:'Menu';
+    text-align:center;
+  }
+}
+
+.nav-toggle.active::before {
+  content:'Close';
+}
+
+.site-navigation-toggle {
+  @extend %link-reset;
+  outline:none;
+  border:none;
+  font:700 italic 1em 'futura-pt', sans-serif;
+  position:absolute ;
+  top:0;
+  right:0;
+  display:block;
+  width:35%;
+  padding:1.35em 10%;
+  -webkit-user-select:none;
+     -moz-user-select:none;
+      -ms-user-select:none;
+          user-select:none;
+  text-transform:uppercase;
+  color:$green;
+  border-left:1px solid $dark-blue;
+  background:$white;
+  svg {
+    fill:$green;
+    max-height:1em;
+  }
+  &:before {
+    display:block;
+    content:'Menu';
+    text-align:center;
+    position:absolute;
+  }
+}
+
+.nav-toggle.active::before {
+  content:'Close';
+}
+
+.site-footer {
+  margin-top:3em;
+  padding-bottom:3em;
+  border-top:1px solid $dark-blue;
+  border-bottom:1px solid $dark-blue;
+  background:$light-blue;
+}
+.site-footer__social {
+  @extend %plain-list;
+  @extend %clearfix;
+
+  margin:1.5em 0 1.5em 0;
+  li {
+    float:left;
+    width:25%;
+    a {
+      @extend %block;
+      @extend %text-center;
+      @extend %link-reset;
+      @extend %relative;
+
+      font-family:'futura-pt', sans-serif;
+      padding-bottom:1em;
+      svg {
+        @extend %block;
+
+        fill:$green;
+      }
+      &:hover {
+        color:$white;
+        background:$dark-blue;
+        svg {
+          fill:$white;
+        }
+      }
+    }
+  }
+}
+.site-footer__colophon {
+  small {
+    font-family:'futura-pt', sans-serif;
+  }
+}
+
+// default post and page styling
+.site-content__default {
+  .entry-title {
+    margin-bottom:.25em;
+  }
+  .site-content__default__body, .comments {
+    @include clear;
+  }
+}
+// home page specific styles
+.site-content__home {
+  @extend %relative;
+  h1 {
+    @include gs-span(s, 1);
+    @extend %text-center;
+
+    margin-top:30%;
+  }
+}
+.site-content__home__heroimg {
+  @extend %absolute;
+
+  z-index:-5;
+  right:0;
+  border-bottom:1px solid $dark-blue;
+  border-left:1px solid $dark-blue;
+}
+
+.js .site-content__home__heroimg {
+  left:0;
+  border-left:none;
+}
+.site-content__home__copy {
+  @include gs-span(s, 1, 2);
+  @include clear;
+
+  margin-top:55%;
+}
+
+// blog listing specific styles
+.site-content__blog {
+  .entry-meta {
+    margin-bottom:1.5em;
+    padding:0;
+    color:$dark-blue;
+    border-bottom:1px solid $medium-blue-gray;
+    background:none;
+  }
+}
+
+// blog listing specific styles
+.site-content__author {
+  .entry-meta {
+    margin-bottom:1.5em;
+  }
+}
+
+.site-content__blog__heroimg, .site-content__about__heroimg, .site-content__portfolio__heroimg, .site-content__default__heroimg {
+  position:relative;
+  z-index:-2;
+  border:1px solid $dark-blue;
+  border-top:none;
+}
+
+.site-content__blog__archives {
+  h2 {
+    margin-bottom:.15em;
+  }
+  .entry-meta {
+    margin-bottom:1.5em;
+  }
+}
+
+// about page specific styles
+.site-content__about__contact {
+  margin-bottom:1.5em;
+  .contact {
+    @extend %plain-list;
+
+    font-family:'futura-pt', sans-serif;
+  }
+}
+.site-content__about__resume {
+  @extend %clearfix;
+
+  margin-bottom:3em;
+  h3 {
+    @extend %inline-block;
+  }
+  .action {
+    @extend %inline-block;
+
+    margin:0 0 0 3em;
+  }
+  .resume {
+    @extend %clearfix;
+
+    padding:5%;
+    border:1px solid rgba(33, 33, 33, .15);
+    -webkit-box-shadow:inset 0 0 10px rgba(33, 33, 33, .05);
+       -moz-box-shadow:inset 0 0 10px rgba(33, 33, 33, .05);
+            box-shadow:inset 0 0 10px rgba(33, 33, 33, .05);
+  }
+  dt {
+    font:400 normal 1.6em 'futura-pt', sans-serif;
+    margin:1.5em 0 .5em 0;
+    border-bottom:1px solid rgba(33, 33, 33, .25);
+    &:first-child {
+      margin-top:0;
+    }
+  }
+  h4 {
+    font:400 normal 1.25em 'futura-pt', sans-serif;
+    color:$body-color;
+  }
+  h5 {
+    font:400 italic 1.125em 'futura-pt', sans-serif;
+    margin:0 0 .15em 0;
+    color:$body-color;
+  }
+  dd {
+    margin:0 0 1.5em 0;
+  }
+  em {
+    @extend %block;
+
+    font-style:normal;
+  }
+  span {
+    @extend %inline-block;
+
+    font:normal .75em 'futura-pt', sans-serif;
+  }
+  ul {
+    @extend %plain-list;
+  }
+}
+
+.site-content__about__picture {
+  @extend %relative;
+  .img-link {
+    @extend %link-reset;
+  }
+  img {
+    border:1px solid $dark-blue;
+  }
+  p {
+    padding:1em;
+    border:1px solid $dark-blue;
+    background:$background-white;
+  }
+}
+// portfolio specific styles
+// listing page
+.site-content__portfolio__list {
+  @extend %plain-list;
+  @extend %clearfix;
+  li {
+    background:$dark-blue;
+  }
+  img {
+    @extend %block;
+    @include transition(all, .3s, ease-in-out);
+
+    border:1px solid $dark-blue;
+    border-top:none;
+  }
+  li:first-child {
+    border-top:1px solid $dark-blue;
+  }
+}
+.site-content__portfolio__listlink {
+  @extend %block;
+  @extend %relative;
+  @extend %link-reset;
+
+  overflow:hidden;
+  .title {
+    @extend %inline-block;
+    @include verticalAlign(50%);
+
+    font-size:1em;
+    left:10%;
+    display:none;
+    width:75%;
+    color:$white;
+    em {
+      @extend %block;
+
+      font-weight:normal;
+    }
+  }
+  &:hover {
+    .title {
+      @extend %block;
+
+      z-index:1;
+    }
+    .animate-left, .animate-right {
+      @extend %inline-block;
+
+      -webkit-animation-duration:1s;
+              animation-duration:1s;
+
+      -webkit-animation-fill-mode:both;
+              animation-fill-mode:both;
+    }
+    .animate-left {
+      -webkit-animation-name:slideInLeft;
+              animation-name:slideInLeft;
+    }
+    .animate-right {
+      -webkit-animation-name:slideInRight;
+              animation-name:slideInRight;
+    }
+    img {
+      opacity:.15;
+
+      -webkit-filter:blur(4px);
+              filter:blur(4px);
+              filter:alpha(opacity=15);
+    }
+  }
+}
+// portfolio single page
+.portfolio__single__image--phone {
+  @extend %text-center;
+  img {
+    max-width:80%;
+  }
+}
+.back-link {
+  @extend %text-center;
+
+  margin-top:1.5em;
+}
+
+@include gs-media(s, min-max) {
+  ul, ol {
+    margin-left:1.15em;
+  }
+  .searchform {
+    label {
+      display:block;
+    }
+    .field {
+      max-width:65%;
+    }
+  }
+  .single {
+    .byline {
+      display:block;
+    }
+  }
+}

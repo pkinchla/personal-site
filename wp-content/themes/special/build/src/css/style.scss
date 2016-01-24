@@ -8,5 +8,11 @@
 @import "base";
 // ----- animations ----- //
 @import "animate";
-// ----- layout and design ----- //
-@import "layout";
+// ----- small screens ----- //
+@import "small";
+// ----- medium screens ----- //
+@import "medium";
+// ----- large screens ----- //
+@import "large";
+// ----- cinema screens ----- //
+@import "cinema";
