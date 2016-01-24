@@ -13,8 +13,7 @@
 }
 
 .site-header {
-  @extend %relative;
-
+  position:relative;
   border-bottom:1px solid $dark-blue;
   &.wrapper {
     width:inherit;
@@ -22,12 +21,11 @@
 }
 
 .site-logo {
-  @extend %block;
-  @extend %clearfix;
   @extend %nav-link;
   @extend %link-reset;
 
   font-family:'futura-pt', sans-serif;
+  display:block;
   padding:1em 1em 1em;
   .logo {
     @include gs-span(s, 1);
@@ -53,14 +51,12 @@ canvas {
   z-index:-1;
 }
 
-// main navigation
-.site-navigation {
-  @extend %clearfix;
-}
-
 .menu {
-  @extend %plain-list;
   @extend %clearfix;
+
+  margin:0;
+  padding:0;
+  list-style:none;
   li {
     font-family:'futura-pt', sans-serif;
     font-size:1.25em;
@@ -74,10 +70,10 @@ canvas {
       border-bottom:0;
     }
     a {
-      @extend %block;
       @extend %nav-link;
       @extend %link-reset;
 
+      display:block;
       padding:.85em 10%;
       color:$body-color;
     }
@@ -91,9 +87,8 @@ canvas {
 
 // responsive nav styles
 .js .nav-collapse {
-  @extend %block;
-
   position:absolute;
+  display:block;
   overflow:hidden;
   clip:rect(0 0 0 0);
   zoom:1;
@@ -135,8 +130,7 @@ canvas {
 
 .site-navigation-toggle {
   @extend %link-reset;
-  outline:none;
-  border:none;
+
   font:700 italic 1em 'futura-pt', sans-serif;
   position:absolute ;
   top:0;
@@ -150,17 +144,20 @@ canvas {
           user-select:none;
   text-transform:uppercase;
   color:$green;
+  border:none;
   border-left:1px solid $dark-blue;
+  outline:none;
   background:$white;
   svg {
-    fill:$green;
     max-height:1em;
+
+    fill:$green;
   }
   &:before {
+    position:absolute;
     display:block;
     content:'Menu';
     text-align:center;
-    position:absolute;
   }
 }
 
@@ -176,23 +173,22 @@ canvas {
   background:$light-blue;
 }
 .site-footer__social {
-  @extend %plain-list;
-  @extend %clearfix;
-
   margin:1.5em 0 1.5em 0;
+  padding:0;
+  list-style:none;
   li {
     float:left;
     width:25%;
     a {
-      @extend %block;
-      @extend %text-center;
       @extend %link-reset;
-      @extend %relative;
 
       font-family:'futura-pt', sans-serif;
+      position:relative;
+      display:block;
       padding-bottom:1em;
+      text-align:center;
       svg {
-        @extend %block;
+        display:block;
 
         fill:$green;
       }
@@ -218,7 +214,7 @@ canvas {
     margin-bottom:.25em;
   }
   .site-content__default__body, .comments {
-    @include clear;
+    clear:both;
   }
 }
 // home page specific styles
@@ -226,14 +222,13 @@ canvas {
   @extend %relative;
   h1 {
     @include gs-span(s, 1);
-    @extend %text-center;
 
     margin-top:30%;
+    text-align:center;
   }
 }
 .site-content__home__heroimg {
-  @extend %absolute;
-
+  position:absolute;
   z-index:-5;
   right:0;
   border-bottom:1px solid $dark-blue;
@@ -246,8 +241,8 @@ canvas {
 }
 .site-content__home__copy {
   @include gs-span(s, 1, 2);
-  @include clear;
 
+  clear:both;
   margin-top:55%;
 }
 
@@ -289,26 +284,23 @@ canvas {
 .site-content__about__contact {
   margin-bottom:1.5em;
   .contact {
-    @extend %plain-list;
-
     font-family:'futura-pt', sans-serif;
+    margin:0;
+    padding:0;
+    list-style:none;
   }
 }
 .site-content__about__resume {
-  @extend %clearfix;
 
   margin-bottom:3em;
   h3 {
-    @extend %inline-block;
+    display:inline-block;
   }
   .action {
-    @extend %inline-block;
-
+    display:inline-block;
     margin:0 0 0 3em;
   }
   .resume {
-    @extend %clearfix;
-
     padding:5%;
     border:1px solid rgba(33, 33, 33, .15);
     -webkit-box-shadow:inset 0 0 10px rgba(33, 33, 33, .05);
@@ -336,22 +328,24 @@ canvas {
     margin:0 0 1.5em 0;
   }
   em {
-    @extend %block;
-
+    display: block;
     font-style:normal;
   }
   span {
-    @extend %inline-block;
-
+    display: inline-block;
     font:normal .75em 'futura-pt', sans-serif;
   }
   ul {
-    @extend %plain-list;
+    margin:0;
+    padding:0;
+    li {
+      list-style: none;
+    }
   }
 }
 
 .site-content__about__picture {
-  @extend %relative;
+  position: relative;
   .img-link {
     @extend %link-reset;
   }
@@ -367,10 +361,11 @@ canvas {
 // portfolio specific styles
 // listing page
 .site-content__portfolio__list {
-  @extend %plain-list;
-  @extend %clearfix;
+  margin:0;
+  padding:0;
   li {
     background:$dark-blue;
+    list-style: none;
   }
   img {
     @extend %block;
@@ -384,8 +379,8 @@ canvas {
   }
 }
 .site-content__portfolio__listlink {
-  @extend %block;
-  @extend %relative;
+  display: block;
+  position: relative;
   @extend %link-reset;
 
   overflow:hidden;
@@ -399,20 +394,18 @@ canvas {
     width:75%;
     color:$white;
     em {
-      @extend %block;
+      display: block;
 
       font-weight:normal;
     }
   }
   &:hover {
     .title {
-      @extend %block;
-
+      display: block;
       z-index:1;
     }
     .animate-left, .animate-right {
-      @extend %inline-block;
-
+      display: inline-block;
       -webkit-animation-duration:1s;
               animation-duration:1s;
 
@@ -444,7 +437,7 @@ canvas {
   }
 }
 .back-link {
-  @extend %text-center;
+  text-align: center;  
 
   margin-top:1.5em;
 }

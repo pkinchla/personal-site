@@ -26,7 +26,7 @@ get_header(); ?>
       </figure>
       <div class="wrapper">
         <h1 class="entry-title"><?php the_title(); ?></h1>
-         <ul class="site-content__portfolio__list">
+         <ul class="site-content__portfolio__list clearfix">
             <?php while ( $loop->have_posts() ) : $loop->the_post(); 
                 $list_image = get_field('list_image');
 

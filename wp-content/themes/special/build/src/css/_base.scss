@@ -328,8 +328,7 @@ a:hover, a:focus, a:active {
 }
 
 .site-main .comment-navigation, .site-main .paging-navigation, .site-main .post-navigation {
-  @extend %clearfix;
-  @include clear;
+  clear:both;
 
   font-family:'futura-pt', sans-serif;
   font-weight:700;
@@ -362,8 +361,6 @@ a:hover, a:focus, a:active {
 Alignments
 --------------------------------------------------------------*/
 .wrapper {
-  @extend %clearfix;
-
   margin:0 auto;
 }
 

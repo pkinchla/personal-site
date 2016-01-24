@@ -12,7 +12,7 @@
 
   <footer id="colophon" class="site-footer">
     <div class="site-info wrapper">
-      <ul class="site-footer__social">
+      <ul class="site-footer__social clearfix">
         <li>
           <a href="//www.residentadvisor.net/profile/pkinchla">
             <svg class="ra" viewBox="0 0 122.077 122.106">

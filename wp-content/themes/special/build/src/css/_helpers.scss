@@ -95,11 +95,6 @@
   }
 }
 
-@mixin fluid-box($width) {
-  width:$width;
-  height: 0;
-  padding-bottom:$width;
-}
 
 @mixin verticalAlign($top) {
   position:absolute;
@@ -138,12 +133,14 @@
 }
 
 // silent placeholders
-%clearfix:before, %clearfix:after {
+%clearfix:before, %clearfix:after,
+.wrapper:before, .wrapper:after,
+.clearfix:before, .clearfix:after {
   display:table;
   content:' ';
 }
 
-%clearfix:after {
+%clearfix:after, .clearfix:after, .wrapper:after {
   clear:both;
 }
 

@@ -23,7 +23,7 @@
 
   <header id="masthead" class="site-header wrapper">
     <div class="site-header__banner">
-      <a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+      <a class="site-logo clearfix" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
         <svg id="ptok" class="logo" viewBox="0 0 152.521 55.061" aria-labelledby="title desc">
           <title id="title">logo type</title>
           <desc id="desc">Paul Kinchla</desc>
@@ -35,7 +35,7 @@
           </g>
         </svg>
       </a>
-      <nav id="site-navigation" class="main-navigation site-header__navigation">
+      <nav id="site-navigation clearfix" class="main-navigation site-header__navigation">
         <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
       </nav><!-- #site-navigation -->
     </div>

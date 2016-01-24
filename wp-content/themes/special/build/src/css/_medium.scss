@@ -18,7 +18,7 @@
   }
   .site-footer__colophon {
     @include gs-span(m, 1, 2);
-    @include clear;
+    clear:both;
   }
   // default post and page styling
   .site-content__default {
@@ -76,7 +76,7 @@
   }
   .site-content__blog__postlist {
     @include gs-span(m, 2, 3);
-    @include clear;
+    clear:both;
   }
   .site-content__blog__categories {
     @include gs-span(m, 1);
@@ -109,13 +109,13 @@
   }
   .site-content__about__copy {
     @include gs-span(m, 2, 3);
-    @include clear;
+    clear:both;
   }
   .site-content__about__contact {
     @include gs-span(m, 1);
   }
   .site-content__about__resume {
-    @include clear;
+    clear:both;
     dt {
       width:25%;
       margin-bottom:-.5em;
@@ -148,7 +148,7 @@
   .site-content__portfolio {
     .entry-title {
       @include gs-span(m, 2);
-      @include clear;
+      clear:both;
     }
   }
   .site-content__portfolio__list {
@@ -185,13 +185,13 @@
   }
   .portfolio__single__copy--print {
     @include gs-span(m, 1);
-    @include clear;
+    clear:both;
 
     padding:0 5%;
   }
   .portfolio__single__copy--phone {
     @include gs-span(m, 1, 2);
-    @include clear;
+    clear:both;
 
     padding:0 5%;
   }
@@ -203,6 +203,6 @@
   }
   .back-link {
     @include gs-span(m, 1, 3);
-    @include clear;
+    clear:both;
   }
 }

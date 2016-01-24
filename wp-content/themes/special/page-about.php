@@ -30,10 +30,10 @@ get_header(); ?>
         <div class="site-content__about__contact">
           <?php echo $contact; ?>
         </div>
-        <section class="site-content__about__resume">
+        <section class="site-content__about__resume clearfix">
           <h3>R&eacute;sum&eacute;</h3>
           <a class="action" href="<?php echo $url_file ?>" download>Download</a>
-          <dl class="resume">
+          <dl class="resume clearfix">
             <dt>Work</dt>
               <?php if( have_rows('work')): ?>
                 <?php while( have_rows('work') ): the_row();  

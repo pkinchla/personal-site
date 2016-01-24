@@ -52,7 +52,7 @@
     }
     .site-content__home__blog {
       @include gs-span(c, 7, 8);
-      @include clear;
+      clear:both;
 
       margin-top:-39%;
     }
@@ -68,7 +68,7 @@
   }
   .site-content__blog__postlist {
     @include gs-span(c, 6, 7);
-    @include clear;
+    clear:both;
   }
   .site-content__blog__categories {
     @include gs-span(c, 4);
@@ -84,7 +84,7 @@
   }
   .site-content__about__copy {
     @include gs-span(c, 4, 5);
-    @include clear;
+    clear:both;
   }
   .site-content__about__contact {
     @include gs-span(c, 2);
