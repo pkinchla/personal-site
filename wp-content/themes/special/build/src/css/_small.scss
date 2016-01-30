@@ -7,6 +7,12 @@
   width:100%;
 }
 
+.site-content {
+  @include animated;
+  @include fadeIn;
+  animation-delay:.35s;
+}
+
 // header
 .site-header__banner {
   @include linear-gradient($light-blue, lighten($dark-blue, 52.5%));
@@ -395,8 +401,11 @@ canvas {
     color:$white;
     em {
       display: block;
-
       font-weight:normal;
+      @include animated;
+    }
+    span {
+      @include animated;
     }
   }
   &:hover {
@@ -404,21 +413,12 @@ canvas {
       display: block;
       z-index:1;
     }
-    .animate-left, .animate-right {
+    em {
+      @include slideInRight;
+    }
+    span {
+      @include slideInLeft;
       display: inline-block;
-      -webkit-animation-duration:1s;
-              animation-duration:1s;
-
-      -webkit-animation-fill-mode:both;
-              animation-fill-mode:both;
-    }
-    .animate-left {
-      -webkit-animation-name:slideInLeft;
-              animation-name:slideInLeft;
-    }
-    .animate-right {
-      -webkit-animation-name:slideInRight;
-              animation-name:slideInRight;
     }
     img {
       opacity:.15;
