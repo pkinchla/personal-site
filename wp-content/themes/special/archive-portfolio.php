@@ -73,7 +73,7 @@ get_header(); ?>
               ?>
             <li>
               <a class="site-content__portfolio__listlink" href="<?php the_permalink(); ?>">
-                <h4 class="title"><span class="animate-left"><?php the_title(); ?></span> | <em class="animate-right"><?php echo get_the_excerpt(); ?></em></h4>  
+                <h4 class="title"><span><?php the_title(); ?></span> | <em><?php echo get_the_excerpt(); ?></em></h4>  
                 <img src="<?php echo $medium; ?>" srcset="<?php echo $portfolio_large .' '. $portfolio_large_width; ?>w, <?php echo $portfolio_medium .' '. $portfolio_medium_width; ?>w, <?php echo $large .' '. $large_width; ?>w, <?php echo $portfolio_small .' '. $portfolio_small_width; ?>w, <?php echo $medium .' '. $medium_width; ?>w, <?php echo $thumbnail .' '. $thumbnail_width; ?>w" sizes="(min-width:120em) 14vw, (min-width:64em) 20vw, (min-width:40em) 30vw, 90vw" alt="<?php echo $alt ?>">
               </a>
             </li>           
