@@ -1,85 +1,68 @@
 // variables
-  // colors
-  $background-white:#f1f1f1;
-  $body-color:#3c3c3c;
-  $light-blue:#e6edfa;
-  $medium-blue-gray:#6e8093;
-  $medium-gray:#55616a;
-  $dark-blue:#334259;
-  $white:#fff;
-  $black:#000;
-  $selection-color:#ffb7b7;
-  $green:#009e77;
-  $dark-green:#19775f;
+// colors
+$background-white:#f1f1f1;
+$body-color:#3c3c3c;
+$light-blue:#e6edfa;
+$medium-blue-gray:#6e8093;
+$medium-gray:#55616a;
+$dark-blue:#334259;
+$white:#fff;
+$black:#000;
+$selection-color:#ffb7b7;
+$green:#009e77;
+$dark-green:#19775f;
 
 // mixins
 @mixin alpha-attribute($attribute, $color, $background) {
-  $percent: alpha($color) * 100%;
-  $opaque: opacify($color, 1);
-  $solid-color: mix($opaque, $background, $percent);
-  #{$attribute}: $solid-color;
-  #{$attribute}: $color;
+  $percent:alpha($color) * 100%;
+  $opaque:opacify($color, 1);
+  $solid-color:mix($opaque, $background, $percent);
+  #{$attribute}:$solid-color;
+  #{$attribute}:$color;
 }
 
 @mixin skewY($deg) {
--webkit-transform:skewY($deg);
-   -moz-transform:skewY($deg);
-    -ms-transform:skewY($deg);
-     -o-transform:skewY($deg);
-        transform:skewY($deg);
+  -webkit-transform:skewY($deg);
+      -ms-transform:skewY($deg);
+          transform:skewY($deg);
 }
 
 @mixin skewX($deg) {
--webkit-transform:skewX($deg);
-   -moz-transform:skewX($deg);
-    -ms-transform:skewX($deg);
-     -o-transform:skewX($deg);
-        transform:skewX($deg);
+  -webkit-transform:skewX($deg);
+      -ms-transform:skewX($deg);
+          transform:skewX($deg);
 }
 
 @mixin rotate($deg) {
--webkit-transform:rotate($deg);
-   -moz-transform:rotate($deg);
-    -ms-transform:rotate($deg);
-     -o-transform:rotate($deg);
-        transform:rotate($deg);
+  -webkit-transform:rotate($deg);
+      -ms-transform:rotate($deg);
+          transform:rotate($deg);
 }
 
 @mixin transition($transition-property, $transition-time, $method) {
   -webkit-transition:$transition-property $transition-time $method;
-     -moz-transition:$transition-property $transition-time $method;
       -ms-transition:$transition-property $transition-time $method;
-       -o-transition:$transition-property $transition-time $method;
           transition:$transition-property $transition-time $method;
 }
 
 @mixin filter($filter-type,$filter-amount) {
   -webkit-filter:$filter-type+unquote('(#{$filter-amount})');
-     -moz-filter:$filter-type+unquote('(#{$filter-amount})');
       -ms-filter:$filter-type+unquote('(#{$filter-amount})');
-       -o-filter:$filter-type+unquote('(#{$filter-amount})');
           filter:$filter-type+unquote('(#{$filter-amount})');
 }
 
 @mixin columns($count, $gap) {
-   -webkit-columns:$count;
-      -moz-columns:$count;
-           columns:$count;
+  -webkit-columns:$count;
+          columns:$count;
   -webkit-column-gap:$gap;
-     -moz-column-gap:$gap;
           column-gap:$gap;
 }
 
 @mixin linear-gradient($fromColor, $toColor) {
   background-color:$toColor; /* Fallback Color */
-  background-image:-webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
   background-image:-webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background-image:   -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
   background-image:    -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
-  background-image:     -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
   background-image:        linear-gradient(top, $fromColor, $toColor);
-
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
 }
 
 @mixin box-shadow($top, $left, $blur, $set, $color, $inset:true) {
@@ -99,9 +82,9 @@
 @mixin verticalAlign($top) {
   position:absolute;
   top:$top;
-  -webkit-transform: translateY(-$top);
-  -ms-transform: translateY(-$top);
-  transform: translateY(-$top);
+  -webkit-transform:translateY(-$top);
+      -ms-transform:translateY(-$top);
+          transform:translateY(-$top);
 }
 
 
@@ -113,7 +96,7 @@
   width:1px;
   height:1px;
 }
-.screen-reader-text:hover,.screen-reader-text:active, .screen-reader-text:focus {
+.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
   font-size:.875em;
   font-weight:bold;
   line-height:normal;
@@ -133,9 +116,7 @@
 }
 
 // silent placeholders
-%clearfix:before, %clearfix:after,
-.wrapper:before, .wrapper:after,
-.clearfix:before, .clearfix:after {
+%clearfix:before, %clearfix:after, .wrapper:before, .wrapper:after, .clearfix:before, .clearfix:after {
   display:table;
   content:' ';
 }
@@ -196,12 +177,9 @@
     margin:0;
   }
 }
-%texture-bg {
-  background:url('images/texture-bg.png');
-}
 
 %nav-link {
   &:hover {
-    @include alpha-attribute('background-color', rgba($medium-gray, 0.20), lighten($medium-gray, 50%));
+    @include alpha-attribute('background-color', rgba($medium-gray, .20), lighten($medium-gray, 50%));
   }
 }

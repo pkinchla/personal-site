@@ -7,15 +7,6 @@
   width:100%;
 }
 
-.site-page {
-  @include animated;
-  @include fadeIn;
-
-  -webkit-animation-delay:.25s;
-          animation-delay:.25s;
-  opacity:0;
-}
-
 // header
 .site-header__banner {
   @include linear-gradient($light-blue, lighten($dark-blue, 52.5%));
@@ -62,11 +53,7 @@ canvas {
 
 .menu {
   @extend %clearfix;
-
-  margin:0;
-  padding:0;
-  list-style:none;
-  list-style-type:none;
+  @extend %plain-list;
   li {
     font-family:'futura-pt', sans-serif;
     font-size:1.25em;

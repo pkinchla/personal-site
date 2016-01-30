@@ -41,7 +41,7 @@ pkg: grunt.file.readJSON('package.json'),
         height:768,
         outputfile: '../critical.css',
         filename: '../style.css',
-        forceInclude: ['menu', 'site-page']
+        forceInclude: ['menu']
       }
     }
   },
