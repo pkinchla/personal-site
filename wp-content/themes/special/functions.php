@@ -118,6 +118,7 @@ add_filter('clean_url', 'add_async_forscript', 11, 1);
 function special_scripts() {
 			
 	if ( WP_DEBUG || SCRIPT_DEBUG ) {
+		wp_enqueue_style( 'style', get_stylesheet_uri('style.css') );	
 		wp_enqueue_script( 'gridset', get_template_directory_uri() . '/build/src/dev-js/gridset-overlay.js', array(), '', true );
 		wp_enqueue_script( 'skip-link', get_template_directory_uri() . '/build/src/js/skip-link-focus-fix.js', array(), '', true );
 		wp_enqueue_script( 'picturefill', get_template_directory_uri() . '/build/src/js/picturefill.js', array(), '', true );
@@ -170,22 +171,19 @@ add_action('wp_head', 'typekit_js');
 
 // function for critical path css
 function critical_css() {
-	if ( WP_DEBUG || SCRIPT_DEBUG ) {
-		wp_enqueue_style( 'style', get_stylesheet_uri('style.css') );	
-	}
-	else {
-	// css
-	$crit_sheet = get_template_directory_uri() . '/critical.css';
-	$critical_path = file_get_data($crit_sheet);
+	if ( !WP_DEBUG || SCRIPT_DEBUG ) {
+		// css
+		$crit_sheet = get_template_directory_uri() . '/critical.css';
+		$critical_path = file_get_data($crit_sheet);
 
-	// loadCSS
-	$js_sheet = get_template_directory_uri() . '/js/loadCSS.js';
-	$loadCSS_path = file_get_data($js_sheet);
+		// loadCSS
+		$js_sheet = get_template_directory_uri() . '/js/loadCSS.js';
+		$loadCSS_path = file_get_data($js_sheet);
 
-	echo '<style>'. $critical_path .'</style>' . "\n";
-	echo '<script>'. $loadCSS_path .'</script>' . "\n";
-	echo '<script>loadCSS("'. get_stylesheet_uri(). '")</script>' . "\n";
-	echo '<noscript><link rel="stylesheet" href="'. get_stylesheet_uri(). '"></noscript>' . "\n";
+		echo '<style>'. $critical_path .'</style>' . "\n";
+		echo '<script>'. $loadCSS_path .'</script>' . "\n";
+		echo '<script>loadCSS("'. get_stylesheet_uri(). '")</script>' . "\n";
+		echo '<noscript><link rel="stylesheet" href="'. get_stylesheet_uri(). '"></noscript>' . "\n";
 	}
 }
 add_action( 'wp_head', 'critical_css');
