@@ -305,8 +305,6 @@ a:hover, a:focus, a:active {
 }
 
 .action {
-  @extend %link-reset;
-
   font-family:'futura-pt', sans-serif;
   display:inline-block;
   padding:.5em 1em;
