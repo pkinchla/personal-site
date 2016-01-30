@@ -8,6 +8,7 @@
 }
 
 .site-content {
+  opacity:0;
   @include animated;
   @include fadeIn;
   animation-delay:.35s;
