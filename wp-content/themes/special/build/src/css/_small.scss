@@ -7,11 +7,13 @@
   width:100%;
 }
 
-.site-content {
-  opacity:0;
+.site-page {
   @include animated;
   @include fadeIn;
-  animation-delay:.35s;
+
+  -webkit-animation-delay:.25s;
+          animation-delay:.25s;
+  opacity:0;
 }
 
 // header
@@ -64,6 +66,7 @@ canvas {
   margin:0;
   padding:0;
   list-style:none;
+  list-style-type:none;
   li {
     font-family:'futura-pt', sans-serif;
     font-size:1.25em;
@@ -298,7 +301,6 @@ canvas {
   }
 }
 .site-content__about__resume {
-
   margin-bottom:3em;
   h3 {
     display:inline-block;
@@ -335,24 +337,24 @@ canvas {
     margin:0 0 1.5em 0;
   }
   em {
-    display: block;
     font-style:normal;
+    display:block;
   }
   span {
-    display: inline-block;
     font:normal .75em 'futura-pt', sans-serif;
+    display:inline-block;
   }
   ul {
     margin:0;
     padding:0;
     li {
-      list-style: none;
+      list-style:none;
     }
   }
 }
 
 .site-content__about__picture {
-  position: relative;
+  position:relative;
   .img-link {
     @extend %link-reset;
   }
@@ -371,8 +373,8 @@ canvas {
   margin:0;
   padding:0;
   li {
+    list-style:none;
     background:$dark-blue;
-    list-style: none;
   }
   img {
     @extend %block;
@@ -386,10 +388,10 @@ canvas {
   }
 }
 .site-content__portfolio__listlink {
-  display: block;
-  position: relative;
   @extend %link-reset;
 
+  position:relative;
+  display:block;
   overflow:hidden;
   .title {
     @extend %inline-block;
@@ -401,9 +403,10 @@ canvas {
     width:75%;
     color:$white;
     em {
-      display: block;
-      font-weight:normal;
       @include animated;
+
+      font-weight:normal;
+      display:block;
     }
     span {
       @include animated;
@@ -411,15 +414,16 @@ canvas {
   }
   &:hover {
     .title {
-      display: block;
       z-index:1;
+      display:block;
     }
     em {
       @include slideInRight;
     }
     span {
       @include slideInLeft;
-      display: inline-block;
+
+      display:inline-block;
     }
     img {
       opacity:.15;
@@ -438,9 +442,8 @@ canvas {
   }
 }
 .back-link {
-  text-align: center;  
-
   margin-top:1.5em;
+  text-align:center;
 }
 
 @include gs-media(s, min-max) {
