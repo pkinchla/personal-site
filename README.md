@@ -2,17 +2,12 @@
 
 My personal site.
 
-## Credit Where Credit is Due
-
-### Based off the starter theme:
+## Based off the starter theme:
 
 - http://underscores.me
 - https://github.com/automattic/_s
 
-### Responsive Navigation 
-- http://responsive-nav.com/
-
-### The MIT License (MIT)
+## The MIT License (MIT)
 
 Copyright (c) 2014 Paul Kinchla
 
