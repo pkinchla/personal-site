@@ -37,20 +37,14 @@
 }
 
 // animation for logo type on home page only
-.js {
-  .home {
-    .the-d {
-      stroke:$body-color;
-      stroke-width:1px;
-      stroke-miterlimit:10;
-    }
+.js.home {
+  .the-d {
+    stroke:$body-color;
+    stroke-width:1px;
+    stroke-miterlimit:10;
   }
 }
-
-canvas {
-  z-index:-1;
-}
-
+// base menu styling
 .menu {
   @extend %clearfix;
   @extend %plain-list;
@@ -82,84 +76,88 @@ canvas {
   }
 }
 
-// responsive nav styles
-.js .nav-collapse {
-  position:absolute;
-  display:block;
+// enhanced styling
+.js .menu {
+  visibility:hidden;
   overflow:hidden;
-  clip:rect(0 0 0 0);
-  zoom:1;
   max-height:0;
-}
-
-.nav-collapse.opened {
-  max-height:9999px;
-}
-
-.nav-toggle {
-  @extend %link-reset;
-
-  font:700 italic 1em 'futura-pt', sans-serif;
-  position:absolute ;
-  top:0;
-  right:0;
-  display:block;
-  width:35%;
-  padding:1.35em 10%;
-  -webkit-user-select:none;
-     -moz-user-select:none;
-      -ms-user-select:none;
-          user-select:none;
-  text-transform:uppercase;
-  color:$green;
-  border-left:1px solid $dark-blue;
-  background:$white;
-  &:before {
-    display:block;
-    content:'Menu';
-    text-align:center;
+  transition:all .15s ease-out;
+  &.open {
+    visibility:visible;
+    max-height:12em;
+    transition:all .25s ease-in;
   }
 }
 
-.nav-toggle.active::before {
-  content:'Close';
-}
+// menu toggle
+// base styling
+.main-nav-toggle {
+  @extend %plain-button;
+  @include transition(all, .35s, ease-in-out);
 
-.site-navigation-toggle {
-  @extend %link-reset;
-
-  font:700 italic 1em 'futura-pt', sans-serif;
-  position:absolute ;
+  font:italic normal 700 1em/normal futura-pt,sans-serif;
+  position:absolute;
   top:0;
   right:0;
-  display:block;
+  display:none;
   width:35%;
-  padding:1.35em 10%;
-  -webkit-user-select:none;
-     -moz-user-select:none;
-      -ms-user-select:none;
-          user-select:none;
+  height:4.005em;
   text-transform:uppercase;
   color:$green;
-  border:none;
   border-left:1px solid $dark-blue;
-  outline:none;
-  background:$white;
-  svg {
-    max-height:1em;
-
+  background:white;
+  .label {
+    display:inline-block;
+    margin-left:.2em;
+  }
+  &:hover {
+    color:darken($green, 15%);
+    .main-nav-button {
+      fill:darken($green, 15%);
+    }
+  }
+  &:hover, &:active, &:focus {
+    border-left:1px solid $dark-blue;
+  }
+  .main-nav-button {
+    max-width:1.5625em;
+    max-height:.75em;
+    overflow: hidden;
     fill:$green;
+    .one, .two, .three {
+    -webkit-transition:all .35s linear;
+            transition:all .35s linear;
+    -webkit-transform:rotate(0deg) scale(1);
+            transform:rotate(0deg) scale(1);
+    -webkit-transform-origin:0 50%;
+            transform-origin:0 50%;
+    }
   }
-  &:before {
-    position:absolute;
-    display:block;
-    content:'Menu';
-    text-align:center;
+  &.close-state {
+    .main-nav-button {
+      .one {
+          -webkit-transform:rotateZ(-45deg) scale(.95);
+                  transform:rotateZ(-45deg) scale(.95);
+           transform-origin:11.5em 5em;
+   -webkit-transform-origin:11.5em 5em;
+        }
+        .two {
+          -webkit-transform:translateY(-25em);
+                  transform:translateY(-25em);
+        }
+        .three {
+          -webkit-transform:rotateZ(45deg) scale(.95);
+                  transform:rotateZ(45deg) scale(.95);
+           transform-origin:11.5em 5em;
+   -webkit-transform-origin:11.5em 5em;
+        }
+    }
   }
 }
 
-.nav-toggle.active::before {
-  content:'Close';
+// enhanced experience
+.js .main-nav-toggle {
+  display:block;
 }
 
 .site-footer {

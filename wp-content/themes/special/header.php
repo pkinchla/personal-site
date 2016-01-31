@@ -36,6 +36,14 @@
         </svg>
       </a>
       <nav id="site-navigation clearfix" class="main-navigation site-header__navigation">
+        <button class="main-nav-toggle">
+          <svg class="main-nav-button" viewBox="0 0 225 164.7">
+          <rect class="one" y="0" width="225" height="23.7"/>
+          <rect class="two" y="70.5" width="225" height="23.7" />
+          <rect class="three" y="141" width="225" height="23.7"/>
+          </svg>
+          <span class="label">Menu</span> 
+        </button>
         <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
       </nav><!-- #site-navigation -->
     </div>

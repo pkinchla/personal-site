@@ -3,7 +3,7 @@
   .site-header__banner {
     @include gs-span(l, 1, 2);
     @include skewY(15deg);
-
+    @include linear-gradient($light-blue, lighten($dark-blue, 52.5%));
     position:absolute;
     z-index:1;
     margin-top:-5em;
@@ -21,8 +21,13 @@
     }
     .site-logo {
       @include skewY(-15deg);
-
-      margin-top:-.5%;
+      background-image:none;
+      background-color:transparent;
+      margin-top:-.5%; 
+      &:hover {
+        background-color: #c0c7cb;
+        background-color: rgba(85, 97, 106, 0.2);
+      } 
       .logo {
         width:100%;
         height:3em;
@@ -54,16 +59,19 @@
       }
     }
   }
-  // menu js classes
-  .js .nav-collapse {
-    position:relative;
+  
+  // .js menu classes
+  .js .menu {
+    max-height:inherit;
+    visibility: visible;
   }
-  .js .nav-collapse.closed {
-    max-height:none;
-  }
-  .nav-toggle {
+  
+  // toggle js classes
+  .js .main-nav-toggle {
     display:none;
   }
+
+  
   .site-footer__social {
     @include gs-span(l, 2, 3);
   }

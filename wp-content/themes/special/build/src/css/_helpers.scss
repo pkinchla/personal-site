@@ -89,7 +89,6 @@ $dark-green:#19775f;
           transform:translateY(-$top);
 }
 
-
 // semantic class helpers
 .screen-reader-text {
   position:absolute !important;
@@ -177,6 +176,17 @@ $dark-green:#19775f;
   }
   dd {
     margin:0;
+  }
+}
+%plain-button {
+  border:none;
+  border-radius:0;
+  outline:none;
+  background:none;
+  box-shadow:none;
+  &:hover, &:focus, &:active {
+    box-shadow:none;
+    border:none;
   }
 }
 
