@@ -24,10 +24,10 @@ get_header(); ?>
 								the_archive_description( '<div class="taxonomy-description">', '</div>' );
 							?>
 						</header><!-- .page-header -->
-						<div class="site-content__blog__archives">
+						<div class="site-content__blog__archives blog_listings">
 							<?php /* Start the Loop */ ?>
 							<?php while ( have_posts() ) : the_post(); ?>
-								<h2><a class="linked-header" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+								<h4><a class="linked-header" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 								<div class="entry-meta">
 									<time datetime="<?php the_time('c');?>"><?php the_time('l, F jS, Y') ?></time>
 								</div>

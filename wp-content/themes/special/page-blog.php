@@ -15,7 +15,7 @@ get_header(); ?>
       </figure>
       <div class="wrapper">
         <h1 class="entry-title"><?php the_title(); ?></h1>
-        <div class="site-content__blog__postlist">
+        <div class="site-content__blog__postlist blog_listings">
         <?php query_posts( 'posts_per_page=10' ); ?>
           <?php while ( have_posts() ) : the_post(); ?>
             <h4><a class="linked-header" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>

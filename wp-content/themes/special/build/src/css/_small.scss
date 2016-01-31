@@ -214,6 +214,14 @@ canvas {
     clear:both;
   }
 }
+// search result styling
+.search-results {
+  .blog_listings {
+    .entry-meta {
+      margin-bottom:0;
+    }
+  }
+}
 // home page specific styles
 .site-content__home {
   @extend %relative;
@@ -244,13 +252,19 @@ canvas {
 }
 
 // blog listing specific styles
-.site-content__blog {
+.blog_listings {
   .entry-meta {
     margin-bottom:1.5em;
     padding:0;
     color:$dark-blue;
     border-bottom:1px solid $medium-blue-gray;
     background:none;
+    a {
+      color:$green;
+      &:hover {
+        background:none;
+      }
+    }
   }
 }
 

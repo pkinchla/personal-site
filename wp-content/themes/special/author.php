@@ -12,8 +12,8 @@ get_header(); ?>
         <img class="site-content__default__heroimg" src="<?php echo get_template_directory_uri() ?>/images/cham.jpg" alt="metallic chameleon">
       </figure>
       <div class="wrapper">
-        <div class="site-content__default__body">
-          <h1 class="entry-title">Author: <?php the_author_link(); ?></h1>
+        <div class="site-content__default__body blog_listings">
+          <h1>Author: <?php the_author_link(); ?></h1>
         
         <?php query_posts( 'posts_per_page=10' ); ?>
           <?php while ( have_posts() ) : the_post(); ?>
