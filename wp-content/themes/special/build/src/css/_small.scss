@@ -110,12 +110,6 @@
     display:inline-block;
     margin-left:.2em;
   }
-  &:hover {
-    color:darken($green, 15%);
-    .main-nav-button {
-      fill:darken($green, 15%);
-    }
-  }
   &:hover, &:active, &:focus {
     border-left:1px solid $dark-blue;
   }
