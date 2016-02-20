@@ -172,7 +172,7 @@ add_action('wp_head', 'typekit_js');
 function critical_css() {
 	if ( !WP_DEBUG || SCRIPT_DEBUG ) {
 		// css
-		$style_sheet = get_template_directory_uri() . '/critical.css';
+		$style_sheet = get_template_directory_uri() . '/style.css';
 		$style_path = file_get_data($style_sheet);
 
 		echo '<style>'. $style_path .'</style>' . "\n";
