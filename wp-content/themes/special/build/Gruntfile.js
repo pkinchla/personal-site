@@ -33,24 +33,10 @@ pkg: grunt.file.readJSON('package.json'),
   },
 
   // production
-  criticalcss: {
-    custom: {
-      options: {
-        url: 'http://pk.com',
-        width: 1366,
-        height:768,
-        outputfile: '../critical.css',
-        filename: '../style.css',
-        forceInclude: ['menu']
-      }
-    }
-  },
-
   cssmin: {
     compress: {
       files: {
-        '../style.css': [ '../style.css' ],
-        '../critical.css': [ '../critical.css' ]
+        '../style.css': [ '../style.css' ]
       }
     }
   },   
@@ -70,7 +56,6 @@ pkg: grunt.file.readJSON('package.json'),
     dist: {
       files: {
         '../js/built.min.js': 'src/built.js',
-        '../js/loadCSS.js': 'src/head-js/loadCSS.js',
         '../js/typekit.js': '../js/typekit.js'
       }
     }
@@ -84,13 +69,12 @@ pkg: grunt.file.readJSON('package.json'),
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-concat'); 
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-criticalcss');
   
   
   // Default task.
   grunt.registerTask('default', ['watch']);
   
   // Production task for concatenation and minification
-  grunt.registerTask('deploy', ['criticalcss', 'cssmin', 'concat', 'uglify' ]);
+  grunt.registerTask('deploy', ['cssmin', 'concat', 'uglify' ]);
 
 };

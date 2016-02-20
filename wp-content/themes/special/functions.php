@@ -172,17 +172,10 @@ add_action('wp_head', 'typekit_js');
 function critical_css() {
 	if ( !WP_DEBUG || SCRIPT_DEBUG ) {
 		// css
-		$crit_sheet = get_template_directory_uri() . '/critical.css';
-		$critical_path = file_get_data($crit_sheet);
+		$style_sheet = get_template_directory_uri() . '/critical.css';
+		$style_path = file_get_data($style_sheet);
 
-		// loadCSS
-		$js_sheet = get_template_directory_uri() . '/js/loadCSS.js';
-		$loadCSS_path = file_get_data($js_sheet);
-
-		echo '<style>'. $critical_path .'</style>' . "\n";
-		echo '<script>'. $loadCSS_path .'</script>' . "\n";
-		echo '<script>loadCSS("'. get_stylesheet_uri(). '")</script>' . "\n";
-		echo '<noscript><link rel="stylesheet" href="'. get_stylesheet_uri(). '"></noscript>' . "\n";
+		echo '<style>'. $style_path .'</style>' . "\n";
 	}
 }
 add_action( 'wp_head', 'critical_css');
