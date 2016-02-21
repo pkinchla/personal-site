@@ -148,23 +148,13 @@ require( get_template_directory() . '/flickr-feed.php' );
 require get_template_directory() . '/inc/template-tags.php';
 
 
-function file_get_data($url) {
-	$ch = curl_init();
-	$timeout = 5;
-	curl_setopt($ch, CURLOPT_URL, $url);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-	$data = curl_exec($ch);
-	curl_close($ch);
-	return $data;
-}
-
 // enqueue typekit
 function typekit_js() {
 	$typekit_file = get_template_directory_uri() . '/js/typekit.js';
-	$typekit_path = file_get_data($typekit_file);
+	$typekit_path = wp_remote_get($typekit_file);
+	$typekit_content = wp_remote_retrieve_body($typekit_path);
 	
-	echo '<script>'. $typekit_path .'</script>' . "\n";
+	echo '<script>'. $typekit_content .'</script>' . "\n";
 }
 add_action('wp_head', 'typekit_js');
 
@@ -173,9 +163,10 @@ function critical_css() {
 	if ( !WP_DEBUG || SCRIPT_DEBUG ) {
 		// css
 		$style_sheet = get_template_directory_uri() . '/style.css';
-		$style_path = file_get_data($style_sheet);
+		$style_path = wp_remote_get($style_sheet);
+		$style_content = wp_remote_retrieve_body($style_path);
 
-		echo '<style>'. $style_path .'</style>' . "\n";
+		echo '<style>'. $style_content .'</style>' . "\n";
 	}
 }
 add_action( 'wp_head', 'critical_css');
@@ -194,9 +185,10 @@ add_image_size( 'hero_cinema_large', 3500);
 // google analytics in footer 
 function add_googleanalytics()  {
 	$ga_file = get_template_directory_uri() . '/js/ga.js';
-	$ga_path = file_get_data($ga_file);
+	$ga_path = wp_remote_get($ga_file);
+	$ga_content = wp_remote_retrieve_body($ga_path);
 	
-	echo '<script>'. $ga_path .'</script>' . "\n";
+	echo '<script>'. $ga_content .'</script>' . "\n";
 }
 add_action('wp_footer', 'add_googleanalytics');
 
