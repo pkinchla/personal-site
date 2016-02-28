@@ -430,6 +430,14 @@
   }
 }
 // portfolio single page
+.site-content__portfolio__single {
+  strong {
+    color: $dark-blue;
+    font-style: italic;
+    display:block;
+    margin-bottom:1.5em;
+  }
+}
 .portfolio__single__image--phone {
   text-align:center;
   img {
