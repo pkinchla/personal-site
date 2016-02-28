@@ -1582,40 +1582,6 @@
 	menu_toggle.addEventListener('click', toggle_menu, false);
 
 
-	// regsitration for worker file and showing state on page
-	var body_selecter = document.getElementsByTagName('body');
-	var loggedin = hasClass(body_selecter[0], 'logged-in');
-
-	
-	
-	if ('serviceWorker' in navigator && !loggedin) {
-	navigator.serviceWorker.register('service-worker.js', {
-	scope: './'
-		}).then(function(reg) {
-
-			if(reg.installing) {
-				console.log(reg.installing);
-			}
-			if (reg.active) {
-				console.log(reg.active);
-			}
-			if (reg.waiting) {
-				console.log(reg.waiting);
-			}
-			if (reg.activated) {
-				console.log(reg.activated);
-			}
-
-		}, function(err) {
-			console.log(err);
-		});
-
-	} else {
-		
-		console.log('sorry, service workers are not supported');
-
-	}	
-
 
 }(document));
 ;( function() {

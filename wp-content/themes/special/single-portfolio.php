@@ -46,10 +46,15 @@ $copy = get_field('copy');
   $medium_rectangle = $main_image_rectangle['sizes'][ $size_medium ];
   $large_rectangle = $main_image_rectangle['sizes'][ $size_large ];
 
+  require_once('resp-hero.php');
+
 get_header(); ?>
 
     <div id="primary" class="content-area">
       <main id="main" class="site-main site-content__portfolio__single">
+      <figure class="wrapper hero-interior">
+        <img class="site-content__default__heroimg" src="<?php echo $medium; ?>" srcset="<?php echo $hero_cinema_large .' '. $hero_cinema_large_width; ?>w, <?php echo $hero_cinema .' '. $hero_cinema_width; ?>w, <?php echo $hero_x_large .' '. $hero_x_large_width; ?>w, <?php echo $hero_large .' '. $hero_large_width; ?>w, <?php echo $hero_medium .' '. $hero_medium_width; ?>w, <?php echo $portfolio_x_large .' '. $portfolio_x_large_width; ?>w, <?php echo $portfolio_large .' '. $portfolio_large_width; ?>w, <?php echo $large .' '. $large_width; ?>w, <?php echo $portfolio_medium .' '. $portfolio_medium_width; ?>w, <?php echo $portfolio_small .' '. $portfolio_small_width; ?>w, <?php echo $medium .' '. $medium_width; ?>w, <?php echo $thumbnail .' '. $thumbnail_width; ?>w" sizes="100vw" alt="<?php echo $alt ?>">
+      </figure>
       <div class="wrapper">
         <h1 class="entry-title"><?php the_title(); ?></h1>
           <?php 
@@ -59,8 +64,10 @@ get_header(); ?>
             </div>
             <div class="portfolio__single__image--print">
                 <img src="<?php echo $small_square; ?>" srcset="<?php echo $large_square; ?> 1300w, <?php echo $medium_square; ?> 800w, <?php echo $small_square; ?> 550w" sizes="(min-width:64em) 66vw, (min-width:40em) 85vw, 90vw" alt="<?php echo $alt_square ?>">
+                <a class="action back-link" href="<?php echo get_page_link(7); ?>">&larr; Back to List</a>
               <?php if ($square_image_optional) { ?>
                 <img src="<?php  echo $small_square_opt; ?>" srcset="<?php echo $large_square_opt;?> 1300w, <?php echo $medium_square_opt;?> 800w, <?php echo $small_square_opt;?> 550w" sizes="(min-width:64em) 66vw, (min-width:40em) 85vw, 90vw" alt="<?php echo $alt_square_opt; ?>"
+                <a class="action back-link" href="<?php echo get_page_link(7); ?>">&larr; Back to List</a>
               <?php }
                   else { }?>
             </div>
@@ -71,11 +78,9 @@ get_header(); ?>
             </div>
             <div class="portfolio__single__image--phone">    
               <img src="<?php echo $medium_rectangle; ?>" alt="<?php echo $alt_rectangle ?>" />
+              <a class="action back-link" href="<?php echo get_page_link(7); ?>">&larr; Back to List</a>
             </div>   
           <?php } ?>
-          <div class="back-link">
-            <a class="action" href="<?php echo get_page_link(7); ?>">&larr; Back to List</a>
-          </div>
         </div>
       </main><!-- #content .site-content -->
     </div><!-- #primary .content-area -->

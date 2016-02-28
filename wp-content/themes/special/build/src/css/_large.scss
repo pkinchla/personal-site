@@ -201,13 +201,11 @@
   .portfolio__single__copy--print {
     @include gs-span(l, 2, 3);
 
-    margin-top:30%;
-    padding:0 2.5%;
   }
   .portfolio__single__copy--phone {
     @include gs-span(l, 3, 4);
 
-    padding:0 5%;
+    padding:0;
   }
   .portfolio__single__image--print {
     @include gs-span(l, 4, 6);

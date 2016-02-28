@@ -271,6 +271,8 @@
   position:relative;
   z-index:-2;
   border:1px solid $dark-blue;
+  border-right:none;
+  border-left:none;
   border-top:none;
 }
 
@@ -429,14 +431,21 @@
 }
 // portfolio single page
 .portfolio__single__image--phone {
-  @extend %text-center;
+  text-align:center;
   img {
     max-width:80%;
+    display:block;
+    margin:0 auto;
+  }
+}
+.portfolio__single__image--print {
+  text-align:center;
+  img {
+    display:block;
   }
 }
 .back-link {
-  margin-top:1.5em;
-  text-align:center;
+  margin-top:3em;
 }
 
 @include gs-media(s, min-max) {

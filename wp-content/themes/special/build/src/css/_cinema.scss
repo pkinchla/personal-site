@@ -142,14 +142,10 @@
   }
   .portfolio__single__copy--print {
     @include gs-span(c, 4, 5);
-
-    margin-top:20%;
-    padding:0 2.5%;
   }
   .portfolio__single__copy--phone {
     @include gs-span(c, 5, 6);
 
-    padding:0 2.5%;
   }
   .portfolio__single__image--print {
     @include gs-span(c, 6, 8);

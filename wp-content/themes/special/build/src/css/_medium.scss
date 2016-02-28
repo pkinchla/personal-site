@@ -73,6 +73,8 @@
   }
   .site-content__blog__heroimg, .site-content__about__heroimg, .site-content__portfolio__heroimg, .site-content__default__heroimg {
     @include gs-span(m, 2, 3);
+    border:1px solid $dark-blue;
+    border-top:none;
   }
   .site-content__blog__postlist {
     @include gs-span(m, 2, 3);
@@ -179,30 +181,21 @@
   .site-content__portfolio__single {
     .entry-title {
       @include gs-span(m, 1, 3);
-
-      padding:0 5%;
     }
   }
   .portfolio__single__copy--print {
     @include gs-span(m, 1);
     clear:both;
-
-    padding:0 5%;
+    padding-right:1em;
   }
   .portfolio__single__copy--phone {
     @include gs-span(m, 1, 2);
     clear:both;
-
-    padding:0 5%;
   }
   .portfolio__single__image--print {
     @include gs-span(m, 2, 3);
   }
   .portfolio__single__image--phone {
     @include gs-span(m, 3);
-  }
-  .back-link {
-    @include gs-span(m, 1, 3);
-    clear:both;
   }
 }
