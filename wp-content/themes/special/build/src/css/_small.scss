@@ -114,37 +114,38 @@
     border-left:1px solid $dark-blue;
   }
   .main-nav-button {
+    overflow:hidden;
     max-width:1.5625em;
     max-height:.75em;
-    overflow: hidden;
+
     fill:$green;
     .one, .two, .three {
-    -webkit-transition:all .35s linear;
-            transition:all .35s linear;
-    -webkit-transform:rotate(0deg) scale(1);
-            transform:rotate(0deg) scale(1);
-    -webkit-transform-origin:0 50%;
-            transform-origin:0 50%;
+      -webkit-transition:all .35s linear;
+              transition:all .35s linear;
+      -webkit-transform:rotate(0deg) scale(1);
+              transform:rotate(0deg) scale(1);
+      -webkit-transform-origin:0 50%;
+              transform-origin:0 50%;
     }
   }
   &.close-state {
     .main-nav-button {
       .one {
-          -webkit-transform:rotateZ(-45deg) scale(.95);
-                  transform:rotateZ(-45deg) scale(.95);
-           transform-origin:11.5em 5em;
-   -webkit-transform-origin:11.5em 5em;
-        }
-        .two {
-          -webkit-transform:translateY(-25em);
-                  transform:translateY(-25em);
-        }
-        .three {
-          -webkit-transform:rotateZ(45deg) scale(.95);
-                  transform:rotateZ(45deg) scale(.95);
-           transform-origin:11.5em 5em;
-   -webkit-transform-origin:11.5em 5em;
-        }
+        -webkit-transform:rotateZ(-45deg) scale(.95);
+                transform:rotateZ(-45deg) scale(.95);
+        -webkit-transform-origin:11.5em 5em;
+                transform-origin:11.5em 5em;
+      }
+      .two {
+        -webkit-transform:translateY(-25em);
+                transform:translateY(-25em);
+      }
+      .three {
+        -webkit-transform:rotateZ(45deg) scale(.95);
+                transform:rotateZ(45deg) scale(.95);
+        -webkit-transform-origin:11.5em 5em;
+                transform-origin:11.5em 5em;
+      }
     }
   }
 }
@@ -271,9 +272,9 @@
   position:relative;
   z-index:-2;
   border:1px solid $dark-blue;
+  border-top:none;
   border-right:none;
   border-left:none;
-  border-top:none;
 }
 
 .site-content__blog__archives {
@@ -432,17 +433,17 @@
 // portfolio single page
 .site-content__portfolio__single {
   strong {
-    color: $dark-blue;
-    font-style: italic;
+    font-style:italic;
     display:block;
     margin-bottom:1.5em;
+    color:$dark-blue;
   }
 }
 .portfolio__single__image--phone {
   text-align:center;
   img {
-    max-width:80%;
     display:block;
+    max-width:80%;
     margin:0 auto;
   }
 }
