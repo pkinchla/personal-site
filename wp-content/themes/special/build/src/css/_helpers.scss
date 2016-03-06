@@ -12,6 +12,12 @@ $selection-color:#ffb7b7;
 $green:#009e77;
 $dark-green:#19775f;
 
+@mixin hardware(){
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+}
+
 // mixins
 @mixin alpha-attribute($attribute, $color, $background) {
   $percent:alpha($color) * 100%;

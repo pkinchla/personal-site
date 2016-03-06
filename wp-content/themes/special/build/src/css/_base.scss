@@ -115,7 +115,7 @@ pre {
 }
 
 code, kbd, tt, var {
-  font-family:15px Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+  font-size:.85em;  
 }
 
 abbr, acronym {
@@ -365,6 +365,7 @@ Alignments
   clear:both;
   margin:0 auto;
   border:1px solid $dark-blue;
+  max-width:100%;
 }
 
 /*--------------------------------------------------------------
@@ -498,7 +499,6 @@ audio {
 Captions
 --------------------------------------------------------------*/
 .wp-caption {
-  max-width:100%;
   margin-bottom:1.5em;
 }
 

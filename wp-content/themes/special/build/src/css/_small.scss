@@ -400,12 +400,13 @@
     color:$white;
     em {
       @include animated;
-
+      @include hardware;
       font-weight:normal;
       display:block;
     }
     span {
       @include animated;
+      @include hardware;
     }
   }
   &:hover {
