@@ -21,6 +21,7 @@
   }
   .site-footer__colophon {
     @include gs-span(m, 1, 2);
+
     clear:both;
   }
   // default post and page styling
@@ -76,11 +77,13 @@
   }
   .site-content__blog__heroimg, .site-content__about__heroimg, .site-content__portfolio__heroimg, .site-content__default__heroimg {
     @include gs-span(m, 2, 3);
+
     border:1px solid $dark-blue;
     border-top:none;
   }
   .site-content__blog__postlist {
     @include gs-span(m, 2, 3);
+
     clear:both;
   }
   .site-content__blog__categories {
@@ -104,6 +107,16 @@
     float:right;
     margin:.45em -25% 1.5em 1.5em;
   }
+  // comments
+  .comment-author {
+    float:left;
+    width:50%;
+  }
+  .comment-metadata {
+    float:left;
+    width:50%;
+    padding-top:.15em;
+  }
   // about page
   .site-content__about {
     .entry-title {
@@ -114,6 +127,7 @@
   }
   .site-content__about__copy {
     @include gs-span(m, 2, 3);
+
     clear:both;
   }
   .site-content__about__contact {
@@ -153,6 +167,7 @@
   .site-content__portfolio {
     .entry-title {
       @include gs-span(m, 2);
+
       clear:both;
     }
   }
@@ -188,11 +203,13 @@
   }
   .portfolio__single__copy--print {
     @include gs-span(m, 1);
+
     clear:both;
     padding-right:1em;
   }
   .portfolio__single__copy--phone {
     @include gs-span(m, 1, 2);
+
     clear:both;
   }
   .portfolio__single__image--print {

@@ -11,6 +11,7 @@ Text Domain: paulkinchla..com
 */
 
 
+
 /*--------------------------------------------------------------
  Typography
 --------------------------------------------------------------*/
@@ -115,7 +116,7 @@ pre {
 }
 
 code, kbd, tt, var {
-  font-size:.85em;  
+  font-size:.85em;
 }
 
 abbr, acronym {
@@ -304,31 +305,16 @@ a:hover, a:focus, a:active {
   border-bottom:none;
 }
 
-.action {
-  font-family:'futura-pt', sans-serif;
-  display:inline-block;
-  padding:.5em 1em;
-  border:1px solid $green;
-  &:hover {
-    color:white;
-    background:$green;
-  }
-  &:hover, &:active, &:visited, &:focus {
-    border-bottom:1px solid $green;
-  }
-}
-
 // pagination
 .nav-links {
   margin:0 auto;
 }
 
 .search-results .navigation, .site-main .comment-navigation, .site-main .paging-navigation, .site-main .post-navigation {
-  clear:both;
-
   font-family:'futura-pt', sans-serif;
   font-weight:700;
   font-style:italic;
+  clear:both;
   width:65%;
   margin:1.5em auto;
   a {
@@ -363,9 +349,9 @@ Alignments
 .aligncenter, .alignright, .alignleft {
   display:block;
   clear:both;
+  max-width:100%;
   margin:0 auto;
   border:1px solid $dark-blue;
-  max-width:100%;
 }
 
 /*--------------------------------------------------------------
@@ -463,17 +449,32 @@ Comments
   font-style:italic;
   color:$dark-blue;
 }
+.comment-body {
+  padding:.75em;
+  border:1px solid $dark-blue;
+  border-right:none;
+  border-bottom:none;
+  a {
+    @extend %link-reset;
+  }
+}
+
 .comment-meta {
+  @extend %clearfix;
+
   font-family:'futura-pt', sans-serif;
   font-style:italic;
-  margin:.5em 0;
-  padding:.5em 0 0 0;
-  border-top:1px solid $dark-blue;
+  margin-bottom:.5em;
+  background:rgba($light-blue, .75);
 }
 .comment-author {
   img {
     vertical-align:middle;
   }
+}
+.comment-reply-link {
+  font-family:'futura-pt', sans-serif;
+  font-style:italic;
 }
 
 /*--------------------------------------------------------------

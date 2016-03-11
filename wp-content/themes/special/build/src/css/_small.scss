@@ -401,6 +401,7 @@
     em {
       @include animated;
       @include hardware;
+
       font-weight:normal;
       display:block;
     }

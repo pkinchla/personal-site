@@ -24,16 +24,16 @@ if ( post_password_required() ) {
 		<?php // You can start editing here -- including this comment! ?>
 
 		<?php if ( have_comments() ) : ?>
-			<h2 class="comments-title">
+			<h3 class="comments-title">
 				<?php
 					printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'special' ),
 						number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 				?>
-			</h2>
+			</h3>
 
 			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 			<nav id="comment-nav-above" class="navigation comment-navigation clearfix">
-				<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'special' ); ?></h2>
+				<h3 class="screen-reader-text"><?php _e( 'Comment navigation', 'special' ); ?></h3>
 				<div class="nav-links">
 
 					<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'special' ) ); ?></div>
@@ -54,7 +54,7 @@ if ( post_password_required() ) {
 
 			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 			<nav id="comment-nav-below" class="navigation comment-navigation clearfix">
-				<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'special' ); ?></h2>
+				<h3 class="screen-reader-text"><?php _e( 'Comment navigation', 'special' ); ?></h3>
 				<div class="nav-links">
 
 					<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'special' ) ); ?></div>
