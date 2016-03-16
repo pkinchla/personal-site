@@ -16,9 +16,7 @@ get_header(); ?>
         <div class="wrapper">
           <h1><?php echo $heading ?></h1>
           <div class="site-content__home__copy">
-            <div class="content">
-              <?php echo $copy ?>
-            </div>
+            <?php echo $copy ?>
           </div>
           <section class="site-content__home__blog">
           <h2>Latest Writing</h2>

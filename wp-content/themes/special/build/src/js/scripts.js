@@ -9,7 +9,10 @@
 	// add js class to body
 		document.getElementsByTagName('body')[0].className+=' js';
 	}
-	
+	else {
+		return;
+	}
+
 	var animate_something = function() {
 		
 		// vars for check on home page
@@ -133,7 +136,7 @@
 		this.classList.toggle('close-state');
 		menu.classList.toggle('open');
 
-		if (hasClass(this, "close-state")) {
+		if (hasClass(this, 'close-state')) {
 			label.textContent = 'Close';
 		}
 		else {

@@ -10,6 +10,10 @@
     @include gs-span(c, 3, 4);
   }
   // footer
+  .site-footer {
+    padding-top:3em;
+    margin-top:25em;
+  }
   .site-footer__social {
     @include gs-span(c, 2, 4);
     svg {
@@ -46,9 +50,7 @@
     }
     .site-content__home__copy {
       @include gs-span(c, 2, 4);
-      .content {
-        padding:8em 6em 8em 8em;
-      }
+      margin-top:5em;
     }
     .site-content__home__blog {
       @include gs-span(c, 7, 8);

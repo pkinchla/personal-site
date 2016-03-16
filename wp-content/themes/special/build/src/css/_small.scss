@@ -10,11 +10,11 @@
 // header
 .site-header__banner {
   @include linear-gradient($light-blue, lighten($dark-blue, 52.5%));
+  border-bottom:1px solid $dark-blue;
 }
 
 .site-header {
   position:relative;
-  border-bottom:1px solid $dark-blue;
   &.wrapper {
     width:inherit;
   }
@@ -159,7 +159,6 @@
   margin-top:3em;
   padding-bottom:3em;
   border-top:1px solid $dark-blue;
-  border-bottom:1px solid $dark-blue;
   background:$light-blue;
 }
 .site-footer__social {
@@ -400,14 +399,12 @@
     color:$white;
     em {
       @include animated;
-      @include hardware;
 
       font-weight:normal;
       display:block;
     }
     span {
       @include animated;
-      @include hardware;
     }
   }
   &:hover {
@@ -417,9 +414,11 @@
     }
     em {
       @include slideInRight;
+      @include hardware;
     }
     span {
       @include slideInLeft;
+      @include hardware;
 
       display:inline-block;
     }
