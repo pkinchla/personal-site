@@ -7,6 +7,7 @@ var offlineFundamentals = [
   theme_path + 'js/built.min.js',
   theme_path + 'prism/prism.min.js',
   theme_path + 'prism/prism.min.css',
+  theme_path + 'offline.html',
 ];
 
 //Add core website files to cache during serviceworker installation
