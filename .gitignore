@@ -16,7 +16,9 @@
 .DS_Store
 !.gitignore
 !README.md
+!sw.js
 !wp-content/
+
  
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.
