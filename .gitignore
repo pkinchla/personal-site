@@ -17,6 +17,8 @@
 !.gitignore
 !README.md
 !sw.js
+!manifest.json
+!icon.png
 !wp-content/
 
  
