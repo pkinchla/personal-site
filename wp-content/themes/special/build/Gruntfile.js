@@ -9,7 +9,7 @@ pkg: grunt.file.readJSON('package.json'),
   sass: {
     dist: {
       files: {
-        '../style.css' : 'src/css/style.scss'
+        '../style.built.css' : 'src/css/style.scss'
       }     
     }
   },
@@ -36,7 +36,7 @@ pkg: grunt.file.readJSON('package.json'),
   cssmin: {
     compress: {
       files: {
-        '../style.css': [ '../style.css' ]
+        '../style.built.css': [ '../style.built.css' ]
       }
     }
   },   

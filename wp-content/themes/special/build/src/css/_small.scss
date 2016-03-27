@@ -11,6 +11,7 @@
 .site-header__banner {
   @include linear-gradient($light-blue, lighten($dark-blue, 52.5%));
   border-bottom:1px solid $dark-blue;
+  
 }
 
 .site-header {
