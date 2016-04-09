@@ -273,9 +273,12 @@ textarea {
 /*--------------------------------------------------------------
 Links
 --------------------------------------------------------------*/
+a, button, input, select, textarea, label, summary {
+  touch-action: manipulation;
+}
+
 a {
   @include transition(all, .2s, ease-in-out);
-
   text-decoration:none;
   color:$green;
   border-bottom:1px dotted $green;
