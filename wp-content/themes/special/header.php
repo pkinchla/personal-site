@@ -14,7 +14,6 @@
 <link rel="profile" href="//gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" type="image/x-icon" />
-<link rel="shortcut icon" type="image/png" href="/icon.png" />
 <link rel="apple-touch-icon" type="image/png" href="/icon.png" />
 <?php wp_head(); ?>
 </head>
