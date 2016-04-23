@@ -6,6 +6,8 @@
  *
  * @package special
  */
+$noindex = get_field('noindex');
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -15,6 +17,11 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" type="image/x-icon" />
 <link rel="apple-touch-icon" type="image/png" href="/icon.png" />
+<?php 
+  if($noindex) {
+    echo '<meta name="robots" content="noindex"/>' . "\n";
+  }
+?>
 <?php wp_head(); ?>
 </head>
 
