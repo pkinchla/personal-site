@@ -17,7 +17,7 @@ $noindex = get_field('noindex');
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" type="image/x-icon" />
 <link rel="apple-touch-icon" type="image/png" href="/icon.png" />
-<?php 
+<?php
   if($noindex) {
     echo '<meta name="robots" content="noindex"/>' . "\n";
   }
@@ -43,14 +43,14 @@ $noindex = get_field('noindex');
           </g>
         </svg>
       </a>
-      <nav id="site-navigation clearfix" class="main-navigation site-header__navigation">
+      <nav id="site-navigation" class="main-navigation site-header__navigation">
         <button class="main-nav-toggle">
           <svg class="main-nav-button" viewBox="0 0 225 164.7">
           <rect class="one" y="0" width="225" height="23.7"/>
           <rect class="two" y="70.5" width="225" height="23.7" />
           <rect class="three" y="141" width="225" height="23.7"/>
           </svg>
-          <span class="label">Menu</span> 
+          <span class="label">Menu</span>
         </button>
         <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
       </nav><!-- #site-navigation -->
