@@ -1,17 +1,5 @@
 (function (document) {
 	'use strict';
-	
-	// cutting the mustard
-	var supports = !!document.querySelector && !!window.addEventListener;
-	
-	// if passed and enchanced class to body for targeting
-	if (supports) {
-	// add js class to body
-		document.getElementsByTagName('body')[0].className+=' js';
-	}
-	else {
-		return;
-	}
 
 	var animate_something = function() {
 		

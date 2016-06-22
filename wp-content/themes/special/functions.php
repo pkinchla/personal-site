@@ -148,6 +148,15 @@ require get_template_directory() . '/inc/template-tags.php';
 
 
 // enqueue typekit
+function enhance_js() {
+	$enhance_file = get_template_directory_uri() . '/js/enhance.js';
+	$enhance_path = wp_remote_get($enhance_file);
+	$enhance_content = wp_remote_retrieve_body($enhance_path);
+	
+	echo '<script>'. $enhance_content .'</script>' . "\n";
+}
+add_action('wp_head', 'enhance_js'); // enqueue ehancements
+
 function typekit_js() {
 	$typekit_file = get_template_directory_uri() . '/js/typekit.js';
 	$typekit_path = wp_remote_get($typekit_file);

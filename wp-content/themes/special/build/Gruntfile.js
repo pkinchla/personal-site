@@ -16,7 +16,7 @@ pkg: grunt.file.readJSON('package.json'),
 
   watch: {
     all: {
-      files: ['../*.php', '../inc/*.php', '../phpFlickr-3.1/*.php', 'src/js/*.js', '../images/*.{png,jpg,jpeg,gif,webp,svg}'],
+      files: ['../*.php', '../inc/*.php', '../phpFlickr-3.1/*.php', 'src/js/*.js', '../js/*.js', '../images/*.{png,jpg,jpeg,gif,webp,svg}'],
       options: {
       livereload: true,  // Set livereload to trigger a reload upon change
       }
@@ -56,7 +56,8 @@ pkg: grunt.file.readJSON('package.json'),
     dist: {
       files: {
         '../js/built.min.js': 'src/built.js',
-        '../js/typekit.js': '../js/typekit.js'
+        '../js/typekit.js': '../js/typekit.js',
+        '../js/enhance.js': '../js/enhance.js'
       }
     }
   },
