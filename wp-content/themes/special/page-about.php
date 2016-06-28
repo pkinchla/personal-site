@@ -44,6 +44,7 @@ get_header(); ?>
                 $company_name = get_sub_field('company_name');
                 $description = get_sub_field('description');
                 $company_link = get_sub_field('company_link');
+                $company_link_text = get_sub_field('company_link_text');
               ?>  
               <dd>
                 <h4><?php echo $title; ?>  <span><time datetime="<?php echo $date_start ?>"><?php echo $date_start ?></time>
@@ -55,7 +56,7 @@ get_header(); ?>
                         endif;
                         ?></span></h4>
                 <h5><?php echo $company_name; ?></h5>
-                <p><?php echo $description; ?> <em><a href="//<?php echo $company_link ?>/" target="_blank"><?php echo $company_link; ?></a></em></p>
+                <p><?php echo $description; ?> <em><a href="http://<?php echo $company_link; ?>" target="_blank"><?php echo $company_link_text; ?></a></em></p>
               </dd>
                <?php endwhile; ?>
               <?php endif; ?>
