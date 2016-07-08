@@ -1,15 +1,17 @@
 (function (document) {
 	'use strict';
 
+	// check class on element
+	function hasClass(el, cls) {
+		return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test(el.className);
+	}
+
 	var animate_something = function() {
 		
-		// vars for check on home page
-		// get the path
-		var pathArray = window.location.pathname.split( '/' );
-		// second part of array that will indicate the page
-		var path = pathArray[2];
+		//var for check on home page
+		var home = document.querySelector('.home');
 
-		if (path == undefined) {
+		if (home) {
 			(function(window) {
 
 				cobrasvg.prototype._supportSvg = function() {
@@ -109,10 +111,6 @@
 
 	animate_something();
 
-	// check class on element
-	function hasClass(el, cls) {
-			return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test(el.className);
-	}
 
 	// vars for mobile navigation
 	var menu_toggle = document.querySelector('.main-nav-toggle');

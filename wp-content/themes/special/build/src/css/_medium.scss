@@ -3,9 +3,6 @@
   .wrapper.hero-interior {
     width:90%;
   }
-  .aligncenter, .alignright, .alignleft {
-    max-width:50%;
-  }
   h1 {
     font-size:2.625em;
   }
@@ -98,15 +95,18 @@
     }
   }
   // media in posts
+  .aligncenter, .alignright, .alignleft {
+    max-width:50%;
+  }
   .alignleft {
     display:inline;
     float:right;
-    margin:.45em -25% 1.5em 1.5em;
+    margin:.45em -25% 1em 1.5em;
   }
   .alignright {
     display:inline;
     float:right;
-    margin:.45em -25% 1.5em 1.5em;
+    margin:.45em -25% 1em 1.5em;
   }
   // comments
   .comment-author {
