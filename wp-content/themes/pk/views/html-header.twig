@@ -1,0 +1,24 @@
+<!doctype html>
+<html {{site.language_attributes}}>
+<head>
+  <meta charset="{{site.charset}}" />
+  <title>
+    {% if wp_title %}
+      {{ wp_title }} - {{ site.name }}
+    {% else %}
+      {{ site.name }}
+    {% endif %}
+  </title>
+  <meta name="description" content="{{site.description}}">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="{{site.charset}}">
+  <link rel="profile" href="//gmpg.org/xfn/11">
+  <link rel="pingback" href="{{site.pingback_url}}" />
+  <link rel="shortcut icon" href="{{ theme.link }}/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" type="image/png" href="/icon.png" />
+  
+  {% if noindex %}
+    <meta name="robots" content="noindex"/>
+  {% endif %}
+  {{function('wp_head')}}

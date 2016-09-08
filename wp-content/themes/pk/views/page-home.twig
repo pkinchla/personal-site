@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+{% block content %}
+  <img class="site-content__home__heroimg" srcset="{{post.get_thumbnail.src | resize(3000)}} 3000w, {{post.get_thumbnail.src | resize(2000)}} 2000w, {{post.get_thumbnail.src | resize(1200)}} 1200w, {{post.get_thumbnail.src | resize(600)}} 600w, {{post.get_thumbnail.src | resize(300)}} 300w, {{post.get_thumbnail.src | resize(150)}} 150w" src="{{post.get_thumbnail.src}}" sizes="100vw" alt="{{post.get_thumbnail.alt}}">
+  <article class="post-type-{{post.post_type}} site-main site-content__home" id="post-{{post.ID}}">
+    <div class="wrapper">
+      <h1>{{post.heading}}</h1>
+      <div class="site-content__home__copy">
+        {{post.copy}}
+      </div>
+      <section class="site-content__home__blog">
+        {% for post in home_post %}
+          <h2>Latest Writing</h2>
+          <h4><a class="linked-header" href="{{post.permalink}}">{{post.title}}</a></h4>
+          <div class="entry-meta"><time datetime="{{post.date|date('c')}}">{{post.date|date('l, F jS, Y')}}</time></div>
+        {% endfor %}
+          {% for post in posts %}
+            {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+          {% endfor %}
+      </section>
+    </div>
+  </article>
+{% endblock %}

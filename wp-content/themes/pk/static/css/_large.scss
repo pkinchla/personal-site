@@ -1,0 +1,247 @@
+@include gs-media(l, min) {
+  // site-header
+  .site-header__banner {
+    @include gs-span(l, 1, 2);
+
+    position:absolute;
+    z-index:1;
+    margin-top:-5em;
+    padding-top:5em;
+    border-bottom:none;
+    background:none;
+    &:before {
+      @include skewY(15deg);
+      @include linear-gradient($light-blue, lighten($dark-blue, 52.5%));
+
+      position:absolute;
+      z-index:-1;
+      top:.25em;
+      display:block;
+      width:100%;
+      height:100%;
+      content:'';
+      border:1px solid $dark-blue;
+    }
+  }
+  .site-header {
+    border:none;
+    &.wrapper {
+      width:90%;
+      margin:0 auto;
+    }
+    .site-logo {
+      margin-top:-.5%;
+      background-color:transparent;
+      background-image:none;
+      &:hover {
+        background-color:#c0c7cb;
+        background-color:rgba(85, 97, 106, .2);
+      }
+      .logo {
+        width:100%;
+        height:3em;
+        margin:1em auto 0 auto;
+        transform:translateZ(10px);
+      }
+    }
+  }
+  .menu {
+    margin:1em 0 5em 0;
+    background:inherit;
+    li {
+      font-family:'futura-pt', sans-serif;
+      font-size:1.55em;
+      text-align:right;
+      border-bottom:inherit;
+      background:inherit;
+      &:first-child {
+        border-top:0;
+      }
+      &:last-child {
+        border-bottom:0;
+      }
+      a {
+        padding:.05em 35% .05em 0;
+        background:inherit;
+      }
+    }
+  }
+  // .js menu classes
+  .js .menu {
+    visibility:visible;
+    max-height:inherit;
+  }
+  // toggle js classes
+  .js .main-nav-toggle {
+    display:none;
+  }
+  .site-footer {
+    position:relative;
+    z-index:1;
+    padding:0 0 6em 0;
+    margin-top:20em;
+    border-top:none;
+    &:before {
+      @include skewY(-10deg);
+      background:$light-blue;
+      position:absolute;
+      z-index:-1;
+      top:-50%;
+      left:0;
+      display:block;
+      width:100%;
+      height:100%;
+      content:'';
+      border-top:1px solid $dark-blue;
+    }
+  }
+  .site-footer__social {
+    @include gs-span(l, 2, 3);
+  }
+  .site-footer__colophon {
+    @include gs-span(l, 5, 6);
+
+    clear:none;
+    margin-top:3em;
+  }
+  // default post and page styling
+  .site-content__default {
+    .site-content__default__body, .comments {
+      @include gs-span(l, 3, 5);
+    }
+    .post-navigation {
+      @include gs-span(l, 5, 6);
+      .nav-links {
+        width:65%;
+      }
+    }
+  }
+  // 404 page
+  .error404 {
+    .page-title {
+      @include gs-span(l, 1);
+
+      margin-top:-10vw;
+    }
+  }
+  // home page
+  .site-content__home {
+    h1 {
+      font-size:3.5em;
+      position:relative;
+      z-index:1;
+      margin-top:40%;
+    }
+    .site-content__home__copy {
+      @include gs-span(l, 1, 3);
+
+      position:relative;
+      z-index:100;
+      margin-top:2.5em;
+      padding:8em 6em 8em 8em;
+      &:before {
+        @include rotate(15deg);
+
+        position:absolute;
+        z-index:-1;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        content:'';
+        border:1px solid $dark-blue;
+        background:darken(rgba($background-white, .90), 2.5%);
+      }
+    }
+    .site-content__home__blog {
+      @include gs-span(l, 3, 4);
+
+      margin-top:-42.5%;
+    }
+  }
+  // blog page
+  .site-content__blog {
+    .entry-title {
+      @include gs-span(l, 5, 6);
+    }
+  }
+  .hero-image {
+    img {
+      @include gs-span(l, 2, 6);
+    }
+  }
+  .site-content__blog__postlist {
+    @include gs-span(l, 5, 6);
+    @include clear;
+  }
+  .site-content__blog__categories {
+    @include gs-span(l, 2, 3);
+
+    margin-top:inherit;
+    ol {
+      min-width:25%;
+    }
+  }
+  // media in posts
+  .alignleft {
+    float:left;
+    margin:.45em 1.5em 1em -25%;
+  }
+  // about page
+  .site-content__about {
+    .entry-title {
+      @include gs-span(l, 3);
+
+      text-align:right;
+    }
+  }
+  .site-content__about__copy {
+    @include gs-span(l, 4, 5);
+    @include clear;
+  }
+  .site-content__about__contact {
+    @include gs-span(l, 2);
+
+    text-align:right;
+  }
+  .site-content__about__resume {
+    @include gs-span(l, 2, 5);
+  }
+  .site-content__about__picture {
+    @include gs-span(l, 2, 4);
+    @include clear;
+    p {
+      left:95%;
+      width:36%;
+    }
+  }
+  // portfolio listing page
+  .site-content__portfolio {
+    .entry-title {
+      @include gs-span(l, 3, 4);
+    }
+  }
+  .site-content__portfolio__list {
+    @include gs-span(l, 3, 6);
+  }
+  // portfolio single page
+  .site-content__portfolio__single {
+    .entry-title {
+      @include gs-span(l, 3, 5);
+    }
+  }
+  .portfolio__single__copy--print {
+    @include gs-span(l, 2, 3);
+  }
+  .portfolio__single__copy--phone {
+    @include gs-span(l, 3, 4);
+
+    padding:0;
+  }
+  .portfolio__single__image--print {
+    @include gs-span(l, 4, 6);
+  }
+  .portfolio__single__image--phone {
+    @include gs-span(l, 5, 6);
+  }
+}
