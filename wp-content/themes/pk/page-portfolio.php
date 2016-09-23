@@ -15,7 +15,8 @@ $context['post'] = $post;
 
 $portfolio_posts = array(
   'post_type' => 'portfolio',
-  'posts_per_page' => 10
+  'posts_per_page' => 10,
+  'orderby' => 'menu_order'
 );
 $context['portfolio_posts'] = Timber::get_posts($portfolio_posts);
 

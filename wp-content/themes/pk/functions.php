@@ -96,10 +96,6 @@ function add_googleanalytics()  {
 }
 add_action('wp_footer', 'add_googleanalytics');
 
-// fuck emoji
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
-
 // remove wp-embed
 function deregister_wp_embed(){
 	wp_deregister_script( 'wp-embed' );
@@ -130,6 +126,7 @@ require get_template_directory() . '/flickr-feed.php';
 
 // Custom template tags for this theme
 require get_template_directory() . '/template-tags.php';
+
 
 class StarterSite extends TimberSite {
 
