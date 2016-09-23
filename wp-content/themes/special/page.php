@@ -7,25 +7,21 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package special
+ * To generate specific templates for your pages you can use:
+ * /mytheme/views/page-mypage.twig
+ * (which will still route through this PHP file)
+ * OR
+ * /mytheme/page-mypage.php
+ * (in which case you'll want to duplicate this file and save to the above path)
+ *
+ * Methods for TimberHelper can be found in the /lib sub-directory
+ *
+ * @package  WordPress
+ * @subpackage  Timber
+ * @since    Timber 0.1
  */
 
-get_header(); ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main site-content__default">
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'content', 'page' ); ?>
-
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
-			<?php endwhile; // end of the loop. ?>
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_footer(); ?>
+$context = Timber::get_context();
+$post = new TimberPost();
+$context['post'] = $post;
+Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );

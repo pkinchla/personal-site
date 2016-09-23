@@ -1,31 +1,20 @@
 <?php
 /**
- * Template name: Author Template
+ * The template for displaying Author Archive pages
  *
+ * Methods for TimberHelper can be found in the /lib sub-directory
+ *
+ * @package  WordPress
+ * @subpackage  Timber
+ * @since    Timber 0.1
  */
+global $wp_query;
 
-get_header(); ?>
-
-  <div id="primary" class="content-area">
-    <main id="main" class="site-main site-content__default site-content__author">
-      <figure class="wrapper hero-interior">
-        <img class="site-content__default__heroimg" src="<?php echo get_template_directory_uri() ?>/images/cham.jpg" alt="metallic chameleon">
-      </figure>
-      <div class="wrapper">
-        <div class="site-content__default__body blog_listings">
-          <h1>Author: <?php the_author_link(); ?></h1>
-        
-        <?php query_posts( 'posts_per_page=10' ); ?>
-          <?php while ( have_posts() ) : the_post(); ?>
-            <h4><a class="linked-header" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-            <div class="entry-meta">
-              <time datetime="<?php the_time('c');?>"><?php the_time('l, F jS, Y') ?></time>
-            </div>
-          <?php endwhile; // end of the loop. ?>
-
-      </div>
-    </main><!-- #content .site-content -->
-  </div><!-- #primary .content-area -->
-
-
-<?php get_footer(); ?>
+$context = Timber::get_context();
+$context['posts'] = Timber::get_posts();
+if ( isset( $wp_query->query_vars['author'] ) ) {
+	$author = new TimberUser( $wp_query->query_vars['author'] );
+	$context['author'] = $author;
+	$context['title'] = 'Author Archives: ' . $author->name();
+}
+Timber::render( array( 'author.twig', 'archive.twig' ), $context );
