@@ -743,6 +743,9 @@ Asides
 /*--------------------------------------------------------------
 Comments
 --------------------------------------------------------------*/
+.comments {
+  margin-top: 3em; }
+
 .comment-content a {
   word-wrap: break-word; }
 
@@ -774,8 +777,14 @@ Comments
   margin-bottom: .5em;
   background: rgba(230, 237, 250, 0.75); }
 
-.comment-author img {
-  vertical-align: middle; }
+.comment-author {
+  font-family: 'futura-pt', sans-serif;
+  font-style: italic; }
+  .comment-author cite {
+    display: inline-block;
+    font-weight: 700; }
+  .comment-author img {
+    vertical-align: middle; }
 
 .comment-reply-link {
   font-family: 'futura-pt', sans-serif;

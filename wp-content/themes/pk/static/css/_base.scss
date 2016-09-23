@@ -417,6 +417,10 @@ Asides
 /*--------------------------------------------------------------
 Comments
 --------------------------------------------------------------*/
+.comments {
+  margin-top:3em;
+}
+
 .comment-content a {
   word-wrap:break-word;
 }
@@ -450,14 +454,19 @@ Comments
 }
 
 .comment-meta {
-  @extend %clearfix;
-
   font-family:'futura-pt', sans-serif;
   font-style:italic;
+  @extend %clearfix;
   margin-bottom:.5em;
   background:rgba($light-blue, .75);
 }
 .comment-author {
+  font-family:'futura-pt', sans-serif;
+  font-style:italic;
+  cite {
+    display: inline-block;
+    font-weight: 700;
+  }
   img {
     vertical-align:middle;
   }

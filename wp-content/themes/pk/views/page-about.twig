@@ -8,14 +8,14 @@
       <div class="wrapper">
         <h1 class="entry-title">{{post.title}}</h1>
         <div class="site-content__about__copy">
-          {{post.copy|wpautop}}
+          {{post.content|wpautop}}
         </div>
         <div class="site-content__about__contact">
           {{post.contact}}
         </div>
         <section class="site-content__about__resume clearfix">
           <h3>R&eacute;sum&eacute;</h3>
-          <a class="action" href="{{url_file}}>" download>Download</a>
+          <a class="action" href="{{post.get_field('file_resume').url}}" download>Download</a>
           <dl class="resume clearfix">
             <dt>Work</dt>
             {% for job in post.get_field('work') %}

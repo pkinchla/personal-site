@@ -28,7 +28,6 @@ function add_async_forscript($url)
 }
 add_filter('clean_url', 'add_async_forscript', 11, 1);
 
-
 /**
  * Enqueue scripts and styles.
  */
@@ -126,6 +125,11 @@ function my_login_stylesheet() {
 add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 
 
+// flickr feed include for shortcode
+require get_template_directory() . '/flickr-feed.php';
+
+// Custom template tags for this theme
+require get_template_directory() . '/template-tags.php';
 
 class StarterSite extends TimberSite {
 
@@ -141,22 +145,12 @@ class StarterSite extends TimberSite {
 	}
 
 	function add_to_context( $context ) {
-		$home_post = array(
-			'post_type' => 'post',
-			'posts_per_page' => 1
-		);
 
-		$context['home_post'] = Timber::get_posts($home_post);
 		$context['noindex'] = get_field('noindex');
 		$context['menu'] = new TimberMenu();
 		$context['site'] = $this;
 
 		return $context;
-	}
-
-	function myfoo( $text ) {
-		$text .= ' bar!';
-		return $text;
 	}
 
 	function add_to_twig( $twig ) {

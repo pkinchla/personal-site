@@ -1,7 +1,19 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  {% for post in posts %}
-    {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-  {% endfor %}
+  <article class="site-main site-content__default">
+    <figure class="wrapper hero-image">
+      <img src="{{theme.path}}/images/cham.jpg" alt="metallic chameleon">
+    </figure>
+    <div class="wrapper">
+      <div class="site-content__default__body">
+        <h1>{{title}}</h1>
+        <div class="site-content__blog__archives blog_listings">
+          {% for post in posts %}
+            {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </article>
 {% endblock %}
