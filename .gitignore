@@ -40,9 +40,7 @@ wp-content/plugins/*
 # specify (see the commented-out example for a hint on how to do this.)
 wp-content/themes/*
 !wp-content/themes/special/
-!wp-content/themes/pk/
 wp-content/themes/special/*.css.map
 wp-content/themes/special/build/npm-debug.log
 wp-content/themes/special/build/node_modules/*
-wp-content/themes/special/build/.sass-cache/
-wp-content/themes/pk/.sass-cache/
+.sass-cache/
