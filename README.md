@@ -2,10 +2,11 @@
 
 My personal site.
 
-## Based off the starter theme:
+## Based off the starter themes:
 
 - http://underscores.me
 - https://github.com/automattic/_s
+- http://upstatement.com/timber/
 
 ## The MIT License (MIT)
 
