@@ -41,6 +41,6 @@ wp-content/plugins/*
 wp-content/themes/*
 !wp-content/themes/special/
 wp-content/themes/special/*.css.map
-wp-content/themes/special/build/npm-debug.log
-wp-content/themes/special/build/node_modules/*
+wp-content/themes/special/npm-debug.log
+wp-content/themes/special/node_modules/*
 .sass-cache/
