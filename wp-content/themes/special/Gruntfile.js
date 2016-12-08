@@ -55,7 +55,7 @@ pkg: grunt.file.readJSON('package.json'),
   uglify: {
     dist: {
       files: {
-        'js/built.min.js': 'static/built.js',
+        'js/built.min.js': 'js/built.js',
         'js/typekit.js': 'js/typekit.js',
         'js/enhance.js': 'js/enhance.js'
       }
