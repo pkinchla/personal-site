@@ -96,14 +96,14 @@ $dark-green:#19775f;
 }
 
 // semantic class helpers
-.assistive-text {
+.screen-reader-text {
   position:absolute !important;
   overflow:hidden;
   clip:rect(1px, 1px, 1px, 1px);
   width:1px;
   height:1px;
 }
-.assistive-text:hover, .assistive-text:active, .assistive-text:focus {
+.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
   font-size:.875em;
   font-weight:bold;
   line-height:normal;

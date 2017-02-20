@@ -8,7 +8,7 @@
 
 <body class="{{body_class}}" data-template="base.twig">
 	<div id="page" class="hfeed site">
-		<a class="skip-link assistive-text" href="#content">Skip To Content</a>
+		<a class="skip-link screen-reader-text" href="#content">Skip To Content</a>
 		{% block header %}
 			<header id="masthead" class="site-header wrapper">
 				<div class="site-header__banner">
@@ -30,7 +30,7 @@
 							</svg>
 							<span class="label">Menu</span>
 						</button>
-						<h1 class="assistive-text">Main Navigation</h1>
+						<h1 class="screen-reader-text">Main Navigation</h1>
 						{% include "menu.twig" with {'menu': menu.get_items} %}
 					</nav><!-- #site-navigation -->
 				</div>
