@@ -15,7 +15,10 @@ pre {
 .site-header__banner {
   @include linear-gradient($light-blue, lighten($dark-blue, 52.5%));
   border-bottom:1px solid $dark-blue;
-  
+  h1 {
+    font-size:1em;
+    margin:0;
+  }
 }
 
 .site-header {
@@ -41,14 +44,6 @@ pre {
   }
 }
 
-// animation for logo type on home page only
-.js .home {
-  .the-d {
-    stroke:$body-color;
-    stroke-width:1px;
-    stroke-miterlimit:10;
-  }
-}
 // base menu styling
 .menu {
   @extend %clearfix;
@@ -330,7 +325,7 @@ pre {
     font:400 normal 1.25em 'futura-pt', sans-serif;
     color:$body-color;
   }
-  h5 {
+  .company-name, .internship-location {
     font:400 italic 1.125em 'futura-pt', sans-serif;
     margin:0 0 .15em 0;
     color:$body-color;

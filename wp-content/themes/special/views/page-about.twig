@@ -31,7 +31,7 @@
                     {% endif %}
                   </span>
                 </h4>
-                <h5>{{job.company_name}}</h5>
+                <span class="company-name">{{job.company_name}}</span>
                 <p>{{job.description}}<em><a href="http://{{job.company_link}}" target="_blank">{{job.company_link_text}}</a></em></p>
               </dd>
             {% endfor %}
@@ -39,7 +39,7 @@
             {% for gig in post.get_field('internship') %}
               <dd>
                 <h4>{{gig.title}}  <span><time datetime="{{gig.date}}">{{gig.date}}</time></span></h4>
-                <h5>{{gig.location}}</h5>
+                <span class="internship-location">{{gig.location}}</span> 
               </dd>
             {% endfor %}
             <dt>Skill</dt>
