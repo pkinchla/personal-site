@@ -14,13 +14,13 @@
           {{post.contact}}
         </div>
         <section class="site-content__about__resume clearfix">
-          <h3>R&eacute;sum&eacute;</h3>
+          <h2>R&eacute;sum&eacute;</h2>
           <a class="action" href="{{post.get_field('file_resume').url}}" download>Download</a>
           <dl class="resume clearfix">
             <dt>Work</dt>
             {% for job in post.get_field('work') %}
               <dd>
-                <h4>
+                <h3>
                 {{job.title}}
                   <span>
                     <time datetime="{{job.date_start}}">{{job.date_start}}</time>
@@ -30,7 +30,7 @@
                       &ndash; present
                     {% endif %}
                   </span>
-                </h4>
+                </h3>
                 <span class="company-name">{{job.company_name}}</span>
                 <p>{{job.description}}<em><a href="http://{{job.company_link}}" target="_blank">{{job.company_link_text}}</a></em></p>
               </dd>
@@ -38,7 +38,7 @@
             <dt>Internship</dt>
             {% for gig in post.get_field('internship') %}
               <dd>
-                <h4>{{gig.title}}  <span><time datetime="{{gig.date}}">{{gig.date}}</time></span></h4>
+                <h3>{{gig.title}}  <span><time datetime="{{gig.date}}">{{gig.date}}</time></span></h3>
                 <span class="internship-location">{{gig.location}}</span> 
               </dd>
             {% endfor %}
@@ -47,7 +47,7 @@
             <dt>Education</dt>
               <dd>
               {% for school in post.get_field('education') %}
-                <h4>{{school.school}}  <span>{{school.degree}}</span></h4>
+                <h3>{{school.school}}  <span>{{school.degree}}</span></h3>
               {% endfor %}
               </dd>  
             <dt>Interest</dt>
