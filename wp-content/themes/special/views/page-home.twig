@@ -10,7 +10,7 @@
       <section class="site-content__home__blog">
         {% for post in home_post %}
           <h2>Latest Writing</h2>
-          <h4><a class="linked-header" href="{{post.link}}">{{post.title}}</a></h4>
+          <h3><a class="linked-header" href="{{post.link}}">{{post.title}}</a></h3>
           <div class="entry-meta"><time datetime="{{post.date|date('c')}}">{{post.date|date('l, F jS, Y')}}</time></div>
         {% endfor %}
       </section>
