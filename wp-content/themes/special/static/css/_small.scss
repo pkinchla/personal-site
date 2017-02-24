@@ -219,7 +219,7 @@ pre {
   @extend %relative;
   h1 {
     @include gs-span(s, 1);
-
+    font-style:italic;
     margin-top:30%;
     text-align:center;
   }
