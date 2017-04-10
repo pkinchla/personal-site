@@ -114,11 +114,14 @@ function my_login_logo_url_title() {
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
-/* add stylesheet for login page */
+// add stylesheet for login page
 function my_login_stylesheet() { 
 		wp_enqueue_style( 'style-login', get_template_directory_uri() . '/style-login.css' );
 }
 add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+
+// add resource hints
+add_filter('http2_render_resource_hints', '__return_true');
 
 
 // flickr feed include for shortcode
