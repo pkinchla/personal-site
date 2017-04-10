@@ -462,6 +462,7 @@ Comments
   font-style:italic;
   @extend %clearfix;
   margin-bottom:.5em;
+  padding-top:.25em;
   background:rgba($light-blue, .75);
 }
 .comment-author {
@@ -470,6 +471,10 @@ Comments
   cite {
     display: inline-block;
     font-weight: 700;
+    vertical-align: middle;
+  }
+  .says {
+    vertical-align:middle;
   }
   img {
     vertical-align:middle;
