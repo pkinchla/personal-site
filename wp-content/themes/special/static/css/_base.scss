@@ -331,6 +331,23 @@ a:hover, a:focus, a:active {
   @extend %link-reset;
 }
 
+.pagination {
+  font-family:'futura-pt', sans-serif;
+  font-weight:700;
+  font-style:italic;
+  margin-top:1.5em;
+  margin-bottom:3em;
+  padding:1em 0;
+  border-bottom:.0625em solid $medium-gray;
+  text-align: center;
+  .page-number, .next {
+    padding:.5em;
+  }
+  a {
+    border-bottom:none;
+  }
+}
+
 
 
 /*--------------------------------------------------------------
