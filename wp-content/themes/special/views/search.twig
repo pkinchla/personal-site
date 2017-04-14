@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <article class="site-main site-content__default">
+    <figure class="wrapper hero-image">
+      <img src="{{theme.path}}/images/cham.jpg" alt="metallic chameleon">
+    </figure>
+    <div class="wrapper">
+      <div class="site-content__default__body">
+        {% if posts is empty %}
+          <h1>No Results</h1>
+          <p class="search-message">Sorry, no results matched your query, maybe try again</p>
+          {% include 'searchform.twig' %}
+        {% else %}
+          <h1>{{title}}</h1>
+          <div class="site-content__blog__archives blog_listings">
+            {% for post in posts %}
+              {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </article>
+{% endblock %}
