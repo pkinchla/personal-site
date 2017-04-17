@@ -19,7 +19,7 @@ $context['post'] = $post;
 $blog_posts = array(
   'paged' => $paged,
   'post_type' => 'post',
-  'posts_per_page' => 2
+  'posts_per_page' => 7
 );
 query_posts($blog_posts);
 
