@@ -93,12 +93,12 @@
 	menu_toggle.addEventListener('click', toggle_menu, false);
 
 	// registration for worker for server side caching
-	// if ('serviceWorker' in navigator) {
-	// 	navigator.serviceWorker.register('/sw.js').then(function() {
-	// 	return navigator.serviceWorker.ready;
-	// 	}).then(function(serviceWorkerRegistration) {
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('/sw.js').then(function() {
+		return navigator.serviceWorker.ready;
+		}).then(function(serviceWorkerRegistration) {
 		
-	// 	});
-	// }
+		});
+	}
 
 }(document));
