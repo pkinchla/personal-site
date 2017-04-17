@@ -7,13 +7,15 @@
     </figure>
     <div class="wrapper article-content">
       <h1 class="entry-title">{{post.title}}</h1>
-      <div class="site-content__blog__postlist blog_listings">
-        {% for post in blog_posts %}
-          <h4><a class="linked-header" href="{{post.link}}">{{post.title}}</a></h4>
-          <div class="entry-meta">
-            <time datetime="{{post.date|date('c')}}">{{post.date|date('l, F jS, Y')}}</time>
-          </div>
-        {% endfor %} 
+      <div id="pagination-block" class="site-content__blog__postlist blog_listings js-pagination-target pagination-target">
+        <div class="js-pagination-element">
+          {% for post in blog_posts %}
+            <h4><a class="linked-header" href="{{post.link}}">{{post.title}}</a></h4>
+            <div class="entry-meta">
+              <time datetime="{{post.date|date('c')}}">{{post.date|date('l, F jS, Y')}}</time>
+            </div>
+          {% endfor %} 
+        </div>
         {% include 'pagination.twig' %}
       </div>
       <div class="site-content__blog__categories">

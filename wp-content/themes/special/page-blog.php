@@ -15,12 +15,11 @@ if (!isset($paged) || !$paged){
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
-// $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 $blog_posts = array(
   'paged' => $paged,
   'post_type' => 'post',
-  'posts_per_page' => 10
+  'posts_per_page' => 2
 );
 query_posts($blog_posts);
 

@@ -298,10 +298,34 @@ a:hover, a:focus, a:active {
   color:$dark-green;
   border-bottom:none;
 }
-
 // pagination
 .nav-links {
   margin:0 auto;
+}
+
+// ajax animation classes
+.pagination-target {
+  overflow: hidden;
+}
+
+.removing {
+  @include animated;
+  @include fadeOut;
+}
+
+.adding {
+  @include animated;
+  @include fadeIn;
+}
+
+.removing-pagination {
+  @include animated;
+  @include slideOutDown;
+}
+
+.adding-pagination {
+  @include animated;
+  @include slideInUp;
 }
 
 .search-results .navigation, .site-main .comment-navigation, .site-main .paging-navigation, .site-main .post-navigation {
@@ -336,9 +360,7 @@ a:hover, a:focus, a:active {
   font-weight:700;
   font-style:italic;
   margin-top:1.5em;
-  margin-bottom:3em;
   padding:1em 0;
-  border-bottom:.0625em solid $medium-gray;
   text-align: center;
   .page-number, .next {
     padding:.5em;

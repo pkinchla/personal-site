@@ -258,6 +258,8 @@ pre {
 
 // blog listing specific styles
 .blog_listings {
+  border-bottom:.0625em solid $medium-gray;
+  margin-bottom:3em;
   .entry-meta {
     margin-bottom:1.5em;
     padding:0;
