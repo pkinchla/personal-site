@@ -8,10 +8,6 @@
  * @since    Timber 0.1
  */
 
-global $paged;
-if (!isset($paged) || !$paged){
-    $paged = 1;
-}
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
@@ -28,4 +24,3 @@ $context['blog_posts'] = Timber::get_posts($blog_posts);
 $context['pagination'] = Timber::get_pagination();
 Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );
 
-$context['spook'] = get_cat_ID('spooky');
