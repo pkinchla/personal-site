@@ -165,11 +165,13 @@ li > ul, li > ol {
 }
 
 dt {
-  font-weight:normal;
+  font-family:'futura-pt', sans-serif;
+  font-weight:700;
+  font-size:1.15em;
 }
 
 dd {
-  margin:0 1.5em 1.5em;
+  margin:0;
 }
 
 img {
