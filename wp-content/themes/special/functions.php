@@ -95,16 +95,6 @@ function add_googleanalytics()  {
 }
 add_action('wp_footer', 'add_googleanalytics');
 
-// google analytics in footer 
-function add_googleadsense()  {
-	$gads_file = get_template_directory_uri() . '/js/gadsense.js';
-	$gads_path = wp_remote_get($gads_file);
-	$gads_content = wp_remote_retrieve_body($gads_path);
-	
-	echo $gads_content . "\n";
-}
-add_action('wp_footer', 'add_googleadsense');
-
 // remove wp-embed
 function deregister_wp_embed(){
 	wp_deregister_script( 'wp-embed' );
