@@ -21,10 +21,6 @@ $nav_args = array(
   );
 $context['post_nav'] = get_the_post_navigation($nav_args);
 
-if (comments_open() || get_comments_number()) {
-  $context['comments'] = TimberHelper::function_wrapper('comments_template');
-}
-
 if ( post_password_required( $post->ID ) ) {
   Timber::render( 'single-password.twig', $context );
 } else {

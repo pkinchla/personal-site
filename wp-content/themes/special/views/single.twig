@@ -22,6 +22,8 @@
 		</div>				
 			{{post_nav}}
 		</div>
-		{{comments}}
+		{% if (function('comments_open')) or (function('get_comments_number')) %}
+			{{ function( 'comments_template' ) }}
+		{% endif %}
 	</article>
 {% endblock %}
