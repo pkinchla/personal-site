@@ -290,6 +290,9 @@ pre {
     border-top:none;
     border-right:none;
     border-left:none;
+    -webkit-filter:grayscale(100%);
+            filter:grayscale(100%);
+
   }
 }
 
