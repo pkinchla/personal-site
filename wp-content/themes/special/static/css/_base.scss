@@ -300,6 +300,7 @@ a:hover, a:focus, a:active {
   color:$dark-green;
   border-bottom:none;
 }
+
 // pagination
 .nav-links {
   margin:0 auto;
@@ -310,24 +311,71 @@ a:hover, a:focus, a:active {
   overflow: hidden;
 }
 
+.pagination-element {
+  @include transition(all, .45s, ease-in-out);
+}
+
+.loading {
+  position: relative;
+  &:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top:calc(50% + .25em);
+    left:50%;
+    width: 1.25em;
+    height: 1.25em;
+    margin-top: -.625em;
+    margin-left: -.625em;
+    border-radius: 50%;
+    border:.15em solid $dark-green;
+    border-top-color: $green;
+    border-right-color: $selection-color;
+    border-bottom-color: $dark-blue;
+    animation:spin .75s linear infinite;
+  }
+}
 .removing {
   @include animated;
-  @include fadeOut;
+  @include slideOutDown;
+  opacity:0;
 }
 
 .adding {
   @include animated;
-  @include fadeIn;
+  @include slideInUp;
 }
 
 .removing-pagination {
   @include animated;
-  @include slideOutDown;
+  @include fadeOut;
 }
 
 .adding-pagination {
   @include animated;
-  @include slideInUp;
+  @include fadeIn;
+}
+
+.pagination-target {
+  padding-top:5em;
+  margin-top:-5em;
+  -webkit-background-clip: content-box;
+  background-clip: content-box;
+}
+
+.pagination {
+  font-family:'futura-pt', sans-serif;
+  font-weight:700;
+  font-style:italic;
+  margin-top:1.5em;
+  padding:1em 0;
+  text-align: center;
+  .page-number, .next {
+    padding:.5em;
+  }
+  a {
+    border-bottom:none;
+  }
 }
 
 .search-results .navigation, .site-main .comment-navigation, .site-main .paging-navigation, .site-main .post-navigation {
@@ -356,23 +404,6 @@ a:hover, a:focus, a:active {
 .linked-header {
   @extend %link-reset;
 }
-
-.pagination {
-  font-family:'futura-pt', sans-serif;
-  font-weight:700;
-  font-style:italic;
-  margin-top:1.5em;
-  padding:1em 0;
-  text-align: center;
-  .page-number, .next {
-    padding:.5em;
-  }
-  a {
-    border-bottom:none;
-  }
-}
-
-
 
 /*--------------------------------------------------------------
 Alignments

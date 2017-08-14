@@ -4,7 +4,7 @@
   "author": "Paul Kinchla",
   "private": true,
   "devDependencies": {
-    "grunt": "^1.0.0",
+    "grunt": "^1.0.1",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-concat": "^1.0.0",
     "grunt-contrib-cssmin": "^1.0.1",

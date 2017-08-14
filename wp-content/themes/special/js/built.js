@@ -1464,6 +1464,51 @@
 		}
 	}
 	
+
+
+	// Function to animate the scroll
+	function smoothScroll(anchor, duration) {
+
+		// Calculate how far and how fast to scroll
+		var startLocation = window.pageYOffset;
+		var endLocation = anchor.offsetTop;
+		var distance = endLocation - startLocation;
+		var increments = distance/(duration/16);
+		var stopAnimation;
+
+		// Scroll the page by an increment, and check if it's time to stop
+		var animateScroll = function () {
+			window.scrollBy(0, increments);
+			stopAnimation();
+		};
+
+		// If scrolling down
+		if ( increments >= 0 ) {
+				// Stop animation when you reach the anchor OR the bottom of the page
+				stopAnimation = function () {
+				var travelled = window.pageYOffset;
+				if ((travelled >= (endLocation - increments)) || ((window.innerHeight + travelled) >= document.body.offsetHeight) ) {
+					clearInterval(runAnimation);
+				}
+			};
+		}
+		// If scrolling up
+		else {
+			// Stop animation when you reach the anchor OR the top of the page
+			stopAnimation = function () {
+			var travelled = window.pageYOffset;
+				if ( travelled <= (endLocation || 0) ) {
+					clearInterval(runAnimation);
+				}
+			};
+		}
+		// Loop the animation function
+		var runAnimation = setInterval(animateScroll, 16);
+	};
+	
+		
+
+	
 	// paginate links
 	function paginateLink(link){
 		var paginatedLink = document.querySelectorAll('.js-pagination'),
@@ -1473,28 +1518,34 @@
 		
 		addClass(element, 'removing')
 		addClass(pagination, 'removing-pagination')
+		addClass(target, 'loading')
 		
 		removeClass(element, 'adding')
 		removeClass(pagination, 'adding-pagination')
+
 
 		fetch(link)
 		.then(function(response){
 			return response.text()
 		})
 		.then(function(text){
+			smoothScroll(target, 250)
 			var htmlData = document.createElement('div')
 					htmlData.innerHTML = text
 			var elementData = htmlData.querySelector('.js-pagination-element'),
 					paginationData = htmlData.querySelector('.js-pagination-block')
+
 					
 			addClass(elementData, 'adding')
 			addClass(paginationData, 'adding-pagination')
-			
+			removeClass(target, 'loading')	
+		
 			target.removeChild(element)
 			target.removeChild(pagination)
 			
 			target.appendChild(elementData)
-			target.appendChild(paginationData)	
+			target.appendChild(paginationData)
+		
 		})
 	}
 
