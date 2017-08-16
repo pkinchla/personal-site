@@ -1605,7 +1605,7 @@
 					addClass(htmlEl, 'exit')
 					setTimeout(function() { 
 						window.location = self
-					}, 100) 
+					}, 350) 
 					
 				})
 			}

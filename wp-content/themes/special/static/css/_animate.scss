@@ -1,6 +1,6 @@
 @mixin animated {
-  -webkit-animation-duration:.5s;
-          animation-duration:.5s;
+  -webkit-animation-duration:.35s;
+          animation-duration:.35s;
 
   -webkit-animation-fill-mode:both;
           animation-fill-mode:both;
@@ -18,6 +18,11 @@
     -webkit-transform: rotate(360deg); 
             transform: rotate(360deg); 
   } 
+}
+
+@mixin spin {
+  -webkit-animation-name:spin;
+          animation-name:spin;
 }
 
 @-webkit-keyframes slideInLeft {

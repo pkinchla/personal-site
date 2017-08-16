@@ -16,6 +16,16 @@ html {
       }
     }
     &.exit {
+      &:before {
+        @include center;
+        font-family:'futura-pt', sans-serif;
+        letter-spacing:-.025em;
+        color:$dark-blue;
+        font-size:2em;
+        font-style:italic;
+        font-weight:800;
+        content:'Loading';
+      }
       .site-content {
         @include slideOutRight;
       }
