@@ -3,6 +3,27 @@
 --------------------------------------------------------------*/
 html {
   box-sizing:border-box;
+  &.js {
+    .site-content, .site-header__banner {
+      @include animated;
+    }
+    &.active {
+      .site-content {
+        @include fadeIn;
+      }
+      .site-header__banner {
+        @include slideInDown;
+      }
+    }
+    &.exit {
+      .site-content {
+        @include slideOutRight;
+      }
+      .site-header__banner {
+        @include fadeOut;
+      }
+    }
+  }
 }
 *, *:before, *:after {
   box-sizing:inherit;

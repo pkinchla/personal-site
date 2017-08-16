@@ -1438,7 +1438,7 @@
 } )( window, document );
 ;(function (document) {
 	'use strict';
-	
+
 	// check class on element
 	function hasClass(el, className) {
 		if (el.classList)
@@ -1464,8 +1464,6 @@
 		}
 	}
 	
-
-
 	// Function to animate the scroll
 	function smoothScroll(anchor, duration) {
 
@@ -1505,9 +1503,6 @@
 		// Loop the animation function
 		var runAnimation = setInterval(animateScroll, 16);
 	};
-	
-		
-
 	
 	// paginate links
 	function paginateLink(link){
@@ -1584,10 +1579,38 @@
 	// registration for worker for server side caching
 	if ('serviceWorker' in navigator) {
 		navigator.serviceWorker.register('/sw.js').then(function() {
-		return navigator.serviceWorker.ready;
+			return navigator.serviceWorker.ready;
 		}).then(function(serviceWorkerRegistration) {
 		
-		});
+		})
+	}
+
+	var links = document.querySelectorAll('a'),
+			htmlEl = document.querySelector('.js');
+
+	for (var i = 0; i < links.length; i++) {
+		if (location.hostname === links[i].hostname || !links[i].hostname.length ) {
+			if(links[i].href.match('#')){
+				// act like a mailto link
+				// todo: fix scrolling link
+				// smoothScroll(links[i], 250)
+			}
+			else if(links[i].href.match('mailto')){
+				// act like a mailto link
+			}
+			else {
+				links[i].addEventListener('click', function(e){
+					var self = this;
+					e.preventDefault()
+					addClass(htmlEl, 'exit')
+					setTimeout(function() { 
+						window.location = self
+					}, 100) 
+					
+				})
+			}
+		}
+		
 	}
 
 }(document));
