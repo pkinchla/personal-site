@@ -18,6 +18,7 @@ html {
     &.exit {
       &:before {
         @include center;
+        position:fixed;
         font-family:'futura-pt', sans-serif;
         letter-spacing:-.025em;
         color:$dark-blue;
