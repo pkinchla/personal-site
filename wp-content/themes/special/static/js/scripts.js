@@ -138,41 +138,50 @@
 	}
 	menu_toggle.addEventListener('click', toggle_menu, false);
 
-	// registration for worker for server side caching
-	if ('serviceWorker' in navigator) {
-		navigator.serviceWorker.register('/sw.js').then(function() {
-			return navigator.serviceWorker.ready;
-		}).then(function(serviceWorkerRegistration) {
+	// // registration for worker for server side caching
+	// if ('serviceWorker' in navigator) {
+	// 	navigator.serviceWorker.register('/sw.js').then(function() {
+	// 		return navigator.serviceWorker.ready;
+	// 	}).then(function(serviceWorkerRegistration) {
 		
-		})
-	}
+	// 	})
+	// }
 
 	var links = document.querySelectorAll('a'),
-			htmlEl = document.querySelector('.js');
-
-	for (var i = 0; i < links.length; i++) {
-		if (location.hostname === links[i].hostname || !links[i].hostname.length ) {
-			if(links[i].href.match('#')){
-				// act like a mailto link
-				// todo: fix scrolling link
-				// smoothScroll(links[i], 250)
-			}
-			else if(links[i].href.match('mailto')){
-				// act like a mailto link
-			}
-			else {
-				links[i].addEventListener('click', function(e){
-					var self = this;
-					e.preventDefault()
-					addClass(htmlEl, 'exit')
-					setTimeout(function() { 
-						window.location = self
-					}, 350) 
-					
-				})
+			htmlEl = document.querySelector('.js'),
+			admin = document.querySelector('.logged-in');
+	
+	// fix back functionality in safari	
+	window.onpageshow = function(event) {
+		if (event.persisted) {
+			window.location.reload() 
+		}
+	};
+		
+	if(!admin) {
+		for (var i = 0; i < links.length; i++) {
+			if (location.hostname === links[i].hostname || !links[i].hostname.length ) {
+				if(links[i].href.match('#')){
+					// act like a mailto link
+					// todo: fix scrolling link
+					// smoothScroll(links[i], 250)
+				}
+				else if(links[i].href.match('mailto')){
+					// act like a mailto link
+				}
+				else {
+					links[i].addEventListener('click', function(e){
+						var self = this;
+						e.preventDefault()
+						addClass(htmlEl, 'exit')
+						setTimeout(function() { 
+							window.location = self
+						}, 350) 
+						
+					})
+				}
 			}
 		}
-		
-	}
+	}	
 
 }(document));
