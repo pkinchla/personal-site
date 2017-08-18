@@ -160,7 +160,8 @@
 		
 	if(!admin) {
 		for (var i = 0; i < links.length; i++) {
-			if (location.hostname === links[i].hostname || !links[i].hostname.length ) {
+			var isAsyncLink = hasClass(links[i], 'js-pagination')
+			if (location.hostname === links[i].hostname || !links[i].hostname.length) {
 				if(links[i].href.match('#')){
 					// todo: fix scrolling link
 					// smoothScroll(links[i], 250)
@@ -168,7 +169,7 @@
 				else if(links[i].href.match('mailto')){
 					// act like a mailto link
 				}
-				else {
+				else if(!isAsyncLink){
 					links[i].addEventListener('click', function(e){
 						var self = this;
 						e.preventDefault()
@@ -176,7 +177,6 @@
 						setTimeout(function() { 
 							window.location = self
 						}, 350) 
-						
 					})
 				}
 			}
