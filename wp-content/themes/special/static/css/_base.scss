@@ -10,9 +10,13 @@ html {
     &.active {
       .site-content {
         @include fadeIn;
+        -webkit-animation-delay:.15s;
+                animation-delay:.15s;
       }
       .site-header__banner {
         @include slideInDown;
+        -webkit-animation-delay:.15s;
+                animation-delay:.15s;
       }
     }
     &.exit {

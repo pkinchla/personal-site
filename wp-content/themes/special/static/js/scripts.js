@@ -162,7 +162,6 @@
 		for (var i = 0; i < links.length; i++) {
 			if (location.hostname === links[i].hostname || !links[i].hostname.length ) {
 				if(links[i].href.match('#')){
-					// act like a mailto link
 					// todo: fix scrolling link
 					// smoothScroll(links[i], 250)
 				}
