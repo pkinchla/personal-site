@@ -17,7 +17,7 @@ html {
                 animation-delay:.15s;
       }
       .site-header__banner {
-        @include slideInDown;
+        @include fadeIn;
         -webkit-animation-delay:.15s;
                 animation-delay:.15s;
       }
