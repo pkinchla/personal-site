@@ -32,7 +32,7 @@ pre {
   @extend %nav-link;
   @extend %link-reset;
 
-  font-family:'futura-pt', sans-serif;
+  font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   display:block;
   padding:1em 1em 1em;
   .logo {
@@ -49,7 +49,7 @@ pre {
   @extend %clearfix;
   @extend %plain-list;
   li {
-    font-family:'futura-pt', sans-serif;
+    font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size:1.25em;
     width:100%;
     border-bottom:1px solid $dark-blue;
@@ -171,7 +171,7 @@ pre {
     a {
       @extend %link-reset;
 
-      font-family:'futura-pt', sans-serif;
+      font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
       position:relative;
       display:block;
       padding-bottom:1em;
@@ -193,7 +193,7 @@ pre {
 }
 .site-footer__colophon {
   small {
-    font-family:'futura-pt', sans-serif;
+    font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
 }
 
@@ -309,7 +309,7 @@ pre {
 .site-content__about__contact {
   margin-bottom:1.5em;
   .contact {
-    font-family:'futura-pt', sans-serif;
+    font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     margin:0;
     padding:0;
     list-style:none;
