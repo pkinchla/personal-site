@@ -32,8 +32,6 @@ add_filter('clean_url', 'add_async_forscript', 11, 1);
  * Enqueue scripts and styles.
  */
 function special_scripts() {
-	
-	wp_enqueue_style( 'typekit', '//use.typekit.net/ltt0nnt.css' );
 			
 	if ( WP_DEBUG || SCRIPT_DEBUG ) {
 		wp_enqueue_style( 'style-built', get_template_directory_uri() . '/style.built.css' );
@@ -56,7 +54,7 @@ function special_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'special_scripts' );
 
-// enqueue enhance
+// enqueue typekit
 function enhance_js() {
 	$enhance_file = get_template_directory_uri() . '/js/enhance.js';
 	$enhance_path = wp_remote_get($enhance_file);
@@ -65,6 +63,15 @@ function enhance_js() {
 	echo '<script>'. $enhance_content .'</script>' . "\n";
 }
 add_action('wp_head', 'enhance_js'); // enqueue ehancements
+
+function typekit_js() {
+	$typekit_file = get_template_directory_uri() . '/js/typekit.js';
+	$typekit_path = wp_remote_get($typekit_file);
+	$typekit_content = wp_remote_retrieve_body($typekit_path);
+	
+	echo '<script>'. $typekit_content .'</script>' . "\n";
+}
+add_action('wp_head', 'typekit_js');
 
 // function for critical path css
 function critical_css() {
