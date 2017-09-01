@@ -368,18 +368,34 @@ pre {
   }
 }
 
+.instagram-feed {
+  @extend %plain-list;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax( 125px, 2fr ));
+  grid-gap:5px;
+  li  {
+    box-shadow:0 0 0 5px $medium-gray;
+    float:left;
+    width:25%;
+    @supports (display:grid) {
+      float:none;
+      width:inherit;
+    }
+  }
+}
 .site-content__about__picture {
   position:relative;
   .img-link {
     @extend %link-reset;
   }
   img {
-    border:1px solid $dark-blue;
+    display:block;
   }
   p {
     padding:1em;
     border:1px solid $dark-blue;
     background:$background-white;
+    margin-top: 1.5em;
   }
 }
 // portfolio specific styles

@@ -61,6 +61,13 @@
           </dl>
         </section>
         <div class="site-content__about__picture">
+          <ul class="instagram-feed">
+            {% for picture in pictures.items %}
+            <li>
+              <img src="{{picture.images.low_resolution.url}}" alt="">
+            </li>
+            {% endfor %}
+          </ul>
           {{post.flickr_field|shortcodes}}
         </div>
       </div>

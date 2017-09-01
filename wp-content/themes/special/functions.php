@@ -96,6 +96,19 @@ function add_googleanalytics()  {
 }
 add_action('wp_footer', 'add_googleanalytics');
 
+// get instagram feed
+function instagram_feed() {
+	if ( false === ( $feed = get_transient( 'instagram_feed' ) ) ) {
+		$url      = 'https://www.instagram.com/pkinchla/media/';
+		$response = wp_remote_get( $url );
+		$body = json_decode( $response['body'] );
+		$feed = $body;
+		set_transient( 'instagram_feed', $feed, 1 * HOUR_IN_SECONDS);
+
+	}
+	return $feed;
+}
+
 // remove wp-embed
 function deregister_wp_embed(){
 	wp_deregister_script( 'wp-embed' );
@@ -125,7 +138,7 @@ add_filter('http2_render_resource_hints', '__return_true');
 
 
 // flickr feed include for shortcode
-require get_template_directory() . '/flickr-feed.php';
+// require get_template_directory() . '/flickr-feed.php';
 
 // Custom template tags for this theme
 require get_template_directory() . '/template-tags.php';
