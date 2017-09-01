@@ -371,12 +371,15 @@ pre {
 .instagram-feed {
   @extend %plain-list;
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax( 125px, 2fr ));
-  grid-gap:5px;
+  grid-template-columns: repeat(auto-fit, minmax( 125px, 1fr ));
+  grid-gap:2px;
   li  {
-    box-shadow:0 0 0 5px $medium-gray;
+    box-shadow:0 0 0 2px $dark-blue;
     float:left;
     width:25%;
+    img {
+      width:100%;
+    }
     @supports (display:grid) {
       float:none;
       width:inherit;

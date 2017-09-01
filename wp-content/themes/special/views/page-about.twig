@@ -63,9 +63,11 @@
         <div class="site-content__about__picture">
           <ul class="instagram-feed">
             {% for picture in pictures.items %}
-            <li>
-              <img src="{{picture.images.low_resolution.url}}" alt="">
-            </li>
+            {% if loop.index < 21 %}
+              <li>
+                <img src="{{picture.images.thumbnail.url}}" alt="">
+              </li>
+            {% endif %}
             {% endfor %}
           </ul>
           {{post.flickr_field|shortcodes}}
