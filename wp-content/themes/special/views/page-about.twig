@@ -61,16 +61,17 @@
           </dl>
         </section>
         <div class="site-content__about__picture">
-          <ul class="instagram-feed">
+          <h2 class="screen-reader-text">Instagram Feed</h2>
+          {{post.flickr_field}}
+          <ul class="photo-feed">
             {% for picture in pictures.items %}
             {% if loop.index < 21 %}
               <li>
-                <img src="{{picture.images.thumbnail.url}}" alt="">
+                <img src="{{picture.images.thumbnail.url}}" alt="{{ (picture.caption) ? picture.caption.text : 'instagram thumbnail' }}">
               </li>
             {% endif %}
             {% endfor %}
           </ul>
-          {{post.flickr_field|shortcodes}}
         </div>
       </div>
     </article>

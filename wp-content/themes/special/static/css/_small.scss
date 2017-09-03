@@ -368,7 +368,7 @@ pre {
   }
 }
 
-.instagram-feed {
+.photo-feed {  
   @extend %plain-list;
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax( 125px, 1fr ));
