@@ -136,10 +136,6 @@ add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 // add resource hints
 add_filter('http2_render_resource_hints', '__return_true');
 
-
-// flickr feed include for shortcode
-// require get_template_directory() . '/flickr-feed.php';
-
 // Custom template tags for this theme
 require get_template_directory() . '/template-tags.php';
 
