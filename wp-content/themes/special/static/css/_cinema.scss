@@ -122,19 +122,11 @@
   }
   .site-content__portfolio__list {
     @include gs-span(c, 2, 6);
+    display:grid;
     li {
-      float:left;
-      width:25%;
-    }
-    li:nth-child(3n+1) {
-      clear:none;
-    }
-    li:nth-child(4n+1) {
-      clear:both;
-    }
-    li:nth-child(-n+4) {
-      img {
-        border-top:1px solid $dark-blue;
+      @supports not (display: grid) {
+        float:left;
+        width:25%;
       }
     }
   }

@@ -178,25 +178,21 @@
   }
   .site-content__portfolio__list {
     @include gs-span(m, 1, 3);
-
+    display:grid;
     clear:both;
-    border-left:1px solid $dark-blue;
     li {
-      float:left;
-      width:33.3%;
-      img {
-        border-left:none;
+      @supports not (display: grid) {
+        border:1px solid $dark-blue;
+        float:left;
+        width:33.3%;
       }
-    }
-    li:first-child {
-      border-top:inherit;
-    }
-    li:nth-child(3n+1) {
-      clear:both;
-    }
-    li:nth-child(-n+3) {
-      img {
-        border-top:1px solid $dark-blue;
+      &:first-child {
+        grid-column:1 / 3;
+        grid-row:1 / 3;
+      }
+      &:nth-child(2) {
+        align-self:end;
+        justify-content:end;
       }
     }
   }

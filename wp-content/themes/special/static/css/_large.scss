@@ -233,6 +233,7 @@
   }
   .site-content__portfolio__list {
     @include gs-span(l, 3, 6);
+    display:grid;
   }
   // portfolio single page
   .site-content__portfolio__single {
