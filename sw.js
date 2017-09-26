@@ -32,16 +32,16 @@ var updateStaticCache = function() {
 //Clear caches with a different version number
 var clearOldCaches = function() {
   return caches.keys().then(function(keys) {
-      return Promise.all(
-                keys
-                  .filter(function (key) {
-                      return key.indexOf(version) != 0;
-                  })
-                  .map(function (key) {
-                      return caches.delete(key);
-                  })
-            );
-    })
+    return Promise.all(
+      keys
+      .filter(function (key) {
+        return key.indexOf(version) != 0;
+      })
+      .map(function (key) {
+        return caches.delete(key);
+      })
+    );
+  })
 }
 
 /*
@@ -53,7 +53,7 @@ var limitCache = function(cache, maxItems) {
     if (items.length > maxItems) {
       cache.delete(items[0]);
     }
-  })
+  });
 }
 
 
@@ -62,26 +62,26 @@ var limitCache = function(cache, maxItems) {
   If cache has more than maxItems then it removes the excess items starting from the beginning
 */
 var trimCache = function (cacheName, maxItems) {
-    caches.open(cacheName)
-        .then(function (cache) {
-            cache.keys()
-                .then(function (keys) {
-                    if (keys.length > maxItems) {
-                        cache.delete(keys[0])
-                            .then(trimCache(cacheName, maxItems));
-                    }
-                });
-        });
+  caches.open(cacheName)
+    .then(function (cache) {
+      cache.keys()
+    .then(function (keys) {
+      if (keys.length > maxItems) {
+        cache.delete(keys[0])
+        .then(trimCache(cacheName, maxItems));
+      }
+    })
+  })
 };
 
 
 //When the service worker is first added to a computer
 self.addEventListener("install", function(event) {
   event.waitUntil(updateStaticCache()
-        .then(function() { 
-          return self.skipWaiting(); 
-        })
-      );
+    .then(function() { 
+      return self.skipWaiting(); 
+    })
+  );
 })
 
 self.addEventListener("message", function(event) {
@@ -97,6 +97,8 @@ self.addEventListener("message", function(event) {
 
 //Service worker handles networking
 self.addEventListener("fetch", function(event) {
+
+  var url = new URL(event.request.url);
 
   //Fetch from network and cache
   var fetchFromNetwork = function(response) {
@@ -129,11 +131,17 @@ self.addEventListener("fetch", function(event) {
       })
     } 
   }
+
+  // Only deal with requests to my own server
+  if (url.origin !== location.origin) {
+   return;
+  }
   
   //This service worker won't touch the admin area and preview pages
-  if (event.request.url.match(/wp-admin/) || event.request.url.match(/preview=true/)) {
+  if ( event.request.url.indexOf('/wp-admin') !== -1 || event.request.url.indexOf('/wp-includes') !== -1 || event.request.url.indexOf('preview=true') !== -1 ) {
     return;
   }
+
   
   //This service worker won't touch non-get requests
   if (event.request.method != 'GET') {
