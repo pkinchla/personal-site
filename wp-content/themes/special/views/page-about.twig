@@ -23,12 +23,7 @@
                 <h3>
                 {{job.title}}
                   <span>
-                    <time datetime="{{job.date_start}}">{{job.date_start}}</time>
-                    {% if job.date_end %}
-                      <time datetime="{{job.date_end}}"> &ndash; {{job.date_end}}</time>
-                    {% else %}
-                      &ndash; present
-                    {% endif %}
+                    <time datetime="{{job.date_start}}">{{job.date_start}}</time>{% if job.date_end %}<time datetime="{{job.date_end}}">&ndash;{{job.date_end}}</time>{% else %}&ndash;present{% endif %}
                   </span>
                 </h3>
                 <span class="company-name">{{job.company_name}}</span>
