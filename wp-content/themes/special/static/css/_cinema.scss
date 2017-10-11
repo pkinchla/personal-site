@@ -121,13 +121,20 @@
     }
   }
   .site-content__portfolio__list {
-    @include gs-span(c, 2, 6);
+    @include gs-span(c, 2, 7);
     display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
     li {
-      @supports not (display: grid) {
-        float:left;
-        width:25%;
-      }
+      float:left;
+      width:25%;
+      @supports (display: grid) {
+        float:none;
+        width:auto;
+      }      
+      &:nth-child(2) {
+        grid-column:3 / 5;
+        grid-row:2 / 4;
+      }      
     }
   }
   // portfolio single page

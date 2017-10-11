@@ -147,6 +147,19 @@ $dark-green:#19775f;
   clear:both;
 }
 
+@mixin cf {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  &:before {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 @mixin clear {
   clear:both;
 }
