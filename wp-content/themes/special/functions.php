@@ -15,7 +15,7 @@ Timber::$dirname = array('views');
 	));
 
 // credentials for apis and things
-require get_template_directory() . '/credentials.php';	
+require_once(get_template_directory() . '/credentials.php');	
 
 // adding async for scripts usage -
 // wp_enqueue_script('script', '/path/to/my/script.js#asyncload');
@@ -108,8 +108,7 @@ add_action('wp_footer', 'add_googleanalytics');
 // get instagram feed
 function instagram_feed() {
 	if ( false === ( $feed = get_transient( 'instagram_feed' ) ) ) {
-		$url      = 'https://api.instagram.com/v1/users/self/media/recent/?feed&access_token="' . $access_token . '"';
-		$response = wp_remote_get( $url );
+		$response = wp_remote_get($instagram_creds);
 		$body = json_decode( $response['body'] );
 		$feed = $body;
 		set_transient( 'instagram_feed', $feed, 1 * HOUR_IN_SECONDS);
