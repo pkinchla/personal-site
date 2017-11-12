@@ -59,7 +59,7 @@
           <h2 class="screen-reader-text">Instagram Feed</h2>
           {{post.flickr_field}}
           <ul class="photo-feed">
-            {% for picture in pictures.items %}
+            {% for picture in pictures.data %}
             {% if loop.index < 21 %}
               <li>
                 <img src="{{picture.images.thumbnail.url}}" alt="{{ (picture.caption) ? picture.caption.text : 'instagram thumbnail' }}">
