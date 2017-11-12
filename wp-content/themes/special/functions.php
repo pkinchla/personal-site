@@ -14,6 +14,9 @@ Timber::$dirname = array('views');
 		'primary' => __( 'Primary Menu', 'special' ),
 	));
 
+// credentials for apis and things
+require get_template_directory() . '/credentials.php';	
+
 // adding async for scripts usage -
 // wp_enqueue_script('script', '/path/to/my/script.js#asyncload');
 
@@ -27,6 +30,12 @@ function add_async_forscript($url)
 				return str_replace('#asyncload', '', $url)."' async='async"; 
 }
 add_filter('clean_url', 'add_async_forscript', 11, 1);
+
+function dump($var){
+	echo '<pre>';
+		var_dump($var);
+	echo '</pre>';
+}
 
 /**
  * Enqueue scripts and styles.
@@ -99,7 +108,7 @@ add_action('wp_footer', 'add_googleanalytics');
 // get instagram feed
 function instagram_feed() {
 	if ( false === ( $feed = get_transient( 'instagram_feed' ) ) ) {
-		$url      = 'https://www.instagram.com/pkinchla/media/';
+		$url      = 'https://api.instagram.com/v1/users/self/media/recent/?feed&access_token="' . $access_token . '"';
 		$response = wp_remote_get( $url );
 		$body = json_decode( $response['body'] );
 		$feed = $body;
