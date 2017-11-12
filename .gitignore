@@ -40,6 +40,7 @@ wp-content/plugins/*
 # specify (see the commented-out example for a hint on how to do this.)
 wp-content/themes/*
 !wp-content/themes/special/
+wp-content/themes/special/credentials.php
 wp-content/themes/special/*.css.map
 wp-content/themes/special/npm-debug.log
 wp-content/themes/special/node_modules/*
