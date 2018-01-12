@@ -163,7 +163,6 @@ class StarterSite extends TimberSite {
 
 	function add_to_context( $context ) {
 
-		$context['noindex'] = get_field('noindex');
 		$context['menu'] = new TimberMenu();
 		$context['site'] = $this;
 
