@@ -1,15 +1,24 @@
 {
-  "name": "mothership",
-  "version": "0.1.0",
-  "author": "Paul Kinchla",
-  "private": true,
+  "name": "Special",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-concat": "^1.0.0",
-    "grunt-contrib-cssmin": "^1.0.1",
-    "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^1.0.1",
-    "grunt-contrib-watch": "^1.0.0"
+    "babelify": "^6.0.2",
+    "browser-sync": "^2.18.7",
+    "browserify": "^9.0.8",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^2.0.0",
+    "install": "^0.8.7",
+    "npm": "^4.2.0",
+    "pump": "^1.0.2",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

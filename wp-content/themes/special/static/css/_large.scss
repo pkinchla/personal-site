@@ -12,7 +12,6 @@
   // site-header
   .site-header__banner {
     @include gs-span(l, 1, 2);
-
     position:absolute;
     z-index:1;
     margin-top:-5em;
