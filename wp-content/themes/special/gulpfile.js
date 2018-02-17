@@ -63,7 +63,7 @@ gulp.task('build', ['js', 'sass']);
 
 gulp.task('watch', [], function(done){
     gulp.watch(paths.watchJS, ['js']);
-    gulp.watch(paths.scss + '*', ['sass']);
+    gulp.watch(paths.watchScss, ['sass']);
 });
 
 gulp.task('sync', function() {
