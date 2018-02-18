@@ -1,3 +1,5 @@
+var hostname = require('./vhost.js');
+
 var browserify = require('browserify'),
     browserSync = require('browser-sync').create(),
     reload = browserSync.reload,
@@ -68,7 +70,7 @@ gulp.task('watch', [], function(done){
 
 gulp.task('sync', function() {
   browserSync.init({
-    proxy: 'pk.com'
+    proxy:hostname.vhost
   });
 });
 
