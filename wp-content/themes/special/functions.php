@@ -118,7 +118,6 @@ function instagram_feed($url) {
 function deregister_wp_embed(){
 	if (!is_admin()) {
 		wp_deregister_script('wp-embed');
-		wp_deregister_script('jquery');
 	}	
 }
 add_action( 'wp_footer', 'deregister_wp_embed' );
