@@ -44,7 +44,7 @@ gulp.task('sass_production', function(){
     return gulp.src(paths.watchScss)
     .pipe(sourcemaps.init({loadMaps:false}))
     .pipe(sass({
-      outputStyle: 'compressed',
+      outputStyle: 'expanded',
     }).on('error', sass.logError))
     .pipe(gulp.dest(paths.cssDist));
 });

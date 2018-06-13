@@ -439,38 +439,37 @@ pre {
   display:block;
   overflow:hidden;
   .title {
-    @extend %inline-block;
     @include verticalAlign(50%);
-
+    display:block;
     font-size:1em;
     left:10%;
-    display:none;
     width:75%;
-    color:$white;
-    em {
-      @include animated;
-
-      font-weight:normal;
-      display:block;
-    }
-    span {
-      @include animated;
-    }
+    opacity:0;
+    color:white;
   }
+  em {
+    @include animated;
+    display:block;
+    font-weight:normal;
+  }
+  span {
+    @include animated; 
+    display:inline-block;
+  }
+  img {
+    display:block;
+  }
+
   &:hover {
     .title {
+      opacity:1;
       z-index:1;
-      display:block;
     }
     em {
       @include slideInRight;
-      @include hardware;
     }
     span {
       @include slideInLeft;
-      @include hardware;
-
-      display:inline-block;
     }
     img {
       opacity:.15;
@@ -478,7 +477,7 @@ pre {
       -webkit-filter:blur(4px);
               filter:blur(4px);
               filter:alpha(opacity=15);
-    }
+    }           
   }
 }
 // portfolio single page
