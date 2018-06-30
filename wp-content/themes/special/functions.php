@@ -151,7 +151,6 @@ add_action('wp_head', function() {
 	flush();
 }, 999);
 
-
 class StarterSite extends TimberSite {
 
 	function __construct() {
