@@ -9,15 +9,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babelify": "^6.0.2",
-    "browser-sync": "^2.18.7",
-    "browserify": "^9.0.8",
+    "babelify": "^7.0.0",
+    "browser-sync": "^2.24.7",
+    "browserify": "^16.2.2",
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^3.2.1",
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^2.0.0",
     "install": "^0.8.7",
-    "npm": "^4.2.0",
     "pump": "^1.0.2",
     "vinyl-source-stream": "^1.1.0"
   }
