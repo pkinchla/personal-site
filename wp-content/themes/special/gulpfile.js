@@ -33,7 +33,7 @@ gulp.task('sass', function () {
   return gulp.src(paths.watchScss)
     .pipe(sourcemaps.init())
     .pipe(sass({
-      outputStyle: 'compressed',
+      outputStyle: 'expanded',
     }).on('error', sass.logError))
     .on('end', reload)
     .pipe(sourcemaps.write())
@@ -44,7 +44,7 @@ gulp.task('sass_production', function(){
     return gulp.src(paths.watchScss)
     .pipe(sourcemaps.init({loadMaps:false}))
     .pipe(sass({
-      outputStyle: 'expanded',
+      outputStyle: 'compressed',
     }).on('error', sass.logError))
     .pipe(gulp.dest(paths.cssDist));
 });
