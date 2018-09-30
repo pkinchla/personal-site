@@ -9,8 +9,7 @@ $dark-blue:#334259;
 $white:#fff;
 $black:#000;
 $selection-color:#ffb7b7;
-$green:#009e77;
-$dark-green:#19775f;
+$link-blue:#3344dd;
 
 @mixin hardware() {
   -webkit-transform: translate3d(0, 0, 0);
@@ -228,13 +227,13 @@ $dark-green:#19775f;
   font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   display:inline-block;
   padding:.5em 1em;
-  border:1px solid $green;
+  border:1px solid $link-blue;
   &:hover {
     color:white;
-    background:$green;
+    background:$link-blue;
   }
   &:hover, &:active, &:visited, &:focus {
-    border-bottom:1px solid $green;
+    border-bottom:1px solid $link-blue;
   }
 }
 

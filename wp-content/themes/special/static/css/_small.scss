@@ -103,7 +103,7 @@ pre {
   width:35%;
   height:4.005em;
   text-transform:uppercase;
-  color:$green;
+  color:$link-blue;
   border-left:1px solid $dark-blue;
   background:white;
   .label {
@@ -118,7 +118,7 @@ pre {
     max-width:1.5625em;
     max-height:.75em;
 
-    fill:$green;
+    fill:$link-blue;
     .one, .two, .three {
       -webkit-transition:all .35s linear;
               transition:all .35s linear;
@@ -180,7 +180,7 @@ pre {
         width:100%;
         height:100%;
         display:block;
-        fill:$green;
+        fill:$link-blue;
       }
       &:hover {
         color:$white;
@@ -268,7 +268,7 @@ pre {
     border-bottom:1px solid $medium-blue-gray;
     background:none;
     a {
-      color:$green;
+      color:$link-blue;
       &:hover {
         background:none;
       }
