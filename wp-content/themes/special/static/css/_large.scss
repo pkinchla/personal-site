@@ -1,14 +1,4 @@
 @include gs-media(l, min) {
-  // change banner animation for larger screens
-  html {
-    &.js {
-      &.active {
-        .site-header__banner {
-          @include slideInDown;
-        }
-      }
-    }
-  }
   // site-header
   .site-header__banner {
     @include gs-span(l, 1, 2);
