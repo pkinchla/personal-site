@@ -60,6 +60,11 @@ html {
   background:$selection-color;
 }
 
+:focus {
+  outline: 3px solid yellow;
+  outline-offset: -3px;
+}
+
 body, button, input, select, textarea {
   font-family:Georgia, serif;
   line-height:1.625;
