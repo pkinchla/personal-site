@@ -207,9 +207,15 @@ pre {
     clear:both;
   }
 }
+.site-content__blog {
+  .entry-title {
+    padding-left:.1875em;
+  }
+}
 // search result styling
 .search-results {
   .blog_listings {
+    padding-left:0.375em; 
     .entry-meta {
       margin-bottom:0;
     }
@@ -261,6 +267,7 @@ pre {
 .blog_listings {
   border-bottom:.0625em solid $medium-gray;
   margin-bottom:3em;
+  padding-left:.375em;
   .entry-meta {
     margin-bottom:1.5em;
     padding:0;
@@ -460,7 +467,8 @@ pre {
     display:block;
   }
 
-  &:hover {
+  &:hover, &:focus {
+    outline-offset: -3px;
     .title {
       opacity:1;
       z-index:1;

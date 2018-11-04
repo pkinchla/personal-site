@@ -61,8 +61,8 @@ html {
 }
 
 :focus {
-  outline: 3px solid yellow;
-  outline-offset: -3px;
+  outline: 3px solid $link-blue;    
+  outline-offset: 3px;
 }
 
 body, button, input, select, textarea {
@@ -70,6 +70,9 @@ body, button, input, select, textarea {
   line-height:1.625;
   color:$body-color;
   background:$background-white;
+  &:focus {
+    outline-offset:-3px;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

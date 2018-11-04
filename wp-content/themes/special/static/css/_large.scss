@@ -32,7 +32,8 @@
       margin-top:-.5%;
       background-color:transparent;
       background-image:none;
-      &:hover {
+      &:hover, &:focus {
+        outline-offset: -3px; 
         background-color:#c0c7cb;
         background-color:rgba(85, 97, 106, .2);
       }
