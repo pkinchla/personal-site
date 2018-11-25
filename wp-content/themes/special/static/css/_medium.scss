@@ -3,7 +3,7 @@
   .wrapper.hero-image {
     width:90%;
   }
-  h1 {
+  h1, .alpha {
     font-size:2.625em;
   }
   // header
@@ -51,22 +51,20 @@
     }
   }
   // home page
-  .site-content__home {
-    h1 {
-      @include gs-span(m, 1, 2);
-    }
-    .site-content__home__copy {
-      @include gs-span(m, 1, 2);
-
-      margin-top:50%;
-    }
-    .site-content__home__blog {
-      @include gs-span(m , 3);
-
-      margin-top:50%;
-      text-align:right;
+  .site-content__home__hero {
+    .alpha {
+      font-size:3.5em;
     }
   }
+  .site-content__home__copy {
+    @include gs-span(m, 1, 2);
+
+  }
+  .site-content__home__blog {
+    @include gs-span(m, 3);
+    text-align:right;
+  }
+
   // blog page
   .site-content__blog {
     .entry-title {

@@ -228,39 +228,27 @@ pre {
   margin-bottom:.75em;
 }
 // home page specific styles
-.site-content__home {
-  @extend %relative;
-  h1 {
-    @include gs-span(s, 1);
-    font-style:italic;
-    margin-top:30%;
-    text-align:center;
-  }
-}
-.site-content__home__heroimg {
-  position:absolute;
-  z-index:-5;
-  right:0;
+.site-content__home__hero {
+  position: relative;
+  margin-bottom:2em;
   border-bottom:1px solid $dark-blue;
-  border-left:1px solid $dark-blue;
+  .alpha {
+    margin:0;
+    position: absolute;
+    top:40%;
+    right:52.5%;
+    font-style:italic;
+  }
+  img {
+    display:block;
+    width:100%;
+  }
 }
 
 .site-content__home__blog {
   h3 {
     font-size:1.5em
   }
-}
-
-
-.js .site-content__home__heroimg {
-  left:0;
-  border-left:none;
-}
-.site-content__home__copy {
-  @include gs-span(s, 1, 2);
-
-  clear:both;
-  margin-top:55%;
 }
 
 // blog listing specific styles

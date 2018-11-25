@@ -10,7 +10,7 @@
           {% for post in portfolio_posts %}
             <li>
               <a class="site-content__portfolio__listlink" href="{{post.link}}">
-                <h4 class="title"><span>{{post.title}}</span> | <em>{{post.post_excerpt}}</em></h4>  
+                <h2 class="title delta"><span>{{post.title}}</span> | <em>{{post.post_excerpt}}</em></h2>  
                 <img src="{{TimberImage(post.get_field('list_image')).src}}" srcset="" sizes="(min-width:120em) 14vw, (min-width:64em) 20vw, (min-width:40em) 30vw, 90vw" alt="{{TimberImage(post.get_field('list_image')).alt}}">
               </a>
             </li>

@@ -17,7 +17,7 @@
   .site-footer__social {
     @include gs-span(c, 2, 4);
     svg {
-      max-width:70%;
+      max-width:65%;
       margin:0 auto;
     }
   }
@@ -42,23 +42,23 @@
     }
   }
   // home page specific styles
-  .site-content__home {
-    h1 {
-      @include gs-span(c, 3, 4);
-
-      margin-top:30%;
+    .site-content__home__hero {
+      margin-bottom:-1.5em;
+      .alpha {
+        top:35%;
+        right:55%;
+      }
     }
     .site-content__home__copy {
       @include gs-span(c, 2, 4);
-      margin-top:5em;
+      margin-top:-40%;
     }
     .site-content__home__blog {
       @include gs-span(c, 7, 8);
 
       clear:both;
-      margin-top:-39%;
+      margin-top:-50%;
     }
-  }
   // blog page specific styles
   .site-content__blog {
     .entry-title {

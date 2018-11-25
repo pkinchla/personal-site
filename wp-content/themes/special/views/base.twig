@@ -11,6 +11,7 @@
 		<a class="skip-link screen-reader-text" href="#content">Skip To Content</a>
 		{% block header %}
 			<header id="masthead" class="site-header wrapper">
+        <h1 class='screen-reader-text'>{{site.title}}'s Personal Site</h1>
 				<div class="site-header__banner">
 					<a class="site-logo clearfix" href="{{site.url}}" rel="home">
 						<svg id="ptok" class="logo" viewBox="0 0 152.521 55.061" width="152.521" height="55.061">
@@ -20,6 +21,7 @@
 						</svg>
 					</a>
 					<nav id="site-navigation" class="main-navigation site-header__navigation">
+            <h2 class="screen-reader-text">Main Navigation</h2>
 						<button class="main-nav-toggle">
 							<svg class="main-nav-button" viewBox="0 0 225 164.7" width="22.5" height="16.47">
 								<rect class="one" y="0" width="225" height="23.7"/>
@@ -27,8 +29,7 @@
 								<rect class="three" y="141" width="225" height="23.7"/>
 							</svg>
 							<span class="label">Menu</span>
-						</button>
-						<h1 class="screen-reader-text">Main Navigation</h1>
+						</button>						
 						{% include "menu.twig" with {'menu': menu.get_items} %}
 					</nav><!-- #site-navigation -->
 				</div>

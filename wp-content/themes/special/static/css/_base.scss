@@ -75,7 +75,7 @@ body, button, input, select, textarea {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .alpha, .beta, .gamma, .delta {
   font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight:800;
   clear:both;
@@ -83,14 +83,14 @@ h1, h2, h3, h4, h5, h6 {
   color:$dark-blue;
 }
 
-h1 {
+h1, .alpha {
   font-size:2em;
   font-weight:800;
   line-height:.975;
   margin:.75em 0;
 }
 
-h2 {
+h2, .beta {
   font-size:1.875em;
   font-style:italic;
   line-height:1.1;
@@ -100,7 +100,7 @@ h2 {
   }
 }
 
-h3 {
+h3, .gamma {
   font-size:1.775em;
   line-height:1.3;
   margin:0 0 .10em 0;
@@ -109,7 +109,7 @@ h3 {
   }
 }
 
-h4 {
+h4, .delta {
   font-size:1.5em;
   line-height:1.3;
   margin:0;
@@ -204,7 +204,7 @@ ul, ol {
 }
 
 .site-content ul {
-  list-style:outside square;
+  list-style-position: outside;
 }
 
 .site-content ol {

@@ -8,9 +8,10 @@
     <div class="wrapper article-content">
       <h1 class="entry-title">{{post.title}}</h1>
       <div id="pagination-block" class="site-content__blog__postlist blog_listings js-pagination-target pagination-target">
+        <h2 class="screen-reader-text">Blog Posts</h2>
         <div class="js-pagination-element pagination-element">
           {% for post in blog_posts %}
-            <h4><a class="linked-header" href="{{post.link}}">{{post.title}}</a></h4>
+            <h3 class="delta"><a class="linked-header" href="{{post.link}}">{{post.title}}</a></h3>
             <div class="entry-meta">
               <time datetime="{{post.date|date('c')}}">{{post.date|date('l, F jS, Y')}}</time>
             </div>

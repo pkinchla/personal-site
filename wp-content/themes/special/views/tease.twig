@@ -1,6 +1,6 @@
 <article class="tease tease-{{post.post_type}}" id="tease-{{post.ID}}">
   {% block content %}
-    <h4><a class="linked-header" href="{{post.link}}">{{post.title}}</a></h4>
+    <h2 class="delta"><a class="linked-header" href="{{post.link}}">{{post.title}}</a></h2>
     <div class="entry-meta">
       <time datetime="{{post.date|date('c')}}">{{post.date|date('l, F jS, Y')}}</time>
     </div>
