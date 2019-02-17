@@ -25,46 +25,6 @@
 		}
 	}
 	
-	// Function to animate the scroll
-	function smoothScroll(anchor, duration) {
-
-		// Calculate how far and how fast to scroll
-		var startLocation = window.pageYOffset;
-		var endLocation = anchor.offsetTop;
-		var distance = endLocation - startLocation;
-		var increments = distance/(duration/16);
-		var stopAnimation;
-
-		// Scroll the page by an increment, and check if it's time to stop
-		var animateScroll = function () {
-			window.scrollBy(0, increments);
-			stopAnimation();
-		};
-
-		// If scrolling down
-		if ( increments >= 0 ) {
-				// Stop animation when you reach the anchor OR the bottom of the page
-				stopAnimation = function () {
-				var travelled = window.pageYOffset;
-				if ((travelled >= (endLocation - increments)) || ((window.innerHeight + travelled) >= document.body.offsetHeight) ) {
-					clearInterval(runAnimation);
-				}
-			};
-		}
-		// If scrolling up
-		else {
-			// Stop animation when you reach the anchor OR the top of the page
-			stopAnimation = function () {
-			var travelled = window.pageYOffset;
-				if ( travelled <= (endLocation || 0) ) {
-					clearInterval(runAnimation);
-				}
-			};
-		}
-		// Loop the animation function
-		var runAnimation = setInterval(animateScroll, 16);
-	};
-	
 	// paginate links
 	function paginateLink(link){
 		var paginatedLink = document.querySelectorAll('.js-pagination'),
@@ -85,7 +45,11 @@
 			return response.text()
 		})
 		.then(function(text){
-			smoothScroll(target, 250)
+      window.scrollTo({
+        top:0,
+        left:0,
+        behavior: 'smooth'
+      })
 			var htmlData = document.createElement('div')
 					htmlData.innerHTML = text
 			var elementData = htmlData.querySelector('.js-pagination-element'),
@@ -163,11 +127,7 @@
 		for (var i = 0; i < links.length; i++) {
 			var isAsyncLink = hasClass(links[i], 'js-pagination')
 			if (location.hostname === links[i].hostname || !links[i].hostname.length) {
-				if(links[i].href.match('#')){
-					// todo: fix scrolling link
-					// smoothScroll(links[i], 250)
-				}
-				else if(links[i].href.match('mailto')){
+				if(links[i].href.match('mailto')){
 					// act like a mailto link
 				}
 				else if(!isAsyncLink){

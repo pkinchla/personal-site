@@ -634,6 +634,10 @@ audio {
   margin-bottom:1.5em;
 }
 
+iframe {
+  margin-bottom:1.5em;
+}
+
 /*--------------------------------------------------------------
 Captions
 --------------------------------------------------------------*/
@@ -658,7 +662,7 @@ Captions
 /*--------------------------------------------------------------
 Prisim syntax higlighting
 --------------------------------------------------------------*/
-code[class*=language-], pre[class*=language-] {
+code[class*=language-], pre[class*=language-], code {
   font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
   line-height:1.5;
   text-align:left;
@@ -684,11 +688,11 @@ pre[class*=language-] {
   padding:1em;
 }
 
-:not(pre) > code[class*=language-], pre[class*=language-] {
+:not(pre) > code[class*=language-], pre[class*=language-], code {
   background:#2d2d2d;
 }
 
-:not(pre) > code[class*=language-] {
+:not(pre) > code[class*=language-], code {
   font-size:.8em;
   padding:.15em .3em;
   white-space:normal;
