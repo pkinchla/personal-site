@@ -1,4 +1,4 @@
-var version = 'v1.4.0:';
+var version = 'v1.5.0:';
 
 var theme_path = 'wp-content/themes/special/';
 
@@ -8,7 +8,7 @@ var offlineFundamentals = [
   theme_path + 'prism/prism.min.js',
   theme_path + 'offline.html',
   'manifest.json',
-  'icon.png',
+  'icon_192.png',
 ];
 
 //Add core website files to cache during serviceworker installation
