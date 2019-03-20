@@ -1,4 +1,4 @@
-var hostname = require('./vhost.js');
+var hostname = require('./vhost.js')
 
 var browserify = require('browserify'),
     browserSync = require('browser-sync').create(),
@@ -21,12 +21,14 @@ var browserify = require('browserify'),
 
 gulp.task('js', [], function(){
     var b = browserify();
-    b.transform(babelify);
-    b.add(paths.scripts);
+    b.transform(babelify.configure({
+      presets : ["es2015"]
+    }))
+    b.add(paths.scripts)
     return b.bundle()
         .pipe(source('scripts.js'))
         .pipe(gulp.dest(paths.scriptsDist))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.stream())
 });
 
 gulp.task('sass', function () {

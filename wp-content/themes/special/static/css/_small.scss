@@ -37,7 +37,7 @@ pre {
   padding:1em 1em 1em;
   .logo {
     @include gs-span(s, 1);
-
+    pointer-events:none;
     height:2em;
 
     fill:$body-color;
@@ -177,6 +177,7 @@ pre {
       padding-bottom:1em;
       text-align:center;
       svg {
+        pointer-events: none;
         width:100%;
         height:100%;
         display:block;
