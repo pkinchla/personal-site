@@ -6,7 +6,8 @@ var browserify = require('browserify'),
     gulp = require('gulp'),
     babelify = require('babelify'),
     sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps');
+    prefixer = require('gulp-autoprefixer'),
+    sourcemaps = require('gulp-sourcemaps'),
     source = require('vinyl-source-stream'),
     uglify = require('gulp-uglify'),
     pump = require('pump'),
@@ -17,9 +18,9 @@ var browserify = require('browserify'),
         watchJS: './static/js/**/*.js',
         watchScss: './static/css/**/*.scss',
         cssDist: './'
-    };
+    }
 
-gulp.task('js', [], function(){
+    gulp.task('js', [], function(){
     var b = browserify();
     b.transform(babelify.configure({
       presets : ["es2015"]
@@ -29,27 +30,33 @@ gulp.task('js', [], function(){
         .pipe(source('scripts.js'))
         .pipe(gulp.dest(paths.scriptsDist))
         .pipe(browserSync.stream())
-});
+})
 
 gulp.task('sass', function () {
   return gulp.src(paths.watchScss)
     .pipe(sourcemaps.init())
     .pipe(sass({
-      outputStyle: 'expanded',
-    }).on('error', sass.logError))
-    .on('end', reload)
+      outputStyle: 'expanded'
+    }))
+    .pipe(prefixer({
+      browsers: ['last 3 versions']
+    }).on('error', sass.logError).on('end', reload))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(paths.cssDist));
-});
+    .pipe(gulp.dest(paths.cssDist))
+})
 
 gulp.task('sass_production', function(){
     return gulp.src(paths.watchScss)
     .pipe(sourcemaps.init({loadMaps:false}))
     .pipe(sass({
-      outputStyle: 'compressed',
-    }).on('error', sass.logError))
-    .pipe(gulp.dest(paths.cssDist));
-});
+      outputStyle: 'compress'
+    }))
+    .pipe(prefixer({
+      browsers: ['last 3 versions']
+    }).on('error', sass.logError).on('end', reload))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(paths.cssDist))
+})
 
 gulp.task('compress', function (cb) {
   console.error(paths.scriptsDist, 'crunched!');

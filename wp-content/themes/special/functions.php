@@ -44,7 +44,7 @@ function special_scripts() {
 			
 	if ( WP_DEBUG || SCRIPT_DEBUG ) {
 		wp_enqueue_style( 'style-built', get_template_directory_uri() . '/main.css' );
-		wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/scripts.js#asyncload', array(), '', true );
+		// wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/scripts.js#asyncload', array(), '', true );
 	} 
 	else {
 		wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/scripts.js#asyncload', array(), '', true );
@@ -54,7 +54,7 @@ function special_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 	if (get_post_type() === 'post') {
-		wp_enqueue_script( 'prism', get_template_directory_uri() .'/prism/prism.min.js', array(), '', true);
+		// wp_enqueue_script( 'prism', get_template_directory_uri() .'/prism/prism.min.js', array(), '', true);
 	}
 }
 add_action( 'wp_enqueue_scripts', 'special_scripts' );
@@ -164,7 +164,8 @@ class StarterSite extends TimberSite {
 	function add_to_context( $context ) {
 
 		$context['menu'] = new TimberMenu();
-		$context['site'] = $this;
+    $context['site'] = $this;
+    $context['is_home'] = is_front_page();
 
 		return $context;
 	}
