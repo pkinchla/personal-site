@@ -109,6 +109,7 @@ pre {
   .label {
     display:inline-block;
     margin-left:.2em;
+    pointer-events: none;
   }
   &:hover, &:active, &:focus {
     border-left:1px solid $dark-blue;
@@ -117,7 +118,7 @@ pre {
     overflow:hidden;
     max-width:1.5625em;
     max-height:.75em;
-
+    pointer-events: none;
     fill:$link-blue;
     .one, .two, .three {
       -webkit-transition:all .35s linear;
@@ -216,7 +217,7 @@ pre {
 // search result styling
 .search-results {
   .blog_listings {
-    padding-left:0.375em; 
+    padding-left:0.375em;
     .entry-meta {
       margin-bottom:0;
     }
@@ -365,7 +366,7 @@ pre {
   }
 }
 
-.photo-feed {  
+.photo-feed {
   @extend %plain-list;
   @include cf;
   display:grid;
@@ -449,7 +450,7 @@ pre {
     font-weight:normal;
   }
   span {
-    @include animated; 
+    @include animated;
     display:inline-block;
   }
   img {
@@ -474,7 +475,7 @@ pre {
       -webkit-filter:blur(4px);
               filter:blur(4px);
               filter:alpha(opacity=15);
-    }           
+    }
   }
 }
 // portfolio single page
