@@ -8,25 +8,25 @@
 
   <body class="{{body_class}}" data-template="base.twig">
     <div id="page" class="hfeed site">
-      <a class="skip-link screen-reader-text" href="#content">Skip To Content</a>
+      <a class="skip-link assistive-text" href="#content">Skip To Content</a>
       {% block header %}
-      <header id="masthead">
-        {% if is_home %} 
+      <header id="masthead" class="site-header js-site-header">
+        {% if is_home %}
           <h1 id="site-title">{% include 'site-logo.twig' %}</h1>
         {% else %}
           {% include 'site-logo.twig' %}
         {% endif %}
-        <nav id="site-navigation" class="site-navigation">
+        <nav id="site-navigation" class="site-navigation js-main-navigation">
           {% include "menu.twig" with {'menu': menu.get_items} %}
         </nav><!-- #site-navigation -->
       </header><!-- #masthead -->
       {% endblock %}
-          
+
       <main id="content" class="site-content">
         {% block content %}
         {% endblock %}
       </main><!-- #content -->
-          
+
       {% block footer %}
         <footer id="colophon" class="site-footer">
           {% include 'footer.twig' %}

@@ -1,21 +1,15 @@
-// // ----- grid mixins ----- //
-// @import "gridset";
-// // ----- settings ----- //
-// @import "helpers";
-// // ----- reset ----- //
-// @import "normalize";
-// // ----- animations ----- //
-// @import "animate";
-// // ----- _s' base ----- //
-// @import "base";
-// // ----- small screens ----- //
-// @import "small";
-// // ----- medium screens ----- //
-// @import "medium";
-// // ----- large screens ----- //
-// @import "large";
-// // ----- cinema screens ----- //
-// @import "cinema";
+// ----- reset ----- //
+@import "normalize";
+// ----- animations ----- //
+@import "animations";
+// ----- helpers ----- //
+@import "helpers";
+// ----- base ----- //
+@import "base";
+// ----- site header ----- //
+@import "siteHeader";
+// ----- Home Page Specific ----- //
+@import "home";
 
-body {
-}
+// ----- _s' base ----- //
+// @import "base";

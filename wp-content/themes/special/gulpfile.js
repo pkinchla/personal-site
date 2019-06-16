@@ -23,7 +23,10 @@ var browserify = require('browserify'),
     gulp.task('js', [], function(){
     var b = browserify();
     b.transform(babelify.configure({
-      presets : ["es2015"]
+      presets: ["react", "es2015"],
+      plugins: [
+        ["transform-react-jsx", { "pragma":"h" }]
+      ]
     }))
     b.add(paths.scripts)
     return b.bundle()

@@ -11,12 +11,6 @@ $black:#000;
 $selection-color:#ffb7b7;
 $link-blue:#3344dd;
 
-@mixin hardware() {
-  -webkit-transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  -webkit-perspective: 1000;
-}
-
 // mixins
 @mixin alpha-attribute($attribute, $color, $background) {
   $percent:alpha($color) * 100%;
@@ -24,74 +18,6 @@ $link-blue:#3344dd;
   $solid-color:mix($opaque, $background, $percent);
   #{$attribute}:$solid-color;
   #{$attribute}:$color;
-}
-
-@mixin skewY($deg) {
-  -webkit-transform:skewY($deg);
-      -ms-transform:skewY($deg);
-          transform:skewY($deg);
-}
-
-@mixin skewX($deg) {
-  -webkit-transform:skewX($deg);
-      -ms-transform:skewX($deg);
-          transform:skewX($deg);
-}
-
-@mixin rotate($deg) {
-  -webkit-transform:rotate($deg);
-      -ms-transform:rotate($deg);
-          transform:rotate($deg);
-}
-
-@mixin transition($transition-property, $transition-time, $method) {
-  -webkit-transition:$transition-property $transition-time $method;
-      -ms-transition:$transition-property $transition-time $method;
-          transition:$transition-property $transition-time $method;
-}
-
-@mixin filter($filter-type,$filter-amount) {
-  -webkit-filter:$filter-type+unquote('(#{$filter-amount})');
-      -ms-filter:$filter-type+unquote('(#{$filter-amount})');
-          filter:$filter-type+unquote('(#{$filter-amount})');
-}
-
-@mixin columns($count, $gap) {
-  -webkit-columns:$count;
-          columns:$count;
-  -webkit-column-gap:$gap;
-          column-gap:$gap;
-}
-
-@mixin linear-gradient($fromColor, $toColor) {
-  background-color:$toColor; /* Fallback Color */
-  background-image:-webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
-  background-image:-webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background-image:   -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
-  background-image:    -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
-  background-image:        linear-gradient(top, $fromColor, $toColor);
-}
-
-@mixin box-shadow($top, $left, $blur, $set, $color, $inset:true) {
-  @if $inset {
-    -webkit-box-shadow:inset $top $left $blur $set $color;
-       -moz-box-shadow:inset $top $left $blur $set $color;
-            box-shadow:inset $top $left $blur $set $color;
-  }
-  @else {
-    -webkit-box-shadow:$top $left $blur $set $color;
-       -moz-box-shadow:$top $left $blur $set $color;
-            box-shadow:$top $left $blur $set $color;
-  }
-}
-
-
-@mixin verticalAlign($top) {
-  position:absolute;
-  top:$top;
-  -webkit-transform:translateY(-$top);
-      -ms-transform:translateY(-$top);
-          transform:translateY(-$top);
 }
 
 @mixin center($horizontal: true, $vertical: true) {
@@ -109,15 +35,49 @@ $link-blue:#3344dd;
   }
 }
 
+@mixin link-reset {
+  border-bottom:none;
+}
+
+@mixin plain-list {
+  margin:0;
+  padding:0;
+  li {
+    list-style:none;
+  }
+  dd {
+    margin:0;
+  }
+}
+
+@mixin plain-button {
+  border:none;
+  border-radius:0;
+  background:none;
+  box-shadow:none;
+  &:hover, &:focus, &:active {
+    box-shadow:none;
+    border:none;
+  }
+}
+
+@mixin nav-link {
+  @include link-reset;
+  &:hover, &:focus {
+    outline-offset: -3px;
+    @include alpha-attribute('background-color', rgba($medium-gray, .20), lighten($medium-gray, 50%));
+  }
+}
+
 // semantic class helpers
-.screen-reader-text {
+.assistive-text {
   position:absolute !important;
   overflow:hidden;
   clip:rect(1px, 1px, 1px, 1px);
   width:1px;
   height:1px;
 }
-.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
+.assistive-text:hover, .assistive-text:active, .assistive-text:focus {
   font-size:.875em;
   font-weight:bold;
   line-height:normal;
@@ -137,98 +97,11 @@ $link-blue:#3344dd;
   outline-offset:-3px;
 }
 
-// silent placeholders
-%clearfix:before, %clearfix:after, .wrapper:before, .wrapper:after, .clearfix:before, .clearfix:after {
-  display:table;
-  content:'';
-}
-
-%clearfix:after, .clearfix:after, .wrapper:after {
-  clear:both;
-}
-
-@mixin cf {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  &:before {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
-
-@mixin clear {
-  clear:both;
-}
-
-%link-reset {
-  text-decoration:none;
-  border-bottom:none;
-  &:hover {
-    text-decoration:none;
-    border-bottom:0;
-  }
-  &:active {
-    text-decoration:none;
-    border-bottom:0;
-  }
-  &:visited {
-    text-decoration:none;
-    border-bottom:0;
-  }
-  &:focus {
-    text-decoration:none;
-    border-bottom:0;
-  }
-}
-%relative {
-  position:relative;
-}
-%absolute {
-  position:absolute;
-}
-%block {
-  display:block;
-}
-%inline {
-  display:inline;
-}
-%inline-block {
-  display:inline-block;
-}
-%text-center {
-  text-align:center;
-}
-%plain-list {
-  margin:0;
-  padding:0;
-  li {
-    list-style:none;
-  }
-  dd {
-    margin:0;
-  }
-}
-%plain-button {
-  border:none;
-  border-radius:0;
-  outline:none;
-  background:none;
-  box-shadow:none;
-  &:hover, &:focus, &:active {
-    box-shadow:none;
-    border:none;
-  }
-}
-
-%action, .action {
+.button {
   font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   display:inline-block;
   padding:.5em 1em;
-  border:1px solid $link-blue;  
+  border:1px solid $link-blue;
   &:hover {
     color:white;
     background:$link-blue;
@@ -239,9 +112,3 @@ $link-blue:#3344dd;
   }
 }
 
-%nav-link {  
-  &:hover, &:focus {    
-    outline-offset: -3px; 
-    @include alpha-attribute('background-color', rgba($medium-gray, .20), lighten($medium-gray, 50%));
-  }
-}

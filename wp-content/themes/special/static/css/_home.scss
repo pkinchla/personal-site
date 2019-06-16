@@ -1,0 +1,42 @@
+.home {
+  figure {
+    position: relative;
+    img {
+      display: block;
+    }
+    span {
+      margin: 0;
+      position: absolute;
+      top: 40%;
+      right: 52.5%;
+      font-style: italic;
+    }
+  }
+
+
+  @media only screen and (min-width:40em) {
+    figure {
+      span {
+        font-size:3.5em;
+      }
+    }
+  }
+
+  @media only screen and (min-width:64em) {
+    figure {
+      span {
+        top: 47.5%;
+        right: 60%;
+      }
+    }
+  }
+
+  @media only screen and (min-width:84.375em) {
+    figure {
+      span {
+        top: 35%;
+        right:55%;
+      }
+    }
+  }
+}
