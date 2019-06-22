@@ -1,0 +1,35 @@
+.site-grid {
+  max-width:120em;
+  margin: 0 auto;
+  .block {
+    padding:0 5%;
+  }
+
+  @supports(display:grid) {
+    display:grid;
+
+    @media only screen and (min-width: 40em) {
+      column-gap:1em;
+      grid-template-columns:repeat(3, 1fr);
+      main {
+        grid-column: 1 / 4;
+      }
+    }
+
+    @media only screen and (min-width: 64em) {
+      grid-template-columns:repeat(12, 1fr);
+      main {
+        grid-column: 1 / 13;
+        grid-row-start: 1;
+      }
+    }
+
+    @media only screen and (min-width: 120em) {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      main {
+        grid-column: 1 / 9;
+      }
+    }
+
+  }
+}

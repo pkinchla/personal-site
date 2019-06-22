@@ -9,7 +9,7 @@
   h1 {
     font-size:1em;
     margin:0;
-    width:65%;
+    width:calc(65% - 1px);
     text-align: center;
   }
   .logo {
@@ -23,17 +23,20 @@
     transition:background, .35s ease-in-out;
     display:block;
   }
+
+  @media only screen and (min-width:40em) {
+    grid-column: 1 / 4;
+  }
+
   @media only screen and (min-width:64em) {
-    width:30%;
-    max-width:25em;
-    position:absolute;
-    top:0;
-    z-index:1;
+    grid-column: 3 / 6;
+    grid-row-start: 1;
+    z-index: 1;
+    align-self: flex-start;
     border:1px solid $dark-blue;
     border-bottom:none;
     border-top:none;
     background:$light-blue;
-    margin-left:5em;
     &:before {
       content:'';
       position:absolute;
@@ -59,13 +62,8 @@
       margin-top:2em;
     }
   }
-  //end 64em min-width
-  @media only screen and (min-width:84.375em) {
-    margin-left:15%;
-  }
-
   @media only screen and (min-width:120em) {
-    margin-left:30%;
+    grid-column: 3 / 5;
   }
 }
 
@@ -103,7 +101,7 @@
     }
     &.open {
       visibility: visible;
-      max-height: 12em;
+      max-height: 15em;
     }
   }
   @media only screen and (min-width:64em) {
@@ -126,14 +124,6 @@
   }
 }
 
-// fix for nav bar postioning against header
-@media only screen and (min-width:64em) {
-  .site {
-    position: relative;
-  }
-}
-
-
 .main-nav-toggle {
   @include plain-button;
   transition:all, .35s, ease-in-out;
@@ -142,7 +132,7 @@
   top:0;
   right:0;
   width:35%;
-  height:4.1em;
+  height:4.15em;
   padding:0;
   text-transform:uppercase;
   color:$link-blue;

@@ -58,6 +58,7 @@ $link-blue:#3344dd;
   &:hover, &:focus, &:active {
     box-shadow:none;
     border:none;
+    outline-offset: -3px;
   }
 }
 
