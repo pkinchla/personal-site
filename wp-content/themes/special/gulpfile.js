@@ -55,6 +55,7 @@ gulp.task('sass_production', function(){
       outputStyle: 'compress'
     }))
     .pipe(prefixer({
+      grid: false,
       browsers: ['last 3 versions']
     }).on('error', sass.logError).on('end', reload))
     .pipe(sourcemaps.write())
