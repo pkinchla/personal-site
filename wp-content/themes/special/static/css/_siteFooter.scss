@@ -1,0 +1,17 @@
+.site-footer {
+  @media only screen and (min-width:40em) {
+    grid-column: 1 / 4;
+    align-self: flex-end;
+  }
+
+  @media only screen and (min-width:64em) {
+    grid-column: 1 / 13;
+  }
+
+  @media only screen and (min-width:84.375em) {
+  }
+
+  @media only screen and (min-width: 120em) {
+    grid-column: 1 / 9;
+  }
+}
