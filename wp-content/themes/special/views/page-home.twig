@@ -9,15 +9,21 @@
       <img srcset="{{post.get_thumbnail.src | resize(3000)}} 3000w, {{post.get_thumbnail.src | resize(2000)}} 2000w, {{post.get_thumbnail.src | resize(1200)}} 1200w, {{post.get_thumbnail.src | resize(600)}} 600w, {{post.get_thumbnail.src | resize(300)}} 300w, {{post.get_thumbnail.src | resize(150)}} 150w" src="{{post.get_thumbnail.src}}" sizes="100vw" alt="{{post.get_thumbnail.alt}}">
       <span class="alpha">{{post.title}}</span>
     </figure>
-    {{post.content}}
-    <h2>Latest Writing</h2>
-    {% for post in home_post %}
-      <article>
-        <header>
-          <h3><a class="linked-header" href="{{post.link}}">{{post.title}}</a></h3
-          <time datetime="{{post.date|date('c')}}" class="entry-meta">{{post.date|date('l, F jS, Y')}}</time>
-        </header>
-      </article>
-    {% endfor %}
+    <div class="block">
+      <div class="content">
+        {{post.content}}
+      </div>
+      <section class="latest">
+        <h2>Latest Writing</h2>
+        {% for post in home_post %}
+          <article>
+            <header>
+              <h3><a class="linked-header" href="{{post.link}}">{{post.title}}</a></h3
+              <time datetime="{{post.date|date('c')}}" class="entry-meta">{{post.date|date('l, F jS, Y')}}</time>
+            </header>
+          </article>
+        {% endfor %}
+      </section>
+    </div>
   </article>
 {% endblock %}
