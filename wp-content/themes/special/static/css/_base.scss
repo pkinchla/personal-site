@@ -161,6 +161,13 @@ ul, ol {
   line-height:1.5;
   margin:0 0 1.5em 0;
   padding:0;
+  padding-left:.75em;
+}
+
+@media only screen and (min-width:40em) {
+  ul, ol {
+    padding-left:0;
+  }
 }
 
 .site-content ul {
