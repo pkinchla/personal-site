@@ -126,7 +126,7 @@
   @media only screen and (min-width: 151em) {
     border-right:1px solid $dark-blue;
     border-left:1px solid $dark-blue;
-    &:after {
+    &:before, &:after {
       border-right:1px solid $dark-blue;
       right:-1px;
     }
