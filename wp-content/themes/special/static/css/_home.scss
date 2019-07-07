@@ -3,6 +3,7 @@
     position: relative;
     z-index:-1;
     margin-bottom:1.5em;
+    border-bottom:1px solid $dark-blue;
     img {
       display: block;
     }
@@ -78,8 +79,8 @@
   @media only screen and (min-width: 120em) {
     .latest {
       left:auto;
-      right:5%;
-      top:40%;
+      right:3em;
+      top:28em;
     }
     .content {
       margin-top:-42.5%;
@@ -90,7 +91,7 @@
   @media only screen and (min-width: 151em) {
     .latest {
       right:10em;
-      top:47%;
+      top:32.5em;
     }
   }
 
