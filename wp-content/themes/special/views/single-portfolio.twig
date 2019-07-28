@@ -1,6 +1,6 @@
 {% extends "base.twig" %}
 {% block content %}
-  <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+  <article class="post-type-{{post.post_type}} site-grid block" id="post-{{post.ID}}">
     <header>
       <h1>{{post.title}}</h1>
     </header>
@@ -15,7 +15,7 @@
       {% if post.square_image_optional %}
         <img src="{{TimberImage(post.get_field('main_image_square_optional')).src}}" srcset=" 1300w, 800w,  550w" sizes="(min-width:64em) 66vw, (min-width:40em) 85vw, 90vw" alt="<?php echo $alt_square_opt; ?>"
         <a class="action back-link" href="/portfolio/">&larr; Back to List</a>
-      {% endif %} 
+      {% endif %}
     </div>
     {% else %}
       {{post.content}}

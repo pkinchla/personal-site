@@ -12,8 +12,12 @@
 @import "siteHeader";
 // ----- site footer ----- //
 @import "siteFooter";
-// ----- Home Page Specific ----- //
+// ----- Home Page ----- //
 @import "home";
+// ----- Hero ----- //
+@import "page-default";
+// ----- Blog Page ----- //
+@import "page-blog";
+// ----- About Page ----- //
+@import "page-about";
 
-// ----- _s' base ----- //
-// @import "base";

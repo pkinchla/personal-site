@@ -1,6 +1,6 @@
 {% extends "base.twig" %}
 {% block content %}
-  <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+  <article id="post-{{post.ID}}">
     <header>
       <h2 class='assistive-text'>Home Page</h2>
       <time class='assistive-text' datetime="{{post.modified_date|date('c')}}">Last Update on {{post.modified_date|date('l, F jS, Y')}}</time>
@@ -19,7 +19,9 @@
           <article>
             <header>
               <h3><a class="linked-header" href="{{post.link}}">{{post.title}}</a></h3
-              <time datetime="{{post.date|date('c')}}" class="entry-meta">{{post.date|date('l, F jS, Y')}}</time>
+              <div class="entry-meta">
+                <time datetime="{{post.date|date('c')}}">{{post.date|date('l, F jS, Y')}}</time>
+              </div>
             </header>
           </article>
         {% endfor %}

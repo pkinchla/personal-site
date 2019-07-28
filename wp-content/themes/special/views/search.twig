@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  <article>
+  <article class="post-type-archive site-grid block">
     {% if posts is empty %}
       <header>
         <h1>No Results</h1>
@@ -17,7 +17,7 @@
       </header>
       <figure>
         <img src="{{theme.path}}/images/cham.jpg" alt="metallic chameleon">
-      </figure> 
+      </figure>
       <section>
         <h2>Results</h2>
         {% for post in posts %}

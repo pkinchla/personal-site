@@ -141,6 +141,12 @@ canvas {
   z-index:-1;
 }
 
+@media only screen and (min-width:40em) {
+  h1, .alpha {
+    font-size: 2.625em;
+  }
+}
+
 @media only screen and (min-width:120em) {
   body {
     font-size:1.25em;
@@ -306,6 +312,7 @@ a {
   text-decoration:none;
   color:$link-blue;
   border-bottom:1px dotted $link-blue;
+  transition: color .35s ease-in-out;
 }
 
 a:visited {
@@ -387,35 +394,14 @@ a:hover, a:focus, a:active {
   margin-top:1.5em;
   padding:1em 0;
   text-align: center;
+  border-bottom: 1px solid $dark-blue;
+  margin-bottom:3em;
   .page-number, .next {
     padding:.5em;
   }
   a {
     border-bottom:none;
   }
-}
-
-.search-results .navigation, .site-main .comment-navigation, .site-main .paging-navigation, .site-main .post-navigation {
-  font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-weight:700;
-  font-style:italic;
-  clear:both;
-  width:65%;
-  margin:1.5em auto;
-  a {
-    @include link-reset;
-  }
-}
-
-.comment-navigation .nav-previous, .paging-navigation .nav-previous, .post-navigation .nav-previous {
-  float:left;
-  width:50%;
-}
-
-.comment-navigation .nav-next, .paging-navigation .nav-next, .post-navigation .nav-next {
-  float:right;
-  width:50%;
-  text-align:right;
 }
 
 .linked-header {
@@ -433,8 +419,6 @@ Alignments
   margin:0 auto;
   width:90%;
 }
-
-
 
 .aligncenter, .alignright, .alignleft {
   display:block;
@@ -484,7 +468,8 @@ Posts and pages
   font-style:italic;
   border-bottom:.0625em solid $dark-blue;
   a {
-    color:$white;
+    // color:$white;
+    @include link-reset;
   }
 }
 
@@ -492,6 +477,20 @@ Posts and pages
   padding:.5em 1em;
   border:1px solid $dark-blue;
 }
+
+.post-navigation {
+  @include sans-bold-italic;
+  margin-bottom:1.5em;
+  .nav-links {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  a {
+    @include link-reset;
+  }
+}
+
+
 
 .cat-item, .entry-footer {
   font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -626,15 +625,9 @@ code[class*=language-], pre[class*=language-], code {
   word-spacing:normal;
   word-wrap:normal;
   word-break:normal;
-  -moz-tab-size:2;
-    -o-tab-size:2;
-       tab-size:2;
-  -webkit-hyphens:none;
-     -moz-hyphens:none;
-          hyphens:none;
+  tab-size:2;
+  hyphens:none;
   color:#ccc;
-
-      -ms-hyphens:none;
   direction:ltr;
 }
 

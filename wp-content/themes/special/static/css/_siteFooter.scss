@@ -18,19 +18,20 @@
       max-width:6em;
       a {
         @include link-reset;
-        display:flex;
-        flex-direction: column;
-        align-items: center;
+        display: block;
         transition: background .3s ease-in-out;
         padding-bottom:1em;
         text-align: center;
+        span {
+          display: block;
+        }
         svg {
           transition: background .6s ease-in-out;
           pointer-events: none;
           width:100%;
           height:100%;
           max-width:6em;
-          display:block;
+          display:inline-block;
           fill:$link-blue;
         }
         &:hover {

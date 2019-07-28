@@ -9,7 +9,11 @@
   h1 {
     font-size:1em;
     margin:0;
-    width:calc(65% - 1px);
+    width:67.95%;
+    text-align: center;
+  }
+  > a {
+    width:67.95%;
     text-align: center;
   }
   .logo {
@@ -60,6 +64,11 @@
       margin:1em auto 0 auto;
       padding:0 0 .75em;
       margin-top:2em;
+    }
+    > a {
+      &:first-of-type {
+        width:100%;
+      }
     }
   }
   @media only screen and (min-width:120em) {
@@ -131,7 +140,7 @@
   position:absolute;
   top:0;
   right:0;
-  width:35%;
+  width:32%;
   height:4.15em;
   padding:0;
   text-transform:uppercase;

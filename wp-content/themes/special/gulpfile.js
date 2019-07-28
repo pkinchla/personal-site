@@ -9,7 +9,7 @@ var browserify = require('browserify'),
     prefixer = require('gulp-autoprefixer'),
     sourcemaps = require('gulp-sourcemaps'),
     source = require('vinyl-source-stream'),
-    uglify = require('gulp-uglify'),
+    uglify = require('gulp-uglify')
     pump = require('pump'),
     paths = {
         scripts: './static/js/scripts.js',
@@ -52,14 +52,14 @@ gulp.task('sass_production', function(){
     return gulp.src(paths.watchScss)
     .pipe(sourcemaps.init({loadMaps:false}))
     .pipe(sass({
-      outputStyle: 'compress'
+      outputStyle: 'compressed'
     }))
     .pipe(prefixer({
       grid: false,
       browsers: ['last 3 versions']
-    }).on('error', sass.logError).on('end', reload))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(paths.cssDist))
+    })
+    .on('error', sass.logError).on('end', reload))
+      .pipe(gulp.dest(paths.cssDist))
 })
 
 gulp.task('compress', function (cb) {
