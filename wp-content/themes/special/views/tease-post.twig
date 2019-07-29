@@ -2,5 +2,7 @@
 
 {% block content %}
   <h3 class="delta"><a class="linked-header" href="{{post.link}}">{{post.title}}</a></h3>
-  <time datetime="{{post.date|date('c')}}">{{post.date|date('l, F jS, Y')}}</time>
+  <div class="entry-meta">
+    <time datetime="{{post.date|date('c')}}">{{post.date|date('l, F jS, Y')}}</time>
+  </div>
 {% endblock %}

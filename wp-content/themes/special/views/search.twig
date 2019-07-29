@@ -18,10 +18,12 @@
       <figure>
         <img src="{{theme.path}}/images/cham.jpg" alt="metallic chameleon">
       </figure>
-      <section>
-        <h2>Results</h2>
+      <section class="content">
+        <h2 class="assistive-text">Results</h2>
         {% for post in posts %}
-          {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+          <article>
+            {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+          </article>
         {% endfor %}
       </section>
     {% endif %}

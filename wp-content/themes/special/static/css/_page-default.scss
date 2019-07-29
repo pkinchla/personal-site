@@ -1,5 +1,6 @@
 article[class^='post-type-'] {
   figure {
+    @include full-width;
     margin-bottom:1.5em;
     border:1px solid $dark-blue;
     img {
@@ -28,6 +29,8 @@ article[class^='post-type-'] {
       grid-column: 2 / 4;
       margin:0;
       border-top:0;
+      transform: inherit;
+      width:inherit;
     }
     header {
       grid-column: 2 / 4;

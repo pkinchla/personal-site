@@ -17,12 +17,7 @@
         <h2>Latest Writing</h2>
         {% for post in home_post %}
           <article>
-            <header>
-              <h3><a class="linked-header" href="{{post.link}}">{{post.title}}</a></h3
-              <div class="entry-meta">
-                <time datetime="{{post.date|date('c')}}">{{post.date|date('l, F jS, Y')}}</time>
-              </div>
-            </header>
+            {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
           </article>
         {% endfor %}
       </section>
