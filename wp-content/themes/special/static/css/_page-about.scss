@@ -58,6 +58,13 @@
   ul {
     @include plain-list;
   }
+  p {
+    font-family: Georgia, serif;
+    font-size: .9em;
+  }
+  time {
+    font-size:.9em;
+  }
 }
 
 .photo-feed {
