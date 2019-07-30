@@ -19,7 +19,10 @@ $nav_args = array(
     'next_text' => 'Next Post &rarr;',
     'screen_reader_text' => 'Post Navigation',
   );
-$context['post_nav'] = get_the_post_navigation($nav_args);
+
+$post_nav = get_the_post_navigation($nav_args);
+$post_nav = str_replace('"screen-reader-text"', '"assistive-text"', $post_nav);
+$context['post_nav'] = $post_nav;
 
 if ( post_password_required( $post->ID ) ) {
   Timber::render( 'single-password.twig', $context );

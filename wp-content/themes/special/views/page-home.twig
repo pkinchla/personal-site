@@ -1,20 +1,26 @@
 {% extends "base.twig" %}
 {% block content %}
-  <figure class='site-content__home__hero'>
-    <span class="alpha">{{post.title}}</span>
-    <img srcset="{{post.get_thumbnail.src | resize(3000)}} 3000w, {{post.get_thumbnail.src | resize(2000)}} 2000w, {{post.get_thumbnail.src | resize(1200)}} 1200w, {{post.get_thumbnail.src | resize(600)}} 600w, {{post.get_thumbnail.src | resize(300)}} 300w, {{post.get_thumbnail.src | resize(150)}} 150w" src="{{post.get_thumbnail.src}}" sizes="100vw" alt="{{post.get_thumbnail.alt}}">
-  </figure>
-  <article class="post-type-{{post.post_type}} wrapper home-page-section" id="post-{{post.ID}}">
-    <div class="site-content__home__copy">
-      <h1 class='screen-reader-text'>Home Page</h1>
-      {{post.content}}
-    </div>
-    <div class="site-content__home__blog">
-      <h2>Latest Writing</h2>
-      {% for post in home_post %}      
-        <h3><a class="linked-header" href="{{post.link}}">{{post.title}}</a></h3>
-        <div class="entry-meta"><time datetime="{{post.date|date('c')}}">{{post.date|date('l, F jS, Y')}}</time></div>
-      {% endfor %}
+  <article id="post-{{post.ID}}">
+    <header>
+      <h2 class='assistive-text'>Home Page</h2>
+      <time class='assistive-text' datetime="{{post.modified_date|date('c')}}">Last Update on {{post.modified_date|date('l, F jS, Y')}}</time>
+    </header>
+    <figure>
+      <img srcset="{{post.get_thumbnail.src | resize(3000)}} 3000w, {{post.get_thumbnail.src | resize(2000)}} 2000w, {{post.get_thumbnail.src | resize(1200)}} 1200w, {{post.get_thumbnail.src | resize(600)}} 600w, {{post.get_thumbnail.src | resize(300)}} 300w, {{post.get_thumbnail.src | resize(150)}} 150w" src="{{post.get_thumbnail.src}}" sizes="100vw" alt="{{post.get_thumbnail.alt}}">
+      <span class="alpha">{{post.title}}</span>
+    </figure>
+    <div class="block">
+      <div class="content">
+        {{post.content}}
+      </div>
+      <section class="latest">
+        <h2>Latest Writing</h2>
+        {% for post in home_post %}
+          <article>
+            {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+          </article>
+        {% endfor %}
+      </section>
     </div>
   </article>
 {% endblock %}

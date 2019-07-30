@@ -1,29 +1,14 @@
-import HandleLinks from './HandleLinks'
-import { hasClass } from './helpers'
+// import HandleLinks from './HandleLinks'
+import MobileMenu from './MobileMenu'
 
 (function (document) {
-  
-  const handleLinks = new HandleLinks()
-  handleLinks.init()
-  
-  // vars for mobile navigation
-	let menu_toggle = document.querySelector('.main-nav-toggle'),
-	    menu = document.querySelector('#primary-menu'),
-	    label = document.querySelector('.label')
-  
-  const toggle_menu = (e) => {
-		e.target.classList.toggle('close-state');
-		menu.classList.toggle('open');
 
-		if (hasClass(e.target, 'close-state')) {
-			label.textContent = 'Close';
-		}
-		else {
-			label.textContent = 'Menu';
-		}
-	}
-	menu_toggle.addEventListener('click', toggle_menu, false);
-	
+  // const handleLinks = new HandleLinks()
+  // handleLinks.init()
+
+  const mobileMenu = new MobileMenu()
+  mobileMenu.init()
+
 	let dev_env = window.location.hostname === 'localhost'
 	// registration for worker for server side caching
 	if ('serviceWorker' in navigator && !dev_env) {
@@ -56,6 +41,6 @@ import { hasClass } from './helpers'
 				}
 			}, false);
 		}
-  })();	
-	
+  })();
+
 }(document));

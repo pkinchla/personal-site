@@ -1,4 +1,4 @@
-var version = 'v1.5.0:';
+var version = 'v2.0.0:';
 
 var theme_path = 'wp-content/themes/special/';
 
@@ -20,10 +20,10 @@ var updateStaticCache = function() {
       if (url.origin != location.origin) {
         request = new Request(value, {mode: 'no-cors'});
       }
-      return fetch(request).then(function(response) { 
+      return fetch(request).then(function(response) {
         var cachedCopy = response.clone();
-        return cache.put(request, cachedCopy); 
-        
+        return cache.put(request, cachedCopy);
+
       });
     }))
   })
@@ -78,15 +78,15 @@ var trimCache = function (cacheName, maxItems) {
 //When the service worker is first added to a computer
 self.addEventListener("install", function(event) {
   event.waitUntil(updateStaticCache()
-    .then(function() { 
-      return self.skipWaiting(); 
+    .then(function() {
+      return self.skipWaiting();
     })
   );
 })
 
 self.addEventListener("message", function(event) {
   var data = event.data;
-  
+
   //Send this command whenever many files are downloaded (ex: a page load)
   if (data.command == "trimCache") {
     trimCache(version + "pages", 25);
@@ -112,7 +112,7 @@ self.addEventListener("fetch", function(event) {
     } else if (event.request.headers.get('Accept').indexOf('image') != -1) {
       caches.open(version + 'images').then(function(cache) {
         cache.put(event.request, cacheCopy).then(function() {
-          limitCache(cache, 10); 
+          limitCache(cache, 10);
         });
       });
     } else {
@@ -126,28 +126,28 @@ self.addEventListener("fetch", function(event) {
   //Fetch from network failed
   var fallback = function() {
     if (event.request.headers.get('Accept').indexOf('text/html') != -1) {
-      return caches.match(event.request).then(function (response) { 
+      return caches.match(event.request).then(function (response) {
         return response || caches.match(theme_path + 'offline.html');
       })
-    } 
+    }
   }
 
   // Only deal with requests to my own server
   if (url.origin !== location.origin) {
    return;
   }
-  
+
   //This service worker won't touch the admin area and preview pages
   if ( event.request.url.indexOf('/wp-admin') !== -1 || event.request.url.indexOf('/wp-includes') !== -1 || event.request.url.indexOf('preview=true') !== -1 ) {
     return;
   }
 
-  
+
   //This service worker won't touch non-get requests
   if (event.request.method != 'GET') {
     return;
   }
-  
+
   //For HTML requests, look for file in network, then cache if network fails.
   if (event.request.headers.get('Accept').indexOf('text/html') != -1) {
       event.respondWith(fetch(event.request).then(fetchFromNetwork, fallback));
@@ -159,14 +159,14 @@ self.addEventListener("fetch", function(event) {
     caches.match(event.request).then(function(cached) {
       return cached || fetch(event.request).then(fetchFromNetwork, fallback);
     })
-  ) 
+  )
 });
 
 //After the install event
 self.addEventListener("activate", function(event) {
   event.waitUntil(clearOldCaches()
-  .then(function() { 
-      return self.clients.claim(); 
+  .then(function() {
+      return self.clients.claim();
     })
   );
 });

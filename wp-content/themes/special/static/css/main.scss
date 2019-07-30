@@ -1,18 +1,25 @@
-// ----- grid mixins ----- //
-@import "gridset";
-// ----- settings ----- //
-@import "helpers";
 // ----- reset ----- //
 @import "normalize";
 // ----- animations ----- //
-@import "animate";
-// ----- _s' base ----- //
+@import "animations";
+// ----- helpers ----- //
+@import "helpers";
+// ----- base ----- //
 @import "base";
-// ----- small screens ----- //
-@import "small";
-// ----- medium screens ----- //
-@import "medium";
-// ----- large screens ----- //
-@import "large";
-// ----- cinema screens ----- //
-@import "cinema";
+// ----- grid ----- //
+@import "grid";
+// ----- site header ----- //
+@import "siteHeader";
+// ----- site footer ----- //
+@import "siteFooter";
+// ----- Home Page ----- //
+@import "home";
+// ----- Hero ----- //
+@import "page-default";
+// ----- Blog Page ----- //
+@import "page-blog";
+// ----- About Page ----- //
+@import "page-about";
+// ----- Page Portfolio ----- //
+@import "page-portfolio";
+

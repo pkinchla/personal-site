@@ -1,0 +1,33 @@
+.post-list {
+  article {
+    margin-bottom: 1.5em;
+  }
+  @media only screen and (min-width: 40em) {
+    grid-column: 2 / 4;
+  }
+
+  @media only screen and (min-width: 64em) {
+    grid-column: 5 / 9;
+  }
+
+  @media only screen and (min-width: 120em) {
+    grid-column: 9 / 13;
+  }
+}
+
+.categories {
+  h2 {
+    margin-top:-.25em;
+  }
+  @media only screen and (min-width: 40em) {
+    grid-column: 2 / 4;
+  }
+
+  @media only screen and (min-width: 64em) {
+    grid-column: 10 / 12;
+  }
+
+  @media only screen and (min-width: 120em) {
+    grid-column: 14 / 17;
+  }
+}
