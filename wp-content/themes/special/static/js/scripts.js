@@ -1,4 +1,4 @@
-import HandleLinks from './HandleLinks'
+// import HandleLinks from './HandleLinks'
 import MobileMenu from './MobileMenu'
 
 (function (document) {

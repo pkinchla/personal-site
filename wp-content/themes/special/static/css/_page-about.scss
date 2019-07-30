@@ -136,4 +136,19 @@
 }
 
 @media only screen and (min-width: 120em) {
+  .contact {
+    grid-column: 14 / 16;
+  }
+
+  .resume-section {
+    grid-column: 6 / 13;
+  }
+
+  .instagram-section {
+    grid-column: 6 / 14;
+    margin-bottom:3em;
+  }
+  .photo-feed {
+    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr ));
+  }
 }

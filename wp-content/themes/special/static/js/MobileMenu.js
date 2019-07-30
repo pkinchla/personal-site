@@ -1,4 +1,4 @@
-import { Component, render, h, Fragment } from 'preact';
+import { Component, render, h } from 'preact';
 
 class MobileMenu {
   constructor() {

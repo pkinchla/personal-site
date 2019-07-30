@@ -1,5 +1,5 @@
 .site-grid {
-  max-width:120em;
+  max-width:55em;
   margin: 0 auto;
   position: relative;
   .block {
@@ -12,7 +12,8 @@
     min-width: 0;
   }
 
-  @supports(display:grid) {
+  @supports (display:grid) {
+    max-width:120em;
 
     @media only screen and (min-width: 40em) {
       display:grid;
@@ -40,9 +41,9 @@
     }
 
     @media only screen and (min-width: 120em) {
-      grid-template-columns:repeat(8, 1fr);
+      grid-template-columns:repeat(16, 1fr);
       main {
-        grid-column: 1 / 9;
+        grid-column: 1 / 17;
       }
     }
   }
