@@ -383,12 +383,11 @@ a:hover, a:focus, a:active {
 .pagination-target {
   padding-top:5em;
   margin-top:-5em;
-  -webkit-background-clip: content-box;
   background-clip: content-box;
 }
 
 .pagination {
-  font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family:$sans-stack;
   font-weight:700;
   font-style:italic;
   margin-top:1.5em;
@@ -559,9 +558,6 @@ Comments
   border:1px solid $dark-blue;
   border-right:none;
   border-bottom:none;
-  a {
-    // @extend %link-reset;
-  }
 }
 
 .comment-meta {
