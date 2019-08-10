@@ -31,10 +31,22 @@ function add_async_forscript($url)
 }
 add_filter('clean_url', 'add_async_forscript', 11, 1);
 
+/**
+ * show variable on frontend
+ */
 function dump($var){
 	echo '<pre>';
 		var_dump($var);
 	echo '</pre>';
+}
+
+/**
+ * get page number if not on page 1
+ */
+function pageNumber($number){
+  if($number > 0) {
+    return $number;
+  }
 }
 
 /**

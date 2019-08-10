@@ -3,7 +3,7 @@
 {% block content %}
   <article class="post-type-{{post.post_type}} site-grid block" id="post-{{post.ID}}">
     <header>
-      <h1>{{post.title}}</h1>
+      <h1>{{post.title}} {% if page_number %}<span>(Page {{page_number}})</span>{% endif %}</h1>
       <div class="entry-meta assistive-text">
         <time datetime="{{post.modified_date|date('c')}}">Last Update on {{post.modified_date|date('l, F jS, Y')}}</time>
       </div>

@@ -19,6 +19,7 @@ $blog_posts = array(
 );
 query_posts($blog_posts);
 
+$context['page_number'] = pageNumber($paged);
 $context['categories'] = Timber::get_terms('category');
 $context['blog_posts'] = Timber::get_posts($blog_posts);
 $context['pagination'] = Timber::get_pagination();

@@ -15,6 +15,10 @@ article[class^='post-type-'] {
   header {
     h1 {
       margin-bottom:.2em;
+      span {
+        font-size:.5em;
+        font-style:italic;
+      }
     }
     margin-bottom: 1.5em;
   }
