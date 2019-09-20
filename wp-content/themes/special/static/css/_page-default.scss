@@ -3,12 +3,8 @@ article[class^='post-type-'] {
     @include full-width;
     margin-bottom:1.5em;
     border:1px solid $dark-blue;
-    overflow: hidden;
     img {
       filter:saturate(10%);
-      &.lazy {
-        filter:saturate(10%) blur(.35em);
-      }
       display: block;
       &.error404 {
         width:100%;

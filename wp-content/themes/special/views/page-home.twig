@@ -6,7 +6,7 @@
       <time class='assistive-text' datetime="{{post.modified_date|date('c')}}">Last Update on {{post.modified_date|date('l, F jS, Y')}}</time>
     </header>
     <figure>
-      <img srcset="{{post.get_thumbnail.src | resize(3000)}} 3000w, {{post.get_thumbnail.src | resize(2000)}} 2000w, {{post.get_thumbnail.src | resize(1200)}} 1200w, {{post.get_thumbnail.src | resize(600)}} 600w, {{post.get_thumbnail.src | resize(300)}} 300w, {{post.get_thumbnail.src | resize(150)}} 150w" src="{{post.get_thumbnail.src}}" sizes="100vw" alt="{{post.get_thumbnail.alt}}" data-thumb={{post.get_thumbnail.src | resize(150)}}>
+      <img srcset="{{post.get_thumbnail.src | resize(3000)}} 3000w, {{post.get_thumbnail.src | resize(2000)}} 2000w, {{post.get_thumbnail.src | resize(1200)}} 1200w, {{post.get_thumbnail.src | resize(600)}} 600w, {{post.get_thumbnail.src | resize(300)}} 300w, {{post.get_thumbnail.src | resize(150)}} 150w" src="{{post.get_thumbnail.src}}" sizes="100vw" alt="{{post.get_thumbnail.alt}}">
       <span class="alpha">{{post.title}}</span>
     </figure>
     <div class="block">
