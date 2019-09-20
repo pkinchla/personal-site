@@ -157,11 +157,6 @@ add_filter('http2_render_resource_hints', '__return_true');
 // Custom template tags for this theme
 require get_template_directory() . '/template-tags.php';
 
-add_action('wp_head', function() {
-	ob_flush();
-	flush();
-}, 999);
-
 class StarterSite extends TimberSite {
 
 	function __construct() {
