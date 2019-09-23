@@ -1,6 +1,5 @@
 // import HandleLinks from './HandleLinks'
 import MobileMenu from './MobileMenu'
-import LazyImages from './LazyImages'
 
 (function (document) {
 
@@ -9,9 +8,6 @@ import LazyImages from './LazyImages'
 
   const mobileMenu = new MobileMenu()
   mobileMenu.init()
-
-  const lazyimages = new LazyImages()
-  lazyimages.init()
 
 	let dev_env = window.location.hostname === 'localhost'
 	// registration for worker for server side caching
