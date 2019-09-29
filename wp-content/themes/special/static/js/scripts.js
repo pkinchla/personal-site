@@ -3,9 +3,6 @@ import MobileMenu from './MobileMenu'
 
 (function (document) {
 
-  // const handleLinks = new HandleLinks()
-  // handleLinks.init()
-
   const mobileMenu = new MobileMenu()
   mobileMenu.init()
 

@@ -20,7 +20,7 @@ var browserify = require('browserify'),
         cssDist: './'
     }
 
-    gulp.task('js', [], function(){
+function scripts() {
     var b = browserify();
     b.transform(babelify.configure({
       presets: ["react", "es2015"],
@@ -30,39 +30,39 @@ var browserify = require('browserify'),
     }))
     b.add(paths.scripts)
     return b.bundle()
-        .pipe(source('scripts.js'))
-        .pipe(gulp.dest(paths.scriptsDist))
-        .pipe(browserSync.stream())
-})
+      .pipe(source('scripts.js'))
+      .pipe(gulp.dest(paths.scriptsDist)
+        .on('end', reload)
+      )
+};
 
-gulp.task('sass', function () {
+function css() {
   return gulp.src(paths.watchScss)
     .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'expanded'
     }))
     .pipe(prefixer({
-      browsers: ['last 3 versions']
+      grid: false
     }).on('error', sass.logError).on('end', reload))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.cssDist))
-})
+};
 
-gulp.task('sass_production', function(){
+function cssProd(){
     return gulp.src(paths.watchScss)
-    .pipe(sourcemaps.init({loadMaps:false}))
+    .pipe(sourcemaps.init({ loadMaps:false }))
     .pipe(sass({
       outputStyle: 'compressed'
     }))
     .pipe(prefixer({
-      grid: false,
-      browsers: ['last 3 versions']
+      grid: false
     })
-    .on('error', sass.logError).on('end', reload))
+    .on('error', sass.logError))
       .pipe(gulp.dest(paths.cssDist))
-})
+};
 
-gulp.task('compress', function (cb) {
+function compress(cb) {
   console.error(paths.scriptsDist, 'crunched!');
   pump([
     gulp.src(paths.scriptsDistFile),
@@ -71,22 +71,33 @@ gulp.task('compress', function (cb) {
     ],
     cb
   );
-});
+};
 
-gulp.task('build', ['js', 'sass']);
+// gulp.task('build', ['js', 'sass']);
 
-
-gulp.task('watch', [], function(done){
-    gulp.watch(paths.watchJS, ['js']);
-    gulp.watch(paths.watchScss, ['sass']);
-});
-
-gulp.task('sync', function() {
+function browsersync(done) {
   browserSync.init({
     proxy:hostname.vhost
   });
-});
+  done();
+}
 
-gulp.task('production_build', ['compress', 'sass_production']);
+function watchFiles() {
+  gulp.watch(paths.watchJS, scripts);
+  gulp.watch(paths.watchScss, css);
+};
 
-gulp.task('default', ['build', 'watch', 'sync']);
+
+const watch = gulp.parallel(watchFiles, browsersync);
+const build = gulp.parallel(compress, cssProd)
+
+
+// gulp.task('production_build', ['compress', 'sass_production']);
+
+exports.watch = watch
+exports.watchFiles = watchFiles
+exports.scripts = scripts
+exports.css = css
+
+gulp.task('default', watch);
+gulp.task('production_build', build);

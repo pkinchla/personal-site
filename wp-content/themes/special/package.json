@@ -14,15 +14,25 @@
     "babelify": "^7.3.0",
     "browser-sync": "^2.26.7",
     "browserify": "^16.2.3",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-sass": "^3.2.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^2.0.0",
+    "gulp-uglify": "^3.0.2",
     "pump": "^3.0.0",
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
     "preact": "^8.4.2"
+  },
+  "browserslist": {
+    "production": [
+      "> 1%",
+      "ie 10"
+    ],
+    "modern": [
+      "last 1 chrome version",
+      "last 1 firefox version"
+    ]
   }
 }
