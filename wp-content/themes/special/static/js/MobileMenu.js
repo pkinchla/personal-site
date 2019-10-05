@@ -1,15 +1,13 @@
-import { Component, render, h } from 'preact';
+import { Component, render, h, Fragment } from 'preact';
 
 class MobileMenu {
   constructor() {
     this.options = {
       selector:document.querySelector('.js-main-navigation'),
-      target:document.querySelector('.js-site-header')
     }
   }
 
   setupComponent() {
-    const self = this
     const items = () => {
       const items = []
       for(let index = 0; index < this.options.selector.firstElementChild.children.length; index++) {
@@ -23,6 +21,7 @@ class MobileMenu {
       }
       return items
     }
+
     class Menu extends Component {
       constructor() {
         super()
@@ -36,13 +35,9 @@ class MobileMenu {
         this.setState({ menuOpen: this.state.menuOpen ? false : true })
       }
 
-      componentWillMount() {
-        self.options.selector.parentNode.removeChild(self.options.selector)
-      }
-
       render(){
         return(
-          <nav id="site-navigation">
+          <Fragment>
             <button className={`main-nav-toggle ${!this.state.menuOpen ? '' : ' close-state'}`} onClick={() => this.toggleMenu()}>
               <svg class='main-nav-button' viewBox="0 0 225 164.7" width="22.5" height="16.47">
 								<rect class="one" y="0" width="225" height="23.7"></rect>
@@ -60,11 +55,11 @@ class MobileMenu {
                 )
               })}
             </ul>
-          </nav>
+          </Fragment>
         )
       }
     }
-    render(<Menu />, this.options.target)
+    render(<Menu />, this.options.selector)
   }
 
 
