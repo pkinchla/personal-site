@@ -76,7 +76,12 @@
     box-shadow:0 0 0 3px $background-white;
     display: inline-block;
     max-width: 10.625em;
+    position: relative;
+    padding-bottom:100%;
     img {
+      position: absolute;
+      top:0;
+      left:0;
       width:100%;
       display: block;
     }
@@ -135,6 +140,7 @@
        left: calc(100% - 20em);
        top:50%;
        transform: translateY(-50%);
+       z-index:1;
      }
   }
   .photo-feed {
