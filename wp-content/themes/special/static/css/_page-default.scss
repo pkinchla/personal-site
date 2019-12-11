@@ -23,6 +23,13 @@ article[class^='post-type-'] {
     margin-bottom: 1.5em;
   }
 
+  pre {
+    width:calc(100vw - 2em);
+    margin-left: calc(50% - 1em);
+    transform: translateX(calc(-50% + 1em));
+    max-width: inherit;
+  }
+
   .entry-footer {
     margin-bottom: 1.5em ;
   }
@@ -49,6 +56,12 @@ article[class^='post-type-'] {
       padding-right: 1.5em;
     }
 
+    pre {
+      width:calc(100% + 3em);
+      margin-left: calc(50% - 6em);
+      transform: translateX(calc(-50% + 6em));
+    }
+
     .content {
       grid-column-start: 3;
       grid-column: 2 / 4;
@@ -72,6 +85,16 @@ article[class^='post-type-'] {
     }
     header {
       grid-column: 5 / 12;
+    }
+
+    pre, iframe {
+      width:calc(100% + 10em) !important;
+      margin-left: calc(50% - 20em);
+      transform: translateX(calc(-50% + 20em));
+    }
+
+    iframe {
+      max-width: inherit;
     }
 
     .content {
