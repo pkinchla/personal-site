@@ -24,7 +24,11 @@
               <div class="delta">
               {{job.title}}
                 <span>
-                  <time datetime="{{job.date_start}}">{{job.date_start}}</time>{% if job.date_end %}<time datetime="{{job.date_end}}">&ndash;{{job.date_end}}</time>{% else %}&ndash;present{% endif %}
+                  {% for date in job.dates %}
+                  <b>
+                    <time datetime="{{date.start_date}}">{{date.start_date|date('Y')}}</time>{% if date.end_date %}<time datetime="{{date.end_date}}">&ndash;{{date.end_date|date('Y')}}</time>{% else %}&ndash;present{% endif %}
+                  </b>
+                  {% endfor %}
                 </span>
               </div>
               <span class="company-name">{{job.company_name}}</span>
@@ -34,7 +38,7 @@
           <dt>Internship</dt>
           {% for gig in post.get_field('internship') %}
             <dd>
-              <div class="delta">{{gig.title}}  <span><time datetime="{{gig.date}}">{{gig.date}}</time></span></div>
+              <div class="delta">{{gig.title}}  <span><time datetime="{{gig.date}}">{{gig.date|date}}</time></span></div>
               <span class="internship-location">{{gig.location}}</span>
             </dd>
           {% endfor %}

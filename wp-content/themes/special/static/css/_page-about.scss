@@ -34,6 +34,9 @@
     font-weight: 400;
     font-size:1.25em;
     color:$body-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
   }
   .company-name, .internship-location {
     @include sans-reg;
@@ -54,6 +57,10 @@
     @include sans-reg;
     font-size:.75em;
     display:inline-block;
+    b {
+      display: block;
+      font-weight: 400;
+    }
   }
   ul {
     @include plain-list;
@@ -120,11 +127,13 @@
       margin-left:27%;
     }
     .delta {
+      display: block;
       span {
         display:inline-block;
         float:right;
         margin-top:5px;
         margin-right:5%;
+        text-align:right;
       }
     }
     dd p {
