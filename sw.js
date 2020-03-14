@@ -137,8 +137,14 @@ self.addEventListener("fetch", function(event) {
    return;
   }
 
+
+  const noCache = event.request.url.match(/wp-admin/) ||
+                  event.request.url.match(/wp-includes/) ||
+                  event.request.url.match(/preview=true/) ||
+                  event.request.url.match(/wp-content/\/plugins/);
+
   //This service worker won't touch the admin area and preview pages
-  if ( event.request.url.indexOf('/wp-admin') !== -1 || event.request.url.indexOf('/wp-includes') !== -1 || event.request.url.indexOf('preview=true') !== -1 ) {
+  if (noCache) {
     return;
   }
 
