@@ -38,7 +38,7 @@
           <dt>Internship</dt>
           {% for gig in post.get_field('internship') %}
             <dd>
-              <div class="delta">{{gig.title}}  <span><time datetime="{{gig.date}}">{{gig.date|date}}</time></span></div>
+              <div class="delta">{{gig.title}}  <span><time datetime="{{gig.date}}">{{gig.date|date('Y')}}</time></span></div>
               <span class="internship-location">{{gig.location}}</span>
             </dd>
           {% endfor %}
