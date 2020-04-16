@@ -127,7 +127,12 @@
       margin-left:27%;
     }
     .delta {
+      position: relative;
+      display: inherit;
       span {
+        position: absolute;
+        right:0;
+        top: .4em;
         width: 7.25em;
       }
     }
