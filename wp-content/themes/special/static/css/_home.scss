@@ -68,16 +68,16 @@
 
   @media only screen and (min-width:84.375em) {
     .content {
-      margin-top:-45%;
+      margin-top:-35%;
     }
     figure {
       span {
-        top: 37%;
+        top: 45%;
         right:55%;
       }
     }
     .latest {
-      top:10em;
+      top:5em;
     }
   }
 
@@ -86,6 +86,11 @@
       left:auto;
       right:3em;
       top:28em;
+    }
+    figure {
+      span {
+        top:35%;
+      }
     }
     .content {
       margin-top:-42.5%;
