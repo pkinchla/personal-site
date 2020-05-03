@@ -19,14 +19,13 @@
       a {
         @include link-reset;
         display: block;
-        transition: background .3s ease-in-out;
         padding-bottom:1em;
         text-align: center;
         span {
           display: block;
         }
         svg {
-          transition: background .6s ease-in-out;
+          transition: background .35s ease-in-out;
           pointer-events: none;
           width:100%;
           height:100%;

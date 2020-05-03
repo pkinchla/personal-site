@@ -308,11 +308,10 @@ a, button, input, select, textarea, label, summary {
 }
 
 a {
-  transition:all, .2s, ease-in-out;
   text-decoration:none;
   color:$link-blue;
   border-bottom:1px dotted $link-blue;
-  transition: color .35s ease-in-out;
+  transition: all .35s ease-in-out;
 }
 
 a:visited {
@@ -328,62 +327,6 @@ a:hover, a:focus, a:active {
 // pagination
 .nav-links {
   margin:0 auto;
-}
-
-// ajax animation classes
-.pagination-target {
-  overflow: hidden;
-}
-
-.pagination-element {
-  transition:all, .45s, ease-in-out;
-}
-
-.loading {
-  position: relative;
-  &:before {
-    content: '';
-    box-sizing: border-box;
-    position: absolute;
-    top:calc(50% + .25em);
-    left:50%;
-    width: 1.25em;
-    height: 1.25em;
-    margin-top: -.625em;
-    margin-left: -.625em;
-    border-radius: 50%;
-    border:.15em solid $black;
-    border-top-color: $link-blue;
-    border-right-color: $selection-color;
-    border-bottom-color: $dark-blue;
-    animation:spin .75s linear infinite;
-  }
-}
-.removing {
-  @include animated;
-  @include slideOutDown;
-  opacity:0;
-}
-
-.adding {
-  @include animated;
-  @include slideInUp;
-}
-
-.removing-pagination {
-  @include animated;
-  @include fadeOut;
-}
-
-.adding-pagination {
-  @include animated;
-  @include fadeIn;
-}
-
-.pagination-target {
-  padding-top:5em;
-  margin-top:-5em;
-  background-clip: content-box;
 }
 
 .pagination {

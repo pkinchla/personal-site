@@ -24,7 +24,6 @@
   }
   a {
     @include nav-link;
-    transition:background, .35s ease-in-out;
     display:block;
   }
 
