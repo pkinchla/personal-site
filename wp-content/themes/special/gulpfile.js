@@ -31,9 +31,7 @@ function scripts() {
     b.add(paths.scripts)
     return b.bundle()
       .pipe(source('scripts.js'))
-      .pipe(gulp.dest(paths.scriptsDist)
-        .on('end', reload)
-      )
+      .pipe(gulp.dest(paths.scriptsDist))
 };
 
 function css() {
@@ -73,31 +71,16 @@ function compress(cb) {
   );
 };
 
-// gulp.task('build', ['js', 'sass']);
-
-function browsersync(done) {
+function watchFiles(done) {
   browserSync.init({
     proxy:hostname.vhost
   });
+  gulp.watch(paths.watchJS, scripts).on('change', reload);
+  gulp.watch(paths.watchScss, css).on('change', reload);
   done();
-}
-
-function watchFiles() {
-  gulp.watch(paths.watchJS, scripts);
-  gulp.watch(paths.watchScss, css);
 };
 
-
-const watch = gulp.parallel(watchFiles, browsersync);
 const build = gulp.parallel(compress, cssProd)
 
-
-// gulp.task('production_build', ['compress', 'sass_production']);
-
-exports.watch = watch
-exports.watchFiles = watchFiles
-exports.scripts = scripts
-exports.css = css
-
-gulp.task('default', watch);
+gulp.task('default', watchFiles);
 gulp.task('production_build', build);
