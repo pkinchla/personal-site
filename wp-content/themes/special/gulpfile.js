@@ -23,9 +23,9 @@ var browserify = require('browserify'),
 function scripts() {
     var b = browserify();
     b.transform(babelify.configure({
-      presets: ["react", "es2015"],
+      presets: [ "@babel/preset-react", "@babel/preset-env" ],
       plugins: [
-        ["transform-react-jsx", { "pragma":"h" }]
+        ["@babel/transform-react-jsx", { "pragma":"h" }]
       ]
     }))
     b.add(paths.scripts)
