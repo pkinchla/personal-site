@@ -1,5 +1,5 @@
 {
-  "name": "Special",
+  "name": "special",
   "version": "1.0.0",
   "description": "",
   "main": "scripts.js",
@@ -22,6 +22,8 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "pump": "^3.0.0",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-scss": "^3.17.2",
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
