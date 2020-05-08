@@ -7,10 +7,15 @@
         <h1>No Results</h1>
       </header>
       <figure>
-        <img src="{{theme.path}}/images/cham.jpg" alt="metallic chameleon">
+        <img
+          src="{{theme.path}}/images/cham.jpg"
+          alt="metallic chameleon"
+        >
       </figure>
-      <p class="search-message">Sorry, no results matched your query, maybe try again</p>
-      {% include 'searchform.twig' %}
+      <div class="content">
+        <p class="search-message">Sorry, no results matched your query, maybe try again</p>
+        {% include 'searchform.twig' %}
+      </div>
     {% else %}
       <header>
         <h1>{{title}}</h1>
@@ -18,14 +23,14 @@
       <figure>
         <img src="{{theme.path}}/images/cham.jpg" alt="metallic chameleon">
       </figure>
-      <section class="content">
-        <h2 class="assistive-text">Results</h2>
+      <h2 class="assistive-text">Results</h2>
+      <div class="content">
         {% for post in posts %}
           <article>
             {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
           </article>
         {% endfor %}
-      </section>
+      </div>
     {% endif %}
   </article>
 {% endblock %}

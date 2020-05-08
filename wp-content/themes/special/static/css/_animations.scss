@@ -147,7 +147,7 @@
   animation-name: slideOutRight;
 }
 
--webkit-keyframes slideOutDown {
+@-webkit-keyframes slideOutDown {
   from {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);

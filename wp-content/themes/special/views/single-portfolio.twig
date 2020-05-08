@@ -5,7 +5,12 @@
       <h1>{{post.title}}</h1>
     </header>
     <figure>
-      <img srcset="{{post.get_thumbnail.src | resize(2000)}} 2000w, {{post.get_thumbnail.src | resize(1200)}} 1200w, {{post.get_thumbnail.src | resize(600)}} 600w, {{post.get_thumbnail.src | resize(300)}} 300w, {{post.get_thumbnail.src | resize(150)}} 150w" src="{{post.get_thumbnail.src}}" sizes="(min-width:120em) 62vw, (min-width:64em) 72vw, (min-width:40em) 66vw, 100vw" alt="{{post.get_thumbnail.alt}}">
+      <img
+        srcset="{{post.get_thumbnail.src | resize(2000)}} 2000w, {{post.get_thumbnail.src | resize(1200)}} 1200w, {{post.get_thumbnail.src | resize(600)}} 600w, {{post.get_thumbnail.src | resize(300)}} 300w, {{post.get_thumbnail.src | resize(150)}} 150w"
+        src="{{post.get_thumbnail.src}}"
+        sizes="(min-width: 2560px) 1339px, (min-width: 1920px) calc(43.55vw + 233px), (min-width: 640px) 66.43vw, 100vw"
+        alt="{{post.get_thumbnail.alt}}"
+      >
     </figure>
     <div class="content">
       {% if post.main_image_square %}
