@@ -15,6 +15,11 @@
   outline-offset: 3px;
 }
 
+// don't add focus for page transitions and form submits
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
 
 /*--------------------------------------------------------------
  Typography
@@ -394,6 +399,11 @@ Alignments
 /*--------------------------------------------------------------
 Posts and pages
 --------------------------------------------------------------*/
+.turbolinks-progress-bar {
+  height: .35em;
+  background-color: $link-blue;
+}
+
 .sticky {
   display:block;
 }

@@ -73,7 +73,15 @@ function compress(cb) {
 
 function watchFiles(done) {
   browserSync.init({
-    proxy:hostname.vhost
+    proxy:hostname.vhost,
+    snippetOptions: {
+      rule: {
+        match: /<\/head>/i,
+        fn: function (snippet, match) {
+          return snippet + match;
+        }
+      }
+    }
   });
   gulp.watch(paths.watchJS, scripts).on('change', reload);
   gulp.watch(paths.watchScss, css).on('change', reload);

@@ -56,7 +56,7 @@ function special_scripts() {
 
 	if ( WP_DEBUG || SCRIPT_DEBUG ) {
 		wp_enqueue_style( 'style-built', get_template_directory_uri() . '/main.css' );
-		wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/scripts.js#asyncload', array(), '', true );
+		wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/scripts.js#asyncload', array(), '');
 	}
 	else {
 		wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/scripts.js#asyncload', array(), '', true );
