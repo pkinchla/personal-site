@@ -59,7 +59,7 @@ function special_scripts() {
 		wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/scripts.js#asyncload', array(), '');
 	}
 	else {
-		wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/scripts.js#asyncload', array(), '', true );
+		wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/scripts.js#asyncload', array(), '');
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
