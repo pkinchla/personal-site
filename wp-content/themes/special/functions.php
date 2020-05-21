@@ -81,14 +81,13 @@ function enhance_js() {
 }
 add_action('wp_head', 'enhance_js'); // enqueue ehancements
 
-function typekit_js() {
-	$typekit_file = get_template_directory_uri() . '/js/typekit.js';
-	$typekit_path = wp_remote_get($typekit_file);
-	$typekit_content = wp_remote_retrieve_body($typekit_path);
+function loadTypekit() {
 
-	echo '<script>'. $typekit_content .'</script>' . "\n";
+  echo '<link rel="preload" href="https://use.typekit.net/ltt0nnt.css" as="style">' . "\n" .
+       '<link rel="stylesheet" href="https://use.typekit.net/ltt0nnt.css" media="print" onload="this.media=\'all\'">' . "\n" .
+       '<noscript><link rel="stylesheet" href="https://use.typekit.net/ltt0nnt.css"></noscript>';
 }
-add_action('wp_head', 'typekit_js');
+add_action('wp_head', 'loadTypekit');
 
 // function for critical path css
 function critical_css() {
