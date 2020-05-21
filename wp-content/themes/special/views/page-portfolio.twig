@@ -18,8 +18,12 @@
         {% for post in portfolio_posts %}
           <li>
             <a href="{{post.link}}">
-              <h3><span>{{post.title}}</span> | <em>{{post.post_excerpt}}</em></h3>
-              <img src="{{TimberImage(post.get_field('list_image')).src}}" srcset="" sizes="(min-width:120em) 14vw, (min-width:64em) 20vw, (min-width:40em) 30vw, 90vw" alt="{{TimberImage(post.get_field('list_image')).alt}}">
+              <h3>
+                <span>{{post.title}}</span>
+                <span class="assistive-text">, project category is</span>
+                <em>{{post.post_excerpt}}</em>
+              </h3>
+              <img src="{{TimberImage(post.get_field('list_image')).src}}" srcset="" sizes="(min-width:120em) 14vw, (min-width:64em) 20vw, (min-width:40em) 30vw, 90vw" alt="">
             </a>
           </li>
         {% endfor %}
