@@ -1,14 +1,11 @@
 // import HandleLinks from './HandleLinks'
+import TurboLinks from 'turbolinks';
 import MobileMenu from './MobileMenu';
 import { ready } from './helpers'
-import TurboLinks from 'turbolinks';
+
 
 (function (document) {
-
-    // Example
   ready(function() {
-    // Do stuff...
-
     TurboLinks.start()
 
     const mobileMenu = new MobileMenu();
@@ -21,26 +18,23 @@ import TurboLinks from 'turbolinks';
         return navigator.serviceWorker.ready;
       });
     }
-
   });
 
-  document.addEventListener("turbolinks:load", function() {
+  document.addEventListener("turbolinks:load", function(e) {
+    let initialLoad = Object.getOwnPropertyNames(e.data.timing).length === 0;
 
     let focusPageEl = document.querySelector('h1');
-
-    if(focusPageEl) {
+    if(focusPageEl && !initialLoad) {
       focusPageEl.focus()
     }
 
     let formEl = document.querySelector('#searchform')
-
     if(formEl) {
       formEl.addEventListener('submit', (e) => {
         e.preventDefault();
         const query = `/?s=${e.target.elements[0].value.toLocaleLowerCase()}&submit=Search`;
         TurboLinks.visit(query);
       });
-
     }
 
     (function() {
