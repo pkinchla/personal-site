@@ -4,8 +4,8 @@ article[class^='post-type-'] {
     margin-bottom:1.5em;
     border:1px solid $dark-blue;
     img {
-      filter:saturate(10%);
       display: block;
+      filter:saturate(10%);
       &.error404 {
         width:100%;
       }
