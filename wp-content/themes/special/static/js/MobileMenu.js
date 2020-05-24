@@ -32,9 +32,6 @@ class MobileMenu {
         };
       }
 
-      setCurrent(e) {
-        this.setState({ currentPage: e?.data?.url });
-      }
 
       toggleMenu() {
         this.setState({ menuOpen: this.state.menuOpen ? false : true });
@@ -42,7 +39,10 @@ class MobileMenu {
 
       componentDidMount(){
         document.addEventListener("turbolinks:load", (e) => {
-          this.setCurrent(e);
+          this.setState({
+            currentPage: e?.data?.url,
+            menuOpen: false
+          });
         });
       }
 
