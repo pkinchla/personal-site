@@ -10,6 +10,8 @@
         src="{{post.get_thumbnail.src}}"
         sizes="(min-width: 2760px) 1339px, (min-width: 1920px) calc(32.93vw + 437px), (min-width: 640px) 66.43vw, 100vw"
         alt="{{post.get_thumbnail.alt}}"
+        height="{{post.get_thumbnail.height}}"
+        width="{{post.get_thumbnail.width}}"
       >
     </figure>
     <section class="portfolio">
@@ -23,7 +25,13 @@
                 <span class="assistive-text">, project category is</span>
                 <em>{{post.post_excerpt}}</em>
               </h3>
-              <img src="{{TimberImage(post.get_field('list_image')).src}}" srcset="" sizes="(min-width:120em) 14vw, (min-width:64em) 20vw, (min-width:40em) 30vw, 90vw" alt="">
+              <img
+                src="{{TimberImage(post.get_field('list_image')).src}}"
+                sizes="(min-width:120em) 14vw, (min-width:64em) 20vw, (min-width:40em) 30vw, 90vw"
+                alt={{TimberImage(post.get_field('list_image')).alt}}
+                height={{TimberImage(post.get_field('list_image')).height}}
+                width={{TimberImage(post.get_field('list_image')).width}}
+              >
             </a>
           </li>
         {% endfor %}
