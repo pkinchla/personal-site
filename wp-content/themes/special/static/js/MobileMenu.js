@@ -3,7 +3,7 @@ import { Component, render, h, Fragment } from 'preact';
 class MobileMenu {
   constructor() {
     this.options = {
-      selector:document.querySelector('.js-main-navigation'),
+      selector:document.querySelector('.js-main-navigation')
     };
   }
 
@@ -13,7 +13,6 @@ class MobileMenu {
       for(let index = 0; index < this.options.selector.firstElementChild.children.length; index++) {
         const element = this.options.selector.firstElementChild.children[index];
         const item = {
-          class:element.className.trim(),
           link:element.firstElementChild.href,
           text:element.firstElementChild.textContent,
         };
@@ -28,11 +27,23 @@ class MobileMenu {
         this.state = {
           menuOpen:false,
           menuData:items(),
+          currentPage: null,
+          test: null
         };
+      }
+
+      setCurrent(e) {
+        this.setState({ currentPage: e?.data?.url });
       }
 
       toggleMenu() {
         this.setState({ menuOpen: this.state.menuOpen ? false : true });
+      }
+
+      componentDidMount(){
+        document.addEventListener("turbolinks:load", (e) => {
+          this.setCurrent(e);
+        });
       }
 
       render(){
@@ -48,9 +59,12 @@ class MobileMenu {
             </button>
             <ul id="primary-menu" className={`menu ${this.state.menuOpen ? 'open' : 'closed'}`}>
               {this.state.menuData.map((item, index) => {
+                const isCurrent = RegExp(`${item.text.toLowerCase()}`).test(this.state.currentPage);
                 return(
-                  <li key={index} className={item.class}>
-                    <a href={item.link}>{item.text}</a>
+                  <li key={index} className={`menu-item`}>
+                    <a aria-current={isCurrent ? true: false } href={item.link}>
+                      {item.text}
+                    </a>
                   </li>
                 );
               })}
@@ -61,7 +75,6 @@ class MobileMenu {
     }
     render(<Menu />, this.options.selector);
   }
-
 
   init() {
     this.setupComponent();

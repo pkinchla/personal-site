@@ -1,16 +1,22 @@
 // import HandleLinks from './HandleLinks'
 import TurboLinks from 'turbolinks';
 import MobileMenu from './MobileMenu';
-import { ready } from './helpers'
-
+import { ready } from './helpers';
+import clientRouting from './clientRouting';
+import initPrism from './prism';
 
 (function (document) {
-  ready(function() {
-    TurboLinks.start()
+  ready(() => {
+    // init client side routing
+    clientRouting();
 
-    const mobileMenu = new MobileMenu();
-    mobileMenu.init();
+    // init MobileMenu
+    new MobileMenu().init();
 
+    // init prism
+    initPrism();
+
+    // start service worker
     let dev_env = window.location.hostname === 'localhost';
     // registration for worker for server side caching
     if ('serviceWorker' in navigator && !dev_env) {
@@ -18,10 +24,15 @@ import { ready } from './helpers'
         return navigator.serviceWorker.ready;
       });
     }
+
   });
 
   document.addEventListener("turbolinks:load", function(e) {
     let initialLoad = Object.getOwnPropertyNames(e.data.timing).length === 0;
+
+    if(Prism) {
+      Prism.highlightAll()
+    }
 
     let focusPageEl = document.querySelector('h1');
     if(focusPageEl && !initialLoad) {
@@ -37,31 +48,6 @@ import { ready } from './helpers'
       });
     }
 
-    (function() {
-      var is_webkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
-        is_opera  = navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,
-        is_ie     = navigator.userAgent.toLowerCase().indexOf( 'msie' )   > -1;
-
-      if (( is_webkit || is_opera || is_ie ) && document.getElementById && window.addEventListener ) {
-        window.addEventListener( 'hashchange', function() {
-          var id = location.hash.substring( 1 ),
-            element;
-
-          if (!(/^[A-z0-9_-]+$/.test( id ))) {
-            return;
-          }
-
-          element = document.getElementById(id);
-
-          if ( element ) {
-            if (!(/^(?:a|select|input|button|textarea)$/i.test( element.tagName ))) {
-              element.tabIndex = -1;
-            }
-            element.focus();
-          }
-        }, false);
-      }
-    })();
-  })
+  });
 
 }(document));

@@ -95,13 +95,12 @@
     a {
       padding:.85em 10%;
       color:$body-color;
+      &[aria-current] {
+        @include alpha-attribute('background-color', rgba($dark-blue, .20), lighten($dark-blue, 70%));
+      }
     }
   }
-  .current-menu-item {
-    a {
-      @include alpha-attribute('background-color', rgba($dark-blue, .20), lighten($dark-blue, 70%));
-    }
-  }
+
   @media only screen and (max-width:64em) {
     &.closed {
       visibility: hidden;
