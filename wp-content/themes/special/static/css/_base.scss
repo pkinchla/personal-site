@@ -15,6 +15,11 @@
   outline-offset: 3px;
 }
 
+// don't add focus for page transitions and form submits
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
 
 /*--------------------------------------------------------------
  Typography
@@ -30,7 +35,7 @@ body, button, input, select, textarea {
 }
 
 h1, h2, h3, h4, h5, h6, .alpha, .beta, .gamma, .delta {
-  @include futura;
+  @include sans-reg;
   font-weight:800;
   clear:both;
   letter-spacing:-.03em;
@@ -74,12 +79,12 @@ p {
 }
 
 b, strong {
-  font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  @include sans-reg;
   font-weight:800;
 }
 
 dfn, cite, em, i {
-  font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  @include sans-reg;
   font-size:1.05em;
   font-style:italic;
 }
@@ -190,7 +195,7 @@ li > ul, li > ol {
 }
 
 dt {
-  font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  @include sans-reg;
   font-weight:700;
   font-size:1.15em;
 }
@@ -202,6 +207,8 @@ dd {
 img {
   max-width:100%; /* Adhere to container width. */
   height:auto; /* Make sure images are scaled correctly. */
+  // height: calc()
+  // height:attr(height);
 }
 
 svg {
@@ -225,7 +232,7 @@ th {
 4.0 Forms
 --------------------------------------------------------------*/
 button, input, select, textarea {
-  font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  @include sans-reg;
   font-size:100%; /* Corrects font size not being inherited in all browsers */
   font-weight:700;
   margin:0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
@@ -351,7 +358,7 @@ a:hover, a:focus, a:active {
 }
 
 .skip-link {
-  font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  @include sans-reg;
 }
 
 .post-type-archive {
@@ -394,6 +401,11 @@ Alignments
 /*--------------------------------------------------------------
 Posts and pages
 --------------------------------------------------------------*/
+.turbolinks-progress-bar {
+  height: .35em;
+  background-color: $link-blue;
+}
+
 .sticky {
   display:block;
 }
@@ -426,12 +438,11 @@ Posts and pages
 }
 
 .entry-meta {
+  @include sans-reg;
   display: inline-block;
-  font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-style:italic;
   border-bottom:.0625em solid $dark-blue;
   a {
-    // color:$white;
     @include link-reset;
   }
 }
@@ -456,7 +467,7 @@ Posts and pages
 
 
 .cat-item, .entry-footer {
-  font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  @include sans-reg;
 }
 
 
@@ -480,7 +491,7 @@ Comments
 
 .comment-form {
   label {
-    font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    @include sans-reg;
     font-weight:700;
     font-style:italic;
     display:inline-block;
@@ -492,7 +503,7 @@ Comments
   display:block;
 }
 .logged-in-as {
-  font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  @include sans-reg;
   font-style:italic;
   color:$dark-blue;
 }
@@ -504,14 +515,14 @@ Comments
 }
 
 .comment-meta {
-  font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  @include sans-reg;
   font-style:italic;
   margin-bottom:.5em;
   padding-top:.25em;
   background:rgba($light-blue, .75);
 }
 .comment-author {
-  font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  @include sans-reg;
   font-style:italic;
   cite {
     display: inline-block;
@@ -526,7 +537,7 @@ Comments
   }
 }
 .comment-reply-link {
-  font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  @include sans-reg;
   font-style:italic;
 }
 
@@ -566,7 +577,7 @@ Captions
 }
 
 .wp-caption-text {
-  font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  @include sans-reg;
   text-align:center;
 }
 

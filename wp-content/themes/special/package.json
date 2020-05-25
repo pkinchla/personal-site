@@ -22,12 +22,14 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "pump": "^3.0.0",
+    "stylelint": "^13.3.3",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-scss": "^3.17.2",
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
-    "preact": "^10.0.0"
+    "preact": "^10.0.0",
+    "turbolinks": "^5.2.0"
   },
   "browserslist": {
     "production": [

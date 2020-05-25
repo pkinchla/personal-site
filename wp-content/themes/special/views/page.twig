@@ -3,7 +3,7 @@
 {% block content %}
   <article class="post-type-{{post.post_type}} site-grid block" id="post-{{post.ID}}">
     <header>
-      <h1>{{post.title}}</h1>
+      <h1 tabindex="-1">{{post.title}}</h1>
     </header>
     <figure>
       <img
@@ -11,6 +11,8 @@
         src="{{post.get_thumbnail.src}}"
         sizes="(min-width: 2560px) 1339px, (min-width: 1920px) calc(43.55vw + 233px), (min-width: 640px) 66.43vw, 100vw"
         alt="{{post.get_thumbnail.alt}}"
+        height="{{post.get_thumbnail.height}}"
+        width="{{post.get_thumbnail.width}}"
       >
     </figure>
     <div class="content">

@@ -8,14 +8,10 @@
 
   <body class="{{body_class}}" data-template="base.twig">
     <div id="page" class="hfeed site site-grid">
-      <a class="skip-link assistive-text" href="#content">Skip To Content</a>
+      <a class="skip-link assistive-text" href="#content" data-turbolinks="false">Skip To Content</a>
       {% block header %}
-      <header id="masthead" class="site-header js-site-header">
-        {% if is_home %}
-          <h1 id="site-title">{% include 'site-logo.twig' %}</h1>
-        {% else %}
-          {% include 'site-logo.twig' %}
-        {% endif %}
+      <header id="masthead" class="site-header js-site-header" data-turbolinks-permanent>
+        {% include 'site-logo.twig' %}
         <nav id="site-navigation" class="site-navigation js-main-navigation">
           {% include "menu.twig" with {'menu': menu.get_items} %}
         </nav><!-- #site-navigation -->

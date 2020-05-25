@@ -81,7 +81,7 @@
   transition:max-height .35s ease-in-out, visibility .35s ease-in-out;
   overflow: hidden;
   li {
-    font-family:'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    @include sans-reg;
     font-size:1.25em;
     width:100%;
     border-bottom:1px solid $dark-blue;
@@ -95,13 +95,12 @@
     a {
       padding:.85em 10%;
       color:$body-color;
+      &[aria-current] {
+        @include alpha-attribute('background-color', rgba($dark-blue, .20), lighten($dark-blue, 70%));
+      }
     }
   }
-  .current-menu-item {
-    a {
-      @include alpha-attribute('background-color', rgba($dark-blue, .20), lighten($dark-blue, 70%));
-    }
-  }
+
   @media only screen and (max-width:64em) {
     &.closed {
       visibility: hidden;
