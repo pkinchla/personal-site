@@ -6,12 +6,10 @@
     </header>
     <figure>
       <img
-        srcset="{{post.get_thumbnail.src | resize(2000)}} 2000w, {{post.get_thumbnail.src | resize(1200)}} 1200w, {{post.get_thumbnail.src | resize(600)}} 600w, {{post.get_thumbnail.src | resize(300)}} 300w, {{post.get_thumbnail.src | resize(150)}} 150w"
+        srcset="{{post.get_thumbnail.src | resize(2000)}} 2000w, {{post.get_thumbnail.src | resize(1200)}} 1200w, {{post.get_thumbnail.src | resize(600)}} 600w, {{post.get_thumbnail.src | resize(350)}} 350w, {{post.get_thumbnail.src | resize(300)}} 300w, {{post.get_thumbnail.src | resize(250)}} 250w, {{post.get_thumbnail.src | resize(150)}} 150w"
         src="{{post.get_thumbnail.src}}"
         sizes="(min-width: 2760px) 1339px, (min-width: 1920px) calc(32.93vw + 437px), (min-width: 640px) 66.43vw, 100vw"
         alt="{{post.get_thumbnail.alt}}"
-        height="{{post.get_thumbnail.height}}"
-        width="{{post.get_thumbnail.width}}"
       >
     </figure>
     <div class="content">
