@@ -28,8 +28,7 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
-    "preact": "^10.0.0",
-    "turbolinks": "^5.2.0"
+    "preact": "^10.0.0"
   },
   "browserslist": {
     "production": [

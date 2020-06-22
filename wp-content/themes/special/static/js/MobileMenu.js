@@ -38,11 +38,8 @@ class MobileMenu {
       }
 
       componentDidMount(){
-        document.addEventListener("turbolinks:load", (e) => {
-          this.setState({
-            currentPage: e?.data?.url,
-            menuOpen: false
-          });
+        this.setState({
+          currentPage: window.location.pathname
         });
       }
 

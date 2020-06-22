@@ -38,7 +38,7 @@ function auto_id_headings( $content ) {
 
 	$content = preg_replace_callback( '/(\<h[1-6](.*?))\>(.*)(<\/h[1-6]>)/i', function( $matches ) {
 		if ( ! stripos( $matches[0], 'id=' ) ) :
-			$heading_link = ' <a class="heading-anchor js-heading-anchor" data-turbolinks="false" href="#' . sanitize_title( $matches[3] ) . '" class="heading-link"><span aria-hidden="true">#</span> <span class="assistive-text">Jump link for '. $matches[3] .'</span></a> ';
+			$heading_link = ' <a class="heading-anchor js-heading-anchor" href="#' . sanitize_title( $matches[3] ) . '" class="heading-link"><span aria-hidden="true">#</span> <span class="assistive-text">Jump link for '. $matches[3] .'</span></a> ';
 			$matches[0] = $matches[1] . $matches[2] . ' id="' . sanitize_title( $matches[3] ) . '">' . $matches[3] . $heading_link . $matches[4];
 		endif;
 
@@ -79,6 +79,10 @@ function special_scripts() {
 	}
 	else {
 		wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/scripts.js#asyncload', array(), '');
+  }
+
+  if (get_post_type() === 'post') {
+		wp_enqueue_script( 'prism', get_template_directory_uri() .'/js/prism.min.js#asyncload', array(), '', true);
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

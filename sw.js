@@ -4,8 +4,8 @@ var theme_path = 'wp-content/themes/special/';
 
 var offlineFundamentals = [
   './',
-  theme_path + 'js/built.min.js',
-  theme_path + 'prism/prism.min.js',
+  theme_path + 'js/scripts.js',
+  theme_path + 'js/prism.min.js',
   theme_path + 'offline.html',
   'manifest.json',
   'icon_192.png',
@@ -138,16 +138,15 @@ self.addEventListener("fetch", function(event) {
   }
 
 
-  const noCache = event.request.url.match(/wp-admin/) ||
-                  event.request.url.match(/wp-includes/) ||
-                  event.request.url.match(/preview=true/) ||
-                  event.request.url.match(/wp-content/\/plugins/);
+  const noCache = event.request.url.match('/wp-admin/') ||
+                  event.request.url.match('/wp-includes/') ||
+                  event.request.url.match('/preview=true/') ||
+                  event.request.url.match('/wp-content/plugins/');
 
   //This service worker won't touch the admin area and preview pages
   if (noCache) {
     return;
   }
-
 
   //This service worker won't touch non-get requests
   if (event.request.method != 'GET') {

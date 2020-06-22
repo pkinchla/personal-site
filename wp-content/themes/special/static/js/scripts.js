@@ -2,20 +2,9 @@
 import TurboLinks from 'turbolinks';
 import MobileMenu from './MobileMenu';
 import { ready } from './helpers';
-import clientRouting from './clientRouting';
-import initPrism from './prism';
 
 (function (document) {
   ready(() => {
-    // init client side routing
-    clientRouting();
-
-    // init MobileMenu
-    new MobileMenu().init();
-
-    // init prism
-    initPrism();
-
     // start service worker
     let dev_env = window.location.hostname === 'localhost';
     // registration for worker for server side caching
@@ -24,6 +13,9 @@ import initPrism from './prism';
         return navigator.serviceWorker.ready;
       });
     }
+
+    // init MobileMenu
+    new MobileMenu().init();
 
     (function () {
       if (typeof MutationObserver === 'undefined') {
@@ -54,29 +46,6 @@ import initPrism from './prism';
       );
       window.fixFontObserver = observer;
     })();
-
-  });
-
-  document.addEventListener("turbolinks:load", function(e) {
-    let initialLoad = Object.getOwnPropertyNames(e.data.timing).length === 0;
-
-    if(Prism) {
-      Prism.highlightAll()
-    }
-
-    let focusPageEl = document.querySelector('h1');
-    if(focusPageEl && !initialLoad) {
-      focusPageEl.focus()
-    }
-
-    let formEl = document.querySelector('#searchform')
-    if(formEl) {
-      formEl.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const query = `/?s=${e.target.elements[0].value.toLocaleLowerCase()}&submit=Search`;
-        TurboLinks.visit(query);
-      });
-    }
 
   });
 
