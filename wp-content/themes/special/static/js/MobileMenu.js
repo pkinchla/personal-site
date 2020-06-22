@@ -27,20 +27,12 @@ class MobileMenu {
         this.state = {
           menuOpen:false,
           menuData:items(),
-          currentPage: null,
-          test: null
+          currentPage: window.location.pathname,
         };
       }
 
-
       toggleMenu() {
         this.setState({ menuOpen: this.state.menuOpen ? false : true });
-      }
-
-      componentDidMount(){
-        this.setState({
-          currentPage: window.location.pathname
-        });
       }
 
       render(){
