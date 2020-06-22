@@ -1,5 +1,4 @@
 // import HandleLinks from './HandleLinks'
-import TurboLinks from 'turbolinks';
 import MobileMenu from './MobileMenu';
 import { ready } from './helpers';
 
