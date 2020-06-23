@@ -54,7 +54,7 @@ add_filter( 'the_content', 'auto_id_headings' );
  * show variable on frontend
  */
 function dump($var){
-	echo '<pre>';
+	echo '<pre style="color: white">';
 		var_dump($var);
 	echo '</pre>';
 }
@@ -193,6 +193,7 @@ class StarterSite extends TimberSite {
 		$context['menu'] = new TimberMenu();
     $context['site'] = $this;
     $context['is_home'] = is_front_page();
+    $context['supportsWebP'] = gd_info()['WebP Support'];
 
 		return $context;
 	}
