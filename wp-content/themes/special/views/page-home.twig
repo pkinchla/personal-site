@@ -11,12 +11,16 @@
              src="{{post.get_thumbnail.src|towebp}}"
              sizes="100vw"
              alt="{{post.get_thumbnail.alt}}"
+             width="{{post.get_thumbnail.width}}"
+             height="{{post.get_thumbnail.height}}"
         >
       {% else %}
         <img srcset="{{post.get_thumbnail.src | resize(3000)}} 3000w, {{post.get_thumbnail.src | resize(2000)}} 2000w, {{post.get_thumbnail.src | resize(1200)}} 1200w, {{post.get_thumbnail.src | resize(600)}} 600w, {{post.get_thumbnail.src | resize(300)}} 300w, {{post.get_thumbnail.src | resize(150)}} 150w"
              src="{{post.get_thumbnail.src}}"
              sizes="100vw"
              alt="{{post.get_thumbnail.alt}}"
+             width="{{post.get_thumbnail.width}}"
+             height="{{post.get_thumbnail.height}}"
         >
       {% endif %}
 
