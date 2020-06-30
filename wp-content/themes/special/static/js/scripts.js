@@ -1,8 +1,10 @@
 // import HandleLinks from './HandleLinks'
 import MobileMenu from './MobileMenu';
-import { ready } from './helpers';
 
 (function (document) {
+  // mobile menu
+  new MobileMenu().init();
+
   // start service worker
   let dev_env = window.location.hostname === 'localhost';
   // registration for worker for server side caching
@@ -11,10 +13,5 @@ import { ready } from './helpers';
       return navigator.serviceWorker.ready;
     });
   }
-
-  ready(() => {
-    // init MobileMenu
-    new MobileMenu().init();
-  });
 
 }(document));
