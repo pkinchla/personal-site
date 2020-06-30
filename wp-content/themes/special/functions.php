@@ -123,16 +123,6 @@ function critical_css() {
 }
 add_action( 'wp_head', 'critical_css');
 
-// google analytics in footer
-function add_googleanalytics()  {
-	$ga_file = get_template_directory_uri() . '/js/ga.js';
-	$ga_path = wp_remote_get($ga_file);
-	$ga_content = wp_remote_retrieve_body($ga_path);
-
-	echo '<script>'. $ga_content .'</script>' . "\n";
-}
-add_action('wp_footer', 'add_googleanalytics');
-
 // get instagram feed
 function instagram_feed($url) {
 	if ( false === ( $feed = get_transient( 'instagram_feed' ) ) ) {
