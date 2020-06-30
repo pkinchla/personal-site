@@ -15,27 +15,24 @@
       </div>
     </header>
     <figure>
-    {% if supportsWebP %}
-        <img
-          srcset="{{post.get_thumbnail.src|resize(2000)|towebp}} 2000w, {{post.get_thumbnail.src|resize(1200)|towebp}} 1200w, {{post.get_thumbnail.src|resize(600)|towebp}} 600w, {{post.get_thumbnail.src|resize(300)|towebp}} 300w, {{post.get_thumbnail.src|resize(150)|towebp}} 150w"
-          src="{{post.get_thumbnail.src|towebp}}"
-          sizes="(min-width: 2560px) 1339px, (min-width: 1920px) calc(43.55vw + 233px), (min-width: 640px) 66.43vw, 100vw"
-          alt="{{post.get_thumbnail.alt}}"
-          width="{{post.get_thumbnail.width}}"
-          height="{{post.get_thumbnail.height}}"
+      <picture>
+        <source srcset="{{post.get_thumbnail.src|resize(2000)|towebp}} 2000w, {{post.get_thumbnail.src|resize(1200)|towebp}} 1200w, {{post.get_thumbnail.src|resize(600)|towebp}} 600w, {{post.get_thumbnail.src|resize(300)|towebp}} 300w, {{post.get_thumbnail.src|resize(150)|towebp}} 150w"
+                sizes="(min-width: 2560px) 1339px, (min-width: 1920px) calc(43.55vw + 233px), (min-width: 640px) 66.43vw, 100vw"
+                type="image/webp"
         >
-      {% else %}
-        <img
-          srcset="{{post.get_thumbnail.src|resize(2000)}} 2000w, {{post.get_thumbnail.src|resize(1200)}} 1200w, {{post.get_thumbnail.src|resize(600)}} 600w, {{post.get_thumbnail.src|resize(300)}} 300w, {{post.get_thumbnail.src|resize(250)}} 250w, {{post.get_thumbnail.src|resize(150)}} 150w"
-          src="{{post.get_thumbnail.src}}"
-          sizes="(min-width: 2560px) 1339px, (min-width: 1920px) calc(43.55vw + 233px), (min-width: 640px) 66.43vw, 100vw"
-          alt="{{post.get_thumbnail.alt}}"
-          width="{{post.get_thumbnail.width}}"
-          height="{{post.get_thumbnail.height}}"
+        <source srcset="{{post.get_thumbnail.src|resize(2000)}} 2000w, {{post.get_thumbnail.src|resize(1200)}} 1200w, {{post.get_thumbnail.src|resize(600)}} 600w, {{post.get_thumbnail.src|resize(300)}} 300w, {{post.get_thumbnail.src|resize(250)}} 250w, {{post.get_thumbnail.src|resize(150)}} 150w"
+                sizes="(min-width: 2560px) 1339px, (min-width: 1920px) calc(43.55vw + 233px), (min-width: 640px) 66.43vw, 100vw"
+                type="image/webp"
         >
-      {% endif %}
+        <img src="{{post.get_thumbnail.src}}"
+             alt="{{post.get_thumbnail.alt}}"
+             width="{{post.get_thumbnail.width}}"
+             height="{{post.get_thumbnail.height}}"
+        >
+      </picture>
     </figure>
     <div class="content">
+      <pre style="color: white">{{dump(gd)}}</pre>
       {{post.content}}
     </div>
     <section class="post-list" aria-labelledby="post-list">

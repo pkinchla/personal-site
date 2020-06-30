@@ -193,7 +193,6 @@ class StarterSite extends TimberSite {
 		$context['menu'] = new TimberMenu();
     $context['site'] = $this;
     $context['is_home'] = is_front_page();
-    $context['supportsWebP'] = gd_info()['WebP Support'];
 
 		return $context;
 	}
