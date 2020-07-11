@@ -6,15 +6,10 @@
   > * {
     line-height:0;
   }
-  h1 {
-    font-size:1em;
-    margin:0;
-    width:67.95%;
-    text-align: center;
-  }
   > a {
-    width:67.95%;
+    width:65.95%;
     text-align: center;
+    display: block;
   }
   .logo {
     pointer-events:none;
@@ -138,8 +133,8 @@
   position:absolute;
   top:0;
   right:0;
-  width:32%;
-  height:4.15em;
+  width:34%;
+  height:calc(4.2125em - 1.5px);
   padding:0;
   text-transform:uppercase;
   color:$link-blue;
