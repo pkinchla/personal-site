@@ -74,29 +74,20 @@
             </dd>
         </dl>
       </section>
-
-      <section class="instagram-section" aria-labelledby="instagram-feed">
+      {# <section class="instagram-section" aria-labelledby="instagram-feed">
         <div>
           <h2 id="instagram-feed">Instagram Feed</h2>
           {{post.flickr_field}}
         </div>
         <ul class="photo-feed">
-          {% for picture in pictures %}
+          {% for picture in pictures.data %}
+          {% if loop.index < 21 %}
             <li>
-              <img
-                srcset="{{picture.node.thumbnail_resources[3].src}} {{picture.node.thumbnail_resources[3].config_width}}w,
-                {{picture.node.thumbnail_resources[2].src}} {{picture.node.thumbnail_resources[2].config_width}}w,
-                {{picture.node.thumbnail_resources[1].src}} {{picture.node.thumbnail_resources[1].config_width}}w,
-                {{picture.node.thumbnail_resources[0].src}} {{picture.node.thumbnail_resources[0].config_width}}w"
-                sizes="150px"
-                src="{{picture.node.thumbnail_resources[0].src}}"
-                alt="{{picture.node.accessibility_caption}}">
+              <img src="{{picture.images.low_resolution.url}}" alt="{{ (picture.caption) ? picture.caption.text : 'instagram thumbnail' }}">
             </li>
+          {% endif %}
           {% endfor %}
         </ul>
-      </section>
+      </section> #}
     </article>
-    {% for picture in pictures %}
-      <pre style="color: white">{{dump(picture.node.thumbnail_resources)}}</pre>
-    {% endfor %}
 {% endblock %}

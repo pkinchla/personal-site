@@ -15,7 +15,8 @@ $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 
-$pictures = instagram_feed('https://www.instagram.com/pkinchla/?__a=1');
-$context['pictures'] = $pictures->graphql->user->edge_owner_to_timeline_media->edges;
+$pictures = instagram_feed($instagram_creds);
+
+$context['pictures'] = $pictures;
 
 Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );
