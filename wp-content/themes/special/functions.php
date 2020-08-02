@@ -124,12 +124,17 @@ add_action( 'wp_head', 'critical_css');
 // get instagram feed
 // require scraper class
 require get_template_directory() . '/vendor/autoload.php';
+require get_template_directory() . '/credentials.php';
+use Phpfastcache\Helper\Psr16Adapter;
 
 function instagram_feed() {
 	if ( false === ( $media = get_transient( 'instagram_feed' ) ) ) {
-    $instagram = new \InstagramScraper\Instagram();
-    $media = $instagram->getMedias('pkinchla');
-		set_transient( 'instagram_feed', $media, 1 * HOUR_IN_SECONDS);
+    $instagram = \InstagramScraper\Instagram::withCredentials($user, $password, new Psr16Adapter('Files'));
+    $instagram->login();
+    $instagram->saveSession();
+    $media = $instagram->getMedias('pkinchla', 32);
+
+    set_transient( 'instagram_feed', $media, 1 * HOUR_IN_SECONDS);
 
 	}
 	return $media;
