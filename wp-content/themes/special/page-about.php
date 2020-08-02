@@ -8,14 +8,11 @@
  * @since    Timber 0.1
  */
 
-// $instagram_creds import
-require get_template_directory() . '/credentials.php';
-
-$context = Timber::get_context();
+ $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 
-$pictures = instagram_feed('https://www.instagram.com/pkinchla/?__a=1');
-$context['pictures'] = $pictures->graphql->user->edge_owner_to_timeline_media->edges;
+$media = instagram_feed();
+$context['pictures'] = $media;
 
 Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );

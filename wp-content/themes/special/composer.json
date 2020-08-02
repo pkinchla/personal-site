@@ -1,14 +1,6 @@
 {
-  "name": "upstatement/timber-starter-theme",
-  "description": "Starter theme to build a Timber theme",
-  "type":"wordpress-theme",
-  "minimum-stability" : "stable",
-  "authors": [
-      {
-          "name": "jarednova",
-          "email": "jared@upstatement.com"
-      }
-  ],
+  "type": "wordpress-theme",
+  "minimum-stability": "stable",
   "repositories": [
     {
       "type": "composer",
@@ -16,14 +8,14 @@
     }
   ],
   "extra": {
-  	"installer-paths": {
+    "installer-paths": {
       "../../plugins/{$name}/": [
         "wpackagist-plugin/*",
         "type:wordpress-plugin"
       ]
-  	}
-	},
+    }
+  },
   "require": {
-	  "wpackagist-plugin/timber-library": "0.22.*"
+    "raiym/instagram-php-scraper": "^0.9.12"
   }
 }

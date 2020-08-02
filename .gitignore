@@ -10,7 +10,7 @@
 # See the comments below for more info on how to add exceptions for your
 # content. Or see git's documentation for more info on .gitignore files:
 # http://kernel.org/pub/software/scm/git/docs/gitignore.html
- 
+
 # Ignore everything in the root except the "wp-content" directory.
 /*
 .DS_Store
@@ -24,7 +24,7 @@
 !apple-touch-icon.png
 !wp-content/
 
- 
+
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.
 wp-content/*
@@ -48,4 +48,5 @@ wp-content/themes/special/credentials.php
 wp-content/themes/special/*.css.map
 wp-content/themes/special/npm-debug.log
 wp-content/themes/special/node_modules/*
+wp-content/themes/special/vendor/*
 .sass-cache/

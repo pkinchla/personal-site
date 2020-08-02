@@ -74,7 +74,6 @@
             </dd>
         </dl>
       </section>
-
       <section class="instagram-section" aria-labelledby="instagram-feed">
         <div>
           <h2 id="instagram-feed">Instagram Feed</h2>
@@ -83,20 +82,10 @@
         <ul class="photo-feed">
           {% for picture in pictures %}
             <li>
-              <img
-                srcset="{{picture.node.thumbnail_resources[3].src}} {{picture.node.thumbnail_resources[3].config_width}}w,
-                {{picture.node.thumbnail_resources[2].src}} {{picture.node.thumbnail_resources[2].config_width}}w,
-                {{picture.node.thumbnail_resources[1].src}} {{picture.node.thumbnail_resources[1].config_width}}w,
-                {{picture.node.thumbnail_resources[0].src}} {{picture.node.thumbnail_resources[0].config_width}}w"
-                sizes="150px"
-                src="{{picture.node.thumbnail_resources[0].src}}"
-                alt="{{picture.node.accessibility_caption}}">
+              <img src="{{picture.imageLowResolutionUrl}}" alt="{{ (picture.caption) ? picture.caption.text : 'instagram thumbnail' }}">
             </li>
           {% endfor %}
         </ul>
       </section>
     </article>
-    {% for picture in pictures %}
-      <pre style="color: white">{{dump(picture.node.thumbnail_resources)}}</pre>
-    {% endfor %}
 {% endblock %}

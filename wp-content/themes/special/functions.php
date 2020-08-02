@@ -122,15 +122,17 @@ function critical_css() {
 add_action( 'wp_head', 'critical_css');
 
 // get instagram feed
-function instagram_feed($url) {
-	if ( false === ( $feed = get_transient( 'instagram_feed' ) ) ) {
-		$response = wp_remote_get($url);
-		$body = json_decode($response['body']);
-		$feed = $body;
-		set_transient( 'instagram_feed', $feed, 1 * HOUR_IN_SECONDS);
+// require scraper class
+require get_template_directory() . '/vendor/autoload.php';
+
+function instagram_feed() {
+	if ( false === ( $media = get_transient( 'instagram_feed' ) ) ) {
+    $instagram = new \InstagramScraper\Instagram();
+    $media = $instagram->getMedias('pkinchla');
+		set_transient( 'instagram_feed', $media, 1 * HOUR_IN_SECONDS);
 
 	}
-	return $feed;
+	return $media;
 }
 
 // remove wp-embed
