@@ -96,4 +96,7 @@
         </ul>
       </section>
     </article>
+    {% for picture in pictures %}
+      <pre style="color: white">{{dump(picture.node.thumbnail_resources)}}</pre>
+    {% endfor %}
 {% endblock %}
