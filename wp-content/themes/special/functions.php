@@ -124,10 +124,9 @@ add_action( 'wp_head', 'critical_css');
 // get instagram feed
 // require scraper class
 require get_template_directory() . '/vendor/autoload.php';
-require get_template_directory() . '/credentials.php';
 use Phpfastcache\Helper\Psr16Adapter;
 
-function instagram_feed() {
+function instagram_feed($user, $password) {
 	if ( false === ( $media = get_transient( 'instagram_feed' ) ) ) {
     $instagram = \InstagramScraper\Instagram::withCredentials($user, $password, new Psr16Adapter('Files'));
     $instagram->login();
