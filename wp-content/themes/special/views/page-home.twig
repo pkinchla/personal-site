@@ -31,9 +31,7 @@
       <section class="latest">
         <h2>Latest Writing</h2>
         {% for post in home_post %}
-          <article>
             {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-          </article>
         {% endfor %}
       </section>
     </div>
