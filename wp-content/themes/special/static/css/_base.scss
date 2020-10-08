@@ -1,13 +1,15 @@
-*, *:before, *:after {
-  box-sizing:inherit;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 ::selection {
-  background:$selection-color;
+  background: $selection-color;
 }
 
 ::-moz-selection {
-  background:$selection-color;
+  background: $selection-color;
 }
 
 :focus {
@@ -16,151 +18,182 @@
 }
 
 // don't add focus for page transitions and form submits
-[tabindex="-1"]:focus {
+[tabindex='-1']:focus {
   outline: none;
 }
-
 
 /*--------------------------------------------------------------
  Typography
 --------------------------------------------------------------*/
-body, button, input, select, textarea {
-  font-family:Georgia, serif;
-  line-height:1.625;
-  color:$body-color;
-  background:$background-white;
+body,
+button,
+input,
+select,
+textarea {
+  font-family: Georgia, serif;
+  line-height: 1.625;
+  color: $body-color;
+  background: $background-white;
   &:focus {
-    outline-offset:-3px;
+    outline-offset: -3px;
   }
 }
 
-h1, h2, h3, h4, h5, h6, .alpha, .beta, .gamma, .delta {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.alpha,
+.beta,
+.gamma,
+.delta {
   @include sans-reg;
-  font-weight:800;
-  clear:both;
-  letter-spacing:-.03em;
-  color:$dark-blue;
+  font-weight: 800;
+  clear: both;
+  letter-spacing: -0.03em;
+  color: $dark-blue;
 }
 
-h1, .alpha {
-  font-size:2em;
-  font-weight:800;
-  line-height:.975;
-  margin:.75em 0;
+h1,
+.alpha {
+  font-size: 2em;
+  font-weight: 800;
+  line-height: 0.975;
+  margin: 0.75em 0;
 }
 
-h2, .beta {
-  font-size:1.875em;
-  font-style:italic;
-  line-height:1.1;
-  margin:0 0 .25em 0;
+h2,
+.beta {
+  font-size: 1.875em;
+  font-style: italic;
+  line-height: 1.1;
+  margin: 0 0 0.25em 0;
   span {
-    font-style:normal;
+    font-style: normal;
   }
 }
 
-h3, .gamma {
-  font-size:1.775em;
-  line-height:1.3;
-  margin:0 0 .10em 0;
+h3,
+.gamma {
+  font-size: 1.775em;
+  line-height: 1.3;
+  margin: 0 0 0.1em 0;
   span {
-    font-style:normal;
+    font-style: normal;
   }
 }
 
-h4, .delta {
-  font-size:1.5em;
-  line-height:1.3;
-  margin:0;
+h4,
+.delta {
+  font-size: 1.5em;
+  line-height: 1.3;
+  margin: 0;
 }
 
 a.heading-anchor {
   border-bottom: none;
   line-height: 1;
-  font-size: .75em;
+  font-size: 0.75em;
 }
 
 p {
-  margin:0 0 1.5em 0;
+  margin: 0 0 1.5em 0;
 }
 
-b, strong {
+b,
+strong {
   @include sans-reg;
-  font-weight:800;
+  font-weight: 800;
 }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
   @include sans-reg;
-  font-size:1.05em;
-  font-style:italic;
+  font-size: 1.05em;
+  font-style: italic;
 }
 
 cite {
-  display:block;
+  display: block;
 }
 
 blockquote {
-  margin:0 1.5em 0 0;
-  padding-left:1.5em;
-  border-left:3px solid $dark-blue;
+  margin: 0 0 1.5em 0;
+  padding-left: 1.5em;
+  border-left: 3px solid $dark-blue;
+}
+
+blockquote p {
+  margin-bottom: 0;
 }
 
 address {
-  margin:0 0 1.5em;
+  margin: 0 0 1.5em;
 }
 
 pre {
-  font-family:'Courier 10 Pitch', Courier, monospace;
-  overflow:auto;
-  max-width:100%;
-  margin-bottom:1.6em;
-  padding:1.6em;
-  background:#141414;
+  font-family: 'Courier 10 Pitch', Courier, monospace;
+  overflow: auto;
+  max-width: 100%;
+  margin-bottom: 1.6em;
+  padding: 1.6em;
+  background: #141414;
 }
 
-code, kbd, tt, var {
-  font-size:.85em;
+code,
+kbd,
+tt,
+var {
+  font-size: 0.85em;
 }
 
-abbr, acronym {
-  cursor:help;
-  border-bottom:1px dotted #666;
+abbr,
+acronym {
+  cursor: help;
+  border-bottom: 1px dotted #666;
 }
 
-mark, ins {
-  text-decoration:none;
-  background:#fff9c0;
+mark,
+ins {
+  text-decoration: none;
+  background: #fff9c0;
 }
 
-sup, sub {
-  font-size:75%;
-  line-height:0;
-  position:relative;
-  height:0;
-  vertical-align:baseline;
+sup,
+sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  height: 0;
+  vertical-align: baseline;
 }
 
 sup {
-  bottom:1ex;
+  bottom: 1ex;
 }
 
 sub {
-  top:.5ex;
+  top: 0.5ex;
 }
 
 canvas {
-  z-index:-1;
+  z-index: -1;
 }
 
-@media only screen and (min-width:40em) {
-  h1, .alpha {
+@media only screen and (min-width: 40em) {
+  h1,
+  .alpha {
     font-size: 2.625em;
   }
 }
 
-@media only screen and (min-width:84.375em) {
+@media only screen and (min-width: 84.375em) {
   body {
-    font-size:1.25em;
+    font-size: 1.25em;
   }
 }
 
@@ -168,22 +201,24 @@ canvas {
 3.0 Elements
 --------------------------------------------------------------*/
 hr {
-  height:1px;
-  margin-bottom:1.5em;
-  border:0;
-  background-color:#ccc;
+  height: 1px;
+  margin-bottom: 1.5em;
+  border: 0;
+  background-color: #ccc;
 }
 
-ul, ol {
-  line-height:1.5;
-  margin:0 0 1.5em 0;
-  padding:0;
-  padding-left:.75em;
+ul,
+ol {
+  line-height: 1.5;
+  margin: 0 0 1.5em 0;
+  padding: 0;
+  padding-left: 0.75em;
 }
 
-@media only screen and (min-width:64em) {
-  ul, ol {
-    padding-left:0;
+@media only screen and (min-width: 64em) {
+  ul,
+  ol {
+    padding-left: 0;
   }
 }
 
@@ -192,168 +227,215 @@ ul, ol {
 }
 
 .site-content ol {
-  list-style:outside decimal;
+  list-style: outside decimal;
 }
 
-li > ul, li > ol {
-  margin-bottom:0;
-  margin-left:1.5em;
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5em;
 }
 
 dt {
   @include sans-reg;
-  font-weight:700;
-  font-size:1.15em;
+  font-weight: 700;
+  font-size: 1.15em;
 }
 
 dd {
-  margin:0;
+  margin: 0;
 }
 
 img {
-  max-width:100%; /* Adhere to container width. */
-  height:auto; /* Make sure images are scaled correctly. */
+  max-width: 100%; /* Adhere to container width. */
+  height: auto; /* Make sure images are scaled correctly. */
 }
 
 svg {
-  overflow:visible;
+  overflow: visible;
 }
 
 figure {
-  margin:0;
+  margin: 0;
 }
 
 table {
-  width:100%;
-  margin:0 0 1.5em;
+  width: 100%;
+  margin: 0 0 1.5em;
 }
 
 th {
-  font-weight:800;
+  font-weight: 800;
 }
 
 /*--------------------------------------------------------------
 4.0 Forms
 --------------------------------------------------------------*/
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   @include sans-reg;
-  font-size:100%; /* Corrects font size not being inherited in all browsers */
-  font-weight:700;
-  margin:0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
-  vertical-align:baseline; /* Improves appearance and consistency in all browsers */
+  font-size: 100%; /* Corrects font size not being inherited in all browsers */
+  font-weight: 700;
+  margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+  vertical-align: baseline; /* Improves appearance and consistency in all browsers */
 }
 
-button, input[type='button'], input[type='reset'], input[type='submit'] {
-  line-height:1;
-  padding:.5em 1em;
-  cursor:pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
-  color:rgba(0, 0, 0, .8);
-  border:1px solid;
-  border-color:#ccc #ccc #bbb;
-  border-radius:3px;
-  background:#e6e6e6;
-  box-shadow:inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 15px 17px rgba(255, 255, 255, .5), inset 0 -5px 12px rgba(0, 0, 0, .05);
-  text-shadow:0 1px 0 rgba(255, 255, 255, .8);
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  line-height: 1;
+  padding: 0.5em 1em;
+  cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+  color: rgba(0, 0, 0, 0.8);
+  border: 1px solid;
+  border-color: #ccc #ccc #bbb;
+  border-radius: 3px;
+  background: #e6e6e6;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 15px 17px rgba(255, 255, 255, 0.5),
+    inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 
-  -webkit-appearance:button; /* Corrects inability to style clickable 'input' types in iOS */
+  -webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
 }
 
-button:hover, input[type='button']:hover, input[type='reset']:hover, input[type='submit']:hover {
-  border-color:#ccc #bbb #aaa;
-  box-shadow:inset 0 1px 0 rgba(255, 255, 255, .8), inset 0 15px 17px rgba(255, 255, 255, .8), inset 0 -5px 12px rgba(0, 0, 0, .02);
+button:hover,
+input[type='button']:hover,
+input[type='reset']:hover,
+input[type='submit']:hover {
+  border-color: #ccc #bbb #aaa;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 15px 17px rgba(255, 255, 255, 0.8),
+    inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 }
 
-button:focus, input[type='button']:focus, input[type='reset']:focus, input[type='submit']:focus, button:active, input[type='button']:active, input[type='reset']:active, input[type='submit']:active {
-  border-color:#aaa #bbb #bbb;
-  box-shadow:inset 0 -1px 0 rgba(255, 255, 255, .5), inset 0 2px 5px rgba(0, 0, 0, .15);
+button:focus,
+input[type='button']:focus,
+input[type='reset']:focus,
+input[type='submit']:focus,
+button:active,
+input[type='button']:active,
+input[type='reset']:active,
+input[type='submit']:active {
+  border-color: #aaa #bbb #bbb;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 2px 5px rgba(0, 0, 0, 0.15);
   outline: 3px solid $link-blue;
-  outline-offset:-3px;
+  outline-offset: -3px;
 }
 
-input[type='checkbox'], input[type='radio'] {
-  padding:0; /* Addresses excess padding in IE8/9 */
+input[type='checkbox'],
+input[type='radio'] {
+  padding: 0; /* Addresses excess padding in IE8/9 */
 }
 
 input[type='search'] {
-  -webkit-box-sizing:content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
-     -moz-box-sizing:content-box;
-          box-sizing:content-box;
+  -webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
 
-  -webkit-appearance:textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+  -webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
 }
 
 input[type='search']::-webkit-search-decoration {
   /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
-  -webkit-appearance:none;
+  -webkit-appearance: none;
 }
 
-button::-moz-focus-inner, input::-moz-focus-inner {
-  padding:0;
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
   /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
-  border:0;
+  border: 0;
 }
 
-input[type='text'], input[type='email'], input[type='url'], input[type='password'], input[type='search'], textarea {
-  color:#666;
-  border:1px solid #ccc;
-  border-radius:3px;
+input[type='text'],
+input[type='email'],
+input[type='url'],
+input[type='password'],
+input[type='search'],
+textarea {
+  color: #666;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
-input[type='text']:focus, input[type='email']:focus, input[type='url']:focus, input[type='password']:focus, input[type='search']:focus, textarea:focus {
-  color:#111;
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='url']:focus,
+input[type='password']:focus,
+input[type='search']:focus,
+textarea:focus {
+  color: #111;
 }
 
-input[type='text'], input[type='email'], input[type='url'], input[type='password'], input[type='search'] {
-  padding:3px;
+input[type='text'],
+input[type='email'],
+input[type='url'],
+input[type='password'],
+input[type='search'] {
+  padding: 3px;
 }
 
 textarea {
-  vertical-align:top; /* Improves readability and alignment in all browsers */
+  vertical-align: top; /* Improves readability and alignment in all browsers */
 }
 
 /*--------------------------------------------------------------
 Links
 --------------------------------------------------------------*/
-a, button, input, select, textarea, label, summary {
-  touch-action:manipulation;
+a,
+button,
+input,
+select,
+textarea,
+label,
+summary {
+  touch-action: manipulation;
 }
 
 a {
-  text-decoration:none;
-  color:$link-blue;
-  border-bottom:1px dotted $link-blue;
-  transition: all .35s ease-in-out;
+  text-decoration: none;
+  color: $link-blue;
+  border-bottom: 1px dotted $link-blue;
+  transition: all 0.35s ease-in-out;
 }
 
 a:visited {
-  color:$link-blue;
+  color: $link-blue;
 }
 
-a:hover, a:focus, a:active {
-  text-decoration:none;
-  color:$black;
-  border-bottom:none;
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: $black;
+  border-bottom: none;
 }
 
 // pagination
 .nav-links {
-  margin:0 auto;
+  margin: 0 auto;
 }
 
 .pagination {
-  font-family:$sans-stack;
-  font-weight:700;
-  font-style:italic;
-  margin-top:1.5em;
-  padding:1em 0;
+  font-family: $sans-stack;
+  font-weight: 700;
+  font-style: italic;
+  margin-top: 1.5em;
+  padding: 1em 0;
   text-align: center;
   border-bottom: 1px solid $dark-blue;
-  margin-bottom:3em;
-  .page-number, .next {
-    padding:.5em;
+  margin-bottom: 3em;
+  .page-number,
+  .next {
+    padding: 0.5em;
   }
   a {
-    border-bottom:none;
+    border-bottom: none;
   }
 }
 
@@ -381,7 +463,7 @@ a:hover, a:focus, a:active {
   }
   .content {
     article {
-      margin-bottom:1.5em;
+      margin-bottom: 1.5em;
     }
   }
 }
@@ -390,75 +472,81 @@ a:hover, a:focus, a:active {
 Alignments
 --------------------------------------------------------------*/
 .block {
-  margin:0 auto;
-  width:90%;
+  margin: 0 auto;
+  width: 90%;
 }
 
-.aligncenter, .alignright, .alignleft {
-  display:block;
-  clear:both;
-  max-width:100%;
-  margin:0 auto 1.5em auto;
-  border:1px solid $dark-blue;
+.aligncenter,
+.alignright,
+.alignleft {
+  display: block;
+  clear: both;
+  max-width: 100%;
+  margin: 0 auto 1.5em auto;
+  border: 1px solid $dark-blue;
 }
 
 /*--------------------------------------------------------------
 Posts and pages
 --------------------------------------------------------------*/
 .turbolinks-progress-bar {
-  height: .35em;
+  height: 0.35em;
   background-color: $link-blue;
 }
 
 .sticky {
-  display:block;
+  display: block;
 }
 
 .hentry {
-  margin:0 0 1.5em;
+  margin: 0 0 1.5em;
 }
 
-.byline, .updated:not(.published) {
-  display:none;
+.byline,
+.updated:not(.published) {
+  display: none;
 }
 
-.single .byline, .group-blog .byline {
-  display:inline;
+.single .byline,
+.group-blog .byline {
+  display: inline;
 }
 
-.page-content, .entry-content, .entry-summary {
-  margin:1.5em 0 0;
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 0;
 }
 
 .entry-content {
   li {
-    margin-bottom:.25em;
+    margin-bottom: 0.25em;
   }
 }
 
 .page-links {
-  clear:both;
-  margin:0 0 1.5em;
+  clear: both;
+  margin: 0 0 1.5em;
 }
 
 .entry-meta {
   @include sans-reg;
   display: inline-block;
-  font-style:italic;
-  border-bottom:.0625em solid $dark-blue;
+  font-style: italic;
+  border-bottom: 0.0625em solid $dark-blue;
   a {
     @include link-reset;
   }
 }
 
 .entry-footer {
-  padding:.5em 1em;
-  border:1px solid $dark-blue;
+  padding: 0.5em 1em;
+  border: 1px solid $dark-blue;
 }
 
 .post-navigation {
   @include sans-bold-italic;
-  margin-bottom:1.5em;
+  margin-bottom: 1.5em;
   .nav-links {
     display: flex;
     justify-content: space-evenly;
@@ -468,209 +556,240 @@ Posts and pages
   }
 }
 
-
-
-.cat-item, .entry-footer {
+.cat-item,
+.entry-footer {
   @include sans-reg;
 }
-
 
 /*--------------------------------------------------------------
 Asides
 --------------------------------------------------------------*/
-.blog .format-aside .entry-title, .archive .format-aside .entry-title {
-  display:none;
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+  display: none;
 }
 
 /*--------------------------------------------------------------
 Comments
 --------------------------------------------------------------*/
 .comments {
-  margin-top:3em;
+  margin-top: 3em;
 }
 
 .comment-content a {
-  word-wrap:break-word;
+  word-wrap: break-word;
 }
 
 .comment-form {
   label {
     @include sans-reg;
-    font-weight:700;
-    font-style:italic;
-    display:inline-block;
-    width:4em;
-    color:$dark-blue;
+    font-weight: 700;
+    font-style: italic;
+    display: inline-block;
+    width: 4em;
+    color: $dark-blue;
   }
 }
 .bypostauthor {
-  display:block;
+  display: block;
 }
 .logged-in-as {
   @include sans-reg;
-  font-style:italic;
-  color:$dark-blue;
+  font-style: italic;
+  color: $dark-blue;
 }
 .comment-body {
-  padding:.75em;
-  border:1px solid $dark-blue;
-  border-right:none;
-  border-bottom:none;
+  padding: 0.75em;
+  border: 1px solid $dark-blue;
+  border-right: none;
+  border-bottom: none;
 }
 
 .comment-meta {
   @include sans-reg;
-  font-style:italic;
-  margin-bottom:.5em;
-  padding-top:.25em;
-  background:rgba($light-blue, .75);
+  font-style: italic;
+  margin-bottom: 0.5em;
+  padding-top: 0.25em;
+  background: rgba($light-blue, 0.75);
 }
 .comment-author {
   @include sans-reg;
-  font-style:italic;
+  font-style: italic;
   cite {
     display: inline-block;
     font-weight: 700;
     vertical-align: middle;
   }
   .says {
-    vertical-align:middle;
+    vertical-align: middle;
   }
   img {
-    vertical-align:middle;
+    vertical-align: middle;
   }
 }
 .comment-reply-link {
   @include sans-reg;
-  font-style:italic;
+  font-style: italic;
 }
 
 /*--------------------------------------------------------------
 Media
 --------------------------------------------------------------*/
-.page-content img.wp-smiley, .entry-content img.wp-smiley, .comment-content img.wp-smiley {
-  margin-top:0;
-  margin-bottom:0;
-  padding:0;
-  border:none;
+.page-content img.wp-smiley,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  border: none;
 }
 
 /* Make sure embeds and iframes fit their containers */
-embed, iframe, object {
-  max-width:100%;
+embed,
+iframe,
+object {
+  max-width: 100%;
 }
 
 audio {
-  margin-bottom:1.5em;
+  margin-bottom: 1.5em;
 }
 
 iframe {
-  margin-bottom:1.5em;
+  margin-bottom: 1.5em;
 }
 
 /*--------------------------------------------------------------
 Captions
 --------------------------------------------------------------*/
 .wp-caption {
-  margin-bottom:1.5em;
+  margin-bottom: 1.5em;
 }
 
 .wp-caption img[class*='wp-image-'] {
-  display:block;
-  margin:0 auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .wp-caption-text {
   @include sans-reg;
-  text-align:center;
+  text-align: center;
 }
 
 .wp-caption .wp-caption-text {
-  margin:.8075em 0;
+  margin: 0.8075em 0;
 }
 
 /*--------------------------------------------------------------
 Prisim syntax higlighting
 --------------------------------------------------------------*/
-code[class*=language-], pre[class*=language-], code {
-  font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
-  line-height:1.5;
-  text-align:left;
-  white-space:pre;
-  word-spacing:normal;
-  word-wrap:normal;
-  word-break:normal;
-  tab-size:2;
-  hyphens:none;
-  color:#ccc;
-  direction:ltr;
+code[class*='language-'],
+pre[class*='language-'],
+code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  line-height: 1.5;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-wrap: normal;
+  word-break: normal;
+  tab-size: 2;
+  hyphens: none;
+  color: #ccc;
+  direction: ltr;
 }
 
-pre[class*=language-] {
-  overflow:auto;
-  margin:.5em 0 1.5em 0;
-  padding:1em;
+pre[class*='language-'] {
+  overflow: auto;
+  margin: 0.5em 0 1.5em 0;
+  padding: 1em;
 }
 
-:not(pre) > code[class*=language-], pre[class*=language-], code {
-  background:#2d2d2d;
+:not(pre) > code[class*='language-'],
+pre[class*='language-'],
+code {
+  background: #2d2d2d;
 }
 
-:not(pre) > code[class*=language-], code {
-  font-size:.8em;
-  padding:.15em .3em;
-  white-space:normal;
-  border-radius:.3em;
+:not(pre) > code[class*='language-'],
+code {
+  font-size: 0.8em;
+  padding: 0.15em 0.3em;
+  white-space: normal;
+  border-radius: 0.3em;
 }
 
-.token.block-comment, .token.cdata, .token.comment, .token.doctype, .token.prolog {
-  color:#999;
+.token.block-comment,
+.token.cdata,
+.token.comment,
+.token.doctype,
+.token.prolog {
+  color: #999;
 }
 
 .token.punctuation {
-  color:#ccc;
+  color: #ccc;
 }
 
-.token.attr-name, .token.deleted, .token.namespace, .token.tag {
-  color:#e2777a;
+.token.attr-name,
+.token.deleted,
+.token.namespace,
+.token.tag {
+  color: #e2777a;
 }
 
 .token.function-name {
-  color:#6196cc;
+  color: #6196cc;
 }
 
-.token.boolean, .token.function, .token.number {
-  color:#f08d49;
+.token.boolean,
+.token.function,
+.token.number {
+  color: #f08d49;
 }
 
-.token.class-name, .token.constant, .token.property, .token.symbol {
-  color:#f8c555;
+.token.class-name,
+.token.constant,
+.token.property,
+.token.symbol {
+  color: #f8c555;
 }
 
-.token.atrule, .token.builtin, .token.important, .token.keyword, .token.selector {
-  color:#cc99cd;
+.token.atrule,
+.token.builtin,
+.token.important,
+.token.keyword,
+.token.selector {
+  color: #cc99cd;
 }
 
-.token.attr-value, .token.char, .token.regex, .token.string, .token.variable {
-  color:#7ec699;
+.token.attr-value,
+.token.char,
+.token.regex,
+.token.string,
+.token.variable {
+  color: #7ec699;
 }
 
-.token.entity, .token.operator, .token.url {
-  color:#67cdcc;
+.token.entity,
+.token.operator,
+.token.url {
+  color: #67cdcc;
 }
 
-.token.bold, .token.important {
-  font-weight:700;
+.token.bold,
+.token.important {
+  font-weight: 700;
 }
 
 .token.italic {
-  font-style:italic;
+  font-style: italic;
 }
 
 .token.entity {
-  cursor:help;
+  cursor: help;
 }
 
 .token.inserted {
-  color:green;
+  color: green;
 }
