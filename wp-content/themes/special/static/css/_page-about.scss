@@ -1,65 +1,66 @@
 .contact {
   @include sans-reg;
   @include plain-list;
-  margin-bottom:1.5em;
+  margin-bottom: 1.5em;
   ul {
-    padding-left: .25em;
+    padding-left: 0.25em;
   }
 }
 
 .resume-section {
   h2 {
-    display:inline-block;
+    display: inline-block;
   }
   .action {
-    display:inline-block;
-    margin:0 0 0 3em;
+    display: inline-block;
+    margin: 0 0 0 3em;
   }
 }
 
 .resume {
-  margin-bottom:3em;
-  padding:5%;
-  border:1px solid rgba(33, 33, 33, .15);
-  box-shadow:inset 0 0 10px rgba(33, 33, 33, .05);
+  margin-bottom: 3em;
+  padding: 5%;
+  border: 1px solid rgba(33, 33, 33, 0.15);
+  box-shadow: inset 0 0 10px rgba(33, 33, 33, 0.05);
   @include sans-reg;
   dt {
-    font-weight:400;
-    font-size:1.6em;
-    margin:1.5em 0 .5em 0;
-    border-bottom:1px solid rgba(33, 33, 33, .25);
+    font-weight: 400;
+    font-size: 1.6em;
+    margin: 1.5em 0 0.5em 0;
+    border-bottom: 1px solid rgba(33, 33, 33, 0.25);
     &:first-child {
-      margin-top:0;
+      margin-top: 0;
     }
   }
   .delta {
     @include sans-reg;
     font-weight: 400;
-    font-size:1.25em;
-    color:$body-color;
+    font-size: 1.25em;
+    color: $body-color;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
   }
-  .company-name, .internship-location {
+  .company-name,
+  .internship-location {
     @include sans-reg;
     display: block;
     font-style: italic;
     font-size: 1.125em;
-    margin:0 0 .15em 0;
-    color:$body-color;
+    margin: 0 0 0.15em 0;
+    color: $body-color;
   }
   dd {
-    margin:0 0 1.5em 0;
+    margin: 0 0 1.5em 0;
   }
   em {
-    font-style:normal;
-    display:block;
+    font-style: normal;
+    display: block;
   }
   span {
     @include sans-reg;
-    font-size:.75em;
-    display:inline-block;
+    font-size: 0.75em;
+    display: inline-block;
     b {
       display: block;
       font-weight: 400;
@@ -70,94 +71,102 @@
   }
   p {
     font-family: Georgia, serif;
-    font-size: .9em;
+    font-size: 0.9em;
   }
   time {
-    font-size:.9em;
+    font-size: 0.9em;
   }
 }
 
 .photo-feed {
   @include plain-list;
-  display:grid;
-  grid-template-columns: repeat(auto-fill, minmax( 125px, 1fr ));
-  grid-gap:3px;
-  li  {
-    box-shadow:0 0 0 3px $background-white;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+  grid-gap: 0.1875em;
+  background: $medium-blue-gray;
+  li:nth-of-type(8n) {
+    grid-row: span 2;
+    grid-column: span 2;
+  }
+  li {
+    box-shadow: 0 0 0 3px $background-white;
     display: inline-block;
-    max-width: 10.625em;
     position: relative;
-    padding-bottom:100%;
+    padding-bottom: 100%;
     overflow: hidden;
     img {
       position: absolute;
-      top:0;
-      left:0;
-      width:100%;
-      display:block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: block;
     }
   }
 }
 
-
 @media only screen and (min-width: 40em) {
-  .contact, .resume-section, .instagram-section {
+  .contact,
+  .resume-section,
+  .instagram-section {
     grid-column: 1 / 3;
     padding-left: 1.5em;
   }
 }
 
 @media only screen and (min-width: 64em) {
-  .contact, .resume-section, .instagram-section {
-    padding-left:0;
+  .contact,
+  .resume-section,
+  .instagram-section {
+    padding-left: 0;
   }
   .contact {
-    margin-top:-.25em;
+    margin-top: -0.25em;
     grid-column: 10 / 12;
     grid-row-start: 3;
   }
-  .resume-section, .instagram-section {
+  .resume-section,
+  .instagram-section {
     grid-column: 4 / 12;
   }
   .resume {
     dt {
-      width:25%;
-      margin-bottom:-.5em;
-      text-align:right;
-      border:none;
+      width: 25%;
+      margin-bottom: -0.5em;
+      text-align: right;
+      border: none;
     }
     dd {
-      margin-left:27%;
+      margin-left: 27%;
     }
     .delta {
       position: relative;
       display: inherit;
       span {
         position: absolute;
-        right:0;
-        top: .4em;
+        right: 0;
+        top: 0.4em;
         width: 7.25em;
       }
     }
     dd p {
-      width:65%;
+      width: 65%;
     }
   }
   .instagram-section {
     position: relative;
-     >  div {
-       padding:1em 1.5em 0;
-       background: $background-white;
-       border: 1px solid $dark-blue;
-       position: absolute;
-       left: calc(100% - 20em);
-       top:50%;
-       transform: translateY(-50%);
-       z-index:1;
-     }
+    > div {
+      padding: 1em 1.5em 0;
+      background: $background-white;
+      border: 1px solid $dark-blue;
+      position: absolute;
+      left: calc(100% - 20em);
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
   }
   .photo-feed {
-    margin-right:13em;
+    margin-right: 13em;
   }
 }
 
@@ -172,9 +181,9 @@
 
   .instagram-section {
     grid-column: 6 / 14;
-    margin-bottom:3em;
+    margin-bottom: 3em;
   }
   .photo-feed {
-    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr ));
+    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
   }
 }
