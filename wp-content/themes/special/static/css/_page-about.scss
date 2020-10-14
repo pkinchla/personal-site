@@ -99,6 +99,7 @@
       top: 0;
       left: 0;
       width: 100%;
+      height: 100%;
       display: block;
     }
   }
@@ -151,22 +152,6 @@
     dd p {
       width: 65%;
     }
-  }
-  .instagram-section {
-    position: relative;
-    > div {
-      padding: 1em 1.5em 0;
-      background: $background-white;
-      border: 1px solid $dark-blue;
-      position: absolute;
-      left: calc(100% - 20em);
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1;
-    }
-  }
-  .photo-feed {
-    margin-right: 13em;
   }
 }
 
