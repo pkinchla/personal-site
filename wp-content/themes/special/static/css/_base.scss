@@ -495,11 +495,6 @@ Alignments
 /*--------------------------------------------------------------
 Posts and pages
 --------------------------------------------------------------*/
-.turbolinks-progress-bar {
-  height: 0.35em;
-  background-color: $link-blue;
-}
-
 .sticky {
   display: block;
 }
@@ -565,6 +560,15 @@ Posts and pages
 .cat-item,
 .entry-footer {
   @include sans-reg;
+}
+
+.cat-links,
+.tag-links {
+  display: inline-block;
+}
+
+.cat-links {
+  margin-right: 0.5em;
 }
 
 /*--------------------------------------------------------------

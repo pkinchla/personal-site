@@ -1,35 +1,37 @@
 // variables
 // colors
-$background-white:#f1f1f1;
-$body-color:#3c3c3c;
-$light-blue:#e6edfa;
-$medium-blue-gray:#6e8093;
-$medium-gray:#55616a;
-$dark-blue:#334259;
-$white:#fff;
-$black:#000;
-$selection-color:#ffb7b7;
-$link-blue:#3344dd;
+$background-white: #f1f1f1;
+$body-color: #3c3c3c;
+$light-blue: #e6edfa;
+$medium-blue-gray: #6e8093;
+$medium-gray: #55616a;
+$dark-blue: #334259;
+$white: #fff;
+$black: #000;
+$selection-color: #ffb7b7;
+$link-blue: #3344dd;
 
-$sans-stack: 'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$sans-stack: 'futura-pt', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+  'Segoe UI Symbol';
 
 @mixin sans-bold-italic {
- font-family: $sans-stack;
- font-weight: 700;
- font-style:italic;
+  font-family: $sans-stack;
+  font-weight: 700;
+  font-style: italic;
 }
 
 @mixin sans-reg {
- font-family: $sans-stack;
+  font-family: $sans-stack;
 }
 
 // mixins
 @mixin alpha-attribute($attribute, $color, $background) {
-  $percent:alpha($color) * 100%;
-  $opaque:opacify($color, 1);
-  $solid-color:mix($opaque, $background, $percent);
-  #{$attribute}:$solid-color;
-  #{$attribute}:$color;
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  #{$attribute}: $solid-color;
+  #{$attribute}: $color;
 }
 
 @mixin center($horizontal: true, $vertical: true) {
@@ -48,44 +50,49 @@ $sans-stack: 'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 }
 
 @mixin link-reset {
-  border-bottom:none;
+  border-bottom: none;
 }
 
 @mixin plain-list {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   li {
-    list-style:none;
+    list-style: none;
   }
   dd {
-    margin:0;
+    margin: 0;
   }
 }
 
 @mixin plain-button {
-  border:none;
-  border-radius:0;
-  background:none;
-  box-shadow:none;
-  &:hover, &:focus, &:active {
-    box-shadow:none;
-    border:none;
+  border: none;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: none;
+    border: none;
     outline-offset: -3px;
   }
 }
 
-@mixin action  {
+@mixin action {
   @include sans-reg;
-  display:inline-block;
-  padding:.5em 1em;
-  border:1px solid $link-blue;
+  display: inline-block;
+  padding: 0.5em 1em;
+  border: 1px solid $link-blue;
   &:hover {
-    color:white;
-    background:$link-blue;
+    color: white;
+    background: $link-blue;
   }
-  &:hover, &:active, &:visited, &:focus {
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus {
     outline-offset: -3px;
-    border-bottom:1px solid $link-blue;
+    border-bottom: 1px solid $link-blue;
   }
 }
 
@@ -95,9 +102,14 @@ $sans-stack: 'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 
 @mixin nav-link {
   @include link-reset;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     outline-offset: -3px;
-    @include alpha-attribute('background-color', rgba($medium-gray, .20), lighten($medium-gray, 50%));
+    @include alpha-attribute(
+      'background-color',
+      rgba($medium-gray, 0.2),
+      lighten($medium-gray, 50%)
+    );
   }
 }
 
@@ -109,32 +121,34 @@ $sans-stack: 'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 
 // semantic class helpers
 .assistive-text {
-  position:absolute !important;
-  overflow:hidden;
-  clip:rect(1px, 1px, 1px, 1px);
-  width:1px;
-  height:1px;
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
 }
 
-.assistive-text:hover, .assistive-text:active, .assistive-text:focus {
-  font-size:.875em;
-  font-weight:bold;
-  line-height:normal;
-  z-index:100000;
-  top:5px;
-  left:5px;
-  display:block;
-  clip:auto !important;
-  width:auto;
-  height:auto;
-  padding:15px 23px 14px;
-  text-decoration:none;
-  border-radius:3px;
-  background-color:#f1f1f1;
-  box-shadow:0 0 2px 2px rgba(0, 0, 0, .6);
-  outline-offset:-3px;
+.assistive-text:hover,
+.assistive-text:active,
+.assistive-text:focus {
+  font-size: 0.875em;
+  font-weight: bold;
+  line-height: normal;
+  z-index: 100000;
+  top: 5px;
+  left: 5px;
+  display: block;
+  clip: auto !important;
+  width: auto;
+  height: auto;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  border-radius: 3px;
+  background-color: #f1f1f1;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  outline-offset: -3px;
   // it's a non interactive element
-  &[tabindex="-1"] {
+  &[tabindex='-1'] {
     border-radius: 0;
     box-shadow: none;
     font-size: 1.35em;
@@ -144,16 +158,18 @@ $sans-stack: 'futura-pt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 
 button {
   @include sans-reg;
-  display:inline-block;
-  padding:.5em 1em;
-  border:1px solid $link-blue;
+  display: inline-block;
+  padding: 0.5em 1em;
+  border: 1px solid $link-blue;
   &:hover {
-    color:white;
-    background:$link-blue;
+    color: white;
+    background: $link-blue;
   }
-  &:hover, &:active, &:visited, &:focus {
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus {
     outline-offset: -3px;
-    border-bottom:1px solid $link-blue;
+    border-bottom: 1px solid $link-blue;
   }
 }
-
