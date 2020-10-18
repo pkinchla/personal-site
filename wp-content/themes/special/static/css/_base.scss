@@ -109,7 +109,6 @@ strong {
 }
 
 dfn,
-cite,
 em,
 i {
   @include sans-reg;
@@ -122,9 +121,16 @@ cite {
 }
 
 blockquote {
+  @include sans-reg;
+  font-size: 1.05em;
   margin: 0 0 1.5em 0;
   padding-left: 1.5em;
   border-left: 3px solid $dark-blue;
+}
+
+cite {
+  font-style: italic;
+  margin-top: 0.25em;
 }
 
 blockquote p {
