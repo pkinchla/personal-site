@@ -390,6 +390,20 @@ textarea {
   vertical-align: top; /* Improves readability and alignment in all browsers */
 }
 
+.password-form {
+  margin: 3em;
+  background: $dark-blue;
+  padding: 1em;
+  display: inline-block;
+  justify-self: center;
+  @media only screen and (min-width: 40em) {
+    grid-column: 6 / 12;
+  }
+  @media only screen and (min-width: 120em) {
+    grid-column: 10 / 15;
+  }
+}
+
 /*--------------------------------------------------------------
 Links
 --------------------------------------------------------------*/
