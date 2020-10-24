@@ -8,8 +8,12 @@
 }
 
 .resume-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   h2 {
     display: inline-block;
+    margin: 0;
   }
   .action {
     display: inline-block;
@@ -18,11 +22,11 @@
 }
 
 .resume {
+  @include sans-reg;
   margin-bottom: 3em;
   padding: 5%;
   border: 1px solid rgba(33, 33, 33, 0.15);
   box-shadow: inset 0 0 10px rgba(33, 33, 33, 0.05);
-  @include sans-reg;
   dt {
     font-weight: 400;
     font-size: 1.6em;
