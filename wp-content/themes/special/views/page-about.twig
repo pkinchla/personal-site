@@ -34,7 +34,7 @@
         <dl class="resume">
           <dt>Work</dt>
           {% for job in post.get_field('work') %}
-            <dd>
+            <dd{% if loop.last == true  %} class="last"{% endif%}>
               <div class="delta">
               {{job.title}}
                 <span>
@@ -51,21 +51,21 @@
           {% endfor %}
           <dt>Internship</dt>
           {% for gig in post.get_field('internship') %}
-            <dd>
+            <dd{% if loop.last == true  %} class="last"{% endif%}>
               <div class="delta">{{gig.title}}  <span><time datetime="{{gig.date}}">{{gig.date|date('Y')}}</time></span></div>
               <span class="internship-location">{{gig.location}}</span>
             </dd>
           {% endfor %}
           <dt>Skill</dt>
-            <dd><p>{{post.skill}}</p></dd>
+            <dd class="last"><p>{{post.skill}}</p></dd>
           <dt>Education</dt>
-            <dd>
+            <dd class="last">
             {% for school in post.get_field('education') %}
               <div class="delta">{{school.school}}  <span>{{school.degree}}</span></div>
             {% endfor %}
             </dd>
           <dt>Interest</dt>
-            <dd>
+            <dd class="last">
               <ul>
                 {% for hobby in post.get_field('interest') %}
                   <li>{{hobby.item_of_interest}}</li>
