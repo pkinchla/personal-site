@@ -17,7 +17,6 @@
   },
   "require": {
     "wpackagist-plugin/timber-library": "1.17.0",
-    "raiym/instagram-php-scraper": "^0.9.12",
     "phpfastcache/phpfastcache": "^7.1"
   }
 }

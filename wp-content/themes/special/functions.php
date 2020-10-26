@@ -121,19 +121,14 @@ function critical_css() {
 }
 add_action( 'wp_head', 'critical_css');
 
-// get instagram feed
-// require scraper class
-require get_template_directory() . '/vendor/autoload.php';
-use Phpfastcache\Helper\Psr16Adapter;
-
-function instagram_feed() {
-	if ( false === ( $media = get_transient( 'instagram_feed' ) ) ) {
-    $instagram = new \InstagramScraper\Instagram();
-    // For getting information about account you don't need to auth:
-    $media = $instagram->getMedias('pkinchla', 32);
-    set_transient( 'instagram_feed', $media, 1 * HOUR_IN_SECONDS);
-	}
-	return $media;
+function instagram_feed($url) {
+  if ( false === ( $feed = get_transient( 'instagram_feed' ) ) ) {
+    $response = wp_remote_get($url);
+    $body = json_decode($response['body']);
+    $feed = $body;
+    set_transient( 'instagram_feed', $feed, 1 * HOUR_IN_SECONDS);
+  }
+  return $feed;
 }
 
 // remove wp-embed

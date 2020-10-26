@@ -7,13 +7,13 @@
  * @subpackage  Timber
  * @since    Timber 0.1
  */
+require get_template_directory() . '/credentials.php';
 
 $context = Timber::get_context();
 $post = new TimberPost();
-$context['post'] = $post;
-$media = instagram_feed();
+$media = instagram_feed($endpoint);
 
-// TODO: figure this out to put in transient instagram_feed();
+$context['post'] = $post;
 $context['pictures'] = $media;
 
 Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );
