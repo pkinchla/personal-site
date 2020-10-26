@@ -8,11 +8,10 @@
  * @since    Timber 0.1
  */
 
- $context = Timber::get_context();
+$context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
-
-$media = instagram_feed($user, $password);
+$media = instagram_feed();
 
 // TODO: figure this out to put in transient instagram_feed();
 $context['pictures'] = $media;

@@ -126,15 +126,12 @@ add_action( 'wp_head', 'critical_css');
 require get_template_directory() . '/vendor/autoload.php';
 use Phpfastcache\Helper\Psr16Adapter;
 
-function instagram_feed($user, $password) {
+function instagram_feed() {
 	if ( false === ( $media = get_transient( 'instagram_feed' ) ) ) {
-    $instagram = \InstagramScraper\Instagram::withCredentials($user, $password, new Psr16Adapter('Files'));
-    $instagram->login();
-    $instagram->saveSession();
+    $instagram = new \InstagramScraper\Instagram();
+    // For getting information about account you don't need to auth:
     $media = $instagram->getMedias('pkinchla', 32);
-
     set_transient( 'instagram_feed', $media, 1 * HOUR_IN_SECONDS);
-
 	}
 	return $media;
 }
