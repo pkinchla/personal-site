@@ -8,10 +8,6 @@
   background: $selection-color;
 }
 
-::-moz-selection {
-  background: $selection-color;
-}
-
 :focus {
   outline: 3px solid $link-blue;
   outline-offset: 3px;
@@ -739,6 +735,16 @@ pre[class*='language-'] {
   overflow: auto;
   margin: 0.5em 0 1.5em 0;
   padding: 1em;
+}
+
+pre[class*='language-'] *::selection {
+  background-color: white;
+  color: black;
+}
+
+pre[class*='language-'] *::-moz-selection {
+  background-color: white;
+  color: black;
 }
 
 :not(pre) > code[class*='language-'],
