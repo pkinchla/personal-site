@@ -1,71 +1,79 @@
 // header
 .site-header {
-  background-image: linear-gradient(to bottom, $light-blue, lighten($dark-blue, 45%));
-  position:relative;
-  border-bottom:1px solid $dark-blue;
+  background-image: linear-gradient(
+    to bottom,
+    $light-blue,
+    lighten($dark-blue, 45%)
+  );
+  position: relative;
+  border-bottom: 1px solid $dark-blue;
   > * {
-    line-height:0;
+    line-height: 0;
   }
   > a {
-    width:65.95%;
+    width: 65.95%;
     text-align: center;
     display: block;
   }
   .logo {
-    pointer-events:none;
-    height:2em;
-    fill:$body-color;
-    padding:1em 1em 1.15em;
+    pointer-events: none;
+    height: 2em;
+    fill: $body-color;
+    padding: 1em 1em 1.15em;
   }
   a {
     @include nav-link;
-    display:block;
+    display: block;
   }
 
-  @media only screen and (min-width:40em) {
+  @media only screen and (min-width: 40em) {
     grid-column: 1 / 4;
   }
 
-  @media only screen and (min-width:64em) {
+  @media only screen and (min-width: 64em) {
     grid-column: 2 / 5;
     grid-row-start: 1;
     z-index: 1;
     align-self: flex-start;
-    border:1px solid $dark-blue;
-    border-bottom:none;
-    border-top:none;
-    background:$light-blue;
+    border: 1px solid $dark-blue;
+    border-bottom: none;
+    border-top: none;
+    background: $light-blue;
     &:before {
-      content:'';
-      position:absolute;
-      z-index:-1;
-      transform:skewY(15deg);
-      background-image: linear-gradient(to bottom, $light-blue, lighten($dark-blue, 45%));
-      top:5em;
-      left:-1px;
-      display:block;
-      width:100%;
-      height:100%;
-      border:1px solid $dark-blue;
-      border-top:none;
+      content: '';
+      position: absolute;
+      z-index: -1;
+      transform: skewY(15deg);
+      background-image: linear-gradient(
+        to bottom,
+        $light-blue,
+        lighten($dark-blue, 45%)
+      );
+      top: 5em;
+      left: -1px;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 1px solid $dark-blue;
+      border-top: none;
     }
     h1 {
-      width:100%;
+      width: 100%;
     }
     .logo {
-      width:100%;
-      height:3em;
-      margin:1em auto 0 auto;
-      padding:0 0 .75em;
-      margin-top:2em;
+      width: 100%;
+      height: 3em;
+      margin: 1em auto 0 auto;
+      padding: 0 0 0.75em;
+      margin-top: 2em;
     }
     > a {
       &:first-of-type {
-        width:100%;
+        width: 100%;
       }
     }
   }
-  @media only screen and (min-width:120em) {
+  @media only screen and (min-width: 120em) {
     grid-column: 6 / 9;
   }
 }
@@ -73,30 +81,34 @@
 // base menu styling
 .menu {
   @include plain-list;
-  transition:max-height .35s ease-in-out, visibility .35s ease-in-out;
+  transition: max-height 0.35s ease-in-out, visibility 0.35s ease-in-out;
   overflow: hidden;
   li {
     @include sans-reg;
-    font-size:1.25em;
-    width:100%;
-    border-bottom:1px solid $dark-blue;
-    background:$white;
+    font-size: 1.25em;
+    width: 100%;
+    border-bottom: 1px solid $dark-blue;
+    background: $white;
     &:first-child {
-      border-top:1px solid $dark-blue;
+      border-top: 1px solid $dark-blue;
     }
     &:last-child {
-      border-bottom:0;
+      border-bottom: 0;
     }
     a {
-      padding:.85em 10%;
-      color:$body-color;
+      padding: 0.85em 10%;
+      color: $body-color;
       &[aria-current] {
-        @include alpha-attribute('background-color', rgba($dark-blue, .20), lighten($dark-blue, 70%));
+        @include alpha-attribute(
+          'background-color',
+          rgba($dark-blue, 0.2),
+          lighten($dark-blue, 70%)
+        );
       }
     }
   }
 
-  @media only screen and (max-width:64em) {
+  @media only screen and (max-width: 64em) {
     &.closed {
       visibility: hidden;
       max-height: 0;
@@ -106,21 +118,22 @@
       max-height: 15em;
     }
   }
-  @media only screen and (min-width:64em) {
-    font-size:1.25em;
-    text-align:right;
-    margin-top:1.5em;
+  @media only screen and (min-width: 64em) {
+    font-size: 1.25em;
+    text-align: right;
+    margin-top: 1.5em;
+    min-height: 7.40625rem;
     li {
-      background:none;
-      border-bottom:none;
+      background: none;
+      border-bottom: none;
       &:first-child {
-        border-top:none;
+        border-top: none;
       }
       &:last-child {
-        border-bottom:none;
+        border-bottom: none;
       }
       a {
-        padding:.05em 35% .05em 0;
+        padding: 0.05em 35% 0.05em 0;
       }
     }
   }
@@ -128,58 +141,61 @@
 
 .main-nav-toggle {
   @include plain-button;
-  transition:all, .35s, ease-in-out;
-  font:italic normal 700 1em/normal 'futura-pt', sans-serif;
-  position:absolute;
-  top:0;
-  right:0;
-  width:34%;
-  height:calc(4.2125em - 1.5px);
-  padding:0;
-  text-transform:uppercase;
-  color:$link-blue;
-  border-radius:0;
-  border:0;
-  background:white;
-  border-left:1px solid $dark-blue;
-  &:hover, &:active, &:focus {
-    border-left:1px solid $dark-blue;
-    background:white;
-    color:$link-blue;
-
+  transition: all, 0.35s, ease-in-out;
+  font: italic normal 700 1em / normal 'futura-pt', sans-serif;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 34%;
+  height: calc(4.2125em - 1.5px);
+  padding: 0;
+  text-transform: uppercase;
+  color: $link-blue;
+  border-radius: 0;
+  border: 0;
+  background: white;
+  border-left: 1px solid $dark-blue;
+  &:hover,
+  &:active,
+  &:focus {
+    border-left: 1px solid $dark-blue;
+    background: white;
+    color: $link-blue;
   }
   .label {
-    display:inline-block;
-    margin-left:.2em;
+    display: inline-block;
+    margin-left: 0.2em;
   }
   .main-nav-button {
-    overflow:hidden;
-    max-width:1.5625em;
-    max-height:.75em;
+    overflow: hidden;
+    max-width: 1.5625em;
+    max-height: 0.75em;
 
-    fill:$link-blue;
-    .one, .two, .three {
-      transition:all .35s linear;
-      transform:rotate(0deg) scale(1);
-      transform-origin:0 50%;
+    fill: $link-blue;
+    .one,
+    .two,
+    .three {
+      transition: all 0.35s linear;
+      transform: rotate(0deg) scale(1);
+      transform-origin: 0 50%;
     }
   }
   &.close-state {
     .main-nav-button {
       .one {
-        transform:rotateZ(-45deg) scale(.95);
-        transform-origin:11.5em 5em;
+        transform: rotateZ(-45deg) scale(0.95);
+        transform-origin: 11.5em 5em;
       }
       .two {
-        transform:translateY(-25em);
+        transform: translateY(-25em);
       }
       .three {
-        transform:rotateZ(45deg) scale(.95);
-        transform-origin:11.5em 5em;
+        transform: rotateZ(45deg) scale(0.95);
+        transform-origin: 11.5em 5em;
       }
     }
   }
-  @media only screen and (min-width:64em) {
-    display:none;
+  @media only screen and (min-width: 64em) {
+    display: none;
   }
 }
