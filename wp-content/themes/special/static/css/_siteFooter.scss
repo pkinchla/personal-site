@@ -1,50 +1,88 @@
 .site-footer {
-  margin-top:3em;
-  padding-top:1.5em;
-  padding-bottom:3em;
-  border-top:1px solid $dark-blue;
-  background:$light-blue;
+  margin-top: 3em;
+  padding-top: 1.5em;
+  padding-bottom: 3em;
+  border-top: 1px solid $dark-blue;
+  background: $light-blue;
 
-  small, ul {
+  small,
+  ul {
     @include sans-reg;
+  }
+
+  #wcb {
+    text-align: left;
+    margin-bottom: 1.5em;
+    font-size: 1em;
+    color: $body-color;
+  }
+
+  #wcb_2,
+  #wcb_a,
+  #wcb_g {
+    @include sans-reg;
+  }
+
+  #wcb_2:empty {
+    display: none;
+  }
+
+  #wcb_a,
+  #wcb_g {
+    border-radius: 0;
+    border: 1px solid $dark-blue;
+  }
+
+  #wcb_a {
+    background: $link-blue;
+    padding: 0.3em 1em;
+    border-left: 0;
+    border-radius: 0 0.3em 0.3em 0;
+    font-weight: 700;
+    font-style: italic;
+    &:focus {
+      outline-offset: -3px;
+      outline-color: $dark-blue;
+      background: $dark-blue;
+    }
   }
 
   ul {
     @include plain-list;
-    display:flex;
-    margin-bottom:1.5em;
+    display: flex;
+    margin-bottom: 1.5em;
     li {
-      width:25%;
-      max-width:6em;
+      width: 25%;
+      max-width: 6em;
       a {
         @include link-reset;
         display: block;
-        padding-bottom:1em;
+        padding-bottom: 1em;
         text-align: center;
         span {
           display: block;
         }
         svg {
-          transition: background .35s ease-in-out;
+          transition: background 0.35s ease-in-out;
           pointer-events: none;
-          width:100%;
-          height:100%;
-          max-width:6em;
-          display:inline-block;
-          fill:$link-blue;
+          width: 100%;
+          height: 100%;
+          max-width: 6em;
+          display: inline-block;
+          fill: $link-blue;
         }
         &:hover {
-          color:$white;
-          background:$dark-blue;
+          color: $white;
+          background: $dark-blue;
           svg {
-            fill:$white;
+            fill: $white;
           }
         }
       }
     }
   }
 
-  @media only screen and (min-width:40em) {
+  @media only screen and (min-width: 40em) {
     grid-column: 1 / 4;
     align-self: flex-end;
     ul {
@@ -53,50 +91,52 @@
     .colophon {
       grid-column: 1 / 3;
     }
-    .colophon, ul {
+    .colophon,
+    ul {
       padding-left: 1.5em;
     }
   }
 
-  @media only screen and (min-width:64em) {
+  @media only screen and (min-width: 64em) {
     grid-column: 1 / 13;
-    position:relative;
-    z-index:1;
-    padding:0 0 6em 0;
-    margin-top:20em;
-    border-top:none;
+    position: relative;
+    z-index: 1;
+    padding: 0 0 6em 0;
+    margin-top: 20em;
+    border-top: none;
     &:before {
       transform: skewY(-10deg);
-      background:$light-blue;
-      position:absolute;
-      z-index:-1;
-      top:-10.625em;
-      right:0;
-      display:block;
-      width:100%;
-      height:100%;
-      content:'';
-      border-top:1px solid $dark-blue;
-  }
+      background: $light-blue;
+      position: absolute;
+      z-index: -1;
+      top: -10.625em;
+      right: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      content: '';
+      border-top: 1px solid $dark-blue;
+    }
     &:after {
       transform: skewY(-10deg);
-      background:$light-blue;
-      position:absolute;
-      z-index:-1;
-      top:-8em;
-      right:0;
-      display:block;
-      width:40em;
-      height:100%;
-      content:'';
+      background: $light-blue;
+      position: absolute;
+      z-index: -1;
+      top: -8em;
+      right: 0;
+      display: block;
+      width: 40em;
+      height: 100%;
+      content: '';
     }
-    .colophon, ul {
-      padding-left:0;
+    .colophon,
+    ul {
+      padding-left: 0;
     }
     ul {
       grid-column: 2 / 7;
       li {
-        max-width:7.5em;
+        max-width: 7.5em;
       }
     }
     .colophon {
@@ -104,7 +144,7 @@
     }
   }
 
-  @media only screen and (min-width:84.375em) {
+  @media only screen and (min-width: 84.375em) {
     ul {
       grid-column: 2 / 7;
     }
@@ -124,11 +164,12 @@
   }
 
   @media only screen and (min-width: 151em) {
-    border-right:1px solid $dark-blue;
-    border-left:1px solid $dark-blue;
-    &:before, &:after {
-      border-right:1px solid $dark-blue;
-      right:-1px;
+    border-right: 1px solid $dark-blue;
+    border-left: 1px solid $dark-blue;
+    &:before,
+    &:after {
+      border-right: 1px solid $dark-blue;
+      right: -1px;
     }
   }
 }
