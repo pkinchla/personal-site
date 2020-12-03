@@ -19,4 +19,7 @@
   <link rel="shortcut icon" href="{{ theme.link }}/favicon.ico" type="image/x-icon" />
   <link rel="manifest" href="/manifest.json" />
   <meta name="google-site-verification" content="NgzPbjF9JgfD5TItR2dFVwE70g0CN2XOMSnfNgstCtM" />
+  {% if not is_dev %}
+    <script src="https://cdn.usefathom.com/script.js" data-site="HYVUCUPM" defer></script>
+  {% endif %}
   {{function('wp_head')}}

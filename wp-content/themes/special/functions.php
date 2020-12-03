@@ -181,6 +181,7 @@ class StarterSite extends TimberSite {
 		$context['menu'] = new TimberMenu();
     $context['site'] = $this;
     $context['is_home'] = is_front_page();
+    $context['is_dev'] = WP_DEBUG || SCRIPT_DEBUG;
 
 		return $context;
 	}
