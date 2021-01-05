@@ -13,5 +13,4 @@ import MobileMenu from './MobileMenu';
       return navigator.serviceWorker.ready;
     });
   }
-
-}(document));
+})(document);

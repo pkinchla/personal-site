@@ -9,26 +9,26 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/plugin-transform-react-jsx": "^7.9.4",
-    "@babel/preset-env": "^7.9.6",
-    "@babel/preset-react": "^7.9.4",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-react-jsx": "^7.12.12",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
     "babelify": "^10.0.0",
-    "browser-sync": "^2.26.12",
-    "browserify": "^16.5.1",
+    "browser-sync": "^2.26.13",
+    "browserify": "^16.5.2",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "pump": "^3.0.0",
-    "stylelint": "^13.3.3",
+    "stylelint": "^13.8.0",
     "stylelint-config-recommended-scss": "^4.2.0",
-    "stylelint-scss": "^3.17.2",
+    "stylelint-scss": "^3.18.0",
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
-    "preact": "^10.0.0"
+    "preact": "^10.5.9"
   },
   "browserslist": {
     "production": [

@@ -98,7 +98,7 @@
     a {
       padding: 0.85em 10%;
       color: $body-color;
-      &[aria-current] {
+      &[aria-current]:not([aria-current='false']) {
         @include alpha-attribute(
           'background-color',
           rgba($dark-blue, 0.2),
