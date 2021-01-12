@@ -1,0 +1,47 @@
+{
+    "key": "group_5f8cb1b1e5986",
+    "title": "Post",
+    "fields": [
+        {
+            "key": "field_5f8cb1bc67f56",
+            "label": "Toggle Image Filter",
+            "name": "toggle_image_filter",
+            "type": "checkbox",
+            "instructions": "set wether featured images should use saturation filter.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Disable Filter": "Disable Filter"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1610458705
+}

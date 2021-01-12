@@ -133,6 +133,50 @@ function instagram_feed($url) {
   return $feed;
 }
 
+
+function register_portfolio_post_type() {
+
+	/**
+	 * Post Type: Portfolio.
+	 */
+
+	$labels = [
+		"name" => __( "Portfolio", "custom-post-type-ui" ),
+		"singular_name" => __( "Portfolio Item", "custom-post-type-ui" ),
+		"add_new_item" => __( "Add New Portfolio Item", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => __( "Portfolio", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => false,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => [ "slug" => "portfolio", "with_front" => false ],
+		"query_var" => true,
+		"menu_position" => 5,
+		"menu_icon" => "dashicons-hammer",
+		"supports" => [ "title", "editor", "excerpt", "trackbacks", "custom-fields", "comments", "revisions", "thumbnail", "author", "page-attributes", "post-formats" ],
+	];
+
+	register_post_type( "portfolio", $args );
+}
+
+add_action( 'init', 'register_portfolio_post_type' );
+
+
 // remove wp-embed
 function deregister_wp_embed(){
 	if (!is_admin()) {
@@ -168,7 +212,6 @@ require get_template_directory() . '/template-tags.php';
 class StarterSite extends TimberSite {
 
 	function __construct() {
-		add_theme_support( 'post-formats' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
