@@ -74,6 +74,7 @@
             </dd>
         </dl>
       </section>
+      {% if pictures|length > 0 %}
       <section class="instagram-section" aria-labelledby="instagram-feed">
         <h2 id="instagram-feed">Instagram Feed</h2>
         {{post.flickr_field}}
@@ -85,5 +86,6 @@
           {% endfor %}
         </ul>
       </section>
+      {% endif %}
     </article>
 {% endblock %}
