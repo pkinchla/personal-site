@@ -1,120 +1,120 @@
 {
-    "key": "group_57e3363d637cf",
-    "title": "Portfolio",
-    "fields": [
-        {
-            "key": "field_5435f3fc3c40c",
-            "label": "list image",
-            "name": "list_image",
-            "type": "image",
-            "instructions": "Image for portfolio page listing",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "preview_size": "thumbnail",
-            "library": "all",
-            "return_format": "array",
-            "min_width": 0,
-            "min_height": 0,
-            "min_size": 0,
-            "max_width": 0,
-            "max_height": 0,
-            "max_size": 0,
-            "mime_types": ""
-        },
-        {
-            "key": "field_543c195703fdc",
-            "label": "Main Image Rectangle",
-            "name": "main_image_rectangle",
-            "type": "image",
-            "instructions": "Image for Single Item Page rectangular dimensions",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "preview_size": "thumbnail",
-            "library": "all",
-            "return_format": "array",
-            "min_width": 0,
-            "min_height": 0,
-            "min_size": 0,
-            "max_width": 0,
-            "max_height": 0,
-            "max_size": 0,
-            "mime_types": ""
-        },
-        {
-            "key": "field_5435f48d48ee5",
-            "label": "Main Image Square",
-            "name": "main_image_square",
-            "type": "image",
-            "instructions": "Image for Single Item Page square dimensions",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "preview_size": "thumbnail",
-            "library": "all",
-            "return_format": "array",
-            "min_width": 0,
-            "min_height": 0,
-            "min_size": 0,
-            "max_width": 0,
-            "max_height": 0,
-            "max_size": 0,
-            "mime_types": ""
-        },
-        {
-            "key": "field_543d27c3bba45",
-            "label": "Main Image Square Optional",
-            "name": "main_image_square_optional",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "preview_size": "thumbnail",
-            "library": "all",
-            "return_format": "array",
-            "min_width": 0,
-            "min_height": 0,
-            "min_size": 0,
-            "max_width": 0,
-            "max_height": 0,
-            "max_size": 0,
-            "mime_types": ""
-        }
-    ],
-    "location": [
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "portfolio"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "seamless",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": true,
-    "description": "",
-    "modified": 1610458687
+  "key": "group_57e3363d637cf",
+  "title": "Portfolio",
+  "fields": [
+    {
+      "key": "field_5435f3fc3c40c",
+      "label": "list image",
+      "name": "list_image",
+      "type": "image",
+      "instructions": "Image for portfolio page listing",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "preview_size": "thumbnail",
+      "library": "all",
+      "return_format": "array",
+      "min_width": 0,
+      "min_height": 0,
+      "min_size": 0,
+      "max_width": 0,
+      "max_height": 0,
+      "max_size": 0,
+      "mime_types": ""
+    },
+    {
+      "key": "field_543c195703fdc",
+      "label": "Main Image Rectangle",
+      "name": "main_image_rectangle",
+      "type": "image",
+      "instructions": "Image for Single Item Page rectangular dimensions",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "preview_size": "thumbnail",
+      "library": "all",
+      "return_format": "array",
+      "min_width": 0,
+      "min_height": 0,
+      "min_size": 0,
+      "max_width": 0,
+      "max_height": 0,
+      "max_size": 0,
+      "mime_types": ""
+    },
+    {
+      "key": "field_5435f48d48ee5",
+      "label": "Main Image Square",
+      "name": "main_image_square",
+      "type": "image",
+      "instructions": "Image for Single Item Page square dimensions",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "preview_size": "thumbnail",
+      "library": "all",
+      "return_format": "array",
+      "min_width": 0,
+      "min_height": 0,
+      "min_size": 0,
+      "max_width": 0,
+      "max_height": 0,
+      "max_size": 0,
+      "mime_types": ""
+    },
+    {
+      "key": "field_543d27c3bba45",
+      "label": "Main Image Square Optional",
+      "name": "main_image_square_optional",
+      "type": "image",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "preview_size": "thumbnail",
+      "library": "all",
+      "return_format": "array",
+      "min_width": 0,
+      "min_height": 0,
+      "min_size": 0,
+      "max_width": 0,
+      "max_height": 0,
+      "max_size": 0,
+      "mime_types": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "portfolio"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "seamless",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "modified": 1610458687
 }

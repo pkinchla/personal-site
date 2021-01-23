@@ -78,7 +78,7 @@
         <h2 id="instagram-feed">Instagram Feed</h2>
         {{post.flickr_field}}
         <ul class="photo-feed">
-          {% for picture in pictures.data %}
+          {% for picture in pictures %}
             <li>
               <img src="{{picture.media_url}}" alt="{{ (picture.caption) ? picture.caption.text : 'instagram thumbnail' }}">
             </li>
