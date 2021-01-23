@@ -3,7 +3,7 @@ import MobileMenu from './MobileMenu';
 
 (function (document) {
   // mobile menu
-  new MobileMenu().init();
+  MobileMenu(document.querySelector('.js-main-navigation'));
 
   // start service worker
   let dev_env = window.location.hostname === 'localhost';
