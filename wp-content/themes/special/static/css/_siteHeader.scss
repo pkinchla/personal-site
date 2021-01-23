@@ -108,16 +108,6 @@
     }
   }
 
-  @media only screen and (max-width: 64em) {
-    &.closed {
-      visibility: hidden;
-      max-height: 0;
-    }
-    &.open {
-      visibility: visible;
-      max-height: 15em;
-    }
-  }
   @media only screen and (min-width: 64em) {
     font-size: 1.25em;
     text-align: right;
@@ -197,5 +187,19 @@
   }
   @media only screen and (min-width: 64em) {
     display: none;
+  }
+}
+
+// enhanced menu styling
+@media only screen and (max-width: 64em) {
+  .js .menu {
+    &.closed {
+      visibility: hidden;
+      max-height: 0;
+    }
+    &.open {
+      visibility: visible;
+      max-height: 15em;
+    }
   }
 }
