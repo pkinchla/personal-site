@@ -74,16 +74,22 @@
             </dd>
         </dl>
       </section>
+      {% if pictures|length > 0 %}
       <section class="instagram-section" aria-labelledby="instagram-feed">
         <h2 id="instagram-feed">Instagram Feed</h2>
         {{post.flickr_field}}
         <ul class="photo-feed">
           {% for picture in pictures %}
             <li>
-              <img src="{{picture.media_url}}" alt="{{ (picture.caption) ? picture.caption.text : 'instagram thumbnail' }}">
+              {% if picture.media_type != 'VIDEO' %}
+                <img src="{{picture.media_url}}" alt="{{ (picture.caption) ? picture.caption.text : 'instagram thumbnail' }}">
+              {% else %}
+                <video controls src="{{picture.media_url}}" />
+              {% endif %}
             </li>
           {% endfor %}
         </ul>
       </section>
+      {% endif %}
     </article>
 {% endblock %}

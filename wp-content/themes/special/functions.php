@@ -129,9 +129,8 @@ function instagram_feed($url) {
     $body = json_decode($response['body']);
     $second_response = wp_remote_get($body->paging->next);
     $second_body = json_decode($second_response['body']);
-    $feed = array_filter(array_merge($body->data, $second_body->data), function($item){
-      return $item->media_type === 'IMAGE';
-    });
+
+    $feed = array_merge($body->data, $second_body->data);
 
     set_transient( 'instagram_feed', $feed, 1 * HOUR_IN_SECONDS);
   }
