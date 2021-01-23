@@ -84,7 +84,7 @@
               {% if picture.media_type != 'VIDEO' %}
                 <img src="{{picture.media_url}}" alt="{{ (picture.caption) ? picture.caption.text : 'instagram thumbnail' }}">
               {% else %}
-                <video controls src="{{picture.media_url}}" />
+                <video controls playsinline src="{{picture.media_url}}#t=0.1" />
               {% endif %}
             </li>
           {% endfor %}

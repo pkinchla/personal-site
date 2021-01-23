@@ -88,14 +88,6 @@
   grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
   grid-gap: 0.1875em;
   background: $medium-blue-gray;
-  li:nth-of-type(8n) {
-    grid-row: span 2;
-    grid-column: span 2;
-  }
-  li:nth-of-type(27) {
-    grid-row: span 3;
-    grid-column: span 3;
-  }
   li {
     box-shadow: 0 0 0 3px $background-white;
     display: inline-block;
@@ -124,6 +116,16 @@
   .instagram-section {
     grid-column: 1 / 3;
     padding-left: 1.5em;
+  }
+  .photo-feed {
+    li:nth-of-type(8n) {
+      grid-row: span 2;
+      grid-column: span 2;
+    }
+    li:nth-of-type(27) {
+      grid-row: span 3;
+      grid-column: span 3;
+    }
   }
 }
 
