@@ -132,7 +132,10 @@ function instagram_feed($url) {
     $feed = array_filter(array_merge($body->data, $second_body->data), function($item){
       return $item->media_type === 'IMAGE';
     });
+
+    set_transient( 'instagram_feed', $feed, 1 * HOUR_IN_SECONDS);
   }
+
   return $feed;
 }
 
