@@ -80,6 +80,9 @@ function special_scripts() {
   wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/scripts.js#asyncload', array(), '', true);
   wp_enqueue_script( 'js-carbon-badge', 'https://unpkg.com/website-carbon-badges@1.1.1/b.min.js#asyncload', array(), '', true);
 
+  wp_dequeue_style( 'wp-block-library' );
+  wp_dequeue_style( 'wp-block-library-theme');
+
 
   if (get_post_type() === 'post') {
 		wp_enqueue_script( 'prism', get_template_directory_uri() .'/js/prism.min.js#asyncload', array(), '', true);
@@ -99,7 +102,7 @@ function enhance_js() {
 
 	echo '<script>'. $enhance_content .'</script>' . "\n";
 }
-add_action('wp_head', 'enhance_js');
+add_action('wp_head', 'enhance_js', -1);
 
 // function for critical path css
 function critical_css() {
