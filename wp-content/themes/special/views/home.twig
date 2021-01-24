@@ -36,7 +36,7 @@
     </div>
     <section class="post-list" aria-labelledby="post-list">
       <h2 id="post-list" class="assistive-text">Blog Posts</h2>
-      {% for post in blog_posts %}
+      {% for post in posts %}
         <article>
           <h3 class="delta"><a class="linked-header" href="{{post.link}}">{{post.title}}</a></h3>
           <div class="entry-meta">
