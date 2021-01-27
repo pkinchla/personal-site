@@ -95,12 +95,11 @@ function special_scripts() {
 add_action( 'wp_enqueue_scripts', 'special_scripts' );
 
 add_action(
-    'after_setup_theme',
-    function() {
-        add_theme_support( 'html5', [ 'script', 'style' ] );
-    }
+  'after_setup_theme',
+  function() {
+    add_theme_support( 'html5', [ 'script', 'style' ] );
+  }
 );
-
 
 // enqueue typekit
 function enhance_js() {
@@ -226,11 +225,11 @@ class StarterSite extends TimberSite {
 	}
 
 	function add_to_context( $context ) {
-
 		$context['menu'] = new TimberMenu();
     $context['site'] = $this;
     $context['is_home'] = is_front_page();
     $context['is_dev'] = WP_DEBUG || SCRIPT_DEBUG;
+    $context['current_page'] = get_permalink(get_queried_object_id());
 
 		return $context;
 	}
