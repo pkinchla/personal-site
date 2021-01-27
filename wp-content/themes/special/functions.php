@@ -94,6 +94,14 @@ function special_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'special_scripts' );
 
+add_action(
+    'after_setup_theme',
+    function() {
+        add_theme_support( 'html5', [ 'script', 'style' ] );
+    }
+);
+
+
 // enqueue typekit
 function enhance_js() {
 	$enhance_file = get_template_directory_uri() . '/js/enhance.js';
