@@ -103,6 +103,30 @@
     }
   }
 
+  @media only screen and (max-width: 64em) {
+    &.closed {
+      visibility: hidden;
+      max-height: 0;
+      display: inherit;
+    }
+    &.open {
+      visibility: visible;
+      max-height: 15em;
+    }
+    li {
+      border-bottom: 1px solid $dark-blue;
+      &:first-child {
+        border-top: 1px solid $dark-blue;
+      }
+      &:last-child {
+        border-bottom: 0;
+      }
+      a {
+        padding: 0.85em 10%;
+      }
+    }
+  }
+
   @media only screen and (min-width: 64em) {
     font-size: 1.25em;
     text-align: right;
@@ -184,32 +208,5 @@
   }
   @media only screen and (min-width: 64em) {
     display: none;
-  }
-}
-
-// enhanced menu styling
-@media only screen and (max-width: 64em) {
-  .js .menu {
-    display: inherit;
-    &.closed {
-      visibility: hidden;
-      max-height: 0;
-    }
-    &.open {
-      visibility: visible;
-      max-height: 15em;
-    }
-    li {
-      border-bottom: 1px solid $dark-blue;
-      &:first-child {
-        border-top: 1px solid $dark-blue;
-      }
-      &:last-child {
-        border-bottom: 0;
-      }
-      a {
-        padding: 0.85em 10%;
-      }
-    }
   }
 }
