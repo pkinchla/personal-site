@@ -82,21 +82,16 @@
 .menu {
   @include plain-list;
   transition: max-height 0.35s ease-in-out, visibility 0.35s ease-in-out;
-  overflow: hidden;
+  display: flex;
+  width: 100vw;
+  overflow-x: auto;
   li {
     @include sans-reg;
     font-size: 1.25em;
-    width: 100%;
-    border-bottom: 1px solid $dark-blue;
     background: $white;
-    &:first-child {
-      border-top: 1px solid $dark-blue;
-    }
-    &:last-child {
-      border-bottom: 0;
-    }
+    width: 100%;
     a {
-      padding: 0.85em 10%;
+      padding: 0.5em 3.5em;
       color: $body-color;
       &[aria-current]:not([aria-current='false']) {
         @include alpha-attribute(
@@ -113,6 +108,8 @@
     text-align: right;
     margin-top: 1.5em;
     min-height: 7.40625rem;
+    display: inherit;
+    width: 100%;
     li {
       background: none;
       border-bottom: none;
@@ -193,6 +190,7 @@
 // enhanced menu styling
 @media only screen and (max-width: 64em) {
   .js .menu {
+    display: inherit;
     &.closed {
       visibility: hidden;
       max-height: 0;
@@ -200,6 +198,18 @@
     &.open {
       visibility: visible;
       max-height: 15em;
+    }
+    li {
+      border-bottom: 1px solid $dark-blue;
+      &:first-child {
+        border-top: 1px solid $dark-blue;
+      }
+      &:last-child {
+        border-bottom: 0;
+      }
+      a {
+        padding: 0.85em 10%;
+      }
     }
   }
 }
