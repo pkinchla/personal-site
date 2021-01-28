@@ -112,6 +112,7 @@
     &.open {
       visibility: visible;
       max-height: 15em;
+      display: inherit;
     }
     li {
       border-bottom: 1px solid $dark-blue;
