@@ -113,15 +113,17 @@
       visibility: visible;
       max-height: 15em;
       display: inherit;
+      li {
+        border-bottom: 1px solid $dark-blue;
+        &:first-child {
+          border-top: 1px solid $dark-blue;
+        }
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
     }
     li {
-      border-bottom: 1px solid $dark-blue;
-      &:first-child {
-        border-top: 1px solid $dark-blue;
-      }
-      &:last-child {
-        border-bottom: 0;
-      }
       a {
         padding: 0.85em 10%;
       }
