@@ -1,11 +1,11 @@
-// import HandleLinks from './HandleLinks'
 import MobileMenu from './MobileMenu';
+import PostsList from './PostsList';
+import { ready } from './helpers';
 
 (function (document) {
-  // mobile menu
   MobileMenu(document.querySelector('.js-main-navigation'));
+  PostsList(document.querySelector('.js-posts'));
 
-  // start service worker
   let dev_env = window.location.hostname === 'localhost';
   // registration for worker for server side caching
   if ('serviceWorker' in navigator && !dev_env) {
@@ -14,3 +14,7 @@ import MobileMenu from './MobileMenu';
     });
   }
 })(document);
+
+// useEffect(() => {
+//   fetchList();
+// });
