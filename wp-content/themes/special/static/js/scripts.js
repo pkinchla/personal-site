@@ -3,7 +3,10 @@ import PostsList from './PostsList';
 import { ready } from './helpers';
 
 (function (document) {
-  MobileMenu(document.querySelector('.js-main-navigation'));
+  MobileMenu(
+    document.querySelector('.js-main-navigation'),
+    document.querySelector('.js-main-navigation-items')
+  );
   PostsList(document.querySelector('.js-posts'));
 
   let dev_env = window.location.hostname === 'localhost';
@@ -14,7 +17,3 @@ import { ready } from './helpers';
     });
   }
 })(document);
-
-// useEffect(() => {
-//   fetchList();
-// });

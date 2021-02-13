@@ -26,6 +26,25 @@
     display: block;
   }
 
+  .menu-link {
+    font: italic normal 700 1em / normal 'futura-pt', sans-serif;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 34%;
+    height: calc(4.2125em - 1.5px);
+    padding: 0;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media only screen and (min-width: 64em) {
+      padding: 0.05em 0;
+      position: inherit;
+      width: 100%;
+    }
+  }
+
   @media only screen and (min-width: 40em) {
     grid-column: 1 / 4;
   }
@@ -82,8 +101,6 @@
 .menu {
   @include plain-list;
   transition: max-height 0.35s ease-in-out, visibility 0.35s ease-in-out;
-  display: flex;
-  width: 100vw;
   overflow-x: auto;
   li {
     @include sans-reg;
@@ -109,21 +126,17 @@
       max-height: 0;
       display: inherit;
     }
-    &.open {
-      visibility: visible;
-      max-height: 15em;
-      display: inherit;
-      li {
-        border-bottom: 1px solid $dark-blue;
-        &:first-child {
-          border-top: 1px solid $dark-blue;
-        }
-        &:last-child {
-          border-bottom: 0;
-        }
-      }
-    }
+    visibility: visible;
+    max-height: 15em;
+    display: inherit;
     li {
+      border-bottom: 1px solid $dark-blue;
+      &:first-child {
+        border-top: 1px solid $dark-blue;
+      }
+      &:last-child {
+        border-bottom: 0;
+      }
       a {
         padding: 0.85em 10%;
       }

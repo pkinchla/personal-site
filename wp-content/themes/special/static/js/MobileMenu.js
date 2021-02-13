@@ -1,7 +1,7 @@
 import { h, render, Fragment } from 'preact';
 import { useState } from 'preact/hooks';
 
-function MobileMenu(selector) {
+function MobileMenu(target, selector) {
   const getItems = () => {
     return Array.from(selector.firstElementChild.children).map((item) => {
       return {
@@ -11,6 +11,8 @@ function MobileMenu(selector) {
     });
   };
   const menuItems = getItems();
+  document.querySelector('.menu-link').remove();
+  document.querySelector('.js-main-navigation-items').remove();
 
   function Menu() {
     const [menuOpen, toggleMenu] = useState(false);
@@ -54,7 +56,7 @@ function MobileMenu(selector) {
     );
   }
 
-  render(<Menu />, selector);
+  render(<Menu />, target);
 }
 
 export default MobileMenu;

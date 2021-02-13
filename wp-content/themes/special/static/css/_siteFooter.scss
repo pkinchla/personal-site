@@ -47,35 +47,62 @@
     }
   }
 
+  nav {
+    padding-bottom: 1.5em;
+    border-bottom: 0.0625em solid $dark-blue;
+    > a {
+      @include link-reset;
+      font: italic normal 700 1em / normal 'futura-pt', sans-serif;
+      text-transform: uppercase;
+    }
+  }
+  .menu {
+    max-height: inherit;
+    overflow: inherit;
+    margin-bottom: 0.75em;
+    li {
+      border: none;
+      background: inherit;
+    }
+    a {
+      @include nav-link;
+      display: block;
+      padding: 0.5em 0;
+    }
+  }
+
   ul {
     @include plain-list;
     display: flex;
     margin-bottom: 1.5em;
-    li {
-      width: 25%;
-      max-width: 6em;
-      a {
-        @include link-reset;
-        display: block;
-        padding-bottom: 1em;
-        text-align: center;
-        span {
+    &.social {
+      li {
+        width: 25%;
+        max-width: 6em;
+        a {
+          @include link-reset;
+          outline-offset: -3px;
           display: block;
-        }
-        svg {
-          transition: background 0.35s ease-in-out;
-          pointer-events: none;
-          width: 100%;
-          height: 100%;
-          max-width: 6em;
-          display: inline-block;
-          fill: $link-blue;
-        }
-        &:hover {
-          color: $white;
-          background: $dark-blue;
+          padding-bottom: 1em;
+          text-align: center;
+          span {
+            display: block;
+          }
           svg {
-            fill: $white;
+            transition: background 0.35s ease-in-out;
+            pointer-events: none;
+            width: 100%;
+            height: 100%;
+            max-width: 6em;
+            display: inline-block;
+            fill: $link-blue;
+          }
+          &:hover {
+            color: $white;
+            background: $dark-blue;
+            svg {
+              fill: $white;
+            }
           }
         }
       }
@@ -85,14 +112,16 @@
   @media only screen and (min-width: 40em) {
     grid-column: 1 / 4;
     align-self: flex-end;
-    ul {
+    .social,
+    nav {
       grid-column: 1 / 3;
     }
     .colophon {
       grid-column: 1 / 3;
     }
     .colophon,
-    ul {
+    .social,
+    nav {
       padding-left: 1.5em;
     }
   }
@@ -129,11 +158,19 @@
       height: 100%;
       content: '';
     }
+    .menu {
+      min-height: inherit;
+    }
     .colophon,
-    ul {
+    .social {
       padding-left: 0;
     }
-    ul {
+    nav {
+      grid-column: 2 / 7;
+      text-align: right;
+      padding-left: 0;
+    }
+    .social {
       grid-column: 2 / 7;
       li {
         max-width: 7.5em;
@@ -145,7 +182,10 @@
   }
 
   @media only screen and (min-width: 84.375em) {
-    ul {
+    nav {
+      grid-column: 2 / 6;
+    }
+    .social {
       grid-column: 2 / 7;
     }
     .colophon {
@@ -155,7 +195,10 @@
 
   @media only screen and (min-width: 120em) {
     grid-column: 1 / 17;
-    ul {
+    nav {
+      grid-column: 4 / 9;
+    }
+    .social {
       grid-column: 4 / 8;
     }
     .colophon {
