@@ -1,11 +1,10 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  <article class="post-type-{{post.post_type}} site-grid block" id="post-{{post.ID}}">
+  <article class="post-type-{{post.post_type}} site-grid block js-posts" id="post-{{post.ID}}">
     <header>
       <h1 tabindex="-1">
         {{post.title}}
-        <span class="assistive-text">(Blog)</span>
         {% if page_number %}
         <span>(Page {{page_number}})</span>
         {% endif %}
