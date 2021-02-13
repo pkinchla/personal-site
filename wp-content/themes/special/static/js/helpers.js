@@ -41,7 +41,7 @@ export const handlePosts = () => {
     },
     fetchPosts: (e, offset, dispatch, posts) => {
       dispatch({ type: 'LOADING', payload: true });
-      document.querySelector('h1').scrollIntoView();
+      if (e) document.querySelector('h1').scrollIntoView();
       if (e) e.preventDefault();
       return fetch(
         `${window.POST_SETTINGS.domain}/wp-json/wp/v2/posts?offset=${

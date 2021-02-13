@@ -1,5 +1,7 @@
 .post-list {
   article {
+    @include animated;
+    @include slideInUp;
     margin-bottom: 1.5em;
   }
   .msg {

@@ -50,6 +50,7 @@
   nav {
     padding-bottom: 1.5em;
     border-bottom: 0.0625em solid $dark-blue;
+    text-align: center;
     > a {
       @include link-reset;
       font: italic normal 700 1em / normal 'futura-pt', sans-serif;
@@ -63,9 +64,11 @@
     li {
       border: none;
       background: inherit;
+      text-align: center;
     }
     a {
       @include nav-link;
+      transition: all 0.35s ease-in-out;
       display: block;
       padding: 0.5em 0;
     }
@@ -167,8 +170,8 @@
     }
     nav {
       grid-column: 2 / 7;
-      text-align: right;
       padding-left: 0;
+      border-right: 0.0625em solid $dark-blue;
     }
     .social {
       grid-column: 2 / 7;

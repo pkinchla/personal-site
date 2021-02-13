@@ -1,4 +1,3 @@
-import 'preact/debug';
 import { h, render, Fragment } from 'preact';
 import { removeAllChildNodes } from './helpers';
 import { useEffect, useReducer } from 'preact/hooks';
@@ -101,7 +100,7 @@ export default function PostsList(selector) {
                             ? null
                             : postAPI.fetchPosts(e, index, dispatch, posts)
                         }
-                        href={`/page/${page}`}
+                        href={`/blog/page/${page}`}
                       >
                         <span className="assistive-text">Page</span> {page}
                       </Tag>
