@@ -94,13 +94,13 @@ export default function PostsList(selector) {
                     return (
                       <Tag
                         className="page-number page-numbers"
-                        aria-controls="post-list"
+                        aria-controls={current_page ? null : 'post-list'}
                         onClick={(e) =>
                           current_page
                             ? null
                             : postAPI.fetchPosts(e, index, dispatch, posts)
                         }
-                        href={`/blog/page/${page}`}
+                        href={current_page ? null : `/blog/page/${page}`}
                       >
                         <span className="assistive-text">Page</span> {page}
                       </Tag>
