@@ -76,9 +76,11 @@ function special_scripts() {
 	if ( WP_DEBUG || SCRIPT_DEBUG ) {
 		wp_enqueue_style( 'style-built', get_template_directory_uri() . '/main.css' );
 	}
+  if(!WP_DEBUG) {
+    wp_enqueue_script( 'js-carbon-badge', 'https://unpkg.com/website-carbon-badges@1.1.1/b.min.js#asyncload', array(), '', true);
+  }
 
   wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/scripts.js#asyncload', array(), '', true);
-  wp_enqueue_script( 'js-carbon-badge', 'https://unpkg.com/website-carbon-badges@1.1.1/b.min.js#asyncload', array(), '', true);
 
   wp_dequeue_style( 'wp-block-library' );
   wp_dequeue_style( 'wp-block-library-theme');
@@ -214,6 +216,25 @@ add_filter('http2_render_resource_hints', '__return_true');
 // Custom template tags for this theme
 require get_template_directory() . '/template-tags.php';
 
+
+/**
+ * Add a Formatted Date to the WordPress REST API JSON Post Object
+ *
+ */
+add_action('rest_api_init', function() {
+  register_rest_field(
+      array('post'),
+      'formatted_date',
+      array(
+          'get_callback'    => function() {
+              return get_the_date('l, F jS, Y');
+          },
+          'update_callback' => null,
+          'schema'          => null,
+      )
+  );
+});
+
 class StarterSite extends TimberSite {
 
 	function __construct() {
@@ -229,6 +250,7 @@ class StarterSite extends TimberSite {
     $context['site'] = $this;
     $context['is_home'] = is_front_page();
     $context['is_dev'] = WP_DEBUG || SCRIPT_DEBUG;
+    $context['posts_per_page'] = get_option( 'posts_per_page' );
     $context['current_page'] = get_permalink(get_queried_object_id());
 
 		return $context;
