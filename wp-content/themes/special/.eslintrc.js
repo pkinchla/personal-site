@@ -1,13 +1,14 @@
 module.exports = {
-  extends: ['eslint:recommended'],
+  extends: ['eslint:recommended', 'preact', 'prettier'],
+  plugins: ['prettier'],
   parser: 'babel-eslint',
   env: {
     browser: true,
   },
   rules: {
-    quotes: ['error', 'single', { avoidEscape: true}],
-    'comma-dangle': ['error', 'always-multiline'],
+    'prettier/prettier': ['error'],
+    eqeqeq: ['error', 'always', { null: 'ignore' }],
+    quotes: ['error', 'single', { avoidEscape: true }],
     semi: ['error', 'always'],
-    "indent": ["error", 2],
   },
-}
+};

@@ -29,9 +29,9 @@ function MobileMenu(target, selector) {
             width="22.5"
             height="16.47"
           >
-            <rect class="one" y="0" width="225" height="23.7"></rect>
-            <rect class="two" y="70.5" width="225" height="23.7"></rect>
-            <rect class="three" y="141" width="225" height="23.7"></rect>
+            <rect class="one" y="0" width="225" height="23.7" />
+            <rect class="two" y="70.5" width="225" height="23.7" />
+            <rect class="three" y="141" width="225" height="23.7" />
           </svg>
           <span className="label">{menuOpen ? 'Close' : 'Menu'}</span>
         </button>
@@ -44,7 +44,7 @@ function MobileMenu(target, selector) {
               window.location.pathname
             );
             return (
-              <li key={index} className={`menu-item`}>
+              <li key={index} className={'menu-item'}>
                 <a aria-current={isCurrent && true} href={item.link}>
                   {item.text}
                 </a>

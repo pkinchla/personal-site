@@ -1,7 +1,6 @@
 import { h, render, Fragment } from 'preact';
-import { removeAllChildNodes } from './helpers';
+import { removeAllChildNodes, handlePosts } from './helpers';
 import { useEffect, useReducer } from 'preact/hooks';
-import { handlePosts } from './helpers';
 
 export default function PostsList(selector) {
   if (!selector) return;
@@ -21,8 +20,10 @@ export default function PostsList(selector) {
         ? window.location.pathname.split('/')[3] - 1
         : 0;
       postAPI.fetchPosts(null, offset, dispatch, posts);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    /* eslint react/no-danger: 0 */
     return (
       <Fragment>
         <figure dangerouslySetInnerHTML={{ __html: figure }} />
@@ -58,6 +59,7 @@ export default function PostsList(selector) {
           <h2 id="posts" className="assistive-text">
             Blog Posts
           </h2>
+
           {posts.error && <p className="msg">Error Fetching Posts</p>}
           {posts.loading && !posts.error ? (
             <p className="msg gamma">loading...</p>

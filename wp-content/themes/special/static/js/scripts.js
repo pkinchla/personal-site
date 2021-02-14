@@ -1,6 +1,5 @@
 import MobileMenu from './MobileMenu';
 import PostsList from './PostsList';
-import { ready } from './helpers';
 
 (function (document) {
   MobileMenu(
