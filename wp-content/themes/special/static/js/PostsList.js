@@ -84,6 +84,22 @@ export default function PostsList(selector) {
                 );
               })}
               <div className="pagination">
+                {posts.current_page !== 0 && (
+                  <a
+                    onClick={(e) =>
+                      postAPI.fetchPosts(
+                        e,
+                        posts.current_page - 2,
+                        dispatch,
+                        posts
+                      )
+                    }
+                    className="prev"
+                    href={`/page/${posts.current_page - 1}`}
+                  >
+                    Previous&nbsp;<span className="assistive-text">Page</span>
+                  </a>
+                )}
                 {Array(Math.ceil(posts.total / posts_per_page))
                   .fill()
                   .map((item, index) => {
@@ -104,10 +120,30 @@ export default function PostsList(selector) {
                         }
                         href={current_page ? null : `/blog/page/${page}`}
                       >
-                        <span className="assistive-text">Page</span> {page}
+                        <span className="assistive-text">Page</span>&nbsp;{page}
                       </Tag>
                     );
                   })}
+                {!(
+                  Math.ceil(posts.total / posts_per_page) === posts.current_page
+                ) && (
+                  <a
+                    onClick={(e) =>
+                      postAPI.fetchPosts(
+                        e,
+                        posts.current_page === 0 ? 1 : posts.current_page,
+                        dispatch,
+                        posts
+                      )
+                    }
+                    className="next"
+                    href={`/page/${
+                      posts.current_page === 0 ? 2 : posts.current_page + 1
+                    }`}
+                  >
+                    Next&nbsp;<span className="assistive-text">Page</span>
+                  </a>
+                )}
               </div>
             </Fragment>
           )}
