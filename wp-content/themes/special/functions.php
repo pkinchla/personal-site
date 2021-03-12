@@ -103,16 +103,6 @@ add_action(
   }
 );
 
-// enqueue typekit
-function enhance_js() {
-	$enhance_file = get_template_directory_uri() . '/js/enhance.js';
-	$enhance_path = wp_remote_get($enhance_file);
-	$enhance_content = wp_remote_retrieve_body($enhance_path);
-
-	echo '<script>'. $enhance_content .'</script>' . "\n";
-}
-add_action('wp_head', 'enhance_js', -1);
-
 // function for critical path css
 function critical_css() {
 	if (!WP_DEBUG || SCRIPT_DEBUG) {
