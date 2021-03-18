@@ -1,4 +1,4 @@
-var version = "v2.1.0:";
+var version = "v3.0:";
 
 var theme_path = "wp-content/themes/special/";
 
@@ -125,7 +125,7 @@ self.addEventListener("fetch", function (event) {
     }
   };
 
-  // //Fetch from network failed
+  //Fetch from network failed
   var fallback = function () {
     if (destination === "document") {
       return caches.match(event.request).then(function (response) {
@@ -134,7 +134,7 @@ self.addEventListener("fetch", function (event) {
     }
   };
 
-  // // Only deal with requests to my own server
+  //Only deal with requests to my own server
   if (url.origin !== location.origin) {
     return;
   }
@@ -156,7 +156,7 @@ self.addEventListener("fetch", function (event) {
     return;
   }
 
-  // //For HTML requests, look for file in network, then cache if network fails.
+  //For HTML requests, look for file in network, then cache if network fails.
   if (destination === "document") {
     event.respondWith(fetch(event.request).then(fetchFromNetwork, fallback));
     return;
