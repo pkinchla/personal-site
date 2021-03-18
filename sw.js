@@ -94,45 +94,52 @@ self.addEventListener("message", function (event) {
 //Service worker handles networking
 self.addEventListener("fetch", function (event) {
   var url = new URL(event.request.url);
+  var destination = event.request.destination;
 
   //Fetch from network and cache
   var fetchFromNetwork = function (response) {
     var cacheCopy = response.clone();
-    if (event.request.headers.get("Accept").indexOf("text/html") != -1) {
-      caches.open(version + "pages").then(function (cache) {
-        cache.put(event.request, cacheCopy).then(function () {
-          limitCache(cache, 25);
+    switch (destination) {
+      case "document": {
+        caches.open(version + "pages").then(function (cache) {
+          cache.put(event.request, cacheCopy).then(function () {
+            limitCache(cache, 25);
+          });
         });
-      });
-    } else if (event.request.headers.get("Accept").indexOf("image") != -1) {
-      caches.open(version + "images").then(function (cache) {
-        cache.put(event.request, cacheCopy).then(function () {
-          limitCache(cache, 10);
+        return response;
+      }
+      case "image": {
+        caches.open(version + "images").then(function (cache) {
+          cache.put(event.request, cacheCopy).then(function () {
+            limitCache(cache, 10);
+          });
         });
-      });
-    } else {
-      caches.open(version + "assets").then(function add(cache) {
-        cache.put(event.request, cacheCopy);
-      });
+        return response;
+      }
+      default: {
+        caches.open(version + "assets").then(function add(cache) {
+          cache.put(event.request, cacheCopy);
+        });
+        return response;
+      }
     }
-    return response;
   };
 
-  //Fetch from network failed
+  // //Fetch from network failed
   var fallback = function () {
-    if (event.request.headers.get("Accept").indexOf("text/html") != -1) {
+    if (destination === "document") {
       return caches.match(event.request).then(function (response) {
         return response || caches.match(theme_path + "offline.html");
       });
     }
   };
 
-  // Only deal with requests to my own server
+  // // Only deal with requests to my own server
   if (url.origin !== location.origin) {
     return;
   }
 
-  const noCache =
+  var noCache =
     event.request.url.match("/wp-admin/") ||
     event.request.url.match("/wp-admin") ||
     event.request.url.match("/wp-includes/") ||
@@ -145,12 +152,12 @@ self.addEventListener("fetch", function (event) {
   }
 
   //This service worker won't touch non-get requests
-  if (event.request.method != "GET") {
+  if (event.request.method !== "GET") {
     return;
   }
 
-  //For HTML requests, look for file in network, then cache if network fails.
-  if (event.request.headers.get("Accept").indexOf("text/html") != -1) {
+  // //For HTML requests, look for file in network, then cache if network fails.
+  if (destination === "document") {
     event.respondWith(fetch(event.request).then(fetchFromNetwork, fallback));
     return;
   }

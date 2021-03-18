@@ -8,9 +8,9 @@ import PostsList from './PostsList';
   );
   PostsList(document.querySelector('.js-posts'));
 
-  let dev_env = window.location.hostname === 'localhost';
+  // let dev_env = window.location.hostname === 'localhost';
   // registration for worker for server side caching
-  if ('serviceWorker' in navigator && !dev_env) {
+  if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js').then(() => {
       return navigator.serviceWorker.ready;
     });
