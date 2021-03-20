@@ -97,7 +97,7 @@ export default function PostsList(selector) {
                     className="prev"
                     href={`/page/${posts.current_page - 1}`}
                   >
-                    Previous&nbsp;<span className="assistive-text">Page</span>
+                    Previous<span className="assistive-text">&nbsp;Page</span>
                   </a>
                 )}
                 {Array(Math.ceil(posts.total / posts_per_page))
@@ -120,7 +120,8 @@ export default function PostsList(selector) {
                         }
                         href={current_page ? null : `/blog/page/${page}`}
                       >
-                        <span className="assistive-text">Page</span>&nbsp;{page}
+                        <span className="assistive-text">Page&nbsp;</span>
+                        {page}
                       </Tag>
                     );
                   })}
@@ -141,7 +142,7 @@ export default function PostsList(selector) {
                       posts.current_page === 0 ? 2 : posts.current_page + 1
                     }`}
                   >
-                    Next&nbsp;<span className="assistive-text">Page</span>
+                    Next<span className="assistive-text">&nbsp;Page</span>
                   </a>
                 )}
               </div>

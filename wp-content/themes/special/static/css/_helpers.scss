@@ -50,7 +50,7 @@ $sans-stack: 'futura-pt', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 }
 
 @mixin link-reset {
-  border-bottom: none;
+  text-decoration: none;
 }
 
 @mixin plain-list {
@@ -79,6 +79,7 @@ $sans-stack: 'futura-pt', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 }
 
 @mixin action {
+  @include link-reset;
   @include sans-reg;
   display: inline-block;
   padding: 0.5em 1em;
