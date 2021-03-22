@@ -556,9 +556,14 @@ Posts and pages
   @include sans-reg;
   display: inline-block;
   font-style: italic;
-  border-bottom: 0.0625em solid $dark-blue;
   a {
     @include link-reset;
+  }
+}
+
+.post-type-post {
+  .entry-meta {
+    border-bottom: 0.0625em solid $dark-blue;
   }
 }
 
