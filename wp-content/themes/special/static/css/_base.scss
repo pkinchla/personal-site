@@ -456,9 +456,6 @@ a:active {
   a {
     outline-offset: -3px;
     text-decoration: none;
-    &:visited {
-      color: initial;
-    }
     &:hover,
     &:focus {
       background: $dark-blue;
