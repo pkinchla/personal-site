@@ -14,6 +14,7 @@
     width: 65.95%;
     text-align: center;
     display: block;
+    color: $dark-blue;
   }
   .logo {
     pointer-events: none;
@@ -177,7 +178,7 @@
   height: calc(4.2125em - 1.5px);
   padding: 0;
   text-transform: uppercase;
-  color: $link-blue;
+  color: $dark-blue;
   border-radius: 0;
   border: 0;
   background: white;
@@ -187,7 +188,7 @@
   &:focus {
     border-left: 1px solid $dark-blue;
     background: white;
-    color: $link-blue;
+    color: $dark-blue;
   }
   .label {
     display: inline-block;

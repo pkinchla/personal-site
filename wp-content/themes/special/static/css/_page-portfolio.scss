@@ -42,8 +42,19 @@
       &:focus {
         outline-offset: -3px;
         h3 {
+          color: currentColor;
           opacity: 1;
           z-index: 1;
+        }
+        &:visited {
+          h3 {
+            color: purple;
+          }
+        }
+        &:active {
+          h3 {
+            color: red;
+          }
         }
         img {
           opacity: 0.15;
