@@ -95,6 +95,9 @@ $sans-stack: 'futura-pt', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 
 .action {
   @include action;
+  &:hover:focus {
+    outline: none;
+  }
 }
 
 @mixin nav-link {

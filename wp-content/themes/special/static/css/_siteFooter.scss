@@ -107,6 +107,9 @@
               fill: white;
             }
           }
+          &:hover:focus {
+            outline: none;
+          }
         }
       }
     }
