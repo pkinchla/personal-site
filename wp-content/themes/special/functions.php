@@ -105,7 +105,7 @@ add_action(
 
 // function for critical path css
 function critical_css() {
-	if (!WP_DEBUG || SCRIPT_DEBUG) {
+	if (!WP_DEBUG || !SCRIPT_DEBUG) {
 		// css
 		$style_sheet = get_template_directory_uri() . '/main.css';
 		$style_path = wp_remote_get($style_sheet);
