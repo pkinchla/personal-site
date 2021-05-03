@@ -111,14 +111,12 @@ p {
 
 b,
 strong {
-  @include sans-reg;
   font-weight: 800;
 }
 
 dfn,
 em,
 i {
-  @include sans-reg;
   font-size: 1.05em;
   font-style: italic;
 }
@@ -608,6 +606,7 @@ Asides
 Comments
 --------------------------------------------------------------*/
 .comments {
+  @include sans-reg;
   margin-top: 3em;
 }
 
@@ -617,7 +616,6 @@ Comments
 
 .comment-form {
   label {
-    @include sans-reg;
     font-weight: 700;
     font-style: italic;
     display: inline-block;
@@ -629,7 +627,6 @@ Comments
   display: block;
 }
 .logged-in-as {
-  @include sans-reg;
   font-style: italic;
   color: $dark-blue;
 }
@@ -641,14 +638,12 @@ Comments
 }
 
 .comment-meta {
-  @include sans-reg;
   font-style: italic;
   margin-bottom: 0.5em;
   padding-top: 0.25em;
   background: rgba($light-blue, 0.75);
 }
 .comment-author {
-  @include sans-reg;
   font-style: italic;
   cite {
     display: inline-block;
@@ -663,7 +658,6 @@ Comments
   }
 }
 .comment-reply-link {
-  @include sans-reg;
   font-style: italic;
 }
 
