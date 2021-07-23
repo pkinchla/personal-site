@@ -72,16 +72,6 @@ function pageNumber($number){
  * Enqueue scripts and styles.
  */
 function special_scripts() {
-
-	if ( WP_DEBUG || SCRIPT_DEBUG ) {
-		wp_enqueue_style( 'style-built', get_template_directory_uri() . '/main.css' );
-	}
-  if(!WP_DEBUG) {
-    wp_enqueue_script( 'js-carbon-badge', 'https://unpkg.com/website-carbon-badges@1.1.1/b.min.js#asyncload', array(), '', true);
-  }
-
-  wp_enqueue_script( 'js-built', get_template_directory_uri() . '/js/scripts.js#asyncload', array(), '', true);
-
   wp_dequeue_style( 'wp-block-library' );
   wp_dequeue_style( 'wp-block-library-theme');
 
@@ -103,19 +93,6 @@ add_action(
   }
 );
 
-// function for critical path css
-function critical_css() {
-	if (!WP_DEBUG || !SCRIPT_DEBUG) {
-		// css
-		$style_sheet = get_template_directory_uri() . '/main.css';
-		$style_path = wp_remote_get($style_sheet);
-		$style_content = wp_remote_retrieve_body($style_path);
-
-		echo '<style>'. $style_content .'</style>' . "\n";
-	}
-}
-add_action( 'wp_head', 'critical_css');
-
 function instagram_feed($url) {
   if ( false === ( $feed = get_transient( 'instagram_feed' ) ) ) {
     $response = wp_remote_get($url);
@@ -131,9 +108,7 @@ function instagram_feed($url) {
   return $feed;
 }
 
-
 function register_portfolio_post_type() {
-
 	/**
 	 * Post Type: Portfolio.
 	 */

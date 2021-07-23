@@ -14,7 +14,7 @@ if ( ! function_exists( 'special_posted_on' ) ) :
 function special_posted_on() {
   $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
   if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-    $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><span class="assistive-text">, Last Update on  <time class="updated" datetime="%3$s">%4$s</time></span>';
+    $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time> | Last Update on <time class="updated" datetime="%3$s">%4$s</time></span>';
   }
 
   $time_string = sprintf( $time_string,
@@ -26,7 +26,7 @@ function special_posted_on() {
 
   $posted_on = sprintf(
     _x( 'Posted on %s', 'post date', 'special' ),
-    '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+    $time_string
   );
 
   $byline = sprintf(
