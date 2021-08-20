@@ -11,13 +11,14 @@
         alt="close up of miniature metallic chameleon standing on a metallic pedestal"
       >
     </figure>
-    <section class="content">
+    <div class="content">
       <h2 class="assistive-text">Posts</h2>
       {% for post in posts %}
         <article>
           {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
         </article>
       {% endfor %}
-    </section>
+      {% include 'pagination.twig' %}
+    </div>
   </article>
 {% endblock %}

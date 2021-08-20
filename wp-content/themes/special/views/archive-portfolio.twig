@@ -2,15 +2,15 @@
 {% block content %}
   <article class="post-type-{{post.post_type}} site-grid block" id="post-{{post.ID}}">
     <header>
-      <h1 tabindex="-1">{{post.title}}</h1>
+      <h1 tabindex="-1">{{post.post_type}}</h1>
     </header>
     <figure>
       {% include 'featured-image.twig' %}
     </figure>
     <section class="portfolio">
-      <h2 class="assistive-text">Portfolio Items</h2>
+      <h2 class="assistive-text">Projects</h2>
       <ul>
-        {% for post in portfolio_posts %}
+        {% for post in posts %}
           <li>
             <a href="{{post.link}}">
               <h3>
@@ -30,6 +30,7 @@
           </li>
         {% endfor %}
       </ul>
+      {% include 'pagination.twig' %}
     </section>
   </article>
 {% endblock %}

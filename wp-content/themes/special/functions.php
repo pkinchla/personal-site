@@ -54,7 +54,7 @@ add_filter( 'the_content', 'auto_id_headings' );
  * show variable on frontend
  */
 function dump($var){
-	echo '<pre style="color: white">';
+	echo '<pre style="color: white; background: black; padding: 1rem; max-width: 100vh; overflow-y: scroll;">';
 		var_dump($var);
 	echo '</pre>';
 }
@@ -114,13 +114,13 @@ function register_portfolio_post_type() {
 	 */
 
 	$labels = [
-		"name" => __( "Portfolio", "custom-post-type-ui" ),
-		"singular_name" => __( "Portfolio Item", "custom-post-type-ui" ),
-		"add_new_item" => __( "Add New Portfolio Item", "custom-post-type-ui" ),
+		"name" => __( "Work", "custom-post-type-ui" ),
+		"singular_name" => __( "Project", "custom-post-type-ui" ),
+		"add_new_item" => __( "Add New Project", "custom-post-type-ui" ),
 	];
 
 	$args = [
-		"label" => __( "Portfolio", "custom-post-type-ui" ),
+		"label" => __( "Work", "custom-post-type-ui" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -129,7 +129,7 @@ function register_portfolio_post_type() {
 		"show_in_rest" => false,
 		"rest_base" => "",
 		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"has_archive" => false,
+		"has_archive" => true,
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
 		"delete_with_user" => false,
@@ -137,14 +137,14 @@ function register_portfolio_post_type() {
 		"capability_type" => "post",
 		"map_meta_cap" => true,
 		"hierarchical" => false,
-		"rewrite" => [ "slug" => "portfolio", "with_front" => false ],
+		"rewrite" => [ "slug" => "work", "with_front" => false ],
 		"query_var" => true,
 		"menu_position" => 5,
 		"menu_icon" => "dashicons-hammer",
 		"supports" => [ "title", "editor", "excerpt", "trackbacks", "custom-fields", "comments", "revisions", "thumbnail", "author", "page-attributes", "post-formats" ],
 	];
 
-	register_post_type( "portfolio", $args );
+  register_post_type( "portfolio", $args );
 }
 
 add_action( 'init', 'register_portfolio_post_type' );
