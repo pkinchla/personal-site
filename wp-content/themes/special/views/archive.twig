@@ -3,7 +3,7 @@
 {% block content %}
   <article class="post-type-archive site-grid block">
     <header>
-      <h1 tabindex="-1">{{title}}</h1>
+      <h1>{{title}}</h1>
     </header>
     <figure>
       <img
@@ -12,11 +12,9 @@
       >
     </figure>
     <div class="content">
-      <h2 class="assistive-text">Posts</h2>
+      <h2 class="assistive-text">{{post.post_type}}</h2>
       {% for post in posts %}
-        <article>
-          {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-        </article>
+        {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
       {% endfor %}
       {% include 'pagination.twig' %}
     </div>

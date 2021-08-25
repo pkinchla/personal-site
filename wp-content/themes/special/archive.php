@@ -18,6 +18,7 @@ $templates = array( 'archive.twig', 'index.twig' );
 
 $context = Timber::get_context();
 
+
 $context['title'] = 'Archive';
 if ( is_day() ) {
   $context['title'] = 'Archive: '.get_the_date( 'D M Y' );
@@ -27,6 +28,9 @@ if ( is_day() ) {
   $context['title'] = 'Archive: '.get_the_date( 'Y' );
 } else if ( is_tag() ) {
   $context['title'] = 'Tag: ' .single_tag_title( '', false );
+} else if ( is_author() ) {
+  $author = ( get_query_var( 'author_name' ) ) ? get_user_by( 'slug', get_query_var( 'author_name' ) ) : get_userdata( get_query_var( 'author' ) );
+  $context['title'] = 'Author: '.$author->display_name;
 } else if ( is_category() ) {
   $context['title'] = 'Category: ' .single_cat_title( '', false );
   array_unshift( $templates, 'archive-' . get_query_var( 'cat' ) . '.twig' );
@@ -37,6 +41,7 @@ if ( is_day() ) {
 
 $collection = new Timber\PostQuery();
 $context['posts'] = $collection;
+$context['page_number'] = pageNumber($paged);
 $context['pagination'] = $collection->pagination();
 
 Timber::render( $templates, $context );

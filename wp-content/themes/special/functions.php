@@ -108,25 +108,26 @@ function instagram_feed($url) {
   return $feed;
 }
 
-function register_portfolio_post_type() {
+function post_type_register_projects() {
+
 	/**
-	 * Post Type: Portfolio.
+	 * Post Type: Projects.
 	 */
 
 	$labels = [
-		"name" => __( "Work", "custom-post-type-ui" ),
+		"name" => __( "Projects", "custom-post-type-ui" ),
 		"singular_name" => __( "Project", "custom-post-type-ui" ),
 		"add_new_item" => __( "Add New Project", "custom-post-type-ui" ),
 	];
 
 	$args = [
-		"label" => __( "Work", "custom-post-type-ui" ),
+		"label" => __( "Projects", "custom-post-type-ui" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
 		"publicly_queryable" => true,
 		"show_ui" => true,
-		"show_in_rest" => false,
+		"show_in_rest" => true,
 		"rest_base" => "",
 		"rest_controller_class" => "WP_REST_Posts_Controller",
 		"has_archive" => true,
@@ -141,13 +142,15 @@ function register_portfolio_post_type() {
 		"query_var" => true,
 		"menu_position" => 5,
 		"menu_icon" => "dashicons-hammer",
-		"supports" => [ "title", "editor", "excerpt", "trackbacks", "custom-fields", "comments", "revisions", "thumbnail", "author", "page-attributes", "post-formats" ],
+		"supports" => [ "title", "editor", "thumbnail", "excerpt", "trackbacks", "custom-fields", "comments", "revisions", "author", "page-attributes", "post-formats" ],
+		"show_in_graphql" => false,
 	];
 
-  register_post_type( "portfolio", $args );
+	register_post_type( "work", $args );
 }
 
-add_action( 'init', 'register_portfolio_post_type' );
+add_action( 'init', 'post_type_register_projects' );
+
 
 // remove wp-embed
 function deregister_wp_embed(){
