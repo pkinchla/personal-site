@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  <article class="post-type-{{post.post_type}} site-grid block js-posts" id="post-{{post.ID}}">
+  <article id="post-{{post.ID}}">
     <header>
       <h1>
         {{post.title}}
@@ -9,7 +9,7 @@
         <span>(Page {{page_number}})</span>
         {% endif %}
       </h1>
-      <div class="entry-meta assistive-text">
+      <div class="assistive-text">
         <time datetime="{{post.modified_date|date('c')}}">Last Update on {{post.modified_date|date('l, F jS, Y')}}</time>
       </div>
     </header>
@@ -30,28 +30,26 @@
         >
       </picture>
     </figure>
-    <div class="content">
-      {{post.content}}
-    </div>
-    <section class="post-list" aria-labelledby="post-list">
+    {{post.content}}
+    <div aria-labelledby="post-list">
       <h2 id="post-list" class="assistive-text">Blog Posts</h2>
       {% for post in posts %}
         <article>
-          <h3 class="delta"><a class="linked-header" href="{{post.link}}">{{post.title}}</a></h3>
+          <h3 class="delta"><a href="{{post.link}}">{{post.title}}</a></h3>
           <div class="entry-meta">
             <time datetime="{{post.date|date('c')}}">{{post.date|date('l, F jS, Y')}}</time>
           </div>
         </article>
       {% endfor %}
       {% include 'pagination.twig' %}
-    </section>
-    <section class="categories" aria-labelledby="categories">
-      <h2 class="gamma" id="categories">Categories</h2>
+    </div>
+    <div aria-labelledby="categories">
+      <h2 id="categories">Categories</h2>
       <ol>
         {% for cat in categories %}
-          <li class="cat-item"><a href="{{cat.link}}">{{cat.title}}</a>  (<a href="/blog/category/{{cat.title|lower}}/feed/">RSS</a>)</li>
+          <li><a href="{{cat.link}}">{{cat.title}}</a>  (<a href="/blog/category/{{cat.title|lower}}/feed/">RSS</a>)</li>
         {% endfor %}
       </ol>
-    </section>
+    </div>
   </article>
 {% endblock %}

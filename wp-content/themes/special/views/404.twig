@@ -1,20 +1,17 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  <article class="post-type-404 site-grid block">
-    <header class="page-header">
+  <article>
+    <header>
       <h1>404</h1>
     </header>
     <figure>
       <img
-        class="error404"
         src="{{theme.path}}/images/max.gif"
         alt="max headroom animated gif gesturing towards camera"
       >
     </figure>
-    <div class="content">
-      <p class="search-message">Sorry, we couldn't find what you're looking for.</p>
-      {% include "searchform.twig" %}
-    </div>
+    <p>Sorry, we couldn't find what you're looking for.</p>
+    {% include "searchform.twig" %}
   </article>
 {% endblock %}

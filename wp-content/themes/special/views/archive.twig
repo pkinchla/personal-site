@@ -1,9 +1,12 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  <article class="post-type-archive site-grid block">
+  <article>
     <header>
       <h1>{{title}}</h1>
+      {% if page_number %}
+        <span>(Page {{page_number}})</span>
+      {% endif %}
     </header>
     <figure>
       <img
@@ -11,12 +14,10 @@
         alt="close up of miniature metallic chameleon standing on a metallic pedestal"
       >
     </figure>
-    <div class="content">
-      <h2 class="assistive-text">{{post.post_type}}</h2>
-      {% for post in posts %}
-        {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-      {% endfor %}
-      {% include 'pagination.twig' %}
-    </div>
+    <h2>{{post.post_type}}</h2>
+    {% for post in posts %}
+      {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+    {% endfor %}
+    {% include 'pagination.twig' %}
   </article>
 {% endblock %}

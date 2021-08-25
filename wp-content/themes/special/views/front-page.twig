@@ -22,18 +22,14 @@
                height="{{post.get_thumbnail.height}}"
           >
         </picture>
-      <span class="alpha">{{post.title}}</span>
+      <span>{{post.title}}</span>
     </figure>
-    <div class="block">
-      <div class="content">
-        {{post.content}}
-      </div>
-      <section class="latest">
-        <h2>Latest Writing</h2>
-        {% for post in home_post %}
-            {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-        {% endfor %}
-      </section>
+    {{post.content}}
+    <div aria-labelledby="latest-blog-post">
+      <h2 id="latest-blog-post">Latest Writing</h2>
+      {% for post in home_post %}
+          {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+      {% endfor %}
     </div>
   </article>
 {% endblock %}

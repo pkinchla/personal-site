@@ -2,18 +2,14 @@
 
 {% block content %}
   <article class="post-type-{{post.post_type}} site-grid block" id="post-{{post.ID}}">
-    <header class="entry-header">
-      <h1 tabindex="-1" class="entry-title">{{post.title}}</h1>
-      <div class="entry-meta">
-        {{function('special_posted_on')}}
-      </div>
+    <header>
+      <h1>{{post.title}}</h1>
+      {{function('special_posted_on')}}
     </header>
-    <figure{% if post.get_field('toggle_image_filter') %} class="no-filter"{% endif %}>
+    <figure {% if post.get_field('toggle_image_filter') %} class="no-filter"{% endif %}>
       {% include 'featured-image.twig' %}
     </figure>
-    <div class="content">
-      {{post.content}}
-    </div>
+    {{post.content}}
     <footer class="entry-footer">
       {{function('special_entry_footer')}}
     </footer>

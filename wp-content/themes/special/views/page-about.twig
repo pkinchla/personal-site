@@ -1,27 +1,23 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    <article class="post-type-{{post.post_type}} site-grid block" id="post-{{post.ID}}">
+    <article id="post-{{post.ID}}">
       <header>
         <h1>{{post.title}}</h1>
       </header>
       <figure>
         {% include 'featured-image.twig' %}
       </figure>
-      <div class="content">
-        {{post.content|wpautop}}
-      </div>
-      <div class="contact">
-        {{post.contact}}
-      </div>
-      <section class="resume-section" aria-labelledby="cv">
+      {{post.content|wpautop}}
+      {{post.contact}}
+      <div aria-labelledby="cv">
         <h2 id="cv">R&eacute;sum&eacute;</h2>
-        <a class="action" href="{{post.get_field('file_resume').url}}" download>Download</a>
-        <dl class="resume">
+        <a href="{{post.get_field('file_resume').url}}" download>Download</a>
+        <dl>
           <dt>Work</dt>
           {% for job in post.get_field('work') %}
-            <dd{% if loop.last == true  %} class="last"{% endif%}>
-              <div class="delta">
+            <dd>
+              <div>
               {{job.title}}
                 <span>
                   {% for date in job.dates %}
@@ -31,27 +27,27 @@
                   {% endfor %}
                 </span>
               </div>
-              <span class="company-name">{{job.company_name}}</span>
+              <span>{{job.company_name}}</span>
               <p>{{job.description}}<em><a href="http://{{job.company_link}}" rel="noopener" target="_blank">{{job.company_link_text}}</a></em></p>
             </dd>
           {% endfor %}
           <dt>Internship</dt>
           {% for gig in post.get_field('internship') %}
-            <dd{% if loop.last == true  %} class="last"{% endif%}>
-              <div class="delta">{{gig.title}}  <span><time datetime="{{gig.date}}">{{gig.date|date('Y')}}</time></span></div>
-              <span class="internship-location">{{gig.location}}</span>
+            <dd>
+              <div>{{gig.title}}  <span><time datetime="{{gig.date}}">{{gig.date|date('Y')}}</time></span></div>
+              <span>{{gig.location}}</span>
             </dd>
           {% endfor %}
           <dt>Skill</dt>
-            <dd class="last"><p>{{post.skill}}</p></dd>
+            <dd><p>{{post.skill}}</p></dd>
           <dt>Education</dt>
-            <dd class="last">
+            <dd>
             {% for school in post.get_field('education') %}
-              <div class="delta">{{school.school}}  <span>{{school.degree}}</span></div>
+              <div>{{school.school}}  <span>{{school.degree}}</span></div>
             {% endfor %}
             </dd>
           <dt>Interest</dt>
-            <dd class="last">
+            <dd>
               <ul>
                 {% for hobby in post.get_field('interest') %}
                   <li>{{hobby.item_of_interest}}</li>
@@ -59,23 +55,23 @@
               </ul>
             </dd>
         </dl>
-      </section>
+      </div>
       {% if pictures|length > 0 %}
-      <section class="instagram-section" aria-labelledby="instagram-feed">
+      <div aria-labelledby="instagram-feed">
         <h2 id="instagram-feed">Instagram Feed</h2>
         {{post.flickr_field}}
-        <ul class="photo-feed">
+        <ul>
           {% for picture in pictures %}
             <li>
               {% if picture.media_type != 'VIDEO' %}
                 <img loading="lazy" src="{{picture.media_url}}" alt="{{ (picture.caption) ? picture.caption.text : 'instagram thumbnail' }}">
               {% else %}
-                <video controls playsinline src="{{picture.media_url}}#t=0.1"></video>
+                <video controls playsinline src="{{picture.media_url}}#t=0.9"></video>
               {% endif %}
             </li>
           {% endfor %}
         </ul>
-      </section>
+      </div>
       {% endif %}
     </article>
 {% endblock %}

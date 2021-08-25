@@ -1,36 +1,32 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  <article class="post-type-archive site-grid block">
+  <article>
     {% if posts is empty %}
       <header>
-        <h1 tabindex="-1">No Results</h1>
+        <h1>No Results</h1>
       </header>
       <figure>
         <img
           src="{{theme.path}}/images/cham.jpg"
-          alt="metallic chameleon"
+          alt="close up of miniature metallic chameleon standing on a metallic pedestal"
         >
       </figure>
-      <div class="content">
-        <p class="search-message">Sorry, no results matched your query, maybe try again</p>
-        {% include 'searchform.twig' %}
-      </div>
+      <p>Sorry, no results matched your query, maybe try again</p>
+      {% include 'searchform.twig' %}
     {% else %}
       <header>
-        <h1 tabindex="-1">{{title}}</h1>
+        <h1>{{title}}</h1>
       </header>
       <figure>
-        <img src="{{theme.path}}/images/cham.jpg" alt="metallic chameleon small figurine sitting on a metal base">
+        <img src="{{theme.path}}/images/cham.jpg" alt="close up of miniature metallic chameleon standing on a metallic pedestal">
       </figure>
       <h2 class="assistive-text">Results</h2>
-      <div class="content">
-        {% for post in posts %}
-          <article>
-            {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-          </article>
-        {% endfor %}
-      </div>
+      {% for post in posts %}
+        <article>
+          {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+        </article>
+      {% endfor %}
       {% include 'pagination.twig' %}
     {% endif %}
   </article>

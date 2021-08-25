@@ -1,8 +1,9 @@
 {% if menu %}
-  <ul id="primary-menu"  class="menu" role="list">
+  <ul id="primary-menu" role="list">
   {% for item in menu %}
-    <li class="{{item.classes | join(' ')}}">
-      <a href="{{item.get_link}}">{{item.title}}</a>
+    <li>
+      {# need to improve this to get archive for work #}
+      <a href="{{item.get_link}}" aria-current="{{ (item.current) ? 'true' : 'false' }}">{{item.title}}</a>
       {% include "menu.twig" with {'menu': item.get_children} %}
     </li>
   {% endfor %}

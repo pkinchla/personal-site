@@ -7,24 +7,24 @@
   {% endblock %}
 
   <body class="{{body_class}}" data-template="base.twig">
-    <div id="page" class="hfeed site site-grid">
+    <div id="page" class="hfeed">
       <a class="skip-link assistive-text" href="#content">Skip To Content</a>
       {% block header %}
-      <header id="masthead" class="site-header">
+      <header id="masthead">
         {% include 'site-logo.twig' %}
-        <nav id="site-navigation" class="site-navigation">
+        <nav id="site-navigation">
           {% include "menu.twig" with {'menu': menu.get_items} %}
         </nav><!-- #site-navigation -->
       </header><!-- #masthead -->
       {% endblock %}
 
-      <main id="content" class="site-content">
+      <main id="content">
         {% block content %}
         {% endblock %}
       </main><!-- #content -->
 
       {% block footer %}
-        <footer id="colophon" class="site-footer">
+        <footer id="colophon">
           {% include 'footer.twig' %}
         </footer>
         {{ function('wp_footer') }}

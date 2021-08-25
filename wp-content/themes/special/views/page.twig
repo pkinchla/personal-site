@@ -1,15 +1,13 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  <article class="post-type-{{post.post_type}} site-grid block" id="post-{{post.ID}}">
+  <article id="post-{{post.ID}}">
     <header>
-      <h1 tabindex="-1">{{post.title}}</h1>
+      <h1>{{post.title}}</h1>
     </header>
     <figure>
       {% include 'featured-image.twig' %}
     </figure>
-    <div class="content">
-      {{post.content}}
-    </div>
+    {{post.content}}
   </article>
 {% endblock %}
