@@ -1,0 +1,6 @@
+@import "typography.css";
+
+body {
+  display: flex;
+  flex-direction: column;
+}
