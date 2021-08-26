@@ -48,7 +48,7 @@
             </dd>
           <dt>Interest</dt>
             <dd>
-              <ul>
+              <ul role="list">
                 {% for hobby in post.get_field('interest') %}
                   <li>{{hobby.item_of_interest}}</li>
                 {% endfor %}
@@ -60,7 +60,7 @@
       <div aria-labelledby="instagram-feed">
         <h2 id="instagram-feed">Instagram Feed</h2>
         {{post.flickr_field}}
-        <ul>
+        <ul role="list">
           {% for picture in pictures %}
             <li>
               {% if picture.media_type != 'VIDEO' %}

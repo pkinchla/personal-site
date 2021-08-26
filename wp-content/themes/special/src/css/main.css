@@ -1,6 +1,10 @@
+@import "reset.css";
 @import "typography.css";
+@import "accessibility.css";
+@import "prism-theme.css";
 
-body {
-  display: flex;
-  flex-direction: column;
+img,
+video {
+  height: auto;
+  max-width: 15em;
 }
