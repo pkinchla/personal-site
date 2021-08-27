@@ -24,12 +24,14 @@
         </picture>
       <span>{{post.title}}</span>
     </figure>
-    {{post.content}}
-    <div aria-labelledby="latest-blog-post">
-      <h2 id="latest-blog-post">Latest Writing</h2>
-      {% for post in home_post %}
-          {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-      {% endfor %}
+    <div class="content">
+      {{post.content}}
+      <div aria-labelledby="latest-blog-post">
+        <h2 id="latest-blog-post">Latest Writing</h2>
+        {% for post in home_post %}
+            {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+        {% endfor %}
+      </div>
     </div>
   </article>
 {% endblock %}

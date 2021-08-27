@@ -3,3 +3,8 @@
   transform: translateX(-50%);
   width: 100vw;
 }
+
+.content {
+  margin: 0 auto;
+  max-width: 55ch;
+}
