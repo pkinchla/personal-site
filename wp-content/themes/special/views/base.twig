@@ -7,14 +7,16 @@
   {% endblock %}
 
   <body class="{{body_class}}" data-template="base.twig">
-    <div id="page" class="hfeed">
+    <div id="page" class="hfeed site">
       <a class="skip-link assistive-text" href="#content">Skip To Content</a>
       {% block header %}
-      <header id="masthead">
-        {% include 'site-logo.twig' %}
-        <nav id="site-navigation">
-          {% include "menu.twig" with {'menu': menu.get_items} %}
-        </nav><!-- #site-navigation -->
+      <header id="masthead" class="full-bleed">
+        <div>
+          {% include 'site-logo.twig' %}
+          <nav id="site-navigation">
+            {% include "menu.twig" with {'menu': menu.get_items} %}
+          </nav><!-- #site-navigation -->
+        </div>
       </header><!-- #masthead -->
       {% endblock %}
 

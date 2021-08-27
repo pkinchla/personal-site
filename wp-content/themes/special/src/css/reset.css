@@ -1,3 +1,5 @@
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
 /* Box sizing rules */
 *,
 *::before,
@@ -45,8 +47,15 @@ a:not([class]) {
 
 /* Make images easier to work with */
 img,
-picture {
+picture,
+video {
   display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+svg {
+  display: inline-block;
   max-width: 100%;
 }
 

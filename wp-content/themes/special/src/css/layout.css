@@ -1,0 +1,119 @@
+.site {
+  box-shadow: rgba(0, 0, 0, 0.24) 0 0.1875em 0.5em;
+  margin: 0 auto;
+  max-width: 48em;
+  min-height: 100vh;
+  padding: 0 1em;
+}
+
+.site > header {
+  border-bottom: 0.0625em solid darkgrey;
+}
+
+.site > header > div {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 48em;
+  padding: 0 1em;
+}
+
+.site > header > div > a {
+  display: flex;
+  max-width: 6em;
+  padding: 0 0.5em;
+}
+
+.site > header > div a {
+  background: white;
+  transition: background 0.35s, color 0.35s ease-in-out;
+}
+
+.site > header > div > nav > ul li a {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  padding: 0 0.5em;
+}
+
+.site > header > div a:hover {
+  background: black;
+  color: white;
+}
+.site > header > div a:hover svg {
+  fill: white;
+}
+
+.site > header > div > nav > ul {
+  align-items: center;
+  display: flex;
+  font-family: var(--font-sans-serif);
+  font-style: italic;
+  font-weight: 700;
+  height: 100%;
+  margin: 0;
+}
+
+.site > header > div > nav > ul li {
+  height: 100%;
+}
+
+@supports (display: grid) {
+  @media only screen and (min-width: 64em) {
+    .site {
+      display: grid;
+      grid-template-areas:
+        "head main"
+        "head main"
+        "head foot";
+      margin: 0 auto;
+      max-width: 75em;
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    .site > header {
+      border-bottom: none;
+      margin-left: 0;
+      padding: 0 1em;
+      position: sticky;
+      top: 50%;
+      transform: translateY(-50%);
+      width: max-content;
+    }
+
+    .site header > div {
+      flex-direction: column;
+    }
+
+    .site > header > div > a {
+      margin-bottom: 0.5em;
+      max-width: 100%;
+      padding: 0.5em;
+    }
+
+    .site > header > div > nav > ul {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .site > header > div > nav > ul li {
+      width: 100%;
+    }
+
+    .site > header > div > nav > ul li a {
+      font-size: 1.15em;
+      padding-left: 2.95em;
+    }
+
+    .site main {
+      border-left: 0.0625em solid black;
+      grid-area: main;
+    }
+
+    .site footer {
+      border-left: 0.0625em solid black;
+      grid-area: foot;
+    }
+  }
+}

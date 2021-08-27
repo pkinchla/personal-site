@@ -1,10 +1,8 @@
 @import "reset.css";
+@import "custom-properties.css";
+@import "utilities.css";
 @import "typography.css";
+@import "links.css";
 @import "accessibility.css";
+@import "layout.css";
 @import "prism-theme.css";
-
-img,
-video {
-  height: auto;
-  max-width: 15em;
-}
