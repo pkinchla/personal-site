@@ -1,3 +1,7 @@
 a:hover {
   text-decoration: none;
 }
+
+a svg {
+  fill: currentColor;
+}

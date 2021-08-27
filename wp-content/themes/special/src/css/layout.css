@@ -12,10 +12,14 @@
 
 .site > header > div {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 auto;
   max-width: 48em;
-  padding: 0 1em;
+}
+
+.site > header a {
+  position: relative;
 }
 
 .site > header > div > a {
@@ -24,9 +28,21 @@
   padding: 0 0.5em;
 }
 
-.site > header > div a {
-  background: white;
-  transition: background 0.35s, color 0.35s ease-in-out;
+.site > header > div a::after {
+  background: currentColor;
+  bottom: 0;
+  content: "";
+  display: inline-block;
+  height: 0.125em;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: width 0.35s ease-in-out;
+  width: 0;
+}
+
+.site > header > div a:hover::after {
+  width: 100%;
 }
 
 .site > header > div > nav > ul li a {
@@ -34,14 +50,6 @@
   display: flex;
   height: 100%;
   padding: 0 0.5em;
-}
-
-.site > header > div a:hover {
-  background: black;
-  color: white;
-}
-.site > header > div a:hover svg {
-  fill: white;
 }
 
 .site > header > div > nav > ul {
@@ -59,7 +67,7 @@
 }
 
 @supports (display: grid) {
-  @media only screen and (min-width: 64em) {
+  @media only screen and (min-width: 48em) {
     .site {
       display: grid;
       grid-template-areas:
@@ -75,7 +83,6 @@
     .site > header {
       border-bottom: none;
       margin-left: 0;
-      padding: 0 1em;
       position: sticky;
       top: 50%;
       transform: translateY(-50%);
@@ -89,7 +96,7 @@
     .site > header > div > a {
       margin-bottom: 0.5em;
       max-width: 100%;
-      padding: 0.5em;
+      padding: 1em 2em;
     }
 
     .site > header > div > nav > ul {
@@ -103,7 +110,7 @@
 
     .site > header > div > nav > ul li a {
       font-size: 1.15em;
-      padding-left: 2.95em;
+      padding-left: 4.35em;
     }
 
     .site main {
