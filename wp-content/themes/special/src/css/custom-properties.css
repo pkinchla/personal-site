@@ -4,4 +4,11 @@
     "Segoe UI Symbol";
   --font-serif: georgia, "Times New Roman", times, serif;
   --font-mono: menlo, courier, monospace;
+
+  /* colors */
+  --light-grey: #f1f1f1;
+  --dark-green: #143f40;
+  --rich-brown: #38220b;
+  --link-blue: #00e;
+  --visited-purple: #551a8b;
 }

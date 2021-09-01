@@ -1,5 +1,6 @@
 /* home page hero */
 .home article > figure span {
+  color: var(--dark-green);
   font-family: var(--font-sans-serif);
   font-size: 2em;
   font-style: italic;

@@ -1,5 +1,5 @@
 .site > header {
-  border-bottom: 0.0625em solid black;
+  border-bottom: 0.0625em solid var(--rich-brown);
 }
 
 .site > header > div {
