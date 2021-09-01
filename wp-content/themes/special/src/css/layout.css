@@ -21,6 +21,26 @@
 
 @supports (display: grid) {
   @media only screen and (min-width: 48em) {
+    .content {
+      display: grid;
+      grid-template-columns:
+        1fr
+        min(55ch, 100%)
+        1fr;
+    }
+
+    .content > * {
+      grid-column: 2;
+    }
+
+    .content > pre,
+    .content > iframe {
+      grid-column: 1 / 4;
+      margin: 0 auto 1.5rem auto;
+      max-width: 80%;
+      width: 80ch;
+    }
+
     .site {
       display: grid;
       grid-template-areas:
@@ -54,22 +74,10 @@
   }
 }
 
-/* home page hero */
-.home article > figure span {
-  font-family: "futura-pt", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
-  font-size: 2em;
-  font-style: italic;
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  position: absolute;
-  right: 52.5%;
-  top: 40%;
-}
+/* generic main content */
 
-@media only screen and (min-width: 48em) {
-  .home article > figure span {
-    font-size: 3em;
+/* @supports (display: grid) {
+  @media only screen and (min-width: 48em) {
+
   }
-}
+} */

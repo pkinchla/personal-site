@@ -3,26 +3,3 @@
   transform: translateX(-50%);
   width: 100vw;
 }
-@supports (display: grid) {
-  @media only screen and (min-width: 48em) {
-    .content {
-      display: grid;
-      grid-template-columns:
-        1fr
-        min(55ch, 100%)
-        1fr;
-    }
-
-    .content > * {
-      grid-column: 2;
-    }
-
-    .content > pre,
-    .content > iframe {
-      grid-column: 1 / 4;
-      margin: 0 auto 1.5rem auto;
-      max-width: 80%;
-      width: 80ch;
-    }
-  }
-}

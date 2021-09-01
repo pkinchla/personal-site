@@ -1,0 +1,17 @@
+/* home page hero */
+.home article > figure span {
+  font-family: var(--font-sans-serif);
+  font-size: 2em;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  position: absolute;
+  right: 52.5%;
+  top: 40%;
+}
+
+@media only screen and (min-width: 48em) {
+  .home article > figure span {
+    font-size: 3em;
+  }
+}

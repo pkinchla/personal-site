@@ -2,7 +2,7 @@
 
 body {
   background-color: #f1f1f1;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: var(--font-serif);
   font-size: clamp(1rem, calc(0.125rem + 1.1vw), 1.25rem);
 }
 
@@ -12,9 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "futura-pt", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
+  font-family: var(--font-sans-serif);
 }
 
 ul,
