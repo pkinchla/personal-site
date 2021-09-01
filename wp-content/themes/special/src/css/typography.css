@@ -16,3 +16,16 @@ h6 {
     Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
 }
+
+ul,
+ol {
+  list-style-position: outside;
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul,
+p {
+  margin-bottom: 1.5em;
+}

@@ -4,67 +4,19 @@
   margin: 0 auto;
   max-width: 48em;
   min-height: 100vh;
-  padding: 0 1em;
 }
 
-.site > header {
-  border-bottom: 0.0625em solid darkgrey;
-}
-
-.site > header > div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 auto;
-  max-width: 48em;
-}
-
-.site > header a {
+.site article > figure {
+  margin-bottom: 1.5em;
   position: relative;
 }
 
-.site > header > div > a {
-  display: flex;
-  max-width: 6em;
-  padding: 0 0.5em;
+.site > *:not(main) {
+  padding: 0 2rem;
 }
 
-.site > header > div a::after {
-  background: currentColor;
-  bottom: 0;
-  content: "";
-  display: inline-block;
-  height: 0.125em;
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%);
-  transition: width 0.35s ease-in-out;
-  width: 0;
-}
-
-.site > header > div a:hover::after {
-  width: 100%;
-}
-
-.site > header > div > nav > ul li a {
-  align-items: center;
-  display: flex;
-  height: 100%;
-  padding: 0 0.5em;
-}
-
-.site > header > div > nav > ul {
-  align-items: center;
-  display: flex;
-  font-family: var(--font-sans-serif);
-  font-style: italic;
-  font-weight: 700;
-  height: 100%;
-  margin: 0;
-}
-
-.site > header > div > nav > ul li {
-  height: 100%;
+.site > main > article > *:not(figure) {
+  padding: 0 2rem;
 }
 
 @supports (display: grid) {
@@ -72,65 +24,37 @@
     .site {
       display: grid;
       grid-template-areas:
-        "head main"
-        "head main"
-        "head foot";
+        "header main"
+        "header main"
+        "header footer";
+      grid-template-columns: 15em 1fr;
       margin: 0 auto;
-      max-width: 75em;
+      max-width: 85.375em;
       min-height: 100vh;
       padding: 0;
     }
 
-    .site > header {
-      border-bottom: none;
-      margin-left: 0;
-      position: sticky;
-      top: 50%;
-      transform: translateY(-50%);
-      width: max-content;
-    }
-
-    .site header > div {
-      flex-direction: column;
-    }
-
-    .site > header > div > a {
-      margin-bottom: 0.5em;
-      max-width: 100%;
-      padding: 1em 2em;
-    }
-
-    .site > header > div > nav > ul {
-      align-items: flex-start;
-      flex-direction: column;
-    }
-
-    .site > header > div > nav > ul li {
-      width: 100%;
-    }
-
-    .site > header > div > nav > ul li a {
-      font-size: 1.15em;
-      padding-left: 4.35em;
-    }
-
-    .site main {
+    .site > main {
       border-left: 0.0625em solid black;
       grid-area: main;
     }
 
-    .site footer {
+    .site > *:not(main) {
+      padding: 0;
+    }
+
+    .site > main > article > *:not(figure) {
+      padding: 0;
+    }
+
+    .site > footer {
       border-left: 0.0625em solid black;
-      grid-area: foot;
+      grid-area: footer;
     }
   }
 }
 
-/* home page hero` */
-.home article > figure {
-  position: relative;
-}
-
+/* home page hero */
 .home article > figure span {
   font-family: "futura-pt", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",

@@ -14,6 +14,7 @@
         alt="close up of miniature metallic chameleon standing on a metallic pedestal"
       >
     </figure>
+    <pre> fix header here: {{post}}</pre>
     <h2>{{post.post_type}}</h2>
     {% for post in posts %}
       {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}

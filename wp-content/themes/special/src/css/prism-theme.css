@@ -1,9 +1,14 @@
+code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
   background: none;
   color: #ccc;
   font-family: var(--font-mono);
-  font-size: 1em;
+  font-size: 0.875em;
   hyphens: none;
   line-height: 1.5;
   tab-size: 4;
@@ -16,7 +21,6 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-  margin: 0.5em 0;
   overflow: auto;
   padding: 1em;
 }

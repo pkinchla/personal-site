@@ -9,13 +9,15 @@
     <figure {% if post.get_field('toggle_image_filter') %} class="no-filter"{% endif %}>
       {% include 'featured-image.twig' %}
     </figure>
-    {{post.content}}
-    <footer class="entry-footer">
-      {{function('special_entry_footer')}}
-    </footer>
-    {{post_nav}}
-    {% if (function('comments_open')) or (function('get_comments_number')) %}
-      {{ function( 'comments_template' ) }}
-    {% endif %}
+    <div class="content">
+      {{post.content}}
+      <footer class="entry-footer">
+        {{function('special_entry_footer')}}
+      </footer>
+      {{post_nav}}
+      {% if (function('comments_open')) or (function('get_comments_number')) %}
+        {{ function( 'comments_template' ) }}
+      {% endif %}
+    </div>
   </article>
 {% endblock %}

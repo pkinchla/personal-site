@@ -34,12 +34,7 @@
     <div aria-labelledby="post-list">
       <h2 id="post-list" class="assistive-text">Blog Posts</h2>
       {% for post in posts %}
-        <article>
-          <h3 class="delta"><a href="{{post.link}}">{{post.title}}</a></h3>
-          <div class="entry-meta">
-            <time datetime="{{post.date|date('c')}}">{{post.date|date('l, F jS, Y')}}</time>
-          </div>
-        </article>
+        {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
       {% endfor %}
       {% include 'pagination.twig' %}
     </div>

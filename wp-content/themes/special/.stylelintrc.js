@@ -4,7 +4,7 @@ module.exports = {
   rules: {
     "color-no-invalid-hex": true,
     "max-empty-lines": 2,
-    "unit-allowed-list": ["ch", "em", "rem", "%", "vh", "vw", "ms", "s"],
+    "unit-allowed-list": ["fr", "ch", "em", "rem", "%", "vh", "vw", "ms", "s"],
     "order/properties-alphabetical-order": true,
   },
 };
