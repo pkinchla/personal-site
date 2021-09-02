@@ -1,6 +1,5 @@
 .site main > article > figure {
-  border-bottom: 0.0625em solid var(--dark-green);
-  border-top: 0.0625em solid var(--dark-green);
+  border-bottom: 0.0625em solid var(--rich-brown);
 }
 
 .site main > article > figure:not(.no-filter)::after {

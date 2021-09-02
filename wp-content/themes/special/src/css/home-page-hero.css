@@ -1,5 +1,4 @@
-/* home page hero */
-.home article > figure span {
+.home article > figure > span {
   background-color: var(--light-grey);
   clip-path: polygon(0 0, 100% 40%, 100% 75%, 15% 100%);
   color: var(--dark-green);
@@ -8,10 +7,34 @@
   font-style: italic;
   font-weight: 700;
   letter-spacing: -0.035em;
-  padding: 0 1em;
+  padding: 0 0.75em;
   position: absolute;
   right: 48%;
   top: 40%;
+  z-index: 2;
+}
+
+.home article > figure > span::after {
+  background-color: var(--dark-green);
+  content: "";
+  display: inline-block;
+  height: 100%;
+  left: 0;
+  mix-blend-mode: multiply;
+  opacity: 0.35;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.home article > figure a {
+  bottom: 12.5%;
+  display: inline-block;
+  font-size: 2em;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 2;
 }
 
 .home .site main > article > header {
@@ -21,5 +44,8 @@
 @media only screen and (min-width: 48em) {
   .home article > figure span {
     font-size: 3em;
+  }
+  .home article > figure a {
+    font-size: 1em;
   }
 }

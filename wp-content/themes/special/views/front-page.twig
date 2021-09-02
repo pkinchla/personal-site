@@ -23,8 +23,12 @@
           >
         </picture>
       <span>{{post.title}}</span>
+      <a href="#home-content">
+        <span aria-hidden="true">&darr;</span>
+        <span class="assistive-text">Home content section</span>
+      </a>
     </figure>
-    <div class="content">
+    <div class="content" id="home-content">
       {{post.content}}
       <section>
         <h2 id="latest-blog-post">Latest Writing</h2>

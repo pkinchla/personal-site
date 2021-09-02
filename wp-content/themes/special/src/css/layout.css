@@ -1,6 +1,5 @@
 /* site layout  */
 .site {
-  box-shadow: var(--dark-green) 0 0.1875em 0.5em;
   margin: 0 auto;
   max-width: 48em;
   min-height: 100vh;
@@ -29,12 +28,16 @@
   padding: 0 2rem;
 }
 
+.site > main > article > *:not(figure):last-child {
+  padding: 0 2rem 6rem 2rem;
+}
+
 @supports (display: grid) {
   @media only screen and (min-width: 48em) {
     .content {
       display: grid;
       grid-template-columns:
-        1fr
+        1.55fr
         min(55ch, 100%)
         1fr;
     }
@@ -65,7 +68,8 @@
     }
 
     .site > main {
-      border-left: 0.0625em solid var(--dark-green);
+      border: 0.0625em solid var(--dark-green);
+      box-shadow: var(--dark-green) 0 0.1875em 0.75em;
       grid-area: main;
     }
 

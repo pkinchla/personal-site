@@ -40,11 +40,11 @@
     </section>
     <section>
       <h2 id="categories">Categories</h2>
-      <ol>
+      <ul>
         {% for cat in categories %}
           <li><a href="{{cat.link}}">{{cat.title}}</a>  (<a href="/blog/category/{{cat.title|lower}}/feed/">RSS</a>)</li>
         {% endfor %}
-      </ol>
+      </ul>
     </section>
   </article>
 {% endblock %}

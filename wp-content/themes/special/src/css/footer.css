@@ -1,0 +1,46 @@
+.site > footer {
+  border: 0.0625rem solid var(--rich-brown);
+  box-shadow: var(--dark-green) 0 0.1875em 0.5em;
+  margin-top: 6rem;
+  padding: 3rem 2rem;
+}
+
+.site > footer > ul {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.site > footer > ul li:not(:last-of-type) {
+  margin-right: 1em;
+}
+
+.site > footer > ul a {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-sans-serif);
+  font-style: italic;
+  font-weight: 700;
+}
+
+.site > footer > ul a svg {
+  height: 2em;
+  width: 2em;
+}
+
+.site > footer p {
+  margin-bottom: 0.75em;
+}
+
+@supports (display: grid) {
+  @media only screen and (min-width: 73.4375em) {
+    .site > footer {
+      display: grid;
+      grid-template-columns:
+        1.55fr
+        min(55ch, 100%)
+        1fr;
+    }
+  }
+}
