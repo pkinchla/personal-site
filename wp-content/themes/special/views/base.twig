@@ -11,12 +11,10 @@
       <a class="skip-link assistive-text" href="#content">Skip To Content</a>
       {% block header %}
       <header id="masthead">
-        <div>
-          {% include 'site-logo.twig' %}
-          <nav id="site-navigation">
-            {% include "menu.twig" with {'menu': menu.get_items} %}
-          </nav><!-- #site-navigation -->
-        </div>
+        {% include 'site-logo.twig' %}
+        <nav id="site-navigation">
+          {% include "menu.twig" with {'menu': menu.get_items} %}
+        </nav><!-- #site-navigation -->
       </header><!-- #masthead -->
       {% endblock %}
 
@@ -26,7 +24,7 @@
       </main><!-- #content -->
 
       {% block footer %}
-        <footer id="colophon">
+        <footer>
           {% include 'footer.twig' %}
         </footer>
         {{ function('wp_footer') }}

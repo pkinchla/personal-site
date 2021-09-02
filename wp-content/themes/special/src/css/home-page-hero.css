@@ -1,14 +1,21 @@
 /* home page hero */
 .home article > figure span {
+  background-color: var(--light-grey);
+  clip-path: polygon(0 0, 100% 40%, 100% 75%, 15% 100%);
   color: var(--dark-green);
   font-family: var(--font-sans-serif);
   font-size: 2em;
   font-style: italic;
   font-weight: 700;
   letter-spacing: -0.035em;
+  padding: 0 1em;
   position: absolute;
-  right: 52.5%;
+  right: 48%;
   top: 40%;
+}
+
+.home .site main > article > header {
+  margin: 0;
 }
 
 @media only screen and (min-width: 48em) {

@@ -11,7 +11,7 @@
       <div>
         {{post.content|wpautop}}
         {{post.contact}}
-        <div aria-labelledby="cv">
+        <section>
           <h2 id="cv">R&eacute;sum&eacute;</h2>
           <a href="{{post.get_field('file_resume').url}}" download>Download</a>
           <dl>
@@ -56,9 +56,9 @@
                 </ul>
               </dd>
           </dl>
-        </div>
+        </section>
         {% if pictures|length > 0 %}
-        <div aria-labelledby="instagram-feed">
+        <section>
           <h2 id="instagram-feed">Instagram Feed</h2>
           {{post.flickr_field}}
           <ul role="list">
@@ -72,7 +72,7 @@
               </li>
             {% endfor %}
           </ul>
-        </div>
+        </section>
         {% endif %}
       </div>
     </article>

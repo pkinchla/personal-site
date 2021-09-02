@@ -31,20 +31,20 @@
       </picture>
     </figure>
     {{post.content}}
-    <div aria-labelledby="post-list">
+    <section>
       <h2 id="post-list" class="assistive-text">Blog Posts</h2>
       {% for post in posts %}
         {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
       {% endfor %}
       {% include 'pagination.twig' %}
-    </div>
-    <div aria-labelledby="categories">
+    </section>
+    <section>
       <h2 id="categories">Categories</h2>
       <ol>
         {% for cat in categories %}
           <li><a href="{{cat.link}}">{{cat.title}}</a>  (<a href="/blog/category/{{cat.title|lower}}/feed/">RSS</a>)</li>
         {% endfor %}
       </ol>
-    </div>
+    </section>
   </article>
 {% endblock %}

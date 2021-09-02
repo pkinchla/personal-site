@@ -1,8 +1,4 @@
 .site > header {
-  border-bottom: 0.0625em solid var(--rich-brown);
-}
-
-.site > header > div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -14,13 +10,13 @@
   position: relative;
 }
 
-.site > header > div > a {
+.site > header > a {
   display: flex;
   max-width: 6em;
   padding: 0 0.5em;
 }
 
-.site > header > div a::after {
+.site > header a::after {
   background: currentColor;
   bottom: 0;
   content: "";
@@ -33,11 +29,11 @@
   width: 0;
 }
 
-.site > header > div a:hover::after {
+.site > header a:hover::after {
   width: 100%;
 }
 
-.site > header > div > nav > ul {
+.site > header > nav > ul {
   align-items: center;
   display: flex;
   font-family: var(--font-sans-serif);
@@ -47,11 +43,11 @@
   margin: 0;
 }
 
-.site > header > div > nav > ul li {
+.site > header > nav > ul li {
   height: 100%;
 }
 
-.site > header > div > nav > ul li a {
+.site > header > nav > ul li a {
   align-items: center;
   display: flex;
   height: 100%;
@@ -61,45 +57,40 @@
 @supports (display: grid) {
   @media only screen and (min-width: 48em) {
     .site > header {
+      align-items: center;
       border-bottom: none;
+      flex-direction: column;
       margin-left: 0;
       position: sticky;
       top: 50%;
       transform: translateY(-50%);
+      width: 100%;
     }
 
-    .site header > div {
-      align-items: center;
-      flex-direction: column;
-    }
-
-    .site header > div > nav {
+    .site header > nav {
       margin-bottom: 1.25rem;
       width: 100%;
     }
 
-    .site > header > div a {
-      width: 100%;
-    }
-
-    .site > header > div > a {
+    .site > header > a {
       display: flex;
       justify-content: center;
       margin-bottom: 0.5em;
       max-width: inherit;
       padding: 1em;
+      width: 100%;
     }
 
-    .site > header > div > nav > ul {
+    .site > header > nav > ul {
       align-items: flex-start;
       flex-direction: column;
     }
 
-    .site > header > div > nav > ul li {
+    .site > header > nav > ul li {
       width: 100%;
     }
 
-    .site > header > div > nav > ul li a {
+    .site > header > nav > ul li a {
       font-size: 1.15em;
       padding-left: 5.5em;
     }

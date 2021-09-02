@@ -6,15 +6,19 @@
   min-height: 100vh;
 }
 
-.site article > figure {
-  border-bottom: 0.0625em solid var(--dark-green);
-  border-top: 0.0625em solid var(--dark-green);
-  margin-bottom: 1.5em;
-  position: relative;
+.site main > article {
+  display: flex;
+  flex-direction: column;
 }
 
-.site article > figure:not(.no-filter) img {
-  filter: saturate(10%);
+.site main > article > header {
+  margin-bottom: 1.5em;
+}
+
+.site main > article > figure {
+  margin-bottom: 1.5em;
+  order: -1;
+  position: relative;
 }
 
 .site > *:not(main) {
@@ -66,10 +70,6 @@
     }
 
     .site > *:not(main) {
-      padding: 0;
-    }
-
-    .site > main > article > *:not(figure) {
       padding: 0;
     }
 

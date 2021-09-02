@@ -26,12 +26,12 @@
     </figure>
     <div class="content">
       {{post.content}}
-      <div aria-labelledby="latest-blog-post">
+      <section>
         <h2 id="latest-blog-post">Latest Writing</h2>
         {% for post in home_post %}
             {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
         {% endfor %}
-      </div>
+      </section>
     </div>
   </article>
 {% endblock %}

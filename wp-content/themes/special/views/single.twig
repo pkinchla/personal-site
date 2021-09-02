@@ -2,7 +2,7 @@
 
 {% block content %}
   <article class="post-type-{{post.post_type}} site-grid block" id="post-{{post.ID}}">
-    <header>
+    <header class="content">
       <h1>{{post.title}}</h1>
       {{function('special_posted_on')}}
     </header>

@@ -18,13 +18,13 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
-  <div class="wrapper">
-    <section class="comments">
+<div id="comments">
+  <div>
+    <section>
     <?php // You can start editing here -- including this comment! ?>
 
     <?php if ( have_comments() ) : ?>
-      <h3 class="comments-title">
+      <h3>
         <?php
           printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'special' ),
             number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
@@ -32,18 +32,16 @@ if ( post_password_required() ) {
       </h3>
 
       <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-      <nav id="comment-nav-above" class="navigation comment-navigation clearfix">
-        <h3 class="screen-reader-text"><?php _e( 'Comment navigation', 'special' ); ?></h3>
-        <div class="nav-links">
-
-          <div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'special' ) ); ?></div>
-          <div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'special' ) ); ?></div>
-
+      <nav id="comment-nav-above">
+        <h3 class="assistive-text"><?php _e( 'Comment navigation', 'special' ); ?></h3>
+        <div>
+          <div><?php previous_comments_link( __( 'Older Comments', 'special' ) ); ?></div>
+          <div><?php next_comments_link( __( 'Newer Comments', 'special' ) ); ?></div>
         </div><!-- .nav-links -->
       </nav><!-- #comment-nav-above -->
       <?php endif; // check for comment navigation ?>
 
-      <ol class="comment-list">
+      <ol>
         <?php
           wp_list_comments( array(
             'style'      => 'ol',
@@ -53,13 +51,11 @@ if ( post_password_required() ) {
       </ol><!-- .comment-list -->
 
       <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-      <nav id="comment-nav-below" class="navigation comment-navigation clearfix">
-        <h3 class="screen-reader-text"><?php _e( 'Comment navigation', 'special' ); ?></h3>
-        <div class="nav-links">
-
-          <div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'special' ) ); ?></div>
-          <div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'special' ) ); ?></div>
-
+      <nav id="comment-nav-below">
+        <h3 class="assistive-text"><?php _e( 'Comment navigation', 'special' ); ?></h3>
+        <div>
+          <div><?php previous_comments_link( __( 'Older Comments', 'special' ) ); ?></div>
+          <div><?php next_comments_link( __( 'Newer Comments', 'special' ) ); ?></div>
         </div><!-- .nav-links -->
       </nav><!-- #comment-nav-below -->
       <?php endif; // check for comment navigation ?>
@@ -70,7 +66,7 @@ if ( post_password_required() ) {
       // If comments are closed and there are comments, let's leave a little note, shall we?
       if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
     ?>
-      <em class="no-comments"><?php _e( 'Comments are closed.', 'special' ); ?></em>
+      <em><?php _e( 'Comments are closed.', 'special' ); ?></em>
     <?php endif; ?>
 
     <?php comment_form(); ?>

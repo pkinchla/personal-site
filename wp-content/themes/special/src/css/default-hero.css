@@ -1,0 +1,22 @@
+.site main > article > figure {
+  border-bottom: 0.0625em solid var(--dark-green);
+  border-top: 0.0625em solid var(--dark-green);
+}
+
+.site main > article > figure:not(.no-filter)::after {
+  background-color: var(--dark-green);
+  content: "";
+  display: inline-block;
+  height: 100%;
+  left: 0;
+  mix-blend-mode: multiply;
+  opacity: 0.35;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.site main > article > figure:not(.no-filter) img {
+  filter: brightness(125%) saturate(5%);
+}
