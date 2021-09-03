@@ -1,5 +1,7 @@
 .site > footer {
+  background: var(--light-grey);
   border: 0.0625rem solid var(--rich-brown);
+  bottom: 0;
   box-shadow: var(--dark-green) 0 0.1875em 0.5em;
   margin-top: 6rem;
   padding: 3rem 2rem;
@@ -25,8 +27,8 @@
 }
 
 .site > footer > ul a svg {
-  height: 2em;
-  width: 2em;
+  height: 3em;
+  width: 3em;
 }
 
 .site > footer p {
@@ -38,9 +40,14 @@
     .site > footer {
       display: grid;
       grid-template-columns:
-        1.55fr
+        2fr
+        0.5fr
         min(55ch, 100%)
+        0.5fr
         1fr;
+    }
+    .site > footer section {
+      grid-column: 3;
     }
   }
 }

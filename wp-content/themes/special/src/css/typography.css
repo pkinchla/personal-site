@@ -4,7 +4,7 @@ body {
   background-color: #f1f1f1;
   color: var(--rich-brown);
   font-family: var(--font-serif);
-  font-size: clamp(1rem, calc(0.125rem + 1.1vw), 1.25rem);
+  font-size: clamp(1rem, 0.125rem + 1.1vw, 1.25rem);
 }
 
 h1,

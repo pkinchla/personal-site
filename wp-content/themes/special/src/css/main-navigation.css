@@ -16,6 +16,11 @@
   padding: 0 0.5em;
 }
 
+.site > header > a > svg {
+  height: 2.5em;
+  width: 12em;
+}
+
 .site > header a::after {
   background: currentColor;
   bottom: 0;

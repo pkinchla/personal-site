@@ -1,5 +1,6 @@
 /* site layout  */
 .site {
+  border-left: 0.0625em solid var(--rich-brown);
   margin: 0 auto;
   max-width: 48em;
   min-height: 100vh;
@@ -28,30 +29,26 @@
   padding: 0 2rem;
 }
 
-.site > main > article > *:not(figure):last-child {
-  padding: 0 2rem 6rem 2rem;
-}
-
 @supports (display: grid) {
   @media only screen and (min-width: 48em) {
     .content {
       display: grid;
       grid-template-columns:
-        1.55fr
+        2fr
+        0.5fr
         min(55ch, 100%)
+        0.5fr
         1fr;
     }
 
     .content > * {
-      grid-column: 2;
+      grid-column: 3;
     }
 
     .content > pre,
     .content > iframe {
-      grid-column: 1 / 4;
-      margin: 0 auto 1.5rem auto;
-      max-width: 80%;
-      width: 80ch;
+      grid-column: 2 / 5;
+      margin-bottom: 1.5em;
     }
 
     .site {
@@ -62,7 +59,7 @@
         "header footer";
       grid-template-columns: 15em 1fr;
       margin: 0 auto;
-      max-width: 85.375em;
+      max-width: 107em;
       min-height: 100vh;
       padding: 0;
     }
@@ -75,6 +72,10 @@
 
     .site > *:not(main) {
       padding: 0;
+    }
+
+    .site > main > article > *:not(figure):last-child {
+      padding: 0 2rem 6rem 2rem;
     }
 
     .site > footer {
