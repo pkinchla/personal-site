@@ -6,9 +6,10 @@
   --font-mono: menlo, courier, monospace;
 
   /* colors */
-  --light-grey: #f1f1f1;
-  --dark-green: #143f40;
-  --rich-brown: #38220b;
-  --link-blue: #00e;
-  --visited-purple: #551a8b;
+  --body-background: #f1f1f1;
+  --primary: #38220b;
+  --secondary: #143f40;
+  --link: #00e;
+  --active: #e00;
+  --visited: #551a8b;
 }

@@ -1,7 +1,7 @@
 .home article > figure > span {
-  background-color: var(--light-grey);
+  background-color: var(--body-background);
   clip-path: polygon(0 0, 100% 40%, 100% 75%, 15% 100%);
-  color: var(--dark-green);
+  color: var(--secondary);
   font-family: var(--font-sans-serif);
   font-size: 2em;
   font-style: italic;
@@ -15,7 +15,7 @@
 }
 
 .home article > figure > span::after {
-  background-color: var(--dark-green);
+  background-color: var(--secondary);
   content: "";
   display: inline-block;
   height: 100%;

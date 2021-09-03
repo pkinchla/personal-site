@@ -1,9 +1,9 @@
 .site main > article > figure {
-  border-bottom: 0.0625em solid var(--rich-brown);
+  border-bottom: 0.0625em solid var(--primary);
 }
 
 .site main > article > figure:not(.no-filter)::after {
-  background-color: var(--dark-green);
+  background-color: var(--secondary);
   content: "";
   display: inline-block;
   height: 100%;

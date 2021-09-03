@@ -2,7 +2,7 @@
 
 body {
   background-color: #f1f1f1;
-  color: var(--rich-brown);
+  color: var(--primary);
   font-family: var(--font-serif);
   font-size: clamp(1rem, 0.125rem + 1.1vw, 1.25rem);
 }
@@ -13,7 +13,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--dark-green);
+  color: var(--secondary);
   font-family: var(--font-sans-serif);
   font-weight: 700;
   max-width: 20ch;

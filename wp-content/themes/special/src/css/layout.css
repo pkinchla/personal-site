@@ -1,6 +1,6 @@
 /* site layout  */
 .site {
-  border-left: 0.0625em solid var(--rich-brown);
+  border-left: 0.0625em solid var(--primary);
   margin: 0 auto;
   max-width: 48em;
   min-height: 100vh;
@@ -65,8 +65,8 @@
     }
 
     .site > main {
-      border: 0.0625em solid var(--dark-green);
-      box-shadow: var(--dark-green) 0 0.1875em 0.75em;
+      border: 0.0625em solid var(--secondary);
+      box-shadow: var(--secondary) 0 0.1875em 0.75em;
       grid-area: main;
     }
 
@@ -79,7 +79,7 @@
     }
 
     .site > footer {
-      border-left: 0.0625em solid var(--rich-brown);
+      border-left: 0.0625em solid var(--primary);
       grid-area: footer;
     }
   }
