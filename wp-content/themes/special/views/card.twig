@@ -1,4 +1,4 @@
-<article id="tease-{{post.ID}}">
+<article class="card" id="card-{{post.ID}}">
   {% block content %}
     <h3><a href="{{post.link}}">{{post.title}}</a></h3>
     <time datetime="{{post.date|date('c')}}">{{post.date|date('l, F jS, Y')}}</time>

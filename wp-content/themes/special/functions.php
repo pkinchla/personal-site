@@ -220,7 +220,8 @@ class StarterSite extends TimberSite {
     $context['is_home'] = is_front_page();
     $context['is_dev'] = WP_DEBUG || SCRIPT_DEBUG;
     $context['posts_per_page'] = get_option( 'posts_per_page' );
-    $context['current_page'] = get_permalink(get_queried_object_id());
+    $context['current_page'] = home_url( $_SERVER['REQUEST_URI']);
+    $context['menu_type'] = explode('/', home_url( $_SERVER['REQUEST_URI'] ))[3];
 
 		return $context;
 	}

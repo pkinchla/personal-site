@@ -21,13 +21,15 @@
       <figure>
         <img src="{{theme.path}}/images/cham.jpg" alt="close up of miniature metallic chameleon standing on a metallic pedestal">
       </figure>
-      <h2 class="assistive-text">Results</h2>
-      {% for post in posts %}
-        <article>
-          {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-        </article>
-      {% endfor %}
-      {% include 'pagination.twig' %}
+      <div class="content-grid">
+        <h2 class="assistive-text">Results</h2>
+        {% for post in posts %}
+          <article>
+            {% include ['card.twig'] %}
+          </article>
+        {% endfor %}
+        {% include 'pagination.twig' %}
+      </div>
     {% endif %}
   </article>
 {% endblock %}

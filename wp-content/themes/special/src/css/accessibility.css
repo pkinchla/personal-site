@@ -37,5 +37,5 @@
 }
 
 .no-offset:focus {
-  outline-offset: 0;
+  outline-offset: -0.09375rem;
 }

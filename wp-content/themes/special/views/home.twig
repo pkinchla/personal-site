@@ -2,15 +2,15 @@
 
 {% block content %}
   <article id="post-{{post.ID}}">
-    <header>
-      <h1>
-        {{post.title}}
-        {% if page_number %}
-        <span>(Page {{page_number}})</span>
-        {% endif %}
-      </h1>
-      <div class="assistive-text">
-        <time datetime="{{post.modified_date|date('c')}}">Last Update on {{post.modified_date|date('l, F jS, Y')}}</time>
+    <header class="content-grid">
+      <div>
+        <h1>
+          {{post.title}}
+          {% if page_number %}
+          <span>(Page {{page_number}})</span>
+          {% endif %}
+        </h1>
+        <div><time datetime="{{post.modified_date|date('c')}}">Last Updated on {{post.modified_date|date('l, F jS, Y')}}</time></div>
       </div>
     </header>
     <figure>
@@ -30,21 +30,25 @@
         >
       </picture>
     </figure>
-    {{post.content}}
-    <section>
-      <h2 id="post-list" class="assistive-text">Blog Posts</h2>
-      {% for post in posts %}
-        {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-      {% endfor %}
-      {% include 'pagination.twig' %}
-    </section>
-    <section>
-      <h2 id="categories">Categories</h2>
-      <ul>
-        {% for cat in categories %}
-          <li><a href="{{cat.link}}">{{cat.title}}</a>  (<a href="/blog/category/{{cat.title|lower}}/feed/">RSS</a>)</li>
-        {% endfor %}
-      </ul>
-    </section>
+    <div class="content-grid">
+      <div>{{post.content}}</div>
+      <section>
+        <h2 id="post-list" class="assistive-text">Blog Posts</h2>
+        <ul role="list">
+          {% for post in posts %}
+            <li>{% include 'card.twig' %}</li>
+          {% endfor %}
+        </ul>
+        {% include 'pagination.twig' %}
+      </section>
+      <section class="category-list">
+        <h2 id="categories">Categories</h2>
+        <ul role="list">
+          {% for cat in categories %}
+            <li><a href="{{cat.link}}">{{cat.title}}</a>  (<a href="/blog/category/{{cat.title|lower}}/feed/">RSS</a>)</li>
+          {% endfor %}
+        </ul>
+      </section>
+    </div>
   </article>
 {% endblock %}

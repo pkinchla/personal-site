@@ -41,11 +41,6 @@
   margin: 0;
 }
 
-/* move this */
-.home .content {
-  scroll-margin-top: 1em;
-}
-
 @media only screen and (min-width: 48em) {
   .home article > figure span {
     font-size: 3em;

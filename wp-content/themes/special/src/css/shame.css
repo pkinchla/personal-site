@@ -1,0 +1,30 @@
+/* move this */
+.home .content {
+  scroll-margin-top: 1em;
+}
+
+.category-list li {
+  font-family: var(--font-sans-serif);
+  font-style: italic;
+}
+
+@supports (display: grid) {
+  @media only screen and (min-width: 106.25em) {
+    .category-list {
+      grid-column: 5 / 6;
+    }
+  }
+}
+
+main > article > header > div > div {
+  border-bottom: 0.125em solid var(--secondary);
+  display: inline-block;
+  font-family: var(--font-sans-serif);
+  font-style: italic;
+  padding-bottom: 0.5em;
+}
+
+main > article > header > div > h1 > span {
+  font-size: 0.5em;
+  font-style: italic;
+}

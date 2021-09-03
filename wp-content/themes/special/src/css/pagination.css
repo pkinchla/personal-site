@@ -1,0 +1,40 @@
+.pagination {
+  border-bottom: 0.125em solid var(--secondary);
+  font-family: var(--font-sans-serif);
+  font-style: italic;
+  font-weight: 700;
+  margin-bottom: 3em;
+  overflow-x: visible;
+  overflow-y: scroll;
+  padding: 0 1em;
+  text-align: center;
+  width: 100%;
+}
+
+.pagination > * {
+  display: inline-block;
+  padding: 0.5em 0.5em 0.99em;
+}
+
+.pagination > .current {
+  position: relative;
+}
+
+.pagination > .current::after {
+  border: solid transparent;
+  border-bottom-color: var(--secondary);
+  border-width: 0.625em;
+  bottom: 0;
+  content: "";
+  display: inline-block;
+  height: 0;
+  left: 50%;
+  margin-left: -0.625em;
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+}
+
+.pagination > *:not(:last-child) {
+  margin-right: 0.5em;
+}

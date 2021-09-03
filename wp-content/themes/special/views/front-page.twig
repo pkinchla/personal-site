@@ -28,12 +28,12 @@
         <span class="assistive-text">Home content section</span>
       </a>
     </figure>
-    <div class="content" id="home-content">
+    <div class="content-grid" id="home-content">
       {{post.content}}
       <section>
         <h2 id="latest-blog-post">Latest Writing</h2>
         {% for post in home_post %}
-            {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+            {% include 'card.twig' %}
         {% endfor %}
       </section>
     </div>

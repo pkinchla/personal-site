@@ -31,7 +31,7 @@
 
 @supports (display: grid) {
   @media only screen and (min-width: 48em) {
-    .content {
+    .content-grid {
       display: grid;
       grid-template-columns:
         2fr
@@ -41,12 +41,12 @@
         1fr;
     }
 
-    .content > * {
+    .content-grid > * {
       grid-column: 3;
     }
 
-    .content > pre,
-    .content > iframe {
+    .content-grid > pre,
+    .content-grid > iframe {
       grid-column: 2 / 5;
       margin-bottom: 1.5em;
     }

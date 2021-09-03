@@ -16,7 +16,7 @@ h6 {
   color: var(--secondary);
   font-family: var(--font-sans-serif);
   font-weight: 700;
-  max-width: 20ch;
+  margin-bottom: 0.35em;
 }
 
 h1 {
