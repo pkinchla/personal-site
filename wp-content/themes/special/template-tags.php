@@ -14,7 +14,7 @@ if ( ! function_exists( 'special_posted_on' ) ) :
 function special_posted_on() {
   $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
   if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-    $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time> | Last Update on <time class="updated" datetime="%3$s">%4$s</time></span>';
+    $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time> | Last Updated on <time class="updated" datetime="%3$s">%4$s</time></span>';
   }
 
   $time_string = sprintf( $time_string,
@@ -49,7 +49,7 @@ function special_entry_footer() {
     /* translators: used between list items, there is a space after the comma */
     $categories_list = get_the_category_list( __( ', ', 'special' ) );
     if ( $categories_list && special_categorized_blog() ) {
-      printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'special' ) . '</span>', $categories_list );
+      printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'special' ) . '</span>&nbsp;', $categories_list );
     }
 
     /* translators: used between list items, there is a space after the comma */

@@ -3,7 +3,10 @@
 {% block content %}
     <article id="post-{{post.ID}}">
       <header>
-        <h1>{{post.title}}</h1>
+        <div>
+          <h1>{{post.title}}</h1>
+          <div><time datetime="{{post.modified_date|date('c')}}">Last Updated on {{post.modified_date|date('l, F jS, Y')}}</time></div>
+        </div>
       </header>
       <figure>
         {% include 'featured-image.twig' %}

@@ -10,6 +10,7 @@
   left: 0;
   mix-blend-mode: multiply;
   opacity: 0.35;
+  pointer-events: none;
   position: absolute;
   top: 0;
   width: 100%;
