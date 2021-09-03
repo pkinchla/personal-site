@@ -12,7 +12,6 @@
 .assistive-text:active,
 .assistive-text:focus {
   background-color: #f1f1f1;
-  border-radius: 0.1875rem;
   box-shadow: 0 0 0.125em 0.125em rgba(0, 0, 0, 0.6);
   clip: auto;
   clip-path: initial;
@@ -30,4 +29,13 @@
   top: 0.3125em;
   width: auto;
   z-index: 10;
+}
+
+:focus {
+  outline: 0.1875rem solid currentColor;
+  outline-offset: 0.09375rem;
+}
+
+.no-offset:focus {
+  outline-offset: 0;
 }

@@ -3,7 +3,7 @@
   {% for item in menu %}
     <li>
       {# need to improve this to get archive for work #}
-      <a href="{{item.get_link}}" aria-current="{{ (item.current) ? 'true' : 'false' }}">{{item.title}}</a>
+      <a class="no-offset" href="{{item.get_link}}" aria-current="{{ (item.current) ? 'true' : 'false' }}">{{item.title}}</a>
       {% include "menu.twig" with {'menu': item.get_children} %}
     </li>
   {% endfor %}
