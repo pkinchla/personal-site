@@ -66,12 +66,13 @@
 @supports (display: grid) {
   .work {
     display: grid;
-    grid-gap: 0.0625em;
+    grid-gap: 0.0625rem;
     grid-template-columns: repeat(auto-fill, minmax(14.0625rem, 1fr));
   }
 
   .work li {
     box-shadow: 0 0 0 0.0625em var(--secondary);
+    padding: 0.0625em;
   }
 }
 
