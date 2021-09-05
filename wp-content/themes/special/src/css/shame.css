@@ -3,11 +3,12 @@
   scroll-margin-top: 1em;
 }
 
-.error404 img {
+.error404 img,
+.archive .site main > article > figure > img {
   width: 100%;
 }
 
-.action-link,
+.action,
 .post-navigation a {
   display: inline-flex;
   font-family: var(--font-sans-serif);
@@ -17,7 +18,7 @@
   padding: 0.5em 1em;
 }
 
-.action-link.border {
+.action.border {
   border: 0.125em solid currentColor;
 }
 
