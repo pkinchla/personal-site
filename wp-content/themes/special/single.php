@@ -15,9 +15,8 @@ $context['post'] = $post;
 $context['pagination'] = Timber::get_pagination();
 
 $nav_args = array(
-    'prev_text' => '&larr; Prev Post',
+    'prev_text' => '&larr; Prev<span class="assistive-text">ious</span> Post',
     'next_text' => 'Next Post &rarr;',
-    'screen_reader_text' => 'Post Navigation',
   );
 
 $post_nav = get_the_post_navigation($nav_args);

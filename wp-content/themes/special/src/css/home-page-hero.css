@@ -30,7 +30,9 @@
 .home article > figure a {
   bottom: 12.5%;
   display: inline-block;
+  font-family: var(--font-sans-serif);
   font-size: 2em;
+  font-style: italic;
   left: 50%;
   position: absolute;
   transform: translateX(-50%);

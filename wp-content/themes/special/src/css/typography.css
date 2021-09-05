@@ -1,5 +1,3 @@
-/* Strong Text Shadow for headings */
-
 body {
   background-color: #f1f1f1;
   color: var(--primary);
@@ -7,6 +5,7 @@ body {
   font-size: clamp(1rem, 0.125rem + 1.1vw, 1.25rem);
 }
 
+/* Strong Text Shadow for headings */
 h1,
 h2,
 h3,
@@ -51,4 +50,46 @@ ol,
 ul,
 p {
   margin-bottom: 1.5em;
+}
+
+blockquote {
+  font-family: var(--font-sans-serif);
+  font-size: 1.15em;
+  margin-bottom: 1.5em;
+  position: relative;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote::before {
+  background: var(--primary);
+  content: "";
+  display: inline-block;
+  height: 100%;
+  left: -0.65em;
+  position: absolute;
+  top: 0;
+  width: 0.125rem;
+}
+
+blockquote p::after {
+  content: "\201D";
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 2em;
+  line-height: 0;
+  position: absolute;
+  right: min-content;
+  right: -0.5em;
+  top: 0.35em;
+}
+
+blockquote cite {
+  display: table;
+  font-style: italic;
+}
+
+blockquote p {
+  display: inline;
+  margin-bottom: 0;
+  position: relative;
 }

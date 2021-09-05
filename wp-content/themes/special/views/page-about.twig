@@ -2,7 +2,7 @@
 
 {% block content %}
     <article id="post-{{post.ID}}">
-      <header>
+      <header class="content-grid">
         <div>
           <h1>{{post.title}}</h1>
           <div><time datetime="{{post.modified_date|date('c')}}">Last Updated on {{post.modified_date|date('l, F jS, Y')}}</time></div>
@@ -12,15 +12,21 @@
         {% include 'featured-image.twig' %}
       </figure>
       <div>
-        {{post.content|wpautop}}
-        {{post.contact}}
-        <section>
-          <h2 id="cv">R&eacute;sum&eacute;</h2>
-          <a href="{{post.get_field('file_resume').url}}" download>Download</a>
-          <dl>
+        <div class="content-grid">
+          {{post.content|wpautop}}
+          <div class="contact">
+            {{post.contact}}
+          </div>
+        </div>
+        <section class="content-grid">
+          <div class="resume-intro">
+            <h2 id="cv">R&eacute;sum&eacute;</h2>
+            <a class="action-link border" href="{{post.get_field('file_resume').url}}" download>Download <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <dl class="resume">
             <dt>Work</dt>
             {% for job in post.get_field('work') %}
-              <dd>
+              <dd{% if loop.last == true  %} class="last"{% endif%}>
                 <div>
                 {{job.title}}
                   <span>
@@ -32,26 +38,26 @@
                   </span>
                 </div>
                 <span>{{job.company_name}}</span>
-                <p>{{job.description}}<em><a href="http://{{job.company_link}}" rel="noopener" target="_blank">{{job.company_link_text}}</a></em></p>
+                <p>{{job.description}}<a href="http://{{job.company_link}}" rel="noopener" target="_blank">{{job.company_link_text}}</a></p>
               </dd>
             {% endfor %}
             <dt>Internship</dt>
             {% for gig in post.get_field('internship') %}
-              <dd>
+              <dd{% if loop.last == true  %} class="last"{% endif%}>
                 <div>{{gig.title}}  <span><time datetime="{{gig.date}}">{{gig.date|date('Y')}}</time></span></div>
                 <span>{{gig.location}}</span>
               </dd>
             {% endfor %}
             <dt>Skill</dt>
-              <dd><p>{{post.skill}}</p></dd>
+              <dd class="last"><p>{{post.skill}}</p></dd>
             <dt>Education</dt>
-              <dd>
+              <dd class="last">
               {% for school in post.get_field('education') %}
                 <div>{{school.school}}  <span>{{school.degree}}</span></div>
               {% endfor %}
               </dd>
             <dt>Interest</dt>
-              <dd>
+              <dd class="last">
                 <ul role="list">
                   {% for hobby in post.get_field('interest') %}
                     <li>{{hobby.item_of_interest}}</li>
