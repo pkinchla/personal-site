@@ -20,6 +20,9 @@ $context = Timber::get_context();
 
 
 $context['title'] = 'Archive';
+$context['is_work_archive'] = get_post_type() == 'work';
+$context['sub_title'] = ucfirst(get_post_type());
+
 if ( is_day() ) {
   $context['title'] = 'Archive: '.get_the_date( 'D M Y' );
 } else if ( is_month() ) {

@@ -1,4 +1,4 @@
-<div class="pagination">
+<div class="pagination{{pagination.prev.link|length == 0 and pagination.next.link|length == 0 ? ' no-results' : ''}}">
   {% if pagination.prev %}
     <a href="{{pagination.prev.link}}"
        class="no-offset {{pagination.prev.link|length ? '' : 'invisible'}}">

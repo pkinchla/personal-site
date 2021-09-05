@@ -2,11 +2,15 @@
 
 {% block content %}
   <article>
-    <header>
-      <h1>{{title}}</h1>
-      {% if page_number %}
-        <span>(Page {{page_number}})</span>
-      {% endif %}
+    <header class="content-grid">
+      <div>
+        <h1>
+          {{title}}
+          {% if page_number %}
+            <span>(Page {{page_number}})</span>
+          {% endif %}
+        </h1>
+      </div>
     </header>
     <figure>
       <img
@@ -14,11 +18,14 @@
         alt="close up of miniature metallic chameleon standing on a metallic pedestal"
       >
     </figure>
-    <pre> fix header here: {{post}}</pre>
-    <h2>{{post.post_type}}</h2>
-    {% for post in posts %}
-      {% include ['card-'~post.post_type~'.twig', 'card.twig'] %}
-    {% endfor %}
-    {% include 'pagination.twig' %}
+    <div class="content-grid">
+      <h2 class="assistive-text">{{sub_title}} List</h2>
+      <ul role="list" {{ (is_work_archive) ? 'class="work"' : '' }}>
+        {% for post in posts %}
+         <li>{% include ['card-'~post.post_type~'.twig', 'card.twig'] %}</li>
+        {% endfor %}
+      </ul>
+      {% include 'pagination.twig' %}
+    </div>
   </article>
 {% endblock %}

@@ -67,10 +67,12 @@
           </dl>
         </section>
         {% if pictures|length > 0 %}
-        <section>
-          <h2 id="instagram-feed">Instagram Feed</h2>
-          {{post.flickr_field}}
-          <ul role="list">
+        <section class="content-grid">
+          <div class="photo-intro">
+            <h2 id="photo-feed">Instagram Feed</h2>
+            {{post.flickr_field}}
+          </div>
+          <ul class="photo-feed" role="list">
             {% for picture in pictures %}
               <li>
                 {% if picture.media_type != 'VIDEO' %}

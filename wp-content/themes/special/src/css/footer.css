@@ -52,5 +52,8 @@
     .site > footer section {
       grid-column: 3;
     }
+    .site > footer ul {
+      justify-content: flex-end;
+    }
   }
 }

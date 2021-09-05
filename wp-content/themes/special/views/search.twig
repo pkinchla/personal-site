@@ -3,7 +3,7 @@
 {% block content %}
   <article>
     {% if posts is empty %}
-      <header>
+      <header class="content-grid">
         <h1>No Results</h1>
       </header>
       <figure>
@@ -12,10 +12,12 @@
           alt="close up of miniature metallic chameleon standing on a metallic pedestal"
         >
       </figure>
-      <p>Sorry, no results matched your query, maybe try again</p>
-      {% include 'searchform.twig' %}
+      <div class="content-grid">
+        <p>Sorry, no results matched your query, maybe try again</p>
+        {% include 'searchform.twig' %}
+      </div>
     {% else %}
-      <header>
+      <header class="content-grid">
         <h1>{{title}}</h1>
       </header>
       <figure>
