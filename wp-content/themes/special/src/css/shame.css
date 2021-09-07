@@ -3,6 +3,11 @@
   scroll-margin-top: 1em;
 }
 
+.error404 img,
+.archive main > article > figure > img {
+  width: 100%;
+}
+
 .action,
 .post-navigation a {
   display: inline-flex;
@@ -26,6 +31,12 @@
 /* vertical r for grid on pages */
 .page .content-grid {
   margin-bottom: 3em;
+}
+
+form.search {
+  display: flex;
+  font-family: var(--font-sans-serif);
+  gap: 0.5em;
 }
 
 main > article > div > footer {
@@ -74,7 +85,7 @@ main > article > div > footer span {
   font-style: italic;
 }
 
-.comment-author img,
+main > article > div .comment-author img,
 .comment-author .says {
   display: inline;
   vertical-align: middle;
@@ -108,6 +119,24 @@ main > article > div > footer span {
 
 .photo-feed video {
   outline-offset: -0.1875em;
+}
+
+.single-work .meta {
+  font-family: var(--font-sans-serif);
+  margin-bottom: 1.5em;
+}
+
+.single-work .media {
+  text-align: center;
+}
+
+.single-work main > article > div .media img {
+  margin: 0 auto;
+  margin-bottom: 1.5em;
+}
+
+.single-work .media img[src$=".gif"] {
+  max-width: 19em;
 }
 
 @supports (display: grid) {
@@ -299,9 +328,4 @@ main > article > header > div > h1 > span {
       max-width: 65%;
     }
   }
-}
-
-.error404 img,
-.archive .site main > article > figure > img {
-  width: 100%;
 }

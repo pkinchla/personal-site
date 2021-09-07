@@ -11,16 +11,16 @@
       {% if post.main_image_square %}
         <div class="content-grid">
           {{post.content}}
-          <strong>Filed in: {{post.post_excerpt}}</strong>
+          <strong class="meta">Filed in: {{post.post_excerpt}}</strong>
         </div>
         <div class="content-grid">
-          <div>
+          <div class="media">
             <img src="{{TimberImage(post.get_field('main_image_square')).src}}" sizes="(min-width:64em) 66vw, (min-width:40em) 85vw, 90vw" alt="<?php echo $alt_square ?>">
             <a class="action border" href="/portfolio/">&larr; Back to List</a>
           </div>
         </div>
         {% if post.square_image_optional %}
-          <div  class="content-grid">
+          <div class="media" class="content-grid">
             <div>
               <img src="{{TimberImage(post.get_field('main_image_square_optional')).src}}" sizes="(min-width:64em) 66vw, (min-width:40em) 85vw, 90vw" alt="<?php echo $alt_square_opt; ?>"
               <a class="action border" href="/portfolio/">&larr; Back to List</a>
@@ -30,10 +30,10 @@
       {% else %}
         <div class="content-grid">
           {{post.content}}
-          <strong>Filed in: {{post.post_excerpt}}</strong>
+          <strong class="meta">Filed in: {{post.post_excerpt}}</strong>
         </div>
         <div class="content-grid">
-          <div>
+          <div class="media">
             <img src="{{TimberImage(post.get_field('main_image_rectangle')).src}}" alt="{{TimberImage(post.get_field('main_image_rectangle')).src}}" />
             <a class="action border" href="/work/">&larr; Back to List</a>
           </div>

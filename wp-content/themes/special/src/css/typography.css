@@ -17,6 +17,11 @@ h6 {
   font-weight: 700;
   margin-bottom: 0.35em;
 }
+.editor-post-title {
+  color: var(--secondary);
+  font-family: var(--font-sans-serif);
+  font-size: 1.5em;
+}
 
 h1 {
   font-size: 2.625em;
@@ -87,10 +92,11 @@ blockquote p:first-of-type::after {
 }
 
 blockquote cite {
+  display: block;
   font-style: italic;
 }
 
-blockquote p:not(:last-of-type) {
+blockquote p:first-of-type {
   display: inline;
   position: relative;
 }

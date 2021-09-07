@@ -152,6 +152,10 @@ function post_type_register_projects() {
 
 add_action( 'init', 'post_type_register_projects' );
 
+// Gutenberg custom stylesheet
+add_theme_support('editor-styles');
+add_editor_style( 'https://use.typekit.net/ltt0nnt.css' );
+add_editor_style( get_template_directory_uri() . '/dist/css/main.css' );
 
 // remove wp-embed
 function deregister_wp_embed(){
