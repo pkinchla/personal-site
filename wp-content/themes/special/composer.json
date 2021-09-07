@@ -16,7 +16,6 @@
     }
   },
   "require": {
-    "wpackagist-plugin/timber-library": "1.17.0",
-    "phpfastcache/phpfastcache": "^7.1"
+    "wpackagist-plugin/timber-library": "1.17.0"
   }
 }
