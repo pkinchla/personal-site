@@ -12,9 +12,9 @@ if ( ! function_exists( 'special_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function special_posted_on() {
-  $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+  $time_string = '<time datetime="%1$s">%2$s</time>';
   if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-    $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time> | Last Updated on <time class="updated" datetime="%3$s">%4$s</time></span>';
+    $time_string = '<time datetime="%1$s">%2$s</time> | Last Updated on <time datetime="%3$s">%4$s</time></span>';
   }
 
   $time_string = sprintf( $time_string,
@@ -34,7 +34,7 @@ function special_posted_on() {
     '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
   );
 
-  echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+  echo '<span>' . $posted_on . '</span><span> ' . $byline . '</span>';
 
 }
 endif;
@@ -49,13 +49,13 @@ function special_entry_footer() {
     /* translators: used between list items, there is a space after the comma */
     $categories_list = get_the_category_list( __( ', ', 'special' ) );
     if ( $categories_list && special_categorized_blog() ) {
-      printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'special' ) . '</span>&nbsp;', $categories_list );
+      printf( '<span>' . __( 'Posted in %1$s', 'special' ) . '</span>&nbsp;', $categories_list );
     }
 
     /* translators: used between list items, there is a space after the comma */
     $tags_list = get_the_tag_list( '', __( ', ', 'special' ) );
     if ( $tags_list ) {
-      printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'special' ) . '</span>', $tags_list );
+      printf( '<span>' . __( 'Tagged %1$s', 'special' ) . '</span>', $tags_list );
     }
   }
 
@@ -65,7 +65,7 @@ function special_entry_footer() {
     echo '</span>';
   }
 
-  edit_post_link( __( 'Edit', 'special' ), ' <span class="edit-link">', '</span>' );
+  edit_post_link( __( 'Edit', 'special' ), ' <span class="action">', '</span>' );
 }
 endif;
 

@@ -1,6 +1,6 @@
 .home article > figure > span {
   background-color: var(--body-background);
-  clip-path: polygon(0 0, 100% 40%, 100% 75%, 15% 100%);
+  clip-path: polygon(0 0, 89.75% 31.28%, 100% 75%, 15% 100%);
   color: var(--secondary);
   font-family: var(--font-sans-serif);
   font-size: 2em;

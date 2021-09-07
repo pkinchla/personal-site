@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  <article class="post-type-{{post.post_type}} site-grid block" id="post-{{post.ID}}">
+  <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
     <header class="content-grid">
       <div>
         <h1>{{post.title}}</h1>
@@ -13,7 +13,7 @@
     </figure>
     <div class="content-grid">
       {{post.content}}
-      <footer class="entry-footer">
+      <footer>
         {{function('special_entry_footer')}}
       </footer>
       {{post_nav}}

@@ -71,25 +71,26 @@ blockquote::before {
   width: 0.125rem;
 }
 
-blockquote p::after {
+blockquote p {
+  margin-bottom: 0;
+}
+
+blockquote p:first-of-type::after {
   content: "\201D";
   display: inline-block;
   font-family: var(--font-serif);
   font-size: 2em;
   line-height: 0;
   position: absolute;
-  right: min-content;
   right: -0.5em;
   top: 0.35em;
 }
 
 blockquote cite {
-  display: table;
   font-style: italic;
 }
 
-blockquote p {
+blockquote p:not(:last-of-type) {
   display: inline;
-  margin-bottom: 0;
   position: relative;
 }
