@@ -1,6 +1,7 @@
 .site > header {
   display: flex;
   flex-wrap: wrap;
+  gap: 0.15rem;
   justify-content: space-between;
   margin: 0 auto;
   max-width: 48em;
@@ -15,7 +16,12 @@
   padding-right: 1.25em;
 }
 
+.site > header a {
+  min-height: 3rem;
+}
+
 .site > header > a {
+  align-items: center;
   display: flex;
   max-width: 6em;
   padding: 0 0.5em;
