@@ -1,5 +1,5 @@
 body {
-  background-color: #f1f1f1;
+  background-color: var(--body-background);
   color: var(--primary);
   font-family: var(--font-serif);
   font-size: clamp(1rem, 0.125rem + 1.1vw, 1.25rem);

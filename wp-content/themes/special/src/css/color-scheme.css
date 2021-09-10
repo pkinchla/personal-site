@@ -1,0 +1,29 @@
+.dark-mode {
+  --body-background: #212121;
+  --primary: #f1f1f1;
+  --secondary: #f1f1f1;
+  --link: #f1f1f1;
+  --active: #f1f1f1;
+  --visited: #f1f1f1;
+}
+
+.dark-mode a {
+  color: var(--link);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-background: #212121;
+    --primary: #f1f1f1;
+    --secondary: #f1f1f1;
+    --link: #f1f1f1;
+    --active: #f1f1f1;
+    --visited: #f1f1f1;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  a {
+    color: var(--link);
+  }
+}

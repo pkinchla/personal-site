@@ -147,7 +147,6 @@ main > article > div .comment-author img,
   }
 
   .work li {
-    box-shadow: 0 0 0 0.0625em var(--secondary);
     padding: 0.0625em;
   }
 }

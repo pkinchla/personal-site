@@ -5,7 +5,7 @@
   --font-serif: georgia, "Times New Roman", times, serif;
   --font-mono: menlo, courier, monospace;
 
-  /* colors */
+  /* base colors overrides in color-scheme.css */
   --body-background: #f1f1f1;
   --primary: #38220b;
   --secondary: #143f40;

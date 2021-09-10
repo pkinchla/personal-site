@@ -39,6 +39,10 @@
   z-index: 2;
 }
 
+.dark-mode article > figure > a {
+  color: var(--body-background);
+}
+
 .home .site main > article > header {
   margin: 0;
 }
