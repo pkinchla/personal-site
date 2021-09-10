@@ -19,17 +19,17 @@ require get_template_directory() . '/credentials.php';
 
 // adding async for scripts usage -
 // wp_enqueue_script('script', '/path/to/my/script.js#asyncload');
-
-function add_async_forscript($url)
+function add_script_attributes($url)
 {
-		if (strpos($url, '#asyncload')===false)
+		if (strpos($url, '#addattribs') === false)
 				return $url;
 		else if (is_admin())
-				return str_replace('#asyncload', '', $url);
+				return str_replace('#addattribs', '', $url);
 		else
-				return str_replace('#asyncload', '', $url)."' async='async";
+
+				return str_replace('#addattribs', '', $url)." 'type='module' async='async";
 }
-add_filter('clean_url', 'add_async_forscript', 11, 1);
+add_filter('clean_url', 'add_script_attributes', 11, 1);
 
 /**
  * Automatically add IDs to headings such as <h2></h2>
@@ -93,8 +93,10 @@ function special_scripts() {
     wp_enqueue_style( 'style', get_template_directory_uri() . '/dist/css/main.css', array(), null );
   }
 
+  wp_enqueue_script( 'scripts', get_template_directory_uri() .'/dist/js/main.js#addattribs', array(), '', true);
+
   if (get_post_type() === 'post') {
-		wp_enqueue_script( 'prism', get_template_directory_uri() .'/js/prism.min.js#asyncload', array(), '', true);
+		wp_enqueue_script( 'prism', get_template_directory_uri() .'/js/prism.min.js#addattribs', array(), '', true);
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
