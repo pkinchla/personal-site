@@ -26,8 +26,7 @@ function add_script_attributes($url)
 		else if (is_admin())
 				return str_replace('#addattribs', '', $url);
 		else
-
-				return str_replace('#addattribs', '', $url)." 'type='module'";
+				return str_replace('#addattribs', '', $url)."' type='module";
 }
 add_filter('clean_url', 'add_script_attributes', 11, 1);
 
@@ -93,7 +92,7 @@ function special_scripts() {
     wp_enqueue_style( 'style', get_template_directory_uri() . '/dist/css/main.css', array(), null );
   }
 
-  wp_enqueue_script( 'scripts', get_template_directory_uri() .'/dist/js/main.js#addattribs', array(), '', true);
+  wp_enqueue_script( 'scripts', get_template_directory_uri() .'/dist/js/main.js#addattribs', array(), null);
 
   if (get_post_type() === 'post') {
 		wp_enqueue_script( 'prism', get_template_directory_uri() .'/js/prism.min.js#addattribs', array(), '', true);
