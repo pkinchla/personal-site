@@ -1,29 +1,43 @@
 .dark-mode {
   --body-background: #212121;
   --primary: #f1f1f1;
-  --secondary: #f1f1f1;
-  --link: #f1f1f1;
-  --active: #f1f1f1;
-  --visited: #f1f1f1;
+  --secondary: #acacac;
+  --link: #fff651;
+  --active: #ff8a8a;
+  --visited: #bc75ff;
 }
 
 .dark-mode a {
   color: var(--link);
 }
 
-@media (prefers-color-scheme: dark) {
+.dark-mode a:visited {
+  color: var(--visited);
+}
+
+.dark-mode a:active {
+  color: var(--active);
+}
+
+/* @media (prefers-color-scheme: dark) {
   :root {
     --body-background: #212121;
     --primary: #f1f1f1;
-    --secondary: #f1f1f1;
-    --link: #f1f1f1;
-    --active: #f1f1f1;
-    --visited: #f1f1f1;
+    --secondary: #b8b8b8;
+    --link: #fff651;
+    --active: #ff8a8a;
+    --visited: #c68aff;
   }
-}
 
-@media (prefers-color-scheme: dark) {
   a {
     color: var(--link);
   }
-}
+
+  a:visited {
+    color: var(--visited);
+  }
+
+  a:active {
+    color: var(--active);
+  }
+} */

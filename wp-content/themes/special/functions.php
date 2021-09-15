@@ -27,7 +27,7 @@ function add_script_attributes($url)
 				return str_replace('#addattribs', '', $url);
 		else
 
-				return str_replace('#addattribs', '', $url)." 'type='module' async='async";
+				return str_replace('#addattribs', '', $url)." 'type='module'";
 }
 add_filter('clean_url', 'add_script_attributes', 11, 1);
 
