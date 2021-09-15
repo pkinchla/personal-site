@@ -3,7 +3,7 @@ function handleColorScheme() {
     return;
   }
 
-  if (!!window.localStorage.color_scheme) {
+  if (!window.localStorage.color_scheme) {
     localStorage.setItem("color_scheme", "system");
   }
 
