@@ -1,7 +1,8 @@
 .color-theme-switcher {
   background: transparent;
   border: 0.25em solid rgb(var(--secondary));
-  display: inline-block;
+  display: inline-flex;
+  flex-wrap: wrap;
   margin-bottom: 1.5em;
   padding: 0.5em 2em 1em 2em;
 }
