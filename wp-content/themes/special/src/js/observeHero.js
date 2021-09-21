@@ -1,13 +1,12 @@
 function observeHero() {
   var jumpLink = document.querySelector(".jump-link");
+  if (!jumpLink) return;
 
   function handleIntersection(entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        console.log("add class");
         jumpLink.classList.add("hidden");
       } else {
-        console.log("remove class");
         jumpLink.classList.remove("hidden");
       }
     });
