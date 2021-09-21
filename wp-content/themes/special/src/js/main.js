@@ -5,4 +5,4 @@ function scripts() {
   return handleColorScheme(), observeHero();
 }
 
-window.addEventListener("load", scripts);
+window.addEventListener("DOMContentLoaded", scripts);

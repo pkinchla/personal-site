@@ -28,15 +28,30 @@
 }
 
 .home article > figure a {
-  bottom: 12.5%;
+  bottom: 20%;
   display: inline-block;
   font-family: var(--font-sans-serif);
   font-size: 2em;
   font-style: italic;
   left: 50%;
+  line-height: 1;
   position: absolute;
   transform: translateX(-50%);
   z-index: 2;
+}
+
+/* may change */
+a.jump-link {
+  opacity: 1;
+  transition: all 0.35s ease-in-out;
+}
+
+a.jump-link.hidden {
+  opacity: 0;
+}
+
+a.jump-link.hidden:focus {
+  opacity: 1;
 }
 
 .dark-mode article > figure > a {
