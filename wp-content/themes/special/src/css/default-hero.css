@@ -1,9 +1,9 @@
 .site main > article > figure {
-  border-bottom: 0.0625em solid var(--primary);
+  border-bottom: 0.0625em solid rgb(var(--primary));
 }
 
 .site main > article > figure:not(.no-filter)::after {
-  background-color: var(--secondary);
+  background: rgb(var(--secondary));
   content: "";
   display: inline-block;
   height: 100%;

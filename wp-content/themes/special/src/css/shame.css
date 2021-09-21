@@ -40,7 +40,7 @@ form.search {
 }
 
 main > article > div > footer {
-  border: 0.0625em solid var(--secondary);
+  border: 0.0625em solid rgb(var(--secondary));
   font-family: var(--font-sans-serif);
   margin-bottom: 3em;
   padding: 1em;
@@ -52,7 +52,7 @@ main > article > div > footer span {
 
 .post-navigation .nav-links {
   align-items: center;
-  border-bottom: 0.0625em solid var(--secondary);
+  border-bottom: 0.0625em solid rgb(var(--secondary));
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
@@ -72,8 +72,8 @@ main > article > div > footer span {
 }
 
 .comment-body {
-  border-left: 0.0625em solid var(--secondary);
-  border-top: 0.0625em solid var(--secondary);
+  border-left: 0.0625em solid rgb(var(--secondary));
+  border-top: 0.0625em solid rgb(var(--secondary));
   padding: 0.75em;
 }
 
@@ -107,14 +107,14 @@ main > article > div .comment-author img,
 }
 
 .photo-feed {
-  background: var(--secondary);
+  background: rgb(var(--secondary));
   display: grid;
   grid-gap: 0.1875em;
   grid-template-columns: repeat(auto-fill, minmax(7.8125em, 1fr));
 }
 
 .photo-feed li {
-  box-shadow: 0 0 0 0.1875em var(--body-background);
+  box-shadow: 0 0 0 0.1875em rgb(var(--body-background));
 }
 
 .photo-feed video {
@@ -202,7 +202,7 @@ main > article > div .comment-author img,
 }
 
 main > article > header > div > div {
-  border-bottom: 0.125em solid var(--secondary);
+  border-bottom: 0.125em solid rgb(var(--secondary));
   display: inline-block;
   font-family: var(--font-sans-serif);
   font-style: italic;
@@ -228,7 +228,7 @@ main > article > header > div > h1 > span {
 
 /* .resume interior styling */
 .resume {
-  border: 0.0625em solid var(--primary);
+  border: 0.0625em solid rgb(var(--primary));
   font-family: var(--font-sans-serif);
   padding: 5%;
 }
@@ -264,7 +264,7 @@ main > article > header > div > h1 > span {
 }
 
 .resume dt {
-  border-bottom: 0.0625rem solid var(--primary);
+  border-bottom: 0.0625rem solid rgb(var(--primary));
   font-size: 1.6em;
   font-weight: 400;
   margin: 1.5em 0 0.5em 0;

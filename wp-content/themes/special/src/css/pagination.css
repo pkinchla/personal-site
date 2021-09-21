@@ -1,5 +1,5 @@
 .pagination {
-  border-bottom: 0.125em solid var(--secondary);
+  border-bottom: 0.125em solid rgb(var(--secondary));
   font-family: var(--font-sans-serif);
   font-style: italic;
   font-weight: 700;
@@ -26,7 +26,7 @@
 
 .pagination > .current::after {
   border: solid transparent;
-  border-bottom-color: var(--secondary);
+  border-bottom-color: rgb(var(--secondary));
   border-width: 0.625em;
   bottom: 0;
   content: "";

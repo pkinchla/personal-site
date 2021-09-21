@@ -72,7 +72,7 @@
 }
 
 .site > header > nav > ul li a[aria-current="true"] span::after {
-  background-color: var(--secondary);
+  background: rgb(var(--secondary));
   content: "";
   display: inline-block;
   height: 1em;

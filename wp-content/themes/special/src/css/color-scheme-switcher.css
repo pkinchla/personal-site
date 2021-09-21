@@ -1,13 +1,14 @@
 .color-theme-switcher {
-  border: 0.25em solid transparent;
-  border-bottom: 0.25em solid var(--secondary);
-  border-left: 0.25em solid var(--secondary);
+  background: transparent;
+  border: 0.25em solid rgb(var(--secondary));
   display: inline-block;
   margin-bottom: 1.5em;
+  padding: 0.5em 2em 1em 2em;
 }
 
 .color-theme-switcher:focus-within {
-  border: 0.25em solid var(--secondary);
+  box-shadow: 0 1em 1em rgba(var(--secondary), 0.45);
+  outline: 1em solid transparent;
 }
 
 .color-theme-switcher label,
@@ -18,7 +19,7 @@
 }
 
 .color-theme-switcher label:not(:last-of-type) {
-  margin-right: 1em;
+  margin-right: 1.5em;
 }
 
 .color-theme-switcher input[type="radio"] {

@@ -1,6 +1,6 @@
 body {
-  background-color: var(--body-background);
-  color: var(--primary);
+  background: rgb(var(--body-background));
+  color: rgb(var(--primary));
   font-family: var(--font-serif);
   font-size: clamp(1rem, 0.125rem + 1.1vw, 1.25rem);
 }
@@ -12,13 +12,13 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--secondary);
+  color: rgb(var(--secondary));
   font-family: var(--font-sans-serif);
   font-weight: 700;
   margin-bottom: 0.35em;
 }
 .editor-post-title {
-  color: var(--secondary);
+  color: rgb(var(--secondary));
   font-family: var(--font-sans-serif);
   font-size: 1.5em;
 }
@@ -66,7 +66,7 @@ blockquote {
 }
 
 blockquote::before {
-  background: var(--primary);
+  background: rgb(var(--primary));
   content: "";
   display: inline-block;
   height: 100%;

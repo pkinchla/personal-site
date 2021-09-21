@@ -1,22 +1,22 @@
 .dark-mode {
-  --body-background: #212121;
-  --primary: #f1f1f1;
-  --secondary: #acacac;
-  --link: #fff651;
-  --active: #ff8a8a;
-  --visited: #bc75ff;
+  --body-background: 33, 33, 33;
+  --primary: 241, 241, 241;
+  --secondary: 172, 172, 172;
+  --link: 255, 246, 81;
+  --active: 255, 138, 138;
+  --visited: 188, 117, 255;
 }
 
 .dark-mode a {
-  color: var(--link);
+  color: rgb(var(--link));
 }
 
 .dark-mode a:visited {
-  color: var(--visited);
+  color: rgb(var(--visited));
 }
 
 .dark-mode a:active {
-  color: var(--active);
+  color: rgb(var(--active));
 }
 
 /* @media (prefers-color-scheme: dark) {

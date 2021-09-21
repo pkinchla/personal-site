@@ -48,7 +48,7 @@
 
 .card-work a:hover,
 .card-work a:focus {
-  background: var(--body-background);
+  background: rgb(var(--body-background));
 }
 
 .card-work a:hover > span,

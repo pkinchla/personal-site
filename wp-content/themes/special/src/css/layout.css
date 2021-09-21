@@ -1,6 +1,6 @@
 /* site layout  */
 .site {
-  border-left: 0.0625em solid var(--primary);
+  border-left: 0.0625em solid rgb(var(--primary));
   margin: 0 auto;
   max-width: 48em;
   min-height: 100vh;
@@ -65,8 +65,8 @@
     }
 
     .site > main {
-      border: 0.0625em solid var(--secondary);
-      box-shadow: var(--secondary) 0 0.1875em 0.75em;
+      border: 0.0625em solid rgb(var(--secondary));
+      box-shadow: rgba(var(--secondary), 0.75) 0 0.1875em 0.75em;
       grid-area: main;
     }
 
@@ -79,7 +79,7 @@
     }
 
     .site > footer {
-      border-left: 0.0625em solid var(--primary);
+      border-left: 0.0625em solid rgb(var(--primary));
       grid-area: footer;
     }
   }

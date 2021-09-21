@@ -6,10 +6,10 @@
   --font-mono: menlo, courier, monospace;
 
   /* base colors overrides in color-scheme */
-  --body-background: #f1f1f1;
-  --primary: #38220b;
-  --secondary: #143f40;
-  --link: #00e;
-  --active: #e00;
-  --visited: #551a8b;
+  --body-background: 241, 241, 241;
+  --primary: 56, 34, 11;
+  --secondary: 20, 63, 64;
+  --link: 0, 0, 238;
+  --active: 238, 0, 0;
+  --visited: 85, 26, 139;
 }

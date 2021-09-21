@@ -11,8 +11,6 @@
 .assistive-text:hover,
 .assistive-text:active,
 .assistive-text:focus {
-  background-color: var(--background-color);
-  box-shadow: 0 0 0.125em 0.125em rgba(0, 0, 0, 0.6);
   clip: auto;
   clip-path: initial;
   display: block;

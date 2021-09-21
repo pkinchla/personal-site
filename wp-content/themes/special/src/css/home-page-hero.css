@@ -1,7 +1,7 @@
 .home article > figure > span {
-  background-color: var(--body-background);
+  background: rgb(var(--body-background));
   clip-path: polygon(0 0, 89.75% 31.28%, 100% 75%, 15% 100%);
-  color: var(--secondary);
+  color: rgb(var(--secondary));
   font-family: var(--font-sans-serif);
   font-size: 2em;
   font-style: italic;
@@ -15,7 +15,7 @@
 }
 
 .home article > figure > span::after {
-  background-color: var(--secondary);
+  background: rgb(var(--secondary));
   content: "";
   display: inline-block;
   height: 100%;
@@ -55,7 +55,7 @@ a.jump-link.hidden:focus {
 }
 
 .dark-mode article > figure > a {
-  color: var(--body-background);
+  color: rgb(var(--body-background));
 }
 
 .home .site main > article > header {
