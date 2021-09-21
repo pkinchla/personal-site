@@ -26,7 +26,7 @@ function add_script_attributes($url)
 		else if (is_admin())
 				return str_replace('#addattribs', '', $url);
 		else
-				return str_replace('#addattribs', '', $url)."' type='module";
+				return str_replace('#addattribs', '', $url)."' async type='module";
 }
 add_filter('clean_url', 'add_script_attributes', 11, 1);
 

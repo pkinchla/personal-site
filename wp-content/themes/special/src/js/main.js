@@ -1,7 +1,8 @@
 import handleColorScheme from "./handleColorScheme";
+import observeHero from "./observeHero";
 
 function scripts() {
-  return handleColorScheme();
+  return handleColorScheme(), observeHero();
 }
 
-document.addEventListener("DOMContentLoaded", scripts);
+window.addEventListener("load", scripts);
