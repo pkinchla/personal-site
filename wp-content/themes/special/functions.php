@@ -95,7 +95,7 @@ function special_scripts() {
   wp_enqueue_script( 'scripts', get_template_directory_uri() .'/dist/js/main.js#addattribs', array(), null);
 
   if (get_post_type() === 'post') {
-		wp_enqueue_script( 'prism', get_template_directory_uri() .'/js/prism.min.js#addattribs', array(), '', true);
+		wp_enqueue_script( 'prism', get_template_directory_uri() .'/dist/js/prism.min.js#addattribs', array(), '', true);
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

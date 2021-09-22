@@ -1,11 +1,10 @@
-var version = "v3.0:";
+var version = "v4.0:";
 
 var theme_path = "wp-content/themes/special/";
 
 var offlineFundamentals = [
-  "./",
-  theme_path + "js/scripts.js",
-  theme_path + "js/prism.min.js",
+  theme_path + "src/dist/js/main.js",
+  theme_path + "src/dist/js/prism.min.js",
   theme_path + "offline.html",
   "manifest.json",
   "icon_192.png",
@@ -99,6 +98,7 @@ self.addEventListener("fetch", function (event) {
   //Fetch from network and cache
   var fetchFromNetwork = function (response) {
     var cacheCopy = response.clone();
+
     switch (destination) {
       case "document": {
         caches.open(version + "pages").then(function (cache) {
@@ -114,6 +114,10 @@ self.addEventListener("fetch", function (event) {
             limitCache(cache, 10);
           });
         });
+        return response;
+      }
+      case "script":
+      case "": {
         return response;
       }
       default: {
@@ -140,6 +144,7 @@ self.addEventListener("fetch", function (event) {
   }
 
   var noCache =
+    event.request.url.match("/wp-login.php") ||
     event.request.url.match("/wp-admin/") ||
     event.request.url.match("/wp-admin") ||
     event.request.url.match("/wp-includes/") ||
