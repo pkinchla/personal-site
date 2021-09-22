@@ -3,8 +3,8 @@ var version = "v4.0:";
 var theme_path = "wp-content/themes/special/";
 
 var offlineFundamentals = [
-  theme_path + "src/dist/js/main.js",
-  theme_path + "src/dist/js/prism.min.js",
+  theme_path + "dist/js/main.js",
+  theme_path + "dist/js/prism.min.js",
   theme_path + "offline.html",
   "manifest.json",
   "icon_192.png",
