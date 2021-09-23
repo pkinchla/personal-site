@@ -147,12 +147,6 @@ self.addEventListener("fetch", function (event) {
     /\b(?:wp-login|wp-admin|wp-includes|preview=true|wp-content\/plugins)\b/gi;
 
   var noCache = re.test(event.request.url);
-  // event.request.url.match("/wp-login.php") ||
-  // event.request.url.match("/wp-admin/") ||
-  // event.request.url.match("/wp-admin") ||
-  // event.request.url.match("/wp-includes/") ||
-  // /preview=true/.test(event.request.url) ||
-  // event.request.url.match("/wp-content/plugins/");
 
   //This service worker won't touch the admin area and preview pages
   if (noCache) {
