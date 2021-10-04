@@ -66,12 +66,16 @@
               </dd>
           </dl>
         </section>
-        {% if pictures|length > 0 %}
         <section class="content-grid">
           <div class="photo-intro">
             <h2 id="photo-feed">Instagram Feed</h2>
-            {{post.flickr_field}}
+            {% if pictures.error %}
+              <span class="error">{{pictures.error}}</span>
+            {% else %}
+              {{post.flickr_field}}
+            {% endif %}
           </div>
+          {% if not pictures.error %}
           <ul class="photo-feed" role="list">
             {% for picture in pictures %}
               <li>
@@ -83,8 +87,8 @@
               </li>
             {% endfor %}
           </ul>
+          {% endif %}
         </section>
-        {% endif %}
       </div>
     </article>
 {% endblock %}

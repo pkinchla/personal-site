@@ -114,6 +114,11 @@ add_action(
 function instagram_feed($url) {
   if ( false === ( $feed = get_transient( 'instagram_feed' ) ) ) {
     $response = wp_remote_get($url);
+
+    if(is_wp_error( $response ) ||$response['response']['code'] > 400  ) {
+      return array("error"=> "Something is terribly wrong with the Instagram API at the moment.");
+    }
+
     $body = json_decode($response['body']);
     $second_response = wp_remote_get($body->paging->next);
     $second_body = json_decode($second_response['body']);
@@ -125,6 +130,53 @@ function instagram_feed($url) {
 
   return $feed;
 }
+
+
+/**
+ * Disable the emoji's
+ */
+function disable_emojis() {
+  remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+  remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+  remove_action( 'wp_print_styles', 'print_emoji_styles' );
+  remove_action( 'admin_print_styles', 'print_emoji_styles' );
+  remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+  remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+  remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+  add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
+  add_filter( 'wp_resource_hints', 'disable_emojis_remove_dns_prefetch', 10, 2 );
+ }
+ add_action( 'init', 'disable_emojis' );
+
+ /**
+  * Filter function used to remove the tinymce emoji plugin.
+  *
+  * @param array $plugins
+  * @return array Difference betwen the two arrays
+  */
+ function disable_emojis_tinymce( $plugins ) {
+  if ( is_array( $plugins ) ) {
+    return array_diff( $plugins, array( 'wpemoji' ) );
+  } else {
+    return array();
+  }
+ }
+
+ /**
+  * Remove emoji CDN hostname from DNS prefetching hints.
+  *
+  * @param array $urls URLs to print for resource hints.
+  * @param string $relation_type The relation type the URLs are printed for.
+  * @return array Difference betwen the two arrays.
+  */
+ function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
+  if ( 'dns-prefetch' == $relation_type ) {
+    $emoji_svg_url = apply_filters( 'emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/' );
+    $urls = array_diff( $urls, array( $emoji_svg_url ) );
+  }
+
+  return $urls;
+ }
 
 function post_type_register_projects() {
 
@@ -189,10 +241,6 @@ function my_login_logo_url() {
 }
 add_filter( 'login_headerurl', 'my_login_logo_url' );
 
-function my_login_logo_url_title() {
-		return 'The Mother Ship';
-}
-add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 // add stylesheet for login page
 function my_login_stylesheet() {
@@ -200,30 +248,8 @@ function my_login_stylesheet() {
 }
 add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 
-// add resource hints
-add_filter('http2_render_resource_hints', '__return_true');
-
 // Custom template tags for this theme
 require get_template_directory() . '/template-tags.php';
-
-
-/**
- * Add a Formatted Date to the WordPress REST API JSON Post Object
- *
- */
-add_action('rest_api_init', function() {
-  register_rest_field(
-      array('post'),
-      'formatted_date',
-      array(
-          'get_callback'    => function() {
-              return get_the_date('l, F jS, Y');
-          },
-          'update_callback' => null,
-          'schema'          => null,
-      )
-  );
-});
 
 class StarterSite extends TimberSite {
 
