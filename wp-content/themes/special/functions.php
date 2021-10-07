@@ -115,8 +115,8 @@ function instagram_feed($url) {
   if ( false === ( $feed = get_transient( 'instagram_feed' ) ) ) {
     $response = wp_remote_get($url);
 
-    if(is_wp_error( $response ) ||$response['response']['code'] > 400  ) {
-      return array("error"=> "Something is terribly wrong with the Instagram API at the moment.");
+    if(is_wp_error( $response ) ||$response['response']['code'] >= 400  ) {
+      return array("error"=> "Something went terribly wrong with the Instagram API. Check back later 😊.");
     }
 
     $body = json_decode($response['body']);
