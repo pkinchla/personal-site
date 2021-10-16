@@ -59,7 +59,6 @@ p {
 
 blockquote {
   font-family: var(--font-sans-serif);
-  font-size: 1.15em;
   margin-bottom: 1.5em;
   position: relative;
   quotes: "\201C""\201D""\2018""\2019";

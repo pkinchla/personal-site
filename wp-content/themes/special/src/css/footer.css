@@ -39,20 +39,9 @@
 }
 
 @supports (display: grid) {
-  @media only screen and (min-width: 73.4375em) {
-    .site > footer {
-      display: grid;
-      grid-template-columns:
-        2fr
-        0.5fr
-        min(55ch, 100%)
-        0.5fr
-        1fr;
-    }
-    .site > footer section {
-      grid-column: 3;
-    }
+  @media only screen and (min-width: 90em) {
     .site > footer ul {
+      grid-column: 1;
       justify-content: flex-end;
     }
   }
