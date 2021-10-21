@@ -17,6 +17,7 @@ h6 {
   font-weight: 700;
   margin-bottom: 0.35em;
 }
+
 .editor-post-title {
   color: rgb(var(--secondary));
   font-family: var(--font-sans-serif);

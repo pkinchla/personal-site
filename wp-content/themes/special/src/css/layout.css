@@ -3,7 +3,6 @@
   border-left: 0.0625em solid rgb(var(--primary));
   margin: 0 auto;
   max-width: 48em;
-  min-height: 100vh;
 }
 
 .site main > article {
@@ -18,6 +17,7 @@
 .site main > article > figure {
   margin-bottom: 1.5em;
   order: -1;
+  overflow: hidden;
   position: relative;
 }
 
