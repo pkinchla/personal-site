@@ -12,8 +12,13 @@
       >
     </figure>
     <div class="content-grid">
-      <p>Sorry, we couldn't find what you're looking for.</p>
-      {% include "searchform.twig" %}
+      {% if bot_was_redirected %}
+        <p>This redirected may have occured because you are a bot who attempted to exploit the common <code>/xmlrpc.php</code> vulnerability in
+        WordPress. If this is not the case, my apologies.</p>
+      {% else %}
+        <p>Sorry, we couldn't find what you're looking for.</p>
+        {% include "searchform.twig" %}
+      {% endif %}
     </div>
   </article>
 {% endblock %}
