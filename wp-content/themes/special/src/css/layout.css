@@ -1,8 +1,14 @@
 /* site layout  */
 .site {
-  border-left: 0.0625em solid rgb(var(--primary));
+  border: 0.0625em solid currentColor;
   margin: 0 auto;
   max-width: 48em;
+}
+
+@supports (display: grid) {
+  .site {
+    border: none;
+  }
 }
 
 .site main > article {
@@ -74,13 +80,14 @@
       padding: 0;
     }
 
-    .site > main > article > *:not(figure):last-child {
-      padding: 0 2rem 6rem 2rem;
-    }
-
     .site > footer {
       border-left: 0.0625em solid rgb(var(--primary));
       grid-area: footer;
+    }
+  }
+  @media only screen and (min-width: 133.75em) {
+    .site {
+      border-left: 0.0625em solid rgb(var(--primary));
     }
   }
 }
