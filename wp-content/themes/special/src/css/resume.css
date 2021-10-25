@@ -2,12 +2,11 @@
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 1em;
   margin-bottom: 1.5em;
 }
 
 .resume-intro h2 {
-  margin: 0;
+  margin: 0 1.5rem 0 0 0;
 }
 
 /* .resume interior styling */
@@ -54,10 +53,6 @@
   margin: 1.5em 0 0.5em 0;
 }
 
-.resume dt:first-child {
-  margin-top: 0;
-}
-
 .resume dd > div {
   align-items: flex-end;
   display: flex;
@@ -67,7 +62,7 @@
 }
 
 @supports (display: grid) {
-  @media only screen and (min-width: 48em) {
+  @media only screen and (min-width: 60.9375em) {
     .resume {
       column-gap: 1em;
       display: grid;
@@ -87,6 +82,10 @@
       margin-top: 6rem;
     }
 
+    .resume dt:nth-of-type(2) {
+      grid-row-start: 3;
+    }
+
     .resume dd {
       grid-column: 3 / 8;
       grid-row-end: span 2;
@@ -103,7 +102,7 @@
     }
 
     .resume dt:first-child + dd {
-      margin-top: 6.25rem;
+      grid-row-start: 2;
     }
 
     .resume p {

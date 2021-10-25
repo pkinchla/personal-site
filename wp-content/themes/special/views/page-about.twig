@@ -24,6 +24,8 @@
             <a class="action border" href="{{post.get_field('file_resume').url}}" download>Download <span aria-hidden="true">&rarr;</span></a>
           </div>
           <dl class="resume">
+            <dt>Skill</dt>
+              <dd class="last"><p>{{post.skill}}</p></dd>
             <dt>Work</dt>
             {% for job in post.get_field('work') %}
               <dd{% if loop.last == true  %} class="last"{% endif%}>
@@ -48,21 +50,11 @@
                 <span>{{gig.location}}</span>
               </dd>
             {% endfor %}
-            <dt>Skill</dt>
-              <dd class="last"><p>{{post.skill}}</p></dd>
             <dt>Education</dt>
               <dd class="last">
               {% for school in post.get_field('education') %}
                 <div>{{school.school}}  <span>{{school.degree}}</span></div>
               {% endfor %}
-              </dd>
-            <dt>Interest</dt>
-              <dd class="last">
-                <ul role="list">
-                  {% for hobby in post.get_field('interest') %}
-                    <li>{{hobby.item_of_interest}}</li>
-                  {% endfor %}
-                </ul>
               </dd>
           </dl>
         </section>
