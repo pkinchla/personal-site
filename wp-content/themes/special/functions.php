@@ -267,7 +267,7 @@ class StarterSite extends TimberSite {
     $context['is_home'] = is_front_page();
     $context['current_page'] = home_url( $_SERVER['REQUEST_URI']);
     $context['menu_type'] = explode('/', home_url( $_SERVER['REQUEST_URI'] ))[3];
-    $context['bot_was_redirected'] = explode('/',  home_url( $_SERVER['QUERY_STRING']))[3] == 'sorry-bot';
+    $context['bot_was_redirected'] = explode('/',  home_url( $_SERVER['QUERY_STRING']))[3] ?? null == 'sorry-bot';
 
 		return $context;
 	}
