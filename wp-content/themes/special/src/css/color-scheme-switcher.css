@@ -4,11 +4,11 @@
   display: inline-flex;
   flex-wrap: wrap;
   margin-bottom: 1.5em;
-  padding: 0.5em 2em 1em 2em;
+  padding: 0.5em 2em 1em;
 }
 
 .color-theme-switcher:focus-within {
-  box-shadow: 0 1em 1em rgba(var(--secondary), 0.45);
+  box-shadow: 0 1em 1em rgb(var(--secondary) 0.45);
   outline: 1em solid transparent;
 }
 

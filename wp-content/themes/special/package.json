@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "lint:styles": "stylelint 'src/**/*.css'"
+    "lint:styles": "stylelint 'src/**/*.css'",
+    "lint:styles-fix": "stylelint --fix 'src/**/*.css'"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.2",
@@ -13,10 +14,10 @@
     "postcss": "^8.3.6",
     "postcss-import": "^14.0.2",
     "rollup-plugin-terser": "^7.0.2",
-    "stylelint": "^13.13.1",
-    "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-standard": "^22.0.0",
-    "stylelint-order": "^4.1.0"
+    "stylelint": "^14.1.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-order": "^5.0.0"
   },
   "browserslist": [
     "last 1 version"

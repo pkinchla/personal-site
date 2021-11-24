@@ -72,7 +72,7 @@
 
     .site > main {
       border: 0.0625em solid rgb(var(--secondary));
-      box-shadow: rgba(var(--secondary), 0.75) 0 0.1875em 0.75em;
+      box-shadow: rgb(var(--secondary) 0.75) 0 0.1875em 0.75em;
       grid-area: main;
     }
 

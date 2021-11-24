@@ -31,9 +31,9 @@
 
 :focus {
   outline: 0.1875rem solid currentColor;
-  outline-offset: 0.09375rem;
+  outline-offset: 0.0938rem;
 }
 
 .no-offset:focus {
-  outline-offset: -0.09375rem;
+  outline-offset: -0.0938rem;
 }

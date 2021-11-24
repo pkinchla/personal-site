@@ -50,7 +50,7 @@
   border-bottom: 0.0625rem solid rgb(var(--primary));
   font-size: 1.6em;
   font-weight: 400;
-  margin: 1.5em 0 0.5em 0;
+  margin: 1.5em 0 0.5em;
 }
 
 .resume dd > div {

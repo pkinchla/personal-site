@@ -1,7 +1,7 @@
 .site > footer {
   border: 0.0625rem solid rgb(var(--primary));
   bottom: 0;
-  box-shadow: rgba(var(--secondary), 0.75) 0 0.1875em 0.5em;
+  box-shadow: rgb(var(--secondary) 0.75) 0 0.1875em 0.5em;
   padding: 3rem 2rem;
 }
 
