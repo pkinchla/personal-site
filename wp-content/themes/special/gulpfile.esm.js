@@ -17,6 +17,13 @@ function css(cb) {
   cb();
 }
 
+function typeFaces(cb) {
+  src("./src/typesfaces/*.woff2")
+    .pipe(dest("./dist/typefaces/"))
+    .pipe(browserSync.stream());
+  cb();
+}
+
 function js(cb) {
   src("./src/js/**/*.js")
     .pipe(
@@ -38,6 +45,7 @@ function watcher(cb) {
   watch("./views/*.twig", reload);
   watch("./src/**/*.css", css);
   watch("./src/**/*.js", js);
+  watch("./src/**/*.css", typeFaces);
   cb();
 }
 

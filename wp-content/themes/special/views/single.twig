@@ -5,7 +5,7 @@
     <header class="content-grid">
       <div>
         <h1>{{post.title}}</h1>
-        <div>{{function('special_posted_on')}}</div>
+        <div class="sans-regular-italic">{{function('special_posted_on')}}</div>
       </div>
     </header>
     <figure {% if post.get_field('toggle_image_filter') %} class="no-filter"{% endif %}>

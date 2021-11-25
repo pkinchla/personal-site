@@ -5,7 +5,7 @@
       <header class="content-grid">
         <div>
           <h1>{{post.title}}</h1>
-          <div><time datetime="{{post.modified_date|date('c')}}">Last Updated on {{post.modified_date|date('l, F jS, Y')}}</time></div>
+          <div class="sans-regular-italic"><time datetime="{{post.modified_date|date('c')}}">Last Updated on {{post.modified_date|date('l, F jS, Y')}}</time></div>
         </div>
       </header>
       <figure>
@@ -13,16 +13,16 @@
       </figure>
         <div class="content-grid">
           {{post.content|wpautop}}
-          <div class="contact">
+          <div class="contact sans-regular-italic">
             {{post.contact}}
           </div>
         </div>
         <section class="content-grid">
           <div class="resume-intro">
             <h2 id="cv">R&eacute;sum&eacute;</h2>
-            <a class="action border" href="{{post.get_field('file_resume').url}}" download>Download <span aria-hidden="true">&rarr;</span></a>
+            <a class="action border sans-bold-italic no-offset" href="{{post.get_field('file_resume').url}}" download>Download <span aria-hidden="true">&rarr;</span></a>
           </div>
-          <dl class="resume">
+          <dl class="resume sans-regular">
             <dt>Skill</dt>
               <dd class="last"><p>{{post.skill}}</p></dd>
             <dt>Work</dt>
@@ -38,7 +38,7 @@
                     {% endfor %}
                   </span>
                 </div>
-                <span>{{job.company_name}}</span>
+                <span class="sans-regular-italic">{{job.company_name}}</span>
                 <p>{{job.description}}<a href="http://{{job.company_link}}" rel="noopener" target="_blank">{{job.company_link_text}}</a></p>
               </dd>
             {% endfor %}

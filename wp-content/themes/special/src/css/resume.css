@@ -12,17 +12,16 @@
 /* .resume interior styling */
 .resume {
   border: 0.0625em solid rgb(var(--primary));
-  font-family: var(--font-sans-serif);
   padding: 5%;
 }
 
 .resume p {
   font-family: var(--font-serif);
+  font-size: 0.9em;
 }
 
-.resume p,
 .resume time {
-  font-size: 0.9em;
+  font-size: .85em;
 }
 
 .resume a {
@@ -31,8 +30,6 @@
 
 .resume dd > span {
   display: block;
-  font-size: 1.125em;
-  font-style: italic;
   margin: 0 0 0.15em;
 }
 
@@ -48,15 +45,14 @@
 
 .resume dt {
   border-bottom: 0.0625rem solid rgb(var(--primary));
-  font-size: 1.6em;
-  font-weight: 400;
+  font-size: 1.5em;
   margin: 1.5em 0 0.5em;
 }
 
 .resume dd > div {
   align-items: flex-end;
   display: flex;
-  font-size: 1.25em;
+  font-size: 1.225em;
   justify-content: space-between;
   max-width: inherit;
 }

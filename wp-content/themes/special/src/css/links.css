@@ -1,3 +1,7 @@
+a {
+  text-decoration-thickness: 0.095em;
+}
+
 a:hover {
   text-decoration: none;
 }

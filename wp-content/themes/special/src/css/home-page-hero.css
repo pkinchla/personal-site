@@ -1,12 +1,8 @@
 .home article > figure > span {
   background: rgb(var(--body-background));
-  clip-path: polygon(0 0, 89.75% 31.28%, 100% 75%, 15% 100%);
+  clip-path: polygon(0 0, 89.75% 31.28%, 100.33% 83.73%, 15% 100%);
   color: rgb(var(--secondary));
-  font-family: var(--font-sans-serif);
   font-size: 2em;
-  font-style: italic;
-  font-weight: 700;
-  letter-spacing: -0.035em;
   padding: 0 0.75em;
   position: absolute;
   right: 48%;
@@ -14,7 +10,7 @@
   z-index: 2;
 }
 
-.home article > figure > span::after {
+.home article > figure > span::after, .home article > figure a::after {
   background: rgb(var(--secondary));
   content: "";
   display: inline-block;
@@ -28,11 +24,10 @@
 }
 
 .home article > figure a {
+  background: rgb(var(--body-background));
   bottom: 20%;
   display: inline-block;
-  font-family: var(--font-sans-serif);
   font-size: 2em;
-  font-style: italic;
   left: 50%;
   line-height: 1;
   position: absolute;

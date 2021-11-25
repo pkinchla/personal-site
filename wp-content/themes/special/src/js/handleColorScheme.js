@@ -48,7 +48,7 @@ function handleColorScheme() {
   });
 
   var element = document.createElement("fieldset");
-  element.classList.add("color-theme-switcher");
+  element.classList.add("color-theme-switcher", 'sans-bold-italic');
 
   var darkToggleMarkUp = `
     <legend>Color Scheme</legend>

@@ -1,8 +1,5 @@
 .pagination {
   border-bottom: 0.125em solid rgb(var(--secondary));
-  font-family: var(--font-sans-serif);
-  font-style: italic;
-  font-weight: 700;
   margin-bottom: 3em;
   overflow-x: visible;
   overflow-y: scroll;

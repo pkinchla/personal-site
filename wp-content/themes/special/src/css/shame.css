@@ -11,9 +11,6 @@
 .action,
 .post-navigation a {
   display: inline-flex;
-  font-family: var(--font-sans-serif);
-  font-style: italic;
-  font-weight: 700;
   gap: 0.25em;
   padding: 0.5em 1em;
 }
@@ -27,11 +24,6 @@
   margin-bottom: 3em;
 }
 
-.action-list li {
-  font-family: var(--font-sans-serif);
-  font-style: italic;
-}
-
 /* vertical r for grid on pages */
 .content-grid:not(header) {
   margin-bottom: 3em;
@@ -39,13 +31,11 @@
 
 form.search {
   display: flex;
-  font-family: var(--font-sans-serif);
   gap: 0.5em;
 }
 
 main > article > div > footer {
   border: 0.0625em solid rgb(var(--secondary));
-  font-family: var(--font-sans-serif);
   margin-bottom: 3em;
   padding: 1em;
 }
@@ -66,7 +56,6 @@ main > article > div > footer span {
 }
 
 .comments {
-  font-family: var(--font-sans-serif);
   margin-bottom: 3em;
 }
 
@@ -122,10 +111,6 @@ main > article > div .comment-author img,
 
 .photo-feed video {
   outline-offset: -0.1875em;
-}
-
-.single-work .meta {
-  font-family: var(--font-sans-serif);
 }
 
 .single-work .media {
@@ -208,8 +193,6 @@ main > article > div .comment-author img,
 main > article > header > div > div {
   border-bottom: 0.125em solid rgb(var(--secondary));
   display: inline-block;
-  font-family: var(--font-sans-serif);
-  font-style: italic;
   padding-bottom: 0.5em;
 }
 

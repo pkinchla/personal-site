@@ -1,9 +1,12 @@
 :root {
-  --font-sans-serif: "futura-pt", -apple-system, blinkmacsystemfont, "Segoe UI",
+  --font-sans-serif: "Tome Sans Variable", -apple-system, blinkmacsystemfont, "Segoe UI",
     roboto, helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
   --font-serif: georgia, "Times New Roman", times, serif;
   --font-mono: menlo, courier, monospace;
+  --variable-wght-bold: 700;
+  --variable-wght-reg: 400;
+  --variable-slant: -10;
 
   /* base colors overrides in color-scheme */
   --body-background: 241, 241, 241;

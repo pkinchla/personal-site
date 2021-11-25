@@ -23,13 +23,17 @@
 .site > header > a {
   align-items: center;
   display: flex;
-  max-width: 6em;
   padding: 0 0.5em;
+  text-decoration: none;
+}
+
+.site > header > a span {
+  line-height: 1;
 }
 
 .site > header > a > svg {
-  height: 2.5em;
-  width: 12em;
+  margin-right: .5em;
+  width: 1.45em;
 }
 
 .site > header a::after {
@@ -52,9 +56,6 @@
 .site > header > nav > ul {
   align-items: center;
   display: flex;
-  font-family: var(--font-sans-serif);
-  font-style: italic;
-  font-weight: 700;
   height: 100%;
   margin: 0;
 }
@@ -109,8 +110,17 @@
       justify-content: center;
       margin-bottom: 0.5em;
       max-width: inherit;
-      padding: 1em;
+      padding: 1em 1em 1em 3em;
       width: 100%;
+    }
+
+    .site > header > a > svg {
+      height: 2.5em;
+      width: 2.25em;
+    }
+
+    .site > header > a span {
+      font-size: 1.4em;
     }
 
     .site > header > nav > ul {

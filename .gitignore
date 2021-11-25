@@ -50,4 +50,5 @@ wp-content/themes/special/npm-debug.log
 wp-content/themes/special/node_modules/*
 wp-content/themes/special/vendor/*
 .sass-cache/
-/node_modules
+node_modules/
+typefaces/

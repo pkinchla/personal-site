@@ -1,4 +1,4 @@
-.color-theme-switcher {
+footer fieldset {
   background: transparent;
   border: 0.25em solid rgb(var(--secondary));
   display: inline-flex;
@@ -7,33 +7,31 @@
   padding: 0.5em 2em 1em;
 }
 
-.color-theme-switcher:focus-within {
+footer fieldset:focus-within {
   box-shadow: 0 1em 1em rgb(var(--secondary) 0.45);
   outline: 1em solid transparent;
 }
 
-.color-theme-switcher label,
-.color-theme-switcher legend {
-  font-family: var(--font-sans-serif);
-  font-style: italic;
-  font-weight: 700;
-}
-
-.color-theme-switcher label:not(:last-of-type) {
+footer fieldset label:not(:last-of-type) {
   margin-right: 1.5em;
 }
 
-.color-theme-switcher input[type="radio"] {
+footer fieldset input[type="radio"] {
   opacity: 0;
 }
 
-.color-theme-switcher input[type="radio"] + label {
+footer fieldset input[type="range"] {
+  margin-right: .25em;
+  max-width: 6em;
+}
+
+footer fieldset input[type="radio"] + label {
   cursor: pointer;
   display: inline-block;
   position: relative;
 }
 
-.color-theme-switcher input[type="radio"] + label::before {
+footer fieldset input[type="radio"] + label::before {
   background: transparent;
   border: 0.125em solid currentColor;
   border-radius: 50%;
@@ -47,11 +45,11 @@
   width: 1.25em;
 }
 
-.color-theme-switcher input[type="radio"]:checked + label::after {
+footer fieldset input[type="radio"]:checked + label::after {
   content: "\2713";
   font-size: 1.5em;
   left: -0.9em;
   position: absolute;
-  top: 40%;
+  top: 30%;
   transform: translateY(-50%);
 }

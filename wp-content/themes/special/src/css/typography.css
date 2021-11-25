@@ -1,3 +1,10 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Tome Sans Variable';
+  line-height: normal;
+  src: url('../typefaces/tome-sans-variable.woff2') format('woff2-variations');
+}
+
 body {
   background: rgb(var(--body-background));
   color: rgb(var(--primary));
@@ -14,7 +21,7 @@ h5,
 h6 {
   color: rgb(var(--secondary));
   font-family: var(--font-sans-serif);
-  font-weight: 700;
+  font-variation-settings: 'wght' var(--variable-wght-bold);
   margin-bottom: 0.35em;
 }
 
@@ -31,7 +38,7 @@ h1 {
 
 h2 {
   font-size: 1.875em;
-  font-style: italic;
+  font-variation-settings: 'wght' var(--variable-wght-bold), 'slnt' var(--variable-slant);
   line-height: 1.1;
 }
 
@@ -99,4 +106,25 @@ blockquote cite {
 blockquote p:first-of-type {
   display: inline;
   position: relative;
+}
+
+/* font helper utilities */
+.sans-regular {
+  font-family: var(--font-sans-serif);
+  font-variation-settings: 'wght' var(--variable-wght-reg);
+}
+
+.sans-regular-italic {
+  font-family: var(--font-sans-serif);
+  font-variation-settings: 'slnt' var(--variable-slant);
+}
+
+.sans-bold {
+  font-family: var(--font-sans-serif);
+  font-variation-settings: 'wght' var(--variable-wght-bold);
+}
+
+.sans-bold-italic {
+  font-family: var(--font-sans-serif);
+  font-variation-settings: 'wght' var(--variable-wght-bold), 'slnt' var(--variable-slant);
 }

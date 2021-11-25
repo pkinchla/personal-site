@@ -8,9 +8,9 @@
 
   <body class="{{body_class}}" data-template="base.twig">
     <div id="page" class="hfeed site">
-      <a class="skip-link assistive-text no-offset" href="#content">Skip To Content</a>
+      <a class="skip-link assistive-text no-offset sans-bold-italic" href="#content">Skip To Content</a>
       {% block header %}
-      <header id="masthead">
+      <header id="masthead" class="sans-bold-italic">
         {% include 'site-logo.twig' %}
         <nav id="site-navigation">
           {% include "menu.twig" with {'menu': menu.get_items} %}
