@@ -4,7 +4,7 @@ import observeHero from "./observeHero";
 import invokeServiceWorker from "./invokeServiceWorker";
 
 function scripts() {
-  return handleColorScheme(), observeHero(), invokeServiceWorker(), fontSettings()
+  return fontSettings(), handleColorScheme(), observeHero(), invokeServiceWorker()
 }
 
 window.addEventListener("DOMContentLoaded", scripts);

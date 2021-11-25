@@ -1,7 +1,6 @@
 @font-face {
   font-display: swap;
   font-family: 'Tome Sans Variable';
-  line-height: normal;
   src: url('/typefaces/tome-sans-variable.woff2') format('woff2-variations');
 }
 
