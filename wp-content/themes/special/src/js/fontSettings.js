@@ -8,13 +8,18 @@ function fontSettings() {
 
   var element = document.createElement("fieldset");
   element.classList.add("font-settings", 'sans-bold-italic');
+  console.log('hello')
 
   var fontSettingsMarkUp = `
     <legend>Font Settings</legend>
-    <input type="range" id="wght-bold" name="wght-bold" min="100" max="900" value=${defaultWght}>
-    <label for="wght-bold">Weight</label>
-    <input type="range" id="slant" name="slant" min="-10" max="0" value=${defaultSlant}>
-    <label for="slant">Slant</label>
+    <span>
+      <input type="range" id="wght-bold" name="wght-bold" min="100" max="900" value=${defaultWght}>
+      <label for="wght-bold">Weight</label>
+    </span>
+    <span>
+      <input type="range" id="slant" name="slant" min="-10" max="0" value=${defaultSlant}>
+      <label for="slant">Slant</label>
+    </span>
   `;
 
   element.innerHTML = fontSettingsMarkUp;

@@ -10,7 +10,7 @@
           <span>(Page {{page_number}})</span>
           {% endif %}
         </h1>
-        <div><time datetime="{{post.modified_date|date('c')}}">Last Updated on {{post.modified_date|date('l, F jS, Y')}}</time></div>
+        <div class="sans-regular-italic"><time datetime="{{post.modified_date|date('c')}}">Last Updated on {{post.modified_date|date('l, F jS, Y')}}</time></div>
       </div>
     </header>
     <figure>
@@ -45,7 +45,7 @@
         <h2 id="categories">Categories</h2>
         <ul role="list">
           {% for cat in categories %}
-            <li><a href="{{cat.link}}">{{cat.title}}</a>  (<a href="/blog/category/{{cat.title|lower}}/feed/">RSS</a>)</li>
+            <li class="sans-regular-italic"><a href="{{cat.link}}">{{cat.title}}</a>  (<a href="/blog/category/{{cat.title|lower}}/feed/">RSS</a>)</li>
           {% endfor %}
         </ul>
       </section>
