@@ -18,7 +18,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments">
+<div id="comments" class="comments sans-regular">
   <?php // You can start editing here -- including this comment! ?>
 
   <?php if ( have_comments() ) : ?>
