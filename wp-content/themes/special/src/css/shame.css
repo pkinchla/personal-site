@@ -76,7 +76,7 @@ main > article > div > footer span {
 }
 
 .comment-meta {
-  font-style: italic;
+  font-variation-settings: 'wght' var(--variable-wght-bold);
 }
 
 main > article > div .comment-author img,
@@ -198,7 +198,7 @@ main > article > header > div > div {
 
 main > article > header > div > h1 > span {
   font-size: 0.5em;
-  font-style: italic;
+  font-variation-settings: 'wght' var(--variable-wght-bold);
 }
 
 main > article > header > div > div > span:last-of-type {

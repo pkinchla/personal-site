@@ -76,17 +76,22 @@ blockquote::before {
   content: "";
   display: inline-block;
   height: 100%;
-  left: -0.65em;
+  left: -0.75em;
   position: absolute;
   top: 0;
   width: 0.125rem;
 }
 
 blockquote p {
-  margin-bottom: 0;
+  line-height: 1.65;
 }
 
-blockquote p:first-of-type::after {
+blockquote p:first-of-type {
+  display: inline;
+  position: relative;
+}
+
+/* blockquote p:first-of-type::after {
   content: "\201D";
   display: inline-block;
   font-family: var(--font-serif);
@@ -95,16 +100,12 @@ blockquote p:first-of-type::after {
   position: absolute;
   right: -0.5em;
   top: 0.35em;
-}
+} */
 
 blockquote cite {
   display: block;
-  font-style: italic;
-}
-
-blockquote p:first-of-type {
-  display: inline;
-  position: relative;
+  font-variation-settings: 'slnt' var(--variable-slant);
+  margin-top: .5em;
 }
 
 /* font helper utilities */

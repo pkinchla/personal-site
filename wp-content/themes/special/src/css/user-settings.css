@@ -1,6 +1,6 @@
 footer fieldset {
   background: transparent;
-  border: 0.25em solid rgb(var(--secondary));
+  border: 0.125em solid rgb(var(--secondary));
   display: inline-flex;
   flex-wrap: wrap;
   margin-bottom: 1.5em;
@@ -51,21 +51,26 @@ footer fieldset span:not(:last-of-type) {
   }
 
   fieldset.color-theme-switcher label {
-    border: .25em solid rgb(var(--secondary));
+    border: .125em solid rgb(var(--secondary));
     margin-right: .25em;
   }
 }
 
 fieldset.color-theme-switcher label {
-  border-top: .25em solid rgb(var(--secondary));
+  border-top: .125em solid rgb(var(--secondary));
   cursor: pointer;
   display: inline-block;
+  margin-bottom: -.0625em;
   margin-top: .5em;
   padding: .25em 1em .5em;
 }
 
+fieldset.color-theme-switcher label:last-of-type {
+  margin-right: -.0625em;
+}
+
 fieldset.color-theme-switcher label:not(:last-of-type) {
-  border-right: .25em solid rgb(var(--secondary));
+  border-right: .125em solid rgb(var(--secondary));
 }
 
 footer fieldset input[type="radio"]:checked + label {
