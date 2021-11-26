@@ -28,6 +28,7 @@ h6 {
   color: rgb(var(--secondary));
   font-family: var(--font-sans-serif);
   font-size: 1.5em;
+  font-weight: normal;
 }
 
 h1 {
@@ -64,6 +65,14 @@ p {
   margin-bottom: 1.5em;
 }
 
+cite, em {
+  font-variation-settings: 'slnt' var(--variable-slant);
+}
+
+strong {
+  font-variation-settings: 'wght' var(--variable-wght-bold);
+}
+
 blockquote {
   font-family: var(--font-sans-serif);
   margin-bottom: 1.5em;
@@ -91,17 +100,6 @@ blockquote p:first-of-type {
   position: relative;
 }
 
-/* blockquote p:first-of-type::after {
-  content: "\201D";
-  display: inline-block;
-  font-family: var(--font-serif);
-  font-size: 2em;
-  line-height: 0;
-  position: absolute;
-  right: -0.5em;
-  top: 0.35em;
-} */
-
 blockquote cite {
   display: block;
   font-variation-settings: 'slnt' var(--variable-slant);
@@ -127,4 +125,21 @@ blockquote cite {
 .sans-bold-italic {
   font-family: var(--font-sans-serif);
   font-variation-settings: 'wght' var(--variable-wght-bold), 'slnt' var(--variable-slant);
+}
+
+/* settings for font-variation support */
+@supports (font-variation-settings: normal) {
+  cite, em {
+    font-style: normal;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong {
+    font-weight: normal;
+  }
 }

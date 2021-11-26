@@ -1,6 +1,8 @@
 function fontSettings() {
+  if ("CSS" in window === false || "supports" in CSS === false) {
+    return;
+  }
   const defaultWght = getComputedStyle(document.documentElement).getPropertyValue("--variable-wght-bold");
-  const defaultSlant = getComputedStyle(document.documentElement).getPropertyValue("--variable-slant");
 
   var handleChange = function (value, setting) {
     document.documentElement.style.setProperty(`--variable-${setting}`, value);
@@ -8,17 +10,12 @@ function fontSettings() {
 
   var element = document.createElement("fieldset");
   element.classList.add("font-settings", 'sans-bold-italic');
-  console.log('hello')
 
   var fontSettingsMarkUp = `
-    <legend>Font Settings</legend>
+    <legend>Font Weight Settings</legend>
     <span>
-      <label for="wght-bold">Weight</label>
+      <label for="wght-bold">Headings</label>
       <input type="range" id="wght-bold" name="wght-bold" min="100" max="900" value=${defaultWght}>
-    </span>
-    <span>
-      <label for="slant">Slant</label>
-      <input type="range" id="slant" name="slant" min="-10" max="0" value=${defaultSlant}>
     </span>
   `;
 

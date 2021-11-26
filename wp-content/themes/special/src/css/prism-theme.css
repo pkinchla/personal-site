@@ -8,7 +8,6 @@ pre[class*="language-"] {
   background: none;
   color: #ccc;
   font-family: var(--font-mono);
-  font-size: 0.875em;
   hyphens: none;
   line-height: 1.5;
   tab-size: 4;

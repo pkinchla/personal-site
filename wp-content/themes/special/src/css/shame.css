@@ -1,6 +1,6 @@
 /* move this */
 .home .content {
-  scroll-margin-top: 1em;
+  scroll-margin-top: 3em;
 }
 
 .error404 img,
@@ -36,6 +36,7 @@ form.search {
 
 main > article > div > footer {
   border: 0.0625em solid rgb(var(--secondary));
+  font-size: .95em;
   margin-bottom: 3em;
   padding: 1em;
 }
@@ -76,7 +77,9 @@ main > article > div > footer span {
 }
 
 .comment-meta {
-  font-variation-settings: 'wght' var(--variable-wght-bold);
+  font-size: .95em;
+  font-variation-settings: 'slnt' var(--variable-slant);
+  margin-bottom: .5em;
 }
 
 main > article > div .comment-author img,

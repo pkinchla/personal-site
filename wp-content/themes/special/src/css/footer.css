@@ -5,6 +5,11 @@
   padding: 3rem 2rem;
 }
 
+.site > footer > section  {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .site > footer > ul {
   align-items: flex-start;
   display: flex;
@@ -24,6 +29,10 @@
 .site > footer > ul a svg {
   height: 3em;
   width: 3em;
+}
+
+.site > footer h2 {
+  width: 100%;
 }
 
 .site > footer p {

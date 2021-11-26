@@ -19,7 +19,7 @@ footer legend {
 
 fieldset.font-settings {
   gap: 1em;
-  padding: 1em;
+  padding: .5em 1em 1em;
 }
 
 footer fieldset:focus-within {
@@ -57,9 +57,10 @@ footer fieldset span:not(:last-of-type) {
 }
 
 fieldset.color-theme-switcher label {
+  align-items: center;
   border-top: .125em solid rgb(var(--secondary));
   cursor: pointer;
-  display: inline-block;
+  display: flex;
   margin-bottom: -.0625em;
   margin-top: .5em;
   padding: .25em 1em .5em;
