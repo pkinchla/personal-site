@@ -12,9 +12,9 @@ function fontSettings() {
   element.classList.add("font-settings", 'sans-bold-italic');
 
   var fontSettingsMarkUp = `
-    <legend>Font Weight Settings</legend>
+    <legend>Font Weight</legend>
     <span>
-      <label for="wght-bold">Headings</label>
+      <label for="wght-bold">Bold Sans-serif</label>
       <input type="range" id="wght-bold" name="wght-bold" min="100" max="900" value=${defaultWght}>
     </span>
   `;
