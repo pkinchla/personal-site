@@ -3,9 +3,23 @@ footer fieldset {
   border: 0.25em solid rgb(var(--secondary));
   display: inline-flex;
   flex-wrap: wrap;
-  gap: 1rem;
   margin-bottom: 1.5em;
-  padding: 0.5em 2em 1em;
+  padding: 0;
+  position: relative;
+}
+
+fieldset.color-theme-switcher {
+  margin-right: 1.5em;
+}
+
+footer legend {
+  margin: 0 .5em 0 1em;
+  padding: 0 .25em;
+}
+
+fieldset.font-settings {
+  gap: 1em;
+  padding: 1em;
 }
 
 footer fieldset:focus-within {
@@ -18,41 +32,43 @@ footer fieldset input[type="radio"] {
 }
 
 footer fieldset input[type="range"] {
-  margin-right: .5em;
+  margin-left: .5em;
+  margin-top: .175em;
   max-width: 6em;
 }
 
 footer fieldset span {
-  align-items: center;
   display: flex;
 }
 
+footer fieldset span:not(:last-of-type) {
+  padding-right: 0;
+}
 
-footer fieldset input[type="radio"] + label {
+@media only screen and (max-width: 20.625em) {
+  fieldset.color-theme-switcher  {
+    padding: .5em
+  }
+
+  fieldset.color-theme-switcher label {
+    border: .25em solid rgb(var(--secondary));
+    margin-right: .25em;
+  }
+}
+
+fieldset.color-theme-switcher label {
+  border-top: .25em solid rgb(var(--secondary));
   cursor: pointer;
   display: inline-block;
-  position: relative;
+  margin-top: .5em;
+  padding: .25em 1em .5em;
 }
 
-footer fieldset input[type="radio"] + label::before {
-  background: transparent;
-  border: 0.125em solid currentColor;
-  border-radius: 50%;
-  content: "";
-  display: inline-block;
-  height: 1.25em;
-  left: -1.375em;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1.25em;
+fieldset.color-theme-switcher label:not(:last-of-type) {
+  border-right: .25em solid rgb(var(--secondary));
 }
 
-footer fieldset input[type="radio"]:checked + label::after {
-  content: "\2713";
-  font-size: 1.5em;
-  left: -0.9em;
-  position: absolute;
-  top: 30%;
-  transform: translateY(-50%);
+footer fieldset input[type="radio"]:checked + label {
+  background: rgb(var(--secondary));
+  color:rgb(var(--body-background));
 }

@@ -52,11 +52,11 @@ function handleColorScheme() {
 
   var darkToggleMarkUp = `
     <legend>Color Scheme</legend>
-    <input type="radio" id="system" name="color-scheme" value="system">
+    <input class="assistive-text" type="radio" id="system" name="color-scheme" value="system">
     <label for="system">System</label>
-    <input type="radio" id="dark" name="color-scheme" value="dark">
+    <input class="assistive-text" type="radio" id="dark" name="color-scheme" value="dark">
     <label for="dark">Dark</label>
-    <input type="radio" id="light" name="color-scheme" value="light">
+    <input class="assistive-text" type="radio" id="light" name="color-scheme" value="light">
     <label for="light">Light</label>
   `;
 

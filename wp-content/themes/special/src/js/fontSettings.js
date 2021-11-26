@@ -13,12 +13,12 @@ function fontSettings() {
   var fontSettingsMarkUp = `
     <legend>Font Settings</legend>
     <span>
-      <input type="range" id="wght-bold" name="wght-bold" min="100" max="900" value=${defaultWght}>
       <label for="wght-bold">Weight</label>
+      <input type="range" id="wght-bold" name="wght-bold" min="100" max="900" value=${defaultWght}>
     </span>
     <span>
-      <input type="range" id="slant" name="slant" min="-10" max="0" value=${defaultSlant}>
       <label for="slant">Slant</label>
+      <input type="range" id="slant" name="slant" min="-10" max="0" value=${defaultSlant}>
     </span>
   `;
 
