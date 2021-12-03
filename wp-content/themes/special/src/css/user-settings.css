@@ -19,8 +19,12 @@ footer legend {
 
 fieldset.font-settings {
   gap: 1em;
-  min-width: 16em;
   padding: .5em 1em 1em;
+}
+
+fieldset.font-settings b {
+  display: inline-block;
+  margin-left: .5em;
 }
 
 footer fieldset:focus-within {
@@ -62,13 +66,9 @@ fieldset.color-theme-switcher label {
   border-top: .125em solid rgb(var(--secondary));
   cursor: pointer;
   display: flex;
-  margin-bottom: -.0625em;
+  margin: -.0625em;
   margin-top: .5em;
   padding: .25em 1em .5em;
-}
-
-fieldset.color-theme-switcher label:last-of-type {
-  margin-right: -.0625em;
 }
 
 fieldset.color-theme-switcher label:not(:last-of-type) {

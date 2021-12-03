@@ -16,17 +16,20 @@ function fontSettings() {
     <span>
       <label for="wght-bold">Bold Sans-serif</label>
       <input type="range" id="wght-bold" name="wght-bold" min="100" max="900" value=${defaultWght}>
+      <b>${defaultWght}</b>
     </span>
   `;
 
   element.innerHTML = fontSettingsMarkUp;
 
   document.getElementById("colophon").prepend(element);
-  var inputs = document.querySelectorAll(`.font-settings input`);
+  var inputs = document.querySelectorAll(".font-settings input");
 
   for (const input of inputs) {
     input.addEventListener("input", function (e) {
       handleChange(e.target.value, e.target.name);
+      // make this reactive
+      document.querySelector(".font-settings b").innerText = getComputedStyle(document.documentElement).getPropertyValue("--variable-wght-bold");
     });
 
   }
