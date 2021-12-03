@@ -19,6 +19,7 @@ footer legend {
 
 fieldset.font-settings {
   gap: 1em;
+  min-width: 16em;
   padding: .5em 1em 1em;
 }
 
