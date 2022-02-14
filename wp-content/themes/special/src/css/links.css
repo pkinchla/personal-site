@@ -9,3 +9,7 @@ a:hover {
 a svg {
   fill: currentColor;
 }
+
+a:visited svg {
+  fill: rgb(var(--visited));
+}

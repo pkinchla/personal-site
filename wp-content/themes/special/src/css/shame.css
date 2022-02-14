@@ -30,8 +30,25 @@
 }
 
 form.search {
-  display: flex;
-  gap: 0.5em;
+  gap: 1em;
+  width: max-content;
+}
+
+form {
+  border: 0.125em solid rgb(var(--secondary));
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin-bottom: 1.5em;
+  padding: 1em;
+}
+
+form:focus-within {
+  box-shadow: .0625em .0625em rgb(var(--secondary)),
+    .125em .125em 0 rgb(var(--secondary)),
+    .1875em .1875em 0 rgb(var(--secondary)),
+    .25em .25em 0 rgb(var(--secondary)),
+    .3125em .3125em 0 rgb(var(--secondary)),
+    .375em .375em 0 rgb(var(--secondary));
 }
 
 main > article > div > footer {
