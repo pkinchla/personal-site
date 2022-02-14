@@ -28,11 +28,17 @@ fieldset.font-settings b {
 }
 
 footer fieldset:focus-within {
-  box-shadow: .0625em .0625em rgb(var(--secondary)),
+  box-shadow: .03125em .03125em 0 rgb(var(--secondary)),
+    .0625em .0625em 0 rgb(var(--secondary)),
+    .09375em .09375em 0 rgb(var(--secondary)),
     .125em .125em 0 rgb(var(--secondary)),
+    .15625em .15625em 0 rgb(var(--secondary)),
     .1875em .1875em 0 rgb(var(--secondary)),
+    .21875em .21875em 0 rgb(var(--secondary)),
     .25em .25em 0 rgb(var(--secondary)),
+    .28125em .28125em 0 rgb(var(--secondary)),
     .3125em .3125em 0 rgb(var(--secondary)),
+    .34375em .34375em 0 rgb(var(--secondary)),
     .375em .375em 0 rgb(var(--secondary));
 }
 

@@ -6,5 +6,6 @@ module.exports = {
     "max-empty-lines": 2,
     "unit-allowed-list": ["fr", "ch", "em", "rem", "%", "vh", "vw", "ms", "s"],
     "order/properties-alphabetical-order": true,
+    "number-max-precision": 6
   },
 };
