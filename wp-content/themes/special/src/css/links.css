@@ -13,3 +13,7 @@ a svg {
 a:visited svg {
   fill: rgb(var(--visited));
 }
+
+a:active svg {
+  fill: rgb(var(--active));
+}
