@@ -1,6 +1,13 @@
 function observeHero() {
   var jumpLink = document.querySelector(".jump-link");
-  if (!jumpLink) return;
+
+  // exit early
+  if (!jumpLink) {
+    return;
+  };
+
+  // prevent flash of links before observer is abstantiated
+  jumpLink.classList.add("hidden");
 
   function handleIntersection(entries) {
     entries.forEach(function (entry) {

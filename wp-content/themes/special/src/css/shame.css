@@ -1,8 +1,4 @@
 /* move this */
-.home .content {
-  scroll-margin-top: 3em;
-}
-
 .error404 img,
 .archive main > article > figure > img {
   width: 100%;
@@ -27,6 +23,10 @@
 /* vertical r for grid on pages */
 .content-grid:not(header) {
   margin-bottom: 3em;
+}
+
+.home main .content-grid {
+  scroll-margin-top: 1.5em;
 }
 
 form.search {
