@@ -2,12 +2,19 @@
 
 {% block content %}
   <article id="post-{{post.ID}}">
-    <header>
-      <h1>{{post.title}}</h1>
+    <header class="content-grid{{ (post.thumbnail == null) ? ' no-hero' : '' }}">
+      <div>
+        <h1>{{post.title}}</h1>
+        <div class="sans-regular-italic">{{function('updated_on')}}</div>
+      </div>
     </header>
+    {% if post.thumbnail %}
     <figure>
       {% include 'featured-image.twig' %}
     </figure>
-    {{post.content}}
+    {% endif %}
+    <div class="content-grid">
+      {{post.content}}
+    </div>
   </article>
 {% endblock %}

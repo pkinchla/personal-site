@@ -2,15 +2,17 @@
 
 {% block content %}
   <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-    <header class="content-grid">
+    <header class="content-grid{{ (post.thumbnail == null) ? 'no-hero' : '' }}">
       <div>
         <h1>{{post.title}}</h1>
         <div class="sans-regular-italic">{{function('special_posted_on')}}</div>
       </div>
     </header>
+    {% if post.thumbnail %}
     <figure {% if post.get_field('toggle_image_filter') %} class="no-filter"{% endif %}>
       {% include 'featured-image.twig' %}
     </figure>
+    {% endif %}
     <div class="content-grid">
       {{post.content}}
       <footer class="sans-regular-italic">

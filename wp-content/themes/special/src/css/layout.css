@@ -20,6 +20,11 @@
   margin-bottom: 1.5em;
 }
 
+.site main > article > header.no-hero {
+  margin-top: clamp(6vw, 10vw, 15vw);
+}
+
+
 .site main > article > figure {
   margin-bottom: 1.5em;
   order: -1;

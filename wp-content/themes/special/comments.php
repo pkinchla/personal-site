@@ -67,5 +67,11 @@ if ( post_password_required() ) {
     <em><?php _e( 'Comments are closed.', 'special' ); ?></em>
   <?php endif; ?>
 
-  <?php comment_form(); ?>
+
+  <?php
+    $args = array(
+      'class_submit' => 'sans-bold-italic action border'
+    );
+    comment_form($args);
+  ?>
 </div><!-- #comments -->

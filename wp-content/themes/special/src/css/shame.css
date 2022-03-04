@@ -42,8 +42,21 @@ form {
   padding: 1em;
 }
 
-input[type='text'] {
+input[type='text'], textarea {
   padding: .5rem .75rem;
+}
+
+textarea {
+  width: 100%;
+}
+
+form.comment-form label:not([for='wp-comment-cookies-consent']) {
+  display: inline-block;
+  min-width: 4em;
+}
+
+form.comment-form input:not([type='submit']):not([type='checkbox']) {
+  width: calc(100% - 5em);
 }
 
 
