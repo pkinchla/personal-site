@@ -1,112 +1,279 @@
-code {
-  font-family: var(--font-mono);
-  font-size: 0.875em;
+/**
+ * a11y-light theme for JavaScript, CSS, and HTML
+ * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
+ * @author ericwbailey
+ */
+
+/*
+ Theme
+ */
+ code[class*="language-"],
+ pre[class*="language-"] {
+   background: none;
+   color: #545454;
+   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+   font-size: .925em;
+   hyphens: none;
+   line-height: 1.5;
+   tab-size: 4;
+   text-align: left;
+   white-space: pre;
+   word-break: normal;
+   word-spacing: normal;
+   word-wrap: normal;
+ }
+
+ /* Code blocks */
+ pre[class*="language-"] {
+   border-radius: 0.3em;
+   margin: 0.5em 0;
+   overflow: auto;
+   padding: 1em;
+ }
+
+ :not(pre) > code[class*="language-"],
+ pre[class*="language-"] {
+   background: #fefefe;
+ }
+
+ /* Inline code */
+ :not(pre) > code[class*="language-"] {
+   border-radius: 0.3em;
+   padding: 0.1em;
+   white-space: normal;
+ }
+
+ .token.comment,
+ .token.prolog,
+ .token.doctype,
+ .token.cdata {
+   color: #696969;
+ }
+
+ .token.punctuation {
+   color: #545454;
+ }
+
+ .token.property,
+ .token.tag,
+ .token.constant,
+ .token.symbol,
+ .token.deleted {
+   color: #007299;
+ }
+
+ .token.boolean,
+ .token.number {
+   color: #008000;
+ }
+
+ .token.selector,
+ .token.attr-name,
+ .token.string,
+ .token.char,
+ .token.builtin,
+ .token.inserted {
+   color: #aa5d00;
+ }
+
+ .token.operator,
+ .token.entity,
+ .token.url,
+ .language-css .token.string,
+ .style .token.string,
+ .token.variable {
+   color: #008000;
+ }
+
+ .token.atrule,
+ .token.attr-value,
+ .token.function {
+   color: #aa5d00;
+ }
+
+ .token.keyword {
+   color: #d91e18;
+ }
+
+ .token.regex,
+ .token.important {
+   color: #d91e18;
+ }
+
+ .token.important,
+ .token.bold {
+   font-weight: bold;
+ }
+
+ .token.italic {
+   font-style: italic;
+ }
+
+ .token.entity {
+   cursor: help;
+ }
+
+ /*
+  Plugin support
+ */
+
+
+/* Line highlight */
+.line-highlight {
+  background: rgb(183 134 11 / 7.5%);
+  border-bottom: 0.0625em solid #b8860b;
+  border-top: 0.0625em solid #b8860b;
 }
 
-code[class*="language-"],
-pre[class*="language-"] {
-  background: none;
-  color: #ccc;
-  font-family: var(--font-mono);
-  hyphens: none;
-  line-height: 1.5;
-  tab-size: 4;
-  text-align: left;
-  white-space: pre;
-  word-break: normal;
-  word-spacing: normal;
-  word-wrap: normal;
+ /* Line numbers */
+.line-numbers .line-numbers-rows {
+  border-right: 0.0625em solid #aa5d00;
 }
 
-/* Code blocks */
-pre[class*="language-"] {
-  overflow: auto;
-  padding: 1em;
+.line-numbers-rows > span::before {
+  color: #696969;
 }
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-  background: #2d2d2d;
-}
+/**
+ * a11y-dark theme for JavaScript, CSS, and HTML
+ * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
+ * @author ericwbailey
+ */
 
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-  border-radius: 0.3em;
-  padding: 0.1em;
-  white-space: normal;
-}
+/*
+ Theme
+ */
+ .dark-mode code[class*="language-"],
+ .dark-mode pre[class*="language-"] {
+   background: none;
+   color: #f8f8f2;
+ }
 
-.token.comment,
-.token.block-comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: #999;
-}
+ .dark-mode :not(pre) > code[class*="language-"],
+ .dark-mode pre[class*="language-"] {
+   background: #2b2b2b;
+ }
 
-.token.punctuation {
-  color: #ccc;
-}
+ .dark-mode .token.comment,
+ .dark-mode .token.prolog,
+ .dark-mode .token.doctype,
+ .dark-mode .token.cdata {
+   color: #d4d0ab;
+ }
 
-.token.tag,
-.token.attr-name,
-.token.namespace,
-.token.deleted {
-  color: #e2777a;
-}
+ .dark-mode .token.punctuation {
+   color: #fefefe;
+ }
 
-.token.function-name {
-  color: #6196cc;
-}
+ .dark-mode .token.property,
+ .dark-mode .token.tag,
+ .dark-mode .token.constant,
+ .dark-mode .token.symbol,
+ .dark-mode .token.deleted {
+   color: #ffa07a;
+ }
 
-.token.boolean,
-.token.number,
-.token.function {
-  color: #f08d49;
-}
+ .dark-mode .token.boolean,
+ .dark-mode .token.number {
+   color: #00e0e0;
+ }
 
-.token.property,
-.token.class-name,
-.token.constant,
-.token.symbol {
-  color: #f8c555;
-}
+ .dark-mode .token.selector,
+ .dark-mode .token.attr-name,
+ .dark-mode .token.string,
+ .dark-mode .token.char,
+ .dark-mode .token.builtin,
+ .dark-mode .token.inserted {
+   color: #abe338;
+ }
 
-.token.selector,
-.token.important,
-.token.atrule,
-.token.keyword,
-.token.builtin {
-  color: #cc99cd;
-}
+ .dark-mode .token.operator,
+ .dark-mode .token.entity,
+ .dark-mode .token.url,
+ .dark-mode .language-css .token.string,
+ .dark-mode .style .token.string,
+ .dark-mode .token.variable {
+   color: #00e0e0;
+ }
 
-.token.string,
-.token.char,
-.token.attr-value,
-.token.regex,
-.token.variable {
-  color: #7ec699;
-}
+ .dark-mode .token.atrule,
+ .dark-mode .token.attr-value,
+ .dark-mode .token.function {
+   color: #ffd700;
+ }
 
-.token.operator,
-.token.entity,
-.token.url {
-  color: #67cdcc;
-}
+ .dark-mode .token.keyword {
+   color: #00e0e0;
+ }
 
-.token.important,
-.token.bold {
-  font-weight: bold;
-}
+ .dark-mode .token.regex,
+ .dark-mode .token.important {
+   color: #ffd700;
+ }
 
-.token.italic {
-  font-style: italic;
-}
+ /*
+  Plugin support
+  */
 
-.token.entity {
-  cursor: help;
-}
+ /* Line highlight */
+ .dark-mode .line-highlight {
+   background: rgb(255 217 0 / 10%);
+   border-bottom: .0625em solid rgb(255 217 0 / 55%);
+   border-top: .0625em solid rgb(255 217 0 / 55%);
+ }
 
-.token.inserted {
-  color: green;
-}
+ /* Line numbers */
+ .dark-mode .line-numbers .line-numbers-rows {
+   border-right: .0625em solid #F8F8F2;
+ }
+
+ .dark-mode .line-numbers-rows > span::before {
+   color: #D4D0AB;
+ }
+
+ /*
+  High contrast mode support
+ */
+ @media screen and (-ms-high-contrast: active) {
+   code[class*="language-"],
+   pre[class*="language-"] {
+     background: window;
+     color: windowText;
+   }
+
+   :not(pre) > code[class*="language-"],
+   pre[class*="language-"] {
+     background: window;
+   }
+
+   .token.important {
+     background: highlight;
+     color: window;
+     font-weight: normal;
+   }
+
+   .token.atrule,
+   .token.attr-value,
+   .token.function,
+   .token.keyword,
+   .token.operator,
+   .token.selector {
+     font-weight: bold;
+   }
+
+   .token.attr-value,
+   .token.comment,
+   .token.doctype,
+   .token.function,
+   .token.keyword,
+   .token.operator,
+   .token.property,
+   .token.string {
+     color: highlight;
+   }
+
+   .token.attr-value,
+   .token.url {
+     font-weight: normal;
+   }
+ }

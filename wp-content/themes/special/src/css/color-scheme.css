@@ -21,12 +21,12 @@
 
 /* @media (prefers-color-scheme: dark) {
   :root {
-    --body-background: #212121;
-    --primary: #f1f1f1;
-    --secondary: #b8b8b8;
-    --link: #fff651;
-    --active: #ff8a8a;
-    --visited: #c68aff;
+    --body-background: 33, 33, 33;
+    --primary: 241, 241, 241;
+    --secondary: 172, 172, 172;
+    --link: 255, 246, 81;
+    --active: 255, 138, 138;
+    --visited: 188, 117, 255;
   }
 
   a {
