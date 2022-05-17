@@ -73,7 +73,7 @@
   position: relative;
 }
 
-.site > header > nav > ul li a[aria-current="true"] span::after {
+.site > header > nav > ul li a[aria-current="page"] span::after {
   background: rgb(var(--secondary));
   content: "";
   display: inline-block;
