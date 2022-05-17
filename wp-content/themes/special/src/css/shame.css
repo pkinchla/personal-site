@@ -148,12 +148,16 @@ main > article > div .comment-author img,
 }
 
 .photo-feed li {
-  aspect-ratio: 1 / 1;
   box-shadow: 0 0 0 0.1875em rgb(var(--body-background));
   overflow: hidden;
 }
 
+.photo-feed img {
+  aspect-ratio: 1 / 1;
+}
+
 .photo-feed video {
+  aspect-ratio: 1 / 1;
   outline-offset: -0.1875em;
 }
 
