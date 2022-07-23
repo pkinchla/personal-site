@@ -1,7 +1,32 @@
 /* move this */
-.error404 img,
+.error404 img {
+  width: 100%;
+}
+
+.photo-feed {
+  background: rgb(var(--secondary));
+  display: grid;
+  grid-gap: 0.1875em;
+  grid-template-columns: repeat(auto-fill, minmax(7.8125em, 1fr));
+}
+
+.photo-feed li {
+  aspect-ratio: 1 / 1;
+  box-shadow: 0 0 0 0.1875em rgb(var(--body-background));
+  overflow: hidden;
+}
+
+
+.photo-feed li img, .photo-feed li video {
+  object-fit: cover;
+}
+
 .archive main > article > figure > img {
   width: 100%;
+}
+
+.action {
+  width: max-content;
 }
 
 .action,
@@ -140,27 +165,6 @@ main > article > div .comment-author img,
   margin-bottom: 0;
 }
 
-.photo-feed {
-  background: rgb(var(--secondary));
-  display: grid;
-  grid-gap: 0.1875em;
-  grid-template-columns: repeat(auto-fill, minmax(7.8125em, 1fr));
-}
-
-.photo-feed li {
-  box-shadow: 0 0 0 0.1875em rgb(var(--body-background));
-  overflow: hidden;
-}
-
-.photo-feed img {
-  aspect-ratio: 1 / 1;
-}
-
-.photo-feed video {
-  aspect-ratio: 1 / 1;
-  outline-offset: -0.1875em;
-}
-
 .single-work .media {
   text-align: center;
 }
@@ -172,6 +176,10 @@ main > article > div .comment-author img,
 
 .single-work .media img[src$=".gif"] {
   max-width: 19em;
+}
+
+.single-work .action {
+  margin-bottom: 1.5em;
 }
 
 @supports (display: grid) {

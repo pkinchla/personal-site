@@ -1,7 +1,7 @@
 <article class="card-{{post.post_type}}" id="card-{{post.ID}}">
   {% block content %}
     <h3>
-      <a class="no-offset" href="{{post.link}}">
+      <a class="no-offset" href="{{ (post.project_url) ? post.project_url : post.link }}">
         <span>
           {{post.title}}
           <span class="sans-bold-italic">{{post.post_excerpt}}</span>

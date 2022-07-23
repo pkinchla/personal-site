@@ -182,6 +182,11 @@ function disable_emojis() {
   return $urls;
  }
 
+// add options
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();
+}
+
 function post_type_register_projects() {
 	/**
 	 * Post Type: Projects.
@@ -286,6 +291,7 @@ class StarterSite extends TimberSite {
     $context['current_page'] = home_url( $_SERVER['REQUEST_URI']);
     $context['menu_type'] = explode('/', home_url( $_SERVER['REQUEST_URI'] ))[3];
     $context['bot_was_redirected'] = explode('/',  home_url( $_SERVER['QUERY_STRING']))[3] ?? null == 'sorry-bot';
+    $context['options'] = get_fields('option');
 
 		return $context;
 	}

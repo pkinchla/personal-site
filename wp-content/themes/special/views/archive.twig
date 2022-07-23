@@ -13,16 +13,28 @@
       </div>
     </header>
     <figure>
-      <img
-        src="{{theme.path}}/images/cham.jpg"
-        alt="close up of miniature metallic chameleon standing on a metallic pedestal"
-      >
+      <picture>
+        <source srcset="{{options.work_archive_hero.url|resize(2000)|towebp}} 2000w, {{options.work_archive_hero.url|resize(1200)|towebp}} 1200w, {{options.work_archive_hero.url|resize(600)|towebp}} 600w, {{options.work_archive_hero.url|resize(300)|towebp}} 300w, {{options.work_archive_hero.url|resize(150)|towebp}} 150w"
+                sizes="(min-width:120em) 62vw, (min-width:64em) 72vw, (min-width:40em) 66vw, 100vw"
+                type="image/webp"
+        >
+        <source srcset="{{options.work_archive_hero.url|resize(2000)}} 2000w, {{options.work_archive_hero.url|resize(1200)}} 1200w, {{options.work_archive_hero.url|resize(600)}} 600w, {{options.work_archive_hero.url|resize(300)}} 300w, {{options.work_archive_hero.url|resize(250)}} 250w, {{options.work_archive_hero.url|resize(150)}} 150w"
+                sizes="(min-width:120em) 62vw, (min-width:64em) 72vw, (min-width:40em) 66vw, 100vw"
+                type="image/webp"
+        >
+        <img src="{{options.work_archive_hero.url}}"
+            alt="{{post.get_thumbnail.alt}}"
+            width="{{post.get_thumbnail.width}}"
+            height="{{post.get_thumbnail.height}}"
+        >
+      </picture>
     </figure>
     <div class="content-grid">
+      {{options.work_archive_content}}
       <h2 class="assistive-text">{{sub_title}} List</h2>
       <ul role="list" {{ (is_work_archive) ? 'class="work"' : '' }}>
         {% for post in posts %}
-         <li>{% include ['card-'~post.post_type~'.twig', 'card.twig'] %}</li>
+            <li>{% include ['card-'~post.post_type~'.twig', 'card.twig'] %}</li>
         {% endfor %}
       </ul>
       {% include 'pagination.twig' %}
