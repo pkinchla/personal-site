@@ -15,7 +15,6 @@
   overflow: hidden;
 }
 
-
 .photo-feed li img, .photo-feed li video {
   aspect-ratio: 1 / 1;
 }
