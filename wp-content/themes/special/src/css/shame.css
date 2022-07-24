@@ -11,14 +11,13 @@
 }
 
 .photo-feed li {
-  aspect-ratio: 1 / 1;
   box-shadow: 0 0 0 0.1875em rgb(var(--body-background));
   overflow: hidden;
 }
 
 
 .photo-feed li img, .photo-feed li video {
-  object-fit: cover;
+  aspect-ratio: 1 / 1;
 }
 
 .archive main > article > figure > img {
