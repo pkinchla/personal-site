@@ -49,14 +49,15 @@ footer fieldset input[type="range"] {
 
 fieldset.font-settings input[type="number"] {
   display: inline-block;
-  margin-left: .5em;
-  max-width: 4em;
+  width: 4em;
 }
 
 
 footer fieldset span {
   align-items:center;
   display: flex;
+  flex-wrap: wrap;
+  gap: .5em;
 }
 
 footer fieldset span:not(:last-of-type) {
