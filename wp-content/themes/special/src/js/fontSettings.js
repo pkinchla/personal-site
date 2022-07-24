@@ -2,11 +2,12 @@ function fontSettings() {
   if ("CSS" in window === false || "supports" in CSS === false) {
     return;
   }
-  const defaultWght = getComputedStyle(document.documentElement).getPropertyValue("--variable-wght-bold");
 
-  var handleChange = function (value, setting) {
-    document.documentElement.style.setProperty(`--variable-${setting}`, value);
-  };
+  var defaultWght = window.localStorage.font_weight || getComputedStyle(document.documentElement).getPropertyValue("--variable-wght-bold");
+
+  if (window.localStorage.font_weight) {
+    document.documentElement.style.setProperty(`--variable-wght-bold`, window.localStorage.font_weight);
+  }
 
   var element = document.createElement("fieldset");
   element.classList.add("font-settings", 'sans-bold-italic');
@@ -15,8 +16,8 @@ function fontSettings() {
     <legend>Font Weight</legend>
     <span>
       <label for="wght-bold">Bold Sans-serif</label>
-      <input type="range" id="wght-bold" name="wght-bold" min="100" max="900" value=${defaultWght}>
-      <b>${defaultWght}</b>
+      <input type="range" name="wght-bold" min="100" max="900" value=${defaultWght}>
+      <input type="number" min="100" max="900" name="wght-bold" step="100" value=${defaultWght} />
     </span>
   `;
 
@@ -27,12 +28,15 @@ function fontSettings() {
 
   for (const input of inputs) {
     input.addEventListener("input", function (e) {
-      handleChange(e.target.value, e.target.name);
-      // make this reactive
-      document.querySelector(".font-settings b").innerText = getComputedStyle(document.documentElement).getPropertyValue("--variable-wght-bold");
+      document.documentElement.style.setProperty(`--variable-${e.target.name}`, e.target.value);
+      localStorage.setItem("font_weight", getComputedStyle(document.documentElement).getPropertyValue("--variable-wght-bold"));
+      inputs.forEach(e => e.value = getComputedStyle(document.documentElement).getPropertyValue("--variable-wght-bold"))
     });
-
   }
+
+
+
+
 }
 
 export default fontSettings;

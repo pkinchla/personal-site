@@ -22,11 +22,6 @@ fieldset.font-settings {
   padding: .5em 1em 1em;
 }
 
-fieldset.font-settings b {
-  display: inline-block;
-  margin-left: .5em;
-}
-
 footer fieldset:focus-within {
   box-shadow: -.03125em .03125em 0 rgb(var(--secondary)),
     -.0625em .0625em 0 rgb(var(--secondary)),
@@ -52,7 +47,15 @@ footer fieldset input[type="range"] {
   max-width: 6em;
 }
 
+fieldset.font-settings input[type="number"] {
+  display: inline-block;
+  margin-left: .5em;
+  max-width: 4em;
+}
+
+
 footer fieldset span {
+  align-items:center;
   display: flex;
 }
 
