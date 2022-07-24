@@ -15,9 +15,10 @@ function fontSettings() {
   var fontSettingsMarkUp = `
     <legend>Font Weight</legend>
     <span>
-      <label for="wght-bold">Bold Sans-serif</label>
-      <input type="range" name="wght-bold" min="100" max="900" value=${defaultWght}>
-      <input type="number" min="100" max="900" name="wght-bold" step="100" value=${defaultWght} />
+      <label for="range">Bold Sans-serif</label>
+      <input type="range" id="range" name="wght-bold" min="100" max="900" value=${defaultWght}>
+      <label for="number" class="assistive-text">Bold Sans-serif</label>
+      <input id="number" type="number" min="100" max="900" name="wght-bold" step="100" value=${defaultWght} />
     </span>
   `;
 
