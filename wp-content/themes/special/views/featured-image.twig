@@ -1,11 +1,11 @@
 <picture>
   <source srcset="{{post.get_thumbnail.src|resize(2000)|towebp}} 2000w, {{post.get_thumbnail.src|resize(1200)|towebp}} 1200w, {{post.get_thumbnail.src|resize(600)|towebp}} 600w, {{post.get_thumbnail.src|resize(300)|towebp}} 300w, {{post.get_thumbnail.src|resize(150)|towebp}} 150w"
-          sizes="(min-width:120em) 62vw, (min-width:64em) 72vw, (min-width:40em) 66vw, 100vw"
+          sizes="(min-width:134em) 2347px, (min-width:40em) 66vw, 100vw"
           type="image/webp"
   >
   <source srcset="{{post.get_thumbnail.src|resize(2000)}} 2000w, {{post.get_thumbnail.src|resize(1200)}} 1200w, {{post.get_thumbnail.src|resize(600)}} 600w, {{post.get_thumbnail.src|resize(300)}} 300w, {{post.get_thumbnail.src|resize(250)}} 250w, {{post.get_thumbnail.src|resize(150)}} 150w"
-          sizes="(min-width:120em) 62vw, (min-width:64em) 72vw, (min-width:40em) 66vw, 100vw"
-          type="image/webp"
+          sizes="(min-width:134em) 2347px, (min-width:40em) 66vw, 100vw"
+          type="image/jpeg"
   >
   <img src="{{post.get_thumbnail.src}}"
       alt="{{post.get_thumbnail.alt}}"

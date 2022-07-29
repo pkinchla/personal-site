@@ -13,10 +13,15 @@
 .photo-feed li {
   box-shadow: 0 0 0 0.1875em rgb(var(--body-background));
   overflow: hidden;
+  padding-bottom: 100%;
+  position: relative;
 }
 
 .photo-feed li img, .photo-feed li video {
-  aspect-ratio: 1 / 1;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
 }
 
 .archive main > article > figure > img {
