@@ -5,7 +5,10 @@
     <header class="content-grid{{ (post.thumbnail == null) ? 'no-hero' : '' }}">
       <div>
         <h1>{{post.title}}</h1>
-        <div class="sans-regular-italic">{{function('special_posted_on')}}</div>
+        <div class="sans-regular-italic">
+          {{function('special_posted_on')}}
+          <span>Reading Time: {{post.reading_time}} minute{{ (post.reading_time == 1) ? '' : 's' }}</span>
+        </div>
       </div>
     </header>
     {% if post.thumbnail %}
@@ -18,7 +21,7 @@
       <footer class="sans-regular-italic">
         {{function('special_entry_footer')}}
       </footer>
-      {{post_nav}}
+      {{post.post_nav}}
       {% if (function('comments_open')) or (function('get_comments_number')) %}
         {{ function( 'comments_template' ) }}
       {% endif %}
