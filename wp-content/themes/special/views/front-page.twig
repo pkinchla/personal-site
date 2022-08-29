@@ -1,40 +1,56 @@
-{% extends "base.twig" %}
-{% block content %}
-  <article id="post-{{post.ID}}">
-    <header>
-      <h1 class='assistive-text'>Home Page</h1>
-      <time class='assistive-text' datetime="{{post.modified_date|date('c')}}">Last Update on {{post.modified_date|date('l, F jS, Y')}}</time>
-    </header>
-    <figure>
-        <picture>
-          <source srcset="{{post.get_thumbnail.src|resize(2000)|towebp}} 2000w, {{post.get_thumbnail.src|resize(1200)|towebp}} 1200w, {{post.get_thumbnail.src|resize(600)|towebp}} 600w, {{post.get_thumbnail.src|resize(300)|towebp}} 300w, {{post.get_thumbnail.src|resize(150)|towebp}} 150w"
-                  sizes="(min-width:134em) 2347px, (min-width:40em) 66vw, 100vw"
-                  type="image/webp"
-          >
-          <source srcset="{{post.get_thumbnail.src|resize(2000)}} 2000w, {{post.get_thumbnail.src|resize(1200)}} 1200w, {{post.get_thumbnail.src|resize(600)}} 600w, {{post.get_thumbnail.src|resize(300)}} 300w, {{post.get_thumbnail.src|resize(250)}} 250w, {{post.get_thumbnail.src|resize(150)}} 150w"
-                  sizes="(min-width:134em) 2347px, (min-width:40em) 66vw, 100vw"
-                  type="image/jpeg"
-          >
-          <img src="{{post.get_thumbnail.src}}"
-              alt="{{post.get_thumbnail.alt}}"
-              width="{{post.get_thumbnail.width}}"
-              height="{{post.get_thumbnail.height}}"
-          >
-        </picture>
-      <span class="sans-bold-italic">{{post.title}}</span>
-      <a href="#home-content" class="jump-link sans-bold-italic">
-        <span aria-hidden="true">&darr;</span>
-        <span class="assistive-text">Home content section</span>
-      </a>
-    </figure>
-    <div class="content-grid" id="home-content">
-      {{post.content}}
-      <section>
-        <h2 id="latest-blog-post">Latest Writing</h2>
-        {% for post in home_post %}
-            {% include 'card.twig' %}
-        {% endfor %}
-      </section>
-    </div>
-  </article>
+{% extends "base.twig" %} {% block content %}
+<article id="post-{{ post.ID }}">
+  <header>
+    <h1 class="assistive-text">Home Page</h1>
+    <time class="assistive-text" datetime="{{post.modified_date|date('c')}}"
+      >Last Update on {{post.modified_date|date('l, F jS, Y')}}</time
+    >
+  </header>
+  <figure>
+    <picture>
+      <source
+        srcset="
+          {{post.get_thumbnail.src|resize(2000)|towebp}} 2000w,
+          {{post.get_thumbnail.src|resize(1200)|towebp}} 1200w,
+          {{post.get_thumbnail.src|resize(600)|towebp}}   600w,
+          {{post.get_thumbnail.src|resize(300)|towebp}}   300w,
+          {{post.get_thumbnail.src|resize(150)|towebp}}   150w
+        "
+        sizes="(min-width:134em) 2347px, (min-width:40em) 66vw, 100vw"
+        type="image/webp"
+      />
+      <source
+        srcset="
+          {{post.get_thumbnail.src|resize(2000)}} 2000w,
+          {{post.get_thumbnail.src|resize(1200)}} 1200w,
+          {{post.get_thumbnail.src|resize(600)}}   600w,
+          {{post.get_thumbnail.src|resize(300)}}   300w,
+          {{post.get_thumbnail.src|resize(250)}}   250w,
+          {{post.get_thumbnail.src|resize(150)}}   150w
+        "
+        sizes="(min-width:134em) 2347px, (min-width:40em) 66vw, 100vw"
+        type="image/jpeg"
+      />
+      <img
+        src="{{ post.get_thumbnail.src }}"
+        alt="{{ post.get_thumbnail.alt }}"
+        width="{{ post.get_thumbnail.width }}"
+        height="{{ post.get_thumbnail.height }}"
+      />
+    </picture>
+    <span class="sans-bold-italic">{{ post.title }}</span>
+    <a href="#home-content" class="jump-link sans-bold-italic">
+      <span aria-hidden="true">&darr;</span>
+      <span class="assistive-text">Home content section</span>
+    </a>
+  </figure>
+  <div class="content-grid" id="home-content">
+    {{ post.content }}
+    <section>
+      <h2 id="latest-blog-post">Latest Writing</h2>
+      {% for post in home_post %} {% include 'card.twig' %} {% endfor %}
+    </section>
+  </div>
+</article>
 {% endblock %}
+
