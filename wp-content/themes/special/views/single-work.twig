@@ -30,7 +30,9 @@
       {% else %}
         <div class="content-grid">
           {{post.content}}
-          <a class="action border no-offset sans-bold-italic" href={{post.project_url}}>Launch Project</a>
+          {% if post.project_url %}
+            <a class="action border no-offset sans-bold-italic" href={{post.project_url}}>Launch Project</a>
+          {% endif %}
           <strong class="meta sans-bold">Filed in: {{post.post_excerpt}}</strong>
         </div>
         <div class="content-grid">
