@@ -30,7 +30,9 @@
       </picture>
     </figure>
     <div class="content-grid">
-      {{options.work_archive_content}}
+      {% if is_work_archive %}
+        {{options.work_archive_content}}
+      {% endif %}
       <h2 class="assistive-text">{{sub_title}} List</h2>
       <ul role="list" {{ (is_work_archive) ? 'class="work"' : '' }}>
         {% for post in posts %}
