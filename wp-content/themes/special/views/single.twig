@@ -2,7 +2,7 @@
 
 {% block content %}
   <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-    <header class="content-grid{{ (post.thumbnail == null) ? 'no-hero' : '' }}">
+    <header class="content-grid{{ (post.thumbnail == null) ? ' no-hero' : '' }}">
       <div>
         <h1>{{post.title}}</h1>
         <div class="sans-regular-italic">
