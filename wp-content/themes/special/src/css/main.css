@@ -1,5 +1,5 @@
+@import "custom-properties";
 @import "reset.css";
-@import "custom-properties.css";
 @import "typography.css";
 @import "links.css";
 @import "accessibility.css";
@@ -15,4 +15,3 @@
 @import "shame.css";
 @import "color-scheme.css";
 @import "user-settings.css";
-

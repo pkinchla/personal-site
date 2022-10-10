@@ -51,7 +51,17 @@ picture,
 video {
   display: block;
   height: auto;
+  width: 100%;
   max-width: 100%;
+}
+
+img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans-serif);
+  font-style: italic;
+  font-weight: var(--variable-wght-bold);
 }
 
 svg {
