@@ -51,17 +51,23 @@ picture,
 video {
   display: block;
   height: auto;
-  width: 100%;
   max-width: 100%;
 }
 
-img {
+img:after {
+  font-family: var(--font-sans-serif);
+  font-weight: var(--variable-wght-bold);
+  content: "\01F6AB"" " attr(alt);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-sans-serif);
-  font-style: italic;
-  font-weight: var(--variable-wght-bold);
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(var(--body-background));
 }
 
 svg {
