@@ -43,7 +43,7 @@ wp-content/plugins/*
 # specify (see the commented-out example for a hint on how to do this.)
 wp-content/themes/*
 !wp-content/themes/special/
-wp-content/themes/special/vhost.js
+wp-content/themes/special/dist/js/main.js.map
 wp-content/themes/special/credentials.php
 wp-content/themes/special/*.css.map
 wp-content/themes/special/npm-debug.log
