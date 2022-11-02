@@ -6,9 +6,9 @@
 .skip-link,
 .skip-link:focus {
   background: rgb(var(--body-background));
+  left: 0;
   text-align: center;
   top: 0;
-  left: 0;
 }
 
 @media only screen and (min-width: 48em) {
@@ -210,6 +210,37 @@ main > article > div .comment-author img,
 
   .work li {
     padding: 0.0625em;
+  }
+}
+
+.post-template-default dl {
+  margin-bottom: 1.5em;
+}
+
+.post-template-default dt {
+  font-family: var(--font-sans-serif);
+  font-variation-settings: "wght" var(--variable-wght-bold),
+    "slnt" var(--variable-slant);
+}
+
+@media only screen and (min-width: 28.125em) {
+  .post-template-default dl {
+    border-left: 0.0625em solid rgb(var(--primary) 0.25);
+    column-gap: 1em;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+  }
+
+  .post-template-default dd {
+    align-items: self-end;
+    border-bottom: 0.0625em solid rgb(var(--primary) 0.25);
+    display: flex;
+    grid-column-start: 2;
+    padding-bottom: 0.25em;
+  }
+
+  .post-template-default dt dd:not(:first-child) {
+    padding-top: 0.25em;
   }
 }
 
