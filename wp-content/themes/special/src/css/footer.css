@@ -5,7 +5,7 @@
   padding: 3rem 2rem;
 }
 
-.site > footer > section  {
+.site > footer > section {
   display: flex;
   flex-wrap: wrap;
 }
@@ -46,7 +46,7 @@
     }
   }
 
-  @media only screen and (min-width: 92em) {
+  @media only screen and (min-width: 125em) {
     .site > footer ul {
       grid-column: 1;
       justify-content: flex-end;
