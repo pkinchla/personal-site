@@ -69,14 +69,17 @@ p {
 }
 
 cite, em {
+  font-style: italic;
   font-variation-settings: 'slnt' var(--variable-slant);
 }
 
 strong {
+  font-weight: bold;
   font-variation-settings: 'wght' var(--variable-wght-bold);
 }
 
 blockquote {
+  font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
   position: relative;
   margin-bottom: 1.5em;
@@ -104,6 +107,7 @@ blockquote p:first-of-type {
 }
 
 blockquote cite {
+  font-style: italic;
   font-variation-settings: 'slnt' var(--variable-slant);
   display: block;
   margin-top: .5em;
