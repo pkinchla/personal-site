@@ -2,7 +2,7 @@
   <ul id="primary-menu" role="list">
   {% for item in menu %}
     <li>
-      <a class="no-offset" href="{{item.get_link}}" aria-current="{{ (item.title|lower == menu_type) ? 'page' : 'false' }}"><span>{{item.title}}</span></a>
+      <a class="no-offset" href="{{item.get_link}}" aria-current="{{ (item.title|lower == menu_type) ? 'page' : 'false' }}">{{item.title}}</a>
       {% include "menu.twig" with {'menu': item.get_children} %}
     </li>
   {% endfor %}

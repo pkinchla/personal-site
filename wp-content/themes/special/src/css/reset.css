@@ -24,8 +24,8 @@ dd {
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"] {
-  list-style: none;
   padding: 0;
+  list-style: none;
 }
 
 /* Set core root defaults */
@@ -35,8 +35,8 @@ html {
 
 /* Set core body defaults */
 body {
-  line-height: 1.5;
   min-height: 100vh;
+  line-height: 1.5;
   text-rendering: optimizeSpeed;
 }
 
@@ -50,24 +50,24 @@ img,
 picture,
 video {
   display: block;
-  height: auto;
   max-width: 100%;
+  height: auto;
 }
 
-img:after {
+img::after {
   font-family: var(--font-sans-serif);
   font-weight: var(--variable-wght-bold);
-  content: "\01F6AB"" " attr(alt);
   display: flex;
-  align-items: center;
-  justify-content: center;
   position: absolute;
-  z-index: 2;
-  top: 0;
   left: 0;
+  top: 0;
+  background: rgb(var(--body-background));
   width: 100%;
   height: 100%;
-  background: rgb(var(--body-background));
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+  content: "\01F6AB"" " attr(alt);
 }
 
 svg {

@@ -1,8 +1,8 @@
 /* site layout  */
 .site {
+  max-width: 48em;
   border: 0.0625em solid currentColor;
   margin: 0 auto;
-  max-width: 48em;
 }
 
 @supports (display: grid) {
@@ -26,10 +26,10 @@
 
 
 .site main > article > figure {
-  margin-bottom: 1.5em;
   order: -1;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+  margin-bottom: 1.5em;
 }
 
 .site > *:not(main) {
@@ -58,21 +58,21 @@
 
     .content-grid > pre,
     .content-grid > iframe {
-      grid-column: 2 / 5;
       margin-bottom: 1.5em;
+      grid-column: 2 / 5;
     }
 
     .site {
       display: grid;
+      max-width: 107em;
+      min-height: 100vh;
+      padding: 0;
+      margin: 0 auto;
       grid-template-areas:
         "header main"
         "header main"
         "header footer";
       grid-template-columns: 15em 1fr;
-      margin: 0 auto;
-      max-width: 107em;
-      min-height: 100vh;
-      padding: 0;
     }
 
     .site > main {

@@ -1,9 +1,9 @@
 .pagination {
+  width: 100%;
+  padding: 0 1em;
   border-bottom: 0.125em solid rgb(var(--secondary));
   margin-bottom: 3em;
-  padding: 0 1em;
   text-align: center;
-  width: 100%;
 }
 
 .pagination.no-results {
@@ -20,18 +20,18 @@
 }
 
 .pagination > .current::after {
-  border: solid transparent;
-  border-bottom-color: rgb(var(--secondary));
-  border-width: 0.625em;
-  bottom: 0;
-  content: "";
   display: inline-block;
-  height: 0;
-  left: 50%;
-  margin-left: -0.625em;
-  pointer-events: none;
   position: absolute;
+  left: 50%;
+  bottom: 0;
   width: 0;
+  height: 0;
+  border: solid transparent;
+  border-width: 0.625em;
+  border-bottom-color: rgb(var(--secondary));
+  margin-left: -0.625em;
+  content: "";
+  pointer-events: none;
 }
 
 .pagination > *:not(:last-child) {

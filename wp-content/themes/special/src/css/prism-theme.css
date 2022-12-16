@@ -9,10 +9,10 @@
  */
  code[class*="language-"],
  pre[class*="language-"] {
-   background: none;
-   color: #545454;
    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
    font-size: .925em;
+   background: none;
+   color: #545454;
    hyphens: none;
    line-height: 1.5;
    tab-size: 4;
@@ -25,9 +25,9 @@
 
  /* Code blocks */
  pre[class*="language-"] {
-   border-radius: 0.3em;
    overflow: auto;
    padding: 1em;
+   border-radius: 0.3em;
  }
 
  :not(pre) > code[class*="language-"],
@@ -37,8 +37,8 @@
 
  /* Inline code */
  :not(pre) > code[class*="language-"] {
-   border-radius: 0.3em;
    padding: 0.1em;
+   border-radius: 0.3em;
    white-space: normal;
  }
 
@@ -119,9 +119,9 @@
 
 /* Line highlight */
 .line-highlight {
-  background: rgb(183 134 11 / 7.5%);
-  border-bottom: 0.0625em solid #b8860b;
   border-top: 0.0625em solid #b8860b;
+  border-bottom: 0.0625em solid #b8860b;
+  background: rgb(183 134 11 / 7.5%);
 }
 
  /* Line numbers */
@@ -216,9 +216,9 @@
 
  /* Line highlight */
  .dark-mode .line-highlight {
-   background: rgb(255 217 0 / 10%);
-   border-bottom: .0625em solid rgb(255 217 0 / 55%);
    border-top: .0625em solid rgb(255 217 0 / 55%);
+   border-bottom: .0625em solid rgb(255 217 0 / 55%);
+   background: rgb(255 217 0 / 10%);
  }
 
  /* Line numbers */
@@ -246,9 +246,9 @@
    }
 
    .token.important {
+     font-weight: normal;
      background: highlight;
      color: window;
-     font-weight: normal;
    }
 
    .token.atrule,

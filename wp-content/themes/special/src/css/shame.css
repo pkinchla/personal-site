@@ -5,10 +5,10 @@
 
 .skip-link,
 .skip-link:focus {
-  background: rgb(var(--body-background));
   left: 0;
-  text-align: center;
   top: 0;
+  background: rgb(var(--body-background));
+  text-align: center;
 }
 
 @media only screen and (min-width: 48em) {
@@ -19,25 +19,34 @@
 }
 
 .photo-feed {
-  background: rgb(var(--secondary));
   display: grid;
+  background: rgb(var(--secondary));
   grid-gap: 0.1875em;
   grid-template-columns: repeat(auto-fill, minmax(7.8125em, 1fr));
 }
 
 .photo-feed li {
-  box-shadow: 0 0 0 0.1875em rgb(var(--body-background));
-  overflow: hidden;
-  padding-bottom: 100%;
+  display: inline-block;
   position: relative;
+  max-width: 7.8125em;
+  box-shadow: 0 0 0 0.1875em rgb(var(--body-background));
+}
+
+@supports (display: grid) {
+  .photo-feed li {
+    display: inline-block;
+    max-width: inherit;
+  }
+
 }
 
 .photo-feed li img,
 .photo-feed li video {
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  aspect-ratio: 1;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .archive main > article > figure > img {
@@ -51,8 +60,8 @@
 .action,
 .post-navigation a {
   display: inline-flex;
-  gap: 0.25em;
   padding: 0.5em 1em;
+  gap: 0.25em;
 }
 
 .action.border {
@@ -74,16 +83,16 @@
 }
 
 form.search {
-  gap: 1em;
   width: max-content;
+  gap: 1em;
 }
 
 form {
-  border: 0.125em solid rgb(var(--secondary));
   display: inline-flex;
   flex-wrap: wrap;
-  margin-bottom: 1.5em;
   padding: 1em;
+  border: 0.125em solid rgb(var(--secondary));
+  margin-bottom: 1.5em;
 }
 
 input[type="text"],
@@ -120,10 +129,10 @@ form:focus-within {
 }
 
 main > article > div > footer {
-  border: 0.0625em solid rgb(var(--secondary));
   font-size: 0.95em;
-  margin-bottom: 3em;
   padding: 1em;
+  border: 0.0625em solid rgb(var(--secondary));
+  margin-bottom: 3em;
 }
 
 main > article > div > footer span {
@@ -131,14 +140,14 @@ main > article > div > footer span {
 }
 
 .post-navigation .nav-links {
-  align-items: center;
-  border-bottom: 0.0625em solid rgb(var(--secondary));
   display: flex;
   flex-wrap: wrap;
-  gap: 1em;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 3em;
   padding: 1em 0;
+  border-bottom: 0.0625em solid rgb(var(--secondary));
+  margin-bottom: 3em;
+  gap: 1em;
 }
 
 .comments {
@@ -146,15 +155,15 @@ main > article > div > footer span {
 }
 
 .comments .children {
-  list-style: none;
   margin-bottom: 0;
   margin-left: 1.5em;
+  list-style: none;
 }
 
 .comment-body {
-  border-left: 0.0625em solid rgb(var(--secondary));
-  border-top: 0.0625em solid rgb(var(--secondary));
   padding: 0.75em;
+  border-top: 0.0625em solid rgb(var(--secondary));
+  border-left: 0.0625em solid rgb(var(--secondary));
 }
 
 .comments p {
@@ -162,9 +171,9 @@ main > article > div > footer span {
 }
 
 .comment-meta {
+  margin-bottom: 0.5em;
   font-size: 0.95em;
   font-variation-settings: "slnt" var(--variable-slant);
-  margin-bottom: 0.5em;
 }
 
 main > article > div .comment-author img,
@@ -174,8 +183,8 @@ main > article > div .comment-author img,
 }
 
 .comment-author cite {
-  display: inline-block;
   font-weight: 700;
+  display: inline-block;
   margin: 0 0.25em;
   vertical-align: middle;
 }
@@ -201,6 +210,11 @@ main > article > div .comment-author img,
   margin-bottom: 1.5em;
 }
 
+.work li {
+  display: inline-block;
+  max-width: 20em;
+}
+
 @supports (display: grid) {
   .work {
     display: grid;
@@ -209,6 +223,8 @@ main > article > div .comment-author img,
   }
 
   .work li {
+    display: inherit;
+    max-width: inherit;
     padding: 0.0625em;
   }
 }
@@ -225,18 +241,18 @@ main > article > div .comment-author img,
 
 @media only screen and (min-width: 28.125em) {
   .post-template-default dl {
+    display: grid;
     border-left: 0.0625em solid rgb(var(--primary) 0.25);
     column-gap: 1em;
-    display: grid;
     grid-template-columns: 1fr 2.5fr;
   }
 
   .post-template-default dd {
-    align-items: self-end;
-    border-bottom: 0.0625em solid rgb(var(--primary) 0.25);
     display: flex;
-    grid-column-start: 2;
+    align-items: self-end;
     padding-bottom: 0.25em;
+    border-bottom: 0.0625em solid rgb(var(--primary) 0.25);
+    grid-column-start: 2;
   }
 
   .post-template-default dt dd:not(:first-child) {
@@ -297,9 +313,9 @@ main > article > div .comment-author img,
 }
 
 main > article > header > div > div {
-  border-bottom: 0.125em solid rgb(var(--secondary));
   display: inline-block;
   padding-bottom: 0.5em;
+  border-bottom: 0.125em solid rgb(var(--secondary));
 }
 
 main > article > header > div > h1 > span {
@@ -310,3 +326,4 @@ main > article > header > div > h1 > span {
 main > article > header > div > div > span:last-of-type {
   display: block;
 }
+

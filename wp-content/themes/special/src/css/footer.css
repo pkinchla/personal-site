@@ -1,8 +1,8 @@
 .site > footer {
-  border: 0.0625rem solid rgb(var(--primary));
   bottom: 0;
-  box-shadow: rgb(var(--secondary) 0.75) 0 0.1875em 0.5em;
   padding: 3rem 2rem;
+  border: 0.0625rem solid rgb(var(--primary));
+  box-shadow: rgb(var(--secondary) 0.75) 0 0.1875em 0.5em;
 }
 
 .site > footer > section {
@@ -11,9 +11,9 @@
 }
 
 .site > footer > ul {
-  align-items: flex-start;
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .site > footer > ul li:not(:last-of-type) {
@@ -21,14 +21,14 @@
 }
 
 .site > footer > ul a {
-  align-items: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .site > footer > ul a svg {
-  height: 3em;
   width: 3em;
+  height: 3em;
 }
 
 .site > footer h2 {
@@ -48,8 +48,8 @@
 
   @media only screen and (min-width: 125em) {
     .site > footer ul {
-      grid-column: 1;
       justify-content: flex-end;
+      grid-column: 1;
     }
   }
 }
