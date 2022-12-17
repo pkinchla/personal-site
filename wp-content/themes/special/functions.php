@@ -116,37 +116,45 @@ add_action(
 );
 
 function instagram_feed($url) {
-  if ( false === ( $feed = get_transient( 'instagram_feed' ) ) ) {
-    $response = wp_remote_get($url);
+  $feed = get_transient( 'instagram_feed' );
 
-    if(is_wp_error( $response ) ||$response['response']['code'] >= 400  ) {
-      return array("error"=> "Something went terribly wrong with the Instagram API. Check back later 😊.");
-    }
-
-    $body = json_decode($response['body']);
-    $second_response = wp_remote_get($body->paging->next);
-    $second_body = json_decode($second_response['body']);
-
-    $feed = array_merge($body->data, $second_body->data);
-
-    set_transient( 'instagram_feed', $feed, 1 * HOUR_IN_SECONDS);
+  if ( false !== $feed ) {
+    return $feed;
   }
+
+  $response = wp_remote_get($url);
+
+  if(is_wp_error( $response ) ||$response['response']['code'] >= 400  ) {
+    return array("error"=> "Something went terribly wrong with the Instagram API. Check back later 😊.");
+  }
+
+  $body = json_decode($response['body']);
+  $second_response = wp_remote_get($body->paging->next);
+  $second_body = json_decode($second_response['body']);
+
+  $feed = array_merge($body->data, $second_body->data);
+
+  set_transient( 'instagram_feed', $feed, 1 * HOUR_IN_SECONDS);
 
   return $feed;
 }
 
 
 function speed_stats($url) {
-  if ( false === ( $stats = get_transient( 'speed_stats' ) ) ) {
-    $response = wp_remote_get($url);
+  $stats = get_transient( 'speed_stats' );
 
-    if(is_wp_error( $response ) ||$response['response']['code'] >= 400  ) {
-      return array("error"=> "Something went terribly wrong with the API. Check back later 😊.");
-    }
-
-    $stats = json_decode($response['body'], true);
-    set_transient( 'speed_stats', $stats, 24 * HOUR_IN_SECONDS);
+  if (false !== $stats) {
+    return $stats;
   }
+
+  $response = wp_remote_get($url);
+
+  if(is_wp_error( $response ) ||$response['response']['code'] >= 400  ) {
+    return array("error"=> "Something went terribly wrong with the API. Check back later 😊.");
+  }
+
+  $stats = json_decode($response['body'], true);
+  set_transient( 'speed_stats', $stats, 24 * HOUR_IN_SECONDS);
 
   return $stats;
 }
