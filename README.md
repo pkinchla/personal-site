@@ -1,6 +1,6 @@
-# mothership
+# My personal site
 
-My personal site.
+https://paulkinchla.com
 
 ## Based off the starter themes:
 
@@ -11,6 +11,10 @@ My personal site.
 ## Code syntax highlighting
 
 https://github.com/ericwbailey/a11y-syntax-highlighting
+
+## Performance stats 
+[speedlify](https://github.com/zachleat/speedlify/)
+[`<speedlify-score>` component](https://github.com/zachleat/speedlify-score)
 
 ## The MIT License (MIT)
 
