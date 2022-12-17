@@ -13,8 +13,8 @@ https://paulkinchla.com
 https://github.com/ericwbailey/a11y-syntax-highlighting
 
 ## Performance stats 
-[speedlify](https://github.com/zachleat/speedlify/)
-[`<speedlify-score>` component](https://github.com/zachleat/speedlify-score)
+-[speedlify](https://github.com/zachleat/speedlify/)
+-[`<speedlify-score>` component](https://github.com/zachleat/speedlify-score)
 
 ## The MIT License (MIT)
 
