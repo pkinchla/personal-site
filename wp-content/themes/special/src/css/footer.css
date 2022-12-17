@@ -36,7 +36,23 @@
 }
 
 .site > footer p {
+  width: 100%;
   margin-bottom: 0.75em;
+}
+
+.site > footer p:last-of-type {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25em;
+}
+
+.site > footer p:last-of-type a{
+  margin-top: .25em;
+}
+
+.speedlify-score {
+  font-variation-settings: 'wght' var(--variable-wght-bold), 'slnt' var(--variable-slant);
 }
 
 @supports (display: grid) {

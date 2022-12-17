@@ -74,7 +74,16 @@
     built on <a href="//wordpress.org/">WordPress</a>.
     <a href="/privacy-policy/">Privacy</a>
   </p>
-  <small class="sans-regular"
-    >&copy;2006 &ndash; {{"now"|date('Y')}} Paul Kinchla</small
-  >
+  <p>
+    <a class="sans-regular-italic" href="https://stats.paulkinchla.me/paulkinchladotcom">
+      Built for speed
+    </a>
+    {% for key, value in perf_stats %}
+      {% if key == current_page %}
+          <speedlify-score speedlify-url="https://stats.paulkinchla.me" hash="{{value["hash"]}}" score weight requests class="sans-regular-italic "></speedlify-score>
+      {% endif %}
+    {% endfor %}
+  </p>
+  <small class="sans-regular">&copy;2006 &ndash; {{"now"|date('Y')}} Paul Kinchla</small>
+
 </section>

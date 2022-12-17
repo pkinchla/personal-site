@@ -19,6 +19,18 @@
   color: rgb(var(--active));
 }
 
+.dark-mode .speedlify-score {
+  color: #6ab68f
+}
+
+.dark-mode .speedlify-score-ok {
+  color: #FFC866;
+}
+
+.dark-mode .speedlify-score-bad {
+  color: #FF948D
+}
+
 /* @media (prefers-color-scheme: dark) {
   :root {
     --body-background: 33, 33, 33;

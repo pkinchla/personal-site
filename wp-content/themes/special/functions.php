@@ -136,6 +136,22 @@ function instagram_feed($url) {
 }
 
 
+function speed_stats($url) {
+  if ( false === ( $stats = get_transient( 'speed_stats' ) ) ) {
+    $response = wp_remote_get($url);
+
+    if(is_wp_error( $response ) ||$response['response']['code'] >= 400  ) {
+      return array("error"=> "Something went terribly wrong with the API. Check back later 😊.");
+    }
+
+    $stats = json_decode($response['body'], true);
+    set_transient( 'speed_stats', $stats, 24 * HOUR_IN_SECONDS);
+  }
+
+  return $stats;
+}
+
+
 /**
  * Disable the emoji's
  */
@@ -303,8 +319,9 @@ class StarterSite extends TimberSite {
 		$context['menu'] = new TimberMenu();
     $context['site'] = $this;
     $context['is_home'] = is_front_page();
-    $context['current_page'] = home_url( $_SERVER['REQUEST_URI']);
+    $context['current_page'] = home_url($_SERVER['REQUEST_URI']);
     $context['menu_type'] = explode('/', home_url( $_SERVER['REQUEST_URI'] ))[3];
+    $context['perf_stats'] = speed_stats('http://stats.paulkinchla.me/api/urls.json');
     $context['bot_was_redirected'] = explode('/',  home_url( $_SERVER['QUERY_STRING']))[3] ?? null == 'sorry-bot';
     $context['options'] = get_fields('option');
 
