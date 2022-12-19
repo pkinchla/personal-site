@@ -5,6 +5,9 @@
   --link: 255, 246, 81;
   --active: 255, 138, 138;
   --visited: 188, 117, 255;
+  --score-good: 106, 182, 143;
+  --score-ok: 255, 200, 102;
+  --score-bad: 255, 148, 141;
 }
 
 .dark-mode a {
@@ -17,18 +20,6 @@
 
 .dark-mode a:active {
   color: rgb(var(--active));
-}
-
-.dark-mode .speedlify-score {
-  color: #6ab68f
-}
-
-.dark-mode .speedlify-score-ok {
-  color: #FFC866;
-}
-
-.dark-mode .speedlify-score-bad {
-  color: #FF948D
 }
 
 /* @media (prefers-color-scheme: dark) {

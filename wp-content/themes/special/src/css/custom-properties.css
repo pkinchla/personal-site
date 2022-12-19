@@ -15,4 +15,9 @@
   --link: 0, 0, 238;
   --active: 238, 0, 0;
   --visited: 85, 26, 139;
+
+  /* speedlify rank colors */
+  --score-good: 6, 107, 55;
+  --score-ok: 186, 76, 3;
+  --score-bad: 209, 0, 0;
 }

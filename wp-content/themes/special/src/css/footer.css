@@ -51,8 +51,39 @@
   margin-top: .25em;
 }
 
-.speedlify-score {
+.site .speedlify-score {
+  border-width: .125em;
   font-variation-settings: 'wght' var(--variable-wght-bold), 'slnt' var(--variable-slant);
+  color: rgb(var(--score-good));
+}
+
+.site .speedlify-score-ok {
+  color: rgb(var(--score-ok));
+}
+
+.site .speedlify-score-bad {
+  color: rgb(var(--score-bad));
+}
+
+.site .speedlify-rank-change {
+  font-variation-settings: 'wght' var(--variable-wght-bold), 'slnt' var(--variable-slant);
+  border-bottom: .125em solid currentColor;
+}
+
+.site .speedlify-rank-change.up {
+  color: rgb(var(--score-good));
+}
+
+.site .speedlify-rank-change.down {
+  color: rgb(var(--score-bad));
+}
+
+.site .speedlify-rank-change.up::before {
+  content: '\2191';
+}
+
+.site .speedlify-rank-change.down::before {
+  content: '\2193';
 }
 
 @supports (display: grid) {
