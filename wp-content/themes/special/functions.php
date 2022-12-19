@@ -154,7 +154,7 @@ function speed_stats($url) {
   }
 
   $stats = json_decode($response['body'], true);
-  set_transient( 'speed_stats', $stats, 24 * HOUR_IN_SECONDS);
+  set_transient( 'speed_stats', $stats, 12 * HOUR_IN_SECONDS);
 
   return $stats;
 }
