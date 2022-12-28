@@ -37,7 +37,6 @@
     display: inline-block;
     max-width: inherit;
   }
-
 }
 
 .photo-feed li img,
@@ -327,3 +326,10 @@ main > article > header > div > div > span:last-of-type {
   display: block;
 }
 
+.content-grid > figure, .content-grid > .wp-block-image figure {
+  border: 0.0625em solid rgb(var(--primary));
+}
+
+.wp-block-image {
+  margin-bottom: 1.5em;
+}

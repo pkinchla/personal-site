@@ -57,7 +57,9 @@
     }
 
     .content-grid > pre,
-    .content-grid > iframe {
+    .content-grid > iframe,
+    .content-grid > figure,
+    .content-grid > .wp-block-image {
       margin-bottom: 1.5em;
       grid-column: 2 / 5;
     }
