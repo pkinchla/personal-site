@@ -40,6 +40,13 @@
   padding: 0 2rem;
 }
 
+.content-grid > pre,
+.content-grid > iframe,
+.site main .content-grid > figure,
+.content-grid > .wp-block-image {
+  margin-bottom: 1.5em;
+}
+
 @supports (display: grid) {
   @media only screen and (min-width: 48em) {
     .content-grid {
@@ -60,7 +67,6 @@
     .content-grid > iframe,
     .content-grid > figure,
     .content-grid > .wp-block-image {
-      margin-bottom: 1.5em;
       grid-column: 2 / 5;
     }
 
