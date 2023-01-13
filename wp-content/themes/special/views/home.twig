@@ -33,7 +33,7 @@
         <h2 id="categories">Categories</h2>
         <ul role="list">
           {% for cat in categories %}
-            <li class="sans-regular-italic"><a href="{{cat.link}}">{{cat.title}}</a>  (<a href="/blog/category/{{cat.title|lower}}/feed/">RSS</a>)</li>
+          <li class="sans-regular-italic"><a href="{{cat.link}}">{{cat.title}}</a>  (<a href="/blog/category/{{cat.title|replace({" ":"-"})|lower}}/feed/">RSS</a>)</li>
           {% endfor %}
         </ul>
       </section>

@@ -57,10 +57,11 @@
         <section class="content-grid">
           <div class="photo-intro">
             <h2 id="photo-feed">Instagram Feed</h2>
-            {% if pictures.error %}
+                       {% if pictures.error %}
               <span class="error">{{pictures.error}}</span>
             {% else %}
               {{post.flickr_field}}
+              <span class="assistive-text">Unfortunately, the Instagram API currently does not return alt text for images</span>
             {% endif %}
           </div>
           {% if not pictures.error %}
@@ -68,7 +69,7 @@
             {% for picture in pictures %}
               <li>
                 {% if picture.media_type != 'VIDEO' %}
-                  <img loading="lazy" src="{{picture.media_url}}" alt="{{ (picture.caption) ? picture.caption.text : 'instagram thumbnail' }}">
+                  <img loading="lazy" src="{{picture.media_url}}" alt="">
                 {% else %}
                   <video controls playsinline src="{{picture.media_url}}.mp4#t=0.9"></video>
                 {% endif %}
