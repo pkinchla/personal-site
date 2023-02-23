@@ -3,26 +3,30 @@
 {% block content %}
   <article>
     {% if posts is empty %}
-      <header class="content-grid">
-        <h1>No Results</h1>
-      </header>
-      <figure>
-        <img
-          src="{{theme.path}}/images/cham.jpg"
-          alt="close up of miniature metallic chameleon standing on a metallic pedestal"
-        >
-      </figure>
+      <div class="hero-grid">
+        <header>
+          <h1>No Results</h1>
+        </header>
+        <figure class="hero">
+          <img
+            src="{{theme.path}}/images/cham.jpg"
+            alt="close up of miniature metallic chameleon standing on a metallic pedestal"
+          >
+        </figure>
+      </div>
       <div class="content-grid">
         <p>Sorry, no results matched your query, maybe try again</p>
         {% include 'searchform.twig' %}
       </div>
     {% else %}
-      <header class="content-grid">
-        <h1>{{title}}</h1>
-      </header>
-      <figure>
-        <img src="{{theme.path}}/images/cham.jpg" alt="close up of miniature metallic chameleon standing on a metallic pedestal">
-      </figure>
+      <div class="hero-grid">
+        <header>
+          <h1>{{title}}</h1>
+        </header>
+        <figure class="hero">
+          <img src="{{theme.path}}/images/cham.jpg" alt="close up of miniature metallic chameleon standing on a metallic pedestal">
+        </figure>
+      </div>
       <div class="content-grid">
         <h2 class="assistive-text">Results</h2>
         {% for post in posts %}

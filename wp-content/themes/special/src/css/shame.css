@@ -311,22 +311,8 @@ main > article > div .comment-author img,
   }
 }
 
-main > article > header > div > div {
-  display: inline-block;
-  padding-bottom: 0.5em;
-  border-bottom: 0.125em solid rgb(var(--secondary));
-}
-
-main > article > header > div > h1 > span {
-  font-size: 0.5em;
-  font-variation-settings: "wght" var(--variable-wght-bold);
-}
-
-main > article > header > div > div > span:last-of-type {
-  display: block;
-}
-
-.content-grid > figure, .content-grid > .wp-block-image figure {
+.content-grid > figure,
+.content-grid > .wp-block-image figure {
   border: 0.0625em solid rgb(var(--primary));
 }
 

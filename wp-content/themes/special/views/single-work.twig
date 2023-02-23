@@ -1,12 +1,12 @@
 {% extends "base.twig" %}
 {% block content %}
   <article id="post-{{post.ID}}">
-    <header class="content-grid">
-      <h1>{{post.title}}</h1>
-    </header>
-    <figure>
-      {% include 'featured-image.twig' %}
-    </figure>
+    <div class="hero-grid">
+      <header>
+        <h1>{{post.title}}</h1>
+      </header>
+        {% include 'featured-image.twig' %}
+    </div>
     <div>
       {% if post.main_image_square %}
         <div class="content-grid">

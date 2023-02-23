@@ -1,3 +1,7 @@
+.home article > figure {
+  margin-bottom: 1.5em;
+}
+
 .home article > figure > span {
   font-size: 2em;
   position: absolute;
@@ -10,7 +14,8 @@
   clip-path: polygon(0 0, 89.75% 31.28%, 100.33% 83.73%, 15% 100%);
 }
 
-.home article > figure > span::after, .home article > figure a::after {
+.home article > figure > span::after,
+.home article > figure a::after {
   display: inline-block;
   position: absolute;
   left: 0;

@@ -2,8 +2,8 @@
 
 {% block content %}
   <article id="post-{{post.ID}}">
-    <header class="content-grid">
-      <div>
+    <div class="hero-grid">
+      <header>
         <h1>
           {{post.title}}
           {% if page_number %}
@@ -11,13 +11,11 @@
           {% endif %}
         </h1>
         <div class="sans-regular-italic"><time datetime="{{post.modified_date|date('c')}}">Last Updated on {{post.modified_date|date('l, F jS, Y')}}</time></div>
-      </div>
-    </header>
-    {% if post.thumbnail %}
-    <figure>
-      {% include 'featured-image.twig' %}
-    </figure>
-    {% endif %}
+      </header>
+      {% if post.thumbnail %}
+        {% include 'featured-image.twig' %}
+      {% endif %}
+    </div>
     <div class="content-grid">
       <div>{{post.content}}</div>
       <section>
