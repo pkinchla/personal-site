@@ -31,6 +31,7 @@
 :focus {
   outline: 0.1875rem solid currentColor;
   outline-offset: 0.0938rem;
+  border-radius: var(--radius-2);
 }
 
 .no-offset:focus {

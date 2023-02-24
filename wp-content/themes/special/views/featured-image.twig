@@ -1,4 +1,4 @@
-<figure class="hero" {% if post.get_field('toggle_image_filter') %} class="no-filter"{% endif %}>
+<figure class="hero{{ (post.get_field('toggle_image_filter')) ? ' no-filter' : '' }}">
   <picture>
     <source
       srcset="

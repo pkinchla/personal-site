@@ -12,6 +12,8 @@
   padding: 0 0.75em;
   z-index: 2;
   clip-path: polygon(0 0, 89.75% 31.28%, 100.33% 83.73%, 15% 100%);
+
+  /* border-radius: var(--radius); */
 }
 
 .home article > figure > span::after,
@@ -28,6 +30,10 @@
   opacity: 0.35;
 }
 
+.home article > figure a::after {
+  border-radius: var(--radius);
+}
+
 .home article > figure a {
   font-size: 2em;
   display: inline-block;
@@ -38,6 +44,7 @@
   z-index: 2;
   line-height: 1;
   transform: translateX(-50%);
+  border-radius: var(--radius);
 }
 
 /* may change */

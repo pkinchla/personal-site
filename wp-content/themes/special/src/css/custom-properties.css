@@ -1,4 +1,5 @@
 :root {
+  /* base typography */
   --font-sans-serif: "Tome Sans Variable", -apple-system, blinkmacsystemfont,
     "Segoe UI", roboto, helvetica, arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
@@ -15,6 +16,22 @@
   --link: 0, 0, 238;
   --active: 238, 0, 0;
   --visited: 85, 26, 139;
+
+  /* base measurements */
+  --radius: 0.33em;
+  --radius-2: 0.66em;
+  --long-shadow: -0.03125rem 0.03125rem 0 rgb(var(--secondary)),
+    -0.0625rem 0.0625rem 0 rgb(var(--secondary)),
+    -0.09375rem 0.09375rem 0 rgb(var(--secondary)),
+    -0.125rem 0.125rem 0 rgb(var(--secondary)),
+    -0.15625rem 0.15625rem 0 rgb(var(--secondary)),
+    -0.1875rem 0.1875rem 0 rgb(var(--secondary)),
+    -0.21875rem 0.21875rem 0 rgb(var(--secondary)),
+    -0.25rem 0.25rem 0 rgb(var(--secondary)),
+    -0.28125rem 0.28125rem 0 rgb(var(--secondary)),
+    -0.3125rem 0.3125rem 0 rgb(var(--secondary)),
+    -0.34375rem 0.34375rem 0 rgb(var(--secondary)),
+    -0.375rem 0.375rem 0 rgb(var(--secondary));
 
   /* speedlify rank colors */
   --score-good: 6, 107, 55;

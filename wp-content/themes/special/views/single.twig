@@ -3,7 +3,7 @@
 {% block content %}
   <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
     <div class="hero-grid">
-    <header class="{{ (post.thumbnail == null) ? ' no-hero' : '' }}">
+    <header{{ (post.thumbnail == null) ? ' class="no-hero"' : '' }}>
       <h1>{{post.title}}</h1>
       <div class="sans-regular-italic">
         {{function('special_posted_on')}}

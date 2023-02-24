@@ -85,6 +85,8 @@
       border: 0.0625em solid rgb(var(--secondary));
       box-shadow: rgb(var(--secondary) 0.75) 0 0.1875em 0.75em;
       grid-area: main;
+      border-radius: var(--radius);
+      overflow: hidden;
     }
 
     .site > *:not(main) {
@@ -94,6 +96,7 @@
     .site > footer {
       border-left: 0.0625em solid rgb(var(--primary));
       grid-area: footer;
+      border-radius: var(--radius);
     }
   }
   @media only screen and (min-width: 133.75em) {

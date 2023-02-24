@@ -1,12 +1,21 @@
-a {
+a:link {
+  color: rgb(var(--link));
   text-decoration-thickness: 0.095em;
+}
+
+a:visited {
+  color: rgb(var(--visited));
 }
 
 a:hover {
   text-decoration: none;
 }
 
-a svg {
+a:active {
+  color: rgb(var(--active));
+}
+
+a:link svg {
   fill: currentColor;
 }
 

@@ -1,5 +1,19 @@
-.dark-mode {
-  --body-background: 33, 33, 33;
+@media (prefers-color-scheme: dark) {
+  :root.no-js {
+    --body-background: 27, 33, 39;
+    --primary: 241, 241, 241;
+    --secondary: 172, 172, 172;
+    --link: 255, 246, 81;
+    --active: 255, 138, 138;
+    --visited: 188, 117, 255;
+    --score-good: 106, 182, 143;
+    --score-ok: 255, 200, 102;
+    --score-bad: 255, 148, 141;
+  }
+}
+
+:root.dark-mode {
+  --body-background: 27, 33, 39;
   --primary: 241, 241, 241;
   --secondary: 172, 172, 172;
   --link: 255, 246, 81;
@@ -9,38 +23,3 @@
   --score-ok: 255, 200, 102;
   --score-bad: 255, 148, 141;
 }
-
-.dark-mode a {
-  color: rgb(var(--link));
-}
-
-.dark-mode a:visited {
-  color: rgb(var(--visited));
-}
-
-.dark-mode a:active {
-  color: rgb(var(--active));
-}
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --body-background: 33, 33, 33;
-    --primary: 241, 241, 241;
-    --secondary: 172, 172, 172;
-    --link: 255, 246, 81;
-    --active: 255, 138, 138;
-    --visited: 188, 117, 255;
-  }
-
-  a {
-    color: var(--link);
-  }
-
-  a:visited {
-    color: var(--visited);
-  }
-
-  a:active {
-    color: var(--active);
-  }
-} */

@@ -23,6 +23,8 @@
   background: rgb(var(--secondary));
   grid-gap: 0.1875em;
   grid-template-columns: repeat(auto-fill, minmax(7.8125em, 1fr));
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
 .photo-feed li {
@@ -54,6 +56,7 @@
 
 .action {
   width: max-content;
+  border-radius: var(--radius);
 }
 
 .action,
@@ -65,6 +68,10 @@
 
 .action.border {
   border: 0.125em solid currentColor;
+}
+
+.action:focus {
+  outline-width: 0.25em;
 }
 
 /* list for contact and category links */
@@ -92,11 +99,13 @@ form {
   padding: 1em;
   border: 0.125em solid rgb(var(--secondary));
   margin-bottom: 1.5em;
+  border-radius: var(--radius);
 }
 
 input[type="text"],
 textarea {
   padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
 }
 
 textarea {
@@ -113,18 +122,7 @@ form.comment-form input:not([type="submit"]):not([type="checkbox"]) {
 }
 
 form:focus-within {
-  box-shadow: -0.03125em 0.03125em 0 rgb(var(--secondary)),
-    -0.0625em 0.0625em 0 rgb(var(--secondary)),
-    -0.09375em 0.09375em 0 rgb(var(--secondary)),
-    -0.125em 0.125em 0 rgb(var(--secondary)),
-    -0.15625em 0.15625em 0 rgb(var(--secondary)),
-    -0.1875em 0.1875em 0 rgb(var(--secondary)),
-    -0.21875em 0.21875em 0 rgb(var(--secondary)),
-    -0.25em 0.25em 0 rgb(var(--secondary)),
-    -0.28125em 0.28125em 0 rgb(var(--secondary)),
-    -0.3125em 0.3125em 0 rgb(var(--secondary)),
-    -0.34375em 0.34375em 0 rgb(var(--secondary)),
-    -0.375em 0.375em 0 rgb(var(--secondary));
+  box-shadow: var(--long-shadow);
 }
 
 main > article > div > footer {
@@ -132,6 +130,7 @@ main > article > div > footer {
   padding: 1em;
   border: 0.0625em solid rgb(var(--secondary));
   margin-bottom: 3em;
+  border-radius: var(--radius);
 }
 
 main > article > div > footer span {
@@ -163,6 +162,7 @@ main > article > div > footer span {
   padding: 0.75em;
   border-top: 0.0625em solid rgb(var(--secondary));
   border-left: 0.0625em solid rgb(var(--secondary));
+  border-top-left-radius: var(--radius);
 }
 
 .comments p {
@@ -271,6 +271,10 @@ main > article > div .comment-author img,
       grid-row: span 3;
     }
   }
+}
+
+.resume {
+  border-radius: var(--radius);
 }
 
 @supports (display: grid) {
