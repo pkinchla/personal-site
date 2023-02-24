@@ -11,6 +11,10 @@ a:hover {
   text-decoration: none;
 }
 
+a:focus {
+  text-decoration: none;
+}
+
 a:active {
   color: rgb(var(--active));
 }
