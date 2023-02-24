@@ -318,6 +318,8 @@ main > article > div .comment-author img,
 .content-grid > figure,
 .content-grid > .wp-block-image figure {
   border: 0.0625em solid rgb(var(--primary));
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
 .wp-block-image {
