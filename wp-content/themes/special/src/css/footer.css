@@ -1,8 +1,8 @@
 .site > footer {
   bottom: 0;
   padding: 3rem 2rem;
-  border: 0.0625rem solid rgb(var(--primary));
-  box-shadow: rgb(var(--secondary) 0.75) 0 0.1875em 0.5em;
+  border: 0.0625rem solid rgb(var(--secondary));
+  border-radius: var(--radius);
 }
 
 .site > footer > section {
@@ -47,13 +47,14 @@
   margin-bottom: 1.25em;
 }
 
-.site > footer p:last-of-type a{
-  margin-top: .25em;
+.site > footer p:last-of-type a {
+  margin-top: 0.25em;
 }
 
 .site .speedlify-score {
-  border-width: .125em;
-  font-variation-settings: 'wght' var(--variable-wght-bold), 'slnt' var(--variable-slant);
+  border-width: 0.125em;
+  font-variation-settings: "wght" var(--variable-wght-bold),
+    "slnt" var(--variable-slant);
   color: rgb(var(--score-good));
 }
 
@@ -66,8 +67,9 @@
 }
 
 .site .speedlify-rank-change {
-  font-variation-settings: 'wght' var(--variable-wght-bold), 'slnt' var(--variable-slant);
-  border-bottom: .125em solid currentColor;
+  font-variation-settings: "wght" var(--variable-wght-bold),
+    "slnt" var(--variable-slant);
+  border-bottom: 0.125em solid currentColor;
 }
 
 .site .speedlify-rank-change.up {
@@ -79,11 +81,11 @@
 }
 
 .site .speedlify-rank-change.up::before {
-  content: '\2191';
+  content: "\2191";
 }
 
 .site .speedlify-rank-change.down::before {
-  content: '\2193';
+  content: "\2193";
 }
 
 @supports (display: grid) {
