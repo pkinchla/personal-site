@@ -49,6 +49,7 @@
 
 .site > footer p:last-of-type a {
   margin-top: 0.25em;
+  height: max-content;
 }
 
 .site .speedlify-score {
