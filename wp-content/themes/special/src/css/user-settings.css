@@ -72,6 +72,7 @@ fieldset.color-theme-switcher label {
   padding: 0.25em 1em 0.5em;
   margin: -0.0625em;
   align-items: center;
+  border: 0.125em solid transparent;
   border-top: 0.125em solid rgb(var(--secondary));
   margin-top: 0.5em;
   cursor: pointer;
@@ -79,6 +80,11 @@ fieldset.color-theme-switcher label {
 
 fieldset.color-theme-switcher label:not(:last-of-type) {
   border-right: 0.125em solid rgb(var(--secondary));
+}
+
+footer fieldset input[type="radio"]:focus + label {
+  border: 0.125em solid currentColor;
+  border-top: 0.125em solid rgb(var(--secondary));
 }
 
 footer fieldset input[type="radio"]:checked + label {
