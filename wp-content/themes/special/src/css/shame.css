@@ -128,7 +128,7 @@ form:focus-within {
 main > article > div > footer {
   font-size: 0.95em;
   padding: 1em;
-  border: 0.0625em solid rgb(var(--secondary));
+  border: 0.0625rem solid rgb(var(--secondary));
   margin-bottom: 3em;
   border-radius: var(--radius);
 }
@@ -160,8 +160,8 @@ main > article > div > footer span {
 
 .comment-body {
   padding: 0.75em;
-  border-top: 0.0625em solid rgb(var(--secondary));
-  border-left: 0.0625em solid rgb(var(--secondary));
+  border-top: 0.0625rem solid rgb(var(--secondary));
+  border-left: 0.0625rem solid rgb(var(--secondary));
   border-top-left-radius: var(--radius);
 }
 

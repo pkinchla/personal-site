@@ -176,6 +176,14 @@ function disable_emojis() {
  }
  add_action( 'init', 'disable_emojis' );
 
+/**
+ * Remove classic theme styles
+ */
+add_action( 'wp_enqueue_scripts', function() {
+  wp_dequeue_style( 'classic-theme-styles' );
+}, 20 );
+
+
  /**
   * Filter function used to remove the tinymce emoji plugin.
   *
