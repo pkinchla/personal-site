@@ -21,11 +21,12 @@
 }
 
 .resume time {
-  font-size: .85em;
+  font-size: 0.85em;
 }
 
 .resume a {
   display: block;
+  max-width: max-content;
 }
 
 .resume dd > span {
@@ -107,3 +108,4 @@
     }
   }
 }
+
