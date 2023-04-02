@@ -32,9 +32,47 @@ footer fieldset input[type="radio"] {
 }
 
 footer fieldset input[type="range"] {
+  background: transparent;
   max-width: 6em;
   margin-top: 0.175em;
   margin-left: 0.5em;
+  margin-right: 0.5em;
+  appearance: none;
+  outline-color: rgb(var(--secondary));
+  outline-width: 0.125em;
+}
+
+footer fieldset input[type="range"]::-webkit-slider-runnable-track {
+  background-color: rgb(var(--secondary));
+  border-radius: 0.5em;
+  height: 0.375em;
+}
+
+footer fieldset input[type="range"]::-moz-range-track {
+  background-color: rgb(var(--secondary));
+  border-radius: 0.5em;
+  height: 0.375em;
+}
+
+footer fieldset input[type="range"]::-webkit-slider-thumb {
+  position: relative;
+  width: 1.25em;
+  height: 1.25em;
+  border-radius: 50%;
+  appearance: none;
+  border: 0.0625em solid rgb(var(--secondary));
+  background-color: rgb(var(--body-background));
+  margin-top: -0.45em;
+  z-index: 5;
+}
+
+footer fieldset input[type="range"]::-moz-range-thumb {
+  width: 1.25em;
+  height: 1.25em;
+  border-radius: 50%;
+  appearance: none;
+  border: 0.0625em solid rgb(var(--secondary));
+  background-color: rgb(var(--body-background));
 }
 
 fieldset.font-settings input[type="number"] {
@@ -42,6 +80,7 @@ fieldset.font-settings input[type="number"] {
   width: 4em;
   border-radius: var(--radius);
   border: 0.125em solid rgb(var(--secondary));
+  outline-color: rgb(var(--secondary));
 }
 
 footer fieldset span {
