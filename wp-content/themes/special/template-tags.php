@@ -40,22 +40,6 @@ function special_posted_on() {
 
 endif;
 
-function updated_on() {
-  $time_string = '<time datetime="%1$s">%2$s</time>';
-  if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-    $time_string = 'Last Updated on <time datetime="%3$s">%4$s</time></span>';
-  }
-
-  $time_string = sprintf( $time_string,
-    esc_attr( get_the_date( 'c' ) ),
-    esc_html( get_the_date() ),
-    esc_attr( get_the_modified_date( 'c' ) ),
-    esc_html( get_the_modified_date() )
-  );
-
-  echo $time_string;
-}
-
 if ( ! function_exists( 'special_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.

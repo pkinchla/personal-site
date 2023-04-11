@@ -159,7 +159,6 @@ function speed_stats($url) {
   return $stats;
 }
 
-
 /**
  * Disable the emoji's
  */
@@ -219,48 +218,6 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();
 }
 
-function post_type_register_projects() {
-	/**
-	 * Post Type: Projects.
-	 */
-
-	$labels = [
-		"name" => __( "Projects", "custom-post-type-ui" ),
-		"singular_name" => __( "Project", "custom-post-type-ui" ),
-		"add_new_item" => __( "Add New Project", "custom-post-type-ui" ),
-	];
-
-	$args = [
-		"label" => __( "Projects", "custom-post-type-ui" ),
-		"labels" => $labels,
-		"description" => "",
-		"public" => true,
-		"publicly_queryable" => true,
-		"show_ui" => true,
-		"show_in_rest" => true,
-		"rest_base" => "",
-		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"has_archive" => true,
-		"show_in_menu" => true,
-		"show_in_nav_menus" => true,
-		"delete_with_user" => false,
-		"exclude_from_search" => false,
-		"capability_type" => "post",
-		"map_meta_cap" => true,
-		"hierarchical" => false,
-		"rewrite" => [ "slug" => "work", "with_front" => false ],
-		"query_var" => true,
-		"menu_position" => 5,
-		"menu_icon" => "dashicons-hammer",
-		"supports" => [ "title", "editor", "thumbnail", "excerpt", "trackbacks", "custom-fields", "comments", "revisions", "author", "page-attributes", "post-formats" ],
-		"show_in_graphql" => false,
-	];
-
-	register_post_type( "work", $args );
-}
-
-add_action( 'init', 'post_type_register_projects' );
-
 // Comment form: Add placeholder to comment field
 function alter_commment_form( $defaults ) {
 
@@ -289,11 +246,8 @@ function estimated_reading_time( $content = '', $wpm = 250 ) {
     return $time;
 }
 
-
-
 // Gutenberg custom stylesheet
 add_theme_support('editor-styles');
-add_editor_style( 'https://use.typekit.net/ltt0nnt.css' );
 add_editor_style( get_template_directory_uri() . '/dist/css/main.css' );
 
 // remove wp-embed

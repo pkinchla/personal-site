@@ -1,7 +1,7 @@
 @font-face {
   font-display: swap;
-  font-family: "Tome Sans Variable";
-  src: url("/typefaces/tome-sans-variable.woff2") format("woff2-variations");
+  font-family: 'Tome Sans Variable';
+  src: url('/typefaces/tome-sans-variable.woff2') format('woff2-variations');
 }
 
 body {
@@ -20,7 +20,7 @@ h5,
 h6 {
   font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
-  font-variation-settings: "wght" var(--variable-wght-bold);
+  font-variation-settings: 'wght' var(--variable-wght-bold);
   color: rgb(var(--secondary));
   margin-bottom: 0.35em;
 }
@@ -41,8 +41,8 @@ h1 {
 h2 {
   font-size: 1.875em;
   font-style: italic;
-  font-variation-settings: "wght" var(--variable-wght-bold),
-    "slnt" var(--variable-slant);
+  font-variation-settings: 'wght' var(--variable-wght-bold),
+    'slnt' var(--variable-slant);
   line-height: 1.1;
 }
 
@@ -74,14 +74,14 @@ em {
   font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
   font-style: italic;
-  font-variation-settings: "slnt" var(--variable-slant);
+  font-variation-settings: 'slnt' var(--variable-slant);
 }
 
 strong {
   font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
   font-weight: bold;
-  font-variation-settings: "wght" var(--variable-wght-bold);
+  font-variation-settings: 'wght' var(--variable-wght-bold);
 }
 
 blockquote {
@@ -89,7 +89,7 @@ blockquote {
   font-family: var(--font-sans-serif);
   position: relative;
   margin-bottom: 1.5em;
-  quotes: "\201C""\201D""\2018""\2019";
+  quotes: '\201C''\201D''\2018''\2019';
 }
 
 blockquote::before {
@@ -100,7 +100,7 @@ blockquote::before {
   background: rgb(var(--primary));
   width: 0.125rem;
   height: 100%;
-  content: "";
+  content: '';
 }
 
 blockquote p {
@@ -114,7 +114,7 @@ blockquote p:first-of-type {
 
 blockquote cite {
   font-style: italic;
-  font-variation-settings: "slnt" var(--variable-slant);
+  font-variation-settings: 'slnt' var(--variable-slant);
   display: block;
   margin-top: 0.5em;
 }
@@ -122,7 +122,7 @@ blockquote cite {
 figcaption {
   font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
-  font-variation-settings: "slnt" var(--variable-slant);
+  font-variation-settings: 'slnt' var(--variable-slant);
   padding: 0.5em 0.75em;
   border-top: 0.0625em solid rgb(var(--secondary));
 }
@@ -131,28 +131,28 @@ figcaption {
 .sans-regular {
   font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
-  font-variation-settings: "wght" var(--variable-wght-reg);
+  font-variation-settings: 'wght' var(--variable-wght-reg);
 }
 
 .sans-regular-italic {
   font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
-  font-variation-settings: "slnt" var(--variable-slant);
+  font-variation-settings: 'slnt' var(--variable-slant);
 }
 
 .sans-bold {
   font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
   font-weight: bold;
-  font-variation-settings: "wght" var(--variable-wght-bold);
+  font-variation-settings: 'wght' var(--variable-wght-bold);
 }
 
 .sans-bold-italic {
   font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
   font-weight: bold;
-  font-variation-settings: "wght" var(--variable-wght-bold),
-    "slnt" var(--variable-slant);
+  font-variation-settings: 'wght' var(--variable-wght-bold),
+    'slnt' var(--variable-slant);
   font-style: italic;
 }
 

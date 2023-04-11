@@ -74,9 +74,9 @@
       min-height: 100vh;
       padding: 0;
       grid-template-areas:
-        "header main"
-        "header main"
-        "header footer";
+        'header main'
+        'header main'
+        'header footer';
       grid-template-columns: 15em 1fr;
     }
 
