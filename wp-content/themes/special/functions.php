@@ -213,12 +213,7 @@ add_action( 'wp_enqueue_scripts', function() {
   return $urls;
  }
 
-// add options
-if( function_exists('acf_add_options_page') ) {
-	acf_add_options_page();
-}
-
-// Comment form: Add placeholder to comment field
+ // Comment form: Add placeholder to comment field
 function alter_commment_form( $defaults ) {
 
     $defaults['fields']['author'] = '<p class="comment-form-author"><label class="sans-bold-italic" for="author">Name <span class="required" aria-hidden="true">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>';
@@ -293,7 +288,6 @@ class StarterSite extends TimberSite {
     $context['menu_type'] = explode('/', home_url( $_SERVER['REQUEST_URI'] ))[3];
     $context['perf_stats'] = speed_stats('http://stats.paulkinchla.me/api/urls.json');
     $context['bot_was_redirected'] = explode('/',  home_url( $_SERVER['QUERY_STRING']))[3] ?? null == 'sorry-bot';
-    $context['options'] = get_fields('option');
 
 		return $context;
 	}
