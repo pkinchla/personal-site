@@ -73,7 +73,6 @@ cite,
 em {
   font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
-  font-style: italic;
   font-variation-settings: 'slnt' var(--variable-slant);
 }
 
@@ -113,7 +112,6 @@ blockquote p:first-of-type {
 }
 
 blockquote cite {
-  font-style: italic;
   font-variation-settings: 'slnt' var(--variable-slant);
   display: block;
   margin-top: 0.5em;
@@ -153,7 +151,6 @@ figcaption {
   font-weight: bold;
   font-variation-settings: 'wght' var(--variable-wght-bold),
     'slnt' var(--variable-slant);
-  font-style: italic;
 }
 
 /* settings for font-variation support */
