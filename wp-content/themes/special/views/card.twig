@@ -1,8 +1,6 @@
 <article class="card" id="card-{{ post.ID }}">
   {% block content %}
-  <h3>
-    <a href="{{ post.link }}">{{ post.title }}</a>
-  </h3>
+    <a class="h3" href="{{ post.link }}">{{ post.title }}</a>
   <time
     class="sans-regular-italic"
     datetime="{{post.date|date('c')}}"
