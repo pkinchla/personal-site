@@ -7,10 +7,13 @@
         <h1>404</h1>
       </header>
       <figure class="hero">
-        <img
-          src="{{theme.path}}/images/max.gif"
-          alt="max headroom animated gif gesturing towards camera"
-        >
+        <picture>
+          <source srcset="{{theme.path}}/images/max-still.jpg" media="(prefers-reduced-motion: reduce)"></source> 
+          <img
+            src="{{theme.path}}/images/max.gif"
+            alt="max headroom animated gif gesturing towards camera"
+          >
+        </picture>
       </figure>
     </div>
     <div class="content-grid">
