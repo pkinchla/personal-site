@@ -1,4 +1,4 @@
-<article class="card" id="card-{{ post.ID }}">
+<div class="card" id="card-{{ post.ID }}">
   {% block content %}
     <a class="h3" href="{{ post.link }}">{{ post.title }}</a>
   <time
@@ -7,5 +7,5 @@
     >{{post.date|date('l, F jS, Y')}}</time
   >
   {% endblock %}
-</article>
+</div>
 
