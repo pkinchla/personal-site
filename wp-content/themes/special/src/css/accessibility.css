@@ -15,7 +15,7 @@
   font-size: 1em;
   display: block;
   position: absolute;
-  left: 0.3125em;
+  inset-inline-start: 0.3125em;
   top: 0.3125em;
   width: auto;
   height: auto;
@@ -29,7 +29,7 @@
 }
 
 :focus {
-  outline: 0.1875rem solid currentColor;
+  outline: 0.1875rem solid currentcolor;
   outline-offset: 0.0938rem;
   border-radius: var(--radius-2);
 }

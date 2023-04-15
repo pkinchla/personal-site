@@ -1,54 +1,54 @@
 function handleColorScheme() {
-  if (window.matchMedia("(prefers-color-scheme)").media === "not all") {
+  if (window.matchMedia('(prefers-color-scheme)').media === 'not all') {
     return;
   }
 
   if (!window.localStorage.color_scheme) {
-    localStorage.setItem("color_scheme", "system");
+    localStorage.setItem('color_scheme', 'system');
   }
 
-  var mediaQueryColorScheme = window.matchMedia("(prefers-color-scheme: dark)");
+  var mediaQueryColorScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
   var matchesDark = function (matchBool) {
-    return matchBool ? "dark" : "light";
+    return matchBool ? 'dark' : 'light';
   };
 
   var handleChange = function (scheme, userToggle = false) {
-    var htmlEl = document.querySelector("html");
+    var htmlEl = document.querySelector('html');
     switch (scheme) {
-      case "dark":
-        htmlEl.classList.add("dark-mode");
+      case 'dark':
+        htmlEl.classList.add('dark-mode');
         if (userToggle) {
-          localStorage.setItem("color_scheme", "dark");
+          localStorage.setItem('color_scheme', 'dark');
         }
         break;
-      case "light":
-        htmlEl.classList.remove("dark-mode");
+      case 'light':
+        htmlEl.classList.remove('dark-mode');
         if (userToggle) {
-          localStorage.setItem("color_scheme", "light");
+          localStorage.setItem('color_scheme', 'light');
         }
         break;
       default:
         handleChange(matchesDark(mediaQueryColorScheme.matches));
         if (userToggle) {
-          localStorage.setItem("color_scheme", "system");
+          localStorage.setItem('color_scheme', 'system');
         }
     }
   };
 
   handleChange(window.localStorage.color_scheme);
 
-  mediaQueryColorScheme.addEventListener("change", function (e) {
+  mediaQueryColorScheme.addEventListener('change', function (e) {
     if (
-      window.localStorage.color_scheme === "dark" ||
-      window.localStorage.color_scheme === "light"
+      window.localStorage.color_scheme === 'dark' ||
+      window.localStorage.color_scheme === 'light'
     )
       return;
     handleChange(matchesDark(e.matches));
   });
 
-  var element = document.createElement("fieldset");
-  element.classList.add("color-theme-switcher", 'sans-bold-italic');
+  var element = document.createElement('fieldset');
+  element.classList.add('color-theme-switcher', 'sans-bold-italic');
 
   var darkToggleMarkUp = `
     <legend>Color Scheme</legend>
@@ -62,12 +62,12 @@ function handleColorScheme() {
 
   element.innerHTML = darkToggleMarkUp;
 
-  document.getElementById("colophon").prepend(element);
+  document.getElementById('colophon').prepend(element);
 
   var inputs = document.querySelectorAll(`.color-theme-switcher input`);
   for (const input of inputs) {
     if (input.value === window.localStorage.color_scheme) input.checked = true;
-    input.addEventListener("change", function (e) {
+    input.addEventListener('change', function (e) {
       handleChange(e.target.value, true);
     });
   }

@@ -1,9 +1,9 @@
-import fontSettings from "./fontSettings";
-import handleColorScheme from "./handleColorScheme";
-import observeHero from "./observeHero";
-import invokeServiceWorker from "./invokeServiceWorker";
-import checkJSLoaded from "./checkJSLoaded";
-import "speedlify-score/speedlify-score.js";
+import fontSettings from './fontSettings';
+import handleColorScheme from './handleColorScheme';
+import observeHero from './observeHero';
+import invokeServiceWorker from './invokeServiceWorker';
+import checkJSLoaded from './checkJSLoaded';
+import 'speedlify-score/speedlify-score.js';
 
 function scripts() {
   return (
@@ -15,4 +15,4 @@ function scripts() {
   );
 }
 
-window.addEventListener("DOMContentLoaded", scripts);
+window.addEventListener('DOMContentLoaded', scripts);

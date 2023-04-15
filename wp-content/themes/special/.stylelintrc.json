@@ -3,12 +3,10 @@
     "stylelint-order"
   ],
   "extends": [
-    "stylelint-config-standard",
-    "stylelint-config-prettier"
+    "stylelint-config-standard"
   ],
   "rules": {
     "color-no-invalid-hex": true,
-    "max-empty-lines": 2,
     "unit-allowed-list": [
       "fr",
       "ch",
@@ -38,8 +36,14 @@
       "color",
       "width",
       "height",
-      "padding",
-      "margin"
+      "padding-block-start",
+      "padding-block-end",
+      "padding-inline-start",
+      "padding-inline-end",
+      "margin-block-start",
+      "margin-block-end",
+      "margin-inline-start",
+      "margin-inline-end"
     ],
     "number-max-precision": 6
   }

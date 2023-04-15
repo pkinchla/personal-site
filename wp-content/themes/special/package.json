@@ -3,6 +3,7 @@
   "scripts": {
     "lint:styles": "stylelint 'src/**/*.css'",
     "lint:styles-fix": "stylelint --fix 'src/**/*.css'",
+    "lint:js": "eslint src/**/*.js",
     "bs": "browser-sync start --proxy 'paulkinchla.test' --files 'dist/, views/*.twig'",
     "css": "postcss --use autoprefixer postcss-import cssnano -o dist/css/main.css src/css/main.css",
     "watch:css": "onchange 'src/css/*.css' -- yarn css",
@@ -11,21 +12,22 @@
     "build": "rollup -c && postcss --no-map --use autoprefixer postcss-import cssnano -o dist/css/main.css src/css/main.css"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^15.0.1",
-    "@rollup/plugin-terser": "^0.1.0",
-    "autoprefixer": "^10.3.2",
-    "browser-sync": "^2.27.11",
-    "cssnano": "^5.0.8",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.1",
+    "autoprefixer": "^10.4.14",
+    "browser-sync": "^2.29.1",
+    "cssnano": "^6.0.0",
+    "eslint": "^8.38.0",
     "esm": "^3.2.25",
     "onchange": "^7.1.0",
-    "postcss": "^8.4.18",
-    "postcss-cli": "^10.0.0",
-    "postcss-import": "^14.0.2",
-    "rollup": "^3.2.5",
-    "stylelint": "^14.1.0",
-    "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-standard": "^24.0.0",
-    "stylelint-order": "^5.0.0"
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "prettier": "^2.8.7",
+    "rollup": "^3.20.2",
+    "stylelint": "^15.4.0",
+    "stylelint-config-standard": "^32.0.0",
+    "stylelint-order": "^6.0.3"
   },
   "dependencies": {
     "speedlify-score": "^2.0.2"

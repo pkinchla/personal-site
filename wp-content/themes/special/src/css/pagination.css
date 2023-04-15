@@ -1,13 +1,13 @@
 .pagination {
   width: 100%;
   padding: 0 1em;
-  border-bottom: 0.125em solid rgb(var(--secondary));
-  margin-bottom: 3em;
+  border-block-end: 0.125em solid rgb(var(--secondary));
+  margin-block-end: 3em;
   text-align: center;
 }
 
 .pagination.no-results {
-  border-bottom: none;
+  border-block-end: none;
 }
 
 .pagination > * {
@@ -22,18 +22,18 @@
 .pagination > .current::after {
   display: inline-block;
   position: absolute;
-  left: 50%;
+  inset-inline-start: 50%;
   bottom: 0;
   width: 0;
   height: 0;
   border: solid transparent;
   border-width: 0.625em;
-  border-bottom-color: rgb(var(--secondary));
-  margin-left: -0.625em;
-  content: "";
+  border-block-end-color: rgb(var(--secondary));
+  margin-inline-start: -0.625em;
+  content: '';
   pointer-events: none;
 }
 
 .pagination > *:not(:last-child) {
-  margin-right: 0.5em;
+  margin-inline-end: 0.5em;
 }

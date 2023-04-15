@@ -29,7 +29,7 @@ h6,
   font-variation-settings: 'wght' var(--variable-wght-bold);
   display: block;
   color: rgb(var(--secondary));
-  margin-bottom: 0.35em;
+  margin-block-end: 0.35em;
 }
 
 .editor-post-title {
@@ -77,7 +77,7 @@ ol {
 ol,
 ul,
 p {
-  margin-bottom: 1.5em;
+  margin-block-end: 1.5em;
 }
 
 cite,
@@ -98,7 +98,7 @@ blockquote {
   font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
   position: relative;
-  margin-bottom: 1.5em;
+  margin-block-end: 1.5em;
   quotes: '\201C''\201D''\2018''\2019';
 }
 
@@ -125,7 +125,7 @@ blockquote p:first-of-type {
 blockquote cite {
   font-variation-settings: 'slnt' var(--variable-slant);
   display: block;
-  margin-top: 0.5em;
+  margin-block-start: 0.5em;
 }
 
 figcaption {
@@ -133,7 +133,7 @@ figcaption {
   font-family: var(--font-sans-serif);
   font-variation-settings: 'slnt' var(--variable-slant);
   padding: 0.5em 0.75em;
-  border-top: 0.0625em solid rgb(var(--secondary));
+  border-block-start: 0.0625em solid rgb(var(--secondary));
 }
 
 /* font helper utilities */

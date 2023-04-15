@@ -1,16 +1,23 @@
 function fontSettings() {
-  if ("CSS" in window === false || "supports" in CSS === false) {
+  if ('CSS' in window === false || 'supports' in CSS === false) {
     return;
   }
 
-  var defaultWght = window.localStorage.font_weight || getComputedStyle(document.documentElement).getPropertyValue("--variable-wght-bold");
+  var defaultWght =
+    window.localStorage.font_weight ||
+    getComputedStyle(document.documentElement).getPropertyValue(
+      '--variable-wght-bold'
+    );
 
   if (window.localStorage.font_weight) {
-    document.documentElement.style.setProperty(`--variable-wght-bold`, window.localStorage.font_weight);
+    document.documentElement.style.setProperty(
+      `--variable-wght-bold`,
+      window.localStorage.font_weight
+    );
   }
 
-  var element = document.createElement("fieldset");
-  element.classList.add("font-settings", 'sans-bold-italic');
+  var element = document.createElement('fieldset');
+  element.classList.add('font-settings', 'sans-bold-italic');
 
   var fontSettingsMarkUp = `
     <legend>Font Weight</legend>
@@ -24,20 +31,29 @@ function fontSettings() {
 
   element.innerHTML = fontSettingsMarkUp;
 
-  document.getElementById("colophon").prepend(element);
-  var inputs = document.querySelectorAll(".font-settings input");
+  document.getElementById('colophon').prepend(element);
+  var inputs = document.querySelectorAll('.font-settings input');
 
   for (const input of inputs) {
-    input.addEventListener("input", function (e) {
-      document.documentElement.style.setProperty(`--variable-${e.target.name}`, e.target.value);
-      localStorage.setItem("font_weight", getComputedStyle(document.documentElement).getPropertyValue("--variable-wght-bold"));
-      inputs.forEach(e => e.value = getComputedStyle(document.documentElement).getPropertyValue("--variable-wght-bold"))
+    input.addEventListener('input', function (e) {
+      document.documentElement.style.setProperty(
+        `--variable-${e.target.name}`,
+        e.target.value
+      );
+      localStorage.setItem(
+        'font_weight',
+        getComputedStyle(document.documentElement).getPropertyValue(
+          '--variable-wght-bold'
+        )
+      );
+      inputs.forEach(
+        (e) =>
+          (e.value = getComputedStyle(
+            document.documentElement
+          ).getPropertyValue('--variable-wght-bold'))
+      );
     });
   }
-
-
-
-
 }
 
 export default fontSettings;

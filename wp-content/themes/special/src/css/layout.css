@@ -1,7 +1,7 @@
 /* site layout  */
 .site {
   max-width: 48em;
-  border: 0.0625em solid currentColor;
+  border: 0.0625em solid currentcolor;
   margin: 0 auto;
 }
 
@@ -17,14 +17,14 @@
 }
 
 .site main > article > header {
-  margin-bottom: 1.5em;
+  margin-block-end: 1.5em;
 }
 
 .site > *:not(main) {
   padding: 0 2rem;
 }
 
-.site > main > article > *:not(figure):not(.hero-grid) {
+.site > main > article > *:not(figure, .hero-grid) {
   padding: 0 2rem;
 }
 
@@ -32,11 +32,11 @@
 .content-grid > iframe,
 .site main .content-grid > figure,
 .content-grid > .wp-block-image {
-  margin-bottom: 1.5em;
+  margin-block-end: 1.5em;
 }
 
 @supports (display: grid) {
-  @media only screen and (min-width: 48em) {
+  @media only screen and (width >= 48em) {
     .content-grid {
       display: grid;
       grid-template-columns:
@@ -96,9 +96,9 @@
     }
   }
 
-  @media only screen and (min-width: 133.75em) {
+  @media only screen and (width >= 133.75em) {
     .site {
-      border-left: 0.0625em solid rgb(var(--secondary));
+      border-inline-start: 0.0625em solid rgb(var(--secondary));
     }
   }
 }

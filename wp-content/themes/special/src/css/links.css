@@ -21,7 +21,7 @@ a:active {
 }
 
 a:link svg {
-  fill: currentColor;
+  fill: currentcolor;
 }
 
 a:visited svg {

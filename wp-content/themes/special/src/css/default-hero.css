@@ -6,27 +6,27 @@
 .hero {
   position: relative;
   overflow: hidden;
-  margin-bottom: 1.5em;
+  margin-block-end: 1.5em;
 }
 
 .hero-grid header {
   padding: 0 2rem;
-  margin-bottom: 1.5em;
+  margin-block-end: 1.5em;
 }
 
 .hero-grid header.no-hero {
-  margin-top: clamp(6vw, 10vw, 15vw);
+  margin-block-start: clamp(6vw, 10vw, 15vw);
 }
 
 .hero-grid header h1 span {
   font-size: 0.5em;
-  font-variation-settings: "wght" var(--variable-wght-bold);
+  font-variation-settings: 'wght' var(--variable-wght-bold);
 }
 
 .hero-grid header > div {
   display: inline-block;
-  padding-bottom: 0.5em;
-  border-bottom: 0.125em solid rgb(var(--secondary));
+  padding-block-end: 0.5em;
+  border-block-end: 0.125em solid rgb(var(--secondary));
 }
 
 .hero-grid header > div > span:last-of-type {
@@ -40,13 +40,13 @@
 .hero:not(.no-filter)::after {
   display: inline-block;
   position: absolute;
-  left: 0;
+  inset-inline-start: 0;
   top: 0;
   background: rgb(var(--secondary));
   width: 100%;
   height: 100%;
   z-index: 1;
-  content: "";
+  content: '';
   mix-blend-mode: multiply;
   opacity: 0.35;
   pointer-events: none;
@@ -58,7 +58,7 @@
 }
 
 @supports (display: grid) {
-  @media only screen and (min-width: 48em) {
+  @media only screen and (width >= 48em) {
     .hero-grid {
       display: grid;
       grid-template-columns:
@@ -80,8 +80,8 @@
       grid-column: 4;
       align-self: end;
       z-index: 2;
-      margin-bottom: 0;
-      margin-left: -2em;
+      margin-block-end: 0;
+      margin-inline-start: -2em;
       border-radius: var(--radius);
     }
 
@@ -89,8 +89,8 @@
       grid-row: 1;
       grid-column: 3 / 7;
       width: calc(100% + 2rem);
-      margin-bottom: 0;
-      border-bottom-left-radius: var(--radius);
+      margin-block-end: 0;
+      border-end-start-radius: var(--radius);
     }
   }
 }
