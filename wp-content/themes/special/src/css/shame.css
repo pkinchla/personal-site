@@ -11,7 +11,7 @@
   text-align: center;
 }
 
-@media only screen and (width >= 48em) {
+@media only screen and (min-width: 48em) {
   .skip-link,
   .skip-link:focus {
     width: 100%;
@@ -238,7 +238,7 @@ main > article > div .comment-author img,
     'slnt' var(--variable-slant);
 }
 
-@media only screen and (width >= 28.125em) {
+@media only screen and (min-width: 28.125em) {
   .post-template-default dl {
     display: grid;
     border-inline-start: 0.0625em solid rgb(var(--primary) 0.25);
@@ -260,7 +260,7 @@ main > article > div .comment-author img,
 }
 
 @supports (display: grid) {
-  @media only screen and (width >= 40em) {
+  @media only screen and (min-width: 40em) {
     .photo-feed li:nth-of-type(8n) {
       grid-column: span 2;
       grid-row: span 2;
@@ -278,7 +278,7 @@ main > article > div .comment-author img,
 }
 
 @supports (display: grid) {
-  @media only screen and (width >= 48em) {
+  @media only screen and (min-width: 48em) {
     .resume,
     .photo-feed,
     .work {
@@ -293,7 +293,7 @@ main > article > div .comment-author img,
 }
 
 @supports (display: grid) {
-  @media only screen and (width >= 81.25em) {
+  @media only screen and (min-width: 81.25em) {
     .resume,
     .photo-feed,
     .work {
@@ -303,7 +303,7 @@ main > article > div .comment-author img,
 }
 
 @supports (display: grid) {
-  @media only screen and (width >= 106.25em) {
+  @media only screen and (min-width: 106.25em) {
     .blog .action-list,
     .contact {
       grid-column: 5 / 6;

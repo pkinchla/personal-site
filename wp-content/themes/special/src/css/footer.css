@@ -90,13 +90,13 @@
 }
 
 @supports (display: grid) {
-  @media only screen and (width >= 48em) {
+  @media only screen and (min-width: 48em) {
     .site > footer {
       margin-block-start: 6rem;
     }
   }
 
-  @media only screen and (width >= 125em) {
+  @media only screen and (min-width: 125em) {
     .site > footer ul {
       justify-content: flex-end;
       grid-column: 1;

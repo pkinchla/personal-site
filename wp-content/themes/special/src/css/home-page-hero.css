@@ -65,7 +65,7 @@ a.jump-link.hidden:focus {
   margin: 0;
 }
 
-@media only screen and (width >= 48em) {
+@media only screen and (min-width: 48em) {
   .home article > figure span {
     font-size: 3em;
   }

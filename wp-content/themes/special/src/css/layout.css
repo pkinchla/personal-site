@@ -36,7 +36,7 @@
 }
 
 @supports (display: grid) {
-  @media only screen and (width >= 48em) {
+  @media only screen and (min-width: 48em) {
     .content-grid {
       display: grid;
       grid-template-columns:
@@ -96,7 +96,7 @@
     }
   }
 
-  @media only screen and (width >= 133.75em) {
+  @media only screen and (min-width: 133.75em) {
     .site {
       border-inline-start: 0.0625em solid rgb(var(--secondary));
     }
