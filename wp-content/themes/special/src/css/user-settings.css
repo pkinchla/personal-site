@@ -77,7 +77,7 @@ footer fieldset input[type='range']::-moz-range-thumb {
 
 fieldset.font-settings input[type='text'] {
   display: inline-block;
-  width: 3.5em;
+  width: 4em;
   border-radius: var(--radius);
   border: 0.125em solid rgb(var(--secondary));
   outline-color: rgb(var(--secondary));
