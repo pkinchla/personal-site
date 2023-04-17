@@ -18,6 +18,9 @@
   --active: 238, 0, 0;
   --visited: 85, 26, 139;
 
+  /* error handling */
+  --error-color: var(--active);
+
   /* base measurements */
   --radius: 0.33em;
   --radius-2: 0.66em;
