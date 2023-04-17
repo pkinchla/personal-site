@@ -26,7 +26,7 @@ function fontSettings() {
       <input type="range" id="range" name="wght-bold" min="100" max="900" value=${defaultWght}>
       <label for="number" class="assistive-text">Bold Sans-serif</label>
       <span class="number">
-        <input aria-describedby="number-error" pattern="[0-9]+" id="number" pattern="" type="text" min="100" max="900" maxlength="3" name="wght-bold" value=${defaultWght} />
+        <input aria-describedby="number-error" pattern="[0-9]*" id="number" pattern="" type="text" min="100" max="900" maxlength="3" name="wght-bold" value=${defaultWght} />
         <span id="number-error" class="field-error" aria-live="assertive"></span>
       </span>
     </span>
