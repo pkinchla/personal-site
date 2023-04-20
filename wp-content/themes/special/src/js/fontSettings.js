@@ -1,3 +1,5 @@
+import { addEventListenerMulti } from './utils'
+
 function fontSettings() {
   if ('CSS' in window === false || 'supports' in CSS === false) {
     return;
@@ -38,7 +40,7 @@ function fontSettings() {
   var inputs = document.querySelectorAll('.font-settings input');
 
   for (const input of inputs) {
-    input.addEventListener('input', function (e) {
+    addEventListenerMulti(input, 'change input', function (e) {
       document.documentElement.style.setProperty(
         `--variable-${e.target.name}`,
         e.target.value
@@ -57,7 +59,7 @@ function fontSettings() {
             document.documentElement
           ).getPropertyValue('--variable-wght-bold'))
       );
-    });
+    })
   }
 }
 
