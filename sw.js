@@ -1,10 +1,10 @@
-var version = 'v7.1';
+var version = 'v7.2';
 
 var theme_path = 'wp-content/themes/special/';
 
 var offlineFundamentals = [
   theme_path + 'dist/js/main.js',
-  theme_path + 'dist/js/prism.min.js',
+  theme_path + 'dist/js/prism.js',
   theme_path + 'offline.html',
   'typefaces/tome-sans-variable.woff2',
   'manifest.json',

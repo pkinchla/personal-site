@@ -7,14 +7,16 @@ function handleColorScheme() {
     localStorage.setItem('color_scheme', 'system');
   }
 
-  var mediaQueryColorScheme = window.matchMedia('(prefers-color-scheme: dark)');
+  const mediaQueryColorScheme = window.matchMedia(
+    '(prefers-color-scheme: dark)'
+  );
 
-  var matchesDark = function (matchBool) {
+  const matchesDark = function (matchBool: boolean) {
     return matchBool ? 'dark' : 'light';
   };
 
-  var handleChange = function (scheme, userToggle = false) {
-    var htmlEl = document.querySelector('html');
+  const handleChange = function (scheme: string, userToggle = false) {
+    const htmlEl = document.querySelector('html') as HTMLHtmlElement;
     switch (scheme) {
       case 'dark':
         htmlEl.classList.add('dark-mode');
@@ -47,10 +49,10 @@ function handleColorScheme() {
     handleChange(matchesDark(e.matches));
   });
 
-  var element = document.createElement('fieldset');
+  const element = document.createElement('fieldset') as HTMLFieldSetElement;
   element.classList.add('color-theme-switcher', 'sans-bold-italic');
 
-  var darkToggleMarkUp = `
+  const darkToggleMarkUp = `
     <legend>Color Scheme</legend>
     <input class="assistive-text" type="radio" id="system" name="color-scheme" value="system">
     <label for="system">System</label>
@@ -61,14 +63,21 @@ function handleColorScheme() {
   `;
 
   element.innerHTML = darkToggleMarkUp;
+  const footer = document.getElementById('colophon') as HTMLElement;
+  footer.prepend(element);
 
-  document.getElementById('colophon').prepend(element);
+  const inputs = document.querySelectorAll(
+    `.color-theme-switcher input`
+  ) as unknown as HTMLInputElement[];
 
-  var inputs = document.querySelectorAll(`.color-theme-switcher input`);
   for (const input of inputs) {
-    if (input.value === window.localStorage.color_scheme) input.checked = true;
-    input.addEventListener('change', function (e) {
-      handleChange(e.target.value, true);
+    if (input.value === window.localStorage.color_scheme) {
+      input.checked = true;
+    }
+
+    input.addEventListener('click', function (e) {
+      const target = e.target as HTMLInputElement;
+      handleChange(target.value, true);
     });
   }
 }

@@ -3,7 +3,7 @@
   "scripts": {
     "lint:styles": "stylelint 'src/**/*.css'",
     "lint:styles-fix": "stylelint --fix 'src/**/*.css'",
-    "lint:js": "eslint src/**/*.js",
+    "lint:ts": "eslint src/**/*.ts",
     "bs": "browser-sync start --proxy 'paulkinchla.test' --files 'dist/, views/*.twig'",
     "css": "postcss --use autoprefixer postcss-import cssnano -o dist/css/main.css src/css/main.css",
     "watch:css": "onchange 'src/css/*.css' -- yarn css",
@@ -14,6 +14,9 @@
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@rollup/plugin-terser": "^0.4.1",
+    "@rollup/plugin-typescript": "^11.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
     "autoprefixer": "^10.4.14",
     "browser-sync": "^2.29.1",
     "cssnano": "^6.0.0",
@@ -27,7 +30,8 @@
     "rollup": "^3.20.2",
     "stylelint": "^15.4.0",
     "stylelint-config-standard": "^32.0.0",
-    "stylelint-order": "^6.0.3"
+    "stylelint-order": "^6.0.3",
+    "tslib": "^2.5.0"
   },
   "dependencies": {
     "speedlify-score": "^2.0.2"

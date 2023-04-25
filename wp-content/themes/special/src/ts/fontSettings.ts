@@ -1,11 +1,11 @@
-import { addEventListenerMulti } from './utils'
+import { addEventListenerMulti } from './utils';
 
 function fontSettings() {
   if ('CSS' in window === false || 'supports' in CSS === false) {
     return;
   }
 
-  var defaultWght =
+  const defaultWght =
     window.localStorage.font_weight ||
     getComputedStyle(document.documentElement).getPropertyValue(
       '--variable-wght-bold'
@@ -18,10 +18,10 @@ function fontSettings() {
     );
   }
 
-  var element = document.createElement('fieldset');
+  const element = document.createElement('fieldset') as HTMLFieldSetElement;
   element.classList.add('font-settings', 'sans-bold-italic');
 
-  var fontSettingsMarkUp = `
+  const fontSettingsMarkUp = `
     <legend>Font Weight</legend>
     <span>
       <label for="range">Bold Sans-serif</label>
@@ -35,15 +35,19 @@ function fontSettings() {
 
   element.innerHTML = fontSettingsMarkUp;
 
-  document.getElementById('colophon').prepend(element);
+  const footer = document.getElementById('colophon') as HTMLElement;
+  footer.prepend(element);
 
-  var inputs = document.querySelectorAll('.font-settings input');
+  const inputs = document.querySelectorAll(
+    '.font-settings input'
+  ) as unknown as HTMLInputElement[];
 
   for (const input of inputs) {
     addEventListenerMulti(input, 'change input', function (e) {
+      const target = e.target as HTMLInputElement;
       document.documentElement.style.setProperty(
-        `--variable-${e.target.name}`,
-        e.target.value
+        `--variable-${target.name}`,
+        target.value
       );
 
       localStorage.setItem(
@@ -54,12 +58,12 @@ function fontSettings() {
       );
 
       inputs.forEach(
-        (e) =>
-          (e.value = getComputedStyle(
+        (input) =>
+          (input.value = getComputedStyle(
             document.documentElement
           ).getPropertyValue('--variable-wght-bold'))
       );
-    })
+    });
   }
 }
 
