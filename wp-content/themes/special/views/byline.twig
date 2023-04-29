@@ -1,0 +1,9 @@
+<div class="sans-regular-italic">
+  Posted on <time datetime="{{post.date|date('c')}}">{{post.date|date('l, F jS, Y')}}</time> | 
+  Last Updated on <time datetime="{{post.modified_date|date('c')}}">{{post.modified_date|date('l, F jS, Y')}}</time>
+  <span class="author vcard">
+    by 
+    <a class="url fn n" href="{{post.author.link}}">{{post.author.name}}</a>
+  </span>
+  <span>Reading Time: {{post.reading_time}} minute{{ (post.reading_time == 1) ? '' : 's' }}</span>
+</div>

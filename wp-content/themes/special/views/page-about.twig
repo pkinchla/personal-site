@@ -5,7 +5,7 @@
       <div class="hero-grid">
         <header>
           <h1>{{post.title}}</h1>
-          <div class="sans-regular-italic"><time datetime="{{post.modified_date|date('c')}}">Last Updated on {{post.modified_date|date('l, F jS, Y')}}</time></div>
+           {% include 'byline-page.twig' %}
         </header>
         {% include 'featured-image.twig' %}
       </div>

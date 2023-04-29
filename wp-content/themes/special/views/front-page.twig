@@ -2,9 +2,9 @@
 <article id="post-{{ post.ID }}">
   <header>
     <h1 class="assistive-text">Home Page</h1>
-    <time class="assistive-text" datetime="{{post.modified_date|date('c')}}"
-      >Last Update on {{post.modified_date|date('l, F jS, Y')}}</time
-    >
+    <span class="assistive-text">
+      {% include 'byline-page.twig' %}
+    </span>
   </header>
   <figure class="hero">
     <picture>

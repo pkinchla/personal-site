@@ -1,6 +1,10 @@
-a:link {
+a {
   color: rgb(var(--link));
   text-decoration-thickness: 0.095em;
+}
+
+a svg {
+  fill: currentcolor;
 }
 
 a:visited {
@@ -18,16 +22,4 @@ a:focus {
 a:active {
   color: rgb(var(--active));
   translate: 0 0.0625rem;
-}
-
-a:link svg {
-  fill: currentcolor;
-}
-
-a:visited svg {
-  fill: rgb(var(--visited));
-}
-
-a:active svg {
-  fill: rgb(var(--active));
 }

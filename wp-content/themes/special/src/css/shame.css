@@ -103,13 +103,20 @@ form {
 }
 
 input[type='text'],
+input[type='search'],
+input[type='submit'],
 textarea {
   padding: 0.5rem 0.75rem;
   border-radius: var(--radius);
+  outline-color: rgb(var(--secondary));
 }
 
 textarea {
   width: 100%;
+}
+
+textarea:focus {
+  outline-color: rgb(var(--secondary));
 }
 
 form.comment-form label:not([for='wp-comment-cookies-consent']) {

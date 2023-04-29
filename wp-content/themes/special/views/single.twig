@@ -5,10 +5,7 @@
     <div class="hero-grid">
     <header{{ (post.thumbnail == null) ? ' class="no-hero"' : '' }}>
       <h1>{{post.title}}</h1>
-      <div class="sans-regular-italic">
-        {{function('special_posted_on')}}
-        <span>Reading Time: {{post.reading_time}} minute{{ (post.reading_time == 1) ? '' : 's' }}</span>
-      </div>
+      {% include 'byline.twig' %}
     </header>
     {% if post.thumbnail %}
       {% include 'featured-image.twig' %}
