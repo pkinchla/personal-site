@@ -1,4 +1,4 @@
-a {
+a:link {
   color: rgb(var(--link));
   text-decoration-thickness: 0.095em;
 }
@@ -20,7 +20,7 @@ a:active {
   translate: 0 0.0625rem;
 }
 
-a svg {
+a:link svg {
   fill: currentcolor;
 }
 
