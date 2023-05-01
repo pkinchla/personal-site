@@ -3,14 +3,6 @@ a {
   text-decoration-thickness: 0.095em;
 }
 
-a svg {
-  fill: currentcolor;
-}
-
-a:visited {
-  color: rgb(var(--visited));
-}
-
 a:hover {
   text-decoration: none;
 }
@@ -19,7 +11,23 @@ a:focus {
   text-decoration: none;
 }
 
+a:visited {
+  color: rgb(var(--visited));
+}
+
 a:active {
   color: rgb(var(--active));
   translate: 0 0.0625rem;
+}
+
+a svg {
+  fill: currentcolor;
+}
+
+a:visited svg {
+  fill: rgb(var(--visited));
+}
+
+a:active svg {
+  fill: rgb(var(--active));
 }
