@@ -1,4 +1,4 @@
-<div class="card" id="card-{{ post.ID }}">
+<div class="card" id="card-{{ post.ID }}" style='--transition-name: {{ post.slug }}'>
   {% block content %}
     <a class="h3" href="{{ post.link }}">{{ post.title }}</a>
   <time

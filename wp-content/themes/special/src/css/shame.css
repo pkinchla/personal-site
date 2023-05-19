@@ -332,3 +332,8 @@ main > article > div .comment-author img,
 .wp-block-image {
   margin-block-end: 1.5em;
 }
+
+header,
+.card {
+  view-transition-name: var(--transition-name);
+}
