@@ -111,6 +111,7 @@ footer fieldset span {
 }
 
 .number button {
+  cursor: pointer;
   display: flex;
   appearance: none;
   background: transparent;
