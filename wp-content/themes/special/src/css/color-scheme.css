@@ -3,7 +3,7 @@
     --body-background: 27, 33, 39;
     --primary: 241, 241, 241;
     --secondary: 172, 172, 172;
-    --link: 255, 246, 81;
+    --link: 0, 191, 255;
     --active: 255, 138, 138;
     --visited: 188, 117, 255;
     --score-good: 106, 182, 143;
@@ -16,7 +16,7 @@
   --body-background: 27, 33, 39;
   --primary: 241, 241, 241;
   --secondary: 172, 172, 172;
-  --link: 255, 246, 81;
+  --link: 0, 191, 255;
   --active: 255, 138, 138;
   --visited: 188, 117, 255;
   --score-good: 106, 182, 143;
