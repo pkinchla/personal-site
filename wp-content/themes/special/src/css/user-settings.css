@@ -21,6 +21,7 @@ footer legend {
 fieldset.font-settings {
   padding: 0.5em 1em 1em;
   gap: 1em;
+  max-width: calc(100vw - 6em);
 }
 
 footer fieldset:focus-within {
@@ -60,7 +61,7 @@ footer fieldset input[type='range']::-webkit-slider-thumb {
   height: 1.25em;
   border-radius: 50%;
   appearance: none;
-  border: 0.0625em solid rgb(var(--secondary));
+  border: 0.125em solid rgb(var(--secondary));
   background-color: rgb(var(--body-background));
   margin-block-start: -0.45em;
   z-index: 5;
@@ -71,28 +72,24 @@ footer fieldset input[type='range']::-moz-range-thumb {
   height: 1.25em;
   border-radius: 50%;
   appearance: none;
-  border: 0.0625em solid rgb(var(--secondary));
+  border: 0.125em solid rgb(var(--secondary));
   background-color: rgb(var(--body-background));
 }
 
 fieldset.font-settings input[type='number'] {
+  appearance: textfield;
   display: inline-block;
-  width: 4em;
-  border-radius: var(--radius);
   border: 0.125em solid rgb(var(--secondary));
+  border-inline-end: none;
+  border-inline-start: none;
   outline-color: rgb(var(--secondary));
+  text-align: center;
+  width: 4em;
 }
 
-@media only screen and (max-width: 35.3125em) {
-  fieldset.font-settings .field-error {
-    position: static;
-    left: 0;
-    transform: translateX(0);
-  }
-}
-
-fieldset.font-settings input[type='text']:invalid + .field-error {
-  visibility: visible;
+fieldset.font-settings input[type='number']::-webkit-inner-spin-button,
+fieldset.font-settings input[type='number']::-webkit-outer-spin-button {
+  appearance: none;
 }
 
 footer fieldset span {
@@ -101,6 +98,44 @@ footer fieldset span {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.5em;
+}
+
+.number {
+  gap: 0;
+  align-items: stretch;
+}
+
+.number > * {
+  border-radius: 0;
+  outline-offset: -0.1em;
+}
+
+.number button {
+  display: flex;
+  appearance: none;
+  background: transparent;
+  color: rgb(var(--secondary));
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5em;
+  border-color: currentcolor;
+  border: 0.125em solid rgb(var(--secondary));
+}
+
+.number button svg {
+  fill: currentcolor;
+  width: 0.75em;
+  height: 0.75em;
+}
+
+.number .decrement {
+  border-start-start-radius: var(--radius);
+  border-end-start-radius: var(--radius);
+}
+
+.number .increment {
+  border-end-end-radius: var(--radius);
+  border-start-end-radius: var(--radius);
 }
 
 footer fieldset span:not(:last-of-type) {
