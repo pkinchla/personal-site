@@ -20,11 +20,11 @@ jobs:
           ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
       - name: connect and pull
         run: >
-          ssh -t ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} /bin/bash -ic "cd ${{ secrets.WORK_DIR }} &&
+          ssh -t ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} &&
           git checkout ${{ secrets.MAIN_BRANCH }} && 
           git pull &&
           cd wp-content/themes/special/ &&
-          pnpm run build &&
+          ~/.local/share/pnpm/pnpm run build &&
           chown -R www-data:www-data /var/www/* && 
           exit"
       - name: cleanup
