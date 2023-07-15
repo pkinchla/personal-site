@@ -15,6 +15,7 @@
 /*
 .DS_Store
 !.gitignore
+!.github/
 !README.md
 !sw.js
 !manifest.json
@@ -49,6 +50,5 @@ wp-content/themes/special/*.css.map
 wp-content/themes/special/npm-debug.log
 wp-content/themes/special/node_modules/*
 wp-content/themes/special/vendor/*
-.sass-cache/
 node_modules/
 typefaces/
