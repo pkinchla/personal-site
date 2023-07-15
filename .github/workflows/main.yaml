@@ -22,7 +22,9 @@ jobs:
         run: >
           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && 
           git checkout ${{ secrets.MAIN_BRANCH }} && 
-          git pull && 
+          git pull &&
+          cd wp-content/themes/special/ &&
+          pnpm run build &&
           chown -R www-data:www-data /var/www/* && 
           exit"
       - name: cleanup
