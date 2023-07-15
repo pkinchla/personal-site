@@ -31,10 +31,10 @@ jobs:
           exit"
       - name: clear cache
         run: >
-          curl -X POST 'https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache' \
-          -H 'X-Auth-Email: pkinchla@gmail.com' \
-          -H 'Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}' \
-          -H 'Content-Type: application/json' \
+          curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
+          -H "X-Auth-Email: pkinchla@gmail.com" \
+          -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+          -H "Content-Type: application/json" \
           --data '{ "purge_everything":true }'
       - name: cleanup
         run: rm -rf ~/.ssh
