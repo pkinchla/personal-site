@@ -31,7 +31,7 @@ jobs:
             -H 'X-Auth-Email: pkinchla@gmail.com' \
             -H 'Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}' \
             -H 'Content-Type: application/json' \
-            --data '{"purge_everything":true}' &&
+            --data '{ "purge_everything":true }' &&
           rm -rf node_modules &&
           exit"
       - name: cleanup
