@@ -27,9 +27,9 @@ jobs:
           ~/.local/share/pnpm/pnpm i &&
           ~/.local/share/pnpm/pnpm run build &&
           chown -R www-data:www-data /var/www/* && 
-          curl -X POST 'https://api.cloudflare.com/client/v4/zones/{{secrets.CLOUDFLARE_ZONE_ID}}/purge_cache' \
+          curl -X POST 'https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache' \
             -H 'X-Auth-Email: pkinchla@gmail.com' \
-            -H 'X-Auth-Key: ${{ secrets.CLOUDFLARE_API_KEY}}' &&
+            -H 'X-Auth-Key: ${{ secrets.CLOUDFLARE_API_KEY }}' &&
           rm -rf node_modules &&
           exit"
       - name: cleanup
