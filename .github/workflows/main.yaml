@@ -29,7 +29,9 @@ jobs:
           chown -R www-data:www-data /var/www/* && 
           curl -X POST 'https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache' \
             -H 'X-Auth-Email: pkinchla@gmail.com' \
-            -H 'Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}' &&
+            -H 'Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}' \
+            -H 'Content-Type: application/json' \
+            --data '{"purge_everything":true}' &&
           rm -rf node_modules &&
           exit"
       - name: cleanup
