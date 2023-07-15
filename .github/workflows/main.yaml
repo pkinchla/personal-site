@@ -29,7 +29,7 @@ jobs:
           chown -R www-data:www-data /var/www/* && 
           rm -rf node_modules &&
           exit"
-      - name: clear cache
+      - name: clear cloudflare cache
         run: >
           curl -X POST 'https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache' \
             -H 'Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}' \
