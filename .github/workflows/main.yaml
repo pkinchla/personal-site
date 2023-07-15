@@ -31,9 +31,8 @@ jobs:
           exit"
       - name: clear cache
         run: >
-          echo ${{ secrets.CLOUDFLARE_ZONE_ID }} &&
+          echo "${{ secrets.CLOUDFLARE_ZONE_ID }} things!!!" &&
           curl -X POST 'https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache' \
-          -H 'X-Auth-Email: pkinchla@gmail.com' \
           -H 'Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}' \
           -H 'Content-Type: application/json' \
           --data '{ "purge_everything":true }'
