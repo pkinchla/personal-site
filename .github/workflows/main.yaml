@@ -20,11 +20,11 @@ jobs:
           ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
       - name: connect and pull
         run: >
-          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && 
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} /bin/bash -ic "cd ${{ secrets.WORK_DIR }} &&
+          bash -l -c 'source ~/.bashrc' &&
           git checkout ${{ secrets.MAIN_BRANCH }} && 
           git pull &&
           cd wp-content/themes/special/ &&
-          bash -l -c 'source /root/.bashrc' &&
           pnpm run build &&
           chown -R www-data:www-data /var/www/* && 
           exit"
