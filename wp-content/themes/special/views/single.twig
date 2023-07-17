@@ -32,7 +32,9 @@
       {% if (function('comments_open')) or (function('get_comments_number')) %}
         {{ function( 'comments_template' ) }}
       {% endif %}
+      {% if post.toc|length >= 2 %}
       <a href="#toc" class="back-to-toc sans-bold-italic no-offset">Back to Table of Contents</a>
+      {% endif %}
     </div>
   </article>
 {% endblock %}
