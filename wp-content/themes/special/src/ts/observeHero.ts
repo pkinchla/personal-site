@@ -7,7 +7,7 @@ function observeHero() {
     return;
   }
 
-  // prevent flash of links before observer is abstantiated
+  // prevent flash of links before observer is instantiated
   jumpLink.classList.add('hidden');
 
   function handleIntersection(entries: IntersectionObserverEntry[]) {

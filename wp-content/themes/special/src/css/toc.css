@@ -1,11 +1,10 @@
 .toc {
-  margin-block-end: 1rem;
-  align-self: start;
-  position: sticky;
+  position: static;
   top: 0.1875rem;
-  z-index: 2;
   background: rgb(var(--body-background));
-  border-block-end: 0.1875rem solid currentColor;
+  margin-block-end: 1rem;
+  border-block-end: 0.1875rem solid rgb(var(--secondary));
+  z-index: 2;
 }
 
 .toc[open],
@@ -14,6 +13,7 @@
 }
 
 .toc summary {
+  color: rgb(var(--secondary));
   padding-block-start: 0.5rem;
   padding-block-end: 0.5rem;
   padding-inline-start: 0.5rem;
@@ -23,7 +23,7 @@
 .toc nav {
   padding: 1rem;
   margin-block-start: 0.75rem;
-  border: 0.1875rem solid currentColor;
+  border: 0.1875rem solid rgb(var(--secondary));
   border-radius: var(--radius-2);
 }
 
@@ -36,8 +36,24 @@
   padding-block-end: 0.25rem;
 }
 
+.back-to-toc {
+  display: flex;
+  position: sticky;
+  bottom: 0.1875rem;
+  background: rgb(var(--body-background));
+  padding: 0.5rem;
+  justify-content: center;
+  outline-offset: 0;
+  border-block-start: 0.1875rem solid currentcolor;
+}
+
+.back-to-toc:focus {
+  border-color: transparent;
+}
+
 @media only screen and (min-width: 48em) {
-  .toc {
+  .toc,
+  .back-to-toc {
     grid-column: 2/ 5;
   }
 }

@@ -13,8 +13,8 @@
     </div>
     <div class="content-grid">
       {% if post.toc|length >= 2 %}
-        <details class="toc sans-regular-italic">
-          <summary>Table of contents</summary>
+        <details id="toc" class="toc sans-bold-italic">
+          <summary>Table of Contents</summary>
           <nav aria-label="Table of Contents">
             <ol role="list">
             {% for link in post.toc %}
@@ -32,6 +32,7 @@
       {% if (function('comments_open')) or (function('get_comments_number')) %}
         {{ function( 'comments_template' ) }}
       {% endif %}
+      <a href="#toc" class="back-to-toc sans-bold-italic">Back to Table of Contents</a>
     </div>
   </article>
 {% endblock %}
