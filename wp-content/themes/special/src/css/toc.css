@@ -1,0 +1,43 @@
+.toc {
+  margin-block-end: 1rem;
+  align-self: start;
+  position: sticky;
+  top: 0.1875rem;
+  z-index: 2;
+  background: rgb(var(--body-background));
+  border-block-end: 0.1875rem solid currentColor;
+}
+
+.toc[open],
+.toc:focus-within {
+  border-color: transparent;
+}
+
+.toc summary {
+  padding-block-start: 0.5rem;
+  padding-block-end: 0.5rem;
+  padding-inline-start: 0.5rem;
+  outline-offset: 0;
+}
+
+.toc nav {
+  padding: 1rem;
+  margin-block-start: 0.75rem;
+  border: 0.1875rem solid currentColor;
+  border-radius: var(--radius-2);
+}
+
+.toc ol {
+  margin: 0;
+}
+
+.toc ol li {
+  padding-block-start: 0.25rem;
+  padding-block-end: 0.25rem;
+}
+
+@media only screen and (min-width: 48em) {
+  .toc {
+    grid-column: 2/ 5;
+  }
+}

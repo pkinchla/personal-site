@@ -11,11 +11,6 @@
   }
 }
 
-.site main > article {
-  display: flex;
-  flex-direction: column;
-}
-
 .site main > article > header {
   margin-block-end: 1.5em;
 }
@@ -84,7 +79,6 @@
       border: 0.0625em solid rgb(var(--secondary));
       grid-area: main;
       border-radius: var(--radius);
-      overflow: hidden;
     }
 
     .site > *:not(main) {

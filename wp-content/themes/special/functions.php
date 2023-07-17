@@ -35,7 +35,7 @@ add_filter('clean_url', 'add_script_attributes', 11, 1);
  */
 function auto_id_headings( $content ) {
 
-  if(get_post_type() === 'page') {
+  if(get_post_type() !== 'post') {
     return $content;
   }
 

@@ -12,6 +12,18 @@
     {% endif %}
     </div>
     <div class="content-grid">
+      {% if post.toc|length >= 2 %}
+        <details class="toc sans-regular-italic">
+          <summary>Table of contents</summary>
+          <nav aria-label="Table of Contents">
+            <ol role="list">
+            {% for link in post.toc %}
+              <li>{{link}}</li>
+            {% endfor %}
+            </ol>
+          </nav>
+        </details>
+      {% endif %} 
       {{post.content}}
       <footer class="sans-regular-italic">
         {{function('special_entry_footer')}}
