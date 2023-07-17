@@ -3,7 +3,7 @@
   top: 0.1875rem;
   background: rgb(var(--body-background));
   margin-block-end: 1rem;
-  border-block-end: 0.1875rem solid rgb(var(--secondary));
+  border-block-end: 0.125em solid rgb(var(--secondary));
   z-index: 2;
 }
 
@@ -23,7 +23,7 @@
 .toc nav {
   padding: 1rem;
   margin-block-start: 0.75rem;
-  border: 0.1875rem solid rgb(var(--secondary));
+  border: 0.125em solid rgb(var(--secondary));
   border-radius: var(--radius-2);
 }
 
@@ -43,7 +43,7 @@
   background: rgb(var(--body-background));
   padding: 0.5rem;
   justify-content: center;
-  border-block-start: 0.1875rem solid currentcolor;
+  border-block-start: 0.125em solid currentcolor;
   border-block-end: 0.1875rem solid rgb(var(--body-background));
 }
 
