@@ -39,12 +39,12 @@
 .back-to-toc {
   display: flex;
   position: sticky;
-  bottom: 0.1875rem;
+  bottom: 0.05em;
   background: rgb(var(--body-background));
   padding: 0.5rem;
   justify-content: center;
-  outline-offset: 0;
   border-block-start: 0.1875rem solid currentcolor;
+  border-block-end: 0.1875rem solid rgb(var(--body-background));
 }
 
 .back-to-toc:focus {
