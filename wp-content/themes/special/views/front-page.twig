@@ -2,11 +2,11 @@
 <article id="post-{{ post.ID }}">
   <header>
     <h1 class="assistive-text">Home Page</h1>
-    <span class="assistive-text">
-      {% include 'byline-page.twig' %}
-    </span>
+    <span class="assistive-text"> {% include 'byline-page.twig' %} </span>
   </header>
-  <figure class="hero">
+  <figure
+    class="hero{{ post.get_field('toggle_image_filter') ? ' no-filter' : '' }}"
+  >
     <picture>
       <source
         srcset="
@@ -53,4 +53,3 @@
   </div>
 </article>
 {% endblock %}
-
