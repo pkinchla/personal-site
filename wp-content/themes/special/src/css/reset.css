@@ -30,6 +30,7 @@ ol[role='list'] {
 
 /* Set core root defaults */
 html {
+  text-size-adjust: none;
   scroll-behavior: smooth;
 }
 
