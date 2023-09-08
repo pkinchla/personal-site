@@ -54,9 +54,9 @@
       </section>
       <section class="content-grid">
         <div class="photo-intro">
-          <h2 id="photo-feed">Instagram Feed</h2>
-                      {% if pictures.error %}
-            <span class="error">{{pictures.error}}</span>
+          <!-- <h2 id="photo-feed">Instagram Feed</h2> -->
+          {% if pictures.error %}
+          <!-- <span class="error">{{pictures.error}}</span> -->
           {% else %}
             {{post.flickr_field}}
             <span class="assistive-text">Unfortunately, the Instagram API currently does not return alt text for images</span>
