@@ -8,7 +8,7 @@ on:
 jobs:
   run_pull:
     name: run pull
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: install ssh keys
@@ -19,7 +19,7 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
       - name: connect, pull and build
-        run: >
+        run: |
           ssh -t ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} &&
           git checkout ${{ secrets.MAIN_BRANCH }} && 
           git pull &&
@@ -30,7 +30,7 @@ jobs:
           rm -rf node_modules &&
           exit"
       - name: clear cloudflare cache
-        run: >
+        run: |
           curl -X POST 'https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache' \
             -H 'Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}' \
             -H 'Content-Type: application/json' \
