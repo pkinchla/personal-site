@@ -13,9 +13,14 @@ fieldset.color-theme-switcher {
   margin-inline-end: 1.5em;
 }
 
-footer legend {
+footer fieldset legend {
   padding: 0 0.25em;
-  margin: 0 0.5em 0 1em;
+  margin: 0 0.5em 0 0.75em;
+}
+
+footer fieldset.font-settings legend {
+  margin: 0;
+  margin-inline-start: -0.125em;
 }
 
 fieldset.font-settings {
