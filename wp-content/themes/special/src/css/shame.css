@@ -57,6 +57,9 @@
 .action {
   width: max-content;
   border-radius: var(--radius);
+  text-decoration: none;
+  background: none;
+  color: rgb(var(--primary));
 }
 
 .action,
@@ -68,6 +71,21 @@
 
 .action.border {
   border: 0.125em solid currentcolor;
+}
+
+.action:hover {
+  color: rgb(var(--body-background));
+  background: rgb(var(--primary));
+}
+
+a.action:hover {
+  color: rgb(var(--body-background));
+  background: rgb(var(--link));
+}
+
+a.action:hover:visited {
+  color: rgb(var(--body-background));
+  background: rgb(var(--visited));
 }
 
 .action:focus {
@@ -108,15 +126,19 @@ input[type='submit'],
 textarea {
   padding: 0.5rem 0.75rem;
   border-radius: var(--radius);
+  border-color: rgb(var(--primary));
   outline-color: rgb(var(--secondary));
+  background: rgb(var(--body-background));
+  color: rgb(var(--primary));
+}
+
+input::placeholder {
+  color: rgb(var(--primary));
+  opacity: 0.75;
 }
 
 textarea {
   width: 100%;
-}
-
-textarea:focus {
-  outline-color: rgb(var(--secondary));
 }
 
 form.comment-form label:not([for='wp-comment-cookies-consent']) {
