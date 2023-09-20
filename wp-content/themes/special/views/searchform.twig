@@ -1,5 +1,24 @@
-  <form class="search sans-bold-italic" method="get" id="searchform" action="{{site.url}}" role="search">
+<search role="search">
+  <form
+    class="search sans-bold-italic"
+    method="get"
+    id="searchform"
+    action="{{ site.url }}"
+  >
     <label for="s" class="assistive-text">Search</label>
-    <input type="text" class="field" name="s"  id="s" placeholder="CSS Grid&hellip;" />
-    <input type="submit" class="action border" name="submit" id="searchsubmit" value="Search" />
+    <input
+      type="text"
+      class="field"
+      name="s"
+      id="s"
+      placeholder="CSS Grid&hellip;"
+    />
+    <input
+      type="submit"
+      class="action border"
+      name="submit"
+      id="searchsubmit"
+      value="Search"
+    />
   </form>
+</search>

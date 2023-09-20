@@ -45,6 +45,12 @@
   justify-content: center;
   border-block-start: 0.125em solid currentcolor;
   border-block-end: 0.1875rem solid rgb(var(--body-background));
+  opacity: 1;
+  transition: all 0.35s ease-in-out;
+}
+
+.back-to-toc.hidden {
+  opacity: 0;
 }
 
 .back-to-toc:focus {

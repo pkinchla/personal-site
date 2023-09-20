@@ -10,7 +10,7 @@ function observeHero() {
   // prevent flash of links before observer is instantiated
   jumpLink.classList.add('hidden');
 
-  function handleIntersection(entries: IntersectionObserverEntry[]) {
+  const handleIntersection = function (entries: IntersectionObserverEntry[]) {
     entries.forEach(function (entry: IntersectionObserverEntry) {
       if (entry.isIntersecting) {
         jumpLink.classList.add('hidden');
@@ -18,7 +18,7 @@ function observeHero() {
         jumpLink.classList.remove('hidden');
       }
     });
-  }
+  };
 
   const observer = new IntersectionObserver(handleIntersection);
   return observer.observe(linkTarget);
