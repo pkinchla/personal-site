@@ -246,6 +246,13 @@ function estimated_reading_time( $content = '', $wpm = 250 ) {
 // Gutenberg custom stylesheet
 add_theme_support('editor-styles');
 add_editor_style( get_template_directory_uri() . '/dist/css/main.css' );
+function prism_enqueue() {
+    wp_enqueue_script(
+        'prism-script',
+        get_template_directory_uri() . '/dist/js/prism.js'
+    );
+}
+add_action( 'enqueue_block_editor_assets', 'prism_enqueue' );
 
 // remove wp-embed
 function deregister_wp_embed(){
