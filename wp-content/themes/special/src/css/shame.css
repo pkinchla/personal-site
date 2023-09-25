@@ -126,7 +126,7 @@ input[type='submit'],
 textarea {
   padding: 0.5rem 0.75rem;
   border-radius: var(--radius);
-  border-color: rgb(var(--primary));
+  border: 0.125rem solid rgb(var(--primary));
   outline-color: rgb(var(--secondary));
   background: rgb(var(--body-background));
   color: rgb(var(--primary));
