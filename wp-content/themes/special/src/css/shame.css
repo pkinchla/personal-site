@@ -132,6 +132,16 @@ textarea {
   color: rgb(var(--primary));
 }
 
+input[type='radio'],
+input[type='checkbox'] {
+  color: rgb(var(--secondary));
+  border-radius: var(--radius);
+  accent-color: rgb(var(--secondary));
+  width: 1.15em;
+  height: 1.15em;
+  vertical-align: sub;
+}
+
 input::placeholder {
   color: rgb(var(--primary));
   opacity: 0.75;
