@@ -83,6 +83,8 @@ footer fieldset input[type='range']::-moz-range-thumb {
 
 fieldset.font-settings input[type='number'] {
   appearance: textfield;
+  background: transparent;
+  color: rgb(var(--primary));
   display: inline-block;
   border: 0.125em solid rgb(var(--secondary));
   border-inline-end: none;
