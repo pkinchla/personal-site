@@ -30,6 +30,7 @@ h6,
   display: block;
   color: rgb(var(--secondary));
   margin-block-end: 0.35em;
+  transition: font-variation-settings var(--transition);
 }
 
 .editor-post-title {
@@ -92,6 +93,7 @@ strong {
   font-family: var(--font-sans-serif);
   font-weight: bold;
   font-variation-settings: 'wght' var(--variable-wght-bold);
+  transition: font-variation-settings var(--transition);
 }
 
 blockquote {
@@ -154,6 +156,7 @@ figcaption {
   font-family: var(--font-sans-serif);
   font-weight: bold;
   font-variation-settings: 'wght' var(--variable-wght-bold);
+  transition: font-variation-settings var(--transition);
 }
 
 .sans-bold-italic {
@@ -162,6 +165,7 @@ figcaption {
   font-weight: bold;
   font-variation-settings: 'wght' var(--variable-wght-bold),
     'slnt' var(--variable-slant);
+  transition: font-variation-settings var(--transition);
 }
 
 /* settings for font-variation support */
