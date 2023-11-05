@@ -7,7 +7,7 @@
     "bs": "browser-sync start --proxy 'paulkinchla.test' -f 'dist/**/*, views/*.twig'",
     "css": "postcss --use autoprefixer postcss-import cssnano -w -o dist/css/main.css src/css/main.css",
     "js": "rollup -c -w",
-    "dev": "pnpm css & pnpm js & yarn bs",
+    "dev": "pnpm css & pnpm js & pnpm bs",
     "build": "rollup -c && postcss --no-map --use autoprefixer postcss-import cssnano -o dist/css/main.css src/css/main.css"
   },
   "devDependencies": {
