@@ -141,7 +141,6 @@ function instagram_feed($url) {
   return $feed;
 }
 
-
 function speed_stats($url) {
   $stats = get_transient( 'speed_stats' );
 
@@ -297,6 +296,7 @@ class StarterSite extends TimberSite {
     $context['menu_type'] = explode('/', home_url( $_SERVER['REQUEST_URI'] ))[3];
     $context['perf_stats'] = speed_stats('http://stats.paulkinchla.me/api/urls.json');
     $context['bot_was_redirected'] = explode('/',  home_url( $_SERVER['QUERY_STRING']))[3] ?? null == 'sorry-bot';
+    $context['theme_class'] = isset($_COOKIE['color_scheme'])? 'dark-mode' : '';
 
 		return $context;
 	}

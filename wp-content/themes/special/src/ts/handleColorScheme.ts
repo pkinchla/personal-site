@@ -1,10 +1,15 @@
+import { getCookie } from "./utils";
+
 function handleColorScheme() {
   if (window.matchMedia('(prefers-color-scheme)').media === 'not all') {
     return;
   }
 
-  if (!window.localStorage.color_scheme) {
-    localStorage.setItem('color_scheme', 'system');
+  const initialValueColorScheme = getCookie('color_scheme');
+
+
+  if (!initialValueColorScheme) {
+    document.cookie = "color_scheme=system; Path=/; Secure";
   }
 
   const mediaQueryColorScheme = window.matchMedia(
@@ -15,35 +20,36 @@ function handleColorScheme() {
     return matchBool ? 'dark' : 'light';
   };
 
-  const handleChange = function (scheme: string, userToggle = false) {
+  const handleChange = function (scheme: string | null, userToggle = false) {
     const htmlEl = document.querySelector('html') as HTMLHtmlElement;
     switch (scheme) {
       case 'dark':
         htmlEl.classList.add('dark-mode');
         if (userToggle) {
-          localStorage.setItem('color_scheme', 'dark');
+          document.cookie = "color_scheme=dark; Path=/; Secure";
         }
         break;
       case 'light':
         htmlEl.classList.remove('dark-mode');
         if (userToggle) {
-          localStorage.setItem('color_scheme', 'light');
+          document.cookie = "color_scheme=light; Path=/; Secure";
         }
         break;
       default:
         handleChange(matchesDark(mediaQueryColorScheme.matches));
         if (userToggle) {
-          localStorage.setItem('color_scheme', 'system');
+          document.cookie = "color_scheme=system; Path=/; Secure";
         }
     }
   };
 
-  handleChange(window.localStorage.color_scheme);
+  handleChange(initialValueColorScheme);
 
   mediaQueryColorScheme.addEventListener('change', function (e) {
+    const setColorScheme = getCookie('color_scheme');
     if (
-      window.localStorage.color_scheme === 'dark' ||
-      window.localStorage.color_scheme === 'light'
+      setColorScheme === 'dark' ||
+      setColorScheme === 'light'
     )
       return;
     handleChange(matchesDark(e.matches));
@@ -71,7 +77,9 @@ function handleColorScheme() {
   ) as unknown as HTMLInputElement[];
 
   for (const input of inputs) {
-    if (input.value === window.localStorage.color_scheme) {
+    const setColorScheme = getCookie('color_scheme');
+    
+    if (input.value === setColorScheme) {
       input.checked = true;
     }
 
@@ -80,6 +88,7 @@ function handleColorScheme() {
       handleChange(target.value, true);
     });
   }
+
 }
 
 export default handleColorScheme;
