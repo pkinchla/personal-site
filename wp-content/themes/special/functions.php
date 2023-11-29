@@ -17,19 +17,6 @@ Timber::$dirname = array('views');
 // credentials for apis and things
 require get_template_directory() . '/credentials.php';
 
-// adding async for scripts usage -
-// wp_enqueue_script('script', '/path/to/my/script.js#asyncload');
-function add_script_attributes($url)
-{
-		if (strpos($url, '#addattribs') === false)
-				return $url;
-		else if (is_admin())
-				return str_replace('#addattribs', '', $url);
-		else
-				return str_replace('#addattribs', '', $url)."' type='module";
-}
-add_filter('clean_url', 'add_script_attributes', 11, 1);
-
 /**
  * Automatically add IDs to headings such as <h2></h2>
  */
@@ -94,21 +81,39 @@ function special_scripts() {
 
   if (WP_DEBUG) {
     wp_enqueue_style( 'style', get_template_directory_uri() . '/dist/css/main.css', array(), null );
-    wp_enqueue_script( 'scripts', get_template_directory_uri() .'/dist/js/main.js?v=' . $_SERVER['REQUEST_TIME'] . '#addattribs', array(), null);
+    wp_enqueue_script( 'scripts', get_template_directory_uri() .'/dist/js/main.js?v=' . $_SERVER['REQUEST_TIME'] . '', array(), null);
   }
   else {
-    wp_enqueue_script( 'scripts', get_template_directory_uri() .'/dist/js/main.js#addattribs', array(), null); 
+    wp_enqueue_script( 'scripts', get_template_directory_uri() .'/dist/js/main.js', array(), null); 
   }
 
   if (get_post_type() === 'post') {
-		wp_enqueue_script( 'prism', get_template_directory_uri() .'/dist/js/prism.js#addattribs', array(), '', true);
+		wp_enqueue_script( 'prism', get_template_directory_uri() .'/dist/js/prism.js', array(), '', true);
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'special_scripts' );
+add_action( 'wp_enqueue_scripts',  __NAMESPACE__ . '\special_scripts'  );
+
+/**
+ * Filter multiple scripts to add type=“module”.
+ */
+add_filter('script_loader_tag', __NAMESPACE__ . '\add_type_to_js_scripts', 10, 3);
+function add_type_to_js_scripts($tag, $handle, $source){
+  // Add main js file and all modules to the array.
+  $theme_handles = array(
+    'scripts',
+    'prism',
+      );
+    // Loop through the array and filter the tag.
+	  foreach($theme_handles as $theme_handle) {
+		if ($theme_handle === $handle) {
+			return $tag = '<script src="'. esc_url($source).'" type="module"></script>';
+		}
+	 }
+}
 
 add_action(
   'after_setup_theme',
