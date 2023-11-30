@@ -15,13 +15,13 @@
       <section class="content-grid">
         <div class="resume-intro">
           <h2 id="cv">R&eacute;sum&eacute;</h2>
-          <a class="action border sans-bold-italic no-offset" href="{{post.get_field('file_resume').url}}" download>Download &rarr;</a>
+          <a class="action border sans-bold-italic no-offset" href="{{post.meta('file_resume').url}}" download>Download &rarr;</a>
         </div>
         <dl class="resume sans-regular">
           <dt>Skill</dt>
             <dd class="last"><p>{{post.skill}}</p></dd>
           <dt>Work</dt>
-          {% for job in post.get_field('work') %}
+          {% for job in post.meta('work') %}
             <dd{% if loop.last == true  %} class="last"{% endif%}>
               <div>
               {{job.title}}
@@ -38,7 +38,7 @@
             </dd>
           {% endfor %}
           <dt>Internship</dt>
-          {% for gig in post.get_field('internship') %}
+          {% for gig in post.meta('internship') %}
             <dd{% if loop.last == true  %} class="last"{% endif%}>
               <div>{{gig.title}}  <span><time datetime="{{gig.date}}">{{gig.date|date('Y')}}</time></span></div>
               <span>{{gig.location}}</span>
@@ -46,7 +46,7 @@
           {% endfor %}
           <dt>Education</dt>
             <dd class="last">
-            {% for school in post.get_field('education') %}
+            {% for school in post.meta('education') %}
               <div>{{school.school}}  <span>{{school.degree}}</span></div>
             {% endfor %}
             </dd>

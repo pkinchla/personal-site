@@ -1,11 +1,11 @@
-<div class="sans-bold-italic pagination{{pagination.prev.link|length == 0 and pagination.next.link|length == 0 ? ' no-results' : ''}}">
-  {% if pagination.prev %}
-    <a href="{{pagination.prev.link}}"
-       class="no-offset {{pagination.prev.link|length ? '' : 'invisible'}}">
+<div class="sans-bold-italic pagination{{posts.pagination.prev.link|length == 0 and posts.pagination.next.link|length == 0 ? ' no-results' : ''}}">
+  {% if posts.pagination.prev %}
+    <a href="{{posts.pagination.prev.link}}"
+       class="no-offset {{posts.pagination.prev.link|length ? '' : 'invisible'}}">
        Prev <span class="assistive-text">Page</span>
     </a>
   {% endif %}
-  {% for page in pagination.pages %}
+  {% for page in posts.pagination.pages %}
     {% if page.link %}
       <a class="no-offset" href="{{page.link}}">
        <span class="assistive-text">Page</span> {{page.title}}
@@ -16,10 +16,10 @@
     </span>
     {% endif %}
   {% endfor %}
-  {% if pagination.next %}
+  {% if posts.pagination.next %}
     <a
-      href="{{pagination.next.link}}"
-      class="no-offset {{pagination.next.link|length ? '' : 'invisible'}}">
+      href="{{posts.pagination.next.link}}"
+      class="no-offset {{posts.pagination.next.link|length ? '' : 'invisible'}}">
       Next <span class="assistive-text">Page</span>
     </a>
   {% endif %}

@@ -9,10 +9,9 @@
  * @since    Timber 0.1
  */
 
-$context = Timber::get_context();
-$post = Timber::query_post();
+$context = Timber::context();
+$post = Timber::get_post();
 $context['post'] = $post;
-$context['pagination'] = Timber::get_pagination();
 
 function createTOC($text) {
   preg_match_all('#<h2.*?>(.*?)</h2>#i',$text, $matches);

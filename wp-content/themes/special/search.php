@@ -10,11 +10,9 @@
  */
 
 $templates = array( 'search.twig', 'archive.twig', 'index.twig' );
-$context = Timber::get_context();
+$context = Timber::context();
 
 $context['title'] = 'Search results for: '. get_search_query();
-$collection = new Timber\PostQuery();
-$context['posts'] = $collection;
-$context['pagination'] = $collection->pagination();
+$context['posts'] = Timber::get_posts();
 
 Timber::render( $templates, $context );

@@ -9,8 +9,8 @@
  */
 
 
-$context = Timber::get_context();
-$post = new TimberPost();
+$context = Timber::context();
+$post = Timber::get_post();
 $context['post'] = $post;
 
 $home_post = array(

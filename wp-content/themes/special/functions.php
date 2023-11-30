@@ -1,11 +1,8 @@
 <?php
 
-if ( ! class_exists( 'Timber' ) ) {
-	add_action( 'admin_notices', function() {
-			echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php' ) ) . '</a></p></div>';
-		} );
-	return;
-}
+require_once __DIR__ . '/vendor/autoload.php';
+
+Timber\Timber::init();
 
 Timber::$dirname = array('views');
 
@@ -283,18 +280,19 @@ add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 // Custom template tags for this theme
 require get_template_directory() . '/template-tags.php';
 
-class StarterSite extends TimberSite {
+
+class StarterSite extends Timber\Site  {
 
 	function __construct() {
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
-		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
-		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
+		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
+		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 		parent::__construct();
 	}
 
 	function add_to_context( $context ) {
-		$context['menu'] = new TimberMenu();
+		$context['menu'] = Timber::get_menu();
     $context['site'] = $this;
     $context['is_home'] = is_front_page();
     $context['current_page'] = home_url($_SERVER['REQUEST_URI']);
@@ -306,9 +304,8 @@ class StarterSite extends TimberSite {
 		return $context;
 	}
 
-	function add_to_twig( $twig ) {
-		/* this is where you can add your own fuctions to twig */
-		$twig->addExtension( new Twig_Extension_StringLoader() );
+	public function add_to_twig( $twig ) {
+		$twig->addExtension( new Twig\Extension\StringLoaderExtension() );
 		return $twig;
 	}
 
