@@ -92,24 +92,26 @@ function special_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts',  __NAMESPACE__ . '\special_scripts'  );
+add_action( 'wp_enqueue_scripts',  'special_scripts'  );
 
 /**
  * Filter multiple scripts to add type=“module”.
  */
-add_filter('script_loader_tag', __NAMESPACE__ . '\add_type_to_js_scripts', 10, 3);
+add_filter('script_loader_tag', 'add_type_to_js_scripts', 10, 3);
+
 function add_type_to_js_scripts($tag, $handle, $source){
   // Add main js file and all modules to the array.
   $theme_handles = array(
     'scripts',
     'prism',
       );
-    // Loop through the array and filter the tag.
-	  foreach($theme_handles as $theme_handle) {
-		if ($theme_handle === $handle) {
-			return $tag = '<script src="'. esc_url($source).'" type="module"></script>';
-		}
-	 }
+  // Loop through the array and filter the tag.
+  foreach($theme_handles as $theme_handle) {
+    if ($theme_handle === $handle) {
+      return $tag = '<script src="'. esc_url($source).'" type="module"></script>';
+    }
+  }
+  return $tag;
 }
 
 add_action(
