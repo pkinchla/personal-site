@@ -3,8 +3,8 @@
     <a class="h3" href="{{ post.link }}">{{ post.title }}</a>
   <time
     class="sans-regular-italic"
-    datetime="{{post.date|date('c')}}"
-    >{{post.date|date('l, F jS, Y')}}</time
+    datetime="{{post.date('c')}}"
+    >{{post.date('l, F jS, Y')}}</time
   >
   {% endblock %}
 </div>

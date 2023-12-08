@@ -1,6 +1,6 @@
 <div class="sans-regular-italic">
-  Posted on <time datetime="{{post.date|date('c')}}">{{post.date|date('l, F jS, Y')}}</time> | 
-  Last Updated on <time datetime="{{post.modified_date|date('c')}}">{{post.modified_date|date('l, F jS, Y')}}</time>
+  Posted on <time datetime="{{post.date('c')}}">{{post.date('l, F jS, Y')}}</time> | 
+  Last Updated on <time datetime="{{post.modified_date('c')}}">{{post.modified_date('l, F jS, Y')}}</time>
   <span class="author vcard">
     by 
     <a class="url fn n" href="{{post.author.link}}">{{post.author.name}}</a>
