@@ -1,23 +1,42 @@
-<!doctype html>
-<html class="no-js {{theme_class}}" {{site.language_attributes}}>
-<head>
-  <meta charset="{{site.charset}}" />
-  <title>
-    {% if wp_title %}
+<!DOCTYPE html>
+<html class="no-js {{ theme_class }}" {{site.language_attributes}}>
+  <head>
+    <meta charset="{{ site.charset }}" />
+    <title>
+      {% if wp_title %}
       {{ wp_title }}
-    {% else %}
+      {% else %}
       {{ site.name }}
-    {% endif %}
-  </title>  
-  <meta name="msapplication-TileColor" content="#0B2F2F">
-  <meta name="theme-color" content="#0B2F2F"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="view-transition" content="same-origin" />
-  <link rel="profile" href="//gmpg.org/xfn/11">
-  <link rel="pingback" href="{{site.pingback_url}}" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="shortcut icon" href="{{ theme.link }}/favicon.ico" type="image/x-icon" />
-  <link rel="manifest" href="/manifest.json" />
-  <meta name="google-site-verification" content="NgzPbjF9JgfD5TItR2dFVwE70g0CN2XOMSnfNgstCtM" />
-  <meta name="robots" content="noai, noimageai">
-  {{function('wp_head')}}
+      {% endif %}
+    </title>
+    <link
+      rel="preload"
+      href="/typefaces/tome-sans-variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <meta name="msapplication-TileColor" content="#0B2F2F" />
+    <meta name="theme-color" content="#0B2F2F" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="view-transition" content="same-origin" />
+    <link rel="profile" href="//gmpg.org/xfn/11" />
+    <link rel="pingback" href="{{ site.pingback_url }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link
+      rel="shortcut icon"
+      href="{{ theme.link }}/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <meta
+      name="google-site-verification"
+      content="NgzPbjF9JgfD5TItR2dFVwE70g0CN2XOMSnfNgstCtM"
+    />
+    <meta name="robots" content="noai, noimageai" />
+    {{
+      function('wp_head')
+    }}
+  </head>
+</html>
+
