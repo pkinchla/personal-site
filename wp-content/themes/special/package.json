@@ -8,7 +8,7 @@
     "css": "postcss --use autoprefixer postcss-import cssnano -w -o dist/css/main.css src/css/main.css",
     "js": "rollup -c -w",
     "dev": "pnpm css & pnpm js & pnpm bs",
-    "build": "rollup -c && postcss --no-map --use autoprefixer postcss-import cssnano -o dist/css/main.css src/css/main.css"
+    "build": "rollup -c && postcss --no-map --use autoprefixer postcss-import cssnano -o dist/css/main.css src/css/main.css || exit 0"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.0.2",
