@@ -1,3 +1,6 @@
+import { fromEvent } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+
 import { addEventListenerMulti } from './utils';
 
 function fontSettings() {
@@ -36,7 +39,7 @@ function fontSettings() {
             </svg>
           </span>          
         </button>
-        <input pattern="[0-9]*" id="number" type="number" min="100" max="900" step="100" maxlength="3" name="wght-bold" value=${defaultWght} />
+        <input pattern="[0-9]*" id="number" type="number" min="100" max="900" step="100" name="wght-bold" value=${defaultWght} />
         <button class="increment">
           <span class='assistive-text'>increment font weight</span>
           <span aria-hidden="true">
@@ -86,9 +89,28 @@ function fontSettings() {
   for (const input of inputs) {
     addEventListenerMulti(input, 'change input', function (e) {
       const target = e.target as HTMLInputElement;
+      if (target.type === 'number') {
+        return;
+      }
       updateFontWeight(target.value);
     });
   }
+
+  const number$ = fromEvent(numberInput, 'input').pipe(
+    map((e) => {
+      const target = e.target as HTMLInputElement;
+      if (target.value.length > 3) {
+        target.value = target.value.slice(0, 3);
+      }
+
+      return target.value;
+    }),
+    distinctUntilChanged()
+  );
+
+  number$
+    .pipe(debounceTime(300))
+    .subscribe((value: string) => updateFontWeight(value));
 
   const updateFontWeight = (value: string) => {
     document.documentElement.style.setProperty('--variable-wght-bold', value);
