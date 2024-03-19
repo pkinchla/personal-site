@@ -1,4 +1,4 @@
-name: 'Deploy'
+name: "Deploy"
 on:
   push:
     branches:
@@ -27,6 +27,7 @@ jobs:
           ~/.local/share/pnpm/pnpm i &&
           ~/.local/share/pnpm/pnpm run build &&
           chown -R www-data:www-data /var/www/* && 
+          rm -rf node_modules &&
           exit"
       - name: clear cloudflare cache
         run: |
