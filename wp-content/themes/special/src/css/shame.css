@@ -55,11 +55,11 @@
 }
 
 .action {
+  background: none;
+  color: rgb(var(--primary));
   width: max-content;
   border-radius: var(--radius);
   text-decoration: none;
-  background: none;
-  color: rgb(var(--primary));
 }
 
 .action,
@@ -74,18 +74,18 @@
 }
 
 .action:hover {
-  color: rgb(var(--body-background));
   background: rgb(var(--primary));
+  color: rgb(var(--body-background));
 }
 
 a.action:hover {
-  color: rgb(var(--body-background));
   background: rgb(var(--link));
+  color: rgb(var(--body-background));
 }
 
 a.action:hover:visited {
-  color: rgb(var(--body-background));
   background: rgb(var(--visited));
+  color: rgb(var(--body-background));
 }
 
 .action:focus {

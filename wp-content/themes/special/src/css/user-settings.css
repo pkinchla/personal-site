@@ -82,16 +82,16 @@ footer fieldset input[type='range']::-moz-range-thumb {
 }
 
 fieldset.font-settings input[type='number'] {
-  appearance: textfield;
+  display: inline-block;
   background: transparent;
   color: rgb(var(--primary));
-  display: inline-block;
+  width: 4em;
+  appearance: textfield;
   border: 0.125em solid rgb(var(--secondary));
   border-inline-end: none;
   border-inline-start: none;
   outline-color: rgb(var(--secondary));
   text-align: center;
-  width: 4em;
 }
 
 fieldset.font-settings input[type='number']::-webkit-inner-spin-button,
