@@ -1,7 +1,7 @@
 .pagination {
   width: 100%;
   padding: 0 1em;
-  border-block-end: 0.125em solid rgb(var(--secondary));
+  border-block-end: 0.125em solid var(--secondary);
   margin-block-end: 3em;
   text-align: center;
 }
@@ -28,7 +28,7 @@
   height: 0;
   border: solid transparent;
   border-width: 0.625em;
-  border-block-end-color: rgb(var(--secondary));
+  border-block-end-color: var(--secondary);
   margin-inline-start: -0.625em;
   content: '';
   pointer-events: none;

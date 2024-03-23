@@ -13,7 +13,7 @@
 /* .resume interior styling */
 .resume {
   padding: 5%;
-  border: 0.0625em solid rgb(var(--primary));
+  border: 0.0625em solid var(--primary);
 }
 
 .resume p {
@@ -48,7 +48,7 @@
 .resume dt {
   font-size: 1.5em;
   margin: 1.5em 0 0.5em;
-  border-block-end: 0.0625rem solid rgb(var(--primary));
+  border-block-end: 0.0625rem solid var(--primary);
 }
 
 .resume dd > div {

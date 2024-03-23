@@ -11,36 +11,101 @@
   --variable-slant: -10;
 
   /* base colors overrides in color-scheme */
-  --body-background: 241, 241, 241;
-  --primary: 56, 34, 11;
-  --secondary: 20, 63, 64;
-  --link: 0, 0, 238;
-  --active: 238, 0, 0;
-  --visited: 85, 26, 139;
-
-  /* error handling */
-  --error-color: var(--active);
+  --body-background: #f1f1f1;
+  --primary: #38220b;
+  --secondary: #143f40;
+  --link: #00e;
+  --active: #e00;
+  --visited: #551a8b;
 
   /* base measurements */
   --radius: 0.33em;
   --radius-2: 0.66em;
-  --long-shadow: -0.03125rem 0.03125rem 0 rgb(var(--secondary)),
-    -0.0625rem 0.0625rem 0 rgb(var(--secondary)),
-    -0.09375rem 0.09375rem 0 rgb(var(--secondary)),
-    -0.125rem 0.125rem 0 rgb(var(--secondary)),
-    -0.15625rem 0.15625rem 0 rgb(var(--secondary)),
-    -0.1875rem 0.1875rem 0 rgb(var(--secondary)),
-    -0.21875rem 0.21875rem 0 rgb(var(--secondary)),
-    -0.25rem 0.25rem 0 rgb(var(--secondary)),
-    -0.28125rem 0.28125rem 0 rgb(var(--secondary)),
-    -0.3125rem 0.3125rem 0 rgb(var(--secondary)),
-    -0.34375rem 0.34375rem 0 rgb(var(--secondary)),
-    -0.375rem 0.375rem 0 rgb(var(--secondary));
-
+  --long-shadow: -0.03125rem 0.03125rem 0 var(--secondary),
+    -0.0625rem 0.0625rem 0 var(--secondary),
+    -0.09375rem 0.09375rem 0 var(--secondary),
+    -0.125rem 0.125rem 0 var(--secondary),
+    -0.15625rem 0.15625rem 0 var(--secondary),
+    -0.1875rem 0.1875rem 0 var(--secondary),
+    -0.21875rem 0.21875rem 0 var(--secondary),
+    -0.25rem 0.25rem 0 var(--secondary),
+    -0.28125rem 0.28125rem 0 var(--secondary),
+    -0.3125rem 0.3125rem 0 var(--secondary),
+    -0.34375rem 0.34375rem 0 var(--secondary),
+    -0.375rem 0.375rem 0 var(--secondary);
   --transition: 0.35s ease-in-out;
 
   /* speedlify rank colors */
-  --score-good: 6, 107, 55;
-  --score-ok: 186, 76, 3;
-  --score-bad: 209, 0, 0;
+  --score-good: #066b37;
+  --score-ok: #ba4c03;
+  --score-bad: #d10000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root.no-js {
+    --body-background: #1b2127;
+    --primary: #f1f1f1;
+    --secondary: #acacac;
+    --link: #00bfff;
+    --active: #ff8a8a;
+    --visited: #bc75ff;
+    --score-good: #6ab68f;
+    --score-ok: #ffc866;
+    --score-bad: #ff948d;
+  }
+}
+
+:root.dark-mode {
+  --body-background: #1b2127;
+  --primary: #f1f1f1;
+  --secondary: #acacac;
+  --link: #00bfff;
+  --active: #ff8a8a;
+  --visited: #bc75ff;
+  --score-good: #6ab68f;
+  --score-ok: #ffc866;
+  --score-bad: #ff948d;
+}
+
+@media (color-gamut: p3) {
+  :root {
+    /* base colors overrides in color-scheme */
+    --body-background: oklch(95.81% 0 0);
+    --primary: oklch(27.48% 0.049 64.33);
+    --secondary: oklch(33.87% 0.047 197.33);
+    --link: oklch(42.9% 0.297278 264.052021);
+    --active: oklch(59.6% 0.244572 29.233885);
+    --visited: oklch(37.84% 0.172 302.15);
+
+    /* speedlify rank colors */
+    --score-good: oklch(46.35% 0.118 152.78);
+    --score-ok: oklch(55.42% 0.158 44.8);
+    --score-bad: oklch(54.05% 0.221786 29.233885);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root.no-js {
+      --body-background: oklch(24.44% 0.014 248.42);
+      --primary: oklch(95.81% 0 0);
+      --secondary: oklch(74.44% 0 0);
+      --link: oklch(75.54% 0.153 231.64);
+      --active: oklch(76.15% 0.142 20.94);
+      --visited: oklch(69.64% 0.201922 305.539504);
+      --score-good: oklch(71.59% 0.096 160.29);
+      --score-ok: oklch(86.3% 0.131 79.98);
+      --score-bad: oklch(77.77% 0.129982 24.457499);
+    }
+  }
+
+  :root.dark-mode {
+    --body-background: oklch(24.44% 0.014 248.42);
+    --primary: oklch(95.81% 0 0);
+    --secondary: oklch(74.44% 0 0);
+    --link: oklch(75.54% 0.153 231.64);
+    --active: oklch(76.15% 0.142 20.94);
+    --visited: oklch(69.64% 0.201922 305.539504);
+    --score-good: oklch(71.59% 0.096 160.29);
+    --score-ok: oklch(86.3% 0.131 79.98);
+    --score-bad: oklch(77.77% 0.129982 24.457499);
+  }
 }

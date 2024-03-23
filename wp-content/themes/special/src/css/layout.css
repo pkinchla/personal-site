@@ -76,7 +76,7 @@
     }
 
     .site > main {
-      border: 0.0625em solid rgb(var(--secondary));
+      border: 0.0625em solid var(--secondary);
       grid-area: main;
       border-radius: var(--radius);
     }
@@ -92,7 +92,7 @@
 
   @media only screen and (min-width: 133.75em) {
     .site {
-      border-inline-start: 0.0625em solid rgb(var(--secondary));
+      border-inline-start: 0.0625em solid var(--secondary);
     }
   }
 }

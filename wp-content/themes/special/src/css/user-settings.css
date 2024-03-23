@@ -4,7 +4,7 @@ footer fieldset {
   background: transparent;
   padding: 0;
   flex-wrap: wrap;
-  border: 0.125em solid rgb(var(--secondary));
+  border: 0.125em solid var(--secondary);
   margin-block-end: 1.5em;
   border-radius: var(--radius);
 }
@@ -44,18 +44,18 @@ footer fieldset input[type='range'] {
   margin-inline-start: 0.5em;
   margin-inline-end: 0.5em;
   appearance: none;
-  outline-color: rgb(var(--secondary));
+  outline-color: var(--secondary);
   outline-width: 0.125em;
 }
 
 footer fieldset input[type='range']::-webkit-slider-runnable-track {
-  background-color: rgb(var(--secondary));
+  background-color: var(--secondary);
   border-radius: 0.5em;
   height: 0.375em;
 }
 
 footer fieldset input[type='range']::-moz-range-track {
-  background-color: rgb(var(--secondary));
+  background-color: var(--secondary);
   border-radius: 0.5em;
   height: 0.375em;
 }
@@ -66,8 +66,8 @@ footer fieldset input[type='range']::-webkit-slider-thumb {
   height: 1.25em;
   border-radius: 50%;
   appearance: none;
-  border: 0.125em solid rgb(var(--secondary));
-  background-color: rgb(var(--body-background));
+  border: 0.125em solid var(--secondary);
+  background-color: var(--body-background);
   margin-block-start: -0.45em;
   z-index: 5;
 }
@@ -77,20 +77,20 @@ footer fieldset input[type='range']::-moz-range-thumb {
   height: 1.25em;
   border-radius: 50%;
   appearance: none;
-  border: 0.125em solid rgb(var(--secondary));
-  background-color: rgb(var(--body-background));
+  border: 0.125em solid var(--secondary);
+  background-color: var(--body-background);
 }
 
 fieldset.font-settings input[type='number'] {
   display: inline-block;
   background: transparent;
-  color: rgb(var(--primary));
+  color: var(--primary);
   width: 4em;
   appearance: textfield;
-  border: 0.125em solid rgb(var(--secondary));
+  border: 0.125em solid var(--secondary);
   border-inline-end: none;
   border-inline-start: none;
-  outline-color: rgb(var(--secondary));
+  outline-color: var(--secondary);
   text-align: center;
 }
 
@@ -122,12 +122,12 @@ footer fieldset span {
   display: flex;
   appearance: none;
   background: transparent;
-  color: rgb(var(--secondary));
+  color: var(--secondary);
   align-items: center;
   justify-content: center;
   padding: 0.55em;
   border-color: currentcolor;
-  border: 0.125em solid rgb(var(--secondary));
+  border: 0.125em solid var(--secondary);
 }
 
 .number button svg {
@@ -156,7 +156,7 @@ footer fieldset span:not(:last-of-type) {
   }
 
   fieldset.color-theme-switcher label {
-    border: 0.125em solid rgb(var(--secondary));
+    border: 0.125em solid var(--secondary);
     margin-inline-end: 0.25em;
   }
 }
@@ -168,23 +168,23 @@ fieldset.color-theme-switcher label {
   margin: -0.0625em;
   align-items: center;
   border: 0.125em solid transparent;
-  border-block-start: 0.125em solid rgb(var(--secondary));
+  border-block-start: 0.125em solid var(--secondary);
   margin-block-start: 0.5em;
   cursor: pointer;
 }
 
 fieldset.color-theme-switcher label:not(:last-of-type) {
-  border-inline-end: 0.125em solid rgb(var(--secondary));
+  border-inline-end: 0.125em solid var(--secondary);
 }
 
 footer fieldset input[type='radio']:focus + label {
   border: 0.125em solid currentcolor;
-  border-block-start: 0.125em solid rgb(var(--secondary));
+  border-block-start: 0.125em solid var(--secondary);
 }
 
 footer fieldset input[type='radio']:checked + label {
-  background: rgb(var(--secondary));
-  color: rgb(var(--body-background));
+  background: var(--secondary);
+  color: var(--body-background);
 }
 
 fieldset.color-theme-switcher

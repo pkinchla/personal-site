@@ -7,7 +7,7 @@
 .skip-link:focus {
   inset-inline-start: 0;
   top: 0;
-  background: rgb(var(--body-background));
+  background: var(--body-background);
   text-align: center;
 }
 
@@ -20,7 +20,7 @@
 
 .photo-feed {
   display: grid;
-  background: rgb(var(--secondary));
+  background: var(--secondary);
   grid-gap: 0.1875em;
   grid-template-columns: repeat(auto-fill, minmax(7.8125em, 1fr));
   border-radius: var(--radius);
@@ -31,7 +31,7 @@
   display: inline-block;
   position: relative;
   max-width: 7.8125em;
-  box-shadow: 0 0 0 0.1875em rgb(var(--body-background));
+  box-shadow: 0 0 0 0.1875em var(--body-background);
 }
 
 @supports (display: grid) {
@@ -56,7 +56,7 @@
 
 .action {
   background: none;
-  color: rgb(var(--primary));
+  color: var(--primary);
   width: max-content;
   border-radius: var(--radius);
   text-decoration: none;
@@ -74,18 +74,18 @@
 }
 
 .action:hover {
-  background: rgb(var(--primary));
-  color: rgb(var(--body-background));
+  background: var(--primary);
+  color: var(--body-background);
 }
 
 a.action:hover {
-  background: rgb(var(--link));
-  color: rgb(var(--body-background));
+  background: var(--link);
+  color: var(--body-background);
 }
 
 a.action:hover:visited {
-  background: rgb(var(--visited));
-  color: rgb(var(--body-background));
+  background: var(--visited);
+  color: var(--body-background);
 }
 
 .action:focus {
@@ -115,7 +115,7 @@ form {
   display: inline-flex;
   flex-wrap: wrap;
   padding: 1em;
-  border: 0.125em solid rgb(var(--secondary));
+  border: 0.125em solid var(--secondary);
   margin-block-end: 1.5em;
   border-radius: var(--radius);
 }
@@ -126,24 +126,24 @@ input[type='submit'],
 textarea {
   padding: 0.5rem 0.75rem;
   border-radius: var(--radius);
-  border: 0.125rem solid rgb(var(--primary));
-  outline-color: rgb(var(--secondary));
-  background: rgb(var(--body-background));
-  color: rgb(var(--primary));
+  border: 0.125rem solid var(--primary);
+  outline-color: var(--secondary);
+  background: var(--body-background);
+  color: var(--primary);
 }
 
 input[type='radio'],
 input[type='checkbox'] {
-  color: rgb(var(--secondary));
+  color: var(--secondary);
   border-radius: var(--radius);
-  accent-color: rgb(var(--secondary));
+  accent-color: var(--secondary);
   width: 1.15em;
   height: 1.15em;
   vertical-align: sub;
 }
 
 input::placeholder {
-  color: rgb(var(--primary));
+  color: var(--primary);
   opacity: 0.75;
 }
 
@@ -167,7 +167,7 @@ form:focus-within {
 main > article > div > footer {
   font-size: 0.95em;
   padding: 1em;
-  border: 0.0625rem solid rgb(var(--secondary));
+  border: 0.0625rem solid var(--secondary);
   margin-block-end: 3em;
   border-radius: var(--radius);
 }
@@ -190,7 +190,7 @@ main > article > div > footer span {
   align-items: center;
   justify-content: center;
   padding: 1em 0;
-  border-block-end: 0.0625em solid rgb(var(--secondary));
+  border-block-end: 0.0625em solid var(--secondary);
   margin-block-end: 3em;
   gap: 1em;
 }
@@ -207,8 +207,8 @@ main > article > div > footer span {
 
 .comment-body {
   padding: 0.75em;
-  border-block-start: 0.0625rem solid rgb(var(--secondary));
-  border-inline-start: 0.0625rem solid rgb(var(--secondary));
+  border-block-start: 0.0625rem solid var(--secondary);
+  border-inline-start: 0.0625rem solid var(--secondary);
   border-start-start-radius: var(--radius);
 }
 
@@ -332,7 +332,7 @@ main > article > div .comment-author img,
 
 .content-grid > figure,
 .content-grid > .wp-block-image figure {
-  border: 0.0625em solid rgb(var(--secondary));
+  border: 0.0625em solid var(--secondary);
   border-radius: var(--radius);
   overflow: hidden;
 }

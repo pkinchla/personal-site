@@ -1,7 +1,7 @@
 .site > footer {
   bottom: 0;
   padding: 3rem 2rem;
-  border: 0.0625rem solid rgb(var(--secondary));
+  border: 0.0625rem solid var(--secondary);
   border-radius: var(--radius);
 }
 
@@ -56,15 +56,15 @@
   border-width: 0.125em;
   font-variation-settings: 'wght' var(--variable-wght-bold),
     'slnt' var(--variable-slant);
-  color: rgb(var(--score-good));
+  color: var(--score-good);
 }
 
 .site .speedlify-score-ok {
-  color: rgb(var(--score-ok));
+  color: var(--score-ok);
 }
 
 .site .speedlify-score-bad {
-  color: rgb(var(--score-bad));
+  color: var(--score-bad);
 }
 
 .site .speedlify-rank-change {
@@ -74,11 +74,11 @@
 }
 
 .site .speedlify-rank-change.up {
-  color: rgb(var(--score-good));
+  color: var(--score-good);
 }
 
 .site .speedlify-rank-change.down {
-  color: rgb(var(--score-bad));
+  color: var(--score-bad);
 }
 
 .site .speedlify-rank-change.up::before {

@@ -7,8 +7,8 @@
 body {
   font-family: var(--font-serif);
   font-size: clamp(1rem, 0.125rem + 1.1vw, 1.25rem);
-  background: rgb(var(--body-background));
-  color: rgb(var(--primary));
+  background: var(--body-background);
+  color: var(--primary);
 }
 
 /* Strong Text Shadow for headings */
@@ -28,7 +28,7 @@ h6,
   font-family: var(--font-sans-serif);
   font-variation-settings: 'wght' var(--variable-wght-bold);
   display: block;
-  color: rgb(var(--secondary));
+  color: var(--secondary);
   margin-block-end: 0.35em;
   transition: font-variation-settings var(--transition);
 }
@@ -38,7 +38,7 @@ h6,
   font-family: var(--font-sans-serif);
   font-weight: normal;
   font-size: 2.625em;
-  color: rgb(var(--secondary));
+  color: var(--secondary);
 }
 
 h1,
@@ -109,7 +109,7 @@ blockquote::before {
   position: absolute;
   left: -0.75em;
   top: 0;
-  background: rgb(var(--primary));
+  background: var(--primary);
   width: 0.125rem;
   height: 100%;
   content: '';
@@ -135,7 +135,7 @@ figcaption {
   font-family: var(--font-sans-serif);
   font-variation-settings: 'slnt' var(--variable-slant);
   padding: 0.5em 0.75em;
-  border-block-start: 0.0625em solid rgb(var(--secondary));
+  border-block-start: 0.0625em solid var(--secondary);
 }
 
 /* font helper utilities */
