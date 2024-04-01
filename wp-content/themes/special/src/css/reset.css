@@ -31,6 +31,7 @@ ol[role='list'] {
 /* Set core root defaults */
 html {
   text-size-adjust: none;
+  scrollbar-color: var(--secondary) var(--body-background);
 }
 
 /* Set core body defaults */
