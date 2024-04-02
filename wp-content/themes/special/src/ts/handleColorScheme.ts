@@ -1,15 +1,18 @@
-import { getCookie } from "./utils";
+import { getCookie } from './utils';
 
 function handleColorScheme() {
   if (window.matchMedia('(prefers-color-scheme)').media === 'not all') {
     return;
   }
 
+  const one_year = 60 * 60 * 24 * 365;
+  const setThemeCookie = (color_scheme: string) =>
+    `color_scheme=${color_scheme}; path=/; max-age=${one_year}; samesite=strict; secure;`;
+
   const initialValueColorScheme = getCookie('color_scheme');
 
-
   if (!initialValueColorScheme) {
-    document.cookie = "color_scheme=system; Path=/; Secure";
+    document.cookie = setThemeCookie('system');
   }
 
   const mediaQueryColorScheme = window.matchMedia(
@@ -26,19 +29,19 @@ function handleColorScheme() {
       case 'dark':
         htmlEl.classList.add('dark-mode');
         if (userToggle) {
-          document.cookie = "color_scheme=dark; Path=/; Secure";
+          document.cookie = setThemeCookie('dark');
         }
         break;
       case 'light':
         htmlEl.classList.remove('dark-mode');
         if (userToggle) {
-          document.cookie = "color_scheme=light; Path=/; Secure";
+          document.cookie = setThemeCookie('light');
         }
         break;
       default:
         handleChange(matchesDark(mediaQueryColorScheme.matches));
         if (userToggle) {
-          document.cookie = "color_scheme=system; Path=/; Secure";
+          document.cookie = setThemeCookie('system');
         }
     }
   };
@@ -47,11 +50,7 @@ function handleColorScheme() {
 
   mediaQueryColorScheme.addEventListener('change', function (e) {
     const setColorScheme = getCookie('color_scheme');
-    if (
-      setColorScheme === 'dark' ||
-      setColorScheme === 'light'
-    )
-      return;
+    if (setColorScheme === 'dark' || setColorScheme === 'light') return;
     handleChange(matchesDark(e.matches));
   });
 
@@ -78,7 +77,7 @@ function handleColorScheme() {
 
   for (const input of inputs) {
     const setColorScheme = getCookie('color_scheme');
-    
+
     if (input.value === setColorScheme) {
       input.checked = true;
     }
@@ -88,7 +87,6 @@ function handleColorScheme() {
       handleChange(target.value, true);
     });
   }
-
 }
 
 export default handleColorScheme;
