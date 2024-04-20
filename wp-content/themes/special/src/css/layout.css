@@ -79,6 +79,9 @@
       border: 0.0625em solid var(--secondary);
       grid-area: main;
       border-radius: var(--radius);
+      border-start-start-radius: 0;
+      border-block-start: 0;
+      border-start-end-radius: 0;
     }
 
     .site > *:not(main) {
