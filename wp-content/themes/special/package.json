@@ -34,6 +34,6 @@
   },
   "dependencies": {
     "rxjs": "^7.8.1",
-    "speedlify-score": "^4.0.4"
+    "speedlify-score": "^3.0.0"
   }
 }
