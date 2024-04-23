@@ -41,8 +41,7 @@ footer fieldset input[type='range'] {
   background: transparent;
   max-width: 6em;
   margin-block-start: 0.175em;
-  margin-inline-start: 0.5em;
-  margin-inline-end: 0.5em;
+  margin-inline: 0.5em 0.5em;
   appearance: none;
   outline-color: var(--secondary);
   outline-width: 0.125em;

@@ -70,42 +70,42 @@
 @media (color-gamut: p3) {
   :root {
     /* base colors overrides in color-scheme */
-    --body-background: oklch(95.81% 0 0);
-    --primary: oklch(27.48% 0.049 64.33);
-    --secondary: oklch(33.87% 0.047 197.33);
-    --link: oklch(42.9% 0.297278 264.052021);
-    --active: oklch(59.6% 0.244572 29.233885);
-    --visited: oklch(37.84% 0.172 302.15);
+    --body-background: oklch(95.81% 0 0deg);
+    --primary: oklch(27.48% 0.049 64.33deg);
+    --secondary: oklch(33.87% 0.047 197.33deg);
+    --link: oklch(42.9% 0.297278 264.052021deg);
+    --active: oklch(59.6% 0.244572 29.233885deg);
+    --visited: oklch(37.84% 0.172 302.15deg);
 
     /* speedlify rank colors */
-    --score-good: oklch(46.35% 0.118 152.78);
-    --score-ok: oklch(55.42% 0.158 44.8);
-    --score-bad: oklch(54.05% 0.221786 29.233885);
+    --score-good: oklch(46.35% 0.118 152.78deg);
+    --score-ok: oklch(55.42% 0.158 44.8deg);
+    --score-bad: oklch(54.05% 0.221786 29.233885deg);
   }
 
   @media (prefers-color-scheme: dark) {
     :root.no-js {
-      --body-background: oklch(24.44% 0.014 248.42);
-      --primary: oklch(95.81% 0 0);
-      --secondary: oklch(74.44% 0 0);
-      --link: oklch(75.54% 0.153 231.64);
-      --active: oklch(76.15% 0.142 20.94);
-      --visited: oklch(69.64% 0.201922 305.539504);
-      --score-good: oklch(71.59% 0.096 160.29);
-      --score-ok: oklch(86.3% 0.131 79.98);
-      --score-bad: oklch(77.77% 0.129982 24.457499);
+      --body-background: oklch(24.44% 0.014 248.42deg);
+      --primary: oklch(95.81% 0 0deg);
+      --secondary: oklch(74.44% 0 0deg);
+      --link: oklch(75.54% 0.153 231.64deg);
+      --active: oklch(76.15% 0.142 20.94deg);
+      --visited: oklch(69.64% 0.201922 305.539504deg);
+      --score-good: oklch(71.59% 0.096 160.29deg);
+      --score-ok: oklch(86.3% 0.131 79.98deg);
+      --score-bad: oklch(77.77% 0.129982 24.457499deg);
     }
   }
 
   :root.dark-mode {
-    --body-background: oklch(24.44% 0.014 248.42);
-    --primary: oklch(95.81% 0 0);
-    --secondary: oklch(74.44% 0 0);
-    --link: oklch(75.54% 0.153 231.64);
-    --active: oklch(76.15% 0.142 20.94);
-    --visited: oklch(69.64% 0.201922 305.539504);
-    --score-good: oklch(71.59% 0.096 160.29);
-    --score-ok: oklch(86.3% 0.131 79.98);
-    --score-bad: oklch(77.77% 0.129982 24.457499);
+    --body-background: oklch(24.44% 0.014 248.42deg);
+    --primary: oklch(95.81% 0 0deg);
+    --secondary: oklch(74.44% 0 0deg);
+    --link: oklch(75.54% 0.153 231.64deg);
+    --active: oklch(76.15% 0.142 20.94deg);
+    --visited: oklch(69.64% 0.201922 305.539504deg);
+    --score-good: oklch(71.59% 0.096 160.29deg);
+    --score-ok: oklch(86.3% 0.131 79.98deg);
+    --score-bad: oklch(77.77% 0.129982 24.457499deg);
   }
 }

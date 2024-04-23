@@ -1,10 +1,6 @@
 {
-  "plugins": [
-    "stylelint-order"
-  ],
-  "extends": [
-    "stylelint-config-standard"
-  ],
+  "plugins": ["stylelint-order"],
+  "extends": ["stylelint-config-standard"],
   "rules": {
     "color-no-invalid-hex": true,
     "media-feature-range-notation": null,
@@ -17,7 +13,8 @@
       "vh",
       "vw",
       "ms",
-      "s"
+      "s",
+      "deg"
     ],
     "order/properties-order": [
       "font-family",
@@ -49,3 +46,4 @@
     "number-max-precision": 6
   }
 }
+

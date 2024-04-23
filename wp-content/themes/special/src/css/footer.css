@@ -52,11 +52,18 @@
   margin-block-start: 0.25em;
 }
 
+.site speedlify-score {
+  flex-wrap: wrap;
+  gap: 0.25em;
+}
+
 .site .speedlify-score {
   border-width: 0.125em;
-  font-variation-settings: 'wght' var(--variable-wght-bold),
+  font-variation-settings:
+    'wght' var(--variable-wght-bold),
     'slnt' var(--variable-slant);
   color: var(--score-good);
+  margin: 0;
 }
 
 .site .speedlify-score-ok {
@@ -68,7 +75,8 @@
 }
 
 .site .speedlify-rank-change {
-  font-variation-settings: 'wght' var(--variable-wght-bold),
+  font-variation-settings:
+    'wght' var(--variable-wght-bold),
     'slnt' var(--variable-slant);
   border-block-end: 0.125em solid currentcolor;
 }

@@ -105,10 +105,8 @@
 
     .site > header > a {
       width: 100%;
-      padding-block-start: 1em;
-      padding-block-end: 1em;
-      padding-inline-start: 4em;
-      padding-inline-end: 1em;
+      padding-block: 1em 1em;
+      padding-inline: 4em 1em;
       margin-block-end: 1em;
     }
 
@@ -142,10 +140,8 @@
     .site > header > nav a {
       font-size: 1.15em;
       width: 100%;
-      padding-block-start: 0.2em;
-      padding-block-end: 0.3em;
-      padding-inline-start: 6em;
-      padding-inline-end: 0;
+      padding-block: 0.2em 0.3em;
+      padding-inline: 6em 0;
     }
 
     /* end nav */

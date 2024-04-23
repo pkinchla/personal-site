@@ -256,8 +256,8 @@ main > article > div .comment-author img,
 @media only screen and (min-width: 28.125em) {
   .post-template-default dl {
     display: grid;
-    padding-inline-start: 1em;
     padding-block-end: 1em;
+    padding-inline-start: 1em;
     border-inline-start: 0.125em solid var(--secondary);
     border-block-end: 0.125em solid var(--secondary);
     border-end-start-radius: var(--radius);

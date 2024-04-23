@@ -14,8 +14,7 @@
 
 .toc summary {
   color: var(--secondary);
-  padding-block-start: 0.5rem;
-  padding-block-end: 0.5rem;
+  padding-block: 0.5rem 0.5rem;
   padding-inline-start: 0.5rem;
   outline-offset: 0;
 }
@@ -32,8 +31,7 @@
 }
 
 .toc ol li {
-  padding-block-start: 0.25rem;
-  padding-block-end: 0.25rem;
+  padding-block: 0.25rem 0.25rem;
 }
 
 .back-to-toc {
