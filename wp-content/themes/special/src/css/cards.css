@@ -38,7 +38,5 @@
 .project span {
   font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
-  font-variation-settings:
-    'wght' var(--variable-wght-med),
-    'slnt' var(--variable-slant);
+  font-variation-settings: 'slnt' var(--variable-slant);
 }
