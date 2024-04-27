@@ -7,6 +7,18 @@
   padding: 0 0.25rem;
 }
 
+.card time {
+  font-variation-settings:
+    'wght' var(--variable-wght-med),
+    'slnt' var(--variable-slant);
+  display: block;
+}
+
+.card span {
+  font-size: 0.9em;
+  display: inline-block;
+}
+
 .project {
   margin-block-end: 1.5em;
 }
@@ -26,5 +38,7 @@
 .project span {
   font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
-  font-variation-settings: 'slnt' var(--variable-slant);
+  font-variation-settings:
+    'wght' var(--variable-wght-med),
+    'slnt' var(--variable-slant);
 }

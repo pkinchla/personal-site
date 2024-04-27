@@ -51,7 +51,8 @@ h2,
 .h2 {
   font-size: 1.875em;
   font-style: italic;
-  font-variation-settings: 'wght' var(--variable-wght-bold),
+  font-variation-settings:
+    'wght' var(--variable-wght-bold),
     'slnt' var(--variable-slant);
   line-height: 1.2;
 }
@@ -101,7 +102,7 @@ blockquote {
   font-family: var(--font-sans-serif);
   position: relative;
   margin-block-end: 1.5em;
-  quotes: '\201C''\201D''\2018''\2019';
+  quotes: '\201C' '\201D' '\2018' '\2019';
 }
 
 blockquote::before {
@@ -163,7 +164,8 @@ figcaption {
   font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
   font-weight: bold;
-  font-variation-settings: 'wght' var(--variable-wght-bold),
+  font-variation-settings:
+    'wght' var(--variable-wght-bold),
     'slnt' var(--variable-slant);
   transition: font-variation-settings var(--transition);
 }
