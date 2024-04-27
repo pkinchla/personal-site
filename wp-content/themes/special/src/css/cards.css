@@ -8,13 +8,13 @@
 }
 
 .card time {
-  font-variation-settings:
-    'wght' var(--variable-wght-med),
-    'slnt' var(--variable-slant);
   display: block;
 }
 
 .card span {
+  font-variation-settings:
+    'wght' var(--variable-wght-med),
+    'slnt' var(--variable-slant);
   font-size: 0.9em;
   display: inline-block;
 }
