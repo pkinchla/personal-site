@@ -10,8 +10,9 @@
 }
 
 .hero-grid header {
-  padding: 0 2rem;
+  width: fit-content;
   margin-block-end: 1.5em;
+  padding: 0 2rem;
 }
 
 .hero-grid header.no-hero {
