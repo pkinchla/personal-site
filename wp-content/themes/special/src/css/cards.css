@@ -14,9 +14,6 @@
 
 .card span {
   font-size: 0.9em;
-  font-variation-settings:
-    'wght' var(--variable-wght-med),
-    'slnt' var(--variable-slant);
   display: inline-block;
 }
 
