@@ -2,7 +2,7 @@
 <article id="post-{{ post.ID }}">
   <header>
     <h1 class="assistive-text">Home Page</h1>
-    <span class="assistive-text"> {% include 'byline-page.twig' %} </span>
+    <div class="assistive-text"> {% include 'byline-page.twig' %} </div>
   </header>
   <figure
     class="hero{{ post.meta('toggle_image_filter') ? ' no-filter' : '' }}"
