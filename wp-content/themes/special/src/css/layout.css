@@ -30,6 +30,11 @@
   margin-block-end: 1.5em;
 }
 
+.hero-grid + .content-grid {
+  position: static;
+  z-index: 3;
+}
+
 @supports (display: grid) {
   @media only screen and (min-width: 48em) {
     .content-grid {
