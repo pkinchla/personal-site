@@ -31,7 +31,7 @@
 }
 
 .hero-grid + .content-grid {
-  position: static;
+  position: relative;
   z-index: 3;
 }
 
