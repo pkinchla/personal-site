@@ -249,7 +249,8 @@ main > article > div .comment-author img,
 
 .post-template-default dt {
   font-family: var(--font-sans-serif);
-  font-variation-settings: 'wght' var(--variable-wght-bold),
+  font-variation-settings:
+    'wght' var(--variable-wght-bold),
     'slnt' var(--variable-slant);
 }
 
@@ -342,9 +343,4 @@ main > article > div .comment-author img,
 
 .wp-block-image {
   margin-block-end: 1.5em;
-}
-
-header,
-.card {
-  view-transition-name: var(--transition-name);
 }
