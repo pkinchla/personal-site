@@ -3,7 +3,7 @@
 {% block content %}
   <article id="post-{{post.ID}}">
     <div class="hero-grid">
-      <header>
+      <header style='--transition-name: {{ post.slug }}'>
         <h1>
           {{post.title}}
           {% if page_number %}
