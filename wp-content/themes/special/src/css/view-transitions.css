@@ -4,6 +4,14 @@
   navigation: auto;
 }
 
+@media (prefers-reduced-motion) {
+  /* stylelint-disable-next-line at-rule-no-unknown */
+  @view-transition {
+    /* stylelint-disable-next-line property-no-unknown */
+    navigation: none;
+  }
+}
+
 header,
 .card {
   view-transition-name: var(--transition-name);
