@@ -25,8 +25,6 @@ footer fieldset.font-settings legend {
 
 fieldset.font-settings {
   padding: 0.5em 1em 1em;
-  gap: 1em;
-  max-width: calc(100vw - 6em);
 }
 
 footer fieldset:focus-within {
@@ -103,7 +101,7 @@ footer fieldset span {
   position: relative;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.5em;
+  gap: 0.75em;
 }
 
 .number {
