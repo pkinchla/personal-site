@@ -39,7 +39,7 @@
   display: inline-block;
   position: absolute;
   inset-inline-start: 50%;
-  bottom: 20%;
+  bottom: 22.5%;
   background: var(--body-background);
   z-index: 2;
   line-height: 1;

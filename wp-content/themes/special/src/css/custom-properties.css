@@ -1,6 +1,6 @@
 :root {
   /* base typography */
-  --font-sans-serif: 'Tome Sans Variable', -apple-system, blinkmacsystemfont,
+  --font-sans-serif: 'Proxima Vara', -apple-system, blinkmacsystemfont,
     'Segoe UI', roboto, helvetica, arial, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol';
   --font-serif: georgia, 'Times New Roman', times, serif;
@@ -8,7 +8,7 @@
   --variable-wght-bold: 606;
   --variable-wght-med: 550;
   --variable-wght-reg: 400;
-  --variable-slant: -10;
+  --variable-italic: 125;
 
   /* base colors overrides in color-scheme */
   --body-background: #f1f1f1;

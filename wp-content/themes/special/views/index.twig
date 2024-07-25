@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  {% for post in posts %}
-    {% include ['card-'~post.post_type~'.twig', 'card.twig'] %}
-  {% endfor %}
+	{% for post in posts %}
+		{% include ['card-'~post.post_type~'.twig', 'card.twig'] %}
+	{% endfor %}
 {% endblock %}

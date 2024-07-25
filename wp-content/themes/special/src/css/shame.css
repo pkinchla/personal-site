@@ -218,7 +218,7 @@ main > article > div > footer span {
 
 .comment-meta {
   font-size: 0.95em;
-  font-variation-settings: 'slnt' var(--variable-slant);
+  font-variation-settings: 'ital' var(--variable-italic);
   margin-block-end: 0.5em;
 }
 
@@ -251,7 +251,7 @@ main > article > div .comment-author img,
   font-family: var(--font-sans-serif);
   font-variation-settings:
     'wght' var(--variable-wght-bold),
-    'slnt' var(--variable-slant);
+    'ital' var(--variable-italic);
 }
 
 @media only screen and (min-width: 28.125em) {

@@ -1,7 +1,7 @@
 @font-face {
   font-display: swap;
-  font-family: 'Tome Sans Variable';
-  src: url('/typefaces/tome-sans-variable.woff2') format('woff2-variations');
+  font-family: 'Proxima Vara';
+  src: url('/typefaces/ProximaVara-Roman.woff2') format('woff2-variations');
 }
 
 body {
@@ -53,7 +53,7 @@ h2,
   font-style: italic;
   font-variation-settings:
     'wght' var(--variable-wght-bold),
-    'slnt' var(--variable-slant);
+    'ital' var(--variable-italic);
   line-height: 1.2;
 }
 
@@ -86,7 +86,7 @@ cite,
 em {
   font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
-  font-variation-settings: 'slnt' var(--variable-slant);
+  font-variation-settings: 'ital' var(--variable-italic);
 }
 
 strong {
@@ -126,7 +126,7 @@ blockquote p:first-of-type {
 }
 
 blockquote cite {
-  font-variation-settings: 'slnt' var(--variable-slant);
+  font-variation-settings: 'ital' var(--variable-italic);
   display: block;
   margin-block-start: 0.5em;
 }
@@ -134,7 +134,7 @@ blockquote cite {
 figcaption {
   font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
-  font-variation-settings: 'slnt' var(--variable-slant);
+  font-variation-settings: 'ital' var(--variable-italic);
   padding: 0.5em 0.75em;
   border-block-start: 0.0625em solid var(--secondary);
 }
@@ -149,7 +149,7 @@ figcaption {
 .sans-regular-italic {
   font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
-  font-variation-settings: 'slnt' var(--variable-slant);
+  font-variation-settings: 'ital' var(--variable-italic);
 }
 
 .sans-bold {
@@ -166,7 +166,7 @@ figcaption {
   font-weight: bold;
   font-variation-settings:
     'wght' var(--variable-wght-bold),
-    'slnt' var(--variable-slant);
+    'ital' var(--variable-italic);
   transition: font-variation-settings var(--transition);
 }
 
