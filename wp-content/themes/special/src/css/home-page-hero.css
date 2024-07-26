@@ -56,6 +56,10 @@
 a.jump-link {
   opacity: 1;
   transition: all var(--transition);
+
+  @starting-style {
+    opacity: 0;
+  }
 }
 
 a.jump-link.hidden {
