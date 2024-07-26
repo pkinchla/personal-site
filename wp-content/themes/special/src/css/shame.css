@@ -55,11 +55,19 @@
 }
 
 .action {
+  display: inline-flex;
+  align-items: center;
   background: none;
   color: var(--primary);
   width: max-content;
   border-radius: var(--radius);
   text-decoration: none;
+  gap: 0.5em;
+
+  span {
+    font-size: 1.5em;
+    line-height: 1;
+  }
 }
 
 .action,

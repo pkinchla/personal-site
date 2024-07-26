@@ -17,7 +17,7 @@
 }
 
 .home article > figure > span::after,
-.home article > figure a::after {
+.home article > figure > a::after {
   display: inline-block;
   position: absolute;
   inset-inline-start: 0;
@@ -30,27 +30,32 @@
   opacity: 0.35;
 }
 
-.home article > figure a::after {
-  border-radius: var(--radius);
-}
-
 .home article > figure a {
-  font-size: 2em;
+  font-size: 3em;
   display: inline-block;
   position: absolute;
-  inset-inline-start: 50%;
-  bottom: 22.5%;
+  bottom: 20%;
   background: var(--body-background);
+  text-align: center;
+  inset-inline-start: 50%;
   z-index: 2;
   line-height: 1;
   transform: translateX(-50%);
   border-radius: var(--radius);
+  width: 1em;
+  border-bottom: 0.095em solid currentcolor;
+  text-decoration: none;
+  overflow: hidden;
+
+  &:hover {
+    border-bottom: 0;
+  }
 }
 
 /* may change */
 a.jump-link {
   opacity: 1;
-  transition: all 0.35s ease-in-out;
+  transition: all var(--transition);
 }
 
 a.jump-link.hidden {
@@ -66,11 +71,11 @@ a.jump-link.hidden:focus {
 }
 
 @media only screen and (min-width: 48em) {
-  .home article > figure span {
+  .home article > figure > span {
     font-size: 3em;
   }
 
   .home article > figure a {
-    font-size: 1em;
+    bottom: 25%;
   }
 }
