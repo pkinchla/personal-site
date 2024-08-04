@@ -66,7 +66,7 @@ function special_entry_footer() {
     echo '</span>';
   }
 
-  edit_post_link( __( 'Edit', 'special' ), ' <span class="sans-bold-italic">', '</span>' );
+  edit_post_link( __( 'Edit', 'special' ), ' <span class="sans-medium-italic">', '</span>' );
 }
 endif;
 

@@ -30,7 +30,7 @@ $nav_args = array(
 
 $post_nav = get_the_post_navigation($nav_args);
 $post_nav = str_replace('"screen-reader-text"', '"assistive-text"', $post_nav);
-$post_nav = str_replace('"navigation post-navigation"', '"navigation post-navigation sans-bold-italic"', $post_nav);
+$post_nav = str_replace('"navigation post-navigation"', '"navigation post-navigation sans-medium-italic"', $post_nav);
 $post->post_nav = $post_nav;
 $post->reading_time = estimated_reading_time($post->post_content);
 $post->toc = createTOC($post->post_content);

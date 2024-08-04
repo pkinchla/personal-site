@@ -9,12 +9,10 @@
  */
 code[class*='language-'],
 pre[class*='language-'] {
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 0.925em;
+  font-family: var(--font-mono);
   background: none;
   color: #545454;
   hyphens: none;
-  line-height: 1.5;
   tab-size: 4;
   text-align: left;
   white-space: pre;

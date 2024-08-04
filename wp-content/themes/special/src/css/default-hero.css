@@ -21,7 +21,6 @@
 
 .hero-grid header h1 span {
   font-size: 0.5em;
-  font-variation-settings: 'wght' var(--variable-wght-bold);
 }
 
 .hero-grid header > div {

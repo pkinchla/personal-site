@@ -20,10 +20,10 @@ export default class FontSettingsControl extends HTMLElement {
     }
 
     this.innerHTML = `
-    <fieldset class="font-settings sans-bold-italic">
+    <fieldset class="font-settings sans-medium-italic">
       <legend>Font Weight</legend>
       <span>
-        <label for="range">Bold Sans-serif</label>
+        <label for="range">Headings</label>
         <input type="range" id="range" name="wght-bold" min="100" max="900" value=${this.defaultWght}>
         <label for="number" class="assistive-text">Bold Sans-serif</label>
         <span class="number">

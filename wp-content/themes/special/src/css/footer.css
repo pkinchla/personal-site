@@ -60,7 +60,7 @@
 .site .speedlify-score {
   border-width: 0.125em;
   font-variation-settings:
-    'wght' var(--variable-wght-bold),
+    'wght' var(--variable-wght-med),
     'ital' var(--variable-italic);
   color: var(--score-good);
   margin: 0;
@@ -76,7 +76,7 @@
 
 .site .speedlify-rank-change {
   font-variation-settings:
-    'wght' var(--variable-wght-bold),
+    'wght' var(--variable-wght-med),
     'ital' var(--variable-italic);
   border-block-end: 0.125em solid currentcolor;
 }

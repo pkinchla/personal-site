@@ -1,9 +1,17 @@
+/* stylelint-disable keyframe-block-no-duplicate-selectors */
 .home article > figure {
+  display: grid;
   margin-block-end: 1.5em;
+
+  picture {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+  }
 }
 
 .home article > figure > span {
   font-size: 2em;
+  position: relative;
   position: absolute;
   right: 48%;
   top: 40%;
@@ -33,23 +41,59 @@
 .home article > figure a {
   font-size: 3em;
   display: inline-block;
-  position: absolute;
+  position: relative;
+  grid-row: 1;
+  grid-column: 1;
+  place-self: flex-end center;
   bottom: 20%;
   background: var(--body-background);
+  width: 1em;
   text-align: center;
-  inset-inline-start: 50%;
   z-index: 2;
   line-height: 1;
-  transform: translateX(-50%);
   border-radius: var(--radius);
-  width: 1em;
   border-bottom: 0.095em solid currentcolor;
   text-decoration: none;
   overflow: hidden;
 
   &:hover {
-    border-bottom: 0;
+    animation: bounce 1s ease-in-out;
   }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  53%,
+  100% {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -1rem, 0) scaleY(1.1);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -0.5rem, 0) scaleY(1.05);
+  }
+
+  80% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0) scaleY(0.95);
+  }
+
+  90% {
+    transform: translate3d(0, -0.25rem, 0) scaleY(1.02);
+  }
+}
+
+.bounce {
+  animation-name: bounce;
+  transform-origin: center bottom;
 }
 
 /* may change */

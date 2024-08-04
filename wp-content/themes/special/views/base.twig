@@ -1,34 +1,31 @@
-  {% block html_head_container %}
+{% block html_head_container %}
 
-  {% include 'html-header.twig' %}
-    {% block head %}
-    {% endblock %}
-    </head>
-  {% endblock %}
+	{% include 'html-header.twig' %}
+	{% block head %}{% endblock %}
+</head>{% endblock %}<body class="{{body_class}}" data-template="base.twig">
+<div id="page" class="hfeed site">
+	<a class="assistive-text no-offset sans-medium-italic skip-link" href="#content">Skip To Content</a>
+	{% block header %}
+		<header id="masthead" class="sans-medium-italic">
+			{% include 'site-logo.twig' %}
+			<nav id="site-navigation">
+				{% include "menu.twig" with {'menu': menu.get_items} %}
+			</nav>
+			<!-- #site-navigation -->
+		</header>
+		<!-- #masthead -->
+	{% endblock %}
 
-  <body class="{{body_class}}" data-template="base.twig">
-    <div id="page" class="hfeed site">
-      <a class="assistive-text no-offset sans-bold-italic skip-link" href="#content">Skip To Content</a>
-      {% block header %}
-      <header id="masthead" class="sans-bold-italic">
-        {% include 'site-logo.twig' %}
-        <nav id="site-navigation">
-          {% include "menu.twig" with {'menu': menu.get_items} %}
-        </nav><!-- #site-navigation -->
-      </header><!-- #masthead -->
-      {% endblock %}
+	<main id="content" tabindex="-1"> {% block content %}{% endblock %}
+		</main>
+		<!-- #content -->
 
-      <main id="content" tabindex="-1">
-        {% block content %}
-        {% endblock %}
-      </main><!-- #content -->
-
-      {% block footer %}
-        <footer class="content-grid">
-          {% include 'footer.twig' %}
-        </footer>
-        {{ function('wp_footer') }}
-      {% endblock %}
-    </div><!-- #page -->
-  </body>
-</html>
+		{% block footer %}
+			<footer class="content-grid">
+				{% include 'footer.twig' %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+	</div>
+	<!-- #page -->
+</body></html>

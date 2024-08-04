@@ -180,10 +180,6 @@ main > article > div > footer {
   border-radius: var(--radius);
 }
 
-main > article > div > footer span {
-  display: inline-block;
-}
-
 @supports (display: grid) {
   @media only screen and (min-width: 48em) {
     .post-navigation {
@@ -220,10 +216,6 @@ main > article > div > footer span {
   border-start-start-radius: var(--radius);
 }
 
-.comments p {
-  font-family: var(--font-serif);
-}
-
 .comment-meta {
   font-size: 0.95em;
   font-variation-settings: 'ital' var(--variable-italic);
@@ -237,7 +229,7 @@ main > article > div .comment-author img,
 }
 
 .comment-author cite {
-  font-weight: 700;
+  font-variation-settings: 'wght' var(--variable-wght-med);
   display: inline-block;
   margin: 0 0.25em;
   vertical-align: middle;
@@ -258,7 +250,7 @@ main > article > div .comment-author img,
 .post-template-default dt {
   font-family: var(--font-sans-serif);
   font-variation-settings:
-    'wght' var(--variable-wght-bold),
+    'wght' var(--variable-wght-med),
     'ital' var(--variable-italic);
 }
 
@@ -340,6 +332,10 @@ main > article > div .comment-author img,
       grid-row: 1;
     }
   }
+}
+
+.post-type-post {
+  font-size-adjust: 0.5;
 }
 
 .content-grid > figure,

@@ -1,26 +1,27 @@
-<div class="sans-bold-italic pagination{{posts.pagination.prev.link|length == 0 and posts.pagination.next.link|length == 0 ? ' no-results' : ''}}">
-  {% if posts.pagination.prev %}
-    <a href="{{posts.pagination.prev.link}}"
-       class="no-offset {{posts.pagination.prev.link|length ? '' : 'invisible'}}">
-       Prev <span class="assistive-text">Page</span>
-    </a>
-  {% endif %}
-  {% for page in posts.pagination.pages %}
-    {% if page.link %}
-      <a class="no-offset" href="{{page.link}}">
-       <span class="assistive-text">Page</span> {{page.title}}
-    </a>
-    {% else %}
-      <span class="{{page.class}}">
-       <span class="assistive-text">Page</span> {{page.title}}
-    </span>
-    {% endif %}
-  {% endfor %}
-  {% if posts.pagination.next %}
-    <a
-      href="{{posts.pagination.next.link}}"
-      class="no-offset {{posts.pagination.next.link|length ? '' : 'invisible'}}">
-      Next <span class="assistive-text">Page</span>
-    </a>
-  {% endif %}
+<div class="sans-medium-italic pagination{{posts.pagination.prev.link|length == 0 and posts.pagination.next.link|length == 0 ? ' no-results' : ''}}">
+	{% if posts.pagination.prev %}
+		<a href="{{posts.pagination.prev.link}}" class="no-offset {{posts.pagination.prev.link|length ? '' : 'invisible'}}">
+			Prev
+			<span class="assistive-text">Page</span>
+		</a>
+	{% endif %}
+	{% for page in posts.pagination.pages %}
+		{% if page.link %}
+			<a class="no-offset" href="{{page.link}}">
+				<span class="assistive-text">Page</span>
+				{{page.title}}
+			</a>
+		{% else %}
+			<span class="{{page.class}}">
+				<span class="assistive-text">Page</span>
+				{{page.title}}
+			</span>
+		{% endif %}
+	{% endfor %}
+	{% if posts.pagination.next %}
+		<a href="{{posts.pagination.next.link}}" class="no-offset {{posts.pagination.next.link|length ? '' : 'invisible'}}">
+			Next
+			<span class="assistive-text">Page</span>
+		</a>
+	{% endif %}
 </div>

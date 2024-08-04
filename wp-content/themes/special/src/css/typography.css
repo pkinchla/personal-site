@@ -4,9 +4,23 @@
   src: url('/typefaces/ProximaVara-Roman.woff2') format('woff2-variations');
 }
 
+@font-face {
+  font-display: swap;
+  font-family: Cooper;
+  src: url('/typefaces/Cooper[wght].woff2') format('woff2-variations');
+  font-style: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Cooper;
+  src: url('/typefaces/Cooper-Italic[wght].woff2') format('woff2-variations');
+  font-style: italic;
+}
+
 body {
-  font-family: var(--font-serif);
-  font-size: clamp(1rem, 0.125rem + 1.1vw, 1.25rem);
+  font-family: var(--font-sans-serif);
+  font-size: clamp(1rem, 0.125rem + 1.1vw, 1.35rem);
   background: var(--body-background);
   color: var(--primary);
 }
@@ -24,8 +38,7 @@ h5,
 .h5,
 h6,
 .h6 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-family: var(--font-sans-serif);
+  font-family: var(--font-serif);
   font-variation-settings: 'wght' var(--variable-wght-bold);
   display: block;
   color: var(--secondary);
@@ -34,8 +47,7 @@ h6,
 }
 
 .editor-post-title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-family: var(--font-sans-serif);
+  font-family: var(--font-serif);
   font-weight: normal;
   font-size: 2.625em;
   color: var(--secondary);
@@ -43,29 +55,26 @@ h6,
 
 h1,
 .h1 {
-  font-size: 2.625em;
+  font-size: 2.825em;
   line-height: 1.1;
 }
 
 h2,
 .h2 {
-  font-size: 1.875em;
+  font-size: 2.075em;
   font-style: italic;
-  font-variation-settings:
-    'wght' var(--variable-wght-bold),
-    'ital' var(--variable-italic);
   line-height: 1.2;
 }
 
 h3,
 .h3 {
-  font-size: 1.5em;
+  font-size: 1.7em;
   line-height: 1.3;
 }
 
 h4,
 .h4 {
-  font-size: 1.15em;
+  font-size: 1.35em;
   line-height: 1.3;
 }
 
@@ -84,21 +93,17 @@ p {
 
 cite,
 em {
-  font-family: Arial, Helvetica, sans-serif;
-  font-family: var(--font-sans-serif);
   font-variation-settings: 'ital' var(--variable-italic);
 }
 
 strong {
-  font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
   font-weight: bold;
-  font-variation-settings: 'wght' var(--variable-wght-bold);
+  font-variation-settings: 'wght' var(--variable-wght-med);
   transition: font-variation-settings var(--transition);
 }
 
 blockquote {
-  font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
   position: relative;
   margin-block-end: 1.5em;
@@ -132,7 +137,6 @@ blockquote cite {
 }
 
 figcaption {
-  font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
   font-variation-settings: 'ital' var(--variable-italic);
   padding: 0.5em 0.75em;
@@ -141,31 +145,27 @@ figcaption {
 
 /* font helper utilities */
 .sans-regular {
-  font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
   font-variation-settings: 'wght' var(--variable-wght-reg);
 }
 
 .sans-regular-italic {
-  font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
   font-variation-settings: 'ital' var(--variable-italic);
 }
 
-.sans-bold {
-  font-family: Arial, Helvetica, sans-serif;
+.sans-medium {
   font-family: var(--font-sans-serif);
   font-weight: bold;
-  font-variation-settings: 'wght' var(--variable-wght-bold);
+  font-variation-settings: 'wght' var(--variable-wght-med);
   transition: font-variation-settings var(--transition);
 }
 
-.sans-bold-italic {
-  font-family: Arial, Helvetica, sans-serif;
+.sans-medium-italic {
   font-family: var(--font-sans-serif);
   font-weight: bold;
   font-variation-settings:
-    'wght' var(--variable-wght-bold),
+    'wght' var(--variable-wght-med),
     'ital' var(--variable-italic);
   transition: font-variation-settings var(--transition);
 }
@@ -174,8 +174,7 @@ figcaption {
 @supports (font-variation-settings: normal) {
   cite,
   em,
-  .sans-bold-italic,
-  h2 {
+  .sans-bold-italic {
     font-style: normal;
   }
 

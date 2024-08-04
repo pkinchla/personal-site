@@ -22,7 +22,6 @@
 }
 
 .project > a {
-  font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
   font-size: 1.25em;
   font-variation-settings: 'wght' var(--variable-wght-med);
@@ -34,7 +33,6 @@
 }
 
 .project span {
-  font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-sans-serif);
   font-variation-settings: 'ital' var(--variable-italic);
 }

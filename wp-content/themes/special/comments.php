@@ -70,7 +70,7 @@ if ( post_password_required() ) {
 
   <?php
     $args = array(
-      'class_submit' => 'sans-bold-italic action border'
+      'class_submit' => 'sans-medium-italic action border'
     );
     comment_form($args);
   ?>

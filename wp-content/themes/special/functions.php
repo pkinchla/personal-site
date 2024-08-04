@@ -223,10 +223,10 @@ add_action( 'wp_enqueue_scripts', function() {
  // Comment form: Add placeholder to comment field
 function alter_commment_form( $defaults ) {
 
-    $defaults['fields']['author'] = '<p class="comment-form-author"><label class="sans-bold-italic" for="author">Name <span class="required" aria-hidden="true">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>';
-    $defaults['fields']['email'] = '<p class="comment-form-email"><label class="sans-bold-italic" for="email">Email <span class="required" aria-hidden="true">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>';
-    $defaults['fields']['url'] = '<p class="comment-form-url"><label class="sans-bold-italic" for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>';
-    $defaults['comment_field'] = '<p class="comment-form-comment"><label class="sans-bold-italic" for="comment">Comment <span class="required" aria-hidden="true">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>';
+    $defaults['fields']['author'] = '<p class="comment-form-author"><label class="sans-medium-italic" for="author">Name <span class="required" aria-hidden="true">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>';
+    $defaults['fields']['email'] = '<p class="comment-form-email"><label class="sans-medium-italic" for="email">Email <span class="required" aria-hidden="true">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>';
+    $defaults['fields']['url'] = '<p class="comment-form-url"><label class="sans-medium-italic" for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>';
+    $defaults['comment_field'] = '<p class="comment-form-comment"><label class="sans-medium-italic" for="comment">Comment <span class="required" aria-hidden="true">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>';
 
     return $defaults;
 }

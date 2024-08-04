@@ -21,7 +21,7 @@ export default class ColorSchemeSwitcher extends HTMLElement {
     });
 
     this.innerHTML = `
-      <fieldset class="color-theme-switcher sans-bold-italic">
+      <fieldset class="color-theme-switcher sans-medium-italic">
         <legend>Color Scheme</legend>
         <input class="assistive-text" type="radio" id="system" name="color-scheme" value="system">
         <label for="system">System</label>
