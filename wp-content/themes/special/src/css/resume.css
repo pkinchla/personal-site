@@ -16,15 +16,6 @@
   border: 0.0625em solid var(--primary);
 }
 
-.resume p {
-  font-family: var(--font-serif);
-  font-size: 0.9em;
-}
-
-.resume time {
-  font-size: 0.85em;
-}
-
 .resume a {
   display: block;
   max-width: max-content;
@@ -104,7 +95,7 @@
     }
 
     .resume p {
-      max-width: 65%;
+      max-width: 70%;
       margin: 0;
     }
   }
