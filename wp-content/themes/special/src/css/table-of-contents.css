@@ -1,10 +1,8 @@
 .toc {
-  position: static;
-  top: 0.1875rem;
   background: var(--body-background);
-  margin-block-end: 1rem;
+  margin-block: 0.1875em 1rem;
   border-block-end: 0.125em solid var(--secondary);
-  z-index: 2;
+  scroll-margin-top: 0.35rem;
 }
 
 .toc[open],
@@ -14,16 +12,34 @@
 
 .toc summary {
   color: var(--secondary);
-  padding-block: 0.5rem 0.5rem;
   padding-inline-start: 0.5rem;
+  padding-block: 0.5rem 0.5rem;
   outline-offset: 0;
 }
 
 .toc nav {
-  padding: 1rem;
   margin-block-start: 0.75rem;
+  padding: 1rem;
   border: 0.125em solid var(--secondary);
   border-radius: var(--radius-2);
+  view-transition-name: slide;
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+/* stylelint-disable-next-line selector-type-no-unknown */
+::view-transition-old(slide) {
+  animation: 300ms ease-in reverse forwards slide;
+  animation-delay: -250ms;
+}
+/* stylelint-disable-next-line selector-type-no-unknown */
+::view-transition-new(slide) {
+  animation: 300ms ease-out forwards slide;
+  animation-delay: -200ms;
 }
 
 .toc ol {

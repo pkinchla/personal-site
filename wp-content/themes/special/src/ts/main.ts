@@ -1,7 +1,7 @@
 import observeHero from './observeHero';
 import invokeServiceWorker from './invokeServiceWorker';
 import checkJSLoaded from './checkJSLoaded';
-import observeTOC from './observeTOC';
+import observeTableOfContents from './observeTableOfContents';
 import ColorSchemeSwitcher from './colorSchemeSwitcher';
 import FontSettingsControl from './fontSettingsControl';
 import 'speedlify-score/speedlify-score.js';
@@ -13,7 +13,7 @@ function scripts() {
     invokeServiceWorker(),
     ColorSchemeSwitcher.init(),
     FontSettingsControl.init(),
-    observeTOC()
+    observeTableOfContents()
   );
 }
 
