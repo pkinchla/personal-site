@@ -1,4 +1,5 @@
-footer fieldset {
+font-settings fieldset,
+color-theme-switcher fieldset {
   display: inline-flex;
   position: relative;
   background: transparent;
@@ -13,29 +14,32 @@ fieldset.color-theme-switcher {
   margin-inline-end: 1.5em;
 }
 
-footer fieldset legend {
+font-settings fieldset legend,
+color-theme-switcher fieldset legend {
   padding: 0 0.25em;
   margin: 0 0.5em 0 0.75em;
 }
 
-footer fieldset.font-settings legend {
+font-settings fieldset legend {
   margin: 0;
   margin-inline-start: -0.125em;
 }
 
-fieldset.font-settings {
+font-settings fieldset {
   padding: 0.5em 1em 1em;
 }
 
-footer fieldset:focus-within {
+font-settings fieldset:focus-within,
+color-theme-switcher fieldset:focus-within {
   box-shadow: var(--long-shadow);
 }
 
-footer fieldset input[type='radio'] {
+color-theme-switcher fieldset input[type='radio'],
+font-settings fieldset fieldset input[type='radio'] {
   opacity: 0;
 }
 
-footer fieldset input[type='range'] {
+font-settings fieldset input[type='range'] {
   background: transparent;
   max-width: 6em;
   margin-block-start: 0.175em;
@@ -45,19 +49,19 @@ footer fieldset input[type='range'] {
   outline-width: 0.125em;
 }
 
-footer fieldset input[type='range']::-webkit-slider-runnable-track {
+font-settings fieldset input[type='range']::-webkit-slider-runnable-track {
   background-color: var(--secondary);
   border-radius: 0.5em;
   height: 0.375em;
 }
 
-footer fieldset input[type='range']::-moz-range-track {
+font-settings fieldset input[type='range']::-moz-range-track {
   background-color: var(--secondary);
   border-radius: 0.5em;
   height: 0.375em;
 }
 
-footer fieldset input[type='range']::-webkit-slider-thumb {
+font-settings fieldset input[type='range']::-webkit-slider-thumb {
   position: relative;
   width: 1.25em;
   height: 1.25em;
@@ -69,7 +73,7 @@ footer fieldset input[type='range']::-webkit-slider-thumb {
   z-index: 5;
 }
 
-footer fieldset input[type='range']::-moz-range-thumb {
+font-settings fieldset input[type='range']::-moz-range-thumb {
   width: 1.25em;
   height: 1.25em;
   border-radius: 50%;
@@ -96,7 +100,8 @@ fieldset.font-settings input[type='number']::-webkit-outer-spin-button {
   appearance: none;
 }
 
-footer fieldset span {
+font-settings fieldset span,
+color-theme-switcher fieldset span {
   display: flex;
   position: relative;
   flex-wrap: wrap;
@@ -143,7 +148,8 @@ footer fieldset span {
   border-start-end-radius: var(--radius);
 }
 
-footer fieldset span:not(:last-of-type) {
+font-settings fieldset span:not(:last-of-type),
+color-theme-switcher fieldset span:not(:last-of-type) {
   padding-inline-end: 0;
 }
 
@@ -174,12 +180,12 @@ fieldset.color-theme-switcher label:not(:last-of-type) {
   border-inline-end: 0.125em solid var(--secondary);
 }
 
-footer fieldset input[type='radio']:focus + label {
+color-theme-switcher fieldset input[type='radio']:focus + label {
   border: 0.125em solid currentcolor;
   border-block-start: 0.125em solid var(--secondary);
 }
 
-footer fieldset input[type='radio']:checked + label {
+color-theme-switcher fieldset input[type='radio']:checked + label {
   background: var(--secondary);
   color: var(--body-background);
 }

@@ -3,14 +3,36 @@
 	{% include 'html-header.twig' %}
 	{% block head %}{% endblock %}
 </head>{% endblock %}<body class="{{body_class}}" data-template="base.twig">
+
 <div id="page" class="hfeed site">
 	<a class="assistive-text no-offset sans-medium-italic skip-link" href="#content">Skip To Content</a>
 	{% block header %}
 		<header id="masthead" class="sans-medium-italic">
+
+			<button class="toggle-user-settings open" popovertarget="site-settings">
+				<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 -960 960 960"><path d="M427-120v-225h60v83h353v60H487v82h-60Zm-307-82v-60h247v60H120Zm187-166v-82H120v-60h187v-84h60v226h-60Zm120-82v-60h413v60H427Zm166-165v-225h60v82h187v60H653v83h-60Zm-473-83v-60h413v60H120Z"/></svg>
+				<span class="assistive-text">Close Site Settings</span>
+			</button>
+			<div popover class="site-settings" id="site-settings">
+				<button class="toggle-user-settings close" popovertarget="site-settings">
+					<svg
+						xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100">
+						<!-- Generator: Adobe Illustrator 28.6.0, SVG Export Plug-In . SVG Version: 1.2.0 Build 709)  -->
+						<line class="cls-1" x1="22.5" y1="77.5" x2="77.5" y2="22.5"/>
+						<line class="cls-1" x1="77.5" y1="77.5" x2="22.5" y2="22.5"/>
+					</svg>
+					<span class="assistive-text">Close Site Settings</span>
+				</button>
+				<color-theme-switcher></color-theme-switcher>
+				<div class="h2">Sample</div>
+				<font-settings></font-settings>
+			</div>
+
 			{% include 'site-logo.twig' %}
 			<nav id="site-navigation">
 				{% include "menu.twig" with {'menu': menu.get_items} %}
 			</nav>
+
 			<!-- #site-navigation -->
 		</header>
 		<!-- #masthead -->

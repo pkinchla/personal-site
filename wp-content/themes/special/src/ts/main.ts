@@ -4,6 +4,7 @@ import checkJSLoaded from './checkJSLoaded';
 import observeTableOfContents from './observeTableOfContents';
 import ColorSchemeSwitcher from './colorSchemeSwitcher';
 import FontSettingsControl from './fontSettingsControl';
+import siteSettingsOverlay from './siteSettingsOverlay';
 import 'speedlify-score/speedlify-score.js';
 
 function scripts() {
@@ -13,7 +14,8 @@ function scripts() {
     invokeServiceWorker(),
     ColorSchemeSwitcher.init(),
     FontSettingsControl.init(),
-    observeTableOfContents()
+    observeTableOfContents(),
+    siteSettingsOverlay()
   );
 }
 

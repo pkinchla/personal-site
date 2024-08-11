@@ -12,7 +12,7 @@
 
 .toc summary {
   color: var(--secondary);
-  padding-inline-start: 0.5rem;
+  padding-inline-start: 1rem;
   padding-block: 0.5rem 0.5rem;
   outline-offset: 0;
 }

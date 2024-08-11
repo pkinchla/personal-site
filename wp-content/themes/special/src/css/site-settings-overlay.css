@@ -1,0 +1,78 @@
+.site-settings[popover] {
+  margin: 0;
+  inline-size: calc(100vi - 1em);
+  inset-inline-start: 0.5em;
+  inset-block-start: 0.5em;
+  background: var(--body-background);
+  border: 0.125em solid var(--secondary);
+  border-radius: var(--radius);
+  view-transition-name: slidein;
+  color: var(--secondary);
+  padding: 1em;
+
+  @media only screen and (min-width: 48em) {
+    inline-size: calc(50vi - 1em);
+  }
+}
+
+.toggle-user-settings {
+  display: inline-flex;
+  position: absolute;
+  background-color: var(--body-background);
+  width: 3em;
+  height: 3em;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  border: 0.1875em solid var(--secondary);
+  outline-color: var(--secondary);
+  z-index: 3;
+
+  svg {
+    width: 2em;
+    height: 2em;
+    fill: var(--secondary);
+  }
+
+  &.open {
+    inset-block-end: -4em;
+    inset-inline-start: 1em;
+
+    @media only screen and (min-width: 48em) {
+      :inset-block-end: unset;
+      inset-block-start: 1em;
+    }
+  }
+
+  &.close {
+    inset-block-start: 1em;
+    inset-inline-end: 1em;
+
+    svg {
+      stroke: var(--secondary);
+      stroke-linecap: round;
+      stroke-miterlimit: 10;
+      stroke-width: 0.5625em;
+    }
+  }
+}
+
+.no-js .toggle-user-settings {
+  display: none;
+}
+
+@keyframes slidein {
+  from {
+    translate: -100vi;
+  }
+}
+
+/* stylelint-disable-next-line selector-type-no-unknown */
+::view-transition-old(slidein) {
+  animation: 0.4s ease-in reverse forwards slidein;
+}
+
+/* stylelint-disable-next-line selector-type-no-unknown */
+::view-transition-new(slidein) {
+  animation: 0.4s ease-out forwards slidein;
+}
