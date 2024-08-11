@@ -19,7 +19,7 @@
   color: var(--secondary);
   padding: 0 0.75em;
   z-index: 2;
-  clip-path: polygon(0 0, 89.75% 31.28%, 100.33% 83.73%, 15% 100%);
+  clip-path: polygon(0 0, 88.1% 23%, 100.33% 83.73%, 15% 100%);
 
   /* border-radius: var(--radius); */
 }
