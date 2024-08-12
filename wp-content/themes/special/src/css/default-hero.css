@@ -16,7 +16,11 @@
 }
 
 .hero-grid header.no-hero {
-  margin-block-start: clamp(6vw, 10vw, 15vw);
+  margin-block-start: 5rem;
+
+  @media only screen and (min-width: 48em) {
+    margin-block-start: clamp(6vw, 10vw, 15vw);
+  }
 }
 
 .hero-grid header h1 span {

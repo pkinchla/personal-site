@@ -37,10 +37,11 @@
 
   &.open {
     inset-block-end: -4em;
-    inset-inline-start: 1em;
+    inset-inline-start: 2em;
 
     @media only screen and (min-width: 48em) {
       :inset-block-end: unset;
+      inset-inline-start: 1em;
       inset-block-start: 1em;
     }
   }
@@ -56,6 +57,14 @@
       stroke-width: 0.5625em;
     }
   }
+}
+
+[contenteditable] {
+  display: inline-block;
+}
+
+[contenteditable]:focus {
+  border-radius: var(--radius);
 }
 
 .no-js .toggle-user-settings {

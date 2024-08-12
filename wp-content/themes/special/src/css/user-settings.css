@@ -27,6 +27,7 @@ font-settings fieldset legend {
 
 font-settings fieldset {
   padding: 0.5em 1em 1em;
+  margin-block-end: 1em;
 }
 
 font-settings fieldset:focus-within,
