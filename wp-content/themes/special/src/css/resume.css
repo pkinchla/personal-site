@@ -28,12 +28,11 @@
 
 .resume div > span {
   font-size: 0.75em;
-  display: inline-block;
 }
 
 .resume span b {
   font-weight: 400;
-  display: block;
+  display: flex;
 }
 
 .resume dt {
@@ -48,6 +47,7 @@
   max-width: inherit;
   align-items: flex-end;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 @supports (display: grid) {
