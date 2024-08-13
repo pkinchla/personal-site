@@ -4,17 +4,23 @@ import { addEventListenerMulti } from './utils';
 
 export default class FontSettingsControl extends HTMLElement {
   defaultWght = 808;
+  fontProperty: string;
+  constructor() {
+    super();
+    this.fontProperty =
+      this.getAttribute('font-property') || '--variable-wght-bold';
+  }
 
   connectedCallback() {
     this.defaultWght =
       window.localStorage.font_weight ||
       getComputedStyle(document.documentElement).getPropertyValue(
-        '--variable-wght-bold'
+        this.fontProperty
       );
 
     if (window.localStorage.font_weight) {
       document.documentElement.style.setProperty(
-        `--variable-wght-bold`,
+        this.fontProperty,
         window.localStorage.font_weight
       );
     }
@@ -104,7 +110,7 @@ export default class FontSettingsControl extends HTMLElement {
       .subscribe();
 
     const updateFontWeight = (value: string) => {
-      document.documentElement.style.setProperty('--variable-wght-bold', value);
+      document.documentElement.style.setProperty(this.fontProperty, value);
       localStorage.setItem('font_weight', value);
 
       const currentWeight = document.querySelector(
@@ -113,13 +119,13 @@ export default class FontSettingsControl extends HTMLElement {
 
       currentWeight.innerText = `Current font weight is ${getComputedStyle(
         document.documentElement
-      ).getPropertyValue('--variable-wght-bold')}`;
+      ).getPropertyValue(this.fontProperty)}`;
 
       inputs.forEach(
         (input) =>
           (input.value = getComputedStyle(
             document.documentElement
-          ).getPropertyValue('--variable-wght-bold'))
+          ).getPropertyValue(this.fontProperty))
       );
     };
   }
