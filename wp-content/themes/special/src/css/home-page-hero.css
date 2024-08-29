@@ -91,11 +91,6 @@
   }
 }
 
-.bounce {
-  animation-name: bounce;
-  transform-origin: center bottom;
-}
-
 /* may change */
 a.jump-link {
   opacity: 1;
