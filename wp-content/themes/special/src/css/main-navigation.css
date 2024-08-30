@@ -43,8 +43,13 @@
 }
 
 .site > header a:hover {
-  color: var(--secondary);
   animation: 1s headShake ease-in-out;
+}
+
+@media (hover: none) {
+  .site > header a:hover {
+    animation: none;
+  }
 }
 
 /* end hover state */
@@ -63,7 +68,6 @@
   height: 1.75em;
   margin-block-end: -0.05em;
   margin-inline-end: 0.5em;
-  fill: currentColor;
 }
 
 /* end logo */
