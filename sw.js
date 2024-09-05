@@ -1,25 +1,25 @@
-var version = "v9.1";
+var version = 'v10.0';
 
-var theme_path = "wp-content/themes/special/";
+var theme_path = 'wp-content/themes/special/';
 
 var offlineFundamentals = [
-  theme_path + "dist/js/main.js",
-  theme_path + "dist/js/prism.js",
-  theme_path + "offline.html",
-  "/typefaces/ProximaVara-Roman.woff2",
-  "manifest.json",
-  "icon_192.png",
+  theme_path + 'dist/js/main.js',
+  theme_path + 'dist/js/prism.js',
+  theme_path + 'offline.html',
+  '/typefaces/ProximaVara-Roman.woff2',
+  'manifest.json',
+  'icon_192.png',
 ];
 
 //Add core website files to cache during serviceworker installation
 var updateStaticCache = function () {
-  return caches.open(version + "fundamentals").then(function (cache) {
+  return caches.open(version + 'fundamentals').then(function (cache) {
     return Promise.all(
       offlineFundamentals.map(function (value) {
         var request = new Request(value);
         var url = new URL(request.url);
         if (url.origin != location.origin) {
-          request = new Request(value, { mode: "no-cors" });
+          request = new Request(value, { mode: 'no-cors' });
         }
         return fetch(request).then(function (response) {
           var cachedCopy = response.clone();
@@ -72,7 +72,7 @@ var trimCache = function (cacheName, maxItems) {
 };
 
 //When the service worker is first added to a computer
-self.addEventListener("install", function (event) {
+self.addEventListener('install', function (event) {
   event.waitUntil(
     updateStaticCache().then(function () {
       return self.skipWaiting();
@@ -80,19 +80,19 @@ self.addEventListener("install", function (event) {
   );
 });
 
-self.addEventListener("message", function (event) {
+self.addEventListener('message', function (event) {
   var data = event.data;
 
   //Send this command whenever many files are downloaded (ex: a page load)
-  if (data.command == "trimCache") {
-    trimCache(version + "pages", 25);
-    trimCache(version + "images", 10);
-    trimCache(version + "assets", 30);
+  if (data.command == 'trimCache') {
+    trimCache(version + 'pages', 25);
+    trimCache(version + 'images', 10);
+    trimCache(version + 'assets', 30);
   }
 });
 
 //Service worker handles networking
-self.addEventListener("fetch", function (event) {
+self.addEventListener('fetch', function (event) {
   var url = new URL(event.request.url);
   var destination = event.request.destination;
 
@@ -101,28 +101,28 @@ self.addEventListener("fetch", function (event) {
     var cacheCopy = response.clone();
 
     switch (destination) {
-      case "document": {
-        caches.open(version + "pages").then(function (cache) {
+      case 'document': {
+        caches.open(version + 'pages').then(function (cache) {
           cache.put(event.request, cacheCopy).then(function () {
             limitCache(cache, 25);
           });
         });
         return response;
       }
-      case "image": {
-        caches.open(version + "images").then(function (cache) {
+      case 'image': {
+        caches.open(version + 'images').then(function (cache) {
           cache.put(event.request, cacheCopy).then(function () {
             limitCache(cache, 10);
           });
         });
         return response;
       }
-      case "script":
-      case "": {
+      case 'script':
+      case '': {
         return response;
       }
       default: {
-        caches.open(version + "assets").then(function add(cache) {
+        caches.open(version + 'assets').then(function add(cache) {
           cache.put(event.request, cacheCopy);
         });
         return response;
@@ -132,9 +132,9 @@ self.addEventListener("fetch", function (event) {
 
   //Fetch from network failed
   var fallback = function () {
-    if (destination === "document") {
+    if (destination === 'document') {
       return caches.match(event.request).then(function (response) {
-        return response || caches.match(theme_path + "offline.html");
+        return response || caches.match(theme_path + 'offline.html');
       });
     }
   };
@@ -155,12 +155,12 @@ self.addEventListener("fetch", function (event) {
   }
 
   //This service worker won't touch non-get requests
-  if (event.request.method !== "GET") {
+  if (event.request.method !== 'GET') {
     return;
   }
 
   //For HTML requests, look for file in network, then cache if network fails.
-  if (destination === "document") {
+  if (destination === 'document') {
     event.respondWith(fetch(event.request).then(fetchFromNetwork, fallback));
     return;
   }
@@ -174,7 +174,7 @@ self.addEventListener("fetch", function (event) {
 });
 
 //After the install event
-self.addEventListener("activate", function (event) {
+self.addEventListener('activate', function (event) {
   event.waitUntil(
     clearOldCaches().then(function () {
       return self.clients.claim();
