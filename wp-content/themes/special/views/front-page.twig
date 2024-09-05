@@ -24,7 +24,7 @@
 					          {{post.thumbnail.src|resize(250)}}   250w,
 					          {{post.thumbnail.src|resize(150)}}   150w
 					        " sizes="(min-width:134em) 2347px, (min-width:40em) 66vw, 100vw" type="image/jpeg"/>
-				<img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}" width="{{ post.thumbnail.width }}" height="{{ post.thumbnail.height }}"/>
+			  <img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}" width="{{ post.thumbnail.width }}" height="{{ post.thumbnail.height }}" fetchpriority="high" />
 			</picture>
 			<span class="sans-medium-italic" style='--transition-name: {{post.slug }}'>{{ post.title }}</span>
 			<a href="#home-content" class="jump-link sans-medium-italic">

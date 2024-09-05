@@ -2,6 +2,7 @@
 <html class="no-js {{ theme_class }}" {{site.language_attributes}}>
 	<head>
 		<meta charset="{{ site.charset }}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<title>
 			{% if wp_title %}
 				{{ wp_title }}
@@ -12,9 +13,11 @@
 		<link rel="preload" href="/typefaces/ProximaVara-Roman.woff2" as="font" type="font/woff2" crossorigin/>
 		<link rel="preload" href="/typefaces/Cooper[wght].woff2" as="font" type="font/woff2" crossorigin/>
 		<link rel="preload" href="/typefaces/Cooper-Italic[wght].woff2" as="font" type="font/woff2" crossorigin/>
+    {{
+      function('wp_head')
+    }}
 		<meta name="msapplication-TileColor" content="#0B2F2F"/>
 		<meta name="theme-color" content="#0B2F2F"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<link rel="profile" href="//gmpg.org/xfn/11"/>
 		<link rel="pingback" href="{{ site.pingback_url }}"/>
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
@@ -22,8 +25,5 @@
 		<link rel="manifest" href="/manifest.json"/>
 		<meta name="google-site-verification" content="NgzPbjF9JgfD5TItR2dFVwE70g0CN2XOMSnfNgstCtM"/>
 		<meta name="robots" content="noai, noimageai"/>
-		{{
-      function('wp_head')
-    }}
 	</head>
 </html>
