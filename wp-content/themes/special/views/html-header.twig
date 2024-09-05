@@ -11,7 +11,6 @@
 			{% endif %}
 		</title>
     {% if post.thumbnail %}
-
       <link 
         rel="preload" 
         as="image" href="{{post.thumbnail.src}}" 
@@ -22,11 +21,6 @@
                      {{post.thumbnail.src|resize(2000)|towebp}} 2000w" 
         imagesizes="{{ is_home ? '(min-width:134em) 2347px, (min-width:40em) 66vw, 100vw"' : '(min-width:134em) 1605px, (min-width:40em) 66vw, 100vw' }}"
       >
-      <link rel="preload" fetchpriority="high" as="image" href="{{post.thumbnail.src|resize(2000)|towebp}}" type="image/webp">
-      <link rel="preload" fetchpriority="high" as="image" href="{{post.thumbnail.src|resize(1200)|towebp}}" type="image/webp">
-      <link rel="preload" fetchpriority="high" as="image" href="{{post.thumbnail.src|resize(600)|towebp}}" type="image/webp">
-      <link rel="preload" fetchpriority="high" as="image" href="{{post.thumbnail.src|resize(300)|towebp}}" type="image/webp">
-      <link rel="preload" fetchpriority="high" as="image" href="{{post.thumbnail.src|resize(150)|towebp}}" type="image/webp">
     {% endif %}
 		<link rel="preload" href="/typefaces/ProximaVara-Roman.woff2" as="font" type="font/woff2" crossorigin/>
 		<link rel="preload" href="/typefaces/Cooper[wght].woff2" as="font" type="font/woff2" crossorigin/>
