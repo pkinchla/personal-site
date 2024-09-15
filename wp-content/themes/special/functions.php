@@ -303,7 +303,7 @@ class StarterSite extends Timber\Site  {
     $context['menu_type'] = explode('/', home_url( $_SERVER['REQUEST_URI'] ))[3];
     $context['perf_stats'] = speed_stats('http://stats.paulkinchla.me/api/urls.json');
     $context['bot_was_redirected'] = explode('/',  home_url( $_SERVER['QUERY_STRING']))[3] ?? null == 'sorry-bot';
-    $context['theme_class'] = htmlspecialchars($_COOKIE['color_scheme']) === 'dark' ? 'dark-mode' : '';
+    $context['theme_class'] = isset($_COOKIE['color_scheme']) && htmlspecialchars($_COOKIE['color_scheme']) === 'dark' ? 'dark-mode' : '';
 		
     return $context;
 	}
