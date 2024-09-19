@@ -15,13 +15,7 @@
 
 /* end base styles */
 .site > header a:hover {
-  animation: 1s bounce ease-in-out;
-}
-
-@media (hover: none) {
-  .site > header a:hover {
-    animation: none;
-  }
+  text-decoration: underline;
 }
 
 /* end hover state */
