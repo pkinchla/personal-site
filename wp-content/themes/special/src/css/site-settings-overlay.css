@@ -10,6 +10,14 @@
   color: var(--secondary);
   padding: 1em;
 
+  [contenteditable] {
+    display: inline-block;
+  }
+
+  [contenteditable]:focus {
+    border-radius: var(--radius);
+  }
+
   @media only screen and (min-width: 48em) {
     inline-size: calc(50vi - 1em);
   }
@@ -57,14 +65,6 @@
       stroke-width: 0.5625em;
     }
   }
-}
-
-[contenteditable] {
-  display: inline-block;
-}
-
-[contenteditable]:focus {
-  border-radius: var(--radius);
 }
 
 .no-js .toggle-user-settings {

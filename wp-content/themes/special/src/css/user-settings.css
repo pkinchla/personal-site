@@ -86,7 +86,7 @@ font-settings fieldset input[type='range']::-moz-range-thumb {
 fieldset.font-settings input[type='number'] {
   display: inline-block;
   background: transparent;
-  color: var(--primary);
+  color: var(--secondary);
   width: 4em;
   appearance: textfield;
   border: 0.125em solid var(--secondary);
