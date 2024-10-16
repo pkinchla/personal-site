@@ -1,4 +1,4 @@
-var version = 'v10.1';
+var version = 'v10.2';
 
 var theme_path = 'wp-content/themes/special/';
 
@@ -6,7 +6,9 @@ var offlineFundamentals = [
   theme_path + 'dist/js/main.js',
   theme_path + 'dist/js/prism.js',
   theme_path + 'offline.html',
-  '/typefaces/ProximaVara-Roman.woff2',
+  '/typefaces/proxima-vara-roman.woff2',
+  '/typefaces/cooper-wght.woff2',
+  '/typefaces/cooper-italic-wght.woff2',
   'manifest.json',
   'icon_192.png',
 ];
