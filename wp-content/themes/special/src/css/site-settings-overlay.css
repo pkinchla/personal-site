@@ -9,6 +9,8 @@
   view-transition-name: slidein;
   color: var(--secondary);
   padding: 1em;
+  max-height: calc(100vh - 1em);
+  overflow-y: auto;
 
   [contenteditable] {
     display: inline-block;
