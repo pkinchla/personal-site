@@ -1,6 +1,6 @@
 {% extends "base.twig" %}
 {% block content %}
-<!-- <article id="post-{{ post.ID }}">
+<article id="post-{{ post.ID }}">
   <header>
     <h1 class="assistive-text">Home Page</h1>
     <div class="assistive-text">
@@ -40,21 +40,4 @@
     </section>
   </div>
 </article>
-{% endblock %} -->
-
-<picture>
-  <img
-    srcset="
-      {{post.thumbnail.src|resize(2000)|towebp}} 2000w,
-      {{post.thumbnail.src|resize(1200)|towebp}} 1200w,
-      {{post.thumbnail.src|resize(600)|towebp}}   600w,
-      {{post.thumbnail.src|resize(300)|towebp}}   300w,
-      {{post.thumbnail.src|resize(150)|towebp}}   150w
-    "
-    sizes="(min-width:134em) 2347px, (min-width:40em) 66vw, 100vw"
-    src="{{ post.thumbnail.src }}"
-    alt="{{ post.thumbnail.alt }}"
-    width="{{ post.thumbnail.width }}"
-    height="{{ post.thumbnail.height }}"
-  />
-</picture>
+{% endblock %}
