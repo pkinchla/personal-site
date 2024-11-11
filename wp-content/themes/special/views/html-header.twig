@@ -14,7 +14,7 @@
   {% if post.thumbnail %}
   <link 
     rel="preload" 
-    as="image" href="{{post.thumbnail.src}}" 
+    as="image" href="{{post.thumbnail.src|resize(2000)|towebp}}"
     imagesrcset="{{post.thumbnail.src|resize(150)|towebp}} 150w, 
                  {{post.thumbnail.src|resize(300)|towebp}} 300w, 
                  {{post.thumbnail.src|resize(600)|towebp}} 600w, 

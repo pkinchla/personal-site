@@ -1,6 +1,7 @@
 <figure class="hero{{ post.meta('toggle_image_filter') ? ' no-filter' : '' }}">
   <picture>
     <img
+      fetchpriority="high"
       srcset="
         {{post.thumbnail.src|resize(2000)|towebp}} 2000w,
         {{post.thumbnail.src|resize(1200)|towebp}} 1200w,
@@ -9,7 +10,7 @@
         {{post.thumbnail.src|resize(150)|towebp}}   150w
       "
       sizes="(min-width:134em) 1605px, (min-width:40em) 66vw, 100vw"
-      src="{{ post.thumbnail.src }}"
+      src="{{ post.thumbnail.src|resize(2000)|towebp }}"
       alt="{{ post.thumbnail.alt }}"
       width="{{ post.thumbnail.width }}"
       height="{{ post.thumbnail.height }}"
