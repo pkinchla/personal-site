@@ -3,6 +3,15 @@
   display: grid;
   margin-block-end: 1.5em;
 
+  @supports (animation-timeline: scroll()) {
+    @media (prefers-reduced-motion: no-preference) {
+      animation-fill-mode: both;
+      animation-name: header-scroll-animation;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+  }
+
   picture {
     grid-row: 1 / -1;
     grid-column: 1 / -1;

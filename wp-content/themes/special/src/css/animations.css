@@ -27,3 +27,15 @@
     transform: translate3d(0, -0.25rem, 0) scaleY(1.02);
   }
 }
+
+@keyframes header-scroll-animation {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.9) translateY(7vh);
+  }
+}
