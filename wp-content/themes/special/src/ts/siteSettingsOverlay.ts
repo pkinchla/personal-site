@@ -2,7 +2,7 @@ function siteSettingsOverlay() {
   const buttons = document.querySelectorAll(
     'button[popovertarget=site-settings]'
   );
-  const popover = document.querySelector('#site-settings');
+  const popover = document.querySelector('#site-settings') as HTMLDivElement;
 
   if (!popover) {
     return;
@@ -24,11 +24,9 @@ function siteSettingsOverlay() {
     e.preventDefault();
     document.startViewTransition(() => {
       if (is_opening) {
-        // @ts-expect-error ignore unknown element
-        return popover?.showPopover();
+        return popover.showPopover();
       }
-      // @ts-expect-error ignore unknown element
-      return popover?.hidePopover();
+      return popover.hidePopover();
     });
   }
 
