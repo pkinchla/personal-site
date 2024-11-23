@@ -5,17 +5,20 @@ import observeTableOfContents from './observeTableOfContents';
 import ColorSchemeSwitcher from './colorSchemeSwitcher';
 import FontSettingsControl from './fontSettingsControl';
 import siteSettingsOverlay from './siteSettingsOverlay';
+import ShareButton from './shareButton';
+
 import 'speedlify-score/speedlify-score.js';
 
 function scripts() {
   return (
     checkJSLoaded(),
-    observeHero(),
     invokeServiceWorker(),
+    siteSettingsOverlay(),
+    observeHero(),
     ColorSchemeSwitcher.init(),
     FontSettingsControl.init(),
-    observeTableOfContents(),
-    siteSettingsOverlay()
+    ShareButton.init(),
+    observeTableOfContents()
   );
 }
 

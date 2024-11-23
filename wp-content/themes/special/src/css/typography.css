@@ -158,7 +158,6 @@ figcaption {
   font-family: var(--font-sans-serif);
   font-weight: bold;
   font-variation-settings: 'wght' var(--variable-wght-med);
-  transition: font-variation-settings var(--transition);
 }
 
 .sans-medium-italic {
@@ -167,7 +166,6 @@ figcaption {
   font-variation-settings:
     'wght' var(--variable-wght-med),
     'ital' var(--variable-italic);
-  transition: font-variation-settings var(--transition);
 }
 
 /* settings for font-variation support */

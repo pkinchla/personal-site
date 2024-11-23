@@ -39,3 +39,13 @@
     transform: scale(0.9) translateY(7vh);
   }
 }
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

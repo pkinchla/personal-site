@@ -1,0 +1,43 @@
+share-button {
+  display: inline-block;
+}
+
+share-button button {
+  display: inline-block;
+  transition: background var(--transition);
+  color: var(--secondary);
+  border-color: var(--secondary);
+  border-radius: var(--radius);
+
+  &:hover {
+    background: var(--secondary);
+    color: var(--body-background);
+  }
+
+  &:focus {
+    border-radius: var(--radius);
+    background: var(--secondary);
+    color: var(--body-background);
+  }
+}
+
+share-button dialog[open] {
+  background: var(--body-background);
+  color: var(--secondary);
+  min-width: max-content;
+  text-align: center;
+  border: 0.125em solid var(--secondary);
+  border-radius: var(--radius);
+  padding: 0.5em;
+  view-transition-name: bounce;
+}
+
+/* stylelint-disable-next-line selector-type-no-unknown */
+::view-transition-old(bounce) {
+  animation: 0.4s ease-out fadeout;
+}
+
+/* stylelint-disable-next-line selector-type-no-unknown */
+::view-transition-new(bounce) {
+  animation: 1s ease-in bounce;
+}

@@ -1,3 +1,6 @@
 <div class="sans-regular-italic">
-  Last Updated on <time datetime="{{post.modified_date('c')}}">{{post.modified_date('l, F jS, Y')}}</time>
+  Last Updated on
+  <time datetime="{{ post.modified_date('c') }}">{{
+    post.modified_date('l, F jS, Y')
+  }}</time>
 </div>
