@@ -4,9 +4,11 @@ share-button {
 
 share-button button {
   display: inline-block;
-  transition: background var(--transition);
+  background: var(--body-background);
   color: var(--secondary);
-  border-color: var(--secondary);
+  appearance: none;
+  transition: background var(--transition);
+  border: 0.125em solid var(--secondary);
   border-radius: var(--radius);
 
   &:hover {
@@ -24,7 +26,6 @@ share-button button {
 share-button dialog[open] {
   background: var(--body-background);
   color: var(--secondary);
-  min-width: max-content;
   text-align: center;
   border: 0.125em solid var(--secondary);
   border-radius: var(--radius);
