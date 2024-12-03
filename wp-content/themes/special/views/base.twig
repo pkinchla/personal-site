@@ -1,54 +1,62 @@
 {% block html_head_container %}
 
-	{% include 'html-header.twig' %}
-	{% block head %}{% endblock %}
-</head>{% endblock %}<body class="{{body_class}}" data-template="base.twig">
+{% include 'html-header.twig' %}
+{% block head %}{% endblock %}
+</head>{% endblock %}
 
-<div id="page" class="hfeed site">
-	<a class="assistive-text no-offset sans-medium-italic skip-link" href="#content">Skip To Content</a>
-	{% block header %}
-		<header id="masthead" class="sans-medium-italic">
+<body class="{{body_class}}" data-template="base.twig">
 
-			<button class="toggle-user-settings open" popovertarget="site-settings">
-				<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 -960 960 960"><path d="M427-120v-225h60v83h353v60H487v82h-60Zm-307-82v-60h247v60H120Zm187-166v-82H120v-60h187v-84h60v226h-60Zm120-82v-60h413v60H427Zm166-165v-225h60v82h187v60H653v83h-60Zm-473-83v-60h413v60H120Z"/></svg>
-				<span class="assistive-text">Close Site Settings</span>
-			</button>
-			<div popover class="site-settings" id="site-settings">
-				<button class="toggle-user-settings close" popovertarget="site-settings">
-					<svg
-						xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100">
-						<line x1="22.5" y1="77.5" x2="77.5" y2="22.5"/>
-						<line x1="77.5" y1="77.5" x2="22.5" y2="22.5"/>
-					</svg>
-					<span class="assistive-text">Close Site Settings</span>
-				</button>
-				<color-theme-switcher></color-theme-switcher>
-				<br>
-				<font-settings font-property="--variable-wght-bold"></font-settings>
-				<br>
-				<div contenteditable="true" class="h2">The quick brown fox jumps over the lazy dog</div>
-			</div>
+  <div id="page" class="hfeed site">
+    <a class="assistive-text no-offset sans-medium-italic skip-link" href="#content">Skip To Content</a>
+    {% block header %}
+    <header id="masthead" class="sans-medium-italic">
 
-			{% include 'site-logo.twig' %}
-			<nav id="site-navigation">
-				{% include "menu.twig" with {'menu': menu.get_items} %}
-			</nav>
+      <button class="toggle-user-settings open" popovertarget="site-settings">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 -960 960 960">
+          <path
+            d="M427-120v-225h60v83h353v60H487v82h-60Zm-307-82v-60h247v60H120Zm187-166v-82H120v-60h187v-84h60v226h-60Zm120-82v-60h413v60H427Zm166-165v-225h60v82h187v60H653v83h-60Zm-473-83v-60h413v60H120Z" />
+        </svg>
+        <span class="assistive-text">Close Site Settings</span>
+      </button>
+      <div popover class="site-settings" id="site-settings">
+        <button class="toggle-user-settings close" popovertarget="site-settings">
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100">
+            <line x1="22.5" y1="77.5" x2="77.5" y2="22.5" />
+            <line x1="77.5" y1="77.5" x2="22.5" y2="22.5" />
+          </svg>
+          <span class="assistive-text">Close Site Settings</span>
+        </button>        
+        <sound-toggle></sound-toggle>
+        <br>
+        <color-theme-switcher></color-theme-switcher>        
+        <br>
+        <font-settings font-property="--variable-wght-bold"></font-settings>
+        <br>
+        <div contenteditable="true" class="h2">The quick brown fox jumps over the lazy dog</div>
+      </div>
 
-			<!-- #site-navigation -->
-		</header>
-		<!-- #masthead -->
-	{% endblock %}
+      {% include 'site-logo.twig' %}
+      <nav id="site-navigation">
+        {% include "menu.twig" with {'menu': menu.get_items} %}
+      </nav>
 
-	<main id="content" tabindex="-1"> {% block content %}{% endblock %}
-		</main>
-		<!-- #content -->
+      <!-- #site-navigation -->
+    </header>
+    <!-- #masthead -->
+    {% endblock %}
 
-		{% block footer %}
-			<footer class="content-grid">
-				{% include 'footer.twig' %}
-			</footer>
-			{{ function('wp_footer') }}
-		{% endblock %}
-	</div>
-	<!-- #page -->
-</body></html>
+    <main id="content" tabindex="-1"> {% block content %}{% endblock %}
+    </main>
+    <!-- #content -->
+
+    {% block footer %}
+    <footer class="content-grid">
+      {% include 'footer.twig' %}
+    </footer>
+    {{ function('wp_footer') }}
+    {% endblock %}
+  </div>
+  <!-- #page -->
+</body>
+
+</html>
