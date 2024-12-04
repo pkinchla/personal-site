@@ -27,7 +27,7 @@ class ToggleSoundComponent extends HTMLElement {
       'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled]), details:not([disabled]), summary:not(:disabled)'
     );
 
-    this.soundEnabled = Boolean(window.localStorage.sound_enabled) || false;
+    this.soundEnabled = window.localStorage.sound_enabled === 'true' || false;
 
     if (soundToggle) {
       soundToggle.checked = this.soundEnabled;
@@ -49,16 +49,12 @@ class ToggleSoundComponent extends HTMLElement {
     });
 
     soundElementsforClick.forEach((element) => {
-      element.addEventListener(
-        'click',
-        () => {
-          if (this.soundEnabled) {
-            const audio = new Audio(this.soundToUse);
-            audio.play();
-          }
-        },
-        true
-      );
+      element.addEventListener('click', () => {
+        if (this.soundEnabled) {
+          const audio = new Audio(this.soundToUse);
+          audio.play();
+        }
+      });
     });
   }
 
