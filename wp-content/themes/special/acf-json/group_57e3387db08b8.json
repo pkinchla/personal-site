@@ -3,46 +3,6 @@
     "title": "About Page",
     "fields": [
         {
-            "key": "field_5514b0042b922",
-            "label": "contact",
-            "name": "contact",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "toolbar": "full",
-            "media_upload": 1,
-            "tabs": "all",
-            "delay": 0
-        },
-        {
-            "key": "field_5514b96fa9334",
-            "label": "flickr field",
-            "name": "flickr_field",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "toolbar": "full",
-            "media_upload": 1,
-            "tabs": "all",
-            "delay": 0
-        },
-        {
             "key": "field_55154873903b6",
             "label": "work",
             "name": "work",
@@ -61,6 +21,7 @@
             "max": 0,
             "layout": "table",
             "button_label": "Add Row",
+            "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_5515488d903b7",
@@ -190,6 +151,8 @@
                     "max": 0,
                     "layout": "table",
                     "button_label": "Add Row",
+                    "rows_per_page": 20,
+                    "parent_repeater": "field_55154873903b6",
                     "sub_fields": [
                         {
                             "key": "field_5e6ce4ac64d46",
@@ -229,12 +192,9 @@
                             "first_day": 1,
                             "parent_repeater": "field_5e6ce47064d45"
                         }
-                    ],
-                    "rows_per_page": 20,
-                    "parent_repeater": "field_55154873903b6"
+                    ]
                 }
-            ],
-            "rows_per_page": 20
+            ]
         },
         {
             "key": "field_55154d4fbad98",
@@ -257,6 +217,7 @@
             "min": 0,
             "max": 0,
             "collapsed": "",
+            "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_55154d70bad99",
@@ -321,8 +282,7 @@
                     "maxlength": "",
                     "parent_repeater": "field_55154d4fbad98"
                 }
-            ],
-            "rows_per_page": 20
+            ]
         },
         {
             "key": "field_55154eac814af",
@@ -365,6 +325,7 @@
             "min": 0,
             "max": 0,
             "collapsed": "",
+            "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_551556975be0e",
@@ -410,8 +371,7 @@
                     "maxlength": "",
                     "parent_repeater": "field_55154ec2be158"
                 }
-            ],
-            "rows_per_page": 20
+            ]
         },
         {
             "key": "field_55e6547aa333a",
@@ -463,5 +423,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699217412
+    "modified": 1733582148
 }

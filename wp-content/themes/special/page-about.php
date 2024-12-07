@@ -11,9 +11,6 @@ require get_template_directory() . '/credentials.php';
 
 $context = Timber::context();
 $post = Timber::get_post();
-$media = instagram_feed($endpoint, $refresh_endpoint);
-
 $context['post'] = $post;
-$context['pictures'] = $media;
 
 Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );

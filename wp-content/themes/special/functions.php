@@ -121,31 +121,6 @@ add_action(
   }
 );
 
-function instagram_feed($endpoint, $refresh_endpoint) {
-  $feed = get_transient( 'instagram_feed' );
-  
-
-  if ( false !== $feed ) {
-    return $feed;
-  }
-
-  $response = wp_remote_get($endpoint);
-
-  if(is_wp_error( $response ) ||$response['response']['code'] >= 400  ) {
-    return array("error"=> "Instgram feed is currently unavailable. Check back later 😊.");
-  }
-
-  $body = json_decode($response['body']);
-  $second_response = wp_safe_remote_get($body->paging->next);
-  $second_body = json_decode($second_response['body']);
-
-  $feed = array_merge($body->data, $second_body->data);
-
-  set_transient( 'instagram_feed', $feed, 1 * HOUR_IN_SECONDS);
-  wp_safe_remote_get($refresh_endpoint);
-
-  return $feed;
-}
 
 function speed_stats($url) {
   $stats = get_transient( 'speed_stats' );
@@ -157,7 +132,7 @@ function speed_stats($url) {
   $response = wp_safe_remote_get($url);
 
   if(is_wp_error( $response ) ||$response['response']['code'] >= 400  ) {
-    return array("error"=> "Stats are currently unavailable. Check back later 😊.");
+    return array("error"=> "Stats are currently unavailable. Check back later.");
   }
 
   $stats = json_decode($response['body'], true);

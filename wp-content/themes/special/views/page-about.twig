@@ -1,95 +1,72 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<article id="post-{{post.ID}}">
-		<div class="hero-grid">
-			<header style='--transition-name: {{ post.slug }}'>
-				<h1>{{post.title}}</h1>
-				{% include 'byline-page.twig' %}
-			</header>
-			{% include 'featured-image.twig' %}
-		</div>
-		<div class="content-grid">
-			{{post.content|wpautop}}
-		</div>
-		<section class="content-grid">
-			<div class="resume-intro">
-				<h2 id="cv">R&eacute;sum&eacute;</h2>
-				<a class="action border sans-medium-italic no-offset" href="{{post.meta('file_resume').url}}" download>Download
-					<span aria-hidden="true">&rarr;</span>
-				</a>
-			</div>
-			<dl class="resume sans-regular">
-				<dt>Skill</dt>
-				<dd class="last">
-					<p>{{post.skill}}</p>
-				</dd>
-				<dt>Work</dt>
-				{% for job in post.meta('work') %}
-					<dd {% if loop.last == true %} class="last" {% endif%}>
-						<div>
-							{{job.title}}
-							<span>
-								{% for date in job.dates %}
-									<b>
-										<time datetime="{{date.start_date}}">{{date.start_date|date('Y')}}</time>
-										{% if date.end_date %}
-											<time datetime="{{date.end_date}}">&ndash;{{date.end_date|date('Y')}}</time>
-											{% else %}&ndash;present
-										{% endif %}
-									</b>
-								{% endfor %}
-							</span>
-						</div>
-						<span class="sans-regular-italic">{{job.company_name}}</span>
-						<p>{{job.description}}<a href="http://{{job.company_link}}" rel="noopener" target="_blank">{{job.company_link_text}}</a>
-						</p>
-					</dd>
-				{% endfor %}
-				<dt>Internship</dt>
-				{% for gig in post.meta('internship') %}
-					<dd {% if loop.last == true %} class="last" {% endif%}>
-						<div>{{gig.title}}
-							<span>
-								<time datetime="{{gig.date}}">{{gig.date|date('Y')}}</time>
-							</span>
-						</div>
-						<span>{{gig.location}}</span>
-					</dd>
-				{% endfor %}
-				<dt>Education</dt>
-				<dd class="last">
-					{% for school in post.meta('education') %}
-						<div>{{school.school}}
-							<span>{{school.degree}}</span>
-						</div>
-					{% endfor %}
-				</dd>
-			</dl>
-		</section>
-		<section class="content-grid">
-			<div class="photo-intro">
-				<h2 id="photo-feed">Instagram Feed</h2>
-				{% if pictures.error %}
-					<span class="error">{{pictures.error}}</span>
-				{% else %}
-					{{post.flickr_field}}
-					<span class="assistive-text">Unfortunately, the Instagram API currently does not return alt text for images</span>
-				{% endif %}
-			</div>
-			{% if not pictures.error %}
-				<ul class="photo-feed" role="list">
-					{% for picture in pictures %}
-						<li>
-							{% if picture.media_type != 'VIDEO' %}
-								<img loading="lazy" src="{{picture.media_url}}" alt="">
-							{% else %}
-								<video controls playsinline src="{{picture.media_url}}.mp4#t=0.9"></video>
-							{% endif %}
-						</li>
-					{% endfor %}
-				</ul>
-			{% endif %}
-		</section>
-	</article>
+<article id="post-{{post.ID}}">
+  <div class="hero-grid">
+    <header style='--transition-name: {{ post.slug }}'>
+      <h1>{{post.title}}</h1>
+      {% include 'byline-page.twig' %}
+    </header>
+    {% include 'featured-image.twig' %}
+  </div>
+  <div class="content-grid">
+    {{post.content|wpautop}}
+  </div>
+  <section class="content-grid">
+    <div class="resume-intro">
+      <h2 id="cv">R&eacute;sum&eacute;</h2>
+      <a class="action border sans-medium-italic no-offset" href="{{post.meta('file_resume').url}}" download>Download
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+    <dl class="resume sans-regular">
+      <dt>Skill</dt>
+      <dd class="last">
+        <p>{{post.skill}}</p>
+      </dd>
+      <dt>Work</dt>
+      {% for job in post.meta('work') %}
+      <dd {% if loop.last==true %} class="last" {% endif%}>
+        <div>
+          {{job.title}}
+          <span>
+            {% for date in job.dates %}
+            <b>
+              <time datetime="{{date.start_date}}">{{date.start_date|date('Y')}}</time>
+              {% if date.end_date %}
+              <time datetime="{{date.end_date}}">&ndash;{{date.end_date|date('Y')}}</time>
+              {% else %}&ndash;present
+              {% endif %}
+            </b>
+            {% endfor %}
+          </span>
+        </div>
+        <span class="sans-regular-italic">{{job.company_name}}</span>
+        <p>{{job.description}}<a href="http://{{job.company_link}}" rel="noopener"
+            target="_blank">{{job.company_link_text}}</a>
+        </p>
+      </dd>
+      {% endfor %}
+      <dt>Internship</dt>
+      {% for gig in post.meta('internship') %}
+      <dd {% if loop.last==true %} class="last" {% endif%}>
+        <div>{{gig.title}}
+          <span>
+            <time datetime="{{gig.date}}">{{gig.date|date('Y')}}</time>
+          </span>
+        </div>
+        <span>{{gig.location}}</span>
+      </dd>
+      {% endfor %}
+      <dt>Education</dt>
+      <dd class="last">
+        {% for school in post.meta('education') %}
+        <div>{{school.school}}
+          <span>{{school.degree}}</span>
+        </div>
+        {% endfor %}
+      </dd>
+    </dl>
+  </section>
+</article>
 {% endblock %}
