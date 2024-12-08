@@ -20,34 +20,15 @@
 
 .photo-feed {
   display: grid;
-  background: var(--secondary);
   grid-gap: 0.1875em;
-  grid-template-columns: repeat(auto-fill, minmax(7.8125em, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
   border-radius: var(--radius);
   overflow: hidden;
-}
+  border: 0.0625em solid var(--primary);
 
-.photo-feed li {
-  display: inline-block;
-  position: relative;
-  max-width: 7.8125em;
-  box-shadow: 0 0 0 0.1875em var(--body-background);
-}
-
-@supports (display: grid) {
-  .photo-feed li {
-    display: inline-block;
-    max-width: inherit;
+  & img {
+    width: 100%;
   }
-}
-
-.photo-feed li img,
-.photo-feed li video {
-  aspect-ratio: 1;
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .archive main > article > figure > img {
@@ -275,14 +256,9 @@ main > article > div .comment-author img,
 
 @supports (display: grid) {
   @media only screen and (min-width: 40em) {
-    .photo-feed li:nth-of-type(8n) {
+    .photo-feed li:nth-of-type(4n) {
       grid-column: span 2;
       grid-row: span 2;
-    }
-
-    .photo-feed li:nth-of-type(27) {
-      grid-column: span 3;
-      grid-row: span 3;
     }
   }
 }
