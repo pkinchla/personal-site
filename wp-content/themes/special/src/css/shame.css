@@ -28,6 +28,7 @@
 
   & img {
     width: 100%;
+    filter: grayscale(0.85);
   }
 }
 
