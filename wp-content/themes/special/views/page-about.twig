@@ -85,6 +85,7 @@
               sizes="{{ loop.index % 4 == 0 ? '(min-width: 2600px) 482px, (min-width: 2100px) calc(9.17vw + 246px), (min-width: 1560px) 25.58vw, (min-width: 1120px) calc(37.14vw - 93px), (min-width: 960px) calc(50vw - 155px), (min-width: 820px) calc(66.67vw - 207px), (min-width: 780px) calc(-725vw + 6127px), (min-width: 720px) calc(50vw - 34px), (min-width: 640px) calc(66.67vw - 45px), (min-width: 560px) calc(33.33vw - 24px), (min-width: 400px) calc(50vw - 34px), calc(100vw - 66px)' : '(min-width: 2600px) 239px, (min-width: 2100px) calc(4.58vw + 121px), (min-width: 1560px) 12.69vw, (min-width: 1120px) calc(18.57vw - 48px), (min-width: 960px) calc(25vw - 79px), (min-width: 820px) calc(33.33vw - 104px), (min-width: 780px) calc(-365vw + 3082px), (min-width: 720px) calc(25vw - 19px), (min-width: 560px) calc(32.86vw - 21px), (min-width: 400px) calc(50vw - 34px), calc(100vw - 66px)"'}}"
               src="{{ item.src }}" 
               alt="{{ item.alt|escape }}"
+              loading="lazy"
             >
           </li>
         {% endfor %}
