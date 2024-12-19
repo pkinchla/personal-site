@@ -3,7 +3,7 @@ import { debounceTime, distinctUntilChanged, map, tap } from 'rxjs/operators';
 import { addEventListenerMulti } from './utils';
 
 export default class FontSettingsControl extends HTMLElement {
-  defaultWght = 808;
+  defaultWght = 707;
   fontProperty: string;
   constructor() {
     super();
