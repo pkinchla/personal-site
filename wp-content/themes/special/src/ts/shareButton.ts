@@ -19,7 +19,7 @@ export default class ShareButton extends HTMLElement {
     this.shareUrl = this.getAttribute('share-url') || window.location.href;
 
     this.innerHTML = `
-      <dialog id="share-result" class="no-offset" role="alertdialog" autofocus>
+      <dialog id="share-result" role="alertdialog" autofocus>
       </dialog>
       <button id="share-button" class="${this.buttonClass}">
         Share
@@ -36,11 +36,13 @@ export default class ShareButton extends HTMLElement {
   connectedCallback() {
     this.buttonElement.addEventListener('click', () => this.shareLink());
 
-    addEventListenerMulti(this.dialog, 'blur click', () =>
-      this.noViewTransition
-        ? this.closeDialog()
-        : document.startViewTransition(async () => this.closeDialog())
-    );
+    addEventListenerMulti(this.dialog, 'blur click', () => {
+      if (this.dialog.open) {
+        this.noViewTransition
+          ? this.closeDialog()
+          : document.startViewTransition(async () => this.closeDialog());
+      }
+    });
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && this.dialog.open) {
@@ -76,7 +78,7 @@ export default class ShareButton extends HTMLElement {
   }
 
   closeDialog() {
-    if (this.noViewTransition) {
+    if (this.noViewTransition && this.dialog.open) {
       return this.dialog.close();
     } else {
       document.startViewTransition(() => this.dialog.close());
