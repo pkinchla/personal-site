@@ -14,13 +14,18 @@
   {% if post.thumbnail %}
   <link 
     rel="preload" 
-    as="image" href="{{post.thumbnail.src|resize(2000)|towebp}}"
-    imagesrcset="{{post.thumbnail.src|resize(150)|towebp}} 150w, 
-                 {{post.thumbnail.src|resize(300)|towebp}} 300w, 
-                 {{post.thumbnail.src|resize(600)|towebp}} 600w, 
+    as="image" href="{{post.thumbnail.src|resize(1594)|towebp}}"
+    imagesrcset="{{post.thumbnail.src|resize(300)|towebp}} 300w, 
+                 {{post.thumbnail.src|resize(600)|towebp}} 600w,
+                 {{post.thumbnail.src|resize(721)|towebp}} 721w,
+                 {{post.thumbnail.src|resize(1080)|towebp}} 1080w,
                  {{post.thumbnail.src|resize(1200)|towebp}} 1200w,
-                 {{post.thumbnail.src|resize(2000)|towebp}} 2000w" 
-    imagesizes="{{ is_home ? '(min-width:134em) 2347px, (min-width:40em) 66vw, 100vw' : '(min-width:134em) 1605px, (min-width:40em) 66vw, 100vw' }}">
+                 {{post.thumbnail.src|resize(1410)|towebp}} 1410w,
+                 {{post.thumbnail.src|resize(1594)|towebp}} 1594w,
+                 {{post.thumbnail.src|resize(1840)|towebp}} 1840w,
+                 {{post.thumbnail.src|resize(2000)|towebp}} 2000w,
+                 {{post.thumbnail.src|resize(2048)|towebp}} 2048w" 
+    imagesizes="{{ is_home ? '(min-width: 2400px) 1984px, (min-width: 780px) calc(90.38vw - 167px), 100vw' : '(min-width:134em) 1605px, (min-width:40em) 66vw, 100vw' }}">
   {% endif %}
   <link rel="preload" href="/typefaces/proxima-vara-roman.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/typefaces/cooper-wght.woff2" as="font" type="font/woff2" crossorigin />
