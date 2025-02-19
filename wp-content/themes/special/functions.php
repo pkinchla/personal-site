@@ -55,19 +55,6 @@ function pageNumber($number){
   }
 }
 
-// function for critical path css
-function critical_css() {
-	if (!WP_DEBUG) {
-		// css
-		$style_sheet = get_template_directory_uri() . '/dist/css/main.css';
-		$style_path = wp_remote_get($style_sheet);
-		$style_content = wp_remote_retrieve_body($style_path);
-
-		echo '<style>'. $style_content .'</style>' . "\n";
-	}
-}
-add_action( 'wp_head', 'critical_css');
-
 
 /**
  * Enqueue scripts and styles.
@@ -76,12 +63,14 @@ function special_scripts() {
   wp_dequeue_style( 'wp-block-library' );
   wp_dequeue_style( 'wp-block-library-theme');
 
+
   if (WP_DEBUG) {
-    wp_enqueue_style( 'style', get_template_directory_uri() . '/dist/css/main.css', array(), null );
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/dist/css/main.css?v=' . $_SERVER['REQUEST_TIME'] . '', array(), null);
     wp_enqueue_script( 'scripts', get_template_directory_uri() .'/dist/js/main.js?v=' . $_SERVER['REQUEST_TIME'] . '', array(), null);
   }
   else {
-    wp_enqueue_script( 'scripts', get_template_directory_uri() .'/dist/js/main.js', array(), null); 
+    wp_enqueue_script( 'scripts', get_template_directory_uri() .'/dist/js/main.js', array(), null) ; 
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/dist/css/main.css', array(), null );
   }
 
   if (get_post_type() === 'post') {
