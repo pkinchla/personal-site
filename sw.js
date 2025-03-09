@@ -1,4 +1,4 @@
-var version = "v10.5";
+var version = "v10.6";
 
 var theme_path = "wp-content/themes/special/";
 
@@ -106,8 +106,6 @@ self.addEventListener("fetch", function (event) {
       case "document": {
         if (response.type === "basic") {
           caches.open(version + "pages").then(function (cache) {
-            console.log(response);
-
             cache.put(event.request, cacheCopy).then(function () {
               limitCache(cache, 25);
             });
