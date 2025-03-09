@@ -5,8 +5,6 @@ import observeTableOfContents from './observeTableOfContents';
 import ColorSchemeSwitcher from './colorSchemeSwitcher';
 import FontSettingsControl from './fontSettingsControl';
 import siteSettingsOverlay from './siteSettingsOverlay';
-import ShareButton from './shareButton';
-import ToggleSoundComponent from './soundToggle';
 import 'speedlify-score/speedlify-score.js';
 
 function scripts() {
@@ -17,8 +15,6 @@ function scripts() {
     observeHero(),
     ColorSchemeSwitcher.init(),
     FontSettingsControl.init(),
-    ShareButton.init(),
-    ToggleSoundComponent.init(),
     observeTableOfContents()
   );
 }

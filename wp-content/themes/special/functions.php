@@ -11,10 +11,7 @@ Timber::$dirname = array('views');
 		'primary' => __( 'Primary Menu', 'special' ),
 	));
 
-// credentials for apis and things
-require get_template_directory() . '/credentials.php';
-
-/**
+  /**
  * Automatically add IDs to headings such as <h2></h2>
  */
 function auto_id_headings( $content ) {

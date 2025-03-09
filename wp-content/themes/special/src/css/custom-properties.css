@@ -1,6 +1,6 @@
 :root {
   /* base typography */
-  --font-serif: 'Cooper', georgia, 'Times New Roman', times, serif;
+  --font-serif: 'Cooper', georgia, serif;
   --font-sans-serif: 'Proxima Vara', -apple-system, blinkmacsystemfont,
     'Segoe UI', roboto, helvetica, arial, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol';
