@@ -14,8 +14,7 @@ $args = array(
 query_posts($args);
 
 while (have_posts()) : the_post();
-  header('Location: ' . get_permalink());
-  wp_safe_redirect();
+  wp_safe_redirect(get_permalink());
   exit;
 endwhile;
 ?>
