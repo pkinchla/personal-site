@@ -1,4 +1,4 @@
-var version = "v10.4";
+var version = "v10.5";
 
 var theme_path = "wp-content/themes/special/";
 
@@ -104,11 +104,15 @@ self.addEventListener("fetch", function (event) {
 
     switch (destination) {
       case "document": {
-        caches.open(version + "pages").then(function (cache) {
-          cache.put(event.request, cacheCopy).then(function () {
-            limitCache(cache, 25);
+        if (response.type === "basic") {
+          caches.open(version + "pages").then(function (cache) {
+            console.log(response);
+
+            cache.put(event.request, cacheCopy).then(function () {
+              limitCache(cache, 25);
+            });
           });
-        });
+        }
         return response;
       }
       case "image": {
