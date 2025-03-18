@@ -13,15 +13,6 @@
   width: fit-content;
   margin-block-end: 1.5em;
   padding: 0 2rem;
-
-  @supports (animation-timeline: scroll()) {
-    @media (prefers-reduced-motion: no-preference) {
-      animation-fill-mode: both;
-      animation-name: header-scroll-animation;
-      animation-timeline: view();
-      animation-range: exit -25% exit 95%;
-    }
-  }
 }
 
 .hero-grid header.no-hero {
@@ -56,15 +47,6 @@
 
 .hero-grid .hero {
   order: -1;
-
-  @supports (animation-timeline: scroll()) {
-    @media (prefers-reduced-motion: no-preference) {
-      animation-fill-mode: both;
-      animation-name: header-scroll-animation;
-      animation-timeline: view();
-      animation-range: exit 0% exit 100%;
-    }
-  }
 }
 
 .hero:not(.no-filter)::after {
