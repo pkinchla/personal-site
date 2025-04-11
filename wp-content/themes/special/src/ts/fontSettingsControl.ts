@@ -41,7 +41,7 @@ export default class FontSettingsControl extends HTMLElement {
               </svg>
             </span>          
           </button>
-          <input pattern="[0-9]*" id="number" type="number" min="100" max="900" step="100" name="wght-bold" value=${this.defaultWght} />
+          <input pattern="[0-9]*" id="number" type="number" inputmode="numeric" min="100" max="900" step="100" name="wght-bold" value=${this.defaultWght} />
           <button class="increment">
             <span class='assistive-text'>increment font weight</span>
             <span aria-hidden="true">
