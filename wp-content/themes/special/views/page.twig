@@ -3,7 +3,7 @@
 {% block content %}
   <article id="post-{{post.ID}}">
     <div class="hero-grid">
-      <header style='--transition-name: {{ post.slug }}' {{ (post.thumbnail == null) ? ' class="no-hero"' : '' }}>
+      <header {{ (post.thumbnail == null) ? ' class="no-hero"' : '' }}>
         <h1>{{post.title}}</h1>       
         {% include 'byline-page.twig' %}
       </header>

@@ -11,8 +11,3 @@
     navigation: none;
   }
 }
-
-header,
-.card {
-  view-transition-name: var(--transition-name);
-}
