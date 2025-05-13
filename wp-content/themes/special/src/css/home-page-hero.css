@@ -1,12 +1,8 @@
 /* stylelint-disable keyframe-block-no-duplicate-selectors */
 .home article > figure {
-  display: grid;
+  display: flex;
   margin-block-end: 1.5em;
-
-  picture {
-    grid-row: 1 / -1;
-    grid-column: 1 / -1;
-  }
+  justify-content: center;
 }
 
 .home article > figure > span {
@@ -20,8 +16,6 @@
   padding: 0 0.75em;
   z-index: 2;
   clip-path: polygon(0 0, 88.1% 23%, 100.33% 83.73%, 15% 100%);
-
-  /* border-radius: var(--radius); */
 }
 
 .home article > figure > span::after,
@@ -41,10 +35,7 @@
 .home article > figure a {
   font-size: 3em;
   display: inline-block;
-  position: relative;
-  grid-row: 1;
-  grid-column: 1;
-  place-self: flex-end center;
+  position: absolute;
   bottom: 20%;
   background: var(--body-background);
   width: 1em;

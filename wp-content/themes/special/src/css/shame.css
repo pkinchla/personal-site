@@ -88,7 +88,7 @@ a.action:hover:visited {
 }
 
 .home main .content-grid {
-  scroll-margin-block-start: 1.5em;
+  scroll-margin-top: 3.5em;
 }
 
 form.search {
