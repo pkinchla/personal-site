@@ -19,9 +19,11 @@ function siteSettingsOverlay() {
     ) {
       return;
     }
+    e.preventDefault();
+    popover.setAttribute('popover', 'hint');
 
     const is_opening = !popover?.matches(':popover-open');
-    e.preventDefault();
+
     document.startViewTransition(() => {
       if (is_opening) {
         return popover.showPopover();
@@ -29,6 +31,21 @@ function siteSettingsOverlay() {
       return popover.hidePopover();
     });
   }
+
+  document.addEventListener('click', (e) => {
+    if (
+      !popover.contains(e.target as HTMLElement) &&
+      popover.matches(':popover-open')
+    ) {
+      toggle(e);
+    }
+  });
+
+  popover.addEventListener('focusout', (e) => {
+    if (popover.contains(e.relatedTarget as HTMLElement)) return;
+
+    setTimeout(() => popover.matches(':popover-open') && toggle(e));
+  });
 
   document.addEventListener('keydown', (e) => {
     if (
