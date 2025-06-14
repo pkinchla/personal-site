@@ -1,7 +1,7 @@
 <figure class="hero{{ post.meta('toggle_image_filter') ? ' no-filter' : '' }}">
   <picture>
     <img
-      fetchpriority="high"
+      fetchpriority=high
       srcset="
         {{post.thumbnail.src|resize(2000)|towebp}} 2000w,
         {{post.thumbnail.src|resize(1200)|towebp}} 1200w,
