@@ -11,7 +11,7 @@
 
 .hero-grid header {
   width: fit-content;
-  padding: 0 2rem;
+  padding: 0 2em 1.25em;
 }
 
 .hero-grid header.no-hero {
@@ -34,14 +34,6 @@
 
 .hero-grid header > div > span:last-of-type {
   display: block;
-}
-
-.hero-grid header > div > span:last-of-type:has(share-button) {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
-  align-items: center;
-  margin-block-start: 0.25em;
 }
 
 .hero-grid .hero {
