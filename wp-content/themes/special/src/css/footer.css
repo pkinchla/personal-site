@@ -90,10 +90,12 @@
 }
 
 .site .speedlify-rank-change.up::before {
+  font-family: system-ui;
   content: '\2191';
 }
 
 .site .speedlify-rank-change.down::before {
+  font-family: system-ui;
   content: '\2193';
 }
 
