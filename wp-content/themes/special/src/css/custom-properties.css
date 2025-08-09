@@ -1,14 +1,14 @@
 :root {
   /* base typography */
-  --font-serif: 'Cooper', georgia, serif;
-  --font-sans-serif: 'Proxima Vara', -apple-system, blinkmacsystemfont,
-    'Segoe UI', roboto, helvetica, arial, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-display: 'Cooper', georgia, serif;
+  --font-sans-serif: 'Arbeit', -apple-system, blinkmacsystemfont, 'Segoe UI',
+    roboto, helvetica, arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
   --font-mono: menlo, courier, monospace;
   --variable-wght-bold: 707;
   --variable-wght-med: 650;
   --variable-wght-reg: 400;
-  --variable-italic: 100;
+  --variable-italic: 1;
 
   /* base colors overrides in color-scheme */
   --body-background: #f1f1f1;

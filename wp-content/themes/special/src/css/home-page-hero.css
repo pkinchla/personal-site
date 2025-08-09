@@ -33,6 +33,7 @@
 }
 
 .home article > figure a {
+  font-family: system-ui, sans-serif;
   font-size: 3em;
   display: inline-block;
   position: absolute;

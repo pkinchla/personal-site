@@ -1,7 +1,7 @@
 @font-face {
   font-display: swap;
-  font-family: 'Proxima Vara';
-  src: url('/typefaces/proxima-vara-roman.woff2') format('woff2-variations');
+  font-family: Arbeit;
+  src: url('/typefaces/arbeit-variable.woff2') format('woff2-variations');
 }
 
 @font-face {
@@ -38,7 +38,7 @@ h5,
 .h5,
 h6,
 .h6 {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-variation-settings: 'wght' var(--variable-wght-bold);
   display: block;
   color: var(--secondary);
@@ -47,7 +47,7 @@ h6,
 }
 
 .editor-post-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: normal;
   font-size: 2.625em;
   color: var(--secondary);

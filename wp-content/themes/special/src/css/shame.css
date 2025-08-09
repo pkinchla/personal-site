@@ -314,7 +314,7 @@ main > article > div .comment-author img,
 }
 
 .random-link {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 2em;
   font-variation-settings: 'wght' var(--variable-wght-bold);
   display: inline-block;
