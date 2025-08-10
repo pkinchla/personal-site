@@ -57,7 +57,7 @@ font-settings fieldset input[type='range'] {
   background: transparent;
   max-width: 6em;
   margin-block-start: 0.175em;
-  margin-inline: 0.5em 0.5em;
+  margin-inline: 0.5em;
   appearance: none;
   outline-color: var(--secondary);
   outline-width: 0.125em;
@@ -142,7 +142,6 @@ color-theme-switcher fieldset span {
   align-items: center;
   justify-content: center;
   padding: 0.55em;
-  border-color: currentcolor;
   border: 0.125em solid var(--secondary);
 }
 

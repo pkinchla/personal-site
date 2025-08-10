@@ -18,7 +18,7 @@ pre[class*='language-'] {
   white-space: pre;
   word-break: normal;
   word-spacing: normal;
-  word-wrap: normal;
+  overflow-wrap: normal;
 }
 
 /* Code blocks */
@@ -233,19 +233,21 @@ pre[class*='language-'] {
 @media screen and (-ms-high-contrast: active) {
   code[class*='language-'],
   pre[class*='language-'] {
+    /* stylelint-disable-next-line declaration-property-value-no-unknown */
     background: window;
-    color: windowText;
+    color: CanvasText;
   }
 
   :not(pre) > code[class*='language-'],
   pre[class*='language-'] {
+    /* stylelint-disable-next-line declaration-property-value-no-unknown */
     background: window;
   }
 
   .token.important {
     font-weight: normal;
     background: highlight;
-    color: window;
+    color: canvas;
   }
 
   .token.atrule,

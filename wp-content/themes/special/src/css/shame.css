@@ -20,7 +20,7 @@
 
 .photo-feed {
   display: grid;
-  grid-gap: 0.1875em;
+  gap: 0.1875em;
   grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
   border-radius: var(--radius);
   overflow: hidden;

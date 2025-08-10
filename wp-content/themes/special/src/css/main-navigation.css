@@ -93,7 +93,7 @@
 
     .site > header > a {
       width: 100%;
-      padding-block: 1em 1em;
+      padding-block: 1em;
       padding-inline: 4em 1em;
       margin-block-end: 1em;
     }
