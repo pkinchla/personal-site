@@ -49,9 +49,14 @@
 
 .action,
 .post-navigation a {
+  align-items: center;
   display: inline-flex;
   padding: 0.5em 1em;
   gap: 0.25em;
+
+  svg {
+    margin-block-start: 0.15em;
+  }
 }
 
 .action.border {
