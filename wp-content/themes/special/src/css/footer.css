@@ -90,13 +90,11 @@
 }
 
 .site .speedlify-rank-change.up::before {
-  font-family: system-ui;
-  content: '\2191';
+  font-family: var(--font-display);
 }
 
 .site .speedlify-rank-change.down::before {
-  font-family: system-ui;
-  content: '\2193';
+  font-family: var(--font-display);
 }
 
 @supports (display: grid) {
