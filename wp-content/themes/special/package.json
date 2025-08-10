@@ -18,6 +18,7 @@
     "@rollup/plugin-typescript": "^12.1.4",
     "@types/dom-view-transitions": "^1.0.6",
     "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "@typescript-eslint/parser": "^8.39.0",
     "autoprefixer": "^10.4.21",
     "browser-sync": "^3.0.4",
     "cssnano": "^6.1.2",
@@ -35,7 +36,6 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "@typescript-eslint/parser": "^8.39.0",
     "rxjs": "^7.8.1",
     "speedlify-score": "^3.0.0"
   }
