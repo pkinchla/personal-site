@@ -321,7 +321,7 @@ main > article > div .comment-author img,
 .random-link {
   font-family: var(--font-display);
   font-size: 2em;
-  font-variation-settings: 'wght' var(--variable-wght-bold);
+  font-variation-settings: 'wght' var(--variable-wght-headings);
   display: inline-block;
   padding-block-end: 0.15em;
   margin-block-end: 1.5rem;

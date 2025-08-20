@@ -20,6 +20,7 @@
 
 body {
   font-family: var(--font-sans-serif);
+  font-weight: var(--variable-wght-body);
   font-size: clamp(1rem, 0.125rem + 1.1vw, 1.35rem);
   background: var(--body-background);
   color: var(--primary);
@@ -39,7 +40,7 @@ h5,
 h6,
 .h6 {
   font-family: var(--font-display);
-  font-variation-settings: 'wght' var(--variable-wght-bold);
+  font-variation-settings: 'wght' var(--variable-wght-headings);
   display: block;
   color: var(--secondary);
   margin-block-end: 0.35em;
@@ -146,7 +147,8 @@ figcaption {
 /* font helper utilities */
 .sans-regular {
   font-family: var(--font-sans-serif);
-  font-variation-settings: 'wght' var(--variable-wght-reg);
+  font-variation-settings: 'wght' var(--variable-wght-body);
+  font-feature-settings: 'ital' 0;
 }
 
 .sans-regular-italic {

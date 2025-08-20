@@ -3,33 +3,39 @@ import { debounceTime, distinctUntilChanged, map, tap } from 'rxjs/operators';
 import { addEventListenerMulti } from './utils';
 
 export default class FontSettingsControl extends HTMLElement {
-  defaultWght = 707;
+  defaultWght = '707';
   fontProperty: string;
+  localStorageKey: string;
+  label: string;
   constructor() {
     super();
-    this.fontProperty =
-      this.getAttribute('font-property') || '--variable-wght-bold';
+    this.localStorageKey =
+      this.getAttribute('font-property')?.split('--')[1] || '--not-found';
+    this.fontProperty = this.getAttribute('font-property') || '--not-found';
+    this.label = this.getAttribute('label') || 'Element';
   }
 
   connectedCallback() {
+    const localStorageValue = window.localStorage.getItem(this.localStorageKey);
+
     this.defaultWght =
-      window.localStorage.font_weight ||
+      localStorageValue ||
       getComputedStyle(document.documentElement).getPropertyValue(
         this.fontProperty
       );
 
-    if (window.localStorage.font_weight) {
+    if (localStorageValue) {
       document.documentElement.style.setProperty(
         this.fontProperty,
-        window.localStorage.font_weight
+        localStorageValue
       );
     }
 
     this.innerHTML = `
     <fieldset class="font-settings sans-medium-italic">
-      <legend>Font Weight</legend>
+      <legend>${this.label}</legend>
       <span>
-        <label for="range">Headings</label>
+        <label for="range">Font Weight</label>
         <input type="range" id="range" name="wght-bold" min="100" max="900" value=${this.defaultWght}>
         <label for="number" class="assistive-text">Bold Sans-serif</label>
         <span class="number">
@@ -55,15 +61,15 @@ export default class FontSettingsControl extends HTMLElement {
       </span>
     </fieldset>`;
 
-    const inputs = document.querySelectorAll(
+    const inputs = this.querySelectorAll(
       '.font-settings input'
     ) as unknown as HTMLInputElement[];
 
-    const buttons = document.querySelectorAll(
+    const buttons = this.querySelectorAll(
       '.font-settings button'
     ) as unknown as HTMLButtonElement[];
 
-    const numberInput = document.querySelector(
+    const numberInput = this.querySelector(
       '.font-settings input[type="number"'
     ) as HTMLInputElement;
 
@@ -111,7 +117,7 @@ export default class FontSettingsControl extends HTMLElement {
 
     const updateFontWeight = (value: string) => {
       document.documentElement.style.setProperty(this.fontProperty, value);
-      localStorage.setItem('font_weight', value);
+      localStorage.setItem(this.localStorageKey, value);
 
       const currentWeight = document.querySelector(
         '.current-weight'
