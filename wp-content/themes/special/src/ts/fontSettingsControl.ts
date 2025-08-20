@@ -18,6 +18,9 @@ export default class FontSettingsControl extends HTMLElement {
   connectedCallback() {
     const localStorageValue = window.localStorage.getItem(this.localStorageKey);
 
+    // TEMP
+    window.localStorage.removeItem('font_weight');
+
     this.defaultWght =
       localStorageValue ||
       getComputedStyle(document.documentElement).getPropertyValue(
