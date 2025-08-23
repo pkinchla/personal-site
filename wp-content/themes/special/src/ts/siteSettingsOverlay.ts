@@ -41,12 +41,6 @@ function siteSettingsOverlay() {
     }
   });
 
-  popover.addEventListener('focusout', (e) => {
-    if (popover.contains(e.relatedTarget as HTMLElement)) return;
-
-    setTimeout(() => popover.matches(':popover-open') && toggle(e));
-  });
-
   document.addEventListener('keydown', (e) => {
     if (
       e.key === 'Escape' &&
