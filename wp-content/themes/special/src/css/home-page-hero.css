@@ -88,11 +88,13 @@ a.jump-link.hidden:focus {
 }
 
 @media only screen and (min-width: 48em) {
-  .home article > figure > span {
-    font-size: 3em;
-  }
-
   .home article > figure a {
     bottom: 25%;
+  }
+}
+
+@media only screen and (min-width: 55em) {
+  .home article > figure > span {
+    font-size: 3em;
   }
 }
