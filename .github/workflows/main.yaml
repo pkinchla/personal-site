@@ -6,34 +6,55 @@ on:
   workflow_dispatch:
 
 jobs:
-  run_pull:
-    name: run pull
+  deploy:
+    name: Build and Deploy
     runs-on: ubuntu-latest
 
     steps:
-      - name: install ssh keys
-        # check this thread to understand why its needed:
-        # https://stackoverflow.com/a/70447517
+      # Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Setup Node.js and pnpm
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+          run_install: true
+
+      # Build the project locally
+      - name: Build project
+        run: |
+          cd wp-content/themes/special
+          pnpm run build
+
+      # Setup SSH for file transfer
+      - name: Setup SSH
         run: |
           install -m 600 -D /dev/null ~/.ssh/id_rsa
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
-      - name: connect, pull and build
+
+      # Copy build files to server
+      - name: Copy build to server
         run: |
-          ssh -t ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} &&
-          git checkout ${{ secrets.MAIN_BRANCH }} && 
-          git pull &&
-          cd wp-content/themes/special/ &&
-          ~/.local/share/pnpm/pnpm i &&
-          ~/.local/share/pnpm/pnpm run build &&
-          chown -R www-data:www-data /var/www/* && 
-          rm -rf node_modules &&
-          exit"
-      - name: clear cloudflare cache
+          scp -r wp-content/themes/special/dist \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}/wp-content/themes/special/
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "sudo chown -R www-data:www-data ${{ secrets.WORK_DIR }}/wp-content/themes/special/dist"
+
+      # Purge Cloudflare cache
+      - name: Clear Cloudflare cache
         run: |
-          curl -X POST 'https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache' \
-            -H 'Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}' \
-            -H 'Content-Type: application/json' \
+          curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
+            -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
             --data '{ "purge_everything":true }'
-      - name: cleanup
+
+      # Cleanup SSH keys
+      - name: Cleanup
         run: rm -rf ~/.ssh
