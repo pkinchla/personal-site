@@ -3,7 +3,7 @@ import { debounceTime, distinctUntilChanged, map, tap } from 'rxjs/operators';
 import { addEventListenerMulti } from './utils';
 
 export default class FontSettingsControl extends HTMLElement {
-  defaultWght = '707';
+  fontValue: string | null;
   fontProperty: string;
   localStorageKey: string;
   label: string;
@@ -13,12 +13,13 @@ export default class FontSettingsControl extends HTMLElement {
       this.getAttribute('font-property')?.split('--')[1] || '--not-found';
     this.fontProperty = this.getAttribute('font-property') || '--not-found';
     this.label = this.getAttribute('label') || 'Element';
+    this.fontValue = null;
   }
 
   connectedCallback() {
     const localStorageValue = window.localStorage.getItem(this.localStorageKey);
 
-    this.defaultWght =
+    this.fontValue =
       localStorageValue ||
       getComputedStyle(document.documentElement).getPropertyValue(
         this.fontProperty
@@ -36,7 +37,7 @@ export default class FontSettingsControl extends HTMLElement {
       <legend>${this.label}</legend>
       <span>
         <label for="range">Font Weight</label>
-        <input type="range" id="range" name="wght-bold" min="100" max="900" value=${this.defaultWght}>
+        <input type="range" id="range" name="wght-bold" min="100" max="900">
         <label for="number" class="assistive-text">Bold Sans-serif</label>
         <span class="number">
           <button class="decrement">
@@ -47,7 +48,7 @@ export default class FontSettingsControl extends HTMLElement {
               </svg>
             </span>          
           </button>
-          <input pattern="[0-9]*" id="number" type="number" inputmode="numeric" min="100" max="900" step="100" name="wght-bold" value=${this.defaultWght} />
+          <input pattern="[0-9]*" id="number" type="number" inputmode="numeric" min="100" max="900" step="100" name="wght-bold" />
           <button class="increment">
             <span class='assistive-text'>increment font weight</span>
             <span aria-hidden="true">
@@ -56,7 +57,7 @@ export default class FontSettingsControl extends HTMLElement {
               </svg>
             </span>          
           </button>
-          <span class="current-weight assistive-text" aria-live="assertive">current font weight is ${this.defaultWght}</span>
+          <span class="current-weight assistive-text" aria-live="assertive">current font weight is ${this.fontValue}</span>
         </span>
       </span>
     </fieldset>`;
@@ -89,7 +90,11 @@ export default class FontSettingsControl extends HTMLElement {
       });
     }
 
+    // swap wtih routine?
     for (const input of inputs) {
+      // set intial values for all inputs
+      input.value = this.fontValue;
+
       addEventListenerMulti(input, 'change input', function (e) {
         const target = e.target as HTMLInputElement;
         if (target.type === 'number') {
@@ -110,8 +115,8 @@ export default class FontSettingsControl extends HTMLElement {
           return target.value;
         }),
         distinctUntilChanged(),
-        debounceTime(300),
-        tap((value: string) => updateFontWeight(value))
+        debounceTime(250),
+        tap((value: string) => value && updateFontWeight(value))
       )
       .subscribe();
 
