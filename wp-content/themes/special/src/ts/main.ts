@@ -7,8 +7,6 @@ import FontSettingsControl from './fontSettingsControl';
 import siteSettingsOverlay from './siteSettingsOverlay';
 import 'speedlify-score/speedlify-score.js';
 
-console.log('Scripts loaded');
-
 function scripts() {
   return (
     checkJSLoaded(),
