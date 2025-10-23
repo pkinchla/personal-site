@@ -1,4 +1,4 @@
-import { fromEvent, of } from 'rxjs';
+import { fromEvent } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map, tap } from 'rxjs/operators';
 import { addEventListenerMulti } from './utils';
 
