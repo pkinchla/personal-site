@@ -1,4 +1,4 @@
-import { fromEvent } from 'rxjs';
+import { fromEvent, of } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map, tap } from 'rxjs/operators';
 import { addEventListenerMulti } from './utils';
 
@@ -108,6 +108,11 @@ export default class FontSettingsControl extends HTMLElement {
       .pipe(
         map((e) => {
           const target = e.target as HTMLInputElement;
+
+          if (!/[0-9]/.test(target.value)) {
+            target.value = '';
+          }
+
           if (target.value.length > 3) {
             target.value = target.value.slice(0, 3);
           }
