@@ -41,7 +41,8 @@ body:has(.site-settings[popover]:popover-open)::after {
   backdrop-filter: blur(0.4375rem);
 }
 
-.toggle-user-settings {
+.toggle-user-settings,
+.dismiss-search-dialog {
   display: inline-flex;
   position: absolute;
   background-color: var(--body-background);

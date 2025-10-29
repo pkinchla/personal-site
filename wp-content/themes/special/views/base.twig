@@ -10,7 +10,6 @@
     <a class="assistive-text no-offset sans-medium-italic skip-link" href="#content">Skip To Content</a>
     {% block header %}
     <header id="masthead" class="sans-medium-italic">
-
       <button class="toggle-user-settings open" popovertarget="site-settings">
         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 -960 960 960">
           <path
@@ -18,6 +17,7 @@
         </svg>
         <span class="assistive-text">Close Site Settings</span>
       </button>
+      <fuzzy-search class="sans-regular"></fuzzy-search>
       <div popover class="site-settings" id="site-settings">
         <button class="toggle-user-settings close" popovertarget="site-settings">
           <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100">
@@ -44,14 +44,15 @@
       <!-- #site-navigation -->
     </header>
     <!-- #masthead -->
-    {% endblock %}
-
-    <main id="content" tabindex="-1"> {% block content %}{% endblock %}
+    {% endblock %}    
+    <main id="content" tabindex="-1">
+      {% block content %}
+      {% endblock %}
     </main>
     <!-- #content -->
 
     {% block footer %}
-    <footer class="content-grid">
+    <footer class="content-grid">      
       {% include 'footer.twig' %}
     </footer>
     {{ function('wp_footer') }}
