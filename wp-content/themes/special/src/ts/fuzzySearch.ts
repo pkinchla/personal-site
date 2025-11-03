@@ -20,7 +20,7 @@ export default class FuzzySearch extends HTMLElement {
     super();
 
     // TODO: figure env for endpoint
-    this.apiEndpoint = `http://paulkinchla.com/wp-json/wp/v2/search?search=`;
+    this.apiEndpoint = `https://paulkinchla.com/wp-json/wp/v2/search?search=`;
   }
 
   connectedCallback() {
