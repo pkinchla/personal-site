@@ -36,7 +36,7 @@ export default class FuzzySearch extends HTMLElement {
         <search>    
           <label class="assistive-text" for="search">Search:</label>
           <input class="sans-regular-italic" type="text" id="search" placeholder="Search Site...">
-          <ul class="results" role="list" tabindex="0"></ul>
+          <ul class="results" role="list" tabindex="-1"></ul>
           <button class="dismiss-search-dialog close">
             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100">
               <line x1="22.5" y1="77.5" x2="77.5" y2="22.5" />
@@ -52,6 +52,10 @@ export default class FuzzySearch extends HTMLElement {
     const resultsContainer = this.querySelector('.results') as HTMLUListElement;
     const dialog = this.querySelector('dialog') as HTMLDialogElement;
     const buttons = this.querySelectorAll('button') as NodeList;
+    let currentFocusIndex = -1;
+
+    // reset index on focus of search input
+    input.addEventListener('focus', () => (currentFocusIndex = -1));
 
     buttons.forEach((button) =>
       button.addEventListener(
@@ -64,6 +68,7 @@ export default class FuzzySearch extends HTMLElement {
       )
     );
 
+    // send focus to results container when enter is pressed
     fromEvent<KeyboardEvent>(input, 'keydown')
       .pipe(
         map((e) => e.key),
@@ -71,6 +76,36 @@ export default class FuzzySearch extends HTMLElement {
       )
       .subscribe(() => resultsContainer.focus());
 
+    // handle arrow keys for navigation of results
+    fromEvent<KeyboardEvent>(dialog, 'keydown')
+      .pipe(
+        map((e) => e.key || e.code),
+        filter((key) => key === 'ArrowUp' || key === 'ArrowDown')
+      )
+      .subscribe((key) => {
+        const resultsLinksArray = Array.from(
+          resultsContainer.querySelectorAll('a')
+        );
+        // no results, early return
+        if (resultsLinksArray.length === 0) {
+          return;
+        }
+
+        switch (key) {
+          case 'ArrowDown':
+            currentFocusIndex =
+              (currentFocusIndex + 1) % resultsLinksArray.length;
+            resultsLinksArray[currentFocusIndex]?.focus();
+            break;
+          case 'ArrowUp':
+            currentFocusIndex =
+              (currentFocusIndex - 1 + resultsLinksArray.length) %
+              resultsLinksArray.length;
+            resultsLinksArray[currentFocusIndex].focus();
+        }
+      });
+
+    // populate results on keyup
     fromEvent<KeyboardEvent>(input, 'keyup')
       .pipe(
         map(() => input.value),
@@ -94,7 +129,7 @@ export default class FuzzySearch extends HTMLElement {
             : `<li>No results for: <strong>${query}</strong></li>`;
         })
       )
-      .subscribe((results) => (resultsContainer.innerHTML = results));
+      .subscribe((results) => (resultsContainer.innerHTML = results ?? ''));
   }
 
   static init() {

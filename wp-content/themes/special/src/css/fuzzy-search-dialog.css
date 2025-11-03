@@ -1,0 +1,76 @@
+header .search-toggle {
+  display: inline-flex;
+  width: 3em;
+  height: 3em;
+  background-color: var(--body-background);
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 100%;
+  border: 0.1875em solid var(--secondary);
+  outline-color: var(--secondary);
+
+  svg {
+    width: 1.75em;
+    height: 1.75em;
+    fill: var(--secondary);
+  }
+}
+
+dialog {
+  transition:
+    transform 0.25s,
+    overlay 0.25s allow-discrete,
+    display 0.25s allow-discrete;
+  transform: scale(0);
+  position: fixed;
+
+  &[open] {
+    transform: scale(1);
+  }
+}
+
+@starting-style {
+  dialog[open] {
+    transform: scale(0);
+  }
+}
+
+fuzzy-search {
+  display: block;
+  position: absolute;
+  z-index: 3;
+  inset-block-end: -4em;
+  inset-inline-start: 6em;
+
+  @media only screen and (min-width: 48em) {
+    :inset-block-end: unset;
+    inset-inline-start: 4.5em;
+    inset-block-start: 0.95em;
+  }
+}
+
+fuzzy-search dialog .results {
+  margin-block-end: 0;
+}
+
+fuzzy-search dialog .results:focus-within {
+  border-radius: var(--radius);
+}
+
+fuzzy-search dialog .results:empty {
+  pointer-events: none;
+  display: none;
+}
+
+fuzzy-search dialog .results a {
+  display: block;
+  width: 100%;
+  padding: 0.25em 0.5em;
+  border-radius: var(--radius);
+}
+
+body:has(.search-dialog:open) {
+  overflow: hidden;
+  overscroll-behavior: none;
+}

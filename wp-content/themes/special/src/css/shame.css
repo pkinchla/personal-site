@@ -23,6 +23,10 @@
   }
 }
 
+.site-header .search-dialog a::after {
+  display: none;
+}
+
 .search-dialog::backdrop {
   backdrop-filter: blur(0.4375rem);
 }
@@ -366,65 +370,4 @@ main > article > div .comment-author img,
 
 .random-link:visited:hover {
   background-color: var(--visited);
-}
-
-/* move to own file */
-header .search-toggle {
-  display: inline-flex;
-  position: absolute;
-  width: 3em;
-  height: 3em;
-  inset-block-end: -4em;
-  inset-inline-start: 6em;
-  background-color: var(--body-background);
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  border-radius: 100%;
-  border: 0.1875em solid var(--secondary);
-  outline-color: var(--secondary);
-  z-index: 3;
-
-  svg {
-    width: 1.75em;
-    height: 1.75em;
-    fill: var(--secondary);
-  }
-
-  @media only screen and (min-width: 48em) {
-    :inset-block-end: unset;
-    inset-inline-start: 4.5em;
-    inset-block-start: 0.95em;
-  }
-}
-
-dialog {
-  transition:
-    display 0.4s allow-discrete,
-    overlay 0.4s allow-discrete;
-  animation: close 0.4s forwards;
-
-  &[open] {
-    animation: open 0.4s forwards;
-  }
-}
-
-@keyframes open {
-  from {
-    transform: scale(0);
-  }
-
-  to {
-    transform: scale(1);
-  }
-}
-
-@keyframes close {
-  from {
-    transform: scale(1);
-  }
-
-  to {
-    transform: scale(0);
-  }
 }
