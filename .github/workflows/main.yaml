@@ -45,7 +45,7 @@ jobs:
         run: |
           scp -r wp-content/themes/special/dist \
             ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.WORK_DIR }}/wp-content/themes/special/
-          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "sudo chown -R www-data:www-data ${{ secrets.WORK_DIR }}/wp-content/themes/special/dist"
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && git checkout ${{ secrets.MAIN_BRANCH }} && git pull && sudo chown -R www-data:www-data ${{ secrets.WORK_DIR }}"
 
       # Purge Cloudflare cache
       - name: Clear Cloudflare cache
