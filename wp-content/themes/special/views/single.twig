@@ -12,18 +12,6 @@
 			{% endif %}
 		</div>
 		<div class="content-grid">
-			{% if post.toc|length >= 2 %}
-				<details id="toc" class="toc toc-js sans-medium-italic">
-					<summary>Table of Contents</summary>
-					<nav aria-label="Table of Contents">
-						<ol role="list">
-							{% for link in post.toc %}
-								<li>{{link}}</li>
-							{% endfor %}
-						</ol>
-					</nav>
-				</details>
-			{% endif %}
 			{{post.content}}
       <a href="/random/" class="random-link">⚘<span class="assistive-text">Random Post</span>
       </a>
@@ -33,9 +21,6 @@
 			{{post.post_nav}}
 			{% if (function('comments_open')) or (function('get_comments_number')) %}
 				{{ function( 'comments_template' ) }}
-			{% endif %}
-			{% if post.toc|length >= 2 %}
-				<a href="#toc" class="back-to-toc toc-link-js sans-medium-italic no-offset">Back to Table of Contents</a>
 			{% endif %}
 		</div>
 	</article>

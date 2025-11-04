@@ -1,7 +1,6 @@
 import observeHero from './observeHero';
 import invokeServiceWorker from './invokeServiceWorker';
 import checkJSLoaded from './checkJSLoaded';
-import observeTableOfContents from './observeTableOfContents';
 import ColorSchemeSwitcher from './colorSchemeSwitcher';
 import FontSettingsControl from './fontSettingsControl';
 import siteSettingsOverlay from './siteSettingsOverlay';
@@ -18,8 +17,7 @@ function scripts() {
     observeHero(),
     ColorSchemeSwitcher.init(),
     FontSettingsControl.init(),
-    FuzzySearch.init(),
-    observeTableOfContents()
+    FuzzySearch.init()
   );
 }
 
