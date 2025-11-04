@@ -73,4 +73,5 @@ fuzzy-search dialog .results a {
 body:has(.search-dialog:open) {
   overflow: hidden;
   overscroll-behavior: none;
+  margin-inline-end: var(--scrollbar-width);
 }

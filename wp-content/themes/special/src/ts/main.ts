@@ -7,15 +7,14 @@ import FontSettingsControl from './fontSettingsControl';
 import siteSettingsOverlay from './siteSettingsOverlay';
 import FuzzySearch from './fuzzySearch';
 import 'speedlify-score/speedlify-score.js';
+import setScrollbarWidth from './setScrollbarWidth';
 
 function scripts() {
   return (
     checkJSLoaded(),
+    setScrollbarWidth(),
     invokeServiceWorker(),
-    siteSettingsOverlay(
-      'button[popovertarget=site-settings]',
-      '#site-settings'
-    ),
+    siteSettingsOverlay(),
     observeHero(),
     ColorSchemeSwitcher.init(),
     FontSettingsControl.init(),
