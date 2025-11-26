@@ -22,13 +22,19 @@ export default class ColorSchemeSwitcher extends HTMLElement {
 
     this.innerHTML = `
       <fieldset class="color-theme-switcher sans-medium-italic">
-        <legend>Color Scheme</legend>
-        <input class="assistive-text" type="radio" id="system" name="color-scheme" value="system">
-        <label for="system">System</label>
-        <input class="assistive-text" type="radio" id="dark" name="color-scheme" value="dark">
-        <label for="dark">Dark</label>
-        <input class="assistive-text" type="radio" id="light" name="color-scheme" value="light">
-        <label for="light">Light</label>
+        <legend>Color Scheme</legend>       
+        <label for="system">
+         <input type="radio" id="system" name="color-scheme" value="system">
+          System
+        </label>
+        <label for="dark">
+          <input type="radio" id="dark" name="color-scheme" value="dark">
+          Dark
+        </label>
+        <label for="light">
+          <input type="radio" id="light" name="color-scheme" value="light">
+          Light
+        </label>
       </fieldset>
     `;
 

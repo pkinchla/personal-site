@@ -79,6 +79,10 @@ select {
   font: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,

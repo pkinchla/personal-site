@@ -1,19 +1,17 @@
 /* stylelint-disable keyframe-block-no-duplicate-selectors */
 .home article > figure {
   display: flex;
-  background: radial-gradient(
-      circle at 25% 25%,
-      var(--link) 0%,
-      transparent 50%
-    ),
+  background:
+    radial-gradient(circle at 25% 25%, var(--link) 0%, transparent 50%),
     radial-gradient(circle at 75% 75%, var(--visited) 0%, transparent 50%),
     linear-gradient(180deg, var(--body-background) 0%, transparent 100%);
   margin-block-end: 1.5em;
   justify-content: center;
+  container-type: inline-size;
 }
 
 .home article > figure > span {
-  font-size: 2em;
+  font-size: clamp(2em, 4cqi, 3em);
   position: relative;
   position: absolute;
   right: 48%;
@@ -90,11 +88,5 @@ a.jump-link.hidden:focus {
 @media only screen and (min-width: 48em) {
   .home article > figure a {
     bottom: 25%;
-  }
-}
-
-@media only screen and (min-width: 55em) {
-  .home article > figure > span {
-    font-size: 3em;
   }
 }
