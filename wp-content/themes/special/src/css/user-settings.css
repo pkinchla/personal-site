@@ -23,7 +23,7 @@ font-settings fieldset legend,
 color-theme-switcher fieldset legend,
 sound-toggle fieldset legend {
   padding: 0 0.25em;
-  margin: 0 0.5em 0 0.75em;
+  margin: 0 0.5em 0.5em 0.75em;
 }
 
 font-settings fieldset legend {
