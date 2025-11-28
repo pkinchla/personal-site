@@ -62,7 +62,7 @@ export default class FontSettingsControl extends HTMLElement {
               </svg>
             </span>          
           </button>
-          <span class="current-weight assistive-text" aria-live="assertive">current font weight is ${this.fontValue}</span>
+          <span role="status" class="current-weight assistive-text">current font weight is ${this.fontValue}</span>
         </span>
       </span>
     </fieldset>`;
@@ -135,6 +135,16 @@ export default class FontSettingsControl extends HTMLElement {
         distinctUntilChanged(),
         debounceTime(250),
         tap((value: string) => value && updateFontWeight(value))
+      )
+      .subscribe();
+
+    fromEvent(numberInput, 'blur')
+      .pipe(
+        map((e) => {
+          const target = e.target as HTMLInputElement;
+          return target.value === '' ? this.minValue : target.value;
+        }),
+        tap((value: string) => updateFontWeight(value))
       )
       .subscribe();
 
