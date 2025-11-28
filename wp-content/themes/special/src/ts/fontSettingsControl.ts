@@ -37,13 +37,16 @@ export default class FontSettingsControl extends HTMLElement {
       );
     }
 
+    const formatLabel = (value: string) =>
+      value.replace(/\s+/g, '-').toLowerCase();
+
     this.innerHTML = `
     <fieldset class="font-settings sans-medium-italic">
       <legend>${this.label}</legend>
       <span>
-        <label for="range">Font Weight</label>
-        <input type="range" id="range" name="wght-bold" min="${this.minValue}" max="${this.maxValue}">
-        <label for="number" class="assistive-text">Bold Sans-serif</label>
+        <label for="range-${formatLabel(this.label)}">Font Weight</label>
+        <input type="range" id="range-${formatLabel(this.label)}" name="wght-bold" min="${this.minValue}" max="${this.maxValue}">
+        <label for="number-${formatLabel(this.label)}" class="assistive-text">${this.label}</label>
         <span class="number">
           <button class="decrement">
             <span class='assistive-text'>decrement font weight</span>
@@ -53,7 +56,7 @@ export default class FontSettingsControl extends HTMLElement {
               </svg>
             </span>          
           </button>
-          <input pattern="[0-9]*" id="number" type="number" inputmode="decimal" min="${this.minValue}" max="${this.maxValue}" step="50" name="wght-bold" />
+          <input pattern="[0-9]*" id="number-${formatLabel(this.label)}" type="number" inputmode="decimal" min="${this.minValue}" max="${this.maxValue}" step="50" name="wght-bold" />
           <button class="increment">
             <span class='assistive-text'>increment font weight</span>
             <span aria-hidden="true">
@@ -95,7 +98,7 @@ export default class FontSettingsControl extends HTMLElement {
       });
     }
 
-    // swap wtih routine?
+    // swap with routine?
     for (const input of inputs) {
       // set intial values for all inputs
       input.value = this.fontValue;

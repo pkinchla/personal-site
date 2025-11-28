@@ -11,7 +11,7 @@
 }
 
 .home article > figure > span {
-  font-size: clamp(2em, 4cqi, 3em);
+  font-size: clamp(1.75em, 5cqi, 3.5em);
   position: relative;
   position: absolute;
   right: 48%;
