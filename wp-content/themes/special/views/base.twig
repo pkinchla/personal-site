@@ -18,7 +18,7 @@
         <span class="assistive-text">Close Site Settings</span>
       </button>
       <fuzzy-search class="sans-regular"></fuzzy-search>
-      <div popover class="site-settings" id="site-settings">
+      <div popover="manual" class="site-settings" id="site-settings">
         <button class="toggle-user-settings close" popovertarget="site-settings">
           <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100">
             <line x1="22.5" y1="77.5" x2="77.5" y2="22.5" />
@@ -28,10 +28,10 @@
         </button>        
         <color-theme-switcher></color-theme-switcher>        
         <br>
-        <font-settings label="Headings" font-property="--variable-wght-headings"></font-settings>
+        <font-settings label="Headings" font-property="--variable-wght-headings" minValue="400" maxValue="900"></font-settings>
         <br>
          <div contenteditable="true" class="h2">The quick brown fox jumps over the lazy dog</div>
-        <font-settings label="Body Copy" font-property="--variable-wght-body"></font-settings>
+        <font-settings label="Body Copy" font-property="--variable-wght-body" minValue="300" maxValue="700"></font-settings>
         <br>
         <div contenteditable="true" class="sans-regular">The quick brown fox jumps over the lazy dog</div>
       </div>

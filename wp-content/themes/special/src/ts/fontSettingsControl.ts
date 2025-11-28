@@ -7,6 +7,9 @@ export default class FontSettingsControl extends HTMLElement {
   fontProperty: string;
   localStorageKey: string;
   label: string;
+  minValue: string;
+  maxValue: string;
+
   constructor() {
     super();
     this.localStorageKey =
@@ -14,6 +17,8 @@ export default class FontSettingsControl extends HTMLElement {
     this.fontProperty = this.getAttribute('font-property') || '--not-found';
     this.label = this.getAttribute('label') || 'Element';
     this.fontValue = null;
+    this.minValue = this.getAttribute('minValue') || '100';
+    this.maxValue = this.getAttribute('maxValue') || '900';
   }
 
   connectedCallback() {
@@ -37,7 +42,7 @@ export default class FontSettingsControl extends HTMLElement {
       <legend>${this.label}</legend>
       <span>
         <label for="range">Font Weight</label>
-        <input type="range" id="range" name="wght-bold" min="100" max="900">
+        <input type="range" id="range" name="wght-bold" min="${this.minValue}" max="${this.maxValue}">
         <label for="number" class="assistive-text">Bold Sans-serif</label>
         <span class="number">
           <button class="decrement">
@@ -48,7 +53,7 @@ export default class FontSettingsControl extends HTMLElement {
               </svg>
             </span>          
           </button>
-          <input pattern="[0-9]*" id="number" type="number" inputmode="numeric" min="100" max="900" step="100" name="wght-bold" />
+          <input aria-describedby="tip-${this.label}" pattern="[0-9]*" id="number" type="number" inputmode="decimal" min="${this.minValue}" max="${this.maxValue}" step="100" name="wght-bold" />
           <button class="increment">
             <span class='assistive-text'>increment font weight</span>
             <span aria-hidden="true">
@@ -111,6 +116,14 @@ export default class FontSettingsControl extends HTMLElement {
 
           if (!/[0-9]/.test(target.value)) {
             target.value = '';
+          }
+
+          if (target.value.length === 3 && target.value < this.minValue) {
+            target.value = this.minValue;
+          }
+
+          if (target.value.length === 3 && target.value > this.maxValue) {
+            target.value = this.maxValue;
           }
 
           if (target.value.length > 3) {

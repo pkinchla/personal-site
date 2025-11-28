@@ -23,7 +23,6 @@ function siteSettingsOverlay(
     }
     e.preventDefault();
     popover.setAttribute('popover', 'hint');
-
     const is_opening = !popover?.matches(':popover-open');
 
     document.startViewTransition(() => {
@@ -55,20 +54,9 @@ function siteSettingsOverlay(
   });
   // TODO: fix this overlay click and focus out issues
   // when popover loses focuses close it
-  // - check if there is an active gs
-  // - make sure the active element is not a child in the popover
-  // - and make sure the active element is not one of the popover buttons
-  // popover.addEventListener('focusout', (e) => {
-  //   console.log(document.activeElement, document.hasFocus());
-
-  //   return requestAnimationFrame(
-  //     () =>
-  //       document?.activeElement &&
-  //       popover.contains(document.activeElement) === false &&
-  //       !Array.from(buttons).includes(document.activeElement) &&
-  //       toggle(e)
-  //   );
-  // });
+  // document.addEventListener('focusout', (e) =>
+  //   requestAnimationFrame(() => !popover.contains(e.relatedTarget) && toggle(e))
+  // );
 }
 
 export default siteSettingsOverlay;
