@@ -65,7 +65,7 @@ export default class FontSettingsControl extends HTMLElement {
               </svg>
             </span>          
           </button>
-          <span role="status" class="current-weight assistive-text">current font weight is ${this.fontValue}</span>
+          <span role="status" class="current-weight assistive-text">Current font weight for ${this.label} is ${this.fontValue}</span>
         </span>
       </span>
     </fieldset>`;
@@ -159,7 +159,7 @@ export default class FontSettingsControl extends HTMLElement {
         '.current-weight'
       ) as HTMLElement;
 
-      currentWeight.innerText = `Current font weight is ${getComputedStyle(
+      currentWeight.innerText = `Current font weight for ${this.label} is ${getComputedStyle(
         document.documentElement
       ).getPropertyValue(this.fontProperty)}`;
 
