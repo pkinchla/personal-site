@@ -85,10 +85,10 @@
   display: inline-flex;
   padding: 0.5em 1em;
   gap: 0.25em;
+}
 
-  svg {
-    margin-block-start: 0.15em;
-  }
+.post-navigation a svg {
+  margin-block-start: 0.15em;
 }
 
 .action.border {
@@ -108,6 +108,10 @@ a.action:hover {
 a.action:hover:visited {
   background: var(--visited);
   color: var(--body-background);
+
+  svg {
+    fill: var(--body-background);
+  }
 }
 
 .action:focus {
@@ -370,4 +374,41 @@ main > article > div .comment-author img,
 
 .random-link:visited:hover {
   background-color: var(--visited);
+}
+
+.web-ring {
+  h2,
+  p {
+    margin-block-end: 0;
+    text-align: center;
+  }
+
+  p {
+    margin-bottom: 0.25em;
+    padding-block-end: 0.25em;
+  }
+
+  ul {
+    list-style: none;
+    border-radius: 0.25em;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 0.5em;
+
+    a {
+      height: 100%;
+    }
+
+    li:nth-of-type(2) {
+      flex: 1;
+      text-align: center;
+      justify-self: center;
+
+      a {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
 }
