@@ -32,19 +32,21 @@ export default class FuzzySearch extends HTMLElement {
           <path d="M574.02 215.86a258.4 258.4 0 0 0-64.195-28.008 261.25 261.25 0 0 0-255.41 66.562 254.1 254.1 0 0 0-40.848 53.145 23.997 23.997 0 0 0 27.113 35.109 23.99 23.99 0 0 0 14.535-11.25 206 206 0 0 1 33.14-43.066 213.14 213.14 0 0 1 96.855-55.418 213.1 213.1 0 0 1 111.58 1.114 210.5 210.5 0 0 1 52.258 22.805 24.001 24.001 0 0 0 24.974-40.993z"/>
         </svg>
       </button>
-      <dialog class="search-dialog">
-        <search>    
-          <label class="assistive-text" for="search">Search:</label>
-          <input class="sans-regular-italic" type="text" id="search" placeholder="Search Site...">
-          <ul class="results" role="list" tabindex="-1"></ul>
-          <button class="dismiss-search-dialog close">
-            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100">
-              <line x1="22.5" y1="77.5" x2="77.5" y2="22.5" />
-              <line x1="77.5" y1="77.5" x2="22.5" y2="22.5" />
-            </svg>
-            <span class="assistive-text">Close Search Dialog</span>
-          </button>            
-        </search>
+      <dialog class="search-dialog" closedby="any">
+        <div>
+          <search>    
+            <label class="assistive-text" for="search">Search:</label>
+            <input class="sans-regular-italic" type="text" id="search" placeholder="Search Site...">
+            <ul class="results" role="list" tabindex="-1"></ul>
+            <button class="dismiss-search-dialog close">
+              <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100">
+                <line x1="22.5" y1="77.5" x2="77.5" y2="22.5" />
+                <line x1="77.5" y1="77.5" x2="22.5" y2="22.5" />
+              </svg>
+              <span class="assistive-text">Close Search Dialog</span>
+            </button>            
+          </search>
+        </div>
       </dialog>
     `;
 
@@ -55,18 +57,22 @@ export default class FuzzySearch extends HTMLElement {
     let currentFocusIndex = -1;
 
     // reset index on focus of search input
-    input.addEventListener('focus', () => (currentFocusIndex = -1));
+    fromEvent(input, 'focus').subscribe(() => (currentFocusIndex = -1));
 
-    buttons.forEach((button) =>
-      button.addEventListener(
-        'click',
-        () => (
-          dialog?.open ? dialog.close() : dialog.showModal(),
-          (input.value = ''),
-          (resultsContainer.innerHTML = '')
-        )
-      )
+    // invoke dialog and reset state
+    fromEvent<MouseEvent>(buttons, 'click').subscribe(
+      () => (dialog?.open ? dialog.close() : dialog.showModal()),
+      //@ts-expect-error side effect
+      (input.value = ''),
+      (resultsContainer.innerHTML = '')
     );
+
+    // add light dismiss for lack of support for closedby
+    fromEvent<MouseEvent>(dialog, 'click')
+      .pipe(
+        filter((e) => (e.target as HTMLDialogElement).nodeName === 'DIALOG')
+      )
+      .subscribe(() => dialog.close());
 
     // send focus to results container when enter is pressed
     fromEvent<KeyboardEvent>(input, 'keydown')

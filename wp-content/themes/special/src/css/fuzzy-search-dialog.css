@@ -24,9 +24,14 @@ dialog {
     display 0.25s allow-discrete;
   transform: scale(0);
   position: fixed;
+  padding: 0;
 
   &[open] {
     transform: scale(1);
+  }
+
+  div {
+    padding: 1em;
   }
 }
 
@@ -44,7 +49,7 @@ fuzzy-search {
   inset-inline-start: 6em;
 
   @media only screen and (min-width: 48em) {
-    :inset-block-end: unset;
+    : inset-block-end: unset;
     inset-inline-start: 4.5em;
     inset-block-start: 0.95em;
   }
