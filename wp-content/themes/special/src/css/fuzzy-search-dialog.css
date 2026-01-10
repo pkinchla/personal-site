@@ -25,6 +25,7 @@ dialog {
   transform: scale(0);
   position: fixed;
   padding: 0;
+  color: var(--primary);
 
   &[open] {
     transform: scale(1);
