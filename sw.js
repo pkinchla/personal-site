@@ -1,4 +1,4 @@
-var version = "v10.84";
+var version = "v10.85";
 
 var theme_path = "wp-content/themes/special/";
 
@@ -27,7 +27,7 @@ var updateStaticCache = function () {
           var cachedCopy = response.clone();
           return cache.put(request, cachedCopy);
         });
-      }),
+      })
     );
   });
 };
@@ -42,7 +42,7 @@ var clearOldCaches = function () {
         })
         .map(function (key) {
           return caches.delete(key);
-        }),
+        })
     );
   });
 };
@@ -78,7 +78,7 @@ self.addEventListener("install", function (event) {
   event.waitUntil(
     updateStaticCache().then(function () {
       return self.skipWaiting();
-    }),
+    })
   );
 });
 
@@ -173,7 +173,7 @@ self.addEventListener("fetch", function (event) {
   event.respondWith(
     caches.match(event.request).then(function (cached) {
       return cached || fetch(event.request).then(fetchFromNetwork, fallback);
-    }),
+    })
   );
 });
 
@@ -182,6 +182,6 @@ self.addEventListener("activate", function (event) {
   event.waitUntil(
     clearOldCaches().then(function () {
       return self.clients.claim();
-    }),
+    })
   );
 });
