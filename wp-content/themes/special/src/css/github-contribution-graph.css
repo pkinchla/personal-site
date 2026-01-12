@@ -1,13 +1,11 @@
-/* Theme variables */
+/* Theme variables
+Does not need .no-js modifiers as this is a custom element */
 :root {
   --contribution-cell-empty: #d7d7d7;
   --contribution-cell-level-1: #9be9a8;
   --contribution-cell-level-2: #40c463;
   --contribution-cell-level-3: #30a14e;
   --contribution-cell-level-4: #216e39;
-  --contribution-tooltip-bg: var(--secondary);
-  --contribution-tooltip-text: var(--body-background);
-  --contribution-border: var(--primary);
 }
 
 :root.dark-mode {
@@ -41,11 +39,11 @@
 /* Container */
 .contribution-graph-container {
   padding: 1.5rem;
-  border: 0.0625rem solid var(--contribution-border);
+  border: 0.0625rem solid var(--primary);
   border-radius: var(--radius);
   font-weight: var(--variable-wght-body);
   position: relative;
-  max-width: 53.125rem;
+  max-width: fit-content;
 }
 
 .contribution-graph-wrapper {
@@ -57,8 +55,10 @@
   display: flex;
   align-items: baseline;
   margin-block-end: 1rem;
+  margin-inline-end: .5em;
   flex-wrap: wrap;
   gap: .5rem;
+  justify-content: space-between;
 }
 
 .contribution-header .h3 {
@@ -68,14 +68,16 @@
 .total-contributions {
   font-size: 0.9em;
   color: var(--secondary);
+  margin-inline-start: .5em;
 }
 
 /* SVG Graph */
 .contribution-graph {
   display: block;
+  color: var(--secondary);
   width: fit-content;
-  min-width: 50rem;
   margin-block-end: 1rem;
+  min-width: fit-content;
   overflow: visible;
   padding: 0.125rem;
 }
@@ -117,10 +119,9 @@
 
 /* Tooltip */
 .contribution-tooltip {
-  font-size: 0.85em;
+  font-size: 0.7em;
   position: fixed;
-  background: var(--contribution-tooltip-bg);
-  color: var(--contribution-tooltip-text);
+  color: var(--secondary);
   padding: 0.5rem 0.75rem;
   border-radius: var(--radius);
   pointer-events: none;
@@ -131,6 +132,8 @@
   white-space: nowrap;
   z-index: 1000;
   line-height: 1.1;
+  border: 0.125em solid var(--secondary);
+  background-color: var(--body-background);
 }
 
 .contribution-tooltip strong {
@@ -145,6 +148,7 @@
   color: var(--secondary);
   margin-block-start: 1rem;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
 }
 

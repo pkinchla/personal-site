@@ -38,8 +38,8 @@ export default class GitHubContributionGraph extends HTMLElement {
     const cellSize = 12;
     const cellGap = 3;
     const weeks = this.data.weeks || [];
-    const width = weeks.length * (cellSize + cellGap);
-    const height = 7 * cellSize + 6 * cellGap + 4; // 7 cells + 6 gaps + padding
+    const width = weeks.length * (cellSize + cellGap) + 60; // weeks across + padding for day labels
+    const height = 7 * (cellSize + cellGap) + 30; // 7 days down + padding for month labels
 
     const svg = `
       <svg
@@ -49,7 +49,9 @@ export default class GitHubContributionGraph extends HTMLElement {
         role="group"
         aria-label="GitHub contribution activity"
       >
-        ${this.renderCells()}
+        ${this.renderDayLabels(cellSize, cellGap)}
+        ${this.renderMonthLabels(cellSize, cellGap, weeks)}
+        ${this.renderCells(cellSize, cellGap, weeks)}
       </svg>
     `;
 
@@ -68,15 +70,79 @@ export default class GitHubContributionGraph extends HTMLElement {
     `;
   }
 
-  renderCells(): string {
-    const cellSize = 12;
-    const cellGap = 3;
+  renderDayLabels(cellSize: number, cellGap: number): string {
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    let labels = '';
+
+    days.forEach((day, index) => {
+      const y = index * (cellSize + cellGap) + 25 + cellSize / 2;
+      labels += `
+        <text
+          x="0"
+          y="${y}"
+          class="day-label"
+          dominant-baseline="middle"
+          text-anchor="start"
+          font-size="13"
+          fill="currentColor"
+        >
+          ${day}
+        </text>
+      `;
+    });
+
+    return labels;
+  }
+
+  renderMonthLabels(
+    cellSize: number,
+    cellGap: number,
+    weeks: ContributionWeek[]
+  ): string {
+    let labels = '';
+    let lastMonth = '';
+    let weekIndex = 0;
+
+    weeks.forEach((week) => {
+      if (week.contributionDays.length > 0) {
+        const firstDay = week.contributionDays[0];
+        const date = new Date(firstDay.date);
+        const monthName = date.toLocaleDateString('en-US', { month: 'short' });
+
+        if (monthName !== lastMonth) {
+          const x = weekIndex * (cellSize + cellGap) + 35;
+          labels += `
+            <text
+              x="${x}"
+              y="15"
+              class="month-label"
+              text-anchor="start"
+              font-size="13"
+              fill="currentColor"
+            >
+              ${monthName}
+            </text>
+          `;
+          lastMonth = monthName;
+        }
+      }
+      weekIndex++;
+    });
+
+    return labels;
+  }
+
+  renderCells(
+    cellSize: number,
+    cellGap: number,
+    weeks: ContributionWeek[]
+  ): string {
     let cells = '';
 
-    this.data.weeks?.forEach((week, weekIndex) => {
+    weeks.forEach((week, weekIndex) => {
       week.contributionDays.forEach((day, dayIndex) => {
-        const x = weekIndex * (cellSize + cellGap);
-        const y = dayIndex * (cellSize + cellGap);
+        const x = weekIndex * (cellSize + cellGap) + 35;
+        const y = dayIndex * (cellSize + cellGap) + 25;
         const level = this.getContributionLevel(day.contributionCount);
 
         cells += `
