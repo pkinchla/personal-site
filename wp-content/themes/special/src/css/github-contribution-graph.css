@@ -1,0 +1,180 @@
+/* Theme variables */
+:root {
+  --contribution-cell-empty: #d7d7d7;
+  --contribution-cell-level-1: #9be9a8;
+  --contribution-cell-level-2: #40c463;
+  --contribution-cell-level-3: #30a14e;
+  --contribution-cell-level-4: #216e39;
+  --contribution-tooltip-bg: var(--secondary);
+  --contribution-tooltip-text: var(--body-background);
+  --contribution-border: var(--primary);
+}
+
+:root.dark-mode {
+  --contribution-cell-empty: #3b4e5c;
+  --contribution-cell-level-1: #0e4429;
+  --contribution-cell-level-2: #006d32;
+  --contribution-cell-level-3: #26a641;
+  --contribution-cell-level-4: #39d353;
+}
+
+@media (color-gamut: p3) {
+  :root {
+    --contribution-cell-empty: oklch(87.92% 0 0deg);
+    --contribution-cell-level-1: oklch(86.66% 0.1182 148.74deg);
+    --contribution-cell-level-2: oklch(72.67% 0.1781 148.54deg);
+    --contribution-cell-level-3: oklch(62.7% 0.157 148.35deg);
+    --contribution-cell-level-4: oklch(47.79% 0.1122 150.02deg);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root.dark-mode {
+      --contribution-cell-empty: oklch(41.36% 0.0334 240.52deg);
+      --contribution-cell-level-1: oklch(34.42% 0.073 156.73deg);
+      --contribution-cell-level-2: oklch(46.78% 0.126255 150.8624deg);
+      --contribution-cell-level-3: oklch(63.65% 0.1777 146.24deg);
+      --contribution-cell-level-4: oklch(76.19% 0.2121 145.62deg);
+    }
+  }
+}
+
+/* Container */
+.contribution-graph-container {
+  padding: 1.5rem;
+  border: 0.0625rem solid var(--contribution-border);
+  border-radius: var(--radius);
+  font-weight: var(--variable-wght-body);
+  position: relative;
+  max-width: 53.125rem;
+}
+
+.contribution-graph-wrapper {
+  position: relative;
+  overflow: auto visible;
+}
+
+.contribution-header {
+  display: flex;
+  align-items: baseline;
+  margin-block-end: 1rem;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.contribution-header .h3 {
+  margin-bottom: 0;
+}
+
+.total-contributions {
+  font-size: 0.9em;
+  color: var(--secondary);
+}
+
+/* SVG Graph */
+.contribution-graph {
+  display: block;
+  width: fit-content;
+  min-width: 50rem;
+  margin-block-end: 1rem;
+  overflow: visible;
+  padding: 0.125rem;
+}
+
+.contribution-cell {
+  fill: var(--contribution-cell-empty);
+  stroke: var(--body-background);
+  stroke-width: 1;
+  cursor: pointer;
+  transition: stroke var(--transition);
+}
+
+.contribution-cell:hover,
+.contribution-cell:focus {
+  stroke: var(--contribution-border);
+  stroke-width: 2;
+  outline: none;
+}
+
+.contribution-cell.level-0 {
+  fill: var(--contribution-cell-empty);
+}
+
+.contribution-cell.level-1 {
+  fill: var(--contribution-cell-level-1);
+}
+
+.contribution-cell.level-2 {
+  fill: var(--contribution-cell-level-2);
+}
+
+.contribution-cell.level-3 {
+  fill: var(--contribution-cell-level-3);
+}
+
+.contribution-cell.level-4 {
+  fill: var(--contribution-cell-level-4);
+}
+
+/* Tooltip */
+.contribution-tooltip {
+  font-size: 0.85em;
+  position: fixed;
+  background: var(--contribution-tooltip-bg);
+  color: var(--contribution-tooltip-text);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, calc(-100% - 0.5rem));
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  white-space: nowrap;
+  z-index: 1000;
+  line-height: 1.1;
+}
+
+.contribution-tooltip strong {
+  display: block;
+  margin-block-end: 0.25rem;
+}
+
+/* Legend */
+.contribution-legend {
+  font-size: 0.9em;
+  display: flex;
+  color: var(--secondary);
+  margin-block-start: 1rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-scale {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.legend-cell {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 0.125rem;
+}
+
+.legend-cell.level-0 {
+  background: var(--contribution-cell-empty);
+}
+
+.legend-cell.level-1 {
+  background: var(--contribution-cell-level-1);
+}
+
+.legend-cell.level-2 {
+  background: var(--contribution-cell-level-2);
+}
+
+.legend-cell.level-3 {
+  background: var(--contribution-cell-level-3);
+}
+
+.legend-cell.level-4 {
+  background: var(--contribution-cell-level-4);
+}

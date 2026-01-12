@@ -66,7 +66,7 @@
         {% endfor %}
       </dd>
     </dl>
-  </section>
+  </section>  
   <section class="content-grid">
     <div class="photo-intro">
       <h2 id="photo-feed">Some Drawings</h2>
@@ -91,6 +91,15 @@
           </li>
         {% endfor %}
       </ul>
+  </section>
+  <section class="content-grid">
+    {% if github_contributions and not github_contributions.error %}
+      <github-contribution-graph style="grid-column: 2 / 6;"
+        data-contributions="{{ github_contributions|json_encode|e('html_attr') }}"
+      ></github-contribution-graph>
+    {% elseif github_contributions.error %}
+      <p class="sans-medium-italic">{{ github_contributions.error }}</p>
+    {% endif %}
   </section>
 </article>
 {% endblock %}

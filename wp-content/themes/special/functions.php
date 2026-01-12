@@ -139,6 +139,109 @@ function speed_stats($url) {
   return $stats;
 }
 
+function github_contributions($username) {
+  $contributions = get_transient('github_contributions_' . $username);
+
+  if (false !== $contributions) {
+    return $contributions;
+  }
+
+  $token = defined('GITHUB_API_TOKEN') ? GITHUB_API_TOKEN : '';
+
+  if (empty($token)) {
+    return array('error' => 'GitHub API token not configured');
+  }
+
+  $query = '
+    query {
+      viewer {
+        login
+        contributionsCollection {
+          contributionCalendar {
+            totalContributions
+            weeks {
+              contributionDays {
+                contributionCount
+                date
+                color
+              }
+            }
+          }
+          restrictedContributionsCount
+        }
+      }
+    }
+  ';
+
+  $body = json_encode(array(
+    'query' => $query
+  ));
+
+  $args = array(
+    'headers' => array(
+      'Authorization' => 'Bearer ' . $token,
+      'Content-Type' => 'application/json',
+      'User-Agent' => 'WordPress'
+    ),
+    'body' => $body,
+    'method' => 'POST',
+    'timeout' => 15
+  );
+
+  $response = wp_safe_remote_post('https://api.github.com/graphql', $args);
+
+  // Check for HTTP errors
+  if (is_wp_error($response)) {
+    if (WP_DEBUG) {
+      error_log('GitHub API WP Error: ' . $response->get_error_message());
+    }
+    return array('error' => 'Unable to connect to GitHub API');
+  }
+
+  $response_code = wp_remote_retrieve_response_code($response);
+  if ($response_code >= 400) {
+    if (WP_DEBUG) {
+      error_log('GitHub API HTTP Error: ' . $response_code);
+      error_log('Response body: ' . wp_remote_retrieve_body($response));
+    }
+
+    if ($response_code === 401) {
+      return array('error' => 'GitHub API authentication failed');
+    }
+
+    return array('error' => 'GitHub API returned error: ' . $response_code);
+  }
+
+  $data = json_decode($response['body'], true);
+
+  // Check for GraphQL errors
+  if (isset($data['errors'])) {
+
+    $error_message = 'GitHub API error';
+    if (isset($data['errors'][0]['message'])) {
+      $error_message = $data['errors'][0]['message'];
+    }
+
+    return array('error' => 'GitHub API: ' . $error_message);
+  }
+
+  // Extract contribution data
+  if (!isset($data['data']['viewer']['contributionsCollection']['contributionCalendar'])) {
+    if (WP_DEBUG) {
+      error_log('Unexpected GitHub API response structure: ' . json_encode($data));
+    }
+    return array('error' => 'Unexpected response from GitHub API');
+  }
+
+  $viewer = $data['data']['viewer'];
+  $contributions = $viewer['contributionsCollection']['contributionCalendar'];
+  $restricted = $viewer['contributionsCollection']['restrictedContributionsCount'] ?? 0;
+
+  set_transient('github_contributions_' . $username, $contributions, 12 * HOUR_IN_SECONDS);
+
+  return $contributions;
+}
+
 /**
  * Disable the emoji's
  */

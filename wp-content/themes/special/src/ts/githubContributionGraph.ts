@@ -1,0 +1,205 @@
+import { fromEvent } from 'rxjs';
+
+interface ContributionDay {
+  date: string;
+  contributionCount: number;
+  color?: string;
+}
+
+interface ContributionWeek {
+  contributionDays: ContributionDay[];
+}
+
+interface ContributionData {
+  totalContributions?: number;
+  weeks?: ContributionWeek[];
+  error?: string;
+}
+
+export default class GitHubContributionGraph extends HTMLElement {
+  data: ContributionData;
+
+  constructor() {
+    super();
+    const dataAttr = this.getAttribute('data-contributions');
+    this.data = dataAttr ? JSON.parse(dataAttr) : { error: 'No data provided' };
+  }
+
+  connectedCallback() {
+    if (this.data.error) {
+      this.renderError();
+      return;
+    }
+    this.render();
+    this.attachEventListeners();
+  }
+
+  render() {
+    const cellSize = 12;
+    const cellGap = 3;
+    const weeks = this.data.weeks || [];
+    const width = weeks.length * (cellSize + cellGap);
+    const height = 7 * cellSize + 6 * cellGap + 4; // 7 cells + 6 gaps + padding
+
+    const svg = `
+      <svg
+        class="contribution-graph"
+        width="${width}"
+        height="${height}"
+        role="group"
+        aria-label="GitHub contribution activity"
+      >
+        ${this.renderCells()}
+      </svg>
+    `;
+
+    this.innerHTML = `
+      <div class="contribution-graph-container">
+        <div class="contribution-header">
+          <h2 class="h3">GitHub Activity</a></h2>
+          <a href="https://github.com/pkinchla" class="total-contributions">${this.data.totalContributions || 0} contributions</a>
+        </div>
+        <div class="contribution-graph-wrapper">
+          ${svg}
+        </div>
+        ${this.renderLegend()}
+        <div class="contribution-tooltip" role="tooltip" aria-hidden="true"></div>
+      </div>
+    `;
+  }
+
+  renderCells(): string {
+    const cellSize = 12;
+    const cellGap = 3;
+    let cells = '';
+
+    this.data.weeks?.forEach((week, weekIndex) => {
+      week.contributionDays.forEach((day, dayIndex) => {
+        const x = weekIndex * (cellSize + cellGap);
+        const y = dayIndex * (cellSize + cellGap);
+        const level = this.getContributionLevel(day.contributionCount);
+
+        cells += `
+          <rect
+            class="contribution-cell level-${level}"
+            x="${x}"
+            y="${y}"
+            width="${cellSize}"
+            height="${cellSize}"
+            rx="2"
+            data-date="${day.date}"
+            data-count="${day.contributionCount}"
+            role="button"
+            tabindex="0"
+            aria-label="${day.contributionCount} contributions on ${day.date}"
+          />
+        `;
+      });
+    });
+
+    return cells;
+  }
+
+  renderLegend(): string {
+    return `
+      <div class="contribution-legend">
+        <span>Less</span>
+        <div class="legend-scale">
+          <div class="legend-cell level-0"></div>
+          <div class="legend-cell level-1"></div>
+          <div class="legend-cell level-2"></div>
+          <div class="legend-cell level-3"></div>
+          <div class="legend-cell level-4"></div>
+        </div>
+        <span>More</span>
+      </div>
+    `;
+  }
+
+  getContributionLevel(count: number): number {
+    if (count === 0) return 0;
+    if (count < 3) return 1;
+    if (count < 6) return 2;
+    if (count < 9) return 3;
+    return 4;
+  }
+
+  attachEventListeners() {
+    const cells = this.querySelectorAll('.contribution-cell');
+    const tooltip = this.querySelector('.contribution-tooltip') as HTMLElement;
+
+    cells.forEach((cell) => {
+      fromEvent(cell, 'mouseenter').subscribe((e: Event) => {
+        const target = e.target as SVGElement;
+        const date = target.getAttribute('data-date') || '';
+        const count = target.getAttribute('data-count') || '0';
+        this.showTooltip(tooltip, target, date, count);
+      });
+
+      fromEvent(cell, 'mouseleave').subscribe(() => {
+        this.hideTooltip(tooltip);
+      });
+
+      fromEvent(cell, 'focus').subscribe((e: Event) => {
+        const target = e.target as SVGElement;
+        const date = target.getAttribute('data-date') || '';
+        const count = target.getAttribute('data-count') || '0';
+        this.showTooltip(tooltip, target, date, count);
+      });
+
+      fromEvent(cell, 'blur').subscribe(() => {
+        this.hideTooltip(tooltip);
+      });
+    });
+  }
+
+  showTooltip(
+    tooltip: HTMLElement,
+    cell: SVGElement,
+    date: string,
+    count: string
+  ) {
+    const formattedDate = new Date(date).toLocaleDateString('en-US', {
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
+    });
+
+    tooltip.innerHTML = `
+      <strong>${count} contribution${count === '1' ? '' : 's'}</strong>
+      <date datetime=${date}>${formattedDate}</date>
+    `;
+
+    // Use fixed positioning relative to viewport
+    const rect = cell.getBoundingClientRect();
+
+    // Position tooltip centered horizontally above the cell
+    const left = rect.left + rect.width / 2;
+    const top = rect.top;
+
+    tooltip.style.left = `${left}px`;
+    tooltip.style.top = `${top}px`;
+    tooltip.style.opacity = '1';
+    tooltip.style.visibility = 'visible';
+    tooltip.setAttribute('aria-hidden', 'false');
+  }
+
+  hideTooltip(tooltip: HTMLElement) {
+    tooltip.style.opacity = '0';
+    tooltip.style.visibility = 'hidden';
+    tooltip.setAttribute('aria-hidden', 'true');
+  }
+
+  renderError() {
+    this.innerHTML = `
+      <div class="contribution-graph-error">
+        <p>${this.data.error}</p>
+      </div>
+    `;
+  }
+
+  static init() {
+    customElements.define('github-contribution-graph', GitHubContributionGraph);
+  }
+}

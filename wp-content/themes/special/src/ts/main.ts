@@ -5,6 +5,7 @@ import ColorSchemeSwitcher from './colorSchemeSwitcher';
 import FontSettingsControl from './fontSettingsControl';
 import siteSettingsOverlay from './siteSettingsOverlay';
 import FuzzySearch from './fuzzySearch';
+import GitHubContributionGraph from './githubContributionGraph';
 import 'speedlify-score/speedlify-score.js';
 import setScrollbarWidth from './setScrollbarWidth';
 
@@ -17,7 +18,8 @@ function scripts() {
     observeHero(),
     ColorSchemeSwitcher.init(),
     FontSettingsControl.init(),
-    FuzzySearch.init()
+    FuzzySearch.init(),
+    GitHubContributionGraph.init()
   );
 }
 

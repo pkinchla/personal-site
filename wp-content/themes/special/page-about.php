@@ -30,4 +30,7 @@ foreach ($attachmentQuery->posts as $attachment) {
   $context['artwork'][] = Timber::get_post($attachment->ID);
 }
 
+$context['github_contributions'] = github_contributions('pkinchla');
+
+
 Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );
