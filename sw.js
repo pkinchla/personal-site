@@ -1,4 +1,4 @@
-var version = "v10.85";
+var version = "v10.86";
 
 var theme_path = "wp-content/themes/special/";
 
@@ -6,7 +6,7 @@ var offlineFundamentals = [
   theme_path + "dist/js/main.js",
   theme_path + "dist/js/prism.js",
   theme_path + "offline.html",
-  "/typefaces/proxima-vara-roman.woff2",
+  "/typefaces/arbeit-variable.woff2",
   "/typefaces/cooper-wght.woff2",
   "/typefaces/cooper-italic-wght.woff2",
   "manifest.json",
