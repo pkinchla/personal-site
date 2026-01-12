@@ -92,7 +92,7 @@ Does not need .no-js modifiers as this is a custom element */
 
 .contribution-cell:hover,
 .contribution-cell:focus {
-  stroke: var(--contribution-border);
+  stroke: var(--primary);
   stroke-width: 2;
   outline: none;
 }
