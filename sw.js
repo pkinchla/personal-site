@@ -1,4 +1,4 @@
-var version = "v10.88";
+var version = "v10.89";
 
 var theme_path = "wp-content/themes/special/";
 

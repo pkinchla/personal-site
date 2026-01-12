@@ -78,11 +78,11 @@ export default class GitHubContributionGraph extends HTMLElement {
       const y = index * (cellSize + cellGap) + 25 + cellSize / 2;
       labels += `
         <text
-          x="0"
+          x="25"
           y="${y}"
           class="day-label"
           dominant-baseline="middle"
-          text-anchor="start"
+          text-anchor="end"
           font-size="13"
           fill="currentColor"
         >
