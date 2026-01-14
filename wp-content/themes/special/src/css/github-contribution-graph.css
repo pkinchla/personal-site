@@ -48,7 +48,15 @@ Does not need .no-js modifiers as this is a custom element */
 
 .contribution-graph-wrapper {
   position: relative;
-  overflow: auto visible;
+  overflow: auto;
+}
+
+.contribution-anchor {
+  position: absolute;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  anchor-name: --contribution-cell;
 }
 
 .contribution-header {
@@ -78,7 +86,6 @@ Does not need .no-js modifiers as this is a custom element */
   width: fit-content;
   margin-block-end: 1rem;
   min-width: fit-content;
-  overflow: visible;
   padding: 0.125rem;
 }
 
@@ -120,20 +127,22 @@ Does not need .no-js modifiers as this is a custom element */
 /* Tooltip */
 .contribution-tooltip {
   font-size: 0.7em;
-  position: fixed;
-  color: var(--secondary);
+  line-height: 1.1;
+  position: absolute;
+  position-anchor: --contribution-cell;
+  left: anchor(--contribution-cell center);
+  bottom: calc(anchor(--contribution-cell top) + 0.5rem);
   padding: 0.5rem 0.75rem;
+  border: 0.125em solid var(--secondary);
   border-radius: var(--radius);
+  background-color: var(--body-background);
+  color: var(--secondary);
+  white-space: nowrap;
   pointer-events: none;
+  translate: -50% 0;
   opacity: 0;
   visibility: hidden;
-  transform: translate(-50%, calc(-100% - 0.5rem));
   transition: opacity 0.2s ease, visibility 0.2s ease;
-  white-space: nowrap;
-  z-index: 1000;
-  line-height: 1.1;
-  border: 0.125em solid var(--secondary);
-  background-color: var(--body-background);
 }
 
 .contribution-tooltip strong {

@@ -1,4 +1,4 @@
-import { fromEvent } from 'rxjs';
+import { fromEvent, startWith } from 'rxjs';
 
 interface ContributionDay {
   date: string;
@@ -38,7 +38,7 @@ export default class GitHubContributionGraph extends HTMLElement {
     const cellSize = 12;
     const cellGap = 3;
     const weeks = this.data.weeks || [];
-    const width = weeks.length * (cellSize + cellGap) + 60; // weeks across + padding for day labels
+    const width = weeks.length * (cellSize + cellGap) + 65; // weeks across + padding for day labels
     const height = 7 * (cellSize + cellGap) + 30; // 7 days down + padding for month labels
 
     const svg = `
@@ -65,6 +65,7 @@ export default class GitHubContributionGraph extends HTMLElement {
           ${svg}
         </div>
         ${this.renderLegend()}
+        <div class="contribution-anchor"></div>
         <div class="contribution-tooltip" role="tooltip" aria-hidden="true"></div>
       </div>
     `;
@@ -78,7 +79,7 @@ export default class GitHubContributionGraph extends HTMLElement {
       const y = index * (cellSize + cellGap) + 25 + cellSize / 2;
       labels += `
         <text
-          x="25"
+          x="30"
           y="${y}"
           class="day-label"
           dominant-baseline="middle"
@@ -110,7 +111,7 @@ export default class GitHubContributionGraph extends HTMLElement {
         const monthName = date.toLocaleDateString('en-US', { month: 'short' });
 
         if (monthName !== lastMonth) {
-          const x = weekIndex * (cellSize + cellGap) + 35;
+          const x = weekIndex * (cellSize + cellGap) + 38;
           labels += `
             <text
               x="${x}"
@@ -141,7 +142,7 @@ export default class GitHubContributionGraph extends HTMLElement {
 
     weeks.forEach((week, weekIndex) => {
       week.contributionDays.forEach((day, dayIndex) => {
-        const x = weekIndex * (cellSize + cellGap) + 35;
+        const x = weekIndex * (cellSize + cellGap) + 40;
         const y = dayIndex * (cellSize + cellGap) + 25;
         const level = this.getContributionLevel(day.contributionCount);
 
@@ -193,13 +194,14 @@ export default class GitHubContributionGraph extends HTMLElement {
   attachEventListeners() {
     const cells = this.querySelectorAll('.contribution-cell');
     const tooltip = this.querySelector('.contribution-tooltip') as HTMLElement;
+    const anchor = this.querySelector('.contribution-anchor') as HTMLElement;
 
     cells.forEach((cell) => {
       fromEvent(cell, 'mouseenter').subscribe((e: Event) => {
         const target = e.target as SVGElement;
         const date = target.getAttribute('data-date') || '';
         const count = target.getAttribute('data-count') || '0';
-        this.showTooltip(tooltip, target, date, count);
+        this.showTooltip(tooltip, anchor, target, date, count);
       });
 
       fromEvent(cell, 'mouseleave').subscribe(() => {
@@ -210,7 +212,7 @@ export default class GitHubContributionGraph extends HTMLElement {
         const target = e.target as SVGElement;
         const date = target.getAttribute('data-date') || '';
         const count = target.getAttribute('data-count') || '0';
-        this.showTooltip(tooltip, target, date, count);
+        this.showTooltip(tooltip, anchor, target, date, count);
       });
 
       fromEvent(cell, 'blur').subscribe(() => {
@@ -221,6 +223,7 @@ export default class GitHubContributionGraph extends HTMLElement {
 
   showTooltip(
     tooltip: HTMLElement,
+    anchor: HTMLElement,
     cell: SVGElement,
     date: string,
     count: string
@@ -237,15 +240,16 @@ export default class GitHubContributionGraph extends HTMLElement {
       <date datetime=${date}>${formattedDate}</date>
     `;
 
-    // Use fixed positioning relative to viewport
+    // Position the anchor element at the cell's location
     const rect = cell.getBoundingClientRect();
+    const container = this.querySelector(
+      '.contribution-graph-container'
+    ) as HTMLElement;
+    const containerRect = container.getBoundingClientRect();
 
-    // Position tooltip centered horizontally above the cell
-    const left = rect.left + rect.width / 2;
-    const top = rect.top;
+    anchor.style.left = `${rect.left - containerRect.left + rect.width / 2}px`;
+    anchor.style.top = `${rect.top - containerRect.top}px`;
 
-    tooltip.style.left = `${left}px`;
-    tooltip.style.top = `${top}px`;
     tooltip.style.opacity = '1';
     tooltip.style.visibility = 'visible';
     tooltip.setAttribute('aria-hidden', 'false');
