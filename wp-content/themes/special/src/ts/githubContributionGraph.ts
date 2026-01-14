@@ -1,4 +1,4 @@
-import { fromEvent, startWith } from 'rxjs';
+import { fromEvent } from 'rxjs';
 
 interface ContributionDay {
   date: string;
@@ -195,29 +195,44 @@ export default class GitHubContributionGraph extends HTMLElement {
     const cells = this.querySelectorAll('.contribution-cell');
     const tooltip = this.querySelector('.contribution-tooltip') as HTMLElement;
     const anchor = this.querySelector('.contribution-anchor') as HTMLElement;
+    const wrapper = this.querySelector(
+      '.contribution-graph-wrapper'
+    ) as HTMLElement;
+
+    let currentCell: SVGElement | null = null;
 
     cells.forEach((cell) => {
       fromEvent(cell, 'mouseenter').subscribe((e: Event) => {
         const target = e.target as SVGElement;
+        currentCell = target;
         const date = target.getAttribute('data-date') || '';
         const count = target.getAttribute('data-count') || '0';
         this.showTooltip(tooltip, anchor, target, date, count);
       });
 
       fromEvent(cell, 'mouseleave').subscribe(() => {
+        currentCell = null;
         this.hideTooltip(tooltip);
       });
 
       fromEvent(cell, 'focus').subscribe((e: Event) => {
         const target = e.target as SVGElement;
+        currentCell = target;
         const date = target.getAttribute('data-date') || '';
         const count = target.getAttribute('data-count') || '0';
         this.showTooltip(tooltip, anchor, target, date, count);
       });
 
       fromEvent(cell, 'blur').subscribe(() => {
+        currentCell = null;
         this.hideTooltip(tooltip);
       });
+    });
+
+    fromEvent(wrapper, 'scroll').subscribe(() => {
+      if (currentCell) {
+        this.updateTooltipPosition(anchor, currentCell);
+      }
     });
   }
 
@@ -240,15 +255,7 @@ export default class GitHubContributionGraph extends HTMLElement {
       <date datetime=${date}>${formattedDate}</date>
     `;
 
-    // Position the anchor element at the cell's location
-    const rect = cell.getBoundingClientRect();
-    const container = this.querySelector(
-      '.contribution-graph-container'
-    ) as HTMLElement;
-    const containerRect = container.getBoundingClientRect();
-
-    anchor.style.left = `${rect.left - containerRect.left + rect.width / 2}px`;
-    anchor.style.top = `${rect.top - containerRect.top}px`;
+    this.updateTooltipPosition(anchor, cell);
 
     tooltip.style.opacity = '1';
     tooltip.style.visibility = 'visible';
@@ -259,6 +266,17 @@ export default class GitHubContributionGraph extends HTMLElement {
     tooltip.style.opacity = '0';
     tooltip.style.visibility = 'hidden';
     tooltip.setAttribute('aria-hidden', 'true');
+  }
+
+  updateTooltipPosition(anchor: HTMLElement, cell: SVGElement) {
+    const rect = cell.getBoundingClientRect();
+    const container = this.querySelector(
+      '.contribution-graph-container'
+    ) as HTMLElement;
+    const containerRect = container.getBoundingClientRect();
+
+    anchor.style.left = `${rect.left - containerRect.left + rect.width / 2}px`;
+    anchor.style.top = `${rect.top - containerRect.top}px`;
   }
 
   renderError() {
