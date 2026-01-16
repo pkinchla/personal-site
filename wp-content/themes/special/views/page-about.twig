@@ -77,16 +77,16 @@
       {% for item in artwork %}
       <li>
         <img srcset="
-                {{item.src|resize(950)|towebp}}   950w,
-                {{item.src|resize(882)|towebp}}   882w,
-                {{item.src|resize(717)|towebp}}   717w,
-                {{item.src|resize(478)|towebp}}   478w
-              " 
-              width="{{item.width}}" height="{{item.height}}"
-              sizes="{{ loop.index % 4 == 0 ? '(min-width: 2500px) 725px, (min-width: 1960px) calc(21.35vw + 196px), (min-width: 1300px) 42.97vw, (min-width: 1220px) calc(48.33vw - 135px), (min-width: 1000px) calc(67vw - 210px), (min-width: 760px) calc(95.45vw - 263px), (min-width: 640px) calc(100vw - 66px), (min-width: 520px) calc(50vw - 34px), calc(100vw - 66px)' : '(min-width: 2500px) 361px, (min-width: 1960px) calc(10.77vw + 94px), (min-width: 1300px) calc(21.56vw - 14px), (min-width: 1220px) calc(23.33vw - 59px), (min-width: 1000px) calc(33vw - 101px), (min-width: 760px) calc(48.18vw - 137px), (min-width: 520px) calc(50vw - 34px), calc(100vw - 66px)"'}}"
-              src="{{ item.src }}" 
-              alt="{{ item.alt|escape }}"
-              loading="lazy"
+              {{item.src|resize(950)|towebp}}   950w,
+              {{item.src|resize(882)|towebp}}   882w,
+              {{item.src|resize(717)|towebp}}   717w,
+              {{item.src|resize(478)|towebp}}   478w
+            "
+            width="{{item.width}}" height="{{item.height}}"
+            sizes="auto"
+            src="{{ item.src }}" 
+            alt="{{ item.alt|escape }}"
+            loading="lazy"
             >
           </li>
         {% endfor %}
