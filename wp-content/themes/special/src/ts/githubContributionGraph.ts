@@ -38,7 +38,7 @@ export default class GitHubContributionGraph extends HTMLElement {
     const cellSize = 12;
     const cellGap = 3;
     const weeks = this.data.weeks || [];
-    const width = weeks.length * (cellSize + cellGap) + 65; // weeks across + padding for day labels
+    const width = weeks.length * (cellSize + cellGap) + 75; // weeks across + padding for day labels
     const height = 7 * (cellSize + cellGap) + 30; // 7 days down + padding for month labels
 
     const svg = `
@@ -243,12 +243,15 @@ export default class GitHubContributionGraph extends HTMLElement {
     date: string,
     count: string
   ) {
-    const formattedDate = new Date(date + 'T00:00:00').toLocaleDateString('en-US', {
-      weekday: 'short',
-      month: 'short',
-      day: 'numeric',
-      year: 'numeric',
-    });
+    const formattedDate = new Date(date + 'T00:00:00').toLocaleDateString(
+      'en-US',
+      {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+      }
+    );
 
     tooltip.innerHTML = `
       <strong>${count} contribution${count === '1' ? '' : 's'}</strong>
