@@ -50,10 +50,14 @@ fuzzy-search {
   inset-inline-start: 6em;
 
   @media only screen and (min-width: 48em) {
-    : inset-block-end: unset;
+    :inset-block-end: unset;
     inset-inline-start: 4.5em;
     inset-block-start: 0.95em;
   }
+}
+
+fuzzy-search dialog:focus-within {
+  box-shadow: var(--long-shadow);
 }
 
 fuzzy-search dialog .results {
