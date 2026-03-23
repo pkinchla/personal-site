@@ -20,6 +20,10 @@
     border-radius: var(--radius);
   }
 
+  &:focus-within {
+    box-shadow: var(--long-shadow);
+  }
+
   @media only screen and (min-width: 48em) {
     inline-size: calc(50vi - 1em);
   }
