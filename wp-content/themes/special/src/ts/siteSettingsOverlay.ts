@@ -22,7 +22,6 @@ function siteSettingsOverlay(
       return;
     }
     e.preventDefault();
-    popover.setAttribute('popover', 'hint');
     const is_opening = !popover?.matches(':popover-open');
 
     document.startViewTransition(() => {
