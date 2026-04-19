@@ -146,9 +146,24 @@ form {
   border-radius: var(--radius);
 }
 
+#webmention-form {
+  display: block;
+
+  label,
+  input {
+    font-family: var(--font-sans-serif);
+    font-weight: 700;
+    font-variation-settings:
+      'wght' var(--variable-wght-med),
+      'ital' var(--variable-italic);
+    cursor: pointer;
+  }
+}
+
 input[type='text'],
 input[type='search'],
 input[type='submit'],
+input[type='url'],
 textarea {
   padding: 0.5rem 0.75rem;
   border-radius: var(--radius);
