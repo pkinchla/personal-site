@@ -150,6 +150,7 @@ input[type='text'],
 input[type='search'],
 input[type='submit'],
 input[type='url'],
+#webmention-form .webmention-source,
 textarea {
   padding: 0.5rem 0.75rem;
   border-radius: var(--radius);
