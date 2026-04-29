@@ -19,9 +19,7 @@
 				{{function('special_entry_footer')}}
 			</footer>
 			{{post.post_nav}}
-			{% if (function('comments_open')) or (function('get_comments_number')) %}
-				{{ function( 'comments_template' ) }}
-			{% endif %}
+			{{ function( 'comments_template' ) }}
 		</div>
 	</article>
 {% endblock %}
