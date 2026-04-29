@@ -1,5 +1,4 @@
 /* move this */
-
 .search-dialog {
   background: var(--body-background);
   margin-block-start: 0;
@@ -21,6 +20,10 @@
     inline-size: 100%;
     margin-block: 0.25em 0.75em;
   }
+}
+
+.mb-1 {
+  margin-block-end: 0.5em;
 }
 
 .site-header .search-dialog a::after {
