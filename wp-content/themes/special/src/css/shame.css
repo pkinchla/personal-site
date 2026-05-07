@@ -202,6 +202,11 @@ form.comment-form input:not([type='submit'], [type='checkbox']) {
       'wght' var(--variable-wght-med),
       'ital' var(--variable-italic);
   }
+
+  input[type='submit']:hover {
+    background: var(--primary);
+    color: var(--body-background);
+  }
 }
 
 form:focus-within {
