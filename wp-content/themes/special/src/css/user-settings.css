@@ -179,7 +179,7 @@ color-theme-switcher fieldset span:not(:last-of-type) {
   padding-inline-end: 0;
 }
 
-@media only screen and (max-width: 20.625em) {
+@media (max-width: 20.625em) {
   fieldset.color-theme-switcher {
     padding: 0.5em;
   }

@@ -9,7 +9,7 @@
   view-transition-name: slidein;
   color: var(--secondary);
   padding: 1em;
-  max-height: calc(100vh - 1em);
+  max-height: calc(100dvh - 1em);
   overflow-y: auto;
 
   [contenteditable] {
@@ -24,7 +24,7 @@
     box-shadow: var(--long-shadow);
   }
 
-  @media only screen and (min-width: 48em) {
+  @media (min-width: 48em) {
     inline-size: calc(50vi - 1em);
   }
 }
@@ -58,8 +58,8 @@
     inset-block-end: -4em;
     inset-inline-start: 2em;
 
-    @media only screen and (min-width: 48em) {
-      :inset-block-end: unset;
+    @media (min-width: 48em) {
+      inset-block-end: unset;
       inset-inline-start: 1em;
       inset-block-start: 1em;
     }

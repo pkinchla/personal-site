@@ -1,4 +1,6 @@
 :root {
+  color-scheme: light dark;
+
   /* base typography */
   --font-display: 'Cooper', georgia, serif;
   --font-sans-serif: 'Arbeit', -apple-system, blinkmacsystemfont, 'Segoe UI',

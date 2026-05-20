@@ -92,6 +92,11 @@ p {
   margin-block-end: 1.5em;
 }
 
+p,
+blockquote {
+  text-wrap: pretty;
+}
+
 cite,
 em {
   font-variation-settings: 'ital' var(--variable-italic);

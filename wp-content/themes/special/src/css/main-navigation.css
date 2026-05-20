@@ -83,68 +83,66 @@
 
 /* end nav */
 
-@supports (display: grid) {
-  @media only screen and (min-width: 48em) {
-    .site > header {
-      flex-direction: column;
-      position: sticky;
-      top: 0;
-      width: 100%;
-      height: 100vh;
-      align-items: center;
-      justify-content: center;
-      margin-inline-start: 0;
-      border-block-end: none;
-    }
-
-    /* logo */
-
-    .site > header > a {
-      width: 100%;
-      padding-block: 1em;
-      padding-inline: 4em 1em;
-      margin-block-end: 1em;
-    }
-
-    .site > header > a span {
-      font-size: 1.4em;
-    }
-
-    .site > header > a > svg {
-      width: 2.25em;
-      height: 2.45em;
-    }
-
-    .site > header > a[aria-current='page']::after {
-      right: 28%;
-      top: 20%;
-    }
-
-    /* end logo */
-
-    /* nav */
-    .site > header > nav {
-      width: 100%;
-    }
-
-    .site > header > nav > ul {
-      flex-direction: column;
-      width: 100%;
-      align-items: flex-start;
-      gap: 0;
-    }
-
-    .site > header > nav > ul li {
-      width: 100%;
-    }
-
-    .site > header > nav a {
-      font-size: 1.15em;
-      width: 100%;
-      padding-block: 0.2em 0.3em;
-      padding-inline: 6em 0;
-    }
-
-    /* end nav */
+@media (min-width: 48em) {
+  .site > header {
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    margin-inline-start: 0;
+    border-block-end: none;
   }
+
+  /* logo */
+
+  .site > header > a {
+    width: 100%;
+    padding-block: 1em;
+    padding-inline: 4em 1em;
+    margin-block-end: 1em;
+  }
+
+  .site > header > a span {
+    font-size: 1.4em;
+  }
+
+  .site > header > a > svg {
+    width: 2.25em;
+    height: 2.45em;
+  }
+
+  .site > header > a[aria-current='page']::after {
+    right: 28%;
+    top: 20%;
+  }
+
+  /* end logo */
+
+  /* nav */
+  .site > header > nav {
+    width: 100%;
+  }
+
+  .site > header > nav > ul {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .site > header > nav > ul li {
+    width: 100%;
+  }
+
+  .site > header > nav a {
+    font-size: 1.15em;
+    width: 100%;
+    padding-block: 0.2em 0.3em;
+    padding-inline: 6em 0;
+  }
+
+  /* end nav */
 }

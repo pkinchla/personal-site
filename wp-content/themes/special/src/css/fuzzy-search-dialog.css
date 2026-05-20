@@ -49,8 +49,8 @@ fuzzy-search {
   inset-block-end: -4em;
   inset-inline-start: 6em;
 
-  @media only screen and (min-width: 48em) {
-    :inset-block-end: unset;
+  @media (min-width: 48em) {
+    inset-block-end: unset;
     inset-inline-start: 4.5em;
     inset-block-start: 0.95em;
   }
