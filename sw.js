@@ -1,11 +1,23 @@
-var version = "v10.92";
+const VERSION = "v10.93";
+const THEME_PATH = "wp-content/themes/special/";
 
-var theme_path = "wp-content/themes/special/";
+const CACHE = {
+  fundamentals: `${VERSION}fundamentals`,
+  pages: `${VERSION}pages`,
+  images: `${VERSION}images`,
+  assets: `${VERSION}assets`,
+};
 
-var offlineFundamentals = [
-  theme_path + "dist/js/main.js",
-  theme_path + "dist/js/prism.js",
-  theme_path + "offline.html",
+const CACHE_MAX = {
+  [CACHE.pages]: 25,
+  [CACHE.images]: 10,
+  [CACHE.assets]: 30,
+};
+
+const OFFLINE_FUNDAMENTALS = [
+  `${THEME_PATH}dist/js/main.js`,
+  `${THEME_PATH}dist/js/prism.js`,
+  `${THEME_PATH}offline.html`,
   "/typefaces/arbeit-variable.woff2",
   "/typefaces/cooper-wght.woff2",
   "/typefaces/cooper-italic-wght.woff2",
@@ -13,175 +25,101 @@ var offlineFundamentals = [
   "icon_192.png",
 ];
 
-//Add core website files to cache during serviceworker installation
-var updateStaticCache = function () {
-  return caches.open(version + "fundamentals").then(function (cache) {
-    return Promise.all(
-      offlineFundamentals.map(function (value) {
-        var request = new Request(value);
-        var url = new URL(request.url);
-        if (url.origin != location.origin) {
-          request = new Request(value, { mode: "no-cors" });
-        }
-        return fetch(request).then(function (response) {
-          var cachedCopy = response.clone();
-          return cache.put(request, cachedCopy);
-        });
-      }),
-    );
-  });
-};
+const WP_BYPASS_RE =
+  /\b(?:wp-login|wp-admin|wp-includes|preview=true|wp-content\/plugins)\b/i;
 
-//Clear caches with a different version number
-var clearOldCaches = function () {
-  return caches.keys().then(function (keys) {
-    return Promise.all(
-      keys
-        .filter(function (key) {
-          return key.indexOf(version) != 0;
+async function updateStaticCache() {
+  const cache = await caches.open(CACHE.fundamentals);
+  // allSettled so a single missing file doesn't abort the whole install
+  await Promise.allSettled(
+    OFFLINE_FUNDAMENTALS.map(async (value) => {
+      const probe = new Request(value);
+      const isCrossOrigin = new URL(probe.url).origin !== location.origin;
+      const request = isCrossOrigin
+        ? new Request(value, { mode: "no-cors" })
+        : probe;
+      const response = await fetch(request);
+      await cache.put(request, response);
+    }),
+  );
+}
+
+async function clearOldCaches() {
+  const keys = await caches.keys();
+  await Promise.all(
+    keys
+      .filter((key) => !key.startsWith(VERSION))
+      .map((key) => caches.delete(key)),
+  );
+}
+
+// Removes all entries over the limit in one pass, oldest first
+async function trimCache(cacheName, maxItems) {
+  const cache = await caches.open(cacheName);
+  const keys = await cache.keys();
+  const excess = keys.length - maxItems;
+  for (let i = 0; i < excess; i++) {
+    await cache.delete(keys[i]);
+  }
+}
+
+self.addEventListener("install", (event) => {
+  event.waitUntil(updateStaticCache().then(() => self.skipWaiting()));
+});
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(clearOldCaches().then(() => self.clients.claim()));
+});
+
+self.addEventListener("message", (event) => {
+  if (event.data?.command === "trimCache") {
+    trimCache(CACHE.pages, CACHE_MAX[CACHE.pages]);
+    trimCache(CACHE.images, CACHE_MAX[CACHE.images]);
+    trimCache(CACHE.assets, CACHE_MAX[CACHE.assets]);
+  }
+});
+
+self.addEventListener("fetch", (event) => {
+  const url = new URL(event.request.url);
+  const { destination } = event.request;
+
+  if (url.origin !== location.origin) return;
+  if (WP_BYPASS_RE.test(event.request.url)) return;
+  if (event.request.method !== "GET") return;
+
+  // HTML: network-first, fall back to cached page then offline shell
+  if (destination === "document") {
+    event.respondWith(
+      fetch(event.request)
+        .then(async (response) => {
+          if (response.type === "basic") {
+            const cache = await caches.open(CACHE.pages);
+            await cache.put(event.request, response.clone());
+            trimCache(CACHE.pages, CACHE_MAX[CACHE.pages]);
+          }
+          return response;
         })
-        .map(function (key) {
-          return caches.delete(key);
+        .catch(async () => {
+          const cached = await caches.match(event.request);
+          return cached ?? caches.match(`${THEME_PATH}offline.html`);
         }),
     );
-  });
-};
-
-/*
-  limits the cache
-  If cache has more than maxItems then it removes the first item in the cache
-*/
-var limitCache = function (cache, maxItems) {
-  cache.keys().then(function (items) {
-    if (items.length > maxItems) {
-      cache.delete(items[0]);
-    }
-  });
-};
-
-/*
-  trims the cache
-  If cache has more than maxItems then it removes the excess items starting from the beginning
-*/
-var trimCache = function (cacheName, maxItems) {
-  caches.open(cacheName).then(function (cache) {
-    cache.keys().then(function (keys) {
-      if (keys.length > maxItems) {
-        cache.delete(keys[0]).then(trimCache(cacheName, maxItems));
-      }
-    });
-  });
-};
-
-//When the service worker is first added to a computer
-self.addEventListener("install", function (event) {
-  event.waitUntil(
-    updateStaticCache().then(function () {
-      return self.skipWaiting();
-    }),
-  );
-});
-
-self.addEventListener("message", function (event) {
-  var data = event.data;
-
-  //Send this command whenever many files are downloaded (ex: a page load)
-  if (data.command == "trimCache") {
-    trimCache(version + "pages", 25);
-    trimCache(version + "images", 10);
-    trimCache(version + "assets", 30);
-  }
-});
-
-//Service worker handles networking
-self.addEventListener("fetch", function (event) {
-  var url = new URL(event.request.url);
-  var destination = event.request.destination;
-
-  //Fetch from network and cache
-  var fetchFromNetwork = function (response) {
-    var cacheCopy = response.clone();
-
-    switch (destination) {
-      case "document": {
-        if (response.type === "basic") {
-          caches.open(version + "pages").then(function (cache) {
-            cache.put(event.request, cacheCopy).then(function () {
-              limitCache(cache, 25);
-            });
-          });
-        }
-        return response;
-      }
-      case "image": {
-        caches.open(version + "images").then(function (cache) {
-          cache.put(event.request, cacheCopy).then(function () {
-            limitCache(cache, 10);
-          });
-        });
-        return response;
-      }
-      case "script":
-      case "": {
-        return response;
-      }
-      default: {
-        caches.open(version + "assets").then(function add(cache) {
-          cache.put(event.request, cacheCopy);
-        });
-        return response;
-      }
-    }
-  };
-
-  //Fetch from network failed
-  var fallback = function () {
-    if (destination === "document") {
-      return caches.match(event.request).then(function (response) {
-        return response || caches.match(theme_path + "offline.html");
-      });
-    }
-  };
-
-  //Only deal with requests to my own server
-  if (url.origin !== location.origin) {
     return;
   }
 
-  var re =
-    /\b(?:wp-login|wp-admin|wp-includes|preview=true|wp-content\/plugins)\b/gi;
+  // Scripts and bare fetch() calls: pass through without caching
+  if (destination === "script" || destination === "") return;
 
-  var noCache = re.test(event.request.url);
-
-  //This service worker won't touch the admin area and preview pages
-  if (noCache) {
-    return;
-  }
-
-  //This service worker won't touch non-get requests
-  if (event.request.method !== "GET") {
-    return;
-  }
-
-  //For HTML requests, look for file in network, then cache if network fails.
-  if (destination === "document") {
-    event.respondWith(fetch(event.request).then(fetchFromNetwork, fallback));
-    return;
-  }
-
-  //For non-HTML requests, look for file in cache, then network if no cache exists.
+  // Images and other assets: cache-first, network fallback
+  const cacheName = destination === "image" ? CACHE.images : CACHE.assets;
   event.respondWith(
-    caches.match(event.request).then(function (cached) {
-      return cached || fetch(event.request).then(fetchFromNetwork, fallback);
-    }),
-  );
-});
-
-//After the install event
-self.addEventListener("activate", function (event) {
-  event.waitUntil(
-    clearOldCaches().then(function () {
-      return self.clients.claim();
+    caches.match(event.request).then(async (cached) => {
+      if (cached) return cached;
+      const response = await fetch(event.request);
+      const cache = await caches.open(cacheName);
+      await cache.put(event.request, response.clone());
+      trimCache(cacheName, CACHE_MAX[cacheName]);
+      return response;
     }),
   );
 });
