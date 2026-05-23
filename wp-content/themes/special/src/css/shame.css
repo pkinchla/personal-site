@@ -236,17 +236,24 @@ main > article > div > footer {
   margin-block-end: 3em;
 }
 
+.comments li::marker {
+  font-weight: var(--variable-wght-body);
+}
+
 .comments .children {
-  margin-block-end: 0;
+  margin-block: 1em 0;
   margin-inline-start: 1.5em;
   list-style: none;
 }
 
+.comment {
+  margin-block-end: 1em;
+}
+
 .comment-body {
   padding: 0.75em;
-  border-block-start: 0.0625rem solid var(--secondary);
-  border-inline-start: 0.0625rem solid var(--secondary);
-  border-start-start-radius: var(--radius);
+  border: 0.125em solid var(--secondary);
+  border-radius: var(--radius);
 }
 
 .comment-meta {
