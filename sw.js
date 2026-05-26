@@ -1,4 +1,4 @@
-const VERSION = "v10.93";
+const VERSION = "v10.94";
 const THEME_PATH = "wp-content/themes/special/";
 
 const CACHE = {
@@ -107,8 +107,15 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Scripts and bare fetch() calls: pass through without caching
-  if (destination === "script" || destination === "") return;
+  // Scripts, bare fetch() calls, and media: pass through without caching
+  // Video/audio use range requests (206 Partial Content) which the Cache API rejects
+  if (
+    destination === "script" ||
+    destination === "" ||
+    destination === "video" ||
+    destination === "audio"
+  )
+    return;
 
   // Images and other assets: cache-first, network fallback
   const cacheName = destination === "image" ? CACHE.images : CACHE.assets;
@@ -116,6 +123,10 @@ self.addEventListener("fetch", (event) => {
     caches.match(event.request).then(async (cached) => {
       if (cached) return cached;
       const response = await fetch(event.request);
+      if (!response.ok || response.status === 206) {
+        return response;
+      }
+
       const cache = await caches.open(cacheName);
       await cache.put(event.request, response.clone());
       trimCache(cacheName, CACHE_MAX[cacheName]);
