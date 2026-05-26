@@ -376,6 +376,11 @@ main > article > div .comment-author img,
   margin-block-end: 1.5em;
 }
 
+main .wp-block-video :where(figcaption) {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
 .random-link {
   font-family: var(--font-display);
   font-size: 2em;

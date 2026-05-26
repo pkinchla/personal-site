@@ -145,7 +145,7 @@ blockquote cite {
 figcaption {
   font-family: var(--font-sans-serif);
   font-variation-settings: 'ital' var(--variable-italic);
-  padding: 0.5em 0.75em;
+  padding: 0.5em 0.75em 0.75em;
   border-block-start: 0.0625em solid var(--secondary);
 }
 
