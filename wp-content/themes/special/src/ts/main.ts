@@ -7,14 +7,15 @@ import siteSettingsOverlay from './siteSettingsOverlay';
 import FuzzySearch from './fuzzySearch';
 import GitHubContributionGraph from './githubContributionGraph';
 import setScrollbarWidth from './setScrollbarWidth';
-
-import('speedlify-score/speedlify-score.js');
+import initSpeedlify from './speedlify';
 
 checkJSLoaded();
 setScrollbarWidth();
 invokeServiceWorker();
 siteSettingsOverlay();
 observeHero();
+initSpeedlify();
+
 ColorSchemeSwitcher.init();
 FontSettingsControl.init();
 FuzzySearch.init();
