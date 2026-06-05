@@ -1,9 +1,7 @@
 @import url('speedlify-score/speedlify-score.css');
 @import url('custom-properties');
 @import url('reset.css');
-@import url('animations.css');
 @import url('typography.css');
-@import url('links.css');
 @import url('accessibility.css');
 @import url('layout.css');
 @import url('prism-theme.css');
@@ -13,10 +11,17 @@
 @import url('home-page-hero.css');
 @import url('cards.css');
 @import url('pagination.css');
-@import url('resume.css');
-@import url('github-contribution-graph.css');
 @import url('shame.css');
 @import url('user-settings.css');
-@import url('view-transitions.css');
 @import url('site-settings-overlay.css');
 @import url('fuzzy-search-dialog.css');
+
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion) {
+  @view-transition {
+    navigation: none;
+  }
+}

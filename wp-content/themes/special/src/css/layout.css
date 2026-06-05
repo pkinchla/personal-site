@@ -44,17 +44,7 @@
     grid-column: 3;
   }
 
-  .header.content-grid {
-    grid-template-columns:
-      0.25fr
-      0.5fr
-      0.5fr
-      min(50ch, 100%)
-      0.5fr
-      1fr;
-  }
-
-  .content-grid > pre,
+.content-grid > pre,
   .content-grid > iframe,
   .content-grid > figure,
   .content-grid > .wp-block-image {

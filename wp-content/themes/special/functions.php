@@ -85,6 +85,10 @@ function special_scripts() {
 		wp_enqueue_script( 'prism', get_template_directory_uri() .'/dist/js/prism.js', array(), '', true);
 	}
 
+	if (is_page('about')) {
+		wp_enqueue_style( 'special-about', get_template_directory_uri() . '/dist/css/about.css', array(), filemtime( get_template_directory() . '/dist/css/about.css' ));
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -94,6 +98,14 @@ add_action( 'wp_enqueue_scripts',  'special_scripts'  );
 /**
  * Filter multiple scripts to add type=“module”.
  */
+add_filter('style_loader_tag', function($html, $handle) {
+  if ($handle === 'special-about') {
+    $preload = str_replace("rel='stylesheet'", "rel='preload' as='style' onload=\"this.onload=null;this.rel='stylesheet'\"", $html);
+    return $preload . '<noscript>' . $html . '</noscript>';
+  }
+  return $html;
+}, 10, 2);
+
 add_filter('script_loader_tag', 'add_type_to_js_scripts', 10, 3);
 
 function add_type_to_js_scripts($tag, $handle, $source){
