@@ -8,9 +8,11 @@ const production = !process.env.ROLLUP_WATCH;
 export default {
   input: 'src/ts/main.ts',
   output: {
-    file: 'dist/js/main.js',
+    dir: 'dist/js',
     format: 'esm',
     sourcemap: production ? false : true,
+    entryFileNames: '[name].js',
+    chunkFileNames: '[name]-[hash].js',
   },
   plugins: [
     resolve(),

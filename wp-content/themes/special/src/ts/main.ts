@@ -6,21 +6,16 @@ import FontSettingsControl from './fontSettingsControl';
 import siteSettingsOverlay from './siteSettingsOverlay';
 import FuzzySearch from './fuzzySearch';
 import GitHubContributionGraph from './githubContributionGraph';
-import 'speedlify-score/speedlify-score.js';
 import setScrollbarWidth from './setScrollbarWidth';
 
-function scripts() {
-  return (
-    checkJSLoaded(),
-    setScrollbarWidth(),
-    invokeServiceWorker(),
-    siteSettingsOverlay(),
-    observeHero(),
-    ColorSchemeSwitcher.init(),
-    FontSettingsControl.init(),
-    FuzzySearch.init(),
-    GitHubContributionGraph.init()
-  );
-}
+import('speedlify-score/speedlify-score.js');
 
-window.addEventListener('DOMContentLoaded', scripts);
+checkJSLoaded();
+setScrollbarWidth();
+invokeServiceWorker();
+siteSettingsOverlay();
+observeHero();
+ColorSchemeSwitcher.init();
+FontSettingsControl.init();
+FuzzySearch.init();
+GitHubContributionGraph.init();

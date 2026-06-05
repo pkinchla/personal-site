@@ -55,12 +55,11 @@ function pageNumber($number){
 // function for critical path css
 function critical_css() {
 	if (!WP_DEBUG) {
-		// css
-		$style_sheet = get_template_directory_uri() . '/dist/css/main.css';
-		$style_path = wp_remote_get($style_sheet);
-		$style_content = wp_remote_retrieve_body($style_path);
-
-		echo '<style>'. $style_content .'</style>' . "\n";
+		$style_path = get_template_directory() . '/dist/css/main.css';
+		$style_content = file_get_contents($style_path);
+		if ($style_content) {
+			echo '<style>' . $style_content . '</style>' . "\n";
+		}
 	}
 }
 add_action( 'wp_head', 'critical_css');
