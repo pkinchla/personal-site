@@ -6,6 +6,10 @@ function siteSettingsOverlay(
   const dismissButton = buttons[1] as HTMLButtonElement;
   const popover = document.querySelector(popoverElement) as HTMLDivElement;
 
+  if (!('HTMLInstallElement' in window)) {
+    document.querySelector('install')?.remove();
+  }
+
   if (!popover) {
     return;
   }
