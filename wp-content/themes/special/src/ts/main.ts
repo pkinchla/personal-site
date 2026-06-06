@@ -20,3 +20,8 @@ ColorSchemeSwitcher.init();
 FontSettingsControl.init();
 FuzzySearch.init();
 GitHubContributionGraph.init();
+
+//shame
+if (!('HTMLInstallElement' in window)) {
+  document.querySelector('install')?.remove();
+}
