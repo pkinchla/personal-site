@@ -60,12 +60,11 @@ export default class FuzzySearch extends HTMLElement {
     fromEvent(input, 'focus').subscribe(() => (currentFocusIndex = -1));
 
     // invoke dialog and reset state
-    fromEvent<MouseEvent>(buttons, 'click').subscribe(
-      () => (dialog?.open ? dialog.close() : dialog.showModal()),
-      //@ts-expect-error side effect
-      (input.value = ''),
-      (resultsContainer.innerHTML = '')
-    );
+    fromEvent<MouseEvent>(buttons, 'click').subscribe(() => {
+      dialog?.open ? dialog.close() : dialog.showModal();
+      input.value = '';
+      resultsContainer.innerHTML = '';
+    });
 
     // add light dismiss for lack of support for closedby
     fromEvent<MouseEvent>(dialog, 'click')

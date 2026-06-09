@@ -1,14 +1,14 @@
 import { getCookie } from './utils';
 
+const mqlDark = window.matchMedia('(prefers-color-scheme: dark)');
+
 export default class ColorSchemeSwitcher extends HTMLElement {
   mediaQueryColorScheme: MediaQueryList;
 
   constructor() {
     super();
 
-    this.mediaQueryColorScheme = window.matchMedia(
-      '(prefers-color-scheme: dark)'
-    );
+    this.mediaQueryColorScheme = mqlDark;
   }
 
   connectedCallback() {
@@ -57,26 +57,21 @@ export default class ColorSchemeSwitcher extends HTMLElement {
   }
 
   static handleChange(scheme: string | null, userToggle = false) {
-    const htmlEl = document.querySelector('html') as HTMLHtmlElement;
     switch (scheme) {
       case 'dark':
-        htmlEl.classList.add('dark-mode');
+        document.documentElement.classList.add('dark-mode');
         if (userToggle) {
           document.cookie = this.setThemeCookie('dark');
         }
         break;
       case 'light':
-        htmlEl.classList.remove('dark-mode');
+        document.documentElement.classList.remove('dark-mode');
         if (userToggle) {
           document.cookie = this.setThemeCookie('light');
         }
         break;
       default:
-        this.handleChange(
-          this.matchesDark(
-            window.matchMedia('(prefers-color-scheme: dark)').matches
-          )
-        );
+        this.handleChange(this.matchesDark(mqlDark.matches));
         if (userToggle) {
           document.cookie = this.setThemeCookie('system');
         }

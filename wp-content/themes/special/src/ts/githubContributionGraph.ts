@@ -1,5 +1,3 @@
-import { fromEvent } from 'rxjs';
-
 interface ContributionDay {
   date: string;
   contributionCount: number;
@@ -192,47 +190,42 @@ export default class GitHubContributionGraph extends HTMLElement {
   }
 
   attachEventListeners() {
-    const cells = this.querySelectorAll('.contribution-cell');
     const tooltip = this.querySelector('.contribution-tooltip') as HTMLElement;
     const anchor = this.querySelector('.contribution-anchor') as HTMLElement;
-    const wrapper = this.querySelector(
-      '.contribution-graph-wrapper'
-    ) as HTMLElement;
+    const wrapper = this.querySelector('.contribution-graph-wrapper') as HTMLElement;
+    const svg = this.querySelector('svg') as SVGElement;
 
     let currentCell: SVGElement | null = null;
 
-    cells.forEach((cell) => {
-      fromEvent(cell, 'mouseenter').subscribe((e: Event) => {
-        const target = e.target as SVGElement;
-        currentCell = target;
-        const date = target.getAttribute('data-date') || '';
-        const count = target.getAttribute('data-count') || '0';
-        this.showTooltip(tooltip, anchor, target, date, count);
-      });
+    const isCell = (el: EventTarget | null): el is SVGElement =>
+      el instanceof SVGElement && el.classList.contains('contribution-cell');
 
-      fromEvent(cell, 'mouseleave').subscribe(() => {
-        currentCell = null;
-        this.hideTooltip(tooltip);
-      });
-
-      fromEvent(cell, 'focus').subscribe((e: Event) => {
-        const target = e.target as SVGElement;
-        currentCell = target;
-        const date = target.getAttribute('data-date') || '';
-        const count = target.getAttribute('data-count') || '0';
-        this.showTooltip(tooltip, anchor, target, date, count);
-      });
-
-      fromEvent(cell, 'blur').subscribe(() => {
-        currentCell = null;
-        this.hideTooltip(tooltip);
-      });
+    svg.addEventListener('mouseover', (e) => {
+      if (!isCell(e.target)) return;
+      currentCell = e.target;
+      this.showTooltip(tooltip, anchor, e.target, e.target.getAttribute('data-date') || '', e.target.getAttribute('data-count') || '0');
     });
 
-    fromEvent(wrapper, 'scroll').subscribe(() => {
-      if (currentCell) {
-        this.updateTooltipPosition(anchor, currentCell);
-      }
+    svg.addEventListener('mouseout', (e) => {
+      if (!isCell(e.target)) return;
+      currentCell = null;
+      this.hideTooltip(tooltip);
+    });
+
+    svg.addEventListener('focusin', (e) => {
+      if (!isCell(e.target)) return;
+      currentCell = e.target;
+      this.showTooltip(tooltip, anchor, e.target, e.target.getAttribute('data-date') || '', e.target.getAttribute('data-count') || '0');
+    });
+
+    svg.addEventListener('focusout', (e) => {
+      if (!isCell(e.target)) return;
+      currentCell = null;
+      this.hideTooltip(tooltip);
+    });
+
+    wrapper.addEventListener('scroll', () => {
+      if (currentCell) this.updateTooltipPosition(anchor, currentCell);
     });
   }
 

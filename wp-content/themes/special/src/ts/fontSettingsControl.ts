@@ -1,5 +1,3 @@
-import { fromEvent } from 'rxjs';
-import { debounceTime, distinctUntilChanged, map, tap } from 'rxjs/operators';
 import { addEventListenerMulti } from './utils';
 
 export default class FontSettingsControl extends HTMLElement {
@@ -54,7 +52,7 @@ export default class FontSettingsControl extends HTMLElement {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 <path d="M88.2 38.5c6.2 0 11.2 4.9 11.2 11.1 0 6.2-5 11.2-11.2 11.3l-27.1.2-22.3.2-27 .2C5.6 61.5.6 56.6.6 50.4c0-6.2 5-11.2 11.2-11.3l27.1-.2 22.3-.2 27-.2z" />
               </svg>
-            </span>          
+            </span>
           </button>
           <input pattern="[0-9]*" id="number-${formatLabel(this.label)}" type="number" inputmode="decimal" min="${this.minValue}" max="${this.maxValue}" step="50" name="wght-bold" />
           <button class="increment">
@@ -63,7 +61,7 @@ export default class FontSettingsControl extends HTMLElement {
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 <path d="M88.2 38.5c6.2 0 11.2 4.9 11.2 11.1 0 6.2-5 11.2-11.2 11.3l-27.1.2-.2 27.1c-.1 6.1-5.1 11.1-11.3 11.1-6.2 0-11.1-5-11.1-11.1l.2-26.9-27 .2C5.5 61.5.5 56.6.5 50.4c0-6.2 5-11.2 11.2-11.3l27.1-.2.2-27.1C39.1 5.7 44.1.7 50.3.7c6.2 0 11.1 5 11.1 11.1l-.2 26.9 27-.2z" />
               </svg>
-            </span>          
+            </span>
           </button>
           <span role="status" class="current-weight assistive-text">Current font weight for ${this.label} is ${this.fontValue}</span>
         </span>
@@ -82,6 +80,18 @@ export default class FontSettingsControl extends HTMLElement {
       '.font-settings input[type="number"'
     ) as HTMLInputElement;
 
+    const updateFontWeight = (value: string) => {
+      document.documentElement.style.setProperty(this.fontProperty, value);
+      localStorage.setItem(this.localStorageKey, value);
+
+      const currentWeight = document.querySelector(
+        '.current-weight'
+      ) as HTMLElement;
+      currentWeight.innerText = `Current font weight for ${this.label} is ${value}`;
+
+      inputs.forEach((input) => (input.value = value));
+    };
+
     for (const button of buttons) {
       button.addEventListener('click', function (e) {
         const target = e.currentTarget as HTMLButtonElement;
@@ -98,9 +108,7 @@ export default class FontSettingsControl extends HTMLElement {
       });
     }
 
-    // swap with routine?
     for (const input of inputs) {
-      // set intial values for all inputs
       input.value = this.fontValue;
 
       addEventListenerMulti(input, 'change input', function (e) {
@@ -112,64 +120,45 @@ export default class FontSettingsControl extends HTMLElement {
       });
     }
 
-    fromEvent(numberInput, 'input')
-      .pipe(
-        map((e) => {
-          const target = e.target as HTMLInputElement;
+    let debounceTimer: ReturnType<typeof setTimeout>;
+    let lastValue = '';
 
-          if (!/[0-9]/.test(target.value)) {
-            target.value = '';
-          }
+    numberInput.addEventListener('input', () => {
+      let val = numberInput.value;
 
-          if (target.value.length === 3 && target.value < this.minValue) {
-            target.value = this.minValue;
-          }
+      if (!/[0-9]/.test(val)) {
+        numberInput.value = '';
+        val = '';
+      }
 
-          if (target.value.length === 3 && target.value > this.maxValue) {
-            target.value = this.maxValue;
-          }
+      if (val.length === 3 && val < this.minValue) {
+        numberInput.value = this.minValue;
+        val = this.minValue;
+      }
 
-          if (target.value.length > 3) {
-            target.value = target.value.slice(0, 3);
-          }
+      if (val.length === 3 && val > this.maxValue) {
+        numberInput.value = this.maxValue;
+        val = this.maxValue;
+      }
 
-          return target.value;
-        }),
-        distinctUntilChanged(),
-        debounceTime(250),
-        tap((value: string) => value && updateFontWeight(value))
-      )
-      .subscribe();
+      if (val.length > 3) {
+        numberInput.value = val.slice(0, 3);
+        val = numberInput.value;
+      }
 
-    fromEvent(numberInput, 'blur')
-      .pipe(
-        map((e) => {
-          const target = e.target as HTMLInputElement;
-          return target.value === '' ? this.minValue : target.value;
-        }),
-        tap((value: string) => updateFontWeight(value))
-      )
-      .subscribe();
+      if (val === lastValue) return;
+      lastValue = val;
 
-    const updateFontWeight = (value: string) => {
-      document.documentElement.style.setProperty(this.fontProperty, value);
-      localStorage.setItem(this.localStorageKey, value);
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        if (val) updateFontWeight(val);
+      }, 250);
+    });
 
-      const currentWeight = document.querySelector(
-        '.current-weight'
-      ) as HTMLElement;
-
-      currentWeight.innerText = `Current font weight for ${this.label} is ${getComputedStyle(
-        document.documentElement
-      ).getPropertyValue(this.fontProperty)}`;
-
-      inputs.forEach(
-        (input) =>
-          (input.value = getComputedStyle(
-            document.documentElement
-          ).getPropertyValue(this.fontProperty))
-      );
-    };
+    numberInput.addEventListener('blur', () => {
+      const value = numberInput.value === '' ? this.minValue : numberInput.value;
+      updateFontWeight(value);
+    });
   }
 
   static init() {

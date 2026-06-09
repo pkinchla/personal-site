@@ -32,6 +32,7 @@ ol[role='list'] {
 html {
   text-size-adjust: none;
   scrollbar-color: var(--secondary) var(--body-background);
+  scrollbar-gutter: stable;
 }
 
 /* Set core body defaults */

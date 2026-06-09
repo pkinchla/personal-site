@@ -14,52 +14,65 @@ function siteSettingsOverlay(
     return;
   }
 
-  buttons.forEach((button) => {
-    button.addEventListener('click', toggle);
-  });
+  // When transitions aren't available, native popovertarget handles open/close/ESC/outside-click.
+  const useTransition =
+    !!document.startViewTransition &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function toggle(e: Event) {
-    if (
-      !document.startViewTransition ||
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    ) {
-      return;
-    }
-    e.preventDefault();
-    const is_opening = !popover?.matches(':popover-open');
+  if (!useTransition) {
+    return;
+  }
 
-    document.startViewTransition(() => {
-      if (is_opening) {
-        popover.showPopover();
-        return dismissButton?.focus();
-      }
-      return popover.hidePopover();
+  let controller: AbortController | null = null;
+
+  function open() {
+    controller = new AbortController();
+    const { signal } = controller;
+
+    document.addEventListener(
+      'click',
+      (e) => {
+        if (!popover.contains(e.target as HTMLElement) && popover.matches(':popover-open')) {
+          close();
+        }
+      },
+      { signal }
+    );
+
+    // preventDefault stops the browser's native ESC-closes-popover so we can animate it.
+    document.addEventListener(
+      'keydown',
+      (e) => {
+        if (e.key === 'Escape' && popover.matches(':popover-open')) {
+          e.preventDefault();
+          close();
+        }
+      },
+      { signal }
+    );
+
+    document.startViewTransition!(() => {
+      popover.showPopover();
+      dismissButton?.focus();
     });
   }
 
-  document.addEventListener('click', (e) => {
-    if (
-      !popover.contains(e.target as HTMLElement) &&
-      popover.matches(':popover-open')
-    ) {
-      toggle(e);
-    }
-  });
+  function close() {
+    controller?.abort();
+    controller = null;
+    document.startViewTransition!(() => popover.hidePopover());
+  }
 
-  document.addEventListener('keydown', (e) => {
-    if (
-      e.key === 'Escape' &&
-      popover.hasAttribute('popover') &&
-      popover.matches(':popover-open')
-    ) {
-      toggle(e);
-    }
+  buttons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (popover.matches(':popover-open')) {
+        close();
+      } else {
+        open();
+      }
+    });
   });
-  // TODO: fix this overlay click and focus out issues
-  // when popover loses focuses close it
-  // document.addEventListener('focusout', (e) =>
-  //   requestAnimationFrame(() => !popover.contains(e.relatedTarget) && toggle(e))
-  // );
 }
 
 export default siteSettingsOverlay;
