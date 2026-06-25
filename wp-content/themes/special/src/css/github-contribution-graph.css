@@ -1,38 +1,57 @@
-/* Theme variables
-Does not need .no-js modifiers as this is a custom element */
+/* raw color tokens */
 :root {
-  --contribution-cell-empty: #d7d7d7;
-  --contribution-cell-level-1: #9be9a8;
-  --contribution-cell-level-2: #40c463;
-  --contribution-cell-level-3: #30a14e;
-  --contribution-cell-level-4: #216e39;
+  --contribution-cell-empty-light: #d7d7d7;
+  --contribution-cell-empty-dark: #3b4e5c;
+  --contribution-cell-level-1-light: #9be9a8;
+  --contribution-cell-level-1-dark: #0e4429;
+  --contribution-cell-level-2-light: #40c463;
+  --contribution-cell-level-2-dark: #006d32;
+  --contribution-cell-level-3-light: #30a14e;
+  --contribution-cell-level-3-dark: #26a641;
+  --contribution-cell-level-4-light: #216e39;
+  --contribution-cell-level-4-dark: #39d353;
+
+  /* resolved tokens — default to light */
+  --contribution-cell-empty: var(--contribution-cell-empty-light);
+  --contribution-cell-level-1: var(--contribution-cell-level-1-light);
+  --contribution-cell-level-2: var(--contribution-cell-level-2-light);
+  --contribution-cell-level-3: var(--contribution-cell-level-3-light);
+  --contribution-cell-level-4: var(--contribution-cell-level-4-light);
 }
 
-:root.dark-mode {
-  --contribution-cell-empty: #3b4e5c;
-  --contribution-cell-level-1: #0e4429;
-  --contribution-cell-level-2: #006d32;
-  --contribution-cell-level-3: #26a641;
-  --contribution-cell-level-4: #39d353;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --contribution-cell-empty: var(--contribution-cell-empty-dark);
+    --contribution-cell-level-1: var(--contribution-cell-level-1-dark);
+    --contribution-cell-level-2: var(--contribution-cell-level-2-dark);
+    --contribution-cell-level-3: var(--contribution-cell-level-3-dark);
+    --contribution-cell-level-4: var(--contribution-cell-level-4-dark);
+  }
 }
 
+@supports (color: light-dark(white, black)) {
+  :root {
+    --contribution-cell-empty: light-dark(var(--contribution-cell-empty-light), var(--contribution-cell-empty-dark));
+    --contribution-cell-level-1: light-dark(var(--contribution-cell-level-1-light), var(--contribution-cell-level-1-dark));
+    --contribution-cell-level-2: light-dark(var(--contribution-cell-level-2-light), var(--contribution-cell-level-2-dark));
+    --contribution-cell-level-3: light-dark(var(--contribution-cell-level-3-light), var(--contribution-cell-level-3-dark));
+    --contribution-cell-level-4: light-dark(var(--contribution-cell-level-4-light), var(--contribution-cell-level-4-dark));
+  }
+}
+
+/* P3 wide gamut — only overrides raw tokens */
 @media (color-gamut: p3) {
   :root {
-    --contribution-cell-empty: oklch(87.92% 0 0deg);
-    --contribution-cell-level-1: oklch(86.66% 0.1182 148.74deg);
-    --contribution-cell-level-2: oklch(72.67% 0.1781 148.54deg);
-    --contribution-cell-level-3: oklch(62.7% 0.157 148.35deg);
-    --contribution-cell-level-4: oklch(47.79% 0.1122 150.02deg);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root.dark-mode {
-      --contribution-cell-empty: oklch(41.36% 0.0334 240.52deg);
-      --contribution-cell-level-1: oklch(34.42% 0.073 156.73deg);
-      --contribution-cell-level-2: oklch(46.78% 0.126255 150.8624deg);
-      --contribution-cell-level-3: oklch(63.65% 0.1777 146.24deg);
-      --contribution-cell-level-4: oklch(76.19% 0.2121 145.62deg);
-    }
+    --contribution-cell-empty-light: oklch(87.92% 0 0deg);
+    --contribution-cell-empty-dark: oklch(41.36% 0.0334 240.52deg);
+    --contribution-cell-level-1-light: oklch(86.66% 0.1182 148.74deg);
+    --contribution-cell-level-1-dark: oklch(34.42% 0.073 156.73deg);
+    --contribution-cell-level-2-light: oklch(72.67% 0.1781 148.54deg);
+    --contribution-cell-level-2-dark: oklch(46.78% 0.126255 150.8624deg);
+    --contribution-cell-level-3-light: oklch(62.7% 0.157 148.35deg);
+    --contribution-cell-level-3-dark: oklch(63.65% 0.1777 146.24deg);
+    --contribution-cell-level-4-light: oklch(47.79% 0.1122 150.02deg);
+    --contribution-cell-level-4-dark: oklch(76.19% 0.2121 145.62deg);
   }
 }
 

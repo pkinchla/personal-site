@@ -1,106 +1,70 @@
-import { getCookie } from './utils';
-
-const mqlDark = window.matchMedia('(prefers-color-scheme: dark)');
+const LS_KEY = 'color-scheme';
 
 export default class ColorSchemeSwitcher extends HTMLElement {
-  mediaQueryColorScheme: MediaQueryList;
-
-  constructor() {
-    super();
-
-    this.mediaQueryColorScheme = mqlDark;
+  connectedCallback() {
+    this.render();
   }
 
-  connectedCallback() {
-    this.mediaQueryColorScheme.addEventListener('change', (e) => {
-      const setColorScheme = getCookie('color_scheme');
-      if (setColorScheme === 'dark' || setColorScheme === 'light') return;
-      ColorSchemeSwitcher.handleChange(
-        ColorSchemeSwitcher.matchesDark(e.matches)
-      );
-    });
+  private render() {
+    const stored = localStorage.getItem(LS_KEY) || 'system';
 
     this.innerHTML = `
       <fieldset class="color-theme-switcher sans-medium-italic">
-        <legend>Color Scheme</legend>       
-        <label for="system">
-         <input type="radio" id="system" name="color-scheme" value="system">
+        <legend>Color Scheme</legend>
+        <label for="scheme-system">
+          <input type="radio" id="scheme-system" name="color-scheme" value="system"${stored === 'system' ? ' checked' : ''}>
           System
         </label>
-        <label for="dark">
-          <input type="radio" id="dark" name="color-scheme" value="dark">
-          Dark
-        </label>
-        <label for="light">
-          <input type="radio" id="light" name="color-scheme" value="light">
+        <label for="scheme-light">
+          <input type="radio" id="scheme-light" name="color-scheme" value="light"${stored === 'light' ? ' checked' : ''}>
           Light
+        </label>
+        <label for="scheme-dark">
+          <input type="radio" id="scheme-dark" name="color-scheme" value="dark"${stored === 'dark' ? ' checked' : ''}>
+          Dark
         </label>
       </fieldset>
     `;
 
-    const inputs = document.querySelectorAll(
-      `.color-theme-switcher input`
-    ) as unknown as HTMLInputElement[];
-
-    for (const input of inputs) {
-      const setColorScheme = getCookie('color_scheme');
-
-      if (input.value === setColorScheme) {
-        input.checked = true;
-      }
-
-      input.addEventListener('click', function (e) {
+    for (const input of this.querySelectorAll<HTMLInputElement>('input')) {
+      input.addEventListener('click', (e) => {
         const target = e.target as HTMLInputElement;
-        ColorSchemeSwitcher.handleChange(target.value, true);
+        ColorSchemeSwitcher.applyScheme(target.value, true);
       });
     }
   }
 
-  static handleChange(scheme: string | null, userToggle = false) {
-    switch (scheme) {
-      case 'dark':
-        document.documentElement.classList.add('dark-mode');
-        if (userToggle) {
-          document.cookie = this.setThemeCookie('dark');
-        }
-        break;
-      case 'light':
-        document.documentElement.classList.remove('dark-mode');
-        if (userToggle) {
-          document.cookie = this.setThemeCookie('light');
-        }
-        break;
-      default:
-        this.handleChange(this.matchesDark(mqlDark.matches));
-        if (userToggle) {
-          document.cookie = this.setThemeCookie('system');
-        }
+  static applyScheme(scheme: string, persist = false) {
+    const meta = document.querySelector<HTMLMetaElement>(
+      'meta[name="color-scheme"]'
+    );
+
+    if (scheme === 'dark') {
+      document.documentElement.style.colorScheme = 'dark';
+      if (meta) meta.content = 'dark';
+    } else if (scheme === 'light') {
+      document.documentElement.style.colorScheme = 'light';
+      if (meta) meta.content = 'light';
+    } else {
+      document.documentElement.style.colorScheme = '';
+      if (meta) meta.content = 'light dark';
+    }
+
+    if (persist) {
+      if (scheme === 'system') {
+        localStorage.removeItem(LS_KEY);
+      } else {
+        localStorage.setItem(LS_KEY, scheme);
+      }
     }
   }
 
-  static matchesDark(matchBool: boolean) {
-    return matchBool ? 'dark' : 'light';
-  }
-
-  static setThemeCookie(color_scheme: string) {
-    const one_year = 60 * 60 * 24 * 365;
-    return `color_scheme=${color_scheme}; path=/; max-age=${one_year}; samesite=strict; secure;`;
-  }
-
-  static initCookie() {
-    const initialValueColorScheme = getCookie('color_scheme');
-    if (!initialValueColorScheme) {
-      document.cookie = this.setThemeCookie('system');
-    }
-
-    this.handleChange(initialValueColorScheme);
-  }
   static init() {
-    if (window.matchMedia('(prefers-color-scheme)').media === 'not all') {
-      return;
-    }
+    if (window.matchMedia('(prefers-color-scheme)').media === 'not all') return;
 
-    this.initCookie();
+    const stored = localStorage.getItem(LS_KEY);
+    if (stored) ColorSchemeSwitcher.applyScheme(stored);
+
     customElements.define('color-theme-switcher', ColorSchemeSwitcher);
   }
 }

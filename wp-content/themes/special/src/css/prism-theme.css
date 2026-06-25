@@ -1,17 +1,14 @@
 /**
- * a11y-light theme for JavaScript, CSS, and HTML
- * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
+ * a11y-light / a11y-dark combined theme for JavaScript, CSS, and HTML
+ * Based on: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
  * @author ericwbailey
  */
 
-/*
- Theme
- */
 code[class*='language-'],
 pre[class*='language-'] {
   font-family: var(--font-mono);
   background: none;
-  color: #545454;
+  color: light-dark(#545454, #f8f8f2);
   hyphens: none;
   tab-size: 4;
   text-align: left;
@@ -30,7 +27,7 @@ pre[class*='language-'] {
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  background: #fefefe;
+  background: light-dark(#fefefe, #2b2b2b);
 }
 
 /* Inline code */
@@ -44,11 +41,11 @@ pre[class*='language-'] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #696969;
+  color: light-dark(#696969, #d4d0ab);
 }
 
 .token.punctuation {
-  color: #545454;
+  color: light-dark(#545454, #fefefe);
 }
 
 .token.property,
@@ -56,12 +53,12 @@ pre[class*='language-'] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: #007299;
+  color: light-dark(#007299, #ffa07a);
 }
 
 .token.boolean,
 .token.number {
-  color: #008000;
+  color: light-dark(#008000, #00e0e0);
 }
 
 .token.selector,
@@ -70,7 +67,7 @@ pre[class*='language-'] {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: #aa5d00;
+  color: light-dark(#aa5d00, #abe338);
 }
 
 .token.operator,
@@ -79,22 +76,22 @@ pre[class*='language-'] {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-  color: #008000;
+  color: light-dark(#008000, #00e0e0);
 }
 
 .token.atrule,
 .token.attr-value,
 .token.function {
-  color: #aa5d00;
+  color: light-dark(#aa5d00, #ffd700);
 }
 
 .token.keyword {
-  color: #d91e18;
+  color: light-dark(#d91e18, #00e0e0);
 }
 
 .token.regex,
 .token.important {
-  color: #d91e18;
+  color: light-dark(#d91e18, #ffd700);
 }
 
 .token.important,
@@ -116,115 +113,18 @@ pre[class*='language-'] {
 
 /* Line highlight */
 .line-highlight {
-  border-block-start: 0.0625em solid #b8860b;
-  border-block-end: 0.0625em solid #b8860b;
-  background: rgb(183 134 11 / 7.5%);
+  border-block-start: 0.0625em solid light-dark(#b8860b, rgb(255 217 0 / 55%));
+  border-block-end: 0.0625em solid light-dark(#b8860b, rgb(255 217 0 / 55%));
+  background: light-dark(rgb(183 134 11 / 7.5%), rgb(255 217 0 / 10%));
 }
 
 /* Line numbers */
 .line-numbers .line-numbers-rows {
-  border-inline-end: 0.0625em solid #aa5d00;
+  border-inline-end: 0.0625em solid light-dark(#aa5d00, #f8f8f2);
 }
 
 .line-numbers-rows > span::before {
-  color: #696969;
-}
-
-/**
- * a11y-dark theme for JavaScript, CSS, and HTML
- * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
- * @author ericwbailey
- */
-
-/*
- Theme
- */
-.dark-mode code[class*='language-'],
-.dark-mode pre[class*='language-'] {
-  background: none;
-  color: #f8f8f2;
-}
-
-.dark-mode :not(pre) > code[class*='language-'],
-.dark-mode pre[class*='language-'] {
-  background: #2b2b2b;
-}
-
-.dark-mode .token.comment,
-.dark-mode .token.prolog,
-.dark-mode .token.doctype,
-.dark-mode .token.cdata {
-  color: #d4d0ab;
-}
-
-.dark-mode .token.punctuation {
-  color: #fefefe;
-}
-
-.dark-mode .token.property,
-.dark-mode .token.tag,
-.dark-mode .token.constant,
-.dark-mode .token.symbol,
-.dark-mode .token.deleted {
-  color: #ffa07a;
-}
-
-.dark-mode .token.boolean,
-.dark-mode .token.number {
-  color: #00e0e0;
-}
-
-.dark-mode .token.selector,
-.dark-mode .token.attr-name,
-.dark-mode .token.string,
-.dark-mode .token.char,
-.dark-mode .token.builtin,
-.dark-mode .token.inserted {
-  color: #abe338;
-}
-
-.dark-mode .token.operator,
-.dark-mode .token.entity,
-.dark-mode .token.url,
-.dark-mode .language-css .token.string,
-.dark-mode .style .token.string,
-.dark-mode .token.variable {
-  color: #00e0e0;
-}
-
-.dark-mode .token.atrule,
-.dark-mode .token.attr-value,
-.dark-mode .token.function {
-  color: #ffd700;
-}
-
-.dark-mode .token.keyword {
-  color: #00e0e0;
-}
-
-.dark-mode .token.regex,
-.dark-mode .token.important {
-  color: #ffd700;
-}
-
-/*
-  Plugin support
-  */
-
-/* Line highlight */
-.dark-mode .line-highlight {
-  border-block-start: 0.0625em solid rgb(255 217 0 / 55%);
-  border-block-end: 0.0625em solid rgb(255 217 0 / 55%);
-  background: rgb(255 217 0 / 10%);
-}
-
-/* Line numbers */
-.dark-mode .line-numbers .line-numbers-rows {
-  border-inline-end: 0.0625em solid #f8f8f2;
-}
-
-.dark-mode .line-numbers-rows > span::before {
-  color: #d4d0ab;
+  color: light-dark(#696969, #d4d0ab);
 }
 
 /*

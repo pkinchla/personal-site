@@ -4,6 +4,16 @@
 <head>
   <meta charset="{{ site.charset }}" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <script>
+  {
+    const s = localStorage.getItem('color-scheme');
+    if (s && s !== 'system') {
+      document.querySelector('meta[name="color-scheme"]').content = s;
+      document.documentElement.style.colorScheme = s;
+    }
+  }
+  </script>
   <title>
     {% if wp_title %}
     {{ wp_title }}
