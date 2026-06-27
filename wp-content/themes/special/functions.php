@@ -374,9 +374,22 @@ class StarterSite extends Timber\Site  {
 		$context['menu'] = Timber::get_menu();
     $context['site'] = $this;
     $context['is_home'] = is_front_page();
-    $context['current_page'] = home_url($_SERVER['REQUEST_URI']);
+    $context['current_page'] = home_url(strtok($_SERVER['REQUEST_URI'], '?#'));
     $context['menu_type'] = explode('/', home_url( $_SERVER['REQUEST_URI'] ))[3];
-    $context['perf_stats'] = speed_stats('http://stats.paulkinchla.me/api/urls.json');
+    $perf_stats = speed_stats('http://stats.paulkinchla.me/api/urls.json');
+    $context['perf_stats'] = $perf_stats;
+    $current_page_stats = null;
+    if (is_array($perf_stats) && !isset($perf_stats['error'])) {
+      $strip = fn($u) => preg_replace('#^https?://#', '', strtok($u, '?#'));
+      $current_stripped = $strip($context['current_page']);
+      foreach ($perf_stats as $url => $stats) {
+        if ($strip($url) === $current_stripped) {
+          $current_page_stats = $stats;
+          break;
+        }
+      }
+    }
+    $context['current_page_stats'] = $current_page_stats;
     $context['bot_was_redirected'] = explode('/',  home_url( $_SERVER['QUERY_STRING']))[3] ?? null == 'sorry-bot';
 		
     return $context;

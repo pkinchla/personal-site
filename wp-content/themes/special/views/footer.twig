@@ -87,11 +87,9 @@
     >
       Built for speed
     </a>
-    {% for key, value in perf_stats %}
-      {% if key|split('?')|first|split('#')|first == current_page %}
-        <speedlify-score speedlify-url="https://stats.paulkinchla.me" hash="{{value[" hash"]}}" score weight requests rank-change class="sans-regular-italic "></speedlify-score>
-      {% endif %}
-    {% endfor %}
+    {% if current_page_stats %}
+      <speedlify-score speedlify-url="https://stats.paulkinchla.me" hash="{{ current_page_stats.hash }}" score weight requests rank-change class="sans-regular-italic"></speedlify-score>
+    {% endif %}
   </p>
   <small class="sans-regular">&copy;2006 &ndash; {{"now"|date('Y')}}</small>
 </section>
