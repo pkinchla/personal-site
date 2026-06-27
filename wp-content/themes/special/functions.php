@@ -374,7 +374,7 @@ class StarterSite extends Timber\Site  {
 		$context['menu'] = Timber::get_menu();
     $context['site'] = $this;
     $context['is_home'] = is_front_page();
-    $context['current_page'] = home_url($_SERVER['REQUEST_URI']);
+    $context['current_page'] = home_url(strtok($_SERVER['REQUEST_URI'], '?#'));
     $context['menu_type'] = explode('/', home_url( $_SERVER['REQUEST_URI'] ))[3];
     $context['perf_stats'] = speed_stats('http://stats.paulkinchla.me/api/urls.json');
     $context['bot_was_redirected'] = explode('/',  home_url( $_SERVER['QUERY_STRING']))[3] ?? null == 'sorry-bot';
