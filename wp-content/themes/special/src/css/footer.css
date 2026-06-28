@@ -1,5 +1,4 @@
 .site > footer {
-  bottom: 0;
   padding: 3rem 2rem;
   border: 0.0625rem solid var(--secondary);
   border-radius: var(--radius);
