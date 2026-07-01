@@ -100,7 +100,9 @@ export default class GitHubContributionGraph extends HTMLElement {
   ): string {
     let labels = '';
     let lastMonth = '';
+    let lastLabelX = -Infinity;
     let weekIndex = 0;
+    const minGap = (cellSize + cellGap) * 2;
 
     weeks.forEach((week) => {
       if (week.contributionDays.length > 0) {
@@ -110,18 +112,21 @@ export default class GitHubContributionGraph extends HTMLElement {
 
         if (monthName !== lastMonth) {
           const x = weekIndex * (cellSize + cellGap) + 38;
-          labels += `
-            <text
-              x="${x}"
-              y="15"
-              class="month-label"
-              text-anchor="start"
-              font-size="13"
-              fill="currentColor"
-            >
-              ${monthName}
-            </text>
-          `;
+          if (x - lastLabelX >= minGap) {
+            labels += `
+              <text
+                x="${x}"
+                y="15"
+                class="month-label"
+                text-anchor="start"
+                font-size="13"
+                fill="currentColor"
+              >
+                ${monthName}
+              </text>
+            `;
+            lastLabelX = x;
+          }
           lastMonth = monthName;
         }
       }
