@@ -2,18 +2,18 @@
   <picture>
     <img
       srcset="
-        {{post.thumbnail.src|resize(2048)|towebp}} 2048w,
-        {{post.thumbnail.src|resize(1840)|towebp}} 1840w,
-        {{post.thumbnail.src|resize(1594)|towebp}} 1594w,
-        {{post.thumbnail.src|resize(1410)|towebp}} 1410w,
-        {{post.thumbnail.src|resize(1200)|towebp}} 1200w,
-        {{post.thumbnail.src|resize(1080)|towebp}} 1080w,
-        {{post.thumbnail.src|resize(721)|towebp}}   721w,
-        {{post.thumbnail.src|resize(600)|towebp}}   600w,
-        {{post.thumbnail.src|resize(300)|towebp}}   300w
+        {{post.thumbnail.src|resize(2048)|toavif}} 2048w,
+        {{post.thumbnail.src|resize(1840)|toavif}} 1840w,
+        {{post.thumbnail.src|resize(1594)|toavif}} 1594w,
+        {{post.thumbnail.src|resize(1410)|toavif}} 1410w,
+        {{post.thumbnail.src|resize(1200)|toavif}} 1200w,
+        {{post.thumbnail.src|resize(1080)|toavif}} 1080w,
+        {{post.thumbnail.src|resize(721)|toavif}}   721w,
+        {{post.thumbnail.src|resize(600)|toavif}}   600w,
+        {{post.thumbnail.src|resize(300)|toavif}}   300w
       "
       sizes="(min-width: 2440px) 1605px, (min-width: 780px) 67.01vw, 100vw"
-      src="{{ post.thumbnail.src|resize(2000)|towebp }}"
+      src="{{ post.thumbnail.src|resize(2000)|toavif }}"
       alt="{{ post.thumbnail.alt }}"
       width="{{ post.thumbnail.width }}"
       height="{{ post.thumbnail.height }}"
