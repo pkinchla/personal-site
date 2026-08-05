@@ -17,7 +17,8 @@
       "s",
       "deg",
       "vi",
-      "vb"
+      "vb",
+      "dvh"
     ],
     "order/properties-order": [
       "font-family",
