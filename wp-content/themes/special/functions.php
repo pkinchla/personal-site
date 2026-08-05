@@ -421,17 +421,6 @@ function timber_ext_to_avif($src, $quality = 70) {
         return $src;
     }
 
-    // Cap resource usage for this conversion only (process-wide static limits — cheap
-    // insurance on a small droplet where a runaway encode could crowd out MySQL/nginx).
-    // Tuned for a 1 vCPU / 1GB box: thread=1 (no benefit from OpenMP on a single core),
-    // memory/map kept well under total RAM, and a hard time limit so one bad image can't
-    // hang a PHP-FPM worker indefinitely.
-    Imagick::setResourceLimit(Imagick::RESOURCETYPE_THREAD, 1);
-    Imagick::setResourceLimit(Imagick::RESOURCETYPE_MEMORY, 128 * 1024 * 1024);
-    Imagick::setResourceLimit(Imagick::RESOURCETYPE_MAP, 128 * 1024 * 1024);
-    Imagick::setResourceLimit(Imagick::RESOURCETYPE_AREA, 32 * 1024 * 1024);
-    Imagick::setResourceLimit(Imagick::RESOURCETYPE_TIME, 20);
-
     // Convert and save the AVIF file
     $success = false;
     try {
@@ -439,11 +428,6 @@ function timber_ext_to_avif($src, $quality = 70) {
         // Flatten any transparency/animation to a single frame before encoding.
         $image->setImageFormat('avif');
         $image->setImageCompressionQuality($quality);
-        // AVIF's AV1 encoder defaults to its slowest/best-compression preset, which is far
-        // too CPU-heavy for a 1 vCPU box run 10x per pageview (srcset + fallback src).
-        // 0 = slowest/smallest, 9 = fastest/largest. 9 trades a bit of file size for a much
-        // shorter encode — the right tradeoff here given the CPU budget.
-        $image->setOption('heic:speed', '9');
         $success = $image->writeImage($avif_absolute_path);
         $image->clear();
         $image->destroy();
