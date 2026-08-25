@@ -175,6 +175,11 @@ figcaption {
     'ital' var(--variable-italic);
 }
 
+.system-semi-bold {
+  font-family: var(--font-system);
+  font-weight: 650;
+}
+
 /* settings for font-variation support */
 @supports (font-variation-settings: normal) {
   cite,

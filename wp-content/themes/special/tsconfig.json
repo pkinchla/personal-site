@@ -5,9 +5,11 @@
     "moduleResolution": "bundler",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "allowJs": true,
+    "importHelpers": true,
     "rootDir": "./src/ts",
     "outDir": "./dist/js",
     "skipLibCheck": true
   },
-  "include": ["./src/ts/**/*.ts"]
+  "include": ["./src/ts/**/*.ts", "./src/ts/**/*.js"]
 }

@@ -5,6 +5,7 @@
     "lint:styles-fix": "stylelint --fix 'src/**/*.css'",
     "lint:ts": "eslint src/**/*.ts",
     "bs": "browser-sync start --proxy 'paulkinchla.test' -f 'dist/**/*, views/*.twig'",
+    "fetch:speedlify2-score": "curl -fsSL https://www.speedlify.dev/js/speedlify2-score.js -o src/ts/vendor/speedlify2-score.js",
     "css": "postcss --use autoprefixer postcss-import cssnano -w -o dist/css/main.css src/css/main.css",
     "js": "rollup -c -w",
     "dev": "pnpm css & pnpm js & pnpm bs",
@@ -36,7 +37,6 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "rxjs": "^7.8.2",
-    "speedlify-score": "^3.0.0"
+    "rxjs": "^7.8.2"
   }
 }

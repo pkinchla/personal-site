@@ -4,8 +4,10 @@
   /* base typography */
   --font-display: 'Cooper', georgia, serif;
   --font-sans-serif:
-    'Arbeit', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, helvetica,
-    arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    'Arbeit', system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto,
+    sans-serif;
+  --font-system:
+    system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif;
   --font-mono: menlo, courier, monospace;
   --variable-wght-med: 650;
   --variable-italic: 1;
@@ -34,6 +36,7 @@
 
   /* resolved tokens — default to light; overridden below by media query and light-dark() */
   --body-background: var(--body-background-light);
+  --ss-tip-bg: var(--body-background);
   --primary: var(--primary-light);
   --secondary: var(--secondary-light);
   --link: var(--link-light);

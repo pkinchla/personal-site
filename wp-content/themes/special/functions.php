@@ -119,25 +119,6 @@ add_action(
 );
 
 
-function speed_stats($url) {
-  $stats = get_transient( 'speed_stats' );
-
-  if (false !== $stats) {
-    return $stats;
-  }
-
-  $response = wp_safe_remote_get($url);
-
-  if(is_wp_error( $response ) ||$response['response']['code'] >= 400  ) {
-    return array("error"=> "Stats are currently unavailable. Check back later.");
-  }
-
-  $stats = json_decode($response['body'], true);
-  set_transient( 'speed_stats', $stats, 12 * HOUR_IN_SECONDS);
-
-  return $stats;
-}
-
 function github_contributions($username) {
   $contributions = get_transient('github_contributions_' . $username);
 
@@ -375,20 +356,7 @@ class StarterSite extends Timber\Site  {
     $context['site'] = $this;
     $context['is_home'] = is_front_page();
     $context['menu_type'] = explode('/', home_url( $_SERVER['REQUEST_URI'] ))[3];
-    $perf_stats = speed_stats('http://stats.paulkinchla.me/api/urls.json');
-    $context['perf_stats'] = $perf_stats;
-    $current_page_stats = null;
-    if (is_array($perf_stats) && !isset($perf_stats['error'])) {
-      $strip = fn($u) => preg_replace('#^https?://#', '', strtok($u, '?#'));
-      $current_stripped = $strip(home_url(strtok($_SERVER['REQUEST_URI'], '?#')));
-      foreach ($perf_stats as $url => $stats) {
-        if ($strip($url) === $current_stripped) {
-          $current_page_stats = $stats;
-          break;
-        }
-      }
-    }
-    $context['current_page_stats'] = $current_page_stats;
+    $context['current_url'] = 'https://paulkinchla.com' . parse_url(home_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))['path'];
     $context['bot_was_redirected'] = explode('/',  home_url( $_SERVER['QUERY_STRING']))[3] ?? null == 'sorry-bot';
 		
     return $context;

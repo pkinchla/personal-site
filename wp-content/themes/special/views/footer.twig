@@ -83,13 +83,16 @@
   <p>
     <a
       class="sans-regular-italic"
-      href="https://stats.paulkinchla.me/paulkinchladotcom"
+      href="https://stats.paulkinchla.me/group/paulkinchladotcom/"
     >
       Built for speed
     </a>
-    {% if current_page_stats %}
-      <speedlify-score speedlify-url="https://stats.paulkinchla.me" hash="{{ current_page_stats.hash }}" score weight requests rank-change class="sans-regular-italic"></speedlify-score>
-    {% endif %}
+    <speedlify2-score
+      class="system-semi-bold"
+      speedlify-url="https://stats.paulkinchla.me"
+      url="{{ current_url }}"
+      class="sans-regular-italic"
+    ></speedlify2-score>
   </p>
   <small class="sans-regular">&copy;2006 &ndash; {{"now"|date('Y')}}</small>
 </section>

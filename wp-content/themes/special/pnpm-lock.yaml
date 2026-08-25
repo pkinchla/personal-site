@@ -14,9 +14,6 @@ importers:
       rxjs:
         specifier: ^7.8.2
         version: 7.8.2
-      speedlify-score:
-        specifier: ^3.0.0
-        version: 3.0.0
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3.3.5
@@ -890,6 +887,7 @@ packages:
   eslint@9.39.4:
     resolution: {integrity: sha512-XoMjdBOwe/esVgEvLmNsD3IRHkm7fbKIUGvrleloJXUZgDHig2IPWNniv+GwjyJXzuNqVjlr5+4yVUZjycJwfQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'
@@ -1782,9 +1780,6 @@ packages:
   source-map@0.6.1:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
-
-  speedlify-score@3.0.0:
-    resolution: {integrity: sha512-gnRDF/RHheFGL9EUPjHFHkga8+G0xqzfM4q+wrHMjlRHD8R9E5emnvHv42FzeBYtjGpBS4yZwwWxJArAe6BocA==}
 
   statuses@1.3.1:
     resolution: {integrity: sha512-wuTCPGlJONk/a1kqZ4fQM2+908lC7fa7nPYpTC1EhnvqLX/IICbeP1OZGDtA374trpSq68YubKUMo8oRhN46yg==}
@@ -3708,8 +3703,6 @@ snapshots:
       source-map: 0.6.1
 
   source-map@0.6.1: {}
-
-  speedlify-score@3.0.0: {}
 
   statuses@1.3.1: {}
 
