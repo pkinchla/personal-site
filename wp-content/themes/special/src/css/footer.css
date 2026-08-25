@@ -55,14 +55,26 @@
 
 /*
  * <speedlify2-score> renders in Shadow DOM, so its internals aren't
- * reachable from here — it exposes its band colors as custom properties
- * instead. Map them to the site's own score tokens (custom-properties.css)
- * so the rings match the palette used everywhere else.
+ * reachable from here — it exposes its colors as custom properties instead.
+ * Map every one that has a real equivalent in the site's own palette
+ * (custom-properties.css) so the badge matches everywhere else it appears.
+ *
+ * --ss-tip-bg now equals --body-background, which is what makes --primary a
+ * correct swap for --ss-tip-text too: --primary is the color the rest of the
+ * site already uses as text on that exact background, in both themes.
+ *
+ * Left on the component's own light-dark() defaults, deliberately: --ss-none
+ * and --ss-track (muted grey / track alpha) and --ss-tip-shadow / --ss-age-*
+ * (translucent black-or-white overlays) have no equivalent site token — they
+ * describe chrome specific to this widget, not brand color.
  */
 .site speedlify2-score {
   --ss-good: var(--score-good);
   --ss-average: var(--score-ok);
   --ss-poor: var(--score-bad);
+  --ss-tip-bg: var(--body-background);
+  --ss-tip-text: var(--primary);
+  --ss-tip-link: var(--link);
 }
 
 @media (min-width: 48em) {

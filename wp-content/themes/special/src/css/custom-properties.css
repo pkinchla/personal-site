@@ -36,7 +36,6 @@
 
   /* resolved tokens — default to light; overridden below by media query and light-dark() */
   --body-background: var(--body-background-light);
-  --ss-tip-bg: var(--body-background);
   --primary: var(--primary-light);
   --secondary: var(--secondary-light);
   --link: var(--link-light);
