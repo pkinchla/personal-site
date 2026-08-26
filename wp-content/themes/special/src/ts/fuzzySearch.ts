@@ -61,7 +61,11 @@ export default class FuzzySearch extends HTMLElement {
 
     // invoke dialog and reset state
     fromEvent<MouseEvent>(buttons, 'click').subscribe(() => {
-      dialog?.open ? dialog.close() : dialog.showModal();
+      if (dialog?.open) {
+        dialog.close();
+      } else {
+        dialog.showModal();
+      }
       input.value = '';
       resultsContainer.innerHTML = '';
     });
@@ -123,7 +127,11 @@ export default class FuzzySearch extends HTMLElement {
           const response = await fetch(`${this.apiEndpoint}${query}`);
           const results = await response.json();
 
-          const safeQuery = query.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+          const safeQuery = query
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
           return results.length > 0
             ? `<em class="h4">Results for: ${safeQuery}</em>` +
                 results
