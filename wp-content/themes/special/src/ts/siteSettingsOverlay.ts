@@ -32,7 +32,10 @@ function siteSettingsOverlay(
     document.addEventListener(
       'click',
       (e) => {
-        if (!popover.contains(e.target as HTMLElement) && popover.matches(':popover-open')) {
+        if (
+          !popover.contains(e.target as HTMLElement) &&
+          popover.matches(':popover-open')
+        ) {
           close();
         }
       },

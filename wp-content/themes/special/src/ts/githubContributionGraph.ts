@@ -197,7 +197,9 @@ export default class GitHubContributionGraph extends HTMLElement {
   attachEventListeners() {
     const tooltip = this.querySelector('.contribution-tooltip') as HTMLElement;
     const anchor = this.querySelector('.contribution-anchor') as HTMLElement;
-    const wrapper = this.querySelector('.contribution-graph-wrapper') as HTMLElement;
+    const wrapper = this.querySelector(
+      '.contribution-graph-wrapper'
+    ) as HTMLElement;
     const svg = this.querySelector('svg') as SVGElement;
 
     let currentCell: SVGElement | null = null;
@@ -208,7 +210,13 @@ export default class GitHubContributionGraph extends HTMLElement {
     svg.addEventListener('mouseover', (e) => {
       if (!isCell(e.target)) return;
       currentCell = e.target;
-      this.showTooltip(tooltip, anchor, e.target, e.target.getAttribute('data-date') || '', e.target.getAttribute('data-count') || '0');
+      this.showTooltip(
+        tooltip,
+        anchor,
+        e.target,
+        e.target.getAttribute('data-date') || '',
+        e.target.getAttribute('data-count') || '0'
+      );
     });
 
     svg.addEventListener('mouseout', (e) => {
@@ -220,7 +228,13 @@ export default class GitHubContributionGraph extends HTMLElement {
     svg.addEventListener('focusin', (e) => {
       if (!isCell(e.target)) return;
       currentCell = e.target;
-      this.showTooltip(tooltip, anchor, e.target, e.target.getAttribute('data-date') || '', e.target.getAttribute('data-count') || '0');
+      this.showTooltip(
+        tooltip,
+        anchor,
+        e.target,
+        e.target.getAttribute('data-date') || '',
+        e.target.getAttribute('data-count') || '0'
+      );
     });
 
     svg.addEventListener('focusout', (e) => {

@@ -156,7 +156,8 @@ export default class FontSettingsControl extends HTMLElement {
     });
 
     numberInput.addEventListener('blur', () => {
-      const value = numberInput.value === '' ? this.minValue : numberInput.value;
+      const value =
+        numberInput.value === '' ? this.minValue : numberInput.value;
       updateFontWeight(value);
     });
   }
