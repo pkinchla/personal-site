@@ -212,7 +212,7 @@ form:focus-within {
 main > article > div > footer {
   font-size: 0.95em;
   padding: 1em;
-  border: 0.0625rem solid var(--secondary);
+  border: 0.125rem solid var(--secondary);
   margin-block-end: 3em;
   border-radius: var(--radius);
 }
@@ -223,7 +223,7 @@ main > article > div > footer {
   align-items: center;
   justify-content: center;
   padding: 1em 0;
-  border-block-end: 0.0625em solid var(--secondary);
+  border-block-end: 0.125em solid var(--secondary);
   margin-block-end: 3em;
   gap: 1em;
 }
