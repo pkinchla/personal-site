@@ -1,53 +1,79 @@
-dialog {
-  transition:
-    transform 0.25s,
-    overlay 0.25s allow-discrete,
-    display 0.25s allow-discrete;
-  transform: scale(0);
-  position: fixed;
-  padding: 0;
-  color: var(--primary);
+fuzzy-search {
+  dialog {
+    position: fixed;
+    background: var(--body-background);
+    color: var(--primary);
+    margin-block-start: 0;
+    transition:
+      transform 0.25s,
+      overlay 0.25s allow-discrete,
+      display 0.25s allow-discrete;
+    transform: scale(0);
+    padding: 0;
+    border-radius: var(--radius);
+    inset-block-start: 0.5em;
+    inline-size: 100vi;
 
-  &[open] {
-    transform: scale(1);
-  }
+    &[open] {
+      transform: scale(1);
+    }
 
-  div {
-    padding: 1em;
+    &::backdrop {
+      backdrop-filter: blur(0.4375rem);
+    }
+
+    &:focus-within {
+      box-shadow: var(--long-shadow);
+    }
+
+    @media (min-width: 48em) {
+      inline-size: calc(50vi - 1em);
+      margin-inline: auto;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      padding: 0.25em 0.5em;
+      border-radius: var(--radius);
+    }
+
+    input {
+      display: inline-block;
+      inline-size: calc(100% - 2.5em);
+      margin-block: 0.25em 0.75em;
+    }
+
+    div {
+      padding: 1em;
+    }
+
+    .dismiss-button {
+      inset-block-start: 1em;
+    }
+
+    .results {
+      margin-block-end: 0;
+
+      &:focus-within {
+        border-radius: var(--radius);
+      }
+
+      &:empty {
+        pointer-events: none;
+        display: none;
+      }
+    }
   }
 }
 
 @starting-style {
-  dialog[open] {
+  fuzzy-search dialog[open] {
     transform: scale(0);
   }
 }
 
-fuzzy-search dialog:focus-within {
-  box-shadow: var(--long-shadow);
-}
-
-fuzzy-search dialog .results {
-  margin-block-end: 0;
-}
-
-fuzzy-search dialog .results:focus-within {
-  border-radius: var(--radius);
-}
-
-fuzzy-search dialog .results:empty {
-  pointer-events: none;
-  display: none;
-}
-
-fuzzy-search dialog .results a {
-  display: block;
-  width: 100%;
-  padding: 0.25em 0.5em;
-  border-radius: var(--radius);
-}
-
-body:has(.search-dialog:open) {
+body:has(fuzzy-search dialog:open) {
   overflow: hidden;
   overscroll-behavior: none;
   margin-inline-end: calc(100vw - 100%);

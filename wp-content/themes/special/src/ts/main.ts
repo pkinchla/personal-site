@@ -3,14 +3,14 @@ import invokeServiceWorker from './invokeServiceWorker';
 import checkJSLoaded from './checkJSLoaded';
 import ColorSchemeSwitcher from './colorSchemeSwitcher';
 import FontSettingsControl from './fontSettingsControl';
-import siteSettingsOverlay from './siteSettingsOverlay';
+import userSettingsOverlay from './userSettingsOverlay';
 import FuzzySearch from './fuzzySearch';
 import GitHubContributionGraph from './githubContributionGraph';
 import initSpeedlify from './speedlify';
 
 checkJSLoaded();
 invokeServiceWorker();
-siteSettingsOverlay();
+userSettingsOverlay();
 observeHero();
 initSpeedlify();
 

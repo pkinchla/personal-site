@@ -1,9 +1,10 @@
+@import url('animations.css');
 @import url('custom-properties');
 @import url('reset.css');
-@import url('animations.css');
 @import url('typography.css');
 @import url('links.css');
 @import url('accessibility.css');
+@import url('forms.css');
 @import url('layout.css');
 @import url('prism-theme.css');
 @import url('main-navigation.css');
@@ -17,5 +18,5 @@
 @import url('shame.css');
 @import url('user-settings.css');
 @import url('view-transitions.css');
-@import url('site-settings-overlay.css');
+@import url('user-settings-overlay.css');
 @import url('fuzzy-search-dialog.css');

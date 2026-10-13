@@ -1,5 +1,5 @@
-function siteSettingsOverlay(
-  buttonElements: string = 'button[popovertarget=site-settings]',
+function userSettingsOverlay(
+  buttonElements: string = 'button[popovertarget=user-settings]',
   popoverElement: string = '#user-settings'
 ) {
   const buttons = document.querySelectorAll(buttonElements) as NodeList;
@@ -78,4 +78,4 @@ function siteSettingsOverlay(
   });
 }
 
-export default siteSettingsOverlay;
+export default userSettingsOverlay;

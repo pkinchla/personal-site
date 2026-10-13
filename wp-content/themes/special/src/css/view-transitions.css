@@ -11,3 +11,13 @@
     navigation: none;
   }
 }
+
+/* stylelint-disable-next-line selector-type-no-unknown */
+::view-transition-old(slidedown) {
+  animation: 0.4s ease-in reverse forwards slidedown;
+}
+
+/* stylelint-disable-next-line selector-type-no-unknown */
+::view-transition-new(slidedown) {
+  animation: 0.4s ease-out forwards slidedown;
+}

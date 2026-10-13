@@ -1,0 +1,54 @@
+.user-settings[popover] {
+  background: var(--body-background);
+  border: 0.125em solid var(--secondary);
+  border-radius: var(--radius);
+  box-shadow: var(--long-shadow);
+  color: var(--secondary);
+  inline-size: calc(100vi - 1em);
+  inset-block-start: 0.5em;
+  inset-inline-start: 0.5em;
+  margin: 0;
+  max-height: calc(100dvh - 1em);
+  overflow-y: auto;
+  padding: 1em;
+  view-transition-name: slidedown;
+
+  [contenteditable] {
+    display: inline-block;
+  }
+
+  [contenteditable]:focus {
+    border-radius: var(--radius);
+  }
+
+  &:focus-within {
+    box-shadow: var(--long-shadow);
+  }
+
+  &::backdrop {
+    backdrop-filter: blur(0.4375rem);
+  }
+
+  @media (min-width: 48em) {
+    inline-size: calc(50vi - 1em);
+    transform: translateX(-50%);
+    left: 50%;
+  }
+}
+
+/* stylelint-disable-next-line selector-type-no-unknown */
+install {
+  display: block;
+  background: var(--body-background);
+  color: var(--secondary);
+  width: 100%;
+  margin-block-end: 0.75em;
+  font-style: italic;
+  border: 0.125em solid var(--secondary);
+  border-radius: var(--radius);
+  max-inline-size: 12.525em;
+
+  &:focus-within {
+    border-radius: var(--radius);
+  }
+}

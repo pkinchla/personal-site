@@ -32,7 +32,7 @@ export default class FuzzySearch extends HTMLElement {
           <path d="M574.02 215.86a258.4 258.4 0 0 0-64.195-28.008 261.25 261.25 0 0 0-255.41 66.562 254.1 254.1 0 0 0-40.848 53.145 23.997 23.997 0 0 0 27.113 35.109 23.99 23.99 0 0 0 14.535-11.25 206 206 0 0 1 33.14-43.066 213.14 213.14 0 0 1 96.855-55.418 213.1 213.1 0 0 1 111.58 1.114 210.5 210.5 0 0 1 52.258 22.805 24.001 24.001 0 0 0 24.974-40.993z"/>
         </svg>
       </button>
-      <dialog class="search-dialog" closedby="any">
+      <dialog closedby="any">
         <div>
           <search>    
             <label class="assistive-text" for="search">Search:</label>
@@ -132,6 +132,7 @@ export default class FuzzySearch extends HTMLElement {
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;')
             .replace(/"/g, '&quot;');
+
           return results.length > 0
             ? `<em class="h4">Results for: ${safeQuery}</em>` +
                 results
