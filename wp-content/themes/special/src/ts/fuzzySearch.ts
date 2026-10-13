@@ -25,7 +25,7 @@ export default class FuzzySearch extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-      <button class="search-toggle">
+      <button class="search-toggle-button">
         <span class="assistive-text">Open Search Dialog</span>
         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200">
           <path d="M1131.8 987.11 743.25 664.49a378.98 378.98 0 0 0 72.223-267.52c-10.555-95.094-56.695-182.68-129.15-245.16s-165.86-95.258-261.48-91.734a379 379 0 0 0-254.01 110.74 379.02 379.02 0 0 0-110.74 254.01c-3.527 95.613 29.242 189.02 91.73 261.48s150.07 118.59 245.16 129.15a378.97 378.97 0 0 0 267.52-72.223l322.62 388.55c39.035 44.711 189.38-105.63 144.66-144.67zM219.85 657.77a309.66 309.66 0 0 1-84.754-158.56 309.7 309.7 0 0 1 17.621-178.93 309.685 309.685 0 0 1 286.11-191.168c61.246 0 121.12 18.16 172.05 52.188a309.69 309.69 0 0 1 131.685 317.91 309.68 309.68 0 0 1-84.754 158.56 310.04 310.04 0 0 1-437.96 0z"/>
@@ -38,7 +38,7 @@ export default class FuzzySearch extends HTMLElement {
             <label class="assistive-text" for="search">Search:</label>
             <input class="sans-regular-italic" type="text" id="search" placeholder="Search Site...">
             <ul class="results" role="list" tabindex="-1" aria-live="polite" aria-atomic="true"></ul>
-            <button class="dismiss-search-dialog close">
+            <button class="dismiss-button">
               <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100">
                 <line x1="22.5" y1="77.5" x2="77.5" y2="22.5" />
                 <line x1="77.5" y1="77.5" x2="22.5" y2="22.5" />

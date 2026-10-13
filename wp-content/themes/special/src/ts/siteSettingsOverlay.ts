@@ -1,6 +1,6 @@
 function siteSettingsOverlay(
   buttonElements: string = 'button[popovertarget=site-settings]',
-  popoverElement: string = '#site-settings'
+  popoverElement: string = '#user-settings'
 ) {
   const buttons = document.querySelectorAll(buttonElements) as NodeList;
   const dismissButton = buttons[1] as HTMLButtonElement;

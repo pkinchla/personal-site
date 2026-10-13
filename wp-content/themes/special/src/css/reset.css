@@ -32,7 +32,8 @@ ol[role='list'] {
 html {
   text-size-adjust: none;
   scrollbar-color: var(--secondary) var(--body-background);
-  scrollbar-gutter: stable;
+
+  /* scrollbar-gutter: stable; */
 }
 
 /* Set core body defaults */
@@ -70,6 +71,7 @@ video {
 svg {
   display: inline-block;
   max-width: 100%;
+  fill: currentcolor;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -82,6 +84,9 @@ select {
 
 button {
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (prefers-reduced-motion: reduce) {
