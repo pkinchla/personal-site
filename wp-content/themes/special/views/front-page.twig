@@ -1,26 +1,45 @@
-{% extends "base.twig" %}
+{% extends 'base.twig' %}
 {% block content %}
-<article id="post-{{ post.ID }}">
-  <header>
-    <h1 class="assistive-text">Home Page</h1>
-    <div class="assistive-text">
-      {% include 'byline-page.twig' %}
-    </div>
-  </header>
-  <figure class="hero{{ post.meta('toggle_image_filter') ? ' no-filter' : '' }}">
-    <picture>
+  <article id="post-{{ post.ID }}">
+    <header>
+      <h1 class="assistive-text">Home Page</h1>
+      <div class="assistive-text">
+        {% include 'byline-page.twig' %}
+      </div>
+    </header>
+    <figure
+      class="hero{{ post.meta('toggle_image_filter') ? ' no-filter' : '' }}"
+    >
       <img
         fetchpriority="high"
         srcset="
-          {{post.thumbnail.src|resize(2048)|towebp}} 2048w,
-          {{post.thumbnail.src|resize(1840)|towebp}} 1840w,
-          {{post.thumbnail.src|resize(1594)|towebp}} 1594w,
-          {{post.thumbnail.src|resize(1410)|towebp}} 1410w,
-          {{post.thumbnail.src|resize(1200)|towebp}} 1200w,
-          {{post.thumbnail.src|resize(1080)|towebp}} 1080w,
-          {{post.thumbnail.src|resize(721)|towebp}}   721w,
-          {{post.thumbnail.src|resize(600)|towebp}}   600w,
-          {{post.thumbnail.src|resize(300)|towebp}}   300w
+          {{ post.thumbnail.src
+          |resize(2048)
+          |towebp }} 2048w,
+          {{ post.thumbnail.src
+          |resize(1840)
+          |towebp }} 1840w,
+          {{ post.thumbnail.src
+          |resize(1594)
+          |towebp }} 1594w,
+          {{ post.thumbnail.src
+          |resize(1410)
+          |towebp }} 1410w,
+          {{ post.thumbnail.src
+          |resize(1200)
+          |towebp }} 1200w,
+          {{ post.thumbnail.src
+          |resize(1080)
+          |towebp }} 1080w,
+          {{ post.thumbnail.src
+          |resize(721)
+          |towebp }}   721w,
+          {{ post.thumbnail.src
+          |resize(600)
+          |towebp }}   600w,
+          {{ post.thumbnail.src
+          |resize(300)
+          |towebp }}   300w
         "
         sizes="(min-width: 2400px) 1984px, (min-width: 780px) calc(90.38vw - 167px), 100vw"
         src="{{ post.thumbnail.src|resize(1594)|towebp }}"
@@ -28,23 +47,16 @@
         width="{{ post.thumbnail.width }}"
         height="{{ post.thumbnail.height }}"
       />
-    </picture>
-    <span class="sans-medium-italic">{{ post.title }}</span>
-    <a href="#home-content" class="jump-link">
-      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
-        <path d="M25,0C11.2,0,0,11.2,0,25s11.2,25,25,25,25-11.2,25-25S38.8,0,25,0ZM23.9,37.8l-10.2-10.2c-.4-.4-.6-1.1-.3-1.7.2-.6.8-1,1.4-1h5.5v-9.4c0-1.7,1.4-3.1,3.1-3.1h3.1c1.7,0,3.1,1.4,3.1,3.1v9.4h5.5c.6,0,1.2.4,1.4,1s.1,1.3-.3,1.7l-10.2,10.2c-.6.6-1.6.6-2.2,0Z"/>
-      </svg>
-      <span class="assistive-text">Home content section</span>
-    </a>
-  </figure>
-  <div class="content-grid" id="home-content">
-    {{ post.content }}
-    <section>
-      <h2 id="latest-blog-post">Latest</h2>
-      {% for post in home_post %}
-      {% include 'card.twig' %}
-      {% endfor %}
-    </section>
-  </div>
-</article>
+    </figure>
+    <span class="sans-medium-italic"><b>{{ post.title }}</b></span>
+    <div>
+      {{ post.content }}
+      <section>
+        <h2 id="latest-blog-post">Latest</h2>
+        {% for post in home_post %}
+          {% include 'card.twig' %}
+        {% endfor %}
+      </section>
+    </div>
+  </article>
 {% endblock %}

@@ -1,4 +1,3 @@
-import observeHero from './observeHero';
 import invokeServiceWorker from './invokeServiceWorker';
 import checkJSLoaded from './checkJSLoaded';
 import ColorSchemeSwitcher from './colorSchemeSwitcher';
@@ -11,7 +10,6 @@ import initSpeedlify from './speedlify';
 checkJSLoaded();
 invokeServiceWorker();
 userSettingsOverlay();
-observeHero();
 initSpeedlify();
 
 ColorSchemeSwitcher.init();
