@@ -1,17 +1,17 @@
 /* site settings */
 .site-header {
-  padding: 0.5em;
   display: flex;
+  background: var(--secondary);
+  color: var(--body-background);
+  margin-block: 1em 2em;
+  padding: 0.5em;
   flex-wrap: wrap;
   gap: 0.5em;
   align-items: center;
   border: 0.125em solid var(--tertiary);
-  background: var(--secondary);
   border-radius: var(--radius);
   max-width: 50em;
-  margin-block: 1em;
   margin-inline: 0.5em;
-  color: var(--body-background);
 
   @media (min-width: 51.875em) {
     box-shadow: var(--long-shadow-border);

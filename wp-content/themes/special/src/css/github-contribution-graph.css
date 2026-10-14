@@ -73,11 +73,12 @@
 /* Container */
 .contribution-graph-container {
   padding: 1.5rem;
-  border: 0.0625rem solid var(--primary);
+  border: 0.125rem solid var(--secondary);
   border-radius: var(--radius);
   font-weight: var(--variable-wght-body);
   position: relative;
   max-width: fit-content;
+  margin-block-end: 2em;
 }
 
 .contribution-graph-wrapper {

@@ -9,141 +9,139 @@
     {% include 'featured-image.twig' %}
     <div class="page-content">
       {{ post.content|wpautop }}
-      <section>
-        <div class="resume-intro">
-          <h2 id="cv">R&eacute;sum&eacute;</h2>
-          <a
-            class="action border sans-medium-italic no-offset"
-            href="{{ post.meta('file_resume').url }}"
-            download
-          >
-            Download
-          </a>
-        </div>
-        <dl class="resume sans-regular">
-          <dt>
-            Skill
-          </dt>
-          <dd class="last">
-            <p>
-              {{ post.skill }}
-            </p>
-          </dd>
-          <dt>
-            Work
-          </dt>
-          {% for job in post.meta('work') %}
-            <dd {{ loop.last ? ' class="last"'|raw }}>
-              <div>
-                {{ job.title }}
-                <span>
-                  {% for date in job.dates %}
-                    <b>
-                      <time datetime="{{ date.start_date }}">
-                        {{ date.start_date|date('Y') }}
-                      </time>
-                      {% if date.end_date %}
-                        <time datetime="{{ date.end_date }}">
-                          &ndash;{{ date.end_date|date('Y') }}
-                        </time>
-                      {% else %}
-                        &ndash;present
-                      {% endif %}
-                    </b>
-                  {% endfor %}
-                </span>
-              </div>
-              <span class="sans-regular-italic">{{ job.company_name }}</span>
-              <p>
-                {{ job.description }}<a href="http://{{ job.company_link }}" rel="noopener" target="_blank">{{
-                    job.company_link_text
-                  }}</a>
-              </p>
-            </dd>
-          {% endfor %}
-          <dt>
-            Internship
-          </dt>
-          {% for gig in post.meta('internship') %}
-            <dd {{ loop.last ? ' class="last"'|raw }}>
-              <div>
-                {{ gig.title }}
-                <span>
-                  <time datetime="{{ gig.date }}">
-                    {{ gig.date|date('Y') }}
-                  </time>
-                </span>
-              </div>
-              <span>{{ gig.location }}</span>
-            </dd>
-          {% endfor %}
-          <dt>
-            Education
-          </dt>
-          <dd class="last">
-            {% for school in post.meta('education') %}
-              <div>
-                {{ school.school }}
-                <span>{{ school.degree }}</span>
-              </div>
-            {% endfor %}
-          </dd>
-        </dl>
-      </section>
-      <section>
-        <div class="photo-intro">
-          <h2 id="photo-feed">Some Drawings</h2>
-          <p>
-            Some artwork I have produced. More information in this list of <a
-              href="/blog/category/pixel-art/"
-            >
-              pixel art posts
-            </a>.
-          </p>
-        </div>
-        <ul class="photo-feed" role="list">
-          {% for item in artwork %}
-            <li>
-              <img
-                srcset="
-              {{ item.src
-                  |resize(950)
-                  |towebp }}   950w,
-              {{ item.src
-                  |resize(882)
-                  |towebp }}   882w,
-              {{ item.src
-                  |resize(717)
-                  |towebp }}   717w,
-              {{ item.src
-                  |resize(478)
-                  |towebp }}   478w
-            "
-                width="{{ item.width }}"
-                height="{{ item.height }}"
-                sizes="auto"
-                src="{{ item.src }}"
-                alt="{{ item.alt|escape }}"
-                loading="lazy"
-              />
-            </li>
-          {% endfor %}
-        </ul>
-      </section>
-      <section>
-        {% if github_contributions and not github_contributions.error %}
-          <github-contribution-graph
-            style="grid-column: 2 / 6;"
-            data-contributions="{{ github_contributions
-              |json_encode
-              |e('html_attr') }}"
-          ></github-contribution-graph>
-        {% elseif github_contributions.error %}
-          <p class="sans-medium-italic">
-            {{ github_contributions.error }}
-          </p>
-        {% endif %}
-      </section>
     </div>
   </article>
+  <div class="grid">
+    <section class="resume-container">
+      <div class="resume-intro">
+        <h2 id="cv">R&eacute;sum&eacute;</h2>
+        <a
+          class="action border sans-medium-italic no-offset"
+          href="{{ post.meta('file_resume').url }}"
+          download
+        >
+          Download
+        </a>
+      </div>
+      <dl class="resume sans-regular">
+        <dt>
+          Skill
+        </dt>
+        <dd class="last">
+          <p>
+            {{ post.skill }}
+          </p>
+        </dd>
+        <dt>
+          Work
+        </dt>
+        {% for job in post.meta('work') %}
+          <dd {{ loop.last ? ' class="last"'|raw }}>
+            <div>
+              {{ job.title }}
+              <span>
+                {% for date in job.dates %}
+                  <b>
+                    <time datetime="{{ date.start_date }}">
+                      {{ date.start_date|date('Y') }}
+                    </time>
+                    {% if date.end_date %}
+                      <time datetime="{{ date.end_date }}">
+                        &ndash;{{ date.end_date|date('Y') }}
+                      </time>
+                    {% else %}
+                      &ndash;present
+                    {% endif %}
+                  </b>
+                {% endfor %}
+              </span>
+            </div>
+            <span class="sans-regular-italic">{{ job.company_name }}</span>
+            <p>
+              {{ job.description }}<a href="http://{{ job.company_link }}" rel="noopener" target="_blank">{{
+                  job.company_link_text
+                }}</a>
+            </p>
+          </dd>
+        {% endfor %}
+        <dt>
+          Internship
+        </dt>
+        {% for gig in post.meta('internship') %}
+          <dd {{ loop.last ? ' class="last"'|raw }}>
+            <div>
+              {{ gig.title }}
+              <span>
+                <time datetime="{{ gig.date }}">{{ gig.date|date('Y') }}</time>
+              </span>
+            </div>
+            <span>{{ gig.location }}</span>
+          </dd>
+        {% endfor %}
+        <dt>
+          Education
+        </dt>
+        <dd class="last">
+          {% for school in post.meta('education') %}
+            <div>
+              {{ school.school }}
+              <span>{{ school.degree }}</span>
+            </div>
+          {% endfor %}
+        </dd>
+      </dl>
+    </section>
+    <section class="media-container">
+      <h2 class="mb-0">Some Drawings</h2>
+      <p>
+        Some artwork I have produced. More information in this list of <a
+          href="/blog/category/pixel-art/"
+        >
+          pixel art posts
+        </a>.
+      </p>
+      <ul class="media-grid" role="list">
+        {% for item in artwork %}
+          <li>
+            <img
+              srcset="
+              {{ item.src
+                |resize(950)
+                |towebp }}   950w,
+              {{ item.src
+                |resize(882)
+                |towebp }}   882w,
+              {{ item.src
+                |resize(717)
+                |towebp }}   717w,
+              {{ item.src
+                |resize(478)
+                |towebp }}   478w
+            "
+              width="{{ item.width }}"
+              height="{{ item.height }}"
+              sizes="auto"
+              src="{{ item.src }}"
+              alt="{{ item.alt|escape }}"
+              loading="lazy"
+            />
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+    <section class="github-activity">
+      {% if github_contributions and not github_contributions.error %}
+        <github-contribution-graph
+          style="grid-column: 2 / 6;"
+          data-contributions="{{ github_contributions
+            |json_encode
+            |e('html_attr') }}"
+        ></github-contribution-graph>
+      {% elseif github_contributions.error %}
+        <p class="sans-medium-italic">
+          {{ github_contributions.error }}
+        </p>
+      {% endif %}
+    </section>
+  </div>
 {% endblock %}

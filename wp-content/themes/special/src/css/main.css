@@ -5,6 +5,7 @@
 @import url('links.css');
 @import url('accessibility.css');
 @import url('forms.css');
+@import url('buttons.css');
 @import url('layout.css');
 @import url('prism-theme.css');
 @import url('main-navigation.css');
@@ -14,6 +15,7 @@
 @import url('cards.css');
 @import url('pagination.css');
 @import url('resume.css');
+@import url('media-grid.css');
 @import url('github-contribution-graph.css');
 @import url('shame.css');
 @import url('user-settings.css');

@@ -1,13 +1,15 @@
 <div class="card" id="card-{{ post.ID }}">
-	{% block content %}
-		<a class="h3" href="{{ post.link }}">{{ post.title }}</a>
-		<time class="sans-regular-italic" datetime="{{post.date('c')}}">{{post.date('l, F jS, Y')}}</time>
-		{% if  post.post_type == 'post' %}
-			<span class="sans-medium-italic">Reading Time:
-				{{fn('estimated_reading_time', post.content)}}
-				minute{{
-      fn('estimated_reading_time', post.content) == 1 ? '' : 's'
-      }}</span>
-		{% endif %}
-	{% endblock %}
+  {% block content %}
+    <a class="h3 mb-0" href="{{ post.link }}">{{ post.title }}</a>
+    <time class="sans-regular-italic" datetime="{{ post.date('c') }}">
+      {{ post.date('l, F jS, Y') }}
+    </time>
+    {% if post.post_type == 'post' %}
+      <span class="sans-medium-italic">
+        Reading Time:
+        {{ fn('estimated_reading_time', post.content) }}
+        minute{{ fn('estimated_reading_time', post.content) == 1 ? '' : 's' }}
+      </span>
+    {% endif %}
+  {% endblock %}
 </div>

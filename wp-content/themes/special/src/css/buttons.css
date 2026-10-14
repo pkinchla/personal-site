@@ -1,0 +1,22 @@
+.action {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  color: var(--primary);
+  width: max-content;
+  border-radius: var(--radius);
+  text-decoration: none;
+  gap: 0.5em;
+
+  &.border {
+    border: 0.125em solid;
+  }
+}
+
+.action,
+.post-navigation a {
+  align-items: center;
+  display: inline-flex;
+  padding: 0.5em 1em;
+  gap: 0.25em;
+}

@@ -1,8 +1,18 @@
+.resume-container {
+  margin-block: 1.5em;
+}
+
+@media (min-width: 48em) {
+  .resume-container {
+    grid-column: 3 / 10;
+  }
+}
+
 .resume-intro {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-block-end: 1.5em;
+  margin-block-end: 1em;
 }
 
 .resume-intro h2 {
@@ -13,7 +23,8 @@
 /* .resume interior styling */
 .resume {
   padding: 5%;
-  border: 0.0625em solid var(--primary);
+  border: 0.125em solid var(--secondary);
+  border-radius: var(--radius);
 }
 
 .resume a {

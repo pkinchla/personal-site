@@ -41,3 +41,18 @@
   border-radius: 0;
   outline-color: transparent;
 }
+
+.skip-link,
+.skip-link:focus {
+  inset-inline-start: 0;
+  top: 0;
+  background: var(--body-background);
+  text-align: center;
+}
+
+@media (min-width: 48em) {
+  .skip-link,
+  .skip-link:focus {
+    width: 100%;
+  }
+}

@@ -9,3 +9,7 @@ hr {
   column-gap: 0.5em;
   flex-wrap: wrap;
 }
+
+.mb-0 {
+  margin-block-end: 0;
+}

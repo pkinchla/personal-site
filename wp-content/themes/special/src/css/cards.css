@@ -1,0 +1,9 @@
+.card {
+  position: relative;
+  padding: 1em;
+  border-block-end: 0.0625em solid var(--secondary);
+
+  &:has(a:hover) {
+    filter: invert(1);
+  }
+}

@@ -14,3 +14,10 @@ main {
     gap: 1em;
   }
 }
+
+@media (min-width: 48em) {
+  .media-container,
+  .github-activity {
+    grid-column: 3 / 10;
+  }
+}
