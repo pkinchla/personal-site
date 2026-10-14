@@ -1,28 +1,36 @@
-{% extends "base.twig" %}
+{% extends 'base.twig' %}
 
 {% block content %}
   <article>
-  <div class="hero-grid">
+    <div class="hero-grid">
       <header>
-        <h1>404</h1>
+        <h1>404<hr />Not found</h1>
       </header>
       <figure class="hero">
         <picture>
-          <source srcset="{{theme.path}}/images/max-still.jpg" media="(prefers-reduced-motion: reduce)" /> 
+          <source
+            srcset="{{ theme.path }}/images/max-still.jpg"
+            media="(prefers-reduced-motion: reduce)"
+          />
           <img
-            src="{{theme.path}}/images/max.gif"
+            src="{{ theme.path }}/images/max.gif"
             alt="max headroom animated gif gesturing towards camera"
-          >
+          />
         </picture>
       </figure>
     </div>
     <div class="content-grid">
       {% if bot_was_redirected %}
-        <p>You are seeing this page because you may be a bot who attempted to exploit the common <code>/xmlrpc.php</code> vulnerability in
-        WordPress. If this is not the case, my apologies.</p>
+        <p>
+          You are seeing this page because you may be a bot who attempted to
+          exploit the common <code>/xmlrpc.php</code> vulnerability in WordPress.
+          If this is not the case, my apologies.
+        </p>
       {% else %}
-        <p>Sorry, we couldn't find what you're looking for. Maybe try a search?</p>
-        {% include "searchform.twig" %}
+        <p>
+          Sorry, we couldn't find what you're looking for. Maybe try a search?
+        </p>
+        {% include 'searchform.twig' %}
       {% endif %}
     </div>
   </article>

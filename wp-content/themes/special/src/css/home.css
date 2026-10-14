@@ -1,7 +1,5 @@
 .home {
   article {
-    padding-inline: 1em;
-
     figure {
       border-block-start: 1em;
       border: 0.125em solid var(--secondary);
@@ -32,7 +30,7 @@
 
     @media (min-width: 48em) {
       figure {
-        grid-column: 4 / 7;
+        grid-column: 6 / 10;
         grid-row-start: 1;
       }
 
@@ -41,15 +39,17 @@
         align-content: center;
         margin: 0;
         padding-inline: 0 1em;
-        grid-column: 3 / 5;
+        grid-column: 4 / 7;
         grid-row-start: 1;
-        text-align: end;
+        text-align: center;
         container-type: inline-size;
         height: calc(100% - 10em);
         align-self: center;
 
         b {
           font-size: 17cqi;
+          paint-order: stroke fill;
+          -webkit-text-stroke: 0.0625em var(--tertiary);
         }
       }
 
@@ -58,13 +58,8 @@
         padding-inline: 2em;
         border-radius: var(--radius-2);
         border: 0.125em solid var(--secondary);
-        grid-column: 3 / 6;
+        grid-column: 4 / 8;
       }
-
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-      gap: 1em;
-      row-gap: 0;
     }
   }
 }

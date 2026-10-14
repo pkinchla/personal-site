@@ -1,40 +1,50 @@
-{% extends "base.twig" %}
+{% extends 'base.twig' %}
 
 {% block content %}
-  <article id="post-{{post.ID}}">
-    <div class="hero-grid">
+  <article id="post-{{ post.ID }}">
+    <div class="grid">
       <header>
         <h1>
-          {{post.title}}
+          {{ post.title }}
           {% if page_number %}
-          <span>(Page {{page_number}})</span>
+            <span class="sans-medium-italic">(Page {{ page_number }})</span>
           {% endif %}
         </h1>
-         {% include 'byline-page.twig' %}
+        {% include 'byline-page.twig' %}
       </header>
       {% if post.thumbnail %}
         {% include 'featured-image.twig' %}
       {% endif %}
-    </div>
-    <div class="content-grid">
-      <div>{{post.content}}</div>
-      <section>
-        <h2 id="post-list" class="assistive-text">Blog Posts</h2>
-        <ul role="list">
-          {% for post in posts %}
-            <li>{% include 'card.twig' %}</li>
-          {% endfor %}
-        </ul>
-        {% include 'pagination.twig' %}
-      </section>
-      <section class="action-list">
-        <h2 id="categories">Categories</h2>
-        <ul role="list">
-          {% for cat in categories %}
-          <li class="sans-regular-italic"><a href="{{cat.link}}">{{cat.title}}</a>  (<a href="/blog/category/{{cat.title|replace({" ":"-"})|lower}}/feed/">RSS</a>)</li>
-          {% endfor %}
-        </ul>
-      </section>
+      <div class="page-content">
+        {{ post.content }}
+        <section>
+          <h2 id="post-list" class="assistive-text">Blog Posts</h2>
+          <ul role="list">
+            {% for post in posts %}
+              <li>{% include 'card.twig' %}</li>
+            {% endfor %}
+          </ul>
+          {% include 'pagination.twig' %}
+        </section>
+        <section class="action-list">
+          <h2 id="categories">Categories</h2>
+          <ul role="list">
+            {% for cat in categories %}
+              <li class="sans-regular-italic">
+                <a href="{{ cat.link }}">{{ cat.title }}</a> (<a
+                  href="/blog/category/{{ cat.title
+                    |replace({
+                      ' ': '-'
+                    })
+                    |lower }}/feed/"
+                >
+                  RSS
+                </a>)
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      </div>
     </div>
   </article>
 {% endblock %}

@@ -1,18 +1,21 @@
-<div class="sans-regular-italic">
-  Posted on
-  <time datetime="{{ post.date('c') }}">{{ post.date('l, F jS, Y') }}</time>
-  | Last Updated on
-  <time datetime="{{ post.modified_date('c') }}">{{
-    post.modified_date('l, F jS, Y')
-  }}</time>
+<div class="sans-regular-italic byline">
+  <span>
+    Posted on
+    <time datetime="{{ post.date('c') }}">{{ post.date('l, F jS, Y') }}</time>
+  </span>
+  <span>
+    Last Updated on
+    <time datetime="{{ post.modified_date('c') }}">
+      {{ post.modified_date('l, F jS, Y') }}
+    </time>
+  </span>
   <span class="author vcard">
     by
     <a class="url fn n" href="{{ post.author.link }}">me</a>
   </span>
-  <span class="sans-medium-italic"
-    >Reading Time:
+  <span class="sans-medium-italic">
+    Reading Time:
     {{ post.reading_time }}
     minute{{ post.reading_time == 1 ? '' : 's' }}
-    <share-button button-class="border sans-medium-italic"></share-button>
   </span>
 </div>

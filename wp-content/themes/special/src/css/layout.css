@@ -1,0 +1,16 @@
+#page {
+  max-width: 100em;
+  margin-inline: auto;
+}
+
+main {
+  padding-inline: 1em;
+}
+
+.grid {
+  @media (min-width: 48em) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 1em;
+  }
+}

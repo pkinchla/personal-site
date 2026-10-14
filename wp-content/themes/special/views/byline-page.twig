@@ -1,6 +1,8 @@
-<div class="sans-regular-italic">
-  Last Updated on
-  <time datetime="{{ post.modified_date('c') }}">{{
-    post.modified_date('l, F jS, Y')
-  }}</time>
+<div class="sans-regular-italic byline">
+  <span>
+    Last Updated on
+    <time datetime="{{ post.modified_date('c') }}">
+      {{ post.modified_date('l, F jS, Y') }}
+    </time>
+  </span>
 </div>

@@ -1,22 +1,38 @@
 <figure class="hero{{ post.meta('toggle_image_filter') ? ' no-filter' : '' }}">
-  <picture>
-    <img
-      srcset="
-        {{post.thumbnail.src|resize(2048)|towebp}} 2048w,
-        {{post.thumbnail.src|resize(1840)|towebp}} 1840w,
-        {{post.thumbnail.src|resize(1594)|towebp}} 1594w,
-        {{post.thumbnail.src|resize(1410)|towebp}} 1410w,
-        {{post.thumbnail.src|resize(1200)|towebp}} 1200w,
-        {{post.thumbnail.src|resize(1080)|towebp}} 1080w,
-        {{post.thumbnail.src|resize(721)|towebp}}   721w,
-        {{post.thumbnail.src|resize(600)|towebp}}   600w,
-        {{post.thumbnail.src|resize(300)|towebp}}   300w
+  <img
+    srcset="
+        {{ post.thumbnail.src
+      |resize(2048)
+      |towebp }} 2048w,
+        {{ post.thumbnail.src
+      |resize(1840)
+      |towebp }} 1840w,
+        {{ post.thumbnail.src
+      |resize(1594)
+      |towebp }} 1594w,
+        {{ post.thumbnail.src
+      |resize(1410)
+      |towebp }} 1410w,
+        {{ post.thumbnail.src
+      |resize(1200)
+      |towebp }} 1200w,
+        {{ post.thumbnail.src
+      |resize(1080)
+      |towebp }} 1080w,
+        {{ post.thumbnail.src
+      |resize(721)
+      |towebp }}   721w,
+        {{ post.thumbnail.src
+      |resize(600)
+      |towebp }}   600w,
+        {{ post.thumbnail.src
+      |resize(300)
+      |towebp }}   300w
       "
-      sizes="(min-width: 2440px) 1605px, (min-width: 780px) 67.01vw, 100vw"
-      src="{{ post.thumbnail.src|resize(2000)|towebp }}"
-      alt="{{ post.thumbnail.alt }}"
-      width="{{ post.thumbnail.width }}"
-      height="{{ post.thumbnail.height }}"
-    />
-  </picture>
+    sizes="(min-width: 2440px) 1605px, (min-width: 780px) 67.01vw, 100vw"
+    src="{{ post.thumbnail.src|resize(2000)|towebp }}"
+    alt="{{ post.thumbnail.alt }}"
+    width="{{ post.thumbnail.width }}"
+    height="{{ post.thumbnail.height }}"
+  />
 </figure>
