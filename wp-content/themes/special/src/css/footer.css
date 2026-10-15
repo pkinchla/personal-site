@@ -6,7 +6,7 @@ footer {
   section {
     background: var(--secondary);
     color: var(--body-background);
-    padding: 1em;
+    padding: 1em 1.5em;
     border-radius: var(--radius);
     border: 0.125em solid var(--tertiary);
 
@@ -47,6 +47,11 @@ footer {
       a {
         display: block;
         text-align: center;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
 
         &:link,
         &:visited {
@@ -66,6 +71,7 @@ footer {
   }
 
   speedlify2-score {
+    font-size: 0.9em;
     background: var(--body-background);
     padding: 0.5em;
     border-radius: var(--radius);
@@ -83,7 +89,7 @@ footer {
     margin-inline: auto;
 
     ul[role='list'] {
-      align-self: center;
+      place-self: start end;
       grid-column: 1 / 6;
       box-shadow: var(--long-shadow-border);
     }
@@ -91,16 +97,18 @@ footer {
     section {
       grid-column: 6 / 11;
       box-shadow: var(--long-shadow-border);
+      margin-inline-end: 1em;
     }
   }
 
   @media (min-width: 70em) {
     ul[role='list'] {
-      grid-column: 2/ 5;
+      grid-column: 3 / 6;
     }
 
     section {
-      grid-column: 5 / 11;
+      grid-column: 6 / 11;
+      margin-inline-end: 0;
     }
   }
 }

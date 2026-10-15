@@ -1,13 +1,9 @@
 .card {
   position: relative;
   padding-block: 0.5em;
-  padding-inline-start: 0.5em;
-  border: 0.125em solid transparent;
+  padding-inline-start: 1em;
+  border: 0.125em solid var(--secondary);
   border-radius: var(--radius);
-
-  :is(li, article):not(:last-of-type) > & {
-    border-block-end: 0.0625em solid var(--secondary);
-  }
 
   a {
     &:focus {
@@ -21,7 +17,8 @@
     }
   }
 
-  &:has(a:hover) {
+  &:has(a:hover),
+  &:has(a:focus) {
     background: var(--secondary);
     color: var(--body-background);
 
@@ -31,7 +28,7 @@
   }
 
   &:has(a:focus) {
-    border: 0.125em solid currentcolor;
+    border-color: var(--tertiary);
   }
 
   span {

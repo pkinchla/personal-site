@@ -11,12 +11,21 @@
   &.border {
     border: 0.125em solid;
   }
-}
 
-.action,
-.post-navigation a {
-  align-items: center;
-  display: inline-flex;
-  padding: 0.5em 1em;
-  gap: 0.25em;
+  &:hover {
+    background: var(--primary);
+    color: var(--body-background);
+  }
+
+  a& {
+    align-items: center;
+    display: inline-flex;
+    padding: 0.5em 1em;
+    gap: 0.25em;
+
+    &:hover {
+      background: var(--link);
+      color: var(--body-background);
+    }
+  }
 }
