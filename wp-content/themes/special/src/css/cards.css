@@ -1,7 +1,7 @@
 .card {
   position: relative;
   padding-block: 0.5em;
-  padding-inline-start: 1em;
+  padding-inline: 1em;
   border: 0.125em solid var(--secondary);
   border-radius: var(--radius);
 

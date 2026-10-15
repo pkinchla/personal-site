@@ -32,8 +32,8 @@ ol[role='list'] {
 html {
   text-size-adjust: none;
   scrollbar-color: var(--secondary) var(--body-background);
-
-  /* scrollbar-gutter: stable; */
+  scrollbar-gutter: stable;
+  scroll-padding-top: 7em;
 }
 
 /* Set core body defaults */
@@ -88,6 +88,10 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+figure {
+  overflow: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {

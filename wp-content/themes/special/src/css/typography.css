@@ -56,13 +56,13 @@ h6,
 
 h1,
 .h1 {
-  font-size: 2.825em;
+  font-size: 2.25em;
   line-height: 1.1;
 }
 
 h2,
 .h2 {
-  font-size: 2.075em;
+  font-size: 2em;
   font-style: italic;
   line-height: 1.2;
 }
@@ -111,6 +111,7 @@ strong {
 
 blockquote {
   font-family: var(--font-sans-serif);
+  font-size: 0.9em;
   position: relative;
   margin-block-end: 1.5em;
   quotes: '\201C' '\201D' '\2018' '\2019';
@@ -119,11 +120,11 @@ blockquote {
 blockquote::before {
   display: inline-block;
   position: absolute;
-  left: -0.75em;
-  top: 0;
+  inset-inline-start: -0.75em;
+  inset-block-start: 0;
   background: var(--primary);
-  width: 0.125rem;
-  height: 100%;
+  inline-size: 0.125rem;
+  block-size: 100%;
   content: '';
 }
 
@@ -145,8 +146,7 @@ blockquote cite {
 figcaption {
   font-family: var(--font-sans-serif);
   font-variation-settings: 'ital' var(--variable-italic);
-  padding-block: 1em;
-  padding-inline: 1em;
+  padding: 1em;
   border-block-start: 0.0625em solid var(--secondary);
 }
 

@@ -22,7 +22,7 @@
       <h2 class="assistive-text">{{ sub_title }} List</h2>
       <ul role="list">
         {% for post in posts %}
-          <li>
+          <li class="mb-2">
             {% include ['card-' ~ post.post_type ~ '.twig', 'card.twig'] %}
           </li>
         {% endfor %}
