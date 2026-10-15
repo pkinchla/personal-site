@@ -120,7 +120,7 @@
             "
               width="{{ item.width }}"
               height="{{ item.height }}"
-              sizes="auto"
+              sizes="auto, (min-width: 100em) 480px, (min-width: 48em) 30vw, (min-width: 40em) 50vw, calc(100vw - 20px)"
               src="{{ item.src }}"
               alt="{{ item.alt|escape }}"
               loading="lazy"
