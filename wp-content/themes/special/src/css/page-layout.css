@@ -36,6 +36,7 @@ body:not(.home) .grid {
     padding-inline: 2em;
     border-radius: var(--radius-2);
     border: 0.125em solid var(--secondary);
+    display: grid;
 
     .wp-block-image,
     .wp-block-video,
@@ -49,7 +50,6 @@ body:not(.home) .grid {
     .page-content {
       grid-row-start: 2;
       grid-column: 3 / 10;
-      display: grid;
       grid-template-columns: subgrid;
       border: 0;
       padding-inline: 0;

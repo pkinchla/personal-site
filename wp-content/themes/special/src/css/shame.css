@@ -27,6 +27,24 @@ hr {
   margin-block-end: 3em;
 }
 
+.project {
+  margin-block-end: 1em;
+
+  > a {
+    font-size: 1.25em;
+    font-variation-settings: 'wght' var(--variable-wght-med);
+    display: block;
+    margin-block-end: 0.25em;
+    line-height: 1.3;
+    max-width: max-content;
+    padding: 0 0.25rem;
+  }
+
+  span {
+    font-variation-settings: 'ital' var(--variable-italic);
+  }
+}
+
 main > article > div > footer {
   font-size: 0.95em;
   padding: 1em;
@@ -53,7 +71,7 @@ main > article > div > footer {
 }
 
 .comments {
-  margin-block-end: 3em;
+  margin-block-end: 1em;
 }
 
 .comments li::marker {
@@ -142,7 +160,8 @@ main > article > div .comment-author img,
   font-size-adjust: 0.5;
 }
 
-.wp-block-image {
+.wp-block-image,
+.wp-block-video {
   margin-block-end: 1.5em;
 }
 

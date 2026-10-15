@@ -31,6 +31,24 @@
 
       b {
         font-size: 22.5cqi;
+        paint-order: stroke fill;
+        -webkit-text-stroke: 0.0625em var(--tertiary);
+        text-shadow:
+          -0.005em 0.005em 0 var(--tertiary),
+          -0.01em 0.01em 0 var(--tertiary),
+          -0.015em 0.015em 0 var(--tertiary),
+          -0.02em 0.02em 0 var(--tertiary),
+          -0.025em 0.025em 0 var(--tertiary),
+          -0.03em 0.03em 0 var(--tertiary),
+          -0.035em 0.035em 0 var(--tertiary),
+          -0.04em 0.04em 0 var(--tertiary),
+          -0.045em 0.045em 0 var(--tertiary),
+          -0.05em 0.05em 0 var(--tertiary),
+          -0.055em 0.055em 0 var(--tertiary),
+          -0.06em 0.06em 0 var(--tertiary),
+          -0.065em 0.065em 0 var(--tertiary),
+          -0.07em 0.07em 0 var(--tertiary),
+          -0.075em 0.075em 0 var(--tertiary);
       }
     }
 
@@ -53,8 +71,6 @@
 
         b {
           font-size: 17cqi;
-          paint-order: stroke fill;
-          -webkit-text-stroke: 0.0625em var(--tertiary);
         }
       }
 
