@@ -23,17 +23,16 @@
     padding: 0.5em 1em;
     gap: 0.25em;
 
-    &:active {
-      background: var(--active);
-      color: var(--body-background);
-    }
-
     &:hover {
       background: var(--link);
       color: var(--body-background);
 
       &:visited {
         background: var(--visited);
+      }
+
+      &:active {
+        background: var(--active);
       }
     }
   }
