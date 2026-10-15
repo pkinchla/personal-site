@@ -1,17 +1,15 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-  <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-    <div class="hero-grid">
-      <header>
-        <h1>{{ post.title }}</h1>
-        {% include 'byline.twig' %}
-      </header>
-      {% if post.thumbnail %}
-        {% include 'featured-image.twig' %}
-      {% endif %}
-    </div>
-    <div class="content-grid">
+  <article class="grid post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+    <header>
+      <h1>{{ post.title }}</h1>
+      {% include 'byline.twig' %}
+    </header>
+    {% if post.thumbnail %}
+      {% include 'featured-image.twig' %}
+    {% endif %}
+    <div class="page-content">
       {{ post.content }}
       <a href="/random/" class="random-link">
         ⚘<span class="assistive-text">Random Post</span>

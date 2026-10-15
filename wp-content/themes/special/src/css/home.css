@@ -5,6 +5,7 @@
       border: 0.125em solid var(--secondary);
       box-shadow: var(--long-shadow);
       border-radius: var(--radius);
+      margin-block-end: 1.5em;
 
       img {
         width: 100%;
@@ -14,11 +15,12 @@
     }
 
     & > span {
+      container-type: inline-size;
       display: block;
       position: relative;
       color: var(--body-background);
-      width: max-content;
-      margin-block: -8em 7em;
+      width: 40%;
+      margin-block: -50% 39%;
       margin-inline-start: 1em;
       padding: 0.5em 2em;
       border-radius: var(--radius);
@@ -26,6 +28,10 @@
       box-shadow: var(--long-shadow-border);
       background-color: var(--secondary);
       z-index: 1;
+
+      b {
+        font-size: 22.5cqi;
+      }
     }
 
     @media (min-width: 48em) {
@@ -42,7 +48,6 @@
         grid-column: 4 / 7;
         grid-row-start: 1;
         text-align: center;
-        container-type: inline-size;
         height: calc(100% - 10em);
         align-self: center;
 

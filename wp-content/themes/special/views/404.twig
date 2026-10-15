@@ -1,25 +1,23 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-  <article>
-    <div class="hero-grid">
-      <header>
-        <h1>404<hr />Not found</h1>
-      </header>
-      <figure class="hero">
-        <picture>
-          <source
-            srcset="{{ theme.path }}/images/max-still.jpg"
-            media="(prefers-reduced-motion: reduce)"
-          />
-          <img
-            src="{{ theme.path }}/images/max.gif"
-            alt="max headroom animated gif gesturing towards camera"
-          />
-        </picture>
-      </figure>
-    </div>
-    <div class="content-grid">
+  <article class="grid">
+    <header>
+      <h1>404 <br />Not found</h1>
+    </header>
+    <figure class="hero">
+      <picture>
+        <source
+          srcset="{{ theme.path }}/images/max-still.jpg"
+          media="(prefers-reduced-motion: reduce)"
+        />
+        <img
+          src="{{ theme.path }}/images/max.gif"
+          alt="max headroom animated gif gesturing towards camera"
+        />
+      </picture>
+    </figure>
+    <div class="page-content">
       {% if bot_was_redirected %}
         <p>
           You are seeing this page because you may be a bot who attempted to

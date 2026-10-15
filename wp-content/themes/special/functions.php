@@ -82,7 +82,7 @@ function special_scripts() {
   }
 
   if (get_post_type() === 'post') {
-		wp_enqueue_script( 'prism', get_template_directory_uri() .'/dist/js/prism.js', array(), '', true);
+		wp_enqueue_script( 'prism', get_template_directory_uri() .'/src/vendor/prism.js', array(), '', true);
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -310,7 +310,7 @@ add_editor_style( get_template_directory_uri() . '/dist/css/main.css' );
 function prism_enqueue() {
     wp_enqueue_script(
         'prism-script',
-        get_template_directory_uri() . '/dist/js/prism.js'
+        get_template_directory_uri() . '/src/vendor/prism.js'
     );
 }
 add_action( 'enqueue_block_editor_assets', 'prism_enqueue' );

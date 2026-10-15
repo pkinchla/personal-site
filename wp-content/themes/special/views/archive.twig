@@ -1,29 +1,30 @@
-{% extends "base.twig" %}
+{% extends 'base.twig' %}
 
 {% block content %}
-  <article>
-    <div class="hero-grid">
-      <header>
-        <h1>
-          {{title}}
-          {% if page_number %}
-            <span>(Page {{page_number}})</span>
-          {% endif %}
-        </h1>
-      </header>
-      <figure class="hero">
-          <img src="{{theme.path}}/images/cham.jpg"
-              alt="a small decorative iguane made out beads and metal standing on small metal platform"
-              width="1300"
-              height="635"
-          >
-      </figure>
-    </div>
-    <div class="content-grid">
-      <h2 class="assistive-text">{{sub_title}} List</h2>
+  <article class="grid">
+    <header>
+      <h1>
+        {{ title }}
+        {% if page_number %}
+          <span>(Page {{ page_number }})</span>
+        {% endif %}
+      </h1>
+    </header>
+    <figure class="hero">
+      <img
+        src="{{ theme.path }}/images/cham.jpg"
+        alt="a small decorative iguane made out beads and metal standing on small metal platform"
+        width="1300"
+        height="635"
+      />
+    </figure>
+    <div class="page-content">
+      <h2 class="assistive-text">{{ sub_title }} List</h2>
       <ul role="list">
         {% for post in posts %}
-            <li>{% include ['card-'~post.post_type~'.twig', 'card.twig'] %}</li>
+          <li>
+            {% include ['card-' ~ post.post_type ~ '.twig', 'card.twig'] %}
+          </li>
         {% endfor %}
       </ul>
       {% include 'pagination.twig' %}

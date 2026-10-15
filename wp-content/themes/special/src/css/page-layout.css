@@ -1,5 +1,5 @@
-.grid {
-  figure {
+body:not(.home) .grid {
+  figure:not(.wp-block-image, .wp-block-video) {
     border: 0.125em solid var(--secondary);
     box-shadow: var(--long-shadow);
     border-radius: var(--radius);
@@ -36,10 +36,69 @@
     padding-inline: 2em;
     border-radius: var(--radius-2);
     border: 0.125em solid var(--secondary);
+
+    .wp-block-image,
+    .wp-block-video,
+    pre {
+      border-radius: var(--radius);
+      border: 0.0625em solid var(--secondary);
+    }
   }
 
   @media (min-width: 48em) {
-    figure {
+    /* container-type: inline-size; */
+
+    /*
+     * Break code blocks out of .page-content (columns 4/9) to span columns
+     * 3/10. 100cqi is the .grid width; with 10 columns and 9 1em gaps, one
+     * column is 10cqi - 0.9em. The extra 2.125em clears .page-content's
+     * inline padding and border.
+     */
+
+    /* .page-content > pre {
+      width: calc(70cqi - 0.3em);
+      margin-inline-start: calc(-10cqi - 2.225em);
+    } */
+
+    /*
+     * Subgrid alternative: .page-content spans 3/10 so code blocks can use
+     * the full width, while everything else sits in the inner columns
+     * (2 / -2 locally, 4/9 on the page grid). The card border moves to an
+     * absolutely positioned ::before on those inner columns so the visible
+     * card stays at 4/9.
+     */
+    .page-content {
+      grid-row-start: 2;
+      grid-column: 3 / 10;
+      display: grid;
+      grid-template-columns: subgrid;
+      border: 0;
+      padding-inline: 0;
+      position: relative;
+      isolation: isolate;
+
+      &::before {
+        content: '';
+        position: absolute;
+        grid-column: 2 / -2;
+        inset: 0;
+        z-index: -1;
+        border: 0.125em solid var(--secondary);
+        border-radius: var(--radius-2);
+      }
+
+      > * {
+        grid-column: 2 / -2;
+        margin-inline: 2.5rem;
+      }
+
+      > pre {
+        grid-column: 1 / -1;
+        margin-inline: 0;
+      }
+    }
+
+    figure:not(.wp-block-image, .wp-block-video) {
       grid-column: 6 / 10;
       grid-row-start: 1;
     }
@@ -55,11 +114,6 @@
       z-index: 1;
       background-color: var(--body-background);
       place-self: center end;
-    }
-
-    .page-content {
-      grid-row-start: 2;
-      grid-column: 4 / 9;
     }
   }
 }
