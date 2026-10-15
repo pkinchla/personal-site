@@ -1,9 +1,42 @@
 .card {
   position: relative;
-  padding: 1em;
-  border-block-end: 0.0625em solid var(--secondary);
+  padding-block: 0.5em;
+  padding-inline-start: 0.5em;
+  border: 0.125em solid transparent;
+  border-radius: var(--radius);
+
+  :is(li, article):not(:last-of-type) > & {
+    border-block-end: 0.0625em solid var(--secondary);
+  }
+
+  a {
+    &:focus {
+      outline: 0;
+    }
+
+    &::after {
+      position: absolute;
+      inset: 0;
+      content: '';
+    }
+  }
 
   &:has(a:hover) {
-    filter: invert(1);
+    background: var(--secondary);
+    color: var(--body-background);
+
+    a {
+      color: inherit;
+    }
+  }
+
+  &:has(a:focus) {
+    border: 0.125em solid currentcolor;
+  }
+
+  span {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1em;
   }
 }
