@@ -70,14 +70,13 @@ footer {
 
   speedlify2-score {
     font-size: 0.9em;
-    background: var(--body-background);
-    padding: 0.5em;
-    border-radius: var(--radius);
-    border: 0.125em solid var(--tertiary);
+    background: var(--secondary);
 
-    --ss-good: var(--score-good);
-    --ss-average: var(--score-ok);
-    --ss-poor: var(--score-bad);
+    --ss-good: var(--score-good-inverse);
+    --ss-average: var(--score-ok-inverse);
+    --ss-poor: var(--score-bad-inverse);
+    --ss-none: var(--body-background);
+    --ss-track: color-mix(in srgb, var(--body-background) 35%, transparent);
     --ss-tip-bg: var(--body-background);
     --ss-tip-text: var(--primary);
     --ss-tip-link: var(--link);
