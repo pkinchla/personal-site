@@ -75,7 +75,12 @@
   ul {
     display: flex;
     gap: 1em;
-    margin: 0;
+    margin-inline: 0.5em 1em;
+    margin-block: 0 0.5em;
+
+    @media (min-width: 31.4375em) {
+      margin-block: 0;
+    }
   }
 
   a {

@@ -11,6 +11,7 @@ overrides:
   brace-expansion@5: '>=5.0.9'
   js-yaml: '>=4.3.1'
   immutable: '>=4.3.9'
+  browser-sync>immutable: ^3.8.4
   fast-uri: '>=3.1.5'
   socket.io-parser: '>=4.2.7'
   svgo: '>=4.0.2'
@@ -1115,6 +1116,10 @@ packages:
   ignore@7.0.6:
     resolution: {integrity: sha512-BAg6QkE8W+TuQLrrw0Ugr7HegXduRuuj8/ti2kSOc+jz1dmx8/WNcjr6XGnq5YpDWxFwwaavqD0+jIUOKelTsw==}
     engines: {node: '>= 4'}
+
+  immutable@3.8.4:
+    resolution: {integrity: sha512-ZQv17KolYrYmsDoDB8N67zhIKsNi9mGYlk96y/yuxyAqJB2hLzSGSM7k/sB0/ZvO4kx27U9+fBeD/XlLGh/uXQ==}
+    engines: {node: '>=0.10.0'}
 
   immutable@5.1.9:
     resolution: {integrity: sha512-m8nVez3rwrgmWxtLMt1ZYXB2Lv7OKYn/disyxAlSDYAlKSlFoPPfIAmAM/M5xqL4m4C/wAPw7S2/CNaUii1Hxg==}
@@ -2502,7 +2507,7 @@ snapshots:
       fresh: 0.5.2
       fs-extra: 3.0.1
       http-proxy: 1.18.1
-      immutable: 5.1.9
+      immutable: 3.8.4
       micromatch: 4.0.8
       opn: 5.3.0
       portscanner: 2.2.0
@@ -3059,6 +3064,8 @@ snapshots:
   ignore@5.3.2: {}
 
   ignore@7.0.6: {}
+
+  immutable@3.8.4: {}
 
   immutable@5.1.9: {}
 
