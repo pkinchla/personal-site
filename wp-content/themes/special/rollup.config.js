@@ -6,7 +6,12 @@ import typescript from '@rollup/plugin-typescript';
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
-  input: 'src/ts/main.ts',
+  input: {
+    main: 'src/ts/main.ts',
+    // Prism is a standalone script only enqueued on posts (and in the block
+    // editor), so it gets its own entry rather than being bundled into main.
+    prism: 'src/ts/vendor/prism.js',
+  },
   output: {
     dir: 'dist/js',
     format: 'esm',
