@@ -48,11 +48,16 @@
   top: 0;
   background: var(--body-background);
   text-align: center;
+  z-index: 20;
 }
 
 @media (min-width: 48em) {
   .skip-link,
   .skip-link:focus {
+    left: 50%;
+    top: 1.75em;
     width: 100%;
+    max-width: 50em;
+    transform: translateX(-50%);
   }
 }
