@@ -33,6 +33,11 @@
       z-index: 1;
       text-align: center;
 
+      @supports (color: light-dark(white, black)) {
+        background: light-dark(var(--secondary), var(--body-background));
+        color: light-dark(var(--body-background), var(--secondary));
+      }
+
       b {
         font-size: clamp(1rem, 22cqi, 2rem);
       }

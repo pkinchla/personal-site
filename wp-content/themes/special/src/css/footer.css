@@ -8,6 +8,11 @@ footer {
     border-radius: var(--radius);
     border: 0.125em solid var(--tertiary);
 
+    @supports (color: light-dark(white, black)) {
+      background: light-dark(var(--secondary), var(--body-background));
+      color: light-dark(var(--body-background), var(--secondary));
+    }
+
     h2 {
       color: inherit;
     }
@@ -41,6 +46,11 @@ footer {
     border: 0.125em solid var(--tertiary);
     justify-content: center;
 
+    @supports (color: light-dark(white, black)) {
+      background: light-dark(var(--secondary), var(--body-background));
+      color: light-dark(var(--body-background), var(--secondary));
+    }
+
     li {
       a {
         display: block;
@@ -70,7 +80,6 @@ footer {
 
   speedlify2-score {
     font-size: 0.9em;
-    background: var(--secondary);
 
     --ss-good: var(--score-good-inverse);
     --ss-average: var(--score-ok-inverse);

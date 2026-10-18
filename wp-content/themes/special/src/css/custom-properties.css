@@ -36,10 +36,10 @@
   --score-bad-light: #d10000;
   --score-bad-dark: #ff948d;
 
-  /* score colors for the footer's inverted (--secondary) surface */
-  --score-good-inverse-dark: #003a10;
-  --score-ok-inverse-dark: #4e2800;
-  --score-bad-inverse-dark: #6d0000;
+  /* score colors for the footer surface (--secondary in light, --body-background in dark) */
+  --score-good-inverse-dark: #4d9766;
+  --score-ok-inverse-dark: #c87146;
+  --score-bad-inverse-dark: #eb5646;
 
   /* resolved tokens — default to light; overridden below by media query and light-dark() */
   --body-background: var(--body-background-light);
@@ -172,8 +172,8 @@
     --score-ok-dark: oklch(86.3% 0.131 79.98deg);
     --score-bad-light: oklch(54.05% 0.221786 29.233885deg);
     --score-bad-dark: oklch(77.77% 0.129982 24.457499deg);
-    --score-good-inverse-dark: oklch(30.36% 0.09 147.21deg);
-    --score-ok-inverse-dark: oklch(32.09% 0.075 60.12deg);
-    --score-bad-inverse-dark: oklch(33.58% 0.138 29.23deg);
+    --score-good-inverse-dark: oklch(61.44% 0.105 153.2deg);
+    --score-ok-inverse-dark: oklch(63.65% 0.124 45.61deg);
+    --score-bad-inverse-dark: oklch(64.94% 0.187 29.23deg);
   }
 }
