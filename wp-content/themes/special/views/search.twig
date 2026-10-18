@@ -3,7 +3,7 @@
 {% block content %}
   <article class="grid">
     {% if posts is empty %}
-      <header>
+      <header class="surface shadow-long">
         <h1>No Results</h1>
       </header>
       <figure class="hero">
@@ -21,7 +21,7 @@
         {% include 'searchform.twig' %}
       </div>
     {% else %}
-      <header>
+      <header class="surface shadow-long">
         <h1>{{ title }}</h1>
       </header>
       <figure class="hero">

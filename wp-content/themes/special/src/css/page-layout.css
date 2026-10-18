@@ -20,13 +20,21 @@
   pointer-events: none;
 }
 
+.byline {
+  font-size: 0.9em;
+  display: inline-flex;
+  column-gap: 0.5em;
+  flex-wrap: wrap;
+}
+
 body:not(.home) .grid {
+  /* also styles figures inside post content, so this stays a component rule */
   figure:not(.wp-block-image, .wp-block-video) {
-    border: 0.125em solid var(--secondary);
+    border: var(--border);
     box-shadow: var(--long-shadow);
     border-radius: var(--radius);
     overflow: hidden;
-    margin-block-end: 1em;
+    margin-block-end: var(--space-4);
 
     img {
       width: 100%;
@@ -36,11 +44,8 @@ body:not(.home) .grid {
   }
 
   header {
-    border: 0.125em solid var(--secondary);
-    box-shadow: var(--long-shadow);
-    border-radius: var(--radius);
     padding: 1em;
-    margin-block-end: 1em;
+    margin-block-end: var(--space-4);
 
     h1 {
       padding-block-end: 0.2em;
@@ -57,14 +62,19 @@ body:not(.home) .grid {
     padding-block: 1.5em;
     padding-inline: 2em;
     border-radius: var(--radius-2);
-    border: 0.125em solid var(--secondary);
+    border: var(--border);
     display: grid;
 
     .wp-block-image,
     .wp-block-video,
-    pre {
+    pre,
+    iframe {
       border-radius: var(--radius);
-      border: 0.0625em solid var(--secondary);
+      border: var(--border-thin);
+    }
+
+    iframe {
+      margin-block-end: var(--space-4);
     }
   }
 
@@ -84,7 +94,7 @@ body:not(.home) .grid {
         grid-column: 2 / -2;
         inset: 0;
         z-index: -1;
-        border: 0.125em solid var(--secondary);
+        border: var(--border);
         border-radius: var(--radius-2);
       }
 

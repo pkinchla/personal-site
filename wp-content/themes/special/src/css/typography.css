@@ -28,7 +28,6 @@ body {
 
 /* Strong Text Shadow for headings */
 h1,
-.h1,
 h2,
 .h2,
 h3,
@@ -36,9 +35,7 @@ h3,
 h4,
 .h4,
 h5,
-.h5,
-h6,
-.h6 {
+h6 {
   font-family: var(--font-display);
   font-variation-settings: 'wght' var(--variable-wght-headings);
   display: block;
@@ -54,8 +51,7 @@ h6,
   color: var(--secondary);
 }
 
-h1,
-.h1 {
+h1 {
   font-size: 2.25em;
   line-height: 1.1;
 }
@@ -90,6 +86,10 @@ ol,
 ul,
 p {
   margin-block-end: 1.5em;
+}
+
+hr {
+  margin-block: 0.65rem 0.15rem;
 }
 
 p,
@@ -147,7 +147,7 @@ figcaption {
   font-family: var(--font-sans-serif);
   font-variation-settings: 'ital' var(--variable-italic);
   padding: 1em;
-  border-block-start: 0.0625em solid var(--secondary);
+  border-block-start: var(--border-thin);
 }
 
 /* font helper utilities */
@@ -162,12 +162,6 @@ figcaption {
   font-variation-settings: 'ital' var(--variable-italic);
 }
 
-.sans-medium {
-  font-family: var(--font-sans-serif);
-  font-weight: bold;
-  font-variation-settings: 'wght' var(--variable-wght-med);
-}
-
 .sans-medium-italic {
   font-family: var(--font-sans-serif);
   font-weight: bold;
@@ -178,14 +172,13 @@ figcaption {
 
 .system-semi-bold {
   font-family: var(--font-system);
-  font-weight: 650;
+  font-weight: var(--variable-wght-med);
 }
 
 /* settings for font-variation support */
 @supports (font-variation-settings: normal) {
   cite,
-  em,
-  .sans-bold-italic {
+  em {
     font-style: normal;
   }
 
@@ -195,9 +188,7 @@ figcaption {
   h4,
   h5,
   h6,
-  strong,
-  .sans-bold-italic,
-  .sans-bold {
+  strong {
     font-weight: normal;
   }
 }

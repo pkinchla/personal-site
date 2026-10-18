@@ -1,0 +1,45 @@
+/* markup from wp_list_comments() in comments.php */
+.comments {
+  margin-block-end: var(--space-4);
+
+  li::marker {
+    font-weight: var(--variable-wght-body);
+  }
+
+  .children {
+    margin-block: 1em 0;
+    margin-inline-start: 1.5em;
+    list-style: none;
+  }
+}
+
+.comment {
+  margin-block-end: var(--space-4);
+}
+
+.comment-body {
+  padding: 0.75em;
+  border: var(--border);
+  border-radius: var(--radius);
+}
+
+.comment-meta {
+  font-size: 0.95em;
+  font-variation-settings: 'ital' var(--variable-italic);
+  margin-block-end: var(--space-2);
+}
+
+.comment-author {
+  img,
+  .says {
+    display: inline;
+    vertical-align: middle;
+  }
+
+  cite {
+    font-variation-settings: 'wght' var(--variable-wght-med);
+    display: inline-block;
+    margin: 0 0.25em;
+    vertical-align: middle;
+  }
+}

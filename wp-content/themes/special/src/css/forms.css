@@ -7,17 +7,13 @@ form {
   display: inline-flex;
   flex-wrap: wrap;
   padding: 1em;
-  border: 0.125em solid var(--secondary);
+  border: var(--border);
   margin-block-end: 1.5em;
   border-radius: var(--radius);
 }
 
 input[type='text'],
-input[type='search'],
-input[type='submit'],
-input[type='url'],
-#webmention-form .webmention-source,
-textarea {
+input[type='submit'] {
   padding: 0.5rem 0.75rem;
   border-radius: var(--radius);
   border: 0.125rem solid var(--primary);
@@ -26,8 +22,7 @@ textarea {
   color: var(--primary);
 }
 
-input[type='radio'],
-input[type='checkbox'] {
+input[type='radio'] {
   color: var(--secondary);
   border-radius: var(--radius);
   accent-color: var(--secondary);
@@ -39,37 +34,6 @@ input[type='checkbox'] {
 input::placeholder {
   color: var(--primary);
   opacity: 0.75;
-}
-
-textarea {
-  width: 100%;
-}
-
-form.comment-form label:not([for='wp-comment-cookies-consent']) {
-  display: inline-block;
-  min-width: 4em;
-}
-
-form.comment-form input:not([type='submit'], [type='checkbox']) {
-  width: calc(100% - 5em);
-}
-
-#webmention-form {
-  display: block;
-
-  label,
-  input {
-    font-family: var(--font-sans-serif);
-    font-weight: 700;
-    font-variation-settings:
-      'wght' var(--variable-wght-med),
-      'ital' var(--variable-italic);
-  }
-
-  input[type='submit']:hover {
-    background: var(--primary);
-    color: var(--body-background);
-  }
 }
 
 form:focus-within {

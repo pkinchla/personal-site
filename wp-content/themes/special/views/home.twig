@@ -3,7 +3,7 @@
 {% block content %}
   <article id="post-{{ post.ID }}">
     <div class="grid">
-      <header>
+      <header class="surface shadow-long">
         <h1>
           {{ post.title }}
           {% if page_number %}
@@ -26,9 +26,9 @@
           </ul>
           {% include 'pagination.twig' %}
         </section>
-        <section class="action-list">
+        <section>
           <h2 id="categories">Categories</h2>
-          <ul role="list">
+          <ul role="list" class="mb-4">
             {% for cat in categories %}
               <li class="sans-regular-italic">
                 <a href="{{ cat.link }}">{{ cat.title }}</a> (<a

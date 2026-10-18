@@ -2,7 +2,7 @@
 
 {% block content %}
   <article class="grid" id="post-{{ post.ID }}">
-    <header>
+    <header class="surface shadow-long">
       <h1>{{ post.title }}</h1>
       {% include 'byline-page.twig' %}
     </header>
@@ -12,7 +12,7 @@
     </div>
   </article>
   <div class="grid">
-    <section class="resume-container">
+    <section class="resume-container col-content">
       <div class="resume-intro">
         <h2 id="cv">R&eacute;sum&eacute;</h2>
         <a
@@ -23,7 +23,7 @@
           Download
         </a>
       </div>
-      <dl class="resume sans-regular">
+      <dl class="resume sans-regular surface">
         <dt>
           Skill
         </dt>
@@ -91,7 +91,7 @@
         </dd>
       </dl>
     </section>
-    <section class="media-container">
+    <section class="media-container col-content">
       <h2 class="mb-0">Some Drawings</h2>
       <p>
         Some artwork I have produced. More information in this list of <a
@@ -100,7 +100,7 @@
           pixel art posts
         </a>.
       </p>
-      <ul class="media-grid" role="list">
+      <ul class="media-grid surface" role="list">
         {% for item in artwork %}
           <li>
             <img
@@ -129,7 +129,7 @@
         {% endfor %}
       </ul>
     </section>
-    <section class="github-activity">
+    <section class="github-activity col-content">
       {% if github_contributions and not github_contributions.error %}
         <github-contribution-graph
           style="grid-column: 2 / 6;"

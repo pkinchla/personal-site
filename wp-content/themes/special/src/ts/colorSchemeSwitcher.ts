@@ -9,7 +9,7 @@ export default class ColorSchemeSwitcher extends HTMLElement {
     const stored = localStorage.getItem(LS_KEY) || 'system';
 
     this.innerHTML = `
-      <fieldset class="color-theme-switcher sans-medium-italic">
+      <fieldset class="color-theme-switcher sans-medium-italic surface shadow-focus">
         <legend>Color Scheme</legend>
         <label for="scheme-system">
           <input type="radio" id="scheme-system" name="color-scheme" value="system"${stored === 'system' ? ' checked' : ''}>

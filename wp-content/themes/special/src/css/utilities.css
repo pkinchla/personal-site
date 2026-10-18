@@ -1,0 +1,52 @@
+/* surfaces */
+.surface {
+  border: var(--border);
+  border-radius: var(--radius);
+}
+
+.surface-lg {
+  border: var(--border);
+  border-radius: var(--radius-2);
+}
+
+.inverse {
+  background: var(--inverse-bg);
+  color: var(--inverse-fg);
+  border: var(--border-width) solid var(--tertiary);
+}
+
+/* shadows */
+.shadow-long {
+  box-shadow: var(--long-shadow);
+}
+
+.shadow-focus:focus-within {
+  box-shadow: var(--long-shadow);
+}
+
+@media (min-width: 48em) {
+  .shadow-long-border-md {
+    box-shadow: var(--long-shadow-border);
+  }
+}
+
+/* layout */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--gap, var(--space-4));
+}
+
+@media (min-width: 48em) {
+  .col-content {
+    grid-column: 3 / 10;
+  }
+}
+
+/* media */
+.cover {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}

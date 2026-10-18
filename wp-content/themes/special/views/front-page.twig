@@ -8,9 +8,10 @@
       </div>
     </header>
     <figure
-      class="hero{{ post.meta('toggle_image_filter') ? ' no-filter' : '' }}"
+      class="hero surface shadow-long{{ post.meta('toggle_image_filter') ? ' no-filter' : '' }}"
     >
       <img
+        class="cover"
         fetchpriority="high"
         srcset="
           {{ post.thumbnail.src
@@ -42,8 +43,8 @@
         height="{{ post.thumbnail.height }}"
       />
     </figure>
-    <span class="sans-medium-italic"><b>{{ post.title }}</b></span>
-    <div>
+    <span class="sans-medium-italic inverse shadow-long-border-md"><b>{{ post.title }}</b></span>
+    <div class="surface-lg">
       {{ post.content }}
       <section>
         <h2>Latest</h2>

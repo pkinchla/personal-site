@@ -1,24 +1,36 @@
-@import url('animations.css');
-@import url('custom-properties');
-@import url('reset.css');
-@import url('typography.css');
-@import url('links.css');
-@import url('accessibility.css');
-@import url('forms.css');
-@import url('buttons.css');
-@import url('layout.css');
-@import url('prism-theme.css');
-@import url('main-navigation.css');
-@import url('footer.css');
-@import url('page-layout.css');
-@import url('home.css');
-@import url('cards.css');
-@import url('pagination.css');
-@import url('resume.css');
-@import url('media-grid.css');
-@import url('github-contribution-graph.css');
-@import url('shame.css');
-@import url('user-settings.css');
-@import url('view-transitions.css');
-@import url('user-settings-overlay.css');
-@import url('fuzzy-search-dialog.css');
+/* layer order — later layers win regardless of selector specificity */
+@layer reset, base, components, utilities;
+
+@import url('reset.css') layer(reset);
+@import url('custom-properties.css') layer(base);
+@import url('animations.css') layer(base);
+@import url('typography.css') layer(base);
+@import url('links.css') layer(base);
+@import url('forms.css') layer(components);
+@import url('buttons.css') layer(components);
+@import url('layout.css') layer(components);
+@import url('prism-theme.css') layer(components);
+@import url('main-navigation.css') layer(components);
+@import url('footer.css') layer(components);
+@import url('page-layout.css') layer(components);
+@import url('home.css') layer(components);
+@import url('cards.css') layer(components);
+@import url('pagination.css') layer(components);
+@import url('resume.css') layer(components);
+@import url('media-grid.css') layer(components);
+@import url('github-contribution-graph.css') layer(components);
+@import url('content.css') layer(components);
+@import url('single.css') layer(components);
+@import url('comments.css') layer(components);
+@import url('user-settings.css') layer(components);
+@import url('view-transitions.css') layer(components);
+@import url('user-settings-overlay.css') layer(components);
+@import url('fuzzy-search-dialog.css') layer(components);
+@import url('accessibility.css') layer(utilities);
+@import url('utilities.css') layer(utilities);
+
+/* after utilities.css so gap-* can override .cluster */
+@import url('spacing.css') layer(utilities);
+
+/* unlayered — see wordpress.css */
+@import url('wordpress.css');

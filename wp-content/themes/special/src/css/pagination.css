@@ -1,6 +1,6 @@
 .pagination {
   padding: 0 1em;
-  border-block-end: 0.125em solid var(--secondary);
+  border-block-end: var(--border);
   margin-block-end: 3em;
   text-align: center;
 }

@@ -22,10 +22,6 @@ fuzzy-search {
       backdrop-filter: blur(0.4375rem);
     }
 
-    &:focus-within {
-      box-shadow: var(--long-shadow);
-    }
-
     @media (min-width: 48em) {
       inline-size: calc(50vi - 1em);
       margin-inline: auto;

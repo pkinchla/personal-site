@@ -1,14 +1,11 @@
 font-settings fieldset,
-color-theme-switcher fieldset,
-sound-toggle fieldset {
+color-theme-switcher fieldset {
   display: inline-flex;
   position: relative;
   background: transparent;
   padding: 0;
   flex-wrap: wrap;
-  border: 0.125em solid var(--secondary);
-  margin-block-end: 1.5em;
-  border-radius: var(--radius);
+  margin-block-end: var(--space-5);
 }
 
 color-theme-switcher {
@@ -20,8 +17,7 @@ fieldset.color-theme-switcher {
 }
 
 font-settings fieldset legend,
-color-theme-switcher fieldset legend,
-sound-toggle fieldset legend {
+color-theme-switcher fieldset legend {
   padding: 0 0.25em;
   margin: 0 0.5em 0.5em 0.75em;
 }
@@ -34,22 +30,6 @@ font-settings fieldset legend {
 font-settings fieldset {
   padding: 0.5em 1em 1em;
   margin-block-end: 1em;
-}
-
-sound-toggle fieldset {
-  padding-block-end: 0.5em;
-  padding-inline-end: 1em;
-  gap: 0.5em;
-}
-
-sound-toggle label {
-  padding-inline-start: 1em;
-}
-
-font-settings fieldset:focus-within,
-color-theme-switcher fieldset:focus-within,
-sound-toggle fieldset:focus-within {
-  box-shadow: var(--long-shadow);
 }
 
 color-theme-switcher input[type='radio'] {
@@ -94,7 +74,7 @@ font-settings fieldset input[type='range']::-webkit-slider-thumb {
   height: 1.25em;
   border-radius: 50%;
   appearance: none;
-  border: 0.125em solid var(--secondary);
+  border: var(--border);
   background-color: var(--body-background);
   margin-block-start: -0.45em;
   z-index: 5;
@@ -105,7 +85,7 @@ font-settings fieldset input[type='range']::-moz-range-thumb {
   height: 1.25em;
   border-radius: 50%;
   appearance: none;
-  border: 0.125em solid var(--secondary);
+  border: var(--border);
   background-color: var(--body-background);
 }
 
@@ -115,7 +95,7 @@ fieldset.font-settings input[type='number'] {
   color: var(--secondary);
   width: 4em;
   appearance: textfield;
-  border: 0.125em solid var(--secondary);
+  border: var(--border);
   border-inline-end: none;
   border-inline-start: none;
   outline-color: var(--secondary);
@@ -127,8 +107,7 @@ fieldset.font-settings input[type='number']::-webkit-outer-spin-button {
   appearance: none;
 }
 
-font-settings fieldset span,
-color-theme-switcher fieldset span {
+font-settings fieldset span {
   display: flex;
   position: relative;
   flex-wrap: wrap;
@@ -155,7 +134,7 @@ color-theme-switcher fieldset span {
   align-items: center;
   justify-content: center;
   padding: 0.55em;
-  border: 0.125em solid var(--secondary);
+  border: var(--border);
 }
 
 .number button svg {
@@ -174,8 +153,7 @@ color-theme-switcher fieldset span {
   border-start-end-radius: var(--radius);
 }
 
-font-settings fieldset span:not(:last-of-type),
-color-theme-switcher fieldset span:not(:last-of-type) {
+font-settings fieldset span:not(:last-of-type) {
   padding-inline-end: 0;
 }
 
@@ -185,7 +163,7 @@ color-theme-switcher fieldset span:not(:last-of-type) {
   }
 
   fieldset.color-theme-switcher label {
-    border: 0.125em solid var(--secondary);
+    border: var(--border);
     margin-inline-end: 0.25em;
   }
 }
@@ -198,17 +176,17 @@ fieldset.color-theme-switcher label {
   margin: -0.0625em;
   align-items: center;
   border: 0.125em solid transparent;
-  border-block-start: 0.125em solid var(--secondary);
+  border-block-start: var(--border);
   cursor: pointer;
 }
 
 fieldset.color-theme-switcher label:not(:last-of-type) {
-  border-inline-end: 0.125em solid var(--secondary);
+  border-inline-end: var(--border);
 }
 
 color-theme-switcher label:has(input[type='radio']:focus) {
   border: 0.125em solid currentcolor;
-  border-block-start: 0.125em solid var(--secondary);
+  border-block-start: var(--border);
 }
 
 color-theme-switcher label:has(input[type='radio']:checked) {

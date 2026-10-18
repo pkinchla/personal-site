@@ -18,7 +18,7 @@
         Skip To Content
       </a>
       {% block header %}
-        <header id="masthead" class="sans-medium-italic site-header">
+        <header id="masthead" class="sans-medium-italic site-header inverse cluster gap-1">
           {% include 'site-logo.twig' %}
 
           <nav id="site-navigation" class="site-navigation">
@@ -40,7 +40,7 @@
               </svg>
               <span class="assistive-text">Open Site Settings</span>
             </button>
-            <div popover="manual" class="user-settings" id="user-settings">
+            <div popover="manual" class="user-settings surface shadow-long" id="user-settings">
               <button class="dismiss-button" popovertarget="user-settings">
                 <svg
                   aria-hidden="true"
@@ -52,7 +52,7 @@
                 </svg>
                 <span class="assistive-text">Close Site Settings</span>
               </button>
-              <install class="js-install sans-medium-italic"></install>
+              <install class="js-install sans-medium-italic surface"></install>
               <color-theme-switcher></color-theme-switcher>
               <br />
               <font-settings

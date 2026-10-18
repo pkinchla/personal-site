@@ -2,7 +2,7 @@
 
 {% block content %}
   <article class="grid post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-    <header>
+    <header class="surface shadow-long">
       <h1>{{ post.title }}</h1>
       {% include 'byline.twig' %}
     </header>
@@ -14,7 +14,7 @@
       <a href="/random/" class="random-link">
         ⚘<span class="assistive-text">Random Post</span>
       </a>
-      <footer class="sans-regular-italic">
+      <footer class="entry-footer sans-regular-italic surface">
         {{ function('special_entry_footer') }}
       </footer>
       {{ post.post_nav }}

@@ -56,9 +56,24 @@
   --score-ok-inverse: var(--score-ok-dark);
   --score-bad-inverse: var(--score-bad-dark);
 
+  /* inverse surface (header, footer panels) — overridden below by light-dark() */
+  --inverse-bg: var(--secondary);
+  --inverse-fg: var(--body-background);
+
+  /* spacing scale */
+  --space-1: 0.25em;
+  --space-2: 0.5em;
+  --space-3: 0.75em;
+  --space-4: 1em;
+  --space-5: 1.5em;
+  --space-6: 3em;
+
   /* base measurements */
   --radius: 0.33em;
   --radius-2: 0.66em;
+  --border-width: 0.125em;
+  --border: var(--border-width) solid var(--secondary);
+  --border-thin: 0.0625em solid var(--secondary);
   --long-shadow:
     -0.03125rem 0.03125rem 0 var(--secondary),
     -0.0625rem 0.0625rem 0 var(--secondary),
@@ -143,6 +158,14 @@
     --score-bad-inverse: light-dark(
       var(--score-bad-dark),
       var(--score-bad-inverse-dark)
+    );
+    --inverse-bg: light-dark(
+      var(--secondary-light),
+      var(--body-background-dark)
+    );
+    --inverse-fg: light-dark(
+      var(--body-background-light),
+      var(--secondary-dark)
     );
 
     accent-color: light-dark(var(--secondary-light), var(--secondary-dark));

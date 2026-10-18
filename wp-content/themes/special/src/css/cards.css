@@ -2,7 +2,7 @@
   position: relative;
   padding-block: 0.5em;
   padding-inline: 1em;
-  border: 0.125em solid var(--secondary);
+  border: var(--border);
   border-radius: var(--radius);
 
   a {

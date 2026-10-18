@@ -1,0 +1,9 @@
+/*
+  Imported without a layer on purpose. WordPress prints per-block CSS
+  (wp-block-*-inline-css) unlayered, and unlayered styles beat every layer,
+  so overrides of core block styles have to live here and win on specificity.
+*/
+
+main .wp-block-video :where(figcaption) {
+  margin-block: 0;
+}

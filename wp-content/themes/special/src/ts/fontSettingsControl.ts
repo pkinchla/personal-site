@@ -39,7 +39,7 @@ export default class FontSettingsControl extends HTMLElement {
       value.replace(/\s+/g, '-').toLowerCase();
 
     this.innerHTML = `
-    <fieldset class="font-settings sans-medium-italic">
+    <fieldset class="font-settings sans-medium-italic surface shadow-focus">
       <legend>${this.label}</legend>
       <span>
         <label for="range-${formatLabel(this.label)}">Font Weight</label>

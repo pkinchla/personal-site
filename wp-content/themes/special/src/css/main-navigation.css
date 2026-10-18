@@ -1,14 +1,7 @@
 /* site settings */
 .site-header {
-  display: flex;
-  background: var(--secondary);
-  color: var(--body-background);
   margin-block: 1em 2em;
   padding: 0.5em;
-  flex-wrap: wrap;
-  gap: 0.5em;
-  align-items: center;
-  border: 0.125em solid var(--tertiary);
   border-radius: var(--radius);
   max-width: 50em;
 
@@ -20,19 +13,10 @@
     z-index: 10;
   }
 
-  @supports (color: light-dark(white, black)) {
-    background: light-dark(var(--secondary), var(--body-background));
-    color: light-dark(var(--body-background), var(--secondary));
-  }
-
   a:not(:where(fuzzy-search a)) {
     position: relative;
-    color: var(--body-background);
+    color: var(--inverse-fg);
     text-decoration: none;
-
-    @supports (color: light-dark(white, black)) {
-      color: light-dark(var(--body-background), var(--secondary));
-    }
 
     &::after {
       display: inline-block;

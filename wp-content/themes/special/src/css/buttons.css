@@ -18,8 +18,11 @@
   }
 
   a& {
-    align-items: center;
     display: inline-flex;
+
+    /* keep link/visited colors from the base layer */
+    color: revert-layer;
+    align-items: center;
     padding: 0.5em 1em;
     gap: 0.25em;
 
