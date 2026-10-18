@@ -10,18 +10,6 @@ hr {
   flex-wrap: wrap;
 }
 
-.mb-0 {
-  margin-block-end: 0;
-}
-
-.mb-1 {
-  margin-block-end: 0.5em;
-}
-
-.mb-2 {
-  margin-block-end: 1em;
-}
-
 /* list for contact and category links */
 .action-list ul {
   margin-block-end: 3em;
