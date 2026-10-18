@@ -1,4 +1,4 @@
-const VERSION = "v11.1";
+const VERSION = "v11.3";
 const THEME_PATH = "wp-content/themes/special/";
 
 const CACHE = {
@@ -18,9 +18,9 @@ const OFFLINE_FUNDAMENTALS = [
   `${THEME_PATH}dist/js/main.js`,
   `${THEME_PATH}dist/js/prism.js`,
   `${THEME_PATH}offline.html`,
-  "/typefaces/arbeit-variable-latin.woff2",
-  "/typefaces/cooper-wght-latin.woff2",
-  "/typefaces/cooper-italic-wght-latin.woff2",
+  "/typefaces/arbeit-variable.woff2",
+  "/typefaces/cooper-wght.woff2",
+  "/typefaces/cooper-italic-wght.woff2",
   "manifest.json",
   "icon_192.png",
 ];

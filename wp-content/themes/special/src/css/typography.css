@@ -1,20 +1,20 @@
 @font-face {
   font-display: swap;
   font-family: Arbeit;
-  src: url('/typefaces/arbeit-variable-latin.woff2') format('woff2-variations');
+  src: url('/typefaces/arbeit-variable.woff2') format('woff2-variations');
 }
 
 @font-face {
   font-display: swap;
   font-family: Cooper;
-  src: url('/typefaces/cooper-wght-latin.woff2') format('woff2-variations');
+  src: url('/typefaces/cooper-wght.woff2') format('woff2-variations');
   font-style: normal;
 }
 
 @font-face {
   font-display: swap;
   font-family: Cooper;
-  src: url('/typefaces/cooper-italic-wght-latin.woff2') format('woff2-variations');
+  src: url('/typefaces/cooper-italic-wght.woff2') format('woff2-variations');
   font-style: italic;
 }
 
