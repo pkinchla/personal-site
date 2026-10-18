@@ -55,8 +55,11 @@
         grid-row-start: 1;
       }
 
-      span {
+      > span {
         box-shadow: var(--long-shadow-border);
+      }
+
+      span {
         inline-size: calc(100% - 1em);
         align-content: center;
         margin: 0;
