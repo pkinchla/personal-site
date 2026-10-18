@@ -6,6 +6,7 @@
 @import url('animations.css') layer(base);
 @import url('typography.css') layer(base);
 @import url('links.css') layer(base);
+@import url('focus.css') layer(base);
 @import url('forms.css') layer(components);
 @import url('buttons.css') layer(components);
 @import url('layout.css') layer(components);

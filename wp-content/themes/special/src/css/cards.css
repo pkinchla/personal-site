@@ -7,7 +7,7 @@
 
   a {
     &:focus {
-      outline: 0;
+      outline: none;
     }
 
     /* translate would make the link the containing block for ::after,

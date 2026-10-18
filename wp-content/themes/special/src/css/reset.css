@@ -37,8 +37,7 @@ html {
 }
 
 ::selection {
-  background: var(--tertiary);
-  opacity: 0.5;
+  background: color-mix(in srgb, var(--tertiary) 50%, transparent);
 }
 
 /* Set core body defaults */
