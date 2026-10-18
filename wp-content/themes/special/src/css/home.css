@@ -25,15 +25,16 @@
       inline-size: 40%;
       margin-block: -50% 39%;
       margin-inline-start: 1em;
-      padding: 0.5em 2em;
+      padding: 0.5em 1em;
       border-radius: var(--radius);
       border: 0.125em solid var(--tertiary);
       box-shadow: var(--long-shadow-border);
       background-color: var(--secondary);
       z-index: 1;
+      text-align: center;
 
       b {
-        font-size: 22cqi;
+        font-size: clamp(1rem, 22cqi, 2rem);
       }
     }
 
@@ -51,14 +52,12 @@
       }
 
       span {
-        inline-size: 100%;
+        inline-size: calc(100% - 1em);
         align-content: center;
         margin: 0;
-        padding-inline: 0 1em;
-        grid-column: 4 / 7;
+        grid-column: 5 / 8;
         grid-row-start: 1;
         text-align: center;
-        block-size: calc(100% - 10em);
         align-self: center;
 
         b {
