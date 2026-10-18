@@ -10,6 +10,12 @@
       outline: 0;
     }
 
+    /* translate would make the link the containing block for ::after,
+       shrinking the hit area mid-click so the click never fires */
+    &:active {
+      translate: none;
+    }
+
     &::after {
       position: absolute;
       inset: 0;
@@ -29,6 +35,10 @@
 
   &:has(a:focus) {
     border-color: var(--tertiary);
+  }
+
+  &:has(a:active) {
+    translate: 0 0.0625rem;
   }
 
   span {
