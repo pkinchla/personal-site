@@ -1,4 +1,4 @@
-const VERSION = "v11.3";
+const VERSION = "v11.4";
 const THEME_PATH = "wp-content/themes/special/";
 
 const CACHE = {
