@@ -16,7 +16,7 @@
     box-shadow: var(--long-shadow-border);
     margin-inline: auto;
     position: sticky;
-    top: 0.5em;
+    top: 1em;
     z-index: 10;
   }
 
