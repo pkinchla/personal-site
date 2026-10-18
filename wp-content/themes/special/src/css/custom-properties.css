@@ -20,7 +20,7 @@
   --primary-light: #38220b;
   --primary-dark: #f1f1f1;
   --secondary-light: #143f40;
-  --secondary-dark: #c5c5c5;
+  --secondary-dark: #9a9a9a;
   --tertiary-light: #e83dbd;
   --tertiary-dark: #c0259c;
   --link-light: #00e;
@@ -37,9 +37,9 @@
   --score-bad-dark: #ff948d;
 
   /* score colors for the footer's inverted (--secondary) surface */
-  --score-good-inverse-dark: #055d30;
-  --score-ok-inverse-dark: #883702;
-  --score-bad-inverse-dark: #a60000;
+  --score-good-inverse-dark: #003a10;
+  --score-ok-inverse-dark: #4e2800;
+  --score-bad-inverse-dark: #6d0000;
 
   /* resolved tokens — default to light; overridden below by media query and light-dark() */
   --body-background: var(--body-background-light);
@@ -157,7 +157,7 @@
     --primary-light: oklch(27.48% 0.049 64.33deg);
     --primary-dark: oklch(95.81% 0 0deg);
     --secondary-light: oklch(33.87% 0.047 197.33deg);
-    --secondary-dark: oklch(82.34% 0 0deg);
+    --secondary-dark: oklch(68.62% 0 0deg);
     --tertiary-light: oklch(65.48% 0.24 340.16deg);
     --tertiary-dark: oklch(55.98% 0.22 339.82deg);
     --link-light: oklch(42.9% 0.297278 264.052021deg);
@@ -172,8 +172,8 @@
     --score-ok-dark: oklch(86.3% 0.131 79.98deg);
     --score-bad-light: oklch(54.05% 0.221786 29.233885deg);
     --score-bad-dark: oklch(77.77% 0.129982 24.457499deg);
-    --score-good-inverse-dark: oklch(42.04% 0.105 153.2deg);
-    --score-ok-inverse-dark: oklch(44.25% 0.124 45.61deg);
-    --score-bad-inverse-dark: oklch(45.54% 0.187 29.23deg);
+    --score-good-inverse-dark: oklch(30.36% 0.09 147.21deg);
+    --score-ok-inverse-dark: oklch(32.09% 0.075 60.12deg);
+    --score-bad-inverse-dark: oklch(33.58% 0.138 29.23deg);
   }
 }

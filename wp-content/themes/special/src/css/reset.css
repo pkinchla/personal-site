@@ -36,6 +36,11 @@ html {
   scroll-padding-top: 7em;
 }
 
+::selection {
+  background: var(--tertiary);
+  opacity: 0.5;
+}
+
 /* Set core body defaults */
 body {
   min-height: 100vh;
