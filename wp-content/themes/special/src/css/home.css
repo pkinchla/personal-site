@@ -2,8 +2,16 @@
   article {
     figure {
       background:
-        radial-gradient(circle at 25% 25%, var(--secondary) 0, transparent 50%),
-        radial-gradient(circle at 75% 75%, var(--tertiary) 0, transparent 50%),
+        radial-gradient(
+          circle at 25% 25%,
+          light-dark(var(--secondary), var(--visited-dark)) 0,
+          transparent 50%
+        ),
+        radial-gradient(
+          circle at 75% 75%,
+          light-dark(var(--tertiary), var(--secondary-light)) 0,
+          transparent 50%
+        ),
         linear-gradient(180deg, var(--body-background) 0, transparent 100%);
       margin-block-end: var(--space-5);
     }
