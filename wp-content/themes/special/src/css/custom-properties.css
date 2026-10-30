@@ -29,11 +29,8 @@
   --active-dark: #ff8a8a;
   --visited-light: #551a8b;
   --visited-dark: #bc75ff;
-  --score-good-light: #066b37;
   --score-good-dark: #6ab68f;
-  --score-ok-light: #ba4c03;
   --score-ok-dark: #ffc866;
-  --score-bad-light: #d10000;
   --score-bad-dark: #ff948d;
 
   /* score colors for the footer surface (--secondary in light, --body-background in dark) */
@@ -49,9 +46,6 @@
   --link: var(--link-light);
   --active: var(--active-light);
   --visited: var(--visited-light);
-  --score-good: var(--score-good-light);
-  --score-ok: var(--score-ok-light);
-  --score-bad: var(--score-bad-light);
   --score-good-inverse: var(--score-good-dark);
   --score-ok-inverse: var(--score-ok-dark);
   --score-bad-inverse: var(--score-bad-dark);
@@ -122,9 +116,6 @@
     --link: var(--link-dark);
     --active: var(--active-dark);
     --visited: var(--visited-dark);
-    --score-good: var(--score-good-dark);
-    --score-ok: var(--score-ok-dark);
-    --score-bad: var(--score-bad-dark);
     --score-good-inverse: var(--score-good-inverse-dark);
     --score-ok-inverse: var(--score-ok-inverse-dark);
     --score-bad-inverse: var(--score-bad-inverse-dark);
@@ -144,9 +135,6 @@
     --link: light-dark(var(--link-light), var(--link-dark));
     --active: light-dark(var(--active-light), var(--active-dark));
     --visited: light-dark(var(--visited-light), var(--visited-dark));
-    --score-good: light-dark(var(--score-good-light), var(--score-good-dark));
-    --score-ok: light-dark(var(--score-ok-light), var(--score-ok-dark));
-    --score-bad: light-dark(var(--score-bad-light), var(--score-bad-dark));
     --score-good-inverse: light-dark(
       var(--score-good-dark),
       var(--score-good-inverse-dark)
@@ -189,11 +177,8 @@
     --active-dark: oklch(76.15% 0.142 20.94deg);
     --visited-light: oklch(37.84% 0.172 302.15deg);
     --visited-dark: oklch(69.64% 0.201922 305.539504deg);
-    --score-good-light: oklch(46.35% 0.118 152.78deg);
     --score-good-dark: oklch(71.59% 0.096 160.29deg);
-    --score-ok-light: oklch(55.42% 0.158 44.8deg);
     --score-ok-dark: oklch(86.3% 0.131 79.98deg);
-    --score-bad-light: oklch(54.05% 0.221786 29.233885deg);
     --score-bad-dark: oklch(77.77% 0.129982 24.457499deg);
     --score-good-inverse-dark: oklch(61.44% 0.105 153.2deg);
     --score-ok-inverse-dark: oklch(63.65% 0.124 45.61deg);
