@@ -15,20 +15,20 @@
   --variable-wght-body: 404;
 
   /* raw color tokens — one place to edit per color */
-  --body-background-light: #f1f1f1;
-  --body-background-dark: #1b2127;
-  --primary-light: #38220b;
-  --primary-dark: #f1f1f1;
-  --secondary-light: #143f40;
-  --secondary-dark: #9a9a9a;
-  --tertiary-light: #e83dbd;
-  --tertiary-dark: #c0259c;
-  --link-light: #00e;
-  --link-dark: #00bfff;
-  --active-light: #da0503;
-  --active-dark: #ff8a8a;
-  --visited-light: #551a8b;
-  --visited-dark: #bc75ff;
+  --body-background-light: #f5f5f5;
+  --body-background-dark: #121416;
+  --primary-light: #161616;
+  --primary-dark: #eee;
+  --secondary-light: #26292e;
+  --secondary-dark: #c4f16a;
+  --tertiary-light: #9a61ea;
+  --tertiary-dark: #8a54d4;
+  --link-light: #0a4ac5;
+  --link-dark: #71c9fa;
+  --active-light: #c21725;
+  --active-dark: #ffa09c;
+  --visited-light: #6e228b;
+  --visited-dark: #dba6f3;
   --score-good-dark: #6ab68f;
   --score-ok-dark: #ffc866;
   --score-bad-dark: #ff948d;
@@ -163,20 +163,20 @@
 /* P3 wide gamut — only overrides raw tokens; light-dark() picks these up automatically */
 @media (color-gamut: p3) {
   :root {
-    --body-background-light: oklch(95.81% 0 0deg);
-    --body-background-dark: oklch(24.44% 0.014 248.42deg);
-    --primary-light: oklch(27.48% 0.049 64.33deg);
-    --primary-dark: oklch(95.81% 0 0deg);
-    --secondary-light: oklch(33.87% 0.047 197.33deg);
-    --secondary-dark: oklch(68.62% 0 0deg);
-    --tertiary-light: oklch(65.48% 0.24 340.16deg);
-    --tertiary-dark: oklch(55.98% 0.22 339.82deg);
-    --link-light: oklch(42.9% 0.297278 264.052021deg);
-    --link-dark: oklch(75.54% 0.153 231.64deg);
-    --active-light: oklch(55.9% 0.228 29.21deg);
-    --active-dark: oklch(76.15% 0.142 20.94deg);
-    --visited-light: oklch(37.84% 0.172 302.15deg);
-    --visited-dark: oklch(69.64% 0.201922 305.539504deg);
+    --body-background-light: oklch(97.02% 0 0deg);
+    --body-background-dark: oklch(18.99% 0.005 248.1deg);
+    --primary-light: oklch(20.02% 0 0deg);
+    --primary-dark: oklch(94.91% 0 0deg);
+    --secondary-light: oklch(28% 0.01 260.7deg);
+    --secondary-dark: oklch(89.95% 0.17 125.11deg);
+    --tertiary-light: oklch(61.93% 0.2 299.75deg);
+    --tertiary-dark: oklch(56.92% 0.19 299.81deg);
+    --link-light: oklch(45.94% 0.201 262.07deg);
+    --link-dark: oklch(79.95% 0.11 234.81deg);
+    --active-light: oklch(52.07% 0.2 25.02deg);
+    --active-dark: oklch(80.06% 0.114 22.53deg);
+    --visited-light: oklch(42.03% 0.17 314.73deg);
+    --visited-dark: oklch(80.04% 0.12 314.98deg);
     --score-good-dark: oklch(71.59% 0.096 160.29deg);
     --score-ok-dark: oklch(86.3% 0.131 79.98deg);
     --score-bad-dark: oklch(77.77% 0.129982 24.457499deg);
