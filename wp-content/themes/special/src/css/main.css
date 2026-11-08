@@ -3,6 +3,7 @@
 
 @import url('reset.css') layer(reset);
 @import url('custom-properties.css') layer(base);
+@import url('palettes.css') layer(base);
 @import url('animations.css') layer(base);
 @import url('typography.css') layer(base);
 @import url('links.css') layer(base);
@@ -24,6 +25,7 @@
 @import url('single.css') layer(components);
 @import url('comments.css') layer(components);
 @import url('user-settings.css') layer(components);
+@import url('color-palette-picker.css') layer(components);
 @import url('view-transitions.css') layer(components);
 @import url('user-settings-overlay.css') layer(components);
 @import url('fuzzy-search-dialog.css') layer(components);

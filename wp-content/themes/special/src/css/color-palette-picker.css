@@ -1,0 +1,132 @@
+color-palette-picker {
+  display: block;
+}
+
+color-palette-picker fieldset {
+  padding: 0.5em 1em 1em;
+}
+
+color-palette-picker fieldset legend {
+  padding: 0 0.25em;
+  margin-inline-start: -0.125em;
+}
+
+.palette-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.5em, 1fr));
+  gap: 0.5em;
+  max-height: 10em;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: var(--secondary) transparent;
+  padding: 0.25em;
+
+  /*
+   * Fade the edges that have more content past them. The base values fade
+   * only the bottom edge; where scroll-driven animations are supported, the
+   * fades follow the scroll position so the top fades in once you scroll and
+   * the bottom clears when you reach the end.
+   */
+  --fade-top: 0%;
+  --fade-bottom: 30%;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black var(--fade-top),
+    black calc(100% - var(--fade-bottom)),
+    transparent
+  );
+}
+
+@property --fade-top {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
+@property --fade-bottom {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
+@keyframes palette-scroll-fade {
+  0% {
+    --fade-top: 0%;
+    --fade-bottom: 28%;
+  }
+
+  15% {
+    --fade-top: 28%;
+  }
+
+  85% {
+    --fade-bottom: 28%;
+  }
+
+  100% {
+    --fade-top: 28%;
+    --fade-bottom: 0%;
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  .palette-options {
+    animation: palette-scroll-fade linear both;
+    animation-timeline: scroll(self);
+  }
+}
+
+.palette-options label {
+  display: grid;
+  position: relative;
+  gap: 0.375em;
+  padding: 0.5em;
+  border: 0.125em solid transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.palette-options input[type='radio'] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.palette-options label:hover {
+  border-color: var(--secondary);
+}
+
+.palette-options label:has(input:checked) {
+  border-color: var(--secondary);
+  background: var(--secondary);
+  color: var(--body-background);
+}
+
+.palette-options label:has(input:focus-visible) {
+  outline: 0.125em solid var(--tertiary);
+  outline-offset: 0.125em;
+}
+
+.palette-swatch {
+  display: grid;
+  overflow: hidden;
+  border: var(--border-thin);
+  border-radius: var(--radius);
+}
+
+.palette-swatch-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  height: 0.875em;
+}
+
+.palette-name {
+  font-size: 0.875em;
+  line-height: 1.2;
+}

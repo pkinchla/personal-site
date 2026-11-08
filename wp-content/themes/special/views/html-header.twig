@@ -8,6 +8,8 @@
       document.querySelector('meta[name="color-scheme"]').content = s;
       document.documentElement.style.colorScheme = s;
     }
+    const p = localStorage.getItem('palette');
+    if (p) document.documentElement.dataset.palette = p;
   }
   </script>
   <title>

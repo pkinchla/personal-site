@@ -1,0 +1,490 @@
+/*
+ * Alternate color palettes, picked in site settings (<color-palette-picker>).
+ * Each sets data-palette on <html>; Graphite & Volt is the default in
+ * custom-properties.css. Like that file, each palette has hex values plus an
+ * oklch() set for P3 screens; :root[data-palette] outranks the plain :root P3
+ * block there, so the palette wins on every screen.
+ * Every palette passes WCAG AA: 4.5:1 for text pairs, 3:1 for the tertiary
+ * accent against body background, secondary and the inverse surface.
+ */
+
+/* Slate & Aqua */
+:root[data-palette='slate-and-aqua'] {
+  --body-background-light: #f3f8fa;
+  --body-background-dark: #0b151c;
+  --primary-light: #141c21;
+  --primary-dark: #ebeff1;
+  --secondary-light: #163749;
+  --secondary-dark: #65f0f0;
+  --tertiary-light: #e942a1;
+  --tertiary-dark: #cd2189;
+  --link-light: #114cbf;
+  --link-dark: #96c9fe;
+  --active-light: #c21725;
+  --active-dark: #ffa09c;
+  --visited-light: #6e228b;
+  --visited-dark: #dba6f3;
+}
+
+@media (color-gamut: p3) {
+  :root[data-palette='slate-and-aqua'] {
+    --body-background-light: oklch(97.59% 0.006 223.46deg);
+    --body-background-dark: oklch(18.96% 0.021 239.75deg);
+    --primary-light: oklch(22.08% 0.015 235.82deg);
+    --primary-dark: oklch(94.97% 0.005 228.82deg);
+    --secondary-light: oklch(32.1% 0.05 235.18deg);
+    --secondary-dark: oklch(87.97% 0.12 195.2deg);
+    --tertiary-light: oklch(64.88% 0.22 350.12deg);
+    --tertiary-dark: oklch(57.07% 0.22 350.17deg);
+    --link-light: oklch(45.9% 0.19 261.99deg);
+    --link-dark: oklch(81.96% 0.092 249.96deg);
+    --active-light: oklch(52.07% 0.2 25.02deg);
+    --active-dark: oklch(80.06% 0.114 22.53deg);
+    --visited-light: oklch(42.03% 0.17 314.73deg);
+    --visited-dark: oklch(80.04% 0.12 314.98deg);
+  }
+}
+
+/* Carbon & Tangerine */
+:root[data-palette='carbon-and-tangerine'] {
+  --body-background-light: #f7f4f2;
+  --body-background-dark: #14110f;
+  --primary-light: #181614;
+  --primary-dark: #f0eeec;
+  --secondary-light: #332c29;
+  --secondary-dark: #feba7e;
+  --tertiary-light: #1781f0;
+  --tertiary-dark: #0266c7;
+  --link-light: #114cbf;
+  --link-dark: #7bd0f9;
+  --active-light: #c21725;
+  --active-dark: #ffa09c;
+  --visited-light: #6e228b;
+  --visited-dark: #dba6f3;
+}
+
+@media (color-gamut: p3) {
+  :root[data-palette='carbon-and-tangerine'] {
+    --body-background-light: oklch(96.89% 0.004 56.37deg);
+    --body-background-dark: oklch(18.05% 0.006 55.94deg);
+    --primary-light: oklch(20.17% 0.005 67.54deg);
+    --primary-dark: oklch(95.01% 0.003 67.78deg);
+    --secondary-light: oklch(29.97% 0.012 44.63deg);
+    --secondary-dark: oklch(83.91% 0.11 61.89deg);
+    --tertiary-light: oklch(60.87% 0.189 254.81deg);
+    --tertiary-dark: oklch(51.84% 0.17 255.13deg);
+    --link-light: oklch(45.9% 0.19 261.99deg);
+    --link-dark: oklch(81.89% 0.101 230.63deg);
+    --active-light: oklch(52.07% 0.2 25.02deg);
+    --active-dark: oklch(80.06% 0.114 22.53deg);
+    --visited-light: oklch(42.03% 0.17 314.73deg);
+    --visited-dark: oklch(80.04% 0.12 314.98deg);
+  }
+}
+
+/* Oxblood & Brass */
+:root[data-palette='oxblood-and-brass'] {
+  --body-background-light: #f8f3eb;
+  --body-background-dark: #1c100f;
+  --primary-light: #231715;
+  --primary-dark: #f2eee7;
+  --secondary-light: #62141a;
+  --secondary-dark: #efcc83;
+  --tertiary-light: #a57e15;
+  --tertiary-dark: #c43443;
+  --link-light: #0150af;
+  --link-dark: #7ac8f5;
+  --active-light: #b71c0e;
+  --active-dark: #ffa383;
+  --visited-light: #6f287e;
+  --visited-dark: #e0a4ee;
+}
+
+@media (color-gamut: p3) {
+  :root[data-palette='oxblood-and-brass'] {
+    --body-background-light: oklch(96.58% 0.012 79.78deg);
+    --body-background-dark: oklch(18.92% 0.021 24.5deg);
+    --primary-light: oklch(21.93% 0.02 29.47deg);
+    --primary-dark: oklch(95.03% 0.01 81.79deg);
+    --secondary-light: oklch(33.01% 0.11 21.8deg);
+    --secondary-dark: oklch(85.92% 0.1 84.8deg);
+    --tertiary-light: oklch(61.47% 0.12 85.52deg);
+    --tertiary-dark: oklch(54.88% 0.18 19.98deg);
+    --link-light: oklch(45.12% 0.166 257.96deg);
+    --link-dark: oklch(79.92% 0.1 235.24deg);
+    --active-light: oklch(50.07% 0.19 30.07deg);
+    --active-dark: oklch(80.04% 0.118 39.92deg);
+    --visited-light: oklch(41.92% 0.15 320.2deg);
+    --visited-dark: oklch(79.98% 0.12 319.87deg);
+  }
+}
+
+/* Moss & Lilac */
+:root[data-palette='moss-and-lilac'] {
+  --body-background-light: #f4f6ef;
+  --body-background-dark: #111810;
+  --primary-light: #171d13;
+  --primary-dark: #edf0e8;
+  --secondary-light: #274018;
+  --secondary-dark: #d9c6fe;
+  --tertiary-light: #9c75d9;
+  --tertiary-dark: #457820;
+  --link-light: #174eba;
+  --link-dark: #7bd0f9;
+  --active-light: #c21725;
+  --active-dark: #ffa09c;
+  --visited-light: #731f85;
+  --visited-dark: #e9ade3;
+}
+
+@media (color-gamut: p3) {
+  :root[data-palette='moss-and-lilac'] {
+    --body-background-light: oklch(96.97% 0.009 119.58deg);
+    --body-background-dark: oklch(19.89% 0.019 141.56deg);
+    --primary-light: oklch(22.1% 0.021 133.12deg);
+    --primary-dark: oklch(95.06% 0.011 123.46deg);
+    --secondary-light: oklch(34.04% 0.071 135.19deg);
+    --secondary-dark: oklch(86.07% 0.079 300.27deg);
+    --tertiary-light: oklch(64.29% 0.149 300.25deg);
+    --tertiary-dark: oklch(51.79% 0.131 134.89deg);
+    --link-light: oklch(45.98% 0.18 261.97deg);
+    --link-dark: oklch(81.89% 0.101 230.63deg);
+    --active-light: oklch(52.07% 0.2 25.02deg);
+    --active-dark: oklch(80.06% 0.114 22.53deg);
+    --visited-light: oklch(42.05% 0.17 319.83deg);
+    --visited-dark: oklch(82% 0.099 329.85deg);
+  }
+}
+
+/* Cobalt & Sherbet */
+:root[data-palette='cobalt-and-sherbet'] {
+  --body-background-light: #f4f7fc;
+  --body-background-dark: #091025;
+  --primary-light: #0f1624;
+  --primary-dark: #eef2f9;
+  --secondary-light: #0f2e94;
+  --secondary-dark: #fec1a6;
+  --tertiary-light: #e26040;
+  --tertiary-dark: #b94224;
+  --link-light: #0a4ac5;
+  --link-dark: #7bd0f9;
+  --active-light: #c11435;
+  --active-dark: #fea8b5;
+  --visited-light: #6e228b;
+  --visited-dark: #dba6f3;
+}
+
+@media (color-gamut: p3) {
+  :root[data-palette='cobalt-and-sherbet'] {
+    --body-background-light: oklch(97.53% 0.007 260.73deg);
+    --body-background-dark: oklch(17.96% 0.045 267.83deg);
+    --primary-light: oklch(20.07% 0.03 263.54deg);
+    --primary-dark: oklch(96.01% 0.01 261.79deg);
+    --secondary-light: oklch(35.95% 0.17 264.99deg);
+    --secondary-dark: oklch(85.95% 0.079 44.97deg);
+    --tertiary-light: oklch(64.77% 0.169 35.04deg);
+    --tertiary-dark: oklch(54.11% 0.16 35.08deg);
+    --link-light: oklch(45.94% 0.201 262.07deg);
+    --link-dark: oklch(81.89% 0.101 230.63deg);
+    --active-light: oklch(51.96% 0.2 19.9deg);
+    --active-dark: oklch(81.91% 0.102 9.68deg);
+    --visited-light: oklch(42.03% 0.17 314.73deg);
+    --visited-dark: oklch(80.04% 0.12 314.98deg);
+  }
+}
+
+/* Charcoal & Flamingo */
+:root[data-palette='charcoal-and-flamingo'] {
+  --body-background-light: #f7f4f5;
+  --body-background-dark: #131113;
+  --primary-light: #151314;
+  --primary-dark: #f1edef;
+  --secondary-light: #292529;
+  --secondary-dark: #feb0ce;
+  --tertiary-light: #038d88;
+  --tertiary-dark: #04736f;
+  --link-light: #0a4ac5;
+  --link-dark: #7bd0f9;
+  --active-light: #c21725;
+  --active-dark: #ffad91;
+  --visited-light: #6e228b;
+  --visited-dark: #c9acff;
+}
+
+@media (color-gamut: p3) {
+  :root[data-palette='charcoal-and-flamingo'] {
+    --body-background-light: oklch(96.97% 0.003 354.69deg);
+    --body-background-dark: oklch(18.09% 0.005 325.79deg);
+    --primary-light: oklch(18.95% 0.004 345.66deg);
+    --primary-dark: oklch(94.98% 0.005 345.28deg);
+    --secondary-light: oklch(27.04% 0.009 325.83deg);
+    --secondary-dark: oklch(83.97% 0.098 354.65deg);
+    --tertiary-light: oklch(58.09% 0.1 190.36deg);
+    --tertiary-dark: oklch(50.19% 0.086 190.52deg);
+    --link-light: oklch(45.94% 0.201 262.07deg);
+    --link-dark: oklch(81.89% 0.101 230.63deg);
+    --active-light: oklch(52.07% 0.2 25.02deg);
+    --active-dark: oklch(82.04% 0.104 39.63deg);
+    --visited-light: oklch(42.03% 0.17 314.73deg);
+    --visited-dark: oklch(79.96% 0.119 299.78deg);
+  }
+}
+
+/* Spruce & Ice */
+:root[data-palette='spruce-and-ice'] {
+  --body-background-light: #eef7f8;
+  --body-background-dark: #021314;
+  --primary-light: #0a191a;
+  --primary-dark: #e7f1f1;
+  --secondary-light: #013631;
+  --secondary-dark: #a6edf0;
+  --tertiary-light: #ea4747;
+  --tertiary-dark: #d32e33;
+  --link-light: #114cbf;
+  --link-dark: #86cdff;
+  --active-light: #ba0d01;
+  --active-dark: #fca676;
+  --visited-light: #6e228b;
+  --visited-dark: #dba6f3;
+}
+
+@media (color-gamut: p3) {
+  :root[data-palette='spruce-and-ice'] {
+    --body-background-light: oklch(96.97% 0.01 204.92deg);
+    --body-background-dark: oklch(17.14% 0.025 199.75deg);
+    --primary-light: oklch(20.05% 0.021 201.16deg);
+    --primary-dark: oklch(95.06% 0.011 196.98deg);
+    --secondary-light: oklch(29.96% 0.052 184.83deg);
+    --secondary-dark: oklch(90.04% 0.07 199.3deg);
+    --tertiary-light: oklch(63.18% 0.2 24.95deg);
+    --tertiary-dark: oklch(56.77% 0.2 25.12deg);
+    --link-light: oklch(45.9% 0.19 261.99deg);
+    --link-dark: oklch(82% 0.1 240.28deg);
+    --active-light: oklch(49.91% 0.2 29.95deg);
+    --active-dark: oklch(79.99% 0.12 49.56deg);
+    --visited-light: oklch(42.03% 0.17 314.73deg);
+    --visited-dark: oklch(80.04% 0.12 314.98deg);
+  }
+}
+
+/* Ultraviolet & Mint */
+:root[data-palette='ultraviolet-and-mint'] {
+  --body-background-light: #f8f5fd;
+  --body-background-dark: #110b1f;
+  --primary-light: #171322;
+  --primary-dark: #f3f0f8;
+  --secondary-light: #3c1475;
+  --secondary-dark: #84f1c4;
+  --tertiary-light: #04956b;
+  --tertiary-dark: #9847ca;
+  --link-light: #0a4ac5;
+  --link-dark: #86cdff;
+  --active-light: #c11435;
+  --active-dark: #ff9f9f;
+  --visited-light: #8a1586;
+  --visited-dark: #edaae6;
+}
+
+@media (color-gamut: p3) {
+  :root[data-palette='ultraviolet-and-mint'] {
+    --body-background-light: oklch(97.47% 0.011 303.11deg);
+    --body-background-dark: oklch(16.98% 0.041 295.54deg);
+    --primary-light: oklch(19.94% 0.03 295.81deg);
+    --primary-dark: oklch(95.97% 0.011 303.11deg);
+    --secondary-light: oklch(32.02% 0.15 294.97deg);
+    --secondary-dark: oklch(88.05% 0.12 165.03deg);
+    --tertiary-light: oklch(59.37% 0.125 164.67deg);
+    --tertiary-dark: oklch(56.08% 0.2 309.89deg);
+    --link-light: oklch(45.94% 0.201 262.07deg);
+    --link-dark: oklch(82% 0.1 240.28deg);
+    --active-light: oklch(51.96% 0.2 19.9deg);
+    --active-dark: oklch(79.96% 0.115 19.91deg);
+    --visited-light: oklch(45.02% 0.19 329.8deg);
+    --visited-dark: oklch(81.99% 0.11 330.15deg);
+  }
+}
+
+/* Heirloom */
+:root[data-palette='heirloom'] {
+  --body-background-light: #f1f1f1;
+  --body-background-dark: #1b2127;
+  --primary-light: #38220b;
+  --primary-dark: #f1f1f1;
+  --secondary-light: #143f40;
+  --secondary-dark: #d1d1d1;
+  --tertiary-light: #e83dbd;
+  --tertiary-dark: #c52aa0;
+  --link-light: #00e;
+  --link-dark: #04bfff;
+  --active-light: #da0503;
+  --active-dark: #ff8a8a;
+  --visited-light: #551a8b;
+  --visited-dark: #c48afe;
+}
+
+@media (color-gamut: p3) {
+  :root[data-palette='heirloom'] {
+    --body-background-light: oklch(95.81% 0 0deg);
+    --body-background-dark: oklch(24.44% 0.014 248.42deg);
+    --primary-light: oklch(27.48% 0.049 64.33deg);
+    --primary-dark: oklch(95.81% 0 0deg);
+    --secondary-light: oklch(33.87% 0.047 197.33deg);
+    --secondary-dark: oklch(86.07% 0 0deg);
+    --tertiary-light: oklch(65.48% 0.24 340.16deg);
+    --tertiary-dark: oklch(57.3% 0.221 339.95deg);
+    --link-light: oklch(42.9% 0.297 264.05deg);
+    --link-dark: oklch(75.55% 0.153 231.72deg);
+    --active-light: oklch(55.9% 0.228 29.21deg);
+    --active-dark: oklch(76.15% 0.142 20.94deg);
+    --visited-light: oklch(37.84% 0.172 302.15deg);
+    --visited-dark: oklch(73.63% 0.171 305.69deg);
+  }
+}
+
+/* Pine & Persimmon */
+:root[data-palette='pine-and-persimmon'] {
+  --body-background-light: #f6f4eb;
+  --body-background-dark: #121e18;
+  --primary-light: #2c1e13;
+  --primary-dark: #f0eee7;
+  --secondary-light: #133f2b;
+  --secondary-dark: #b9e4c6;
+  --tertiary-light: #e7581a;
+  --tertiary-dark: #c34901;
+  --link-light: #0053a4;
+  --link-dark: #60ccfc;
+  --active-light: #be222a;
+  --active-dark: #ffa098;
+  --visited-light: #662d88;
+  --visited-dark: #d19ff5;
+}
+
+@media (color-gamut: p3) {
+  :root[data-palette='pine-and-persimmon'] {
+    --body-background-light: oklch(96.62% 0.012 96.42deg);
+    --body-background-dark: oklch(22.14% 0.021 162.38deg);
+    --primary-light: oklch(24.91% 0.029 59.05deg);
+    --primary-dark: oklch(94.87% 0.01 93.57deg);
+    --secondary-light: oklch(33.09% 0.06 160.51deg);
+    --secondary-dark: oklch(88.02% 0.061 154.57deg);
+    --tertiary-light: oklch(64.19% 0.19 40.08deg);
+    --tertiary-dark: oklch(56.46% 0.169 42.18deg);
+    --link-light: oklch(44.91% 0.148 254.98deg);
+    --link-dark: oklch(80.05% 0.12 229.96deg);
+    --active-light: oklch(51.99% 0.19 24.9deg);
+    --active-dark: oklch(79.97% 0.115 25.14deg);
+    --visited-light: oklch(41.98% 0.15 310.32deg);
+    --visited-dark: oklch(77.96% 0.13 310.26deg);
+  }
+}
+
+/* Ink & Marigold */
+:root[data-palette='ink-and-marigold'] {
+  --body-background-light: #faf6ef;
+  --body-background-dark: #0d1528;
+  --primary-light: #181f2e;
+  --primary-dark: #f1eee7;
+  --secondary-light: #132b5a;
+  --secondary-dark: #f0dcb1;
+  --tertiary-light: #bf6e06;
+  --tertiary-dark: #a65f05;
+  --link-light: #0e4ec8;
+  --link-dark: #71c9fa;
+  --active-light: #c11435;
+  --active-dark: #ff9f9f;
+  --visited-light: #71258e;
+  --visited-dark: #d4a0ec;
+}
+
+@media (color-gamut: p3) {
+  :root[data-palette='ink-and-marigold'] {
+    --body-background-light: oklch(97.43% 0.01 81.8deg);
+    --body-background-dark: oklch(19.91% 0.04 265.63deg);
+    --primary-light: oklch(23.99% 0.031 264.89deg);
+    --primary-dark: oklch(94.95% 0.01 87.47deg);
+    --secondary-light: oklch(29.96% 0.09 262.11deg);
+    --secondary-dark: oklch(90.02% 0.06 85.97deg);
+    --tertiary-light: oklch(61.55% 0.14 61.97deg);
+    --tertiary-dark: oklch(55.5% 0.126 62deg);
+    --link-light: oklch(47.05% 0.199 261.91deg);
+    --link-dark: oklch(79.95% 0.11 234.81deg);
+    --active-light: oklch(51.96% 0.2 19.9deg);
+    --active-dark: oklch(79.96% 0.115 19.91deg);
+    --visited-light: oklch(42.97% 0.17 314.84deg);
+    --visited-dark: oklch(78.03% 0.119 314.8deg);
+  }
+}
+
+/* Plum & Peach */
+:root[data-palette='plum-and-peach'] {
+  --body-background-light: #fdf3ef;
+  --body-background-dark: #211220;
+  --primary-light: #2b1b2a;
+  --primary-dark: #f6ece8;
+  --secondary-light: #4d1b4a;
+  --secondary-dark: #ffcebd;
+  --tertiary-light: #d35f4e;
+  --tertiary-dark: #bc4a3b;
+  --link-light: #254cba;
+  --link-dark: #78c7fd;
+  --active-light: #c11435;
+  --active-dark: #ff9f9f;
+  --visited-light: #5b3291;
+  --visited-dark: #c4a4fe;
+}
+
+@media (color-gamut: p3) {
+  :root[data-palette='plum-and-peach'] {
+    --body-background-light: oklch(97.08% 0.012 43.28deg);
+    --body-background-dark: oklch(20.92% 0.035 329.08deg);
+    --primary-light: oklch(24.91% 0.036 328.73deg);
+    --primary-dark: oklch(94.98% 0.012 43.28deg);
+    --secondary-light: oklch(31.85% 0.1 330.02deg);
+    --secondary-dark: oklch(88.96% 0.06 40.01deg);
+    --tertiary-light: oklch(62.59% 0.15 30.31deg);
+    --tertiary-dark: oklch(55.9% 0.15 30.03deg);
+    --link-light: oklch(46% 0.179 265.04deg);
+    --link-dark: oklch(79.95% 0.11 239.96deg);
+    --active-light: oklch(51.96% 0.2 19.9deg);
+    --active-dark: oklch(79.96% 0.115 19.91deg);
+    --visited-light: oklch(41.99% 0.15 299.76deg);
+    --visited-dark: oklch(78.05% 0.129 299.77deg);
+  }
+}
+
+/* Terracotta & Teal */
+:root[data-palette='terracotta-and-teal'] {
+  --body-background-light: #f9f0e5;
+  --body-background-dark: #241711;
+  --primary-light: #321e16;
+  --primary-dark: #f1eae0;
+  --secondary-light: #6a2107;
+  --secondary-dark: #f6cfb0;
+  --tertiary-light: #0d9696;
+  --tertiary-dark: #027c7c;
+  --link-light: #0150af;
+  --link-dark: #71c9fa;
+  --active-light: #b71824;
+  --active-dark: #ffa09c;
+  --visited-light: #662d88;
+  --visited-dark: #d19ff5;
+}
+
+@media (color-gamut: p3) {
+  :root[data-palette='terracotta-and-teal'] {
+    --body-background-light: oklch(95.92% 0.018 73.08deg);
+    --body-background-dark: oklch(21.96% 0.024 45.76deg);
+    --primary-light: oklch(25.86% 0.035 42.57deg);
+    --primary-dark: oklch(93.98% 0.015 77.07deg);
+    --secondary-light: oklch(35.86% 0.11 37.89deg);
+    --secondary-dark: oklch(88.01% 0.06 60.38deg);
+    --tertiary-light: oklch(61.04% 0.102 194.81deg);
+    --tertiary-dark: oklch(53.1% 0.09 194.78deg);
+    --link-light: oklch(45.12% 0.166 257.96deg);
+    --link-dark: oklch(79.95% 0.11 234.81deg);
+    --active-light: oklch(50.02% 0.19 24.9deg);
+    --active-dark: oklch(80.06% 0.114 22.53deg);
+    --visited-light: oklch(41.98% 0.15 310.32deg);
+    --visited-dark: oklch(77.96% 0.13 310.26deg);
+  }
+}
