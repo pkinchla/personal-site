@@ -100,8 +100,8 @@
 }
 
 .dismiss-button {
-  fill: var(--tertiary);
-  stroke: var(--tertiary);
+  fill: currentColor;
+  stroke: currentColor;
   stroke-linecap: round;
   stroke-miterlimit: 10;
   stroke-width: 0.5625em;
@@ -119,10 +119,9 @@
   .user-settings-button,
   .search-toggle-button,
   .dismiss-button {
-    background: var(--secondary);
     color: var(--tertiary);
     padding: 0.25em;
-    border: 0.125em solid var(--tertiary);
+    border: 0.125em solid currentColor;
     border-radius: var(--radius);
 
     svg {
@@ -138,4 +137,8 @@
   @media (min-width: 32.8125em) {
     margin-inline: auto 0.75em;
   }
+}
+
+.site-settings .dismiss-button {
+  color: var(--secondary);
 }
