@@ -54,19 +54,19 @@ color-palette-picker fieldset legend {
 @keyframes palette-scroll-fade {
   0% {
     --fade-top: 0%;
-    --fade-bottom: 28%;
+    --fade-bottom: 30%;
   }
 
   15% {
-    --fade-top: 28%;
+    --fade-top: 30%;
   }
 
   85% {
-    --fade-bottom: 28%;
+    --fade-bottom: 30%;
   }
 
   100% {
-    --fade-top: 28%;
+    --fade-top: 30%;
     --fade-bottom: 0%;
   }
 }
