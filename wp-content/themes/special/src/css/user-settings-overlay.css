@@ -14,6 +14,11 @@
     display: inline-block;
   }
 
+  /* stylelint-disable-next-line selector-type-no-unknown */
+  .no-js & > :not(.dismiss-button, install) {
+    display: none;
+  }
+
   [contenteditable]:focus {
     border-radius: var(--radius);
   }
