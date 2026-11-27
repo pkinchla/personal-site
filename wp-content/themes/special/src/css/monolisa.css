@@ -1,0 +1,162 @@
+/*! MonoLisa 3.001 — licensed, see https://www.monolisa.dev/license */
+@font-face {
+  font-display: swap;
+  src: url('/typefaces/monolisa/0-MonoLisaCode-normal.woff2') format('woff2');
+  font-family: MonoLisa;
+  font-weight: 1 900;
+  font-style: normal;
+  unicode-range: U+0020-007F;
+}
+
+@font-face {
+  font-display: swap;
+  src: url('/typefaces/monolisa/1-MonoLisaCode-italic.woff2') format('woff2');
+  font-family: MonoLisa;
+  font-weight: 1 900;
+  font-style: italic;
+  unicode-range: U+0020-007F;
+}
+
+@font-face {
+  font-display: swap;
+  src: url('/typefaces/monolisa/2-MonoLisaCode-normal.woff2') format('woff2');
+  font-family: MonoLisa;
+  font-weight: 1 900;
+  font-style: normal;
+  unicode-range: U+0080-00FF;
+}
+
+@font-face {
+  font-display: swap;
+  src: url('/typefaces/monolisa/3-MonoLisaCode-italic.woff2') format('woff2');
+  font-family: MonoLisa;
+  font-weight: 1 900;
+  font-style: italic;
+  unicode-range: U+0080-00FF;
+}
+
+@font-face {
+  font-display: swap;
+  src: url('/typefaces/monolisa/4-MonoLisaCode-normal.woff2') format('woff2');
+  font-family: MonoLisa;
+  font-weight: 1 900;
+  font-style: normal;
+  unicode-range: U+0100-017F;
+}
+
+@font-face {
+  font-display: swap;
+  src: url('/typefaces/monolisa/5-MonoLisaCode-italic.woff2') format('woff2');
+  font-family: MonoLisa;
+  font-weight: 1 900;
+  font-style: italic;
+  unicode-range: U+0100-017F;
+}
+
+@font-face {
+  font-display: swap;
+  src: url('/typefaces/monolisa/6-MonoLisaCode-normal.woff2') format('woff2');
+  font-family: MonoLisa;
+  font-weight: 1 900;
+  font-style: normal;
+  unicode-range: U+1E00-1EFF;
+}
+
+@font-face {
+  font-display: swap;
+  src: url('/typefaces/monolisa/7-MonoLisaCode-italic.woff2') format('woff2');
+  font-family: MonoLisa;
+  font-weight: 1 900;
+  font-style: italic;
+  unicode-range: U+1E00-1EFF;
+}
+
+@font-face {
+  font-display: swap;
+  src: url('/typefaces/monolisa/8-MonoLisaCode-normal.woff2') format('woff2');
+  font-family: MonoLisa;
+  font-weight: 1 900;
+  font-style: normal;
+  unicode-range: U+0180-024F;
+}
+
+@font-face {
+  font-display: swap;
+  src: url('/typefaces/monolisa/9-MonoLisaCode-italic.woff2') format('woff2');
+  font-family: MonoLisa;
+  font-weight: 1 900;
+  font-style: italic;
+  unicode-range: U+0180-024F;
+}
+
+@font-face {
+  font-display: swap;
+  src: url('/typefaces/monolisa/10-MonoLisaCode-normal.woff2') format('woff2');
+  font-family: MonoLisa;
+  font-weight: 1 900;
+  font-style: normal;
+  unicode-range: U+2000-206F;
+}
+
+@font-face {
+  font-display: swap;
+  src: url('/typefaces/monolisa/11-MonoLisaCode-italic.woff2') format('woff2');
+  font-family: MonoLisa;
+  font-weight: 1 900;
+  font-style: italic;
+  unicode-range: U+2000-206F;
+}
+
+@font-face {
+  font-display: swap;
+  src: url('/typefaces/monolisa/12-MonoLisaCode-normal.woff2') format('woff2');
+  font-family: MonoLisa;
+  font-weight: 1 900;
+  font-style: normal;
+  unicode-range: U+2100-214F;
+}
+
+@font-face {
+  font-display: swap;
+  src: url('/typefaces/monolisa/13-MonoLisaCode-italic.woff2') format('woff2');
+  font-family: MonoLisa;
+  font-weight: 1 900;
+  font-style: italic;
+  unicode-range: U+2100-214F;
+}
+
+@font-face {
+  font-display: swap;
+  src: url('/typefaces/monolisa/14-MonoLisaCode-normal.woff2') format('woff2');
+  font-family: MonoLisa;
+  font-weight: 1 900;
+  font-style: normal;
+  unicode-range: U+20A0-20CF;
+}
+
+@font-face {
+  font-display: swap;
+  src: url('/typefaces/monolisa/15-MonoLisaCode-italic.woff2') format('woff2');
+  font-family: MonoLisa;
+  font-weight: 1 900;
+  font-style: italic;
+  unicode-range: U+20A0-20CF;
+}
+
+@font-face {
+  font-display: swap;
+  src: url('/typefaces/monolisa/16-MonoLisaCode-normal.woff2') format('woff2');
+  font-family: MonoLisa;
+  font-weight: 1 900;
+  font-style: normal;
+  unicode-range: U+02B0-02FF;
+}
+
+@font-face {
+  font-display: swap;
+  src: url('/typefaces/monolisa/17-MonoLisaCode-italic.woff2') format('woff2');
+  font-family: MonoLisa;
+  font-weight: 1 900;
+  font-style: italic;
+  unicode-range: U+02B0-02FF;
+}

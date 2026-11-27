@@ -8,7 +8,8 @@
     sans-serif;
   --font-system:
     system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif;
-  --font-mono: menlo, courier, monospace;
+  --font-mono: 'MonoLisa', menlo, courier, monospace;
+  --font-mono-grad: 0; /* MonoLisa GRAD axis: -50 to 50 */
   --variable-wght-med: 650;
   --variable-italic: 1;
   --variable-wght-headings: 707;

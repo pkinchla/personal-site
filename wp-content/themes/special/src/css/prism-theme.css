@@ -7,6 +7,14 @@
 code[class*='language-'],
 pre[class*='language-'] {
   font-family: var(--font-mono);
+  font-variation-settings: 'GRAD' var(--font-mono-grad);
+
+  /* reset.css sets optimizeSpeed on body, which disables ligatures */
+  text-rendering: optimizelegibility;
+  font-variant-ligatures: common-ligatures contextual;
+
+  /* MonoLisa script italic (ss01 only exists in the italic files) */
+  font-feature-settings: 'ss01';
   background: none;
   color: light-dark(#545454, #f8f8f2);
   hyphens: none;
@@ -99,7 +107,8 @@ pre[class*='language-'] {
   font-weight: bold;
 }
 
-.token.italic {
+.token.italic,
+.token.parameter {
   font-style: italic;
 }
 

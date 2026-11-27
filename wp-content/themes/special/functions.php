@@ -64,6 +64,18 @@ function critical_css() {
 }
 add_action( 'wp_head', 'critical_css');
 
+// MonoLisa @font-face rules for code samples, only needed on single posts
+function monolisa_font_faces() {
+	if (!is_singular('post')) {
+		return;
+	}
+	$font_css = file_get_contents(get_template_directory() . '/dist/css/monolisa.css');
+	if ($font_css) {
+		echo '<style>' . $font_css . '</style>' . "\n";
+	}
+}
+add_action( 'wp_head', 'monolisa_font_faces');
+
 
 /**
  * Enqueue scripts and styles.
